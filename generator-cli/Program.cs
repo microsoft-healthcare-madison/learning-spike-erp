@@ -17,6 +17,15 @@ namespace generator_cli
     /// <summary>A program.</summary>
     public class Program
     {
+        private static Dictionary<string, Organization> _orgById = new Dictionary<string, Organization>();
+        private static Dictionary<string, Location> _rootLocationByOrgId = new Dictionary<string, Location>();
+
+        private static bool _useJson = false;
+        private static FhirJsonSerializer _jsonSerializer = null;
+        private static FhirXmlSerializer _xmlSerializer = null;
+
+        private static string _extension = ".json";
+
         /// <summary>Main entry-point for this application.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
         /// <param name="outputDirectory">    Directory to write files.</param>
@@ -29,10 +38,8 @@ namespace generator_cli
         /// <param name="seed">               Starting seed to use in generation, 0 for none (default: 0).</param>
         /// <param name="orgSource">          Source for organization records: generate|csv (default: csv).</param>
         /// <param name="prettyPrint">        If output files should be formatted for display.</param>
-        /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: all).</param>
-        /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: all).</param>
-        /// <param name="repeatDataInUpdates">If unchanged data (e.g., org records) should be included in
-        ///  updates.</param>
+        /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
+        /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: O|U).</param>
         public static void Main(
             string outputDirectory,
             string outputFormat = "JSON",
@@ -44,9 +51,8 @@ namespace generator_cli
             int seed = 0,
             string orgSource = "csv",
             bool prettyPrint = true,
-            string bedTypes = "",
-            string operationalStatuses = "",
-            bool repeatDataInUpdates = false)
+            string bedTypes = "ICU|ER|HU",
+            string operationalStatuses = "O|U")
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -64,19 +70,17 @@ namespace generator_cli
                 Directory.CreateDirectory(outputDirectory);
             }
 
-            FhirJsonSerializer jsonSerializer = null;
-            FhirXmlSerializer xmlSerializer = null;
+            _useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
 
-            bool useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
-
-            if (useJson)
+            if (_useJson)
             {
                 SerializerSettings settings = new SerializerSettings()
                 {
                     Pretty = prettyPrint,
                 };
 
-                jsonSerializer = new FhirJsonSerializer(settings);
+                _jsonSerializer = new FhirJsonSerializer(settings);
+                _extension = ".json";
             }
             else
             {
@@ -85,19 +89,11 @@ namespace generator_cli
                     Pretty = prettyPrint,
                 };
 
-                xmlSerializer = new FhirXmlSerializer(settings);
+                _xmlSerializer = new FhirXmlSerializer(settings);
+                _extension = ".xml";
             }
 
-            Dictionary<string, Organization> orgById = new Dictionary<string, Organization>();
-            Dictionary<string, Location> rootLocationByOrgId = new Dictionary<string, Location>();
 
-            string currentDir = Path.Combine(outputDirectory, "t0");
-            string filename = string.Empty;
-
-            if (!Directory.Exists(currentDir))
-            {
-                Directory.CreateDirectory(currentDir);
-            }
 
             bool useLookup = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() != "GENERATE");
 
@@ -110,62 +106,91 @@ namespace generator_cli
                 HospitalManager.Init(seed);
             }
 
-            // generate our initial data set
-            for (int facilityNumber = 0; facilityNumber < facilityCount; facilityNumber++)
+            // create our organization records
+            CreateOrgs(facilityCount, useLookup, state, postalCode);
+
+            // write our org bundles in t0
+            WriteOrgBundles(Path.Combine(outputDirectory, "t0"));
+
+        }
+
+        /// <summary>Writes an organisation bundles.</summary>
+        /// <param name="dir">The dir.</param>
+        private static void WriteOrgBundles(string dir)
+        {
+            if (!Directory.Exists(dir))
             {
-                string bundleId = FhirGenerator.NextId;
+                Directory.CreateDirectory(dir);
+            }
 
-                Bundle bundle = new Bundle()
-                {
-                    Id = bundleId,
-                    Identifier = FhirGenerator.IdentifierForId(bundleId),
-                    Type = Bundle.BundleType.Collection,
-                    Timestamp = new DateTimeOffset(DateTime.Now),
-                    Meta = new Meta(),
-                };
+            foreach (string orgId in _orgById.Keys)
+            {
+                WriteOrgBundle(orgId, dir);
+            }
+        }
 
-                bundle.Entry = new List<Bundle.EntryComponent>();
+        /// <summary>Writes an organization bundle.</summary>
+        /// <param name="org">The organization.</param>
+        /// <param name="dir">The dir.</param>
+        private static void WriteOrgBundle(
+            string orgId,
+            string dir)
+        {
+            string filename = Path.Combine(dir, $"{orgId}{_extension}");
 
+            string bundleId = FhirGenerator.NextId;
+
+            Bundle bundle = new Bundle()
+            {
+                Id = bundleId,
+                Identifier = FhirGenerator.IdentifierForId(bundleId),
+                Type = Bundle.BundleType.Collection,
+                Timestamp = new DateTimeOffset(DateTime.Now),
+                Meta = new Meta(),
+            };
+
+            bundle.Entry = new List<Bundle.EntryComponent>();
+
+            bundle.AddResourceEntry(_orgById[orgId], $"{FhirGenerator.InternalSystem}{orgId}");
+            bundle.AddResourceEntry(_rootLocationByOrgId[orgId], $"{FhirGenerator.InternalSystem}{_rootLocationByOrgId[orgId].Id}");
+
+            if (_useJson)
+            {
+                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
+            }
+            else
+            {
+                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
+            }
+        }
+
+        /// <summary>Creates the orgs.</summary>
+        /// <param name="useLookup"> True to use lookup.</param>
+        /// <param name="state">     State to restrict generation to (default: none).</param>
+        /// <param name="postalCode">Postal code to restrict generation to (default: none).</param>
+        private static void CreateOrgs(
+            int count,
+            bool useLookup,
+            string state,
+            string postalCode)
+        {
+            for (int facilityNumber = 0; facilityNumber < count; facilityNumber++)
+            {
                 Organization org = useLookup
                     ? HospitalManager.GetOrganization(state, postalCode)
                     : GeoManager.GetOrganization(state, postalCode);
 
-                if (orgById.ContainsKey(org.Id))
+                if (_orgById.ContainsKey(org.Id))
                 {
                     // ignore for now - need to figure out what to do for counts later
                     continue;
                 }
 
-                orgById.Add(org.Id, org);
-                bundle.AddResourceEntry(org, $"{FhirGenerator.InternalSystem}/{org.Id}");
+                _orgById.Add(org.Id, org);
 
                 Location orgLoc = FhirGenerator.RootLocationForOrg(org);
-                rootLocationByOrgId.Add(org.Id, orgLoc);
-                bundle.AddResourceEntry(orgLoc, $"{FhirGenerator.InternalSystem}/{orgLoc.Id}");
-
-                if (useJson)
-                {
-                    filename = Path.Combine(currentDir, $"{org.Id}.json");
-                    File.WriteAllText(filename, jsonSerializer.SerializeToString(bundle));
-                }
-                else
-                {
-                    filename = Path.Combine(currentDir, $"{org.Id}.xml");
-                    File.WriteAllText(filename, xmlSerializer.SerializeToString(bundle));
-                }
+                _rootLocationByOrgId.Add(org.Id, orgLoc);
             }
-
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    Address address = GeoManager.GetAnyAddress();
-            //    Console.WriteLine($"Address: {address.City}, {address.State} {address.PostalCode}");
-            //}
-
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    Organization org = HospitalManager.GetAnyOrganization();
-            //    Console.WriteLine($"Org: {org.Name}");
-            //}
         }
     }
 }

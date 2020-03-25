@@ -595,7 +595,7 @@ namespace generator_cli.Generators
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "HU",
-                        "Medical-surgical beds.");
+                        "Hospital unit.");
 
                 case BedType.RehabLongTermCare:
                     return new Coding(
