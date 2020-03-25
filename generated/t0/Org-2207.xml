@@ -1,0 +1,67 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="FHIR-3" />
+  <identifier>
+    <system value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/" />
+    <value value="FHIR-3" />
+  </identifier>
+  <type value="collection" />
+  <timestamp value="2020-03-25T16:18:55.1342439-05:00" />
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-2207" />
+    <resource>
+      <Organization>
+        <id value="Org-2207" />
+        <identifier>
+          <system value="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals" />
+          <value value="2207" />
+        </identifier>
+        <active value="true" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type" />
+            <code value="prov" />
+          </coding>
+        </type>
+        <name value="FRYE REGIONAL MEDICAL CENTER" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="420 NORTH CENTER ST" />
+          <city value="HICKORY" />
+          <state value="NC" />
+          <postalCode value="28601" />
+          <country value="USA" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-2207" />
+    <resource>
+      <Location>
+        <id value="Loc-Org-2207" />
+        <status value="active" />
+        <mode value="instance" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="420 NORTH CENTER ST" />
+          <city value="HICKORY" />
+          <state value="NC" />
+          <postalCode value="28601" />
+          <country value="USA" />
+        </address>
+        <physicalType>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/location-physical-type" />
+            <code value="si" />
+          </coding>
+        </physicalType>
+        <position>
+          <longitude value="-81.337270844" />
+          <latitude value="35.737346474" />
+        </position>
+      </Location>
+    </resource>
+  </entry>
+</Bundle>

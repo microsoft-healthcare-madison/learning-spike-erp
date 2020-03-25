@@ -30,99 +30,91 @@ namespace generator_cli.Generators
         /// <summary>The SANER-IG characteristic system.</summary>
         private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/location-definitions";
 
-        /// <summary>The availability statuses.</summary>
-        private static readonly Array _availabilityStatuses = Enum.GetValues(typeof(AvailabilityStatus));
-
-        /// <summary>The operational statuses.</summary>
-        private static readonly Array _operationalStatuses = Enum.GetValues(typeof(OperationalStatus));
-
-        /// <summary>List of types of the bed.</summary>
-        private static readonly Array _bedTypes = Enum.GetValues(typeof(BedType));
-
-        /// <summary>The bed features.</summary>
-        private static readonly Array _bedFeatures = Enum.GetValues(typeof(BedFeature));
-
         /// <summary>The random.</summary>
         private static Random _rand = new Random();
 
         /// <summary>The identifier.</summary>
         private static long _id = 1;
 
-        /// <summary>Values that represent availability status.</summary>
-        public enum AvailabilityStatus
-        {
-            /// <summary>Beds described by this characteristic are operational (but may be in use).</summary>
-            Active,
+        /// <summary>This location is operational (but may be in use).</summary>
+        public const string AvailabilityStatusActive = "active";
+        /// <summary>This location is temporarily out of service.</summary>
+        public const string AvailabilityStatusSuspended = "suspended";
+        /// <summary>This location is no longer operational.</summary>
+        public const string AvailabilityStatusInactive = "inactive";
 
-            /// <summary>Beds described by this characteristic are temporarily out of service.</summary>
-            Suspended,
+        /// <summary>The availability statuses.</summary>
+        public static readonly string[] AvailabilityStatuses = {
+            AvailabilityStatusActive,
+            AvailabilityStatusInactive,
+            AvailabilityStatusSuspended,
+        };
 
-            /// <summary>Beds described by this characteristic are no longer operational (e.g., Closed).</summary>
-            Inactive,
-        }
+        /// <summary>This bed needs decontamination before it can be readied for use.</summary>
+        public const string OperationalStatusContaminated = "K";
+        /// <summary>This bed is no longer in service.</summary>
+        public const string OperationalStatusClosed = "C";
+        /// <summary>This bed is not in use, but is presently ready for use.</summary>
+        public const string OperationalStatusHousekeeping = "H";
+        /// <summary>This bed is presently in use.</summary>
+        public const string OperationalStatusOccupied = "O";
+        /// <summary>This bed is presently ready for use.</summary>
+        public const string OperationalStatusUnoccupied = "U";
 
-        /// <summary>Values that represent bed status.</summary>
-        public enum OperationalStatus
-        {
-            /// <summary>This bed needs decontamination before it can be readied for use.</summary>
-            Contaminated,
+        /// <summary>The operational statuses.</summary>
+        public static readonly string[] OperationalStatuses = {
+            OperationalStatusContaminated,
+            OperationalStatusClosed,
+            OperationalStatusHousekeeping,
+            OperationalStatusOccupied,
+            OperationalStatusUnoccupied,
+        };
 
-            /// <summary>This bed is no longer in service.</summary>
-            Closed,
+        /// <summary>The bed type adult icu.</summary>
+        public const string BedTypeAdultICU = "ICU";
+        /// <summary>The bed type pediactric icu.</summary>
+        public const string BedTypePediatricICU = "PEDICU";
+        /// <summary>The bed type neonatal icu.</summary>
+        public const string BedTypeNeonatalICU = "PEDNICU";
+        /// <summary>The bed type emergency room.</summary>
+        public const string BedTypeEmergencyRoom = "ER";
+        /// <summary>The bed type hospital unit.</summary>
+        public const string BedTypeHospitalUnit = "HU";
+        /// <summary>The bed type rehab long term care.</summary>
+        public const string BedTypeRehabLongTermCare = "RHU";
+        /// <summary>The bed type pediatric.</summary>
+        public const string BedTypePediatric = "PEDU";
+        /// <summary>The bed type psychiatric.</summary>
+        public const string BedTypePsychiatric = "PHU";
+        /// <summary>The bed type operating room.</summary>
+        public const string BedTypeOperatingRoom = "OR";
 
-            /// <summary>This bed is not in use, but is presently ready for use.</summary>
-            Housekeeping,
+        /// <summary>List of types of the bed.</summary>
+        public static readonly string[] BedTypes = {
+            BedTypeAdultICU,
+            BedTypePediatricICU,
+            BedTypeNeonatalICU,
+            BedTypeEmergencyRoom,
+            BedTypeHospitalUnit,
+            BedTypeRehabLongTermCare,
+            BedTypePediatric,
+            BedTypePsychiatric,
+            BedTypeOperatingRoom,
+        };
 
-            /// <summary>This bed is presently in use.</summary>
-            Occupied,
+        /// <summary>Negative airflow isolation beds.</summary>
+        public const string BedFeatureNegativeFlowIsolation = "NEGISO";
+        /// <summary>Isolation beds (airflow is not a concern).</summary>
+        public const string BedFeatureOtherIsolation = "OTHISO";
+        /// <summary>Bed in a unit that does not support isolation.</summary>
+        public const string BedFeatureNonIsolating = "NONISO";
 
-            /// <summary>This bed is presently ready for use.</summary>
-            Unoccupied,
-        }
-
-        /// <summary>Values that represent bed types.</summary>
-        public enum BedType
-        {
-            /// <summary>Adult ICU beds.</summary>
-            AdultICU,
-
-            /// <summary>Pediatric ICU beds.</summary>
-            PediactricICU,
-
-            /// <summary>Neonatal ICU beds.</summary>
-            NeonatalICU,
-
-            /// <summary>Emergency department beds for acute care.</summary>
-            EmergencyRoom,
-
-            /// <summary>Medical-surgical beds.</summary>
-            MedicalSurgical,
-
-            /// <summary>Rehabilitation / long term care beds.</summary>
-            RehabLongTermCare,
-
-            /// <summary>Pediatric beds.</summary>
-            Pediatrics,
-
-            /// <summary>Ward beds on a close/locked psychiatric unit or ward.</summary>
-            Psychiatric,
-
-            /// <summary>Operating rooms which are equipped, staffed, and could be made available in a short period of time.</summary>
-            OperatingRoom,
-        }
-
-        /// <summary>Values that represent bed features.</summary>
-        public enum BedFeature
-        {
-            /// <summary>Negative airflow isolation beds.</summary>
-            NegativeFlowIsolation,
-
-            /// <summary>Isolation beds (airflow is not a concern).</summary>
-            OtherIsolation,
-
-            /// <summary>An enum constant representing the non isolating option.</summary>
-            NonIsolating,
-        }
+        /// <summary>The bed features.</summary>
+        public static readonly string[] BedFeatures = {
+            BedFeatureNegativeFlowIsolation,
+            BedFeatureOtherIsolation,
+            BedFeatureNonIsolating,
+        };
 
         /// <summary>Values that represent SANER-IG characteristics.</summary>
         public enum SanerCharacteristic
@@ -186,7 +178,6 @@ namespace generator_cli.Generators
             };
         }
 
-
         /// <summary>Concept for organization type.</summary>
         /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
         public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForOrganizationType() =>
@@ -214,29 +205,24 @@ namespace generator_cli.Generators
         }
 
         /// <summary>Generates a bed with random properties.</summary>
-        /// <param name="address">       The address.</param>
         /// <param name="managing">      The managing organization.</param>
         /// <param name="parentLocation">The parent location.</param>
         /// <returns>The bed.</returns>
         public static Location GenerateBed(
-            Address address,
             Organization managing,
             Location parentLocation)
         {
             // note: Random.Next max is exclusive
-            AvailabilityStatus availability = (AvailabilityStatus)
-                _availabilityStatuses.GetValue(_rand.Next(0, _availabilityStatuses.Length));
+            string availability = AvailabilityStatuses[_rand.Next(0, AvailabilityStatuses.Length)];
 
-            OperationalStatus operational = (OperationalStatus)
-                _operationalStatuses.GetValue(_rand.Next(0, _operationalStatuses.Length));
+            string operational = OperationalStatuses[_rand.Next(0, OperationalStatuses.Length)];
 
-            List<BedType> bedTypes = new List<BedType>()
+            List<string> bedTypes = new List<string>()
             {
-                (BedType)_bedTypes.GetValue(_rand.Next(0, _bedTypes.Length)),
+                BedTypes[_rand.Next(0, BedTypes.Length)],
             };
 
             return GenerateBed(
-                address,
                 availability,
                 operational,
                 bedTypes,
@@ -275,7 +261,7 @@ namespace generator_cli.Generators
             {
                 Id = IdForOrgRootLocation(org.Id),
                 Address = org.Address[0],
-                Status = GetLocationStatus(AvailabilityStatus.Active),
+                Status = GetLocationStatus(AvailabilityStatusActive),
                 Mode = Location.LocationMode.Instance,
                 PhysicalType = ConceptForPhysicalTypeSite(),
                 Position = position,
@@ -283,7 +269,6 @@ namespace generator_cli.Generators
         }
 
         /// <summary>Generates a bed with random properties.</summary>
-        /// <param name="address">           The address.</param>
         /// <param name="availabilityStatus">The availability status.</param>
         /// <param name="operationalStatus"> The operational status.</param>
         /// <param name="bedTypes">          List of types of the bed.</param>
@@ -291,17 +276,15 @@ namespace generator_cli.Generators
         /// <param name="parentLocation">    The parent location.</param>
         /// <returns>The bed.</returns>
         public static Location GenerateBed(
-            Address address,
-            AvailabilityStatus availabilityStatus,
-            OperationalStatus operationalStatus,
-            List<BedType> bedTypes,
+            string availabilityStatus,
+            string operationalStatus,
+            List<string> bedTypes,
             Organization managing,
             Location parentLocation)
         {
             Location loc = new Location()
             {
                 Id = NextId,
-                Address = address,
                 Status = GetLocationStatus(availabilityStatus),
                 OperationalStatus = CodingForOperationalStatus(operationalStatus),
                 Type = (bedTypes == null) ? null : ConceptsForBedTypes(bedTypes),
@@ -338,10 +321,10 @@ namespace generator_cli.Generators
             int quantity,
             Organization managingOrganization,
             Location parentLocation,
-            AvailabilityStatus availabilityStatus,
-            OperationalStatus operationalStatus,
-            BedType bedType,
-            BedFeature bedFeature)
+            string availabilityStatus,
+            string operationalStatus,
+            string bedType,
+            string bedFeature)
         {
             if (managingOrganization == null)
             {
@@ -458,17 +441,17 @@ namespace generator_cli.Generators
         ///  required range.</exception>
         /// <param name="status">The status.</param>
         /// <returns>The location status.</returns>
-        private static Location.LocationStatus GetLocationStatus(AvailabilityStatus status)
+        private static Location.LocationStatus GetLocationStatus(string status)
         {
             switch (status)
             {
-                case AvailabilityStatus.Active:
+                case AvailabilityStatusActive:
                     return Location.LocationStatus.Active;
 
-                case AvailabilityStatus.Suspended:
+                case AvailabilityStatusSuspended:
                     return Location.LocationStatus.Suspended;
 
-                case AvailabilityStatus.Inactive:
+                case AvailabilityStatusInactive:
                     return Location.LocationStatus.Inactive;
             }
 
@@ -478,23 +461,23 @@ namespace generator_cli.Generators
         /// <summary>Coding for availability status.</summary>
         /// <param name="status">The status.</param>
         /// <returns>A Coding.</returns>
-        private static Coding CodingForAvailabilityStatus(AvailabilityStatus status)
+        private static Coding CodingForAvailabilityStatus(string status)
         {
             switch (status)
             {
-                case AvailabilityStatus.Active:
+                case AvailabilityStatusActive:
                     return new Coding(
                         "http://hl7.org/fhir/location-status",
                         "active",
                         "The location is operational.");
 
-                case AvailabilityStatus.Suspended:
+                case AvailabilityStatusSuspended:
                     return new Coding(
                         "http://hl7.org/fhir/location-status",
                         "suspended",
                         "The location is temporarily closed.");
 
-                case AvailabilityStatus.Inactive:
+                case AvailabilityStatusInactive:
                     return new Coding(
                         "http://hl7.org/fhir/location-status",
                         "inactive",
@@ -507,35 +490,35 @@ namespace generator_cli.Generators
         /// <summary>Coding for status.</summary>
         /// <param name="status">The status.</param>
         /// <returns>A Coding.</returns>
-        private static Coding CodingForOperationalStatus(OperationalStatus status)
+        private static Coding CodingForOperationalStatus(string status)
         {
             switch (status)
             {
-                case OperationalStatus.Contaminated:
+                case OperationalStatusContaminated:
                     return new Coding(
                         "http://terminology.hl7.org/CodeSystem/v2-0116",
                         "K",
                         "Contaminated");
 
-                case OperationalStatus.Closed:
+                case OperationalStatusClosed:
                     return new Coding(
                         "http://terminology.hl7.org/CodeSystem/v2-0116",
                         "C",
                         "Closed");
 
-                case OperationalStatus.Housekeeping:
+                case OperationalStatusHousekeeping:
                     return new Coding(
                         "http://terminology.hl7.org/CodeSystem/v2-0116",
                         "H",
                         "Housekeeping");
 
-                case OperationalStatus.Occupied:
+                case OperationalStatusOccupied:
                     return new Coding(
                         "http://terminology.hl7.org/CodeSystem/v2-0116",
                         "O",
                         "Occupied");
 
-                case OperationalStatus.Unoccupied:
+                case OperationalStatusUnoccupied:
                     return new Coding(
                         "http://terminology.hl7.org/CodeSystem/v2-0116",
                         "U",
@@ -548,11 +531,11 @@ namespace generator_cli.Generators
         /// <summary>Codings for bed types.</summary>
         /// <param name="bedTypes">List of types of the bed.</param>
         /// <returns>A List&lt;Coding&gt;</returns>
-        private static List<Coding> CodingsForBedTypes(List<BedType> bedTypes)
+        private static List<Coding> CodingsForBedTypes(List<string> bedTypes)
         {
             List<Coding> codings = new List<Coding>();
 
-            foreach (BedType bedType in bedTypes)
+            foreach (string bedType in bedTypes)
             {
                 codings.Add(CodingForBedType(bedType));
             }
@@ -563,59 +546,59 @@ namespace generator_cli.Generators
         /// <summary>Coding for bed type.</summary>
         /// <param name="type">The type.</param>
         /// <returns>A Coding.</returns>
-        private static Coding CodingForBedType(BedType type)
+        private static Coding CodingForBedType(string type)
         {
             switch (type)
             {
-                case BedType.AdultICU:
+                case BedTypeAdultICU:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "ICU",
                         "Adult ICU bed type.");
 
-                case BedType.PediactricICU:
+                case BedTypePediatricICU:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PEDICU",
                         "Pediatric ICU beds.");
 
-                case BedType.NeonatalICU:
+                case BedTypeNeonatalICU:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PEDNICU",
                         "Neonatal ICU beds.");
 
-                case BedType.EmergencyRoom:
+                case BedTypeEmergencyRoom:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "ER",
                         "Emergency Department beds.");
 
-                case BedType.MedicalSurgical:
+                case BedTypeHospitalUnit:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "HU",
                         "Hospital unit.");
 
-                case BedType.RehabLongTermCare:
+                case BedTypeRehabLongTermCare:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "RHU",
                         "Rehabilitation - long term care beds.");
 
-                case BedType.Pediatrics:
+                case BedTypePediatric:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PEDU",
                         "Pediatric beds.");
 
-                case BedType.Psychiatric:
+                case BedTypePsychiatric:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PHU",
                         "Psyciatric beds.");
 
-                case BedType.OperatingRoom:
+                case BedTypeOperatingRoom:
                     return new Coding(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "OR",
@@ -628,11 +611,11 @@ namespace generator_cli.Generators
         /// <summary>Concepts for bed types.</summary>
         /// <param name="bedTypes">List of types of the bed.</param>
         /// <returns>A List&lt;CodeableConcept&gt;</returns>
-        private static List<CodeableConcept> ConceptsForBedTypes(List<BedType> bedTypes)
+        private static List<CodeableConcept> ConceptsForBedTypes(List<string> bedTypes)
         {
             List<CodeableConcept> concepts = new List<CodeableConcept>();
 
-            foreach (BedType bedType in bedTypes)
+            foreach (string bedType in bedTypes)
             {
                 concepts.Add(ConceptForBedType(bedType));
             }
@@ -643,59 +626,59 @@ namespace generator_cli.Generators
         /// <summary>Concept for bed type.</summary>
         /// <param name="type">The type.</param>
         /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForBedType(BedType type)
+        private static CodeableConcept ConceptForBedType(string type)
         {
             switch (type)
             {
-                case BedType.AdultICU:
+                case BedTypeAdultICU:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "ICU",
                         "Adult ICU bed type.");
 
-                case BedType.PediactricICU:
+                case BedTypePediatricICU:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PEDICU",
                         "Pediatric ICU beds.");
 
-                case BedType.NeonatalICU:
+                case BedTypeNeonatalICU:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PEDNICU",
                         "Neonatal ICU beds.");
 
-                case BedType.EmergencyRoom:
+                case BedTypeEmergencyRoom:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "ER",
                         "Emergency Department beds.");
 
-                case BedType.MedicalSurgical:
+                case BedTypeHospitalUnit:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "HU",
-                        "Medical-surgical beds.");
+                        "Hospital beds.");
 
-                case BedType.RehabLongTermCare:
+                case BedTypeRehabLongTermCare:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "RHU",
                         "Rehabilitation - long term care beds.");
 
-                case BedType.Pediatrics:
+                case BedTypePediatric:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PEDU",
                         "Pediatric beds.");
 
-                case BedType.Psychiatric:
+                case BedTypePsychiatric:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "PHU",
                         "Psyciatric beds.");
 
-                case BedType.OperatingRoom:
+                case BedTypeOperatingRoom:
                     return new CodeableConcept(
                         "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
                         "OR",
@@ -708,26 +691,26 @@ namespace generator_cli.Generators
         /// <summary>Concept for bed feature.</summary>
         /// <param name="feature">The feature.</param>
         /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForBedFeature(BedFeature feature)
+        private static CodeableConcept ConceptForBedFeature(string feature)
         {
             switch (feature)
             {
-                case BedFeature.NegativeFlowIsolation:
+                case BedFeatureNegativeFlowIsolation:
                     return new CodeableConcept(
                         "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
                         "NEGISO",
                         "Negative airflow isolation beds.");
 
-                case BedFeature.OtherIsolation:
+                case BedFeatureOtherIsolation:
                     return new CodeableConcept(
                         "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
                         "OTHISO",
                         "Isolation beds (airflow is not a concern).");
 
-                case BedFeature.NonIsolating:
+                case BedFeatureNonIsolating:
                     return new CodeableConcept(
                         "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                        "OTHISO",
+                        "NONISO",
                         "Non-isolating unit.");
             }
 

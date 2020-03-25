@@ -1,0 +1,67 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="FHIR-4" />
+  <identifier>
+    <system value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/" />
+    <value value="FHIR-4" />
+  </identifier>
+  <type value="collection" />
+  <timestamp value="2020-03-25T16:18:55.1404878-05:00" />
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-3475" />
+    <resource>
+      <Organization>
+        <id value="Org-3475" />
+        <identifier>
+          <system value="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals" />
+          <value value="3475" />
+        </identifier>
+        <active value="true" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type" />
+            <code value="prov" />
+          </coding>
+        </type>
+        <name value="CHATTOOGA MEDICAL CENTER" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="11766 US 27" />
+          <city value="SUMMERVILLE" />
+          <state value="GA" />
+          <postalCode value="30747" />
+          <country value="USA" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-3475" />
+    <resource>
+      <Location>
+        <id value="Loc-Org-3475" />
+        <status value="active" />
+        <mode value="instance" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="11766 US 27" />
+          <city value="SUMMERVILLE" />
+          <state value="GA" />
+          <postalCode value="30747" />
+          <country value="USA" />
+        </address>
+        <physicalType>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/location-physical-type" />
+            <code value="si" />
+          </coding>
+        </physicalType>
+        <position>
+          <longitude value="-85.3304196" />
+          <latitude value="34.499668415" />
+        </position>
+      </Location>
+    </resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,67 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="FHIR-5" />
+  <identifier>
+    <system value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/" />
+    <value value="FHIR-5" />
+  </identifier>
+  <type value="collection" />
+  <timestamp value="2020-03-25T16:18:55.1463894-05:00" />
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-5261" />
+    <resource>
+      <Organization>
+        <id value="Org-5261" />
+        <identifier>
+          <system value="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals" />
+          <value value="5261" />
+        </identifier>
+        <active value="true" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type" />
+            <code value="prov" />
+          </coding>
+        </type>
+        <name value="SWEENY COMMUNITY HOSPITAL" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="305 NORTH MCKINNEY STREET" />
+          <city value="SWEENY" />
+          <state value="TX" />
+          <postalCode value="77480" />
+          <country value="USA" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-5261" />
+    <resource>
+      <Location>
+        <id value="Loc-Org-5261" />
+        <status value="active" />
+        <mode value="instance" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="305 NORTH MCKINNEY STREET" />
+          <city value="SWEENY" />
+          <state value="TX" />
+          <postalCode value="77480" />
+          <country value="USA" />
+        </address>
+        <physicalType>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/location-physical-type" />
+            <code value="si" />
+          </coding>
+        </physicalType>
+        <position>
+          <longitude value="-95.6918314069999" />
+          <latitude value="29.0478346680001" />
+        </position>
+      </Location>
+    </resource>
+  </entry>
+</Bundle>

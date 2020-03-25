@@ -93,8 +93,6 @@ namespace generator_cli
                 _extension = ".xml";
             }
 
-
-
             bool useLookup = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() != "GENERATE");
 
             // always need the geo manager
@@ -111,7 +109,6 @@ namespace generator_cli
 
             // write our org bundles in t0
             WriteOrgBundles(Path.Combine(outputDirectory, "t0"));
-
         }
 
         /// <summary>Writes an organisation bundles.</summary>
@@ -130,8 +127,8 @@ namespace generator_cli
         }
 
         /// <summary>Writes an organization bundle.</summary>
-        /// <param name="org">The organization.</param>
-        /// <param name="dir">The dir.</param>
+        /// <param name="orgId">The organization.</param>
+        /// <param name="dir">  The dir.</param>
         private static void WriteOrgBundle(
             string orgId,
             string dir)
@@ -151,8 +148,13 @@ namespace generator_cli
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
-            bundle.AddResourceEntry(_orgById[orgId], $"{FhirGenerator.InternalSystem}{orgId}");
-            bundle.AddResourceEntry(_rootLocationByOrgId[orgId], $"{FhirGenerator.InternalSystem}{_rootLocationByOrgId[orgId].Id}");
+            bundle.AddResourceEntry(
+                _orgById[orgId],
+                $"{FhirGenerator.InternalSystem}{_orgById[orgId].ResourceType}/{orgId}");
+
+            bundle.AddResourceEntry(
+                _rootLocationByOrgId[orgId],
+                $"{FhirGenerator.InternalSystem}{_rootLocationByOrgId[orgId].ResourceType}/{_rootLocationByOrgId[orgId].Id}");
 
             if (_useJson)
             {
@@ -165,6 +167,7 @@ namespace generator_cli
         }
 
         /// <summary>Creates the orgs.</summary>
+        /// <param name="count">     Number of.</param>
         /// <param name="useLookup"> True to use lookup.</param>
         /// <param name="state">     State to restrict generation to (default: none).</param>
         /// <param name="postalCode">Postal code to restrict generation to (default: none).</param>

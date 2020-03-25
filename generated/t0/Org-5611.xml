@@ -1,0 +1,67 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="FHIR-7" />
+  <identifier>
+    <system value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/" />
+    <value value="FHIR-7" />
+  </identifier>
+  <type value="collection" />
+  <timestamp value="2020-03-25T16:18:55.1590725-05:00" />
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-5611" />
+    <resource>
+      <Organization>
+        <id value="Org-5611" />
+        <identifier>
+          <system value="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals" />
+          <value value="5611" />
+        </identifier>
+        <active value="true" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type" />
+            <code value="prov" />
+          </coding>
+        </type>
+        <name value="HENRY FORD WEST BLOOMFIELD HOSPITAL" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="6777 WEST MAPLE ROAD" />
+          <city value="W BLOOMFIELD" />
+          <state value="MI" />
+          <postalCode value="48322" />
+          <country value="USA" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-5611" />
+    <resource>
+      <Location>
+        <id value="Loc-Org-5611" />
+        <status value="active" />
+        <mode value="instance" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="6777 WEST MAPLE ROAD" />
+          <city value="W BLOOMFIELD" />
+          <state value="MI" />
+          <postalCode value="48322" />
+          <country value="USA" />
+        </address>
+        <physicalType>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/location-physical-type" />
+            <code value="si" />
+          </coding>
+        </physicalType>
+        <position>
+          <longitude value="-83.407039254" />
+          <latitude value="42.538673176" />
+        </position>
+      </Location>
+    </resource>
+  </entry>
+</Bundle>

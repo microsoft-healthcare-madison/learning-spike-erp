@@ -1,0 +1,67 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="FHIR-8" />
+  <identifier>
+    <system value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/" />
+    <value value="FHIR-8" />
+  </identifier>
+  <type value="collection" />
+  <timestamp value="2020-03-25T16:18:55.1652058-05:00" />
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-3815" />
+    <resource>
+      <Organization>
+        <id value="Org-3815" />
+        <identifier>
+          <system value="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals" />
+          <value value="3815" />
+        </identifier>
+        <active value="true" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type" />
+            <code value="prov" />
+          </coding>
+        </type>
+        <name value="MEADOW WOOD BEHAVIORAL HEALTH SYSTEM" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="575 S DUPONT HWY" />
+          <city value="NEW CASTLE" />
+          <state value="DE" />
+          <postalCode value="19720" />
+          <country value="USA" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-3815" />
+    <resource>
+      <Location>
+        <id value="Loc-Org-3815" />
+        <status value="active" />
+        <mode value="instance" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="575 S DUPONT HWY" />
+          <city value="NEW CASTLE" />
+          <state value="DE" />
+          <postalCode value="19720" />
+          <country value="USA" />
+        </address>
+        <physicalType>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/location-physical-type" />
+            <code value="si" />
+          </coding>
+        </physicalType>
+        <position>
+          <longitude value="-75.629343535" />
+          <latitude value="39.639728115" />
+        </position>
+      </Location>
+    </resource>
+  </entry>
+</Bundle>

@@ -1,0 +1,67 @@
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="FHIR-11" />
+  <identifier>
+    <system value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/" />
+    <value value="FHIR-11" />
+  </identifier>
+  <type value="collection" />
+  <timestamp value="2020-03-25T16:18:55.1822066-05:00" />
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-2129" />
+    <resource>
+      <Organization>
+        <id value="Org-2129" />
+        <identifier>
+          <system value="https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals" />
+          <value value="2129" />
+        </identifier>
+        <active value="true" />
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/ValueSet/organization-type" />
+            <code value="prov" />
+          </coding>
+        </type>
+        <name value="HEALTHEAST ST JOHNS HOSPITAL" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="1575 BEAM AVENUE" />
+          <city value="ST PAUL" />
+          <state value="MN" />
+          <postalCode value="55109" />
+          <country value="USA" />
+        </address>
+      </Organization>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-2129" />
+    <resource>
+      <Location>
+        <id value="Loc-Org-2129" />
+        <status value="active" />
+        <mode value="instance" />
+        <address>
+          <use value="work" />
+          <type value="both" />
+          <line value="1575 BEAM AVENUE" />
+          <city value="ST PAUL" />
+          <state value="MN" />
+          <postalCode value="55109" />
+          <country value="USA" />
+        </address>
+        <physicalType>
+          <coding>
+            <system value="http://terminology.hl7.org/ValueSet/location-physical-type" />
+            <code value="si" />
+          </coding>
+        </physicalType>
+        <position>
+          <longitude value="-93.033933528" />
+          <latitude value="45.0291120530001" />
+        </position>
+      </Location>
+    </resource>
+  </entry>
+</Bundle>
