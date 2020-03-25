@@ -21,9 +21,17 @@ namespace generator_cli.Geographic
 
         private static Random _rand = null;
 
+        private static int _minBeds = 0;
+        private static int _maxBeds = 0;
+
         /// <summary>Initializes this object and loads location data.</summary>
-        /// <param name="seed">(Optional) The seed.</param>
-        public static void Init(int seed = 0)
+        /// <param name="seed">   (Optional) The seed.</param>
+        /// <param name="minBeds">(Optional) The minimum beds.</param>
+        /// <param name="maxBeds">(Optional) The maximum beds.</param>
+        public static void Init(
+            int seed = 0,
+            int minBeds = 10,
+            int maxBeds = 5000)
         {
             if (seed == 0)
             {
@@ -33,6 +41,9 @@ namespace generator_cli.Geographic
             {
                 _rand = new Random(seed);
             }
+
+            _minBeds = minBeds;
+            _maxBeds = maxBeds;
 
             string filename = Path.Combine(Directory.GetCurrentDirectory(), "data", "us-zip-code-latitude-and-longitude.json");
 
@@ -75,6 +86,13 @@ namespace generator_cli.Geographic
                 _locations[index].fields.city,
                 _locations[index].fields.state,
                 _locations[index].fields.zip);
+        }
+
+        /// <summary>Beds for hospital.</summary>
+        /// <returns>An int.</returns>
+        public static int BedsForHospital()
+        {
+            return _rand.Next(_minBeds, _maxBeds);
         }
 
         /// <summary>Address for state.</summary>

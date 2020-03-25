@@ -87,9 +87,18 @@ namespace generator_cli.Generators
             }
         }
 
-        private static void CreateBeds()
+        /// <summary>Gets the beds.</summary>
+        /// <returns>A List&lt;Location&gt;</returns>
+        public List<Location> Beds()
         {
+            List<Location> beds = new List<Location>();
 
+            foreach (KeyValuePair<BedConfiguration, List<Location>> kvp in _bedsByConfig)
+            {
+                beds.AddRange(kvp.Value);
+            }
+
+            return beds;
         }
     }
 }

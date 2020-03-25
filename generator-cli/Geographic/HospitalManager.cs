@@ -23,9 +23,17 @@ namespace generator_cli.Geographic
 
         private static Random _rand = null;
 
+        private static int _minBeds = 0;
+        private static int _maxBeds = 0;
+
         /// <summary>Initializes this object.</summary>
-        /// <param name="seed">(Optional) The seed.</param>
-        public static void Init(int seed = 0)
+        /// <param name="seed">   (Optional) The seed.</param>
+        /// <param name="minBeds">(Optional) The minimum beds.</param>
+        /// <param name="maxBeds">(Optional) The maximum beds.</param>
+        public static void Init(
+            int seed = 0,
+            int minBeds = 10,
+            int maxBeds = 5000)
         {
             if (seed == 0)
             {
@@ -35,6 +43,9 @@ namespace generator_cli.Geographic
             {
                 _rand = new Random(seed);
             }
+
+            _minBeds = minBeds;
+            _maxBeds = maxBeds;
 
             string filename = Path.Combine(Directory.GetCurrentDirectory(), "data", "Hospitals.csv");
 
@@ -78,6 +89,24 @@ namespace generator_cli.Geographic
                 $"Loaded {_hospitals.Count} hospital records" +
                 $", {_hospitalsByState.Count} states" +
                 $", {_hospitalsByZip.Count} zip codes");
+        }
+
+        /// <summary>Beds for hospital.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>An int.</returns>
+        public static int BedsForHospital(string id)
+        {
+            if ((!string.IsNullOrEmpty(id)) && _hospitalsById.ContainsKey(id))
+            {
+                if (int.TryParse(_hospitalsById[id].BEDS, out int recordBeds))
+                {
+                    recordBeds = Math.Max(recordBeds, _minBeds);
+                    recordBeds = Math.Min(recordBeds, _maxBeds);
+                    return recordBeds;
+                }
+            }
+
+            return _rand.Next(_minBeds, _maxBeds);
         }
 
         /// <summary>Gets an organization.</summary>
