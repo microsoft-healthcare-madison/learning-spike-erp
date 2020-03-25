@@ -16,9 +16,6 @@ namespace generator_cli.Geographic
     /// <summary>Manager for hospitals.</summary>
     public abstract class HospitalManager
     {
-        /// <summary>The hospital prefix.</summary>
-        public const string HospitalPrefix = "Org-";
-
         private static List<HospitalRecord> _hospitals = new List<HospitalRecord>();
         private static Dictionary<string, List<HospitalRecord>> _hospitalsByZip = new Dictionary<string, List<HospitalRecord>>();
         private static Dictionary<string, List<HospitalRecord>> _hospitalsByState = new Dictionary<string, List<HospitalRecord>>();
@@ -150,7 +147,7 @@ namespace generator_cli.Geographic
                 Id = IdForOrg(hosp.OBJECTID),
                 Identifier = IdentifierForOrg(hosp.OBJECTID),
                 Active = true,
-                Type = ConceptForOrganizationType(),
+                Type = FhirGenerator.ConceptListForOrganizationType(),
                 Name = hosp.NAME,
                 Address = new List<Hl7.Fhir.Model.Address>()
                 {
@@ -211,17 +208,7 @@ namespace generator_cli.Geographic
         /// <summary>Identifier for organization.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A string.</returns>
-        private static string IdForOrg(long id) => $"{HospitalPrefix}{id}";
-
-        /// <summary>Concept for organization type.</summary>
-        /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
-        private static List<Hl7.Fhir.Model.CodeableConcept> ConceptForOrganizationType() =>
-            new List<Hl7.Fhir.Model.CodeableConcept>()
-            {
-                new Hl7.Fhir.Model.CodeableConcept(
-                    "http://hl7.org/fhir/ValueSet/organization-type",
-                    "prov"),
-            };
+        private static string IdForOrg(long id) => $"{FhirGenerator.OrgPrefix}{id}";
 
         /// <summary>Query if 'id' is hospital known.</summary>
         /// <param name="id">The identifier.</param>

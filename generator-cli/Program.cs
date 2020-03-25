@@ -19,14 +19,20 @@ namespace generator_cli
     {
         /// <summary>Main entry-point for this application.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
-        /// <param name="outputDirectory">Directory to write files.</param>
-        /// <param name="outputFormat">   The output format, JSON or XML (default: JSON).</param>
-        /// <param name="state">          State to restrict generation to (default: none).</param>
-        /// <param name="postalCode">     Postal code to restrict generation to (default: none).</param>
-        /// <param name="facilityCount">  Number of facilities to generate.</param>
-        /// <param name="timeSteps">      Number of time-step updates to generate.</param>
-        /// <param name="seed">           Starting seed to use in generation, 0 for none (default: 0).</param>
-        /// <param name="bundleType">     Type of bundle to generate: batch|transaction (default: batch).</param>
+        /// <param name="outputDirectory">    Directory to write files.</param>
+        /// <param name="outputFormat">       The output format, JSON or XML (default: JSON).</param>
+        /// <param name="state">              State to restrict generation to (default: none).</param>
+        /// <param name="postalCode">         Postal code to restrict generation to (default: none).</param>
+        /// <param name="facilityCount">      Number of facilities to generate.</param>
+        /// <param name="timeSteps">          Number of time-step updates to generate.</param>
+        /// <param name="timePeriodHours">    Time-step period in hours (default: 24).</param>
+        /// <param name="seed">               Starting seed to use in generation, 0 for none (default: 0).</param>
+        /// <param name="orgSource">          Source for organization records: generate|csv (default: csv).</param>
+        /// <param name="prettyPrint">        If output files should be formatted for display.</param>
+        /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: all).</param>
+        /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: all).</param>
+        /// <param name="repeatDataInUpdates">If unchanged data (e.g., org records) should be included in
+        ///  updates.</param>
         public static void Main(
             string outputDirectory,
             string outputFormat = "JSON",
@@ -34,8 +40,13 @@ namespace generator_cli
             string postalCode = null,
             int facilityCount = 10,
             int timeSteps = 10,
+            int timePeriodHours = 24,
             int seed = 0,
-            string bundleType = "batch")
+            string orgSource = "csv",
+            bool prettyPrint = true,
+            string bedTypes = "",
+            string operationalStatuses = "",
+            bool repeatDataInUpdates = false)
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -48,18 +59,34 @@ namespace generator_cli
                 throw new ArgumentNullException(nameof(outputFormat));
             }
 
-            GeoManager.Init(seed);
-            HospitalManager.Init(seed);
-
             if (!Directory.Exists(outputDirectory))
             {
                 Directory.CreateDirectory(outputDirectory);
             }
 
-            FhirJsonSerializer jsonSerializer = new FhirJsonSerializer();
-            FhirXmlSerializer xmlSerializer = new FhirXmlSerializer();
+            FhirJsonSerializer jsonSerializer = null;
+            FhirXmlSerializer xmlSerializer = null;
 
             bool useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
+
+            if (useJson)
+            {
+                SerializerSettings settings = new SerializerSettings()
+                {
+                    Pretty = prettyPrint,
+                };
+
+                jsonSerializer = new FhirJsonSerializer(settings);
+            }
+            else
+            {
+                SerializerSettings settings = new SerializerSettings()
+                {
+                    Pretty = prettyPrint,
+                };
+
+                xmlSerializer = new FhirXmlSerializer(settings);
+            }
 
             Dictionary<string, Organization> orgById = new Dictionary<string, Organization>();
             Dictionary<string, Location> rootLocationByOrgId = new Dictionary<string, Location>();
@@ -72,7 +99,16 @@ namespace generator_cli
                 Directory.CreateDirectory(currentDir);
             }
 
-            bool useBatch = string.IsNullOrEmpty(bundleType) || (bundleType.ToUpperInvariant() != "TRANSACTION");
+            bool useLookup = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() != "GENERATE");
+
+            // always need the geo manager
+            GeoManager.Init(seed);
+
+            // only need hospital manager if we are using lookup
+            if (useLookup)
+            {
+                HospitalManager.Init(seed);
+            }
 
             // generate our initial data set
             for (int facilityNumber = 0; facilityNumber < facilityCount; facilityNumber++)
@@ -83,14 +119,23 @@ namespace generator_cli
                 {
                     Id = bundleId,
                     Identifier = FhirGenerator.IdentifierForId(bundleId),
-                    Type = useBatch ? Bundle.BundleType.Batch : Bundle.BundleType.Transaction,
+                    Type = Bundle.BundleType.Collection,
                     Timestamp = new DateTimeOffset(DateTime.Now),
                     Meta = new Meta(),
                 };
 
                 bundle.Entry = new List<Bundle.EntryComponent>();
 
-                Organization org = HospitalManager.GetOrganization(state, postalCode);
+                Organization org = useLookup
+                    ? HospitalManager.GetOrganization(state, postalCode)
+                    : GeoManager.GetOrganization(state, postalCode);
+
+                if (orgById.ContainsKey(org.Id))
+                {
+                    // ignore for now - need to figure out what to do for counts later
+                    continue;
+                }
+
                 orgById.Add(org.Id, org);
                 bundle.AddResourceEntry(org, $"{FhirGenerator.InternalSystem}/{org.Id}");
 

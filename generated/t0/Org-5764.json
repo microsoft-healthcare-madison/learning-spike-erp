@@ -1,1 +1,82 @@
-{"resourceType":"Bundle","id":"FHIR-2","identifier":{"system":"https://github.com/microsoft-healthcare-madison/learning-spike-erp/","value":"FHIR-2"},"type":"batch","timestamp":"2020-03-25T11:11:34.9698308-05:00","entry":[{"fullUrl":"https://github.com/microsoft-healthcare-madison/learning-spike-erp//Org-5764","resource":{"resourceType":"Organization","id":"Org-5764","identifier":[{"system":"https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals","value":"5764"}],"active":true,"type":[{"coding":[{"system":"http://hl7.org/fhir/ValueSet/organization-type","code":"prov"}]}],"name":"THAYER COUNTY HEALTH SERVICES","address":[{"use":"work","type":"both","line":["120 PARK AVE"],"city":"HEBRON","state":"NE","postalCode":"68370","country":"USA"}]}},{"fullUrl":"https://github.com/microsoft-healthcare-madison/learning-spike-erp//Loc-Org-5764","resource":{"resourceType":"Location","id":"Loc-Org-5764","status":"active","mode":"instance","address":{"use":"work","type":"both","line":["120 PARK AVE"],"city":"HEBRON","state":"NE","postalCode":"68370","country":"USA"},"physicalType":{"coding":[{"system":"http://terminology.hl7.org/ValueSet/location-physical-type","code":"si"}]},"position":{"longitude":-97.593730433,"latitude":40.160639266}}}]}
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-2",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-2"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-25T14:00:03.1006272-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp//Org-5764",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-5764",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "5764"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "THAYER COUNTY HEALTH SERVICES",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "120 PARK AVE"
+            ],
+            "city": "HEBRON",
+            "state": "NE",
+            "postalCode": "68370",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp//Loc-Org-5764",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-5764",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "120 PARK AVE"
+          ],
+          "city": "HEBRON",
+          "state": "NE",
+          "postalCode": "68370",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/ValueSet/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -97.593730433,
+          "latitude": 40.160639266
+        }
+      }
+    }
+  ]
+}

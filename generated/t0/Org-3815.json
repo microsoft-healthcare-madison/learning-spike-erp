@@ -1,1 +1,82 @@
-{"resourceType":"Bundle","id":"FHIR-8","identifier":{"system":"https://github.com/microsoft-healthcare-madison/learning-spike-erp/","value":"FHIR-8"},"type":"batch","timestamp":"2020-03-25T11:11:35.9789518-05:00","entry":[{"fullUrl":"https://github.com/microsoft-healthcare-madison/learning-spike-erp//Org-3815","resource":{"resourceType":"Organization","id":"Org-3815","identifier":[{"system":"https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals","value":"3815"}],"active":true,"type":[{"coding":[{"system":"http://hl7.org/fhir/ValueSet/organization-type","code":"prov"}]}],"name":"MEADOW WOOD BEHAVIORAL HEALTH SYSTEM","address":[{"use":"work","type":"both","line":["575 S DUPONT HWY"],"city":"NEW CASTLE","state":"DE","postalCode":"19720","country":"USA"}]}},{"fullUrl":"https://github.com/microsoft-healthcare-madison/learning-spike-erp//Loc-Org-3815","resource":{"resourceType":"Location","id":"Loc-Org-3815","status":"active","mode":"instance","address":{"use":"work","type":"both","line":["575 S DUPONT HWY"],"city":"NEW CASTLE","state":"DE","postalCode":"19720","country":"USA"},"physicalType":{"coding":[{"system":"http://terminology.hl7.org/ValueSet/location-physical-type","code":"si"}]},"position":{"longitude":-75.629343535,"latitude":39.639728115}}}]}
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-8",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-8"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-25T14:00:04.1865386-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp//Org-3815",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-3815",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "3815"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "MEADOW WOOD BEHAVIORAL HEALTH SYSTEM",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "575 S DUPONT HWY"
+            ],
+            "city": "NEW CASTLE",
+            "state": "DE",
+            "postalCode": "19720",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp//Loc-Org-3815",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-3815",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "575 S DUPONT HWY"
+          ],
+          "city": "NEW CASTLE",
+          "state": "DE",
+          "postalCode": "19720",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/ValueSet/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -75.629343535,
+          "latitude": 39.639728115
+        }
+      }
+    }
+  ]
+}

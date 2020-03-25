@@ -1,1 +1,82 @@
-{"resourceType":"Bundle","id":"FHIR-7","identifier":{"system":"https://github.com/microsoft-healthcare-madison/learning-spike-erp/","value":"FHIR-7"},"type":"batch","timestamp":"2020-03-25T11:11:35.9734947-05:00","entry":[{"fullUrl":"https://github.com/microsoft-healthcare-madison/learning-spike-erp//Org-5611","resource":{"resourceType":"Organization","id":"Org-5611","identifier":[{"system":"https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals","value":"5611"}],"active":true,"type":[{"coding":[{"system":"http://hl7.org/fhir/ValueSet/organization-type","code":"prov"}]}],"name":"HENRY FORD WEST BLOOMFIELD HOSPITAL","address":[{"use":"work","type":"both","line":["6777 WEST MAPLE ROAD"],"city":"W BLOOMFIELD","state":"MI","postalCode":"48322","country":"USA"}]}},{"fullUrl":"https://github.com/microsoft-healthcare-madison/learning-spike-erp//Loc-Org-5611","resource":{"resourceType":"Location","id":"Loc-Org-5611","status":"active","mode":"instance","address":{"use":"work","type":"both","line":["6777 WEST MAPLE ROAD"],"city":"W BLOOMFIELD","state":"MI","postalCode":"48322","country":"USA"},"physicalType":{"coding":[{"system":"http://terminology.hl7.org/ValueSet/location-physical-type","code":"si"}]},"position":{"longitude":-83.407039254,"latitude":42.538673176}}}]}
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-7",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-7"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-25T14:00:04.1792412-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp//Org-5611",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-5611",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "5611"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/ValueSet/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "HENRY FORD WEST BLOOMFIELD HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "6777 WEST MAPLE ROAD"
+            ],
+            "city": "W BLOOMFIELD",
+            "state": "MI",
+            "postalCode": "48322",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp//Loc-Org-5611",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-5611",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "6777 WEST MAPLE ROAD"
+          ],
+          "city": "W BLOOMFIELD",
+          "state": "MI",
+          "postalCode": "48322",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/ValueSet/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -83.407039254,
+          "latitude": 42.538673176
+        }
+      }
+    }
+  ]
+}

@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
+using generator_cli.Generators;
 using Newtonsoft.Json;
 
 namespace generator_cli.Geographic
@@ -69,14 +71,10 @@ namespace generator_cli.Geographic
             // note: Random.next max is exclusive
             int index = _rand.Next(0, _locations.Count);
 
-            return new Hl7.Fhir.Model.Address()
-            {
-                Use = Hl7.Fhir.Model.Address.AddressUse.Work,
-                Type = Hl7.Fhir.Model.Address.AddressType.Both,
-                City = _locations[index].fields.city,
-                State = _locations[index].fields.state,
-                PostalCode = _locations[index].fields.zip,
-            };
+            return CreateAddress(
+                _locations[index].fields.city,
+                _locations[index].fields.state,
+                _locations[index].fields.zip);
         }
 
         /// <summary>Address for state.</summary>
@@ -106,22 +104,126 @@ namespace generator_cli.Geographic
 
             if (fillCity)
             {
-                return new Hl7.Fhir.Model.Address()
-                {
-                    Use = Hl7.Fhir.Model.Address.AddressUse.Work,
-                    Type = Hl7.Fhir.Model.Address.AddressType.Both,
-                    State = state,
-                    City = _locationsByState[state][index].fields.city,
-                    PostalCode = _locationsByState[state][index].fields.zip,
-                };
+                return CreateAddress(
+                    _locationsByState[state][index].fields.city,
+                    state,
+                    _locationsByState[state][index].fields.zip);
             }
 
+            return CreateAddress(
+                string.Empty,
+                state,
+                _locationsByState[state][index].fields.zip);
+        }
+
+        /// <summary>Creates the address.</summary>
+        /// <param name="city">      The city.</param>
+        /// <param name="state">     The state.</param>
+        /// <param name="postalCode">The postal code.</param>
+        /// <returns>The new address.</returns>
+        private static Hl7.Fhir.Model.Address CreateAddress(
+            string city,
+            string state,
+            string postalCode)
+        {
             return new Hl7.Fhir.Model.Address()
             {
                 Use = Hl7.Fhir.Model.Address.AddressUse.Work,
                 Type = Hl7.Fhir.Model.Address.AddressType.Both,
+                City = city,
                 State = state,
-                PostalCode = _locationsByState[state][index].fields.zip,
+                PostalCode = postalCode,
+                Country = "USA",
+            };
+        }
+
+        /// <summary>Gets an organization.</summary>
+        /// <param name="state">     (Optional) The state.</param>
+        /// <param name="postalCode">(Optional) The postal code.</param>
+        /// <returns>The organization.</returns>
+        public static Hl7.Fhir.Model.Organization GetOrganization(
+            string state = null,
+            string postalCode = null)
+        {
+            string localCity = string.Empty;
+            string localState = string.Empty;
+            string localPostalCode = string.Empty;
+
+            // check for needing a postal code
+            if (string.IsNullOrEmpty(postalCode))
+            {
+                // use state if present
+                if ((!string.IsNullOrEmpty(state)) && (_locationsByState.ContainsKey(state)))
+                {
+                    // note: Rand.Next max is exclusive
+                    int index = _rand.Next(0, _locationsByState[state].Count);
+
+                    localCity = _locationsByState[state][index].fields.city;
+                    localState = state;
+                    localPostalCode = _locationsByState[state][index].fields.zip;
+                }
+                else
+                {
+                    // note: Rand.Next max is exclusive
+                    int index = _rand.Next(0, _locations.Count);
+
+                    localCity = _locations[index].fields.city;
+                    localState = _locations[index].fields.state;
+                    localPostalCode = _locations[index].fields.zip;
+                }
+            }
+
+            // check for not having a state
+            if (string.IsNullOrEmpty(localState))
+            {
+                // use state if present
+                if ((!string.IsNullOrEmpty(postalCode)) && (_locationsByZip.ContainsKey(postalCode)))
+                {
+                    // note: Rand.Next max is exclusive
+                    int index = _rand.Next(0, _locationsByZip[postalCode].Count);
+
+                    localCity = _locationsByZip[postalCode][index].fields.city;
+                    localState = _locationsByZip[postalCode][index].fields.state;
+                    localPostalCode = postalCode;
+                }
+                else
+                {
+                    // note: Rand.Next max is exclusive
+                    int index = _rand.Next(0, _locations.Count);
+
+                    localCity = _locations[index].fields.city;
+                    localState = _locations[index].fields.state;
+                    localPostalCode = _locations[index].fields.zip;
+                }
+            }
+
+            return CreateOrgForGeo(localCity, localState, localPostalCode);
+        }
+
+        /// <summary>Organisation for geo.</summary>
+        /// <param name="city">      The city.</param>
+        /// <param name="state">     The state.</param>
+        /// <param name="postalCode">The postal code.</param>
+        /// <returns>A Hl7.Fhir.Model.Organization.</returns>
+        private static Hl7.Fhir.Model.Organization CreateOrgForGeo(
+            string city,
+            string state,
+            string postalCode)
+        {
+            string id = FhirGenerator.NextOrgId;
+            string name = $"HOSPITAL {id}";
+
+            return new Hl7.Fhir.Model.Organization()
+            {
+                Id = id,
+                Identifier = FhirGenerator.IdentifierListForId(id),
+                Active = true,
+                Type = FhirGenerator.ConceptListForOrganizationType(),
+                Name = name,
+                Address = new List<Hl7.Fhir.Model.Address>()
+                {
+                    CreateAddress(city, state, postalCode),
+                },
             };
         }
 
@@ -152,22 +254,16 @@ namespace generator_cli.Geographic
                 // note: Random.next max is exclusive
                 int index = _rand.Next(0, _locationsByZip[postalCode].Count);
 
-                return new Hl7.Fhir.Model.Address()
-                {
-                    Use = Hl7.Fhir.Model.Address.AddressUse.Work,
-                    Type = Hl7.Fhir.Model.Address.AddressType.Both,
-                    PostalCode = postalCode,
-                    City = _locationsByZip[postalCode][index].fields.city,
-                    State = _locationsByZip[postalCode][index].fields.state,
-                };
+                return CreateAddress(
+                    _locationsByZip[postalCode][index].fields.city,
+                    _locationsByZip[postalCode][index].fields.state,
+                    postalCode);
             }
 
-            return new Hl7.Fhir.Model.Address()
-            {
-                Use = Hl7.Fhir.Model.Address.AddressUse.Work,
-                Type = Hl7.Fhir.Model.Address.AddressType.Both,
-                PostalCode = postalCode,
-            };
+            return CreateAddress(
+                string.Empty,
+                string.Empty,
+                postalCode);
         }
 
         /// <summary>Position for postal code.</summary>

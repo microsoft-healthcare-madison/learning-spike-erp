@@ -21,6 +21,9 @@ namespace generator_cli.Generators
         /// <summary>The fhir identifier prefix.</summary>
         public const string FhirIdPrefix = "FHIR-";
 
+        /// <summary>The hospital prefix.</summary>
+        public const string OrgPrefix = "Org-";
+
         /// <summary>The root location prefix.</summary>
         public const string RootLocationPrefix = "Loc-";
 
@@ -150,6 +153,16 @@ namespace generator_cli.Generators
             }
         }
 
+        /// <summary>Gets the identifier of the next organisation.</summary>
+        /// <value>The identifier of the next organisation.</value>
+        public static string NextOrgId
+        {
+            get
+            {
+                return $"{OrgPrefix}{Interlocked.Increment(ref _id)}";
+            }
+        }
+
         /// <summary>Identifier for identifier.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
@@ -159,6 +172,30 @@ namespace generator_cli.Generators
                     InternalSystem,
                     id);
         }
+
+        /// <summary>Identifier list for identifier.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
+        public static List<Hl7.Fhir.Model.Identifier> IdentifierListForId(string id)
+        {
+            return new List<Identifier>()
+            {
+                new Hl7.Fhir.Model.Identifier(
+                        InternalSystem,
+                        id),
+            };
+        }
+
+
+        /// <summary>Concept for organization type.</summary>
+        /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
+        public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForOrganizationType() =>
+            new List<Hl7.Fhir.Model.CodeableConcept>()
+            {
+                new Hl7.Fhir.Model.CodeableConcept(
+                    "http://hl7.org/fhir/ValueSet/organization-type",
+                    "prov"),
+            };
 
         /// <summary>Identifier for organization root location.</summary>
         /// <param name="orgId">Identifier for the organization.</param>
@@ -171,8 +208,8 @@ namespace generator_cli.Generators
             }
 
             return orgId.Replace(
-                HospitalManager.HospitalPrefix,
-                $"{RootLocationPrefix}{HospitalManager.HospitalPrefix}",
+                OrgPrefix,
+                $"{RootLocationPrefix}{OrgPrefix}",
                 StringComparison.Ordinal);
         }
 
