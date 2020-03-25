@@ -16,9 +16,13 @@ namespace generator_cli.Geographic
     /// <summary>Manager for hospitals.</summary>
     public abstract class HospitalManager
     {
+        /// <summary>The hospital prefix.</summary>
+        public const string HospitalPrefix = "Org-";
+
         private static List<HospitalRecord> _hospitals = new List<HospitalRecord>();
         private static Dictionary<string, List<HospitalRecord>> _hospitalsByZip = new Dictionary<string, List<HospitalRecord>>();
         private static Dictionary<string, List<HospitalRecord>> _hospitalsByState = new Dictionary<string, List<HospitalRecord>>();
+        private static Dictionary<string, HospitalRecord> _hospitalsById = new Dictionary<string, HospitalRecord>();
 
         private static Random _rand = null;
 
@@ -51,6 +55,10 @@ namespace generator_cli.Geographic
                         HospitalRecord hosp = rawEnumerator.Current;
 
                         _hospitals.Add(hosp);
+
+                        _hospitalsById.Add(
+                            IdForOrg(hosp.OBJECTID),
+                            hosp);
 
                         if (!_hospitalsByZip.ContainsKey(hosp.ZIP))
                         {
@@ -139,7 +147,8 @@ namespace generator_cli.Geographic
         {
             return new Hl7.Fhir.Model.Organization()
             {
-                Identifier = IdentifierForId(hosp.OBJECTID),
+                Id = IdForOrg(hosp.OBJECTID),
+                Identifier = IdentifierForOrg(hosp.OBJECTID),
                 Active = true,
                 Type = ConceptForOrganizationType(),
                 Name = hosp.NAME,
@@ -191,13 +200,18 @@ namespace generator_cli.Geographic
         /// <summary>Identifier for identifier.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
-        private static List<Hl7.Fhir.Model.Identifier> IdentifierForId(long id) =>
+        private static List<Hl7.Fhir.Model.Identifier> IdentifierForOrg(long id) =>
             new List<Hl7.Fhir.Model.Identifier>()
             {
                 new Hl7.Fhir.Model.Identifier(
                     "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
                     $"{id}"),
             };
+
+        /// <summary>Identifier for organization.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A string.</returns>
+        private static string IdForOrg(long id) => $"{HospitalPrefix}{id}";
 
         /// <summary>Concept for organization type.</summary>
         /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
@@ -208,5 +222,39 @@ namespace generator_cli.Geographic
                     "http://hl7.org/fhir/ValueSet/organization-type",
                     "prov"),
             };
+
+        /// <summary>Query if 'id' is hospital known.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>True if hospital known, false if not.</returns>
+        public static bool IsHospitalKnown(string id)
+        {
+            return _hospitalsById.ContainsKey(id);
+        }
+
+        /// <summary>Position for hospital.</summary>
+        /// <exception cref="ArgumentNullException">      Thrown when one or more required arguments are
+        ///  null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when one or more arguments are outside the
+        ///  required range.</exception>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A Hl7.Fhir.Model.Location.PositionComponent.</returns>
+        public static Hl7.Fhir.Model.Location.PositionComponent PositionForHospital(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+
+            if (!_hospitalsById.ContainsKey(id))
+            {
+                throw new ArgumentOutOfRangeException(nameof(id));
+            }
+
+            return new Hl7.Fhir.Model.Location.PositionComponent()
+            {
+                Longitude = (decimal)_hospitalsById[id].LONGITUDE,
+                Latitude = (decimal)_hospitalsById[id].LATITUDE,
+            };
+        }
     }
 }

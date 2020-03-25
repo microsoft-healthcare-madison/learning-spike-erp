@@ -169,5 +169,39 @@ namespace generator_cli.Geographic
                 PostalCode = postalCode,
             };
         }
+
+        /// <summary>Position for postal code.</summary>
+        /// <exception cref="ArgumentNullException">      Thrown when one or more required arguments are
+        ///  null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when one or more arguments are outside the
+        ///  required range.</exception>
+        /// <param name="postalCode">The postal code.</param>
+        /// <returns>A Hl7.Fhir.Model.Location.PositionComponent.</returns>
+        public static Hl7.Fhir.Model.Location.PositionComponent PositionForPostalCode(string postalCode)
+        {
+            if (string.IsNullOrEmpty(postalCode))
+            {
+                throw new ArgumentNullException(nameof(postalCode));
+            }
+
+            if (!_locationsByZip.ContainsKey(postalCode))
+            {
+                throw new ArgumentOutOfRangeException(nameof(postalCode));
+            }
+
+            return new Hl7.Fhir.Model.Location.PositionComponent()
+            {
+                Longitude = (decimal)_locationsByZip[postalCode][0].fields.longitude,
+                Latitude = (decimal)_locationsByZip[postalCode][0].fields.latitude,
+            };
+        }
+
+        /// <summary>Query if 'postalCode' is postal code known.</summary>
+        /// <param name="postalCode">The postal code.</param>
+        /// <returns>True if postal code known, false if not.</returns>
+        public static bool IsPostalCodeKnown(string postalCode)
+        {
+            return _locationsByZip.ContainsKey(postalCode);
+        }
     }
 }

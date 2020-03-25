@@ -18,13 +18,15 @@ namespace generator_cli
     public class Program
     {
         /// <summary>Main entry-point for this application.</summary>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
         /// <param name="outputDirectory">Directory to write files.</param>
-        /// <param name="outputFormat">   The output format, JSON or XML.</param>
-        /// <param name="state">          State to restrict generation to.</param>
-        /// <param name="postalCode">     Postal code to restrict generation to.</param>
+        /// <param name="outputFormat">   The output format, JSON or XML (default: JSON).</param>
+        /// <param name="state">          State to restrict generation to (default: none).</param>
+        /// <param name="postalCode">     Postal code to restrict generation to (default: none).</param>
         /// <param name="facilityCount">  Number of facilities to generate.</param>
         /// <param name="timeSteps">      Number of time-step updates to generate.</param>
-        /// <param name="seed">           Starting seed to use in generation.</param>
+        /// <param name="seed">           Starting seed to use in generation, 0 for none (default: 0).</param>
+        /// <param name="bundleType">     Type of bundle to generate: batch|transaction (default: batch).</param>
         public static void Main(
             string outputDirectory,
             string outputFormat = "JSON",
@@ -32,7 +34,8 @@ namespace generator_cli
             string postalCode = null,
             int facilityCount = 10,
             int timeSteps = 10,
-            int seed = 0)
+            int seed = 0,
+            string bundleType = "batch")
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -58,8 +61,8 @@ namespace generator_cli
 
             bool useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
 
-            List<Organization> orgs = new List<Organization>();
-            List<Location> orgLocs = new List<Location>();
+            Dictionary<string, Organization> orgById = new Dictionary<string, Organization>();
+            Dictionary<string, Location> rootLocationByOrgId = new Dictionary<string, Location>();
 
             string currentDir = Path.Combine(outputDirectory, "t0");
             string filename = string.Empty;
@@ -69,33 +72,41 @@ namespace generator_cli
                 Directory.CreateDirectory(currentDir);
             }
 
+            bool useBatch = string.IsNullOrEmpty(bundleType) || (bundleType.ToUpperInvariant() != "TRANSACTION");
+
             // generate our initial data set
             for (int facilityNumber = 0; facilityNumber < facilityCount; facilityNumber++)
             {
+                string bundleId = FhirGenerator.NextId;
+
+                Bundle bundle = new Bundle()
+                {
+                    Id = bundleId,
+                    Identifier = FhirGenerator.IdentifierForId(bundleId),
+                    Type = useBatch ? Bundle.BundleType.Batch : Bundle.BundleType.Transaction,
+                    Timestamp = new DateTimeOffset(DateTime.Now),
+                    Meta = new Meta(),
+                };
+
+                bundle.Entry = new List<Bundle.EntryComponent>();
+
                 Organization org = HospitalManager.GetOrganization(state, postalCode);
-                orgs.Add(org);
-                if (useJson)
-                {
-                    filename = Path.Combine(currentDir, $"H{org.Identifier[0].Value}.json");
-                    File.WriteAllText(filename, jsonSerializer.SerializeToString(org));
-                }
-                else
-                {
-                    filename = Path.Combine(currentDir, $"{org.Identifier[0].Value}.xml");
-                    File.WriteAllText(filename, xmlSerializer.SerializeToString(org));
-                }
+                orgById.Add(org.Id, org);
+                bundle.AddResourceEntry(org, $"{FhirGenerator.InternalSystem}/{org.Id}");
 
                 Location orgLoc = FhirGenerator.RootLocationForOrg(org);
-                orgLocs.Add(orgLoc);
+                rootLocationByOrgId.Add(org.Id, orgLoc);
+                bundle.AddResourceEntry(orgLoc, $"{FhirGenerator.InternalSystem}/{orgLoc.Id}");
+
                 if (useJson)
                 {
-                    filename = Path.Combine(currentDir, $"{org.Identifier[0].Value}-loc.json");
-                    File.WriteAllText(filename, jsonSerializer.SerializeToString(orgLoc));
+                    filename = Path.Combine(currentDir, $"{org.Id}.json");
+                    File.WriteAllText(filename, jsonSerializer.SerializeToString(bundle));
                 }
                 else
                 {
-                    filename = Path.Combine(currentDir, $"{org.Identifier[0].Value}-loc.xml");
-                    File.WriteAllText(filename, xmlSerializer.SerializeToString(orgLoc));
+                    filename = Path.Combine(currentDir, $"{org.Id}.xml");
+                    File.WriteAllText(filename, xmlSerializer.SerializeToString(bundle));
                 }
             }
 

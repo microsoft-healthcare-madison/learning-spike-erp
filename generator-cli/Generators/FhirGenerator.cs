@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using generator_cli.Geographic;
 using Hl7.Fhir.Model;
 
 namespace generator_cli.Generators
@@ -14,6 +15,15 @@ namespace generator_cli.Generators
     /// <summary>A ben generator.</summary>
     public abstract class FhirGenerator
     {
+        /// <summary>The internal system.</summary>
+        public const string InternalSystem = "https://github.com/microsoft-healthcare-madison/learning-spike-erp/";
+
+        /// <summary>The fhir identifier prefix.</summary>
+        public const string FhirIdPrefix = "FHIR-";
+
+        /// <summary>The root location prefix.</summary>
+        public const string RootLocationPrefix = "Loc-";
+
         /// <summary>The SANER-IG characteristic system.</summary>
         private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/location-definitions";
 
@@ -136,13 +146,38 @@ namespace generator_cli.Generators
         {
             get
             {
-                return $"F{Interlocked.Increment(ref _id)}";
+                return $"{FhirIdPrefix}{Interlocked.Increment(ref _id)}";
             }
+        }
+
+        /// <summary>Identifier for identifier.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
+        public static Hl7.Fhir.Model.Identifier IdentifierForId(string id)
+        {
+            return new Hl7.Fhir.Model.Identifier(
+                    InternalSystem,
+                    id);
+        }
+
+        /// <summary>Identifier for organization root location.</summary>
+        /// <param name="orgId">Identifier for the organization.</param>
+        /// <returns>A string.</returns>
+        private static string IdForOrgRootLocation(string orgId)
+        {
+            if (string.IsNullOrEmpty(orgId))
+            {
+                return NextId;
+            }
+
+            return orgId.Replace(
+                HospitalManager.HospitalPrefix,
+                $"{RootLocationPrefix}{HospitalManager.HospitalPrefix}",
+                StringComparison.Ordinal);
         }
 
         /// <summary>Generates a bed with random properties.</summary>
         /// <param name="address">       The address.</param>
-        /// <param name="bedTypeCount">  Number of bed types.</param>
         /// <param name="managing">      The managing organization.</param>
         /// <param name="parentLocation">The parent location.</param>
         /// <returns>The bed.</returns>
@@ -178,13 +213,35 @@ namespace generator_cli.Generators
         public static Location RootLocationForOrg(
             Organization org)
         {
+            if (org == null)
+            {
+                throw new ArgumentNullException(nameof(org));
+            }
+
+            if ((org.Address == null) || (org.Address.Count == 0))
+            {
+                throw new ArgumentException($"Organization Address is required!");
+            }
+
+            Location.PositionComponent position = null;
+
+            if (HospitalManager.IsHospitalKnown(org.Id))
+            {
+                position = HospitalManager.PositionForHospital(org.Id);
+            }
+            else if (GeoManager.IsPostalCodeKnown(org.Address[0].PostalCode))
+            {
+                position = GeoManager.PositionForPostalCode(org.Address[0].PostalCode);
+            }
+
             return new Location()
             {
-                Id = NextId,
+                Id = IdForOrgRootLocation(org.Id),
                 Address = org.Address[0],
                 Status = GetLocationStatus(AvailabilityStatus.Active),
                 Mode = Location.LocationMode.Instance,
                 PhysicalType = ConceptForPhysicalTypeSite(),
+                Position = position,
             };
         }
 
