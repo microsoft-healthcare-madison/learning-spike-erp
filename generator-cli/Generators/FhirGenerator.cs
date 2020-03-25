@@ -38,8 +38,10 @@ namespace generator_cli.Generators
 
         /// <summary>This location is operational (but may be in use).</summary>
         public const string AvailabilityStatusActive = "active";
+
         /// <summary>This location is temporarily out of service.</summary>
         public const string AvailabilityStatusSuspended = "suspended";
+
         /// <summary>This location is no longer operational.</summary>
         public const string AvailabilityStatusInactive = "inactive";
 
@@ -52,12 +54,16 @@ namespace generator_cli.Generators
 
         /// <summary>This bed needs decontamination before it can be readied for use.</summary>
         public const string OperationalStatusContaminated = "K";
+
         /// <summary>This bed is no longer in service.</summary>
         public const string OperationalStatusClosed = "C";
+
         /// <summary>This bed is not in use, but is presently ready for use.</summary>
         public const string OperationalStatusHousekeeping = "H";
+
         /// <summary>This bed is presently in use.</summary>
         public const string OperationalStatusOccupied = "O";
+
         /// <summary>This bed is presently ready for use.</summary>
         public const string OperationalStatusUnoccupied = "U";
 
@@ -72,20 +78,28 @@ namespace generator_cli.Generators
 
         /// <summary>The bed type adult icu.</summary>
         public const string BedTypeAdultICU = "ICU";
+
         /// <summary>The bed type pediactric icu.</summary>
         public const string BedTypePediatricICU = "PEDICU";
+
         /// <summary>The bed type neonatal icu.</summary>
         public const string BedTypeNeonatalICU = "PEDNICU";
+
         /// <summary>The bed type emergency room.</summary>
         public const string BedTypeEmergencyRoom = "ER";
+
         /// <summary>The bed type hospital unit.</summary>
         public const string BedTypeHospitalUnit = "HU";
+
         /// <summary>The bed type rehab long term care.</summary>
         public const string BedTypeRehabLongTermCare = "RHU";
+
         /// <summary>The bed type pediatric.</summary>
         public const string BedTypePediatric = "PEDU";
+
         /// <summary>The bed type psychiatric.</summary>
         public const string BedTypePsychiatric = "PHU";
+
         /// <summary>The bed type operating room.</summary>
         public const string BedTypeOperatingRoom = "OR";
 
@@ -104,8 +118,10 @@ namespace generator_cli.Generators
 
         /// <summary>Negative airflow isolation beds.</summary>
         public const string BedFeatureNegativeFlowIsolation = "NEGISO";
+
         /// <summary>Isolation beds (airflow is not a concern).</summary>
         public const string BedFeatureOtherIsolation = "OTHISO";
+
         /// <summary>Bed in a unit that does not support isolation.</summary>
         public const string BedFeatureNonIsolating = "NONISO";
 

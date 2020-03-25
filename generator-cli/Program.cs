@@ -42,8 +42,8 @@ namespace generator_cli
         /// <param name="prettyPrint">        If output files should be formatted for display.</param>
         /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
         /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: O|U).</param>
-        /// <param name="minBedsPerOrg">      The minimum number of beds per hospital.</param>
-        /// <param name="maxBedsPerOrg">      The maximum number of beds per hospital.</param>
+        /// <param name="minBedsPerOrg">      The minimum number of beds per hospital (default: 10).</param>
+        /// <param name="maxBedsPerOrg">      The maximum number of beds per hospital (default: 1000).</param>
         public static void Main(
             string outputDirectory,
             string outputFormat = "JSON",
@@ -58,7 +58,7 @@ namespace generator_cli
             string bedTypes = "ICU|ER|HU",
             string operationalStatuses = "O|U",
             int minBedsPerOrg = 10,
-            int maxBedsPerOrg = 5000)
+            int maxBedsPerOrg = 1000)
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))

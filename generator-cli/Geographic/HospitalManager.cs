@@ -51,6 +51,9 @@ namespace generator_cli.Geographic
 
             IEnumerable<HospitalRecord> raw;
 
+            int bedMin = int.MaxValue;
+            int bedMax = int.MinValue;
+
             using (StreamReader reader = new StreamReader(filename, Encoding.UTF8))
             using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
@@ -61,6 +64,12 @@ namespace generator_cli.Geographic
                     while (rawEnumerator.MoveNext())
                     {
                         HospitalRecord hosp = rawEnumerator.Current;
+
+                        if (int.TryParse(hosp.BEDS, out int beds))
+                        {
+                            bedMin = Math.Min(bedMin, beds);
+                            bedMax = Math.Max(bedMax, beds);
+                        }
 
                         _hospitals.Add(hosp);
 
@@ -88,7 +97,7 @@ namespace generator_cli.Geographic
             Console.WriteLine(
                 $"Loaded {_hospitals.Count} hospital records" +
                 $", {_hospitalsByState.Count} states" +
-                $", {_hospitalsByZip.Count} zip codes");
+                $", {_hospitalsByZip.Count} zip codes, beds: {bedMin} - {bedMax}");
         }
 
         /// <summary>Beds for hospital.</summary>
