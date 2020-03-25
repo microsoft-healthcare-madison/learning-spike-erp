@@ -6,110 +6,121 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using generator_cli.Generators;
+using generator_cli.Geographic;
+using Hl7.Fhir.Model;
+using Hl7.Fhir.Serialization;
 using Newtonsoft.Json;
-using fhir = generator_cli.fhir;
 
 namespace generator_cli
 {
     /// <summary>A program.</summary>
     public class Program
     {
-        private static readonly fhir.CodeableConcept[] _codingIcu = new fhir.CodeableConcept[1]
-        {
-            new fhir.CodeableConcept()
-            {
-                Coding = new fhir.Coding[1]
-                {
-                    new fhir.Coding()
-                    {
-                        Code = "ICU",
-                        System = "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                    },
-                },
-            },
-        };
-
-        private static readonly fhir.CodeableConcept[] _codingHospital = new fhir.CodeableConcept[1]
-        {
-            new fhir.CodeableConcept()
-            {
-                Coding = new fhir.Coding[1]
-                {
-                    new fhir.Coding()
-                    {
-                        Code = "HOSP",
-                        System = "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                    },
-                },
-            },
-        };
-
         /// <summary>Main entry-point for this application.</summary>
-        /// <param name="postalCode">     Postal code to use when updating ERP data.</param>
-        /// <param name="outputDirectory">Directory to write JSON files.</param>
-        /// <param name="fhirServerUrl">  URL of a FHIR server to interact with.</param>
-        /// <param name="clean">          Delete all ERP resources for the given postal code.</param>
-        /// <param name="generateStatic"> Generate a set of resources and exit.</param>
-        /// <param name="runSimulation">  Generate a set of resources and periodically update it.</param>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="outputDirectory">Directory to write files.</param>
+        /// <param name="outputFormat">   The output format, JSON or XML (default: JSON).</param>
+        /// <param name="state">          State to restrict generation to (default: none).</param>
+        /// <param name="postalCode">     Postal code to restrict generation to (default: none).</param>
+        /// <param name="facilityCount">  Number of facilities to generate.</param>
+        /// <param name="timeSteps">      Number of time-step updates to generate.</param>
+        /// <param name="seed">           Starting seed to use in generation, 0 for none (default: 0).</param>
+        /// <param name="bundleType">     Type of bundle to generate: batch|transaction (default: batch).</param>
         public static void Main(
-            string postalCode,
-            string outputDirectory = null,
-            string fhirServerUrl = null,
-            bool clean = false,
-            bool generateStatic = false,
-            bool runSimulation = false)
+            string outputDirectory,
+            string outputFormat = "JSON",
+            string state = null,
+            string postalCode = null,
+            int facilityCount = 10,
+            int timeSteps = 10,
+            int seed = 0,
+            string bundleType = "batch")
         {
             // sanity checks
-            //if (string.IsNullOrEmpty(postalCode))
-            //{
-            //    throw new ArgumentNullException(nameof(postalCode));
-            //}
-
-            //if (string.IsNullOrEmpty(outputDirectory) && string.IsNullOrEmpty(fhirServerUrl))
-            //{
-            //    throw new ArgumentException("Either --output-directory or --fhir-server-url must be specified.");
-            //}
-
-            LoadLocationData();
-        }
-
-        /// <summary>Loads location data.</summary>
-        public static void LoadLocationData()
-        {
-            string filename = Path.Combine(Directory.GetCurrentDirectory(), "data", "us-zip-code-latitude-and-longitude.json");
-
-            List<ZipGeoCode> zips = JsonConvert.DeserializeObject<List<ZipGeoCode>>(File.ReadAllText(filename));
-
-            Console.WriteLine($"Loaded {zips.Count} location records.");
-
-            foreach (ZipGeoCode loc in zips)
+            if (string.IsNullOrEmpty(outputDirectory))
             {
-                if ((loc.fields.state == "WI") && (loc.fields.city == "Madison"))
+                Console.WriteLine($"Invalid {nameof(outputDirectory)}: --output-directory is required");
+            }
+
+            if (string.IsNullOrEmpty(outputFormat))
+            {
+                throw new ArgumentNullException(nameof(outputFormat));
+            }
+
+            GeoManager.Init(seed);
+            HospitalManager.Init(seed);
+
+            if (!Directory.Exists(outputDirectory))
+            {
+                Directory.CreateDirectory(outputDirectory);
+            }
+
+            FhirJsonSerializer jsonSerializer = new FhirJsonSerializer();
+            FhirXmlSerializer xmlSerializer = new FhirXmlSerializer();
+
+            bool useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
+
+            Dictionary<string, Organization> orgById = new Dictionary<string, Organization>();
+            Dictionary<string, Location> rootLocationByOrgId = new Dictionary<string, Location>();
+
+            string currentDir = Path.Combine(outputDirectory, "t0");
+            string filename = string.Empty;
+
+            if (!Directory.Exists(currentDir))
+            {
+                Directory.CreateDirectory(currentDir);
+            }
+
+            bool useBatch = string.IsNullOrEmpty(bundleType) || (bundleType.ToUpperInvariant() != "TRANSACTION");
+
+            // generate our initial data set
+            for (int facilityNumber = 0; facilityNumber < facilityCount; facilityNumber++)
+            {
+                string bundleId = FhirGenerator.NextId;
+
+                Bundle bundle = new Bundle()
                 {
-                    Console.WriteLine($"Found: {loc.datasetid}:{loc.recordid} - {loc.fields.city}, {loc.fields.state} {loc.fields.zip}");
+                    Id = bundleId,
+                    Identifier = FhirGenerator.IdentifierForId(bundleId),
+                    Type = useBatch ? Bundle.BundleType.Batch : Bundle.BundleType.Transaction,
+                    Timestamp = new DateTimeOffset(DateTime.Now),
+                    Meta = new Meta(),
+                };
+
+                bundle.Entry = new List<Bundle.EntryComponent>();
+
+                Organization org = HospitalManager.GetOrganization(state, postalCode);
+                orgById.Add(org.Id, org);
+                bundle.AddResourceEntry(org, $"{FhirGenerator.InternalSystem}/{org.Id}");
+
+                Location orgLoc = FhirGenerator.RootLocationForOrg(org);
+                rootLocationByOrgId.Add(org.Id, orgLoc);
+                bundle.AddResourceEntry(orgLoc, $"{FhirGenerator.InternalSystem}/{orgLoc.Id}");
+
+                if (useJson)
+                {
+                    filename = Path.Combine(currentDir, $"{org.Id}.json");
+                    File.WriteAllText(filename, jsonSerializer.SerializeToString(bundle));
+                }
+                else
+                {
+                    filename = Path.Combine(currentDir, $"{org.Id}.xml");
+                    File.WriteAllText(filename, xmlSerializer.SerializeToString(bundle));
                 }
             }
-        }
 
-        /// <summary>Generates a location.</summary>
-        /// <param name="occupied">  True if this location is occupied.</param>
-        /// <param name="isIcu">     True if is location is an ICU type, false if not.</param>
-        /// <param name="postalCode">Postal code to use when updating ERP data.</param>
-        /// <returns>The location.</returns>
-        public static string GenerateBedLocation(bool occupied, bool isIcu, string postalCode)
-        {
-            fhir.Location location = new fhir.Location()
-            {
-                OperationalStatus = occupied ? fhir.LocationOperationalStatusValues.O : fhir.LocationOperationalStatusValues.U,
-                Type = isIcu ? _codingIcu : _codingHospital,
-                PhysicalType = new fhir.CodeableConcept() { Coding = new fhir.Coding[1] { fhir.LocationPhysicalTypeValues.bd, }, },
-                Address = new fhir.Address()
-                {
-                    PostalCode = postalCode,
-                },
-            };
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Address address = GeoManager.GetAnyAddress();
+            //    Console.WriteLine($"Address: {address.City}, {address.State} {address.PostalCode}");
+            //}
 
-            return JsonConvert.SerializeObject(location);
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Organization org = HospitalManager.GetAnyOrganization();
+            //    Console.WriteLine($"Org: {org.Name}");
+            //}
         }
     }
 }
