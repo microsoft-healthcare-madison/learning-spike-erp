@@ -113,7 +113,7 @@ namespace generator_cli
 
             // create our organization records
             CreateOrgs(facilityCount, state, postalCode);
-            CreateOrgBeds(string.Empty, bedTypes, operationalStatuses, string.Empty);
+            CreateOrgBeds(FhirGenerator.AvailabilityStatusActive, bedTypes, operationalStatuses, string.Empty);
 
             // write our org bundles in t0
             WriteOrgBundles(Path.Combine(outputDirectory, "t0"));
