@@ -132,7 +132,7 @@ namespace generator_cli.Generators
 
         /// <summary>Gets the identifier of the next.</summary>
         /// <value>The identifier of the next.</value>
-        private static string NextId
+        public static string NextId
         {
             get
             {
@@ -170,6 +170,22 @@ namespace generator_cli.Generators
                 bedTypes,
                 managing,
                 parentLocation);
+        }
+
+        /// <summary>Root location for organization.</summary>
+        /// <param name="org">The organization.</param>
+        /// <returns>A Location.</returns>
+        public static Location RootLocationForOrg(
+            Organization org)
+        {
+            return new Location()
+            {
+                Id = NextId,
+                Address = org.Address[0],
+                Status = GetLocationStatus(AvailabilityStatus.Active),
+                Mode = Location.LocationMode.Instance,
+                PhysicalType = ConceptForPhysicalTypeSite(),
+            };
         }
 
         /// <summary>Generates a bed with random properties.</summary>
@@ -212,6 +228,17 @@ namespace generator_cli.Generators
             return loc;
         }
 
+        /// <summary>Generates a group.</summary>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="name">                The name.</param>
+        /// <param name="quantity">            The quantity.</param>
+        /// <param name="managingOrganization">The managing organization.</param>
+        /// <param name="parentLocation">      The parent location.</param>
+        /// <param name="availabilityStatus">  The availability status.</param>
+        /// <param name="operationalStatus">   The operational status.</param>
+        /// <param name="bedType">             Type of the bed.</param>
+        /// <param name="bedFeature">          The bed feature.</param>
+        /// <returns>The group.</returns>
         public static Group GenerateGroup(
             string name,
             int quantity,
@@ -319,8 +346,17 @@ namespace generator_cli.Generators
         private static CodeableConcept ConceptForPhysicalTypeBed()
         {
             return new CodeableConcept(
-                "http://terminology.hl7.org/CodeSystem/location-physical-type",
+                "http://terminology.hl7.org/ValueSet/location-physical-type",
                 "bd");
+        }
+
+        /// <summary>Concept for physical type site.</summary>
+        /// <returns>A CodeableConcept.</returns>
+        private static CodeableConcept ConceptForPhysicalTypeSite()
+        {
+            return new CodeableConcept(
+                "http://terminology.hl7.org/ValueSet/location-physical-type",
+                "si");
         }
 
         /// <summary>Gets location status.</summary>

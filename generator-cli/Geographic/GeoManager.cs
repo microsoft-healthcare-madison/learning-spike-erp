@@ -15,19 +15,29 @@ namespace generator_cli.Geographic
     {
         private static List<ZipGeoCode> _locations = null;
         private static Dictionary<string, List<ZipGeoCode>> _locationsByZip = null;
-        private static Dictionary<string, List<ZipGeoCode>> _locationsByCityState = null;
+        private static Dictionary<string, List<ZipGeoCode>> _locationsByState = null;
 
-        private static Random _rand = new Random();
+        private static Random _rand = null;
 
         /// <summary>Initializes this object and loads location data.</summary>
-        public static void Init()
+        /// <param name="seed">(Optional) The seed.</param>
+        public static void Init(int seed = 0)
         {
+            if (seed == 0)
+            {
+                _rand = new Random();
+            }
+            else
+            {
+                _rand = new Random(seed);
+            }
+
             string filename = Path.Combine(Directory.GetCurrentDirectory(), "data", "us-zip-code-latitude-and-longitude.json");
 
             _locations = JsonConvert.DeserializeObject<List<ZipGeoCode>>(File.ReadAllText(filename));
 
             _locationsByZip = new Dictionary<string, List<ZipGeoCode>>();
-            _locationsByCityState = new Dictionary<string, List<ZipGeoCode>>();
+            _locationsByState = new Dictionary<string, List<ZipGeoCode>>();
             foreach (ZipGeoCode loc in _locations)
             {
                 if (!_locationsByZip.ContainsKey(loc.fields.zip))
@@ -37,20 +47,82 @@ namespace generator_cli.Geographic
 
                 _locationsByZip[loc.fields.zip].Add(loc);
 
-                string cityState = $"{loc.fields.city},{loc.fields.state}".ToUpperInvariant();
-
-                if (!_locationsByCityState.ContainsKey(cityState))
+                // string cityState = $"{loc.fields.city},{loc.fields.state}".ToUpperInvariant();
+                if (!_locationsByState.ContainsKey(loc.fields.state))
                 {
-                    _locationsByCityState.Add(cityState, new List<ZipGeoCode>());
+                    _locationsByState.Add(loc.fields.state, new List<ZipGeoCode>());
                 }
 
-                _locationsByCityState[cityState].Add(loc);
+                _locationsByState[loc.fields.state].Add(loc);
             }
 
             Console.WriteLine(
                 $"Loaded {_locations.Count} location records" +
-                $", {_locationsByCityState.Count} city/states" +
+                $", {_locationsByState.Count} states" +
                 $", {_locationsByZip.Count} zip codes");
+        }
+
+        /// <summary>Gets any address.</summary>
+        /// <returns>any address.</returns>
+        public static Hl7.Fhir.Model.Address GetAnyAddress()
+        {
+            // note: Random.next max is exclusive
+            int index = _rand.Next(0, _locations.Count);
+
+            return new Hl7.Fhir.Model.Address()
+            {
+                Use = Hl7.Fhir.Model.Address.AddressUse.Work,
+                Type = Hl7.Fhir.Model.Address.AddressType.Both,
+                City = _locations[index].fields.city,
+                State = _locations[index].fields.state,
+                PostalCode = _locations[index].fields.zip,
+            };
+        }
+
+        /// <summary>Address for state.</summary>
+        /// <exception cref="ArgumentNullException">      Thrown when one or more required arguments are
+        ///  null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when one or more arguments are outside the
+        ///  required range.</exception>
+        /// <param name="state">   The state.</param>
+        /// <param name="fillCity">(Optional) True to fill city.</param>
+        /// <returns>The Hl7.Fhir.Model.Address.</returns>
+        public static Hl7.Fhir.Model.Address GetAddressForState(
+            string state,
+            bool fillCity = true)
+        {
+            if (string.IsNullOrEmpty(state))
+            {
+                throw new ArgumentNullException(nameof(state));
+            }
+
+            if (!_locationsByState.ContainsKey(state))
+            {
+                throw new ArgumentOutOfRangeException(nameof(state));
+            }
+
+            // note: Random.next max is exclusive
+            int index = _rand.Next(0, _locationsByState[state].Count);
+
+            if (fillCity)
+            {
+                return new Hl7.Fhir.Model.Address()
+                {
+                    Use = Hl7.Fhir.Model.Address.AddressUse.Work,
+                    Type = Hl7.Fhir.Model.Address.AddressType.Both,
+                    State = state,
+                    City = _locationsByState[state][index].fields.city,
+                    PostalCode = _locationsByState[state][index].fields.zip,
+                };
+            }
+
+            return new Hl7.Fhir.Model.Address()
+            {
+                Use = Hl7.Fhir.Model.Address.AddressUse.Work,
+                Type = Hl7.Fhir.Model.Address.AddressType.Both,
+                State = state,
+                PostalCode = _locationsByState[state][index].fields.zip,
+            };
         }
 
         /// <summary>Address for postal code.</summary>
@@ -61,7 +133,7 @@ namespace generator_cli.Geographic
         /// <param name="postalCode">   The postal code.</param>
         /// <param name="fillCityState">(Optional) True to fill city state.</param>
         /// <returns>The Address.</returns>
-        public static Hl7.Fhir.Model.Address AddressForPostalCode(
+        public static Hl7.Fhir.Model.Address GetAddressForPostalCode(
             string postalCode,
             bool fillCityState = true)
         {
@@ -82,6 +154,8 @@ namespace generator_cli.Geographic
 
                 return new Hl7.Fhir.Model.Address()
                 {
+                    Use = Hl7.Fhir.Model.Address.AddressUse.Work,
+                    Type = Hl7.Fhir.Model.Address.AddressType.Both,
                     PostalCode = postalCode,
                     City = _locationsByZip[postalCode][index].fields.city,
                     State = _locationsByZip[postalCode][index].fields.state,
@@ -90,6 +164,8 @@ namespace generator_cli.Geographic
 
             return new Hl7.Fhir.Model.Address()
             {
+                Use = Hl7.Fhir.Model.Address.AddressUse.Work,
+                Type = Hl7.Fhir.Model.Address.AddressType.Both,
                 PostalCode = postalCode,
             };
         }
