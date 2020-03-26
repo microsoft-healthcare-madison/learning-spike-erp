@@ -204,7 +204,7 @@ namespace generator_cli.Generators
             new List<Hl7.Fhir.Model.CodeableConcept>()
             {
                 new Hl7.Fhir.Model.CodeableConcept(
-                    "http://hl7.org/fhir/ValueSet/organization-type",
+                    "http://hl7.org/fhir/CodeSystem/organization-type",
                     "prov"),
             };
 
@@ -570,7 +570,7 @@ namespace generator_cli.Generators
         private static CodeableConcept ConceptForPhysicalTypeBed()
         {
             return new CodeableConcept(
-                "http://terminology.hl7.org/ValueSet/location-physical-type",
+                "http://terminology.hl7.org/CodeSystem/location-physical-type",
                 "bd");
         }
 
@@ -579,7 +579,7 @@ namespace generator_cli.Generators
         private static CodeableConcept ConceptForPhysicalTypeSite()
         {
             return new CodeableConcept(
-                "http://terminology.hl7.org/ValueSet/location-physical-type",
+                "http://terminology.hl7.org/CodeSystem/location-physical-type",
                 "si");
         }
 
@@ -769,55 +769,55 @@ namespace generator_cli.Generators
             {
                 case BedTypeAdultICU:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "ICU",
                         "Adult ICU bed type.");
 
                 case BedTypePediatricICU:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "PEDICU",
                         "Pediatric ICU beds.");
 
                 case BedTypeNeonatalICU:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "PEDNICU",
                         "Neonatal ICU beds.");
 
                 case BedTypeEmergencyRoom:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "ER",
                         "Emergency Department beds.");
 
                 case BedTypeHospitalUnit:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "HU",
                         "Hospital unit.");
 
                 case BedTypeRehabLongTermCare:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "RHU",
                         "Rehabilitation - long term care beds.");
 
                 case BedTypePediatric:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "PEDU",
                         "Pediatric beds.");
 
                 case BedTypePsychiatric:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "PHU",
                         "Psyciatric beds.");
 
                 case BedTypeOperatingRoom:
                     return new Coding(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
                         "OR",
                         "Operating Rooms");
             }
@@ -845,64 +845,9 @@ namespace generator_cli.Generators
         /// <returns>A CodeableConcept.</returns>
         private static CodeableConcept ConceptForBedType(string type)
         {
-            switch (type)
-            {
-                case BedTypeAdultICU:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "ICU",
-                        "Adult ICU bed type.");
-
-                case BedTypePediatricICU:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "PEDICU",
-                        "Pediatric ICU beds.");
-
-                case BedTypeNeonatalICU:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "PEDNICU",
-                        "Neonatal ICU beds.");
-
-                case BedTypeEmergencyRoom:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "ER",
-                        "Emergency Department beds.");
-
-                case BedTypeHospitalUnit:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "HU",
-                        "Hospital beds.");
-
-                case BedTypeRehabLongTermCare:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "RHU",
-                        "Rehabilitation - long term care beds.");
-
-                case BedTypePediatric:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "PEDU",
-                        "Pediatric beds.");
-
-                case BedTypePsychiatric:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "PHU",
-                        "Psyciatric beds.");
-
-                case BedTypeOperatingRoom:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                        "OR",
-                        "Operating Rooms");
-            }
-
-            return null;
+            var ret = new CodeableConcept();
+            ret.Coding.Add(CodingForBedType(type));
+            return ret;
         }
 
         /// <summary>Concept for bed feature.</summary>

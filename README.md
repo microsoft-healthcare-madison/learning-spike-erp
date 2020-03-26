@@ -23,9 +23,18 @@ a) generate a new Group for each combination for each day (and put it in name?)
 b) reuse/update the same set of Groups each day (if the server supports this, and versioning)
 c) something else?
 
-### Coming Soon:
+### Coming soon:
 
 Change datasets for time periods. Will allow for variation over time (hence the t0 folder). Upload scripts.
+
+# Getting started
+
+```
+git clone https://github.com/microsoft-healthcare-madison/learning-spike-erp
+cd learning-spike-erp
+dotnet  build generator-cli/generator-cli.sln
+./generator-cli/bin/Debug/netcoreapp3.1/generator-cli  --output-directory generated --seed 0
+```
 
 
 # Contributing
