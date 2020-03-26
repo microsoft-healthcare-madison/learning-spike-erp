@@ -18,17 +18,21 @@ namespace generator_cli.Generators
         /// <summary>The beds by configuration.</summary>
         private Dictionary<BedConfiguration, List<Location>> _bedsByConfig;
 
+        /// <summary>The allowed configs.</summary>
+        private static List<BedConfiguration> _allowedBedConfigs = null;
+
+        /// <summary>The bed statuses by fixed.</summary>
+        private static Dictionary<string, List<BedConfiguration>> _bedStatusesByFixed = null;
+
         /// <summary>Initializes a new instance of the <see cref="OrgBeds"/> class.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
-        /// <param name="org">                     The organization.</param>
-        /// <param name="parentLocation">          The parent location.</param>
-        /// <param name="initialBedCount">         Number of initial bed.</param>
-        /// <param name="allowedBedConfigurations">The allowed bed configurations.</param>
+        /// <param name="org">            The organization.</param>
+        /// <param name="parentLocation"> The parent location.</param>
+        /// <param name="initialBedCount">Number of initial bed.</param>
         public OrgBeds(
             Organization org,
             Location parentLocation,
-            int initialBedCount,
-            List<BedConfiguration> allowedBedConfigurations)
+            int initialBedCount)
         {
             if (org == null)
             {
@@ -40,15 +44,10 @@ namespace generator_cli.Generators
                 throw new ArgumentNullException(nameof(parentLocation));
             }
 
-            if ((allowedBedConfigurations == null) || (allowedBedConfigurations.Count == 0))
-            {
-                throw new ArgumentNullException(nameof(allowedBedConfigurations));
-            }
-
             OrgId = org.Id;
             _bedsByConfig = new Dictionary<BedConfiguration, List<Location>>();
 
-            foreach (BedConfiguration config in allowedBedConfigurations)
+            foreach (BedConfiguration config in _allowedBedConfigs)
             {
                 _bedsByConfig.Add(config, new List<Location>());
             }
@@ -57,7 +56,7 @@ namespace generator_cli.Generators
             for (int i = 0; i < initialBedCount; i++)
             {
                 // pick a configuration
-                BedConfiguration config = allowedBedConfigurations[_rand.Next(0, allowedBedConfigurations.Count)];
+                BedConfiguration config = _allowedBedConfigs[_rand.Next(0, _allowedBedConfigs.Count)];
 
                 _bedsByConfig[config].Add(
                     FhirGenerator.GenerateBed(
@@ -73,9 +72,49 @@ namespace generator_cli.Generators
         /// <value>The identifier of the organization.</value>
         public string OrgId { get; }
 
+        /// <summary>Updates the beds for time step described by changeFactor.</summary>
+        /// <param name="changeFactor">(Optional) The change factor.</param>
+        public void UpdateBedStatusForTimeStep(
+            double changeFactor = 0.1)
+        {
+            foreach (BedConfiguration config in _bedsByConfig.Keys)
+            {
+                int bedCount = _bedsByConfig[config].Count;
+                if (bedCount == 0)
+                {
+                    continue;
+                }
+
+                for (int bedIndex = bedCount - 1; bedIndex >= 0; bedIndex--)
+                {
+                    if (_rand.NextDouble() > changeFactor)
+                    {
+                        continue;
+                    }
+
+                    // pull a bed out of this set
+                    Location bed = _bedsByConfig[config][bedIndex];
+                    _bedsByConfig[config].RemoveAt(bedIndex);
+
+                    // pick a configuration from the matching fixed config parts
+                    int nextConfigIndex = _rand.Next(0, _bedStatusesByFixed[config.FixedKey].Count);
+                    BedConfiguration nextConfig = _bedStatusesByFixed[config.FixedKey][nextConfigIndex];
+
+                    // change this bed
+                    FhirGenerator.UpdateBedConfiguration(ref bed, nextConfig);
+
+                    // add to the destination config
+                    _bedsByConfig[nextConfig].Add(bed);
+                }
+            }
+        }
+
         /// <summary>Initializes this object.</summary>
-        /// <param name="seed">(Optional) The seed.</param>
-        public static void Init(int seed = 0)
+        /// <param name="seed">                    The seed.</param>
+        /// <param name="allowedBedConfigurations">The allowed bed configurations.</param>
+        public static void Init(
+            int seed,
+            List<BedConfiguration> allowedBedConfigurations)
         {
             if (seed == 0)
             {
@@ -85,13 +124,39 @@ namespace generator_cli.Generators
             {
                 _rand = new Random(seed);
             }
+
+            if ((allowedBedConfigurations == null) || (allowedBedConfigurations.Count == 0))
+            {
+                throw new ArgumentNullException(nameof(allowedBedConfigurations));
+            }
+
+            // copy main configs
+            _allowedBedConfigs = allowedBedConfigurations;
+
+            _bedStatusesByFixed = new Dictionary<string, List<BedConfiguration>>();
+            foreach (BedConfiguration config in allowedBedConfigurations)
+            {
+                if (!_bedStatusesByFixed.ContainsKey(config.FixedKey))
+                {
+                    _bedStatusesByFixed.Add(config.FixedKey, new List<BedConfiguration>());
+                }
+
+                _bedStatusesByFixed[config.FixedKey].Add(config);
+            }
         }
 
         /// <summary>Gets the beds.</summary>
+        /// <param name="config">(Optional) The configuration.</param>
         /// <returns>A List&lt;Location&gt;</returns>
-        public List<Location> Beds()
+        public List<Location> Beds(
+            BedConfiguration config = null)
         {
             List<Location> beds = new List<Location>();
+
+            if ((config != null) && _bedsByConfig.ContainsKey(config))
+            {
+                return _bedsByConfig[config];
+            }
 
             foreach (KeyValuePair<BedConfiguration, List<Location>> kvp in _bedsByConfig)
             {
@@ -99,6 +164,27 @@ namespace generator_cli.Generators
             }
 
             return beds;
+        }
+
+        /// <summary>Bed count.</summary>
+        /// <param name="config">(Optional) The configuration.</param>
+        /// <returns>An int.</returns>
+        public int BedCount(
+            BedConfiguration config = null)
+        {
+            if ((config != null) && _bedsByConfig.ContainsKey(config))
+            {
+                return _bedsByConfig[config].Count;
+            }
+
+            int count = 0;
+
+            foreach (KeyValuePair<BedConfiguration, List<Location>> kvp in _bedsByConfig)
+            {
+                count += kvp.Value.Count;
+            }
+
+            return count;
         }
     }
 }

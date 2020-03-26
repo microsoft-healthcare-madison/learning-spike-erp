@@ -321,26 +321,41 @@ namespace generator_cli.Generators
             return loc;
         }
 
+        /// <summary>Updates the bed configuration.</summary>
+        /// <param name="bed"> [in,out] The bed.</param>
+        /// <param name="next">The next.</param>
+        public static void UpdateBedConfiguration(
+            ref Location bed,
+            BedConfiguration next)
+        {
+            if (bed == null)
+            {
+                throw new ArgumentNullException(nameof(bed));
+            }
+
+            if (next == null)
+            {
+                throw new ArgumentNullException(nameof(next));
+            }
+
+            bed.Status = GetLocationStatus(next.Availability);
+            bed.OperationalStatus = CodingForOperationalStatus(next.Status);
+        }
+
         /// <summary>Generates a group.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
-        /// <param name="name">                The name.</param>
-        /// <param name="quantity">            The quantity.</param>
         /// <param name="managingOrganization">The managing organization.</param>
         /// <param name="parentLocation">      The parent location.</param>
-        /// <param name="availabilityStatus">  The availability status.</param>
-        /// <param name="operationalStatus">   The operational status.</param>
-        /// <param name="bedType">             Type of the bed.</param>
-        /// <param name="bedFeature">          The bed feature.</param>
+        /// <param name="name">                The name.</param>
+        /// <param name="bedConfig">           The bed configuration this group represents.</param>
+        /// <param name="bedCount">            Number of beds.</param>
         /// <returns>The group.</returns>
         public static Group GenerateGroup(
-            string name,
-            int quantity,
             Organization managingOrganization,
             Location parentLocation,
-            string availabilityStatus,
-            string operationalStatus,
-            string bedType,
-            string bedFeature)
+            string name,
+            BedConfiguration bedConfig,
+            int bedCount)
         {
             if (managingOrganization == null)
             {
@@ -352,30 +367,35 @@ namespace generator_cli.Generators
                 throw new ArgumentNullException(nameof(parentLocation));
             }
 
+            if (bedConfig == null)
+            {
+                throw new ArgumentNullException(nameof(bedConfig));
+            }
+
             List<Group.CharacteristicComponent> characteristics = new List<Group.CharacteristicComponent>()
             {
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.Status),
-                    Value = CodingForAvailabilityStatus(availabilityStatus),
+                    Value = CodingForAvailabilityStatus(bedConfig.Availability),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.OperationalStatus),
-                    Value = CodingForOperationalStatus(operationalStatus),
+                    Value = CodingForOperationalStatus(bedConfig.Status),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.Type),
-                    Value = ConceptForBedType(bedType),
+                    Value = ConceptForBedType(bedConfig.Type),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.Feature),
-                    Value = ConceptForBedFeature(bedFeature),
+                    Value = ConceptForBedFeature(bedConfig.Feature),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
@@ -392,7 +412,7 @@ namespace generator_cli.Generators
                 Actual = true,
                 Code = ConceptForPhysicalTypeBed(),
                 Name = name,
-                Quantity = quantity,
+                Quantity = bedCount,
                 ManagingEntity = new ResourceReference(managingOrganization.Id),
                 Characteristic = characteristics,
             };

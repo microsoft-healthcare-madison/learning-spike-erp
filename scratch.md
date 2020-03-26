@@ -91,3 +91,5 @@ group[0 -- I think we only ever need one, even though this repeats]
 * No good way to convey a stratifier component for valueReferences; the whole mechanism is focused on CodeableConcepts, but we can "hack it" (As proposed here) or use an extension.valueReference, or we use distinction top-level MeasureReport.groups per-ward.
 
 * Searching across multiple days worth of MeasureReports appears to be simpler than Groups (a MeasureReport is immutable, so a server would naturally host a Day 1 report, a Day 2 report, etc -- whereas for Groups... would you define a new one for each day, or update an existing group each day? If nwe ones are defined how do you tie them all together?)
+
+* Group Annoyance: groups for types not present aren't created, so you need to query and reassemble (e.g., if I have no unoccupied beds, that group isn't present)'

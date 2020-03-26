@@ -52,6 +52,10 @@ namespace generator_cli.Generators
         /// <value>The feature.</value>
         public string Feature => _feature;
 
+        /// <summary>Gets the fixed key.</summary>
+        /// <value>The fixed key.</value>
+        public string FixedKey => $"{_type}-{_feature}";
+
         /// <inheritdoc/>
         public override string ToString()
         {

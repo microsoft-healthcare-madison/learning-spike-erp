@@ -17,9 +17,15 @@ namespace generator_cli
     /// <summary>A program.</summary>
     public class Program
     {
+        private const string _filenameAdditionForBeds = "-beds";
+        private const string _filenameAdditionForGroups = "-groups";
+        private const string _filenameAdditionForMeasureReports = "-measureReports";
+
         private static Dictionary<string, Organization> _orgById = new Dictionary<string, Organization>();
         private static Dictionary<string, Location> _rootLocationByOrgId = new Dictionary<string, Location>();
         private static Dictionary<string, OrgBeds> _bedsByOrgId = new Dictionary<string, OrgBeds>();
+
+        private static List<BedConfiguration> _bedConfigurations = null;
 
         private static bool _useLookup = false;
         private static bool _useJson = false;
@@ -103,7 +109,14 @@ namespace generator_cli
 
             // always need the geo manager
             GeoManager.Init(seed);
-            OrgBeds.Init(seed);
+
+            _bedConfigurations = BedConfiguration.StatesForParams(
+                string.Empty,
+                bedTypes,
+                operationalStatuses,
+                string.Empty);
+
+            OrgBeds.Init(seed, _bedConfigurations);
 
             // only need hospital manager if we are using lookup (avoid loading otherwise)
             if (_useLookup)
@@ -113,31 +126,87 @@ namespace generator_cli
 
             // create our organization records
             CreateOrgs(facilityCount, state, postalCode);
-            CreateOrgBeds(string.Empty, bedTypes, operationalStatuses, string.Empty);
+            CreateOrgBeds();
 
-            // write our org bundles in t0
             WriteOrgBundles(Path.Combine(outputDirectory, "t0"));
 
             WriteBedBundles(Path.Combine(outputDirectory, "t0"));
+
+            WriteGroupBundles(Path.Combine(outputDirectory, "t0"));
+        }
+
+        /// <summary>Writes bed group bundles.</summary>
+        /// <param name="dir">The dir.</param>
+        private static void WriteGroupBundles(string dir)
+        {
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
+            foreach (string orgId in _orgById.Keys)
+            {
+                WriteGroupBundle(orgId, dir);
+            }
+        }
+
+        /// <summary>Writes a group bundle.</summary>
+        /// <param name="orgId">The organization.</param>
+        /// <param name="dir">  The dir.</param>
+        private static void WriteGroupBundle(
+            string orgId,
+            string dir)
+        {
+            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForGroups}{_extension}");
+
+            string bundleId = FhirGenerator.NextId;
+
+            Bundle bundle = new Bundle()
+            {
+                Id = bundleId,
+                Identifier = FhirGenerator.IdentifierForId(bundleId),
+                Type = Bundle.BundleType.Collection,
+                Timestamp = new DateTimeOffset(DateTime.Now),
+                Meta = new Meta(),
+            };
+
+            bundle.Entry = new List<Bundle.EntryComponent>();
+
+            foreach (BedConfiguration config in _bedConfigurations)
+            {
+                int bedCount = _bedsByOrgId[orgId].BedCount(config);
+
+                // check for no beds of this type
+                if (bedCount == 0)
+                {
+                    continue;
+                }
+
+                Group group = FhirGenerator.GenerateGroup(
+                    _orgById[orgId],
+                    _rootLocationByOrgId[orgId],
+                    $"{config.ToString()}",
+                    config,
+                    bedCount);
+
+                bundle.AddResourceEntry(
+                    group,
+                    $"{FhirGenerator.InternalSystem}{group.ResourceType}/{group.Id}");
+            }
+
+            if (_useJson)
+            {
+                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
+            }
+            else
+            {
+                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
+            }
         }
 
         /// <summary>Creates organization beds.</summary>
-        /// <param name="availabilities">     The availabilities.</param>
-        /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
-        /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: O|U).</param>
-        /// <param name="features">           The features.</param>
-        private static void CreateOrgBeds(
-            string availabilities,
-            string bedTypes,
-            string operationalStatuses,
-            string features)
+        private static void CreateOrgBeds()
         {
-            List<BedConfiguration> bedConfigurations = BedConfiguration.StatesForParams(
-                availabilities,
-                bedTypes,
-                operationalStatuses,
-                features);
-
             foreach (string orgId in _orgById.Keys)
             {
                 int initialBedCount;
@@ -154,8 +223,7 @@ namespace generator_cli
                 _bedsByOrgId.Add(orgId, new OrgBeds(
                     _orgById[orgId],
                     _rootLocationByOrgId[orgId],
-                    initialBedCount,
-                    bedConfigurations));
+                    initialBedCount));
             }
         }
 
@@ -181,7 +249,7 @@ namespace generator_cli
             string orgId,
             string dir)
         {
-            string filename = Path.Combine(dir, $"{orgId}-beds{_extension}");
+            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForBeds}{_extension}");
 
             string bundleId = FhirGenerator.NextId;
 
