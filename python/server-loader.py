@@ -199,6 +199,7 @@ class Server:
             resource = json.load(fd)
         if resource.get('resourceType') == 'Bundle':
             self.annotate_bundle_entries(resource)
+            resource['type'] = 'batch'
         headers = {
             'accept': 'application/fhir+json',
             'content-type': 'application/fhir+json'
