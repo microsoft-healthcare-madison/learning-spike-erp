@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-1704",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-1704"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-25T23:43:02.9397521-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-2805",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-2805",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "2805"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "ANNE BATES LEACH EYE HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "900 NW 17TH ST"
+            ],
+            "city": "MIAMI",
+            "state": "FL",
+            "postalCode": "33136",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-2805",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-2805",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "900 NW 17TH ST"
+          ],
+          "city": "MIAMI",
+          "state": "FL",
+          "postalCode": "33136",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -80.210800363,
+          "latitude": 25.791140791
+        }
+      }
+    }
+  ]
+}

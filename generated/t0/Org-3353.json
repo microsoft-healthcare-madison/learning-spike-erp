@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-1708",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-1708"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-25T23:43:02.9426386-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-3353",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-3353",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "3353"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "NEW YORK EYE AND EAR INFIRMARY",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "310 E 14TH ST"
+            ],
+            "city": "NEW YORK",
+            "state": "NY",
+            "postalCode": "10003",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-3353",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-3353",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "310 E 14TH ST"
+          ],
+          "city": "NEW YORK",
+          "state": "NY",
+          "postalCode": "10003",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -73.98448331,
+          "latitude": 40.7318530630001
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-1701",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-1701"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-25T23:43:01.9185545-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-3106",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-3106",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "3106"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "BELMONT CENTER FOR COMPREHENSIVE TREATMENT",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "4200 MONUMENT ROAD"
+            ],
+            "city": "PHILADELPHIA",
+            "state": "PA",
+            "postalCode": "19131",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-3106",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-3106",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "4200 MONUMENT ROAD"
+          ],
+          "city": "PHILADELPHIA",
+          "state": "PA",
+          "postalCode": "19131",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -75.214646,
+          "latitude": 40.0001250010001
+        }
+      }
+    }
+  ]
+}
