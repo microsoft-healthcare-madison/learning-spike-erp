@@ -1,24 +1,25 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1799",
+  "id": "FHIR-2090",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1799"
+    "value": "FHIR-2090"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:11.1332192-05:00",
+  "timestamp": "2020-03-26T14:44:23.1872839-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2091",
       "resource": {
         "resourceType": "MeasureReport",
+        "id": "FHIR-2091",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T13:48:11.1338355-05:00",
+        "date": "2020-03-26T14:44:23.1880838-05:00",
         "reporter": {
           "reference": "Organization/Org-5259"
         },

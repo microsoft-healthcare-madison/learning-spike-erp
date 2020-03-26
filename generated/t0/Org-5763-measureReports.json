@@ -1,24 +1,25 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1796",
+  "id": "FHIR-2084",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1796"
+    "value": "FHIR-2084"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:11.0488519-05:00",
+  "timestamp": "2020-03-26T14:44:23.0413177-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2085",
       "resource": {
         "resourceType": "MeasureReport",
+        "id": "FHIR-2085",
         "text": {
           "div": "GORDON MEMORIAL HOSPITAL DISTRICT Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T13:48:11.0540689-05:00",
+        "date": "2020-03-26T14:44:23.0486985-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },

@@ -50,7 +50,7 @@ namespace generator_cli.Geographic
             _minBeds = minBeds;
             _maxBeds = maxBeds;
 
-            string filename = string.IsNullOrEmpty(dataDirectory) 
+            string filename = string.IsNullOrEmpty(dataDirectory)
                 ? Path.Combine(Directory.GetCurrentDirectory(), "data", "Hospitals.csv")
                 : Path.Combine(dataDirectory, "Hospitals.csv");
 

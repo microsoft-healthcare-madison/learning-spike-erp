@@ -1,24 +1,25 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1804",
+  "id": "FHIR-2100",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1804"
+    "value": "FHIR-2100"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:11.2407802-05:00",
+  "timestamp": "2020-03-26T14:44:23.3908322-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2101",
       "resource": {
         "resourceType": "MeasureReport",
+        "id": "FHIR-2101",
         "text": {
           "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T13:48:11.2410399-05:00",
+        "date": "2020-03-26T14:44:23.3912363-05:00",
         "reporter": {
           "reference": "Organization/Org-1065"
         },

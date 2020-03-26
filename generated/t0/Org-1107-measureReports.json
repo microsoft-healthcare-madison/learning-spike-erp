@@ -1,24 +1,25 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1800",
+  "id": "FHIR-2092",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1800"
+    "value": "FHIR-2092"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:11.1523091-05:00",
+  "timestamp": "2020-03-26T14:44:23.2285426-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2093",
       "resource": {
         "resourceType": "MeasureReport",
+        "id": "FHIR-2093",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T13:48:11.15281-05:00",
+        "date": "2020-03-26T14:44:23.2292579-05:00",
         "reporter": {
           "reference": "Organization/Org-1107"
         },

@@ -50,7 +50,8 @@ namespace generator_cli.Generators
         public const string AvailabilityStatusInactive = "inactive";
 
         /// <summary>The availability statuses.</summary>
-        public static readonly string[] AvailabilityStatuses = {
+        public static readonly string[] AvailabilityStatuses =
+        {
             AvailabilityStatusActive,
             AvailabilityStatusInactive,
             AvailabilityStatusSuspended,
@@ -72,7 +73,8 @@ namespace generator_cli.Generators
         public const string OperationalStatusUnoccupied = "U";
 
         /// <summary>The operational statuses.</summary>
-        public static readonly string[] OperationalStatuses = {
+        public static readonly string[] OperationalStatuses =
+        {
             OperationalStatusContaminated,
             OperationalStatusClosed,
             OperationalStatusHousekeeping,
@@ -108,7 +110,8 @@ namespace generator_cli.Generators
         public const string BedTypeOperatingRoom = "OR";
 
         /// <summary>List of types of the bed.</summary>
-        public static readonly string[] BedTypes = {
+        public static readonly string[] BedTypes =
+        {
             BedTypeAdultICU,
             BedTypePediatricICU,
             BedTypeNeonatalICU,
@@ -130,7 +133,8 @@ namespace generator_cli.Generators
         public const string BedFeatureNonIsolating = "NONISO";
 
         /// <summary>The bed features.</summary>
-        public static readonly string[] BedFeatures = {
+        public static readonly string[] BedFeatures =
+        {
             BedFeatureNegativeFlowIsolation,
             BedFeatureOtherIsolation,
             BedFeatureNonIsolating,
@@ -412,6 +416,7 @@ namespace generator_cli.Generators
 
             return new Group()
             {
+                Id = NextId,
                 Type = Group.GroupType.Device,
                 Actual = true,
                 Code = ConceptForPhysicalTypeBed(),
@@ -522,6 +527,7 @@ namespace generator_cli.Generators
 
             return new MeasureReport()
             {
+                Id = NextId,
                 Status = MeasureReport.MeasureReportStatus.Complete,
                 Type = MeasureReport.MeasureReportType.Summary,
                 Date = new FhirDateTime(new DateTimeOffset(DateTime.Now)).ToString(),

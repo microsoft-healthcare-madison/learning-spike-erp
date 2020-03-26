@@ -1,24 +1,25 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1801",
+  "id": "FHIR-2094",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1801"
+    "value": "FHIR-2094"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:11.1843313-05:00",
+  "timestamp": "2020-03-26T14:44:23.2622555-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2095",
       "resource": {
         "resourceType": "MeasureReport",
+        "id": "FHIR-2095",
         "text": {
           "div": "BEAUMONT HOSPITAL FARMINGTON HILLS Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T13:48:11.1848628-05:00",
+        "date": "2020-03-26T14:44:23.2638211-05:00",
         "reporter": {
           "reference": "Organization/Org-5610"
         },
