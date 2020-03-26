@@ -499,6 +499,8 @@ namespace generator_cli.Generators
                 });
             }
 
+            stratums = stratums.Where(x => x.MeasureScore.Value > 0).ToList();
+
             MeasureReport.GroupComponent component = new MeasureReport.GroupComponent()
             {
                 MeasureScore = new Quantity(){
