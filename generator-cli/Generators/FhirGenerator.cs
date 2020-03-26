@@ -501,6 +501,9 @@ namespace generator_cli.Generators
 
             MeasureReport.GroupComponent component = new MeasureReport.GroupComponent()
             {
+                MeasureScore = new Quantity(){
+                    Value = bedsByConfig.Values.Select(v => v.Count).Sum()
+                },
                 Stratifier = new List<MeasureReport.StratifierComponent>()
                 {
                     new MeasureReport.StratifierComponent()
