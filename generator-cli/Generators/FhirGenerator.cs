@@ -463,6 +463,11 @@ namespace generator_cli.Generators
 
             foreach (BedConfiguration bedConfig in bedsByConfig.Keys)
             {
+                if (bedsByConfig[bedConfig].Count == 0)
+                {
+                    continue;
+                }
+
                 stratums.Add(new MeasureReport.StratifierGroupComponent()
                 {
                     MeasureScore = new Quantity(bedsByConfig[bedConfig].Count, "Number"),
