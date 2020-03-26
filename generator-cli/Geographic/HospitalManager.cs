@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using CsvHelper;
 using generator_cli.Generators;
@@ -116,6 +117,53 @@ namespace generator_cli.Geographic
             }
 
             return _rand.Next(_minBeds, _maxBeds);
+        }
+
+        /// <summary>Gets the organizations.</summary>
+        /// <param name="requestedCount">Number of.</param>
+        /// <param name="state">         (Optional) The state.</param>
+        /// <param name="postalCode">    (Optional) The postal code.</param>
+        /// <returns>The organizations.</returns>
+        public static List<Hl7.Fhir.Model.Organization> GetOrganizations(
+            int requestedCount,
+            string state = null,
+            string postalCode = null)
+        {
+            if ((!string.IsNullOrEmpty(state)) && _hospitalsByState.ContainsKey(state))
+            {
+                return GetOrgsFromList(requestedCount, _hospitalsByState[state]);
+            }
+
+            if ((!string.IsNullOrEmpty(postalCode)) && _hospitalsByZip.ContainsKey(postalCode))
+            {
+                return GetOrgsFromList(requestedCount, _hospitalsByZip[postalCode]);
+            }
+
+            return GetOrgsFromList(requestedCount, _hospitals);
+        }
+
+        /// <summary>Gets orgs from list.</summary>
+        /// <param name="requestedCount">Number of.</param>
+        /// <param name="records">       The records.</param>
+        /// <returns>The orgs from list.</returns>
+        private static List<Hl7.Fhir.Model.Organization> GetOrgsFromList(
+            int requestedCount,
+            List<HospitalRecord> records)
+        {
+            List<Hl7.Fhir.Model.Organization> orgs = new List<Hl7.Fhir.Model.Organization>();
+
+            List<int> indexes = Enumerable.Range(0, records.Count - 1).ToList();
+
+            for (int i = Math.Min(requestedCount, records.Count); i > 0; i--)
+            {
+                int index = _rand.Next(0, indexes.Count);
+
+                orgs.Add(OrgForRec(_hospitals[indexes[index]]));
+
+                indexes.RemoveAt(index);
+            }
+
+            return orgs;
         }
 
         /// <summary>Gets an organization.</summary>

@@ -408,12 +408,12 @@ namespace generator_cli
             string state,
             string postalCode)
         {
-            for (int facilityNumber = 0; facilityNumber < count; facilityNumber++)
-            {
-                Organization org = _useLookup
-                    ? HospitalManager.GetOrganization(state, postalCode)
-                    : GeoManager.GetOrganization(state, postalCode);
+            List<Organization> orgs = _useLookup
+                ? HospitalManager.GetOrganizations(count, state, postalCode)
+                : GeoManager.GetOrganizations(count, state, postalCode);
 
+            foreach (Organization org in orgs)
+            {
                 if (_orgById.ContainsKey(org.Id))
                 {
                     // ignore for now - need to figure out what to do for counts later

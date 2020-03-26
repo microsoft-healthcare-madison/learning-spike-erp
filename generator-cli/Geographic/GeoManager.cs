@@ -155,6 +155,23 @@ namespace generator_cli.Geographic
             };
         }
 
+        /// <summary>Gets the organizations.</summary>
+        /// <param name="requestedCount">Number of.</param>
+        /// <param name="state">         (Optional) The state.</param>
+        /// <param name="postalCode">    (Optional) The postal code.</param>
+        /// <returns>The organizations.</returns>
+        public static List<Hl7.Fhir.Model.Organization> GetOrganizations(
+            int requestedCount,
+            string state = null,
+            string postalCode = null)
+        {
+            List<Hl7.Fhir.Model.Organization> orgs = new List<Hl7.Fhir.Model.Organization>();
+
+            orgs.Add(GetOrganization(state, postalCode));
+
+            return orgs;
+        }
+
         /// <summary>Gets an organization.</summary>
         /// <param name="state">     (Optional) The state.</param>
         /// <param name="postalCode">(Optional) The postal code.</param>
@@ -171,7 +188,7 @@ namespace generator_cli.Geographic
             if (string.IsNullOrEmpty(postalCode))
             {
                 // use state if present
-                if ((!string.IsNullOrEmpty(state)) && (_locationsByState.ContainsKey(state)))
+                if ((!string.IsNullOrEmpty(state)) && _locationsByState.ContainsKey(state))
                 {
                     // note: Rand.Next max is exclusive
                     int index = _rand.Next(0, _locationsByState[state].Count);
@@ -195,7 +212,7 @@ namespace generator_cli.Geographic
             if (string.IsNullOrEmpty(localState))
             {
                 // use state if present
-                if ((!string.IsNullOrEmpty(postalCode)) && (_locationsByZip.ContainsKey(postalCode)))
+                if ((!string.IsNullOrEmpty(postalCode)) && _locationsByZip.ContainsKey(postalCode))
                 {
                     // note: Rand.Next max is exclusive
                     int index = _rand.Next(0, _locationsByZip[postalCode].Count);

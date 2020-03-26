@@ -1,22 +1,22 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1767",
+  "id": "FHIR-1774",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1767"
+    "value": "FHIR-1774"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:10.2345358-05:00",
+  "timestamp": "2020-03-26T13:48:10.2796644-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-2207",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-1065",
       "resource": {
         "resourceType": "Organization",
-        "id": "Org-2207",
+        "id": "Org-1065",
         "identifier": [
           {
             "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
-            "value": "2207"
+            "value": "1065"
           }
         ],
         "active": true,
@@ -30,38 +30,38 @@
             ]
           }
         ],
-        "name": "FRYE REGIONAL MEDICAL CENTER",
+        "name": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON",
         "address": [
           {
             "use": "work",
             "type": "both",
             "line": [
-              "420 NORTH CENTER ST"
+              "1001 WEST MINERAL AVENUE"
             ],
-            "city": "HICKORY",
-            "state": "NC",
-            "postalCode": "28601",
+            "city": "LITTLETON",
+            "state": "CO",
+            "postalCode": "80120",
             "country": "USA"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-2207",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-1065",
       "resource": {
         "resourceType": "Location",
-        "id": "Loc-Org-2207",
+        "id": "Loc-Org-1065",
         "status": "active",
         "mode": "instance",
         "address": {
           "use": "work",
           "type": "both",
           "line": [
-            "420 NORTH CENTER ST"
+            "1001 WEST MINERAL AVENUE"
           ],
-          "city": "HICKORY",
-          "state": "NC",
-          "postalCode": "28601",
+          "city": "LITTLETON",
+          "state": "CO",
+          "postalCode": "80120",
           "country": "USA"
         },
         "physicalType": {
@@ -73,8 +73,8 @@
           ]
         },
         "position": {
-          "longitude": -81.337270844,
-          "latitude": 35.737346474
+          "longitude": -105.000098158,
+          "latitude": 39.5745418340001
         }
       }
     }

@@ -1,19 +1,19 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1787",
+  "id": "FHIR-1792",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1787"
+    "value": "FHIR-1792"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:10.8472266-05:00",
+  "timestamp": "2020-03-26T13:48:10.9736152-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -26,9 +26,9 @@
           ]
         },
         "name": "active-ICU-O-NEGISO",
-        "quantity": 8,
+        "quantity": 6,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -113,7 +113,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -125,7 +125,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -138,9 +138,9 @@
           ]
         },
         "name": "active-ICU-U-NEGISO",
-        "quantity": 11,
+        "quantity": 9,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -225,7 +225,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -237,7 +237,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -250,9 +250,9 @@
           ]
         },
         "name": "inactive-ICU-C-NEGISO",
-        "quantity": 9,
+        "quantity": 12,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -337,7 +337,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -349,7 +349,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -364,7 +364,7 @@
         "name": "suspended-ICU-C-NEGISO",
         "quantity": 11,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -449,7 +449,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -461,7 +461,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -474,9 +474,9 @@
           ]
         },
         "name": "active-ICU-O-OTHISO",
-        "quantity": 8,
+        "quantity": 15,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -561,7 +561,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -573,7 +573,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -586,9 +586,9 @@
           ]
         },
         "name": "active-ICU-U-OTHISO",
-        "quantity": 7,
+        "quantity": 14,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -673,7 +673,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -685,7 +685,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -698,9 +698,9 @@
           ]
         },
         "name": "inactive-ICU-C-OTHISO",
-        "quantity": 7,
+        "quantity": 15,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -785,7 +785,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -797,7 +797,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -810,9 +810,9 @@
           ]
         },
         "name": "suspended-ICU-C-OTHISO",
-        "quantity": 10,
+        "quantity": 15,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -897,7 +897,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -909,7 +909,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -922,9 +922,9 @@
           ]
         },
         "name": "active-ICU-O-NONISO",
-        "quantity": 5,
+        "quantity": 7,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1009,7 +1009,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1021,7 +1021,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -1034,9 +1034,9 @@
           ]
         },
         "name": "active-ICU-U-NONISO",
-        "quantity": 10,
+        "quantity": 9,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1121,7 +1121,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1133,7 +1133,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -1146,9 +1146,9 @@
           ]
         },
         "name": "inactive-ICU-C-NONISO",
-        "quantity": 7,
+        "quantity": 9,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1233,7 +1233,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1245,7 +1245,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -1258,9 +1258,9 @@
           ]
         },
         "name": "suspended-ICU-C-NONISO",
-        "quantity": 7,
+        "quantity": 10,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1345,7 +1345,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1357,7 +1357,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -1370,9 +1370,9 @@
           ]
         },
         "name": "active-ER-O-NEGISO",
-        "quantity": 14,
+        "quantity": 12,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1457,7 +1457,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1469,7 +1469,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -1482,9 +1482,9 @@
           ]
         },
         "name": "active-ER-U-NEGISO",
-        "quantity": 11,
+        "quantity": 8,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1569,7 +1569,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1581,7 +1581,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -1594,9 +1594,9 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 9,
+        "quantity": 11,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1681,7 +1681,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1693,7 +1693,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -1708,7 +1708,7 @@
         "name": "suspended-ER-C-NEGISO",
         "quantity": 10,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1793,7 +1793,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1805,7 +1805,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -1818,9 +1818,9 @@
           ]
         },
         "name": "active-ER-O-OTHISO",
-        "quantity": 12,
+        "quantity": 16,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -1905,7 +1905,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -1917,7 +1917,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -1930,9 +1930,9 @@
           ]
         },
         "name": "active-ER-U-OTHISO",
-        "quantity": 8,
+        "quantity": 7,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2017,7 +2017,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2029,7 +2029,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -2042,9 +2042,9 @@
           ]
         },
         "name": "inactive-ER-C-OTHISO",
-        "quantity": 7,
+        "quantity": 8,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2129,7 +2129,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2141,7 +2141,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -2154,9 +2154,9 @@
           ]
         },
         "name": "suspended-ER-C-OTHISO",
-        "quantity": 14,
+        "quantity": 16,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2241,7 +2241,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2253,7 +2253,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -2266,9 +2266,9 @@
           ]
         },
         "name": "active-ER-O-NONISO",
-        "quantity": 4,
+        "quantity": 13,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2353,7 +2353,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2365,7 +2365,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -2378,9 +2378,9 @@
           ]
         },
         "name": "active-ER-U-NONISO",
-        "quantity": 13,
+        "quantity": 10,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2465,7 +2465,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2477,7 +2477,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -2490,9 +2490,9 @@
           ]
         },
         "name": "inactive-ER-C-NONISO",
-        "quantity": 10,
+        "quantity": 6,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2577,7 +2577,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2589,7 +2589,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -2602,9 +2602,9 @@
           ]
         },
         "name": "suspended-ER-C-NONISO",
-        "quantity": 14,
+        "quantity": 5,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2689,7 +2689,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2701,7 +2701,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -2714,9 +2714,9 @@
           ]
         },
         "name": "active-HU-O-NEGISO",
-        "quantity": 10,
+        "quantity": 13,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2801,7 +2801,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2813,7 +2813,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -2826,9 +2826,9 @@
           ]
         },
         "name": "active-HU-U-NEGISO",
-        "quantity": 11,
+        "quantity": 7,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -2913,7 +2913,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -2925,7 +2925,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -2938,9 +2938,9 @@
           ]
         },
         "name": "inactive-HU-C-NEGISO",
-        "quantity": 11,
+        "quantity": 7,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3025,7 +3025,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3037,7 +3037,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -3050,9 +3050,9 @@
           ]
         },
         "name": "suspended-HU-C-NEGISO",
-        "quantity": 7,
+        "quantity": 12,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3137,7 +3137,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3149,7 +3149,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -3164,7 +3164,7 @@
         "name": "active-HU-O-OTHISO",
         "quantity": 12,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3249,7 +3249,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3261,7 +3261,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -3274,9 +3274,9 @@
           ]
         },
         "name": "active-HU-U-OTHISO",
-        "quantity": 13,
+        "quantity": 5,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3361,7 +3361,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3373,7 +3373,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -3386,9 +3386,9 @@
           ]
         },
         "name": "inactive-HU-C-OTHISO",
-        "quantity": 11,
+        "quantity": 10,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3473,7 +3473,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3485,7 +3485,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -3498,9 +3498,9 @@
           ]
         },
         "name": "suspended-HU-C-OTHISO",
-        "quantity": 14,
+        "quantity": 8,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3585,7 +3585,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3597,7 +3597,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged active & O"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -3610,9 +3610,9 @@
           ]
         },
         "name": "active-HU-O-NONISO",
-        "quantity": 9,
+        "quantity": 3,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3697,7 +3697,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3709,7 +3709,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged active & U"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -3724,7 +3724,7 @@
         "name": "active-HU-U-NONISO",
         "quantity": 10,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3809,7 +3809,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3821,7 +3821,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged inactive & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -3834,9 +3834,9 @@
           ]
         },
         "name": "inactive-HU-C-NONISO",
-        "quantity": 12,
+        "quantity": 13,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -3921,7 +3921,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }
@@ -3933,7 +3933,7 @@
       "resource": {
         "resourceType": "Group",
         "text": {
-          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged suspended & C"
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -3946,9 +3946,9 @@
           ]
         },
         "name": "suspended-HU-C-NONISO",
-        "quantity": 9,
+        "quantity": 7,
         "managingEntity": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-3813"
         },
         "characteristic": [
           {
@@ -4033,7 +4033,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Location/Loc-Org-2207"
+              "reference": "Location/Loc-Org-3813"
             },
             "exclude": false
           }

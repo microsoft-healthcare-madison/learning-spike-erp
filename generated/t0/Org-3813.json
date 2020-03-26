@@ -1,22 +1,22 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1767",
+  "id": "FHIR-1772",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1767"
+    "value": "FHIR-1772"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T13:48:10.2345358-05:00",
+  "timestamp": "2020-03-26T13:48:10.2701013-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-2207",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-3813",
       "resource": {
         "resourceType": "Organization",
-        "id": "Org-2207",
+        "id": "Org-3813",
         "identifier": [
           {
             "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
-            "value": "2207"
+            "value": "3813"
           }
         ],
         "active": true,
@@ -30,38 +30,38 @@
             ]
           }
         ],
-        "name": "FRYE REGIONAL MEDICAL CENTER",
+        "name": "HERITAGE VALLEY BEAVER",
         "address": [
           {
             "use": "work",
             "type": "both",
             "line": [
-              "420 NORTH CENTER ST"
+              "1000 DUTCH RIDGE ROAD"
             ],
-            "city": "HICKORY",
-            "state": "NC",
-            "postalCode": "28601",
+            "city": "BEAVER",
+            "state": "PA",
+            "postalCode": "15009",
             "country": "USA"
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-2207",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-3813",
       "resource": {
         "resourceType": "Location",
-        "id": "Loc-Org-2207",
+        "id": "Loc-Org-3813",
         "status": "active",
         "mode": "instance",
         "address": {
           "use": "work",
           "type": "both",
           "line": [
-            "420 NORTH CENTER ST"
+            "1000 DUTCH RIDGE ROAD"
           ],
-          "city": "HICKORY",
-          "state": "NC",
-          "postalCode": "28601",
+          "city": "BEAVER",
+          "state": "PA",
+          "postalCode": "15009",
           "country": "USA"
         },
         "physicalType": {
@@ -73,8 +73,8 @@
           ]
         },
         "position": {
-          "longitude": -81.337270844,
-          "latitude": 35.737346474
+          "longitude": -80.323298436,
+          "latitude": 40.712044516
         }
       }
     }
