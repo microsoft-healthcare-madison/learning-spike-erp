@@ -127,44 +127,60 @@ namespace generator_cli.Geographic
         /// <param name="requestedCount">Number of.</param>
         /// <param name="state">         (Optional) The state.</param>
         /// <param name="postalCode">    (Optional) The postal code.</param>
+        /// <param name="recordsToSkip"> (Optional) The records to skip.</param>
         /// <returns>The organizations.</returns>
         public static List<Hl7.Fhir.Model.Organization> GetOrganizations(
             int requestedCount,
             string state = null,
-            string postalCode = null)
+            string postalCode = null,
+            int recordsToSkip = 0)
         {
             if ((!string.IsNullOrEmpty(state)) && _hospitalsByState.ContainsKey(state))
             {
-                return GetOrgsFromList(requestedCount, _hospitalsByState[state]);
+                return GetOrgsFromList(
+                    requestedCount,
+                    _hospitalsByState[state],
+                    recordsToSkip);
             }
 
             if ((!string.IsNullOrEmpty(postalCode)) && _hospitalsByZip.ContainsKey(postalCode))
             {
-                return GetOrgsFromList(requestedCount, _hospitalsByZip[postalCode]);
+                return GetOrgsFromList(
+                    requestedCount,
+                    _hospitalsByZip[postalCode],
+                    recordsToSkip);
             }
 
-            return GetOrgsFromList(requestedCount, _hospitals);
+            return GetOrgsFromList(requestedCount, _hospitals, recordsToSkip);
         }
 
         /// <summary>Gets orgs from list.</summary>
         /// <param name="requestedCount">Number of.</param>
         /// <param name="records">       The records.</param>
+        /// <param name="recordsToSkip"> (Optional) The records to skip.</param>
         /// <returns>The orgs from list.</returns>
         private static List<Hl7.Fhir.Model.Organization> GetOrgsFromList(
             int requestedCount,
-            List<HospitalRecord> records)
+            List<HospitalRecord> records,
+            int recordsToSkip = 0)
         {
             List<Hl7.Fhir.Model.Organization> orgs = new List<Hl7.Fhir.Model.Organization>();
 
             List<int> indexes = Enumerable.Range(0, records.Count - 1).ToList();
 
-            for (int i = Math.Min(requestedCount, records.Count); i > 0; i--)
+            for (int i = Math.Min(requestedCount + recordsToSkip, records.Count); i > 0; i--)
             {
                 int index = _rand.Next(0, indexes.Count);
-
-                orgs.Add(OrgForRec(_hospitals[indexes[index]]));
-
+                int listIndex = indexes[index];
                 indexes.RemoveAt(index);
+
+                if (recordsToSkip > 0)
+                {
+                    recordsToSkip--;
+                    continue;
+                }
+
+                orgs.Add(OrgForRec(_hospitals[listIndex]));
             }
 
             return orgs;

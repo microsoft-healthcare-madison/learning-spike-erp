@@ -45,6 +45,7 @@ namespace generator_cli
         /// <param name="timeSteps">          Number of time-step updates to generate.</param>
         /// <param name="timePeriodHours">    Time-step period in hours (default: 24).</param>
         /// <param name="seed">               Starting seed to use in generation, 0 for none (default: 0).</param>
+        /// <param name="recordsToSkip">      Number of records to skip before starting generation (default: 0).</param>
         /// <param name="orgSource">          Source for organization records: generate|csv (default: csv).</param>
         /// <param name="prettyPrint">        If output files should be formatted for display.</param>
         /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
@@ -62,6 +63,7 @@ namespace generator_cli
             int timeSteps = 2,
             int timePeriodHours = 24,
             int seed = 0,
+            int recordsToSkip = 0,
             string orgSource = "csv",
             bool prettyPrint = true,
             string bedTypes = "ICU|ER|HU",
@@ -142,11 +144,13 @@ namespace generator_cli
             }
 
             // create our organization records
-            CreateOrgs(facilityCount, state, postalCode);
+            CreateOrgs(facilityCount, state, postalCode, recordsToSkip);
 
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)
             {
+                Console.WriteLine($"Processing org: {orgId}");
+
                 CreateOrgBed(orgId);
 
                 // loop over timeSteps
@@ -454,16 +458,19 @@ namespace generator_cli
         }
 
         /// <summary>Creates the orgs.</summary>
-        /// <param name="count">     Number of.</param>
-        /// <param name="state">     State to restrict generation to (default: none).</param>
-        /// <param name="postalCode">Postal code to restrict generation to (default: none).</param>
+        /// <param name="count">        Number of.</param>
+        /// <param name="state">        State to restrict generation to (default: none).</param>
+        /// <param name="postalCode">   Postal code to restrict generation to (default: none).</param>
+        /// <param name="recordsToSkip">(Optional) Number of records to skip before starting generation
+        ///  (default: 0).</param>
         private static void CreateOrgs(
             int count,
             string state,
-            string postalCode)
+            string postalCode,
+            int recordsToSkip = 0)
         {
             List<Organization> orgs = _useLookup
-                ? HospitalManager.GetOrganizations(count, state, postalCode)
+                ? HospitalManager.GetOrganizations(count, state, postalCode, recordsToSkip)
                 : GeoManager.GetOrganizations(count, state, postalCode);
 
             foreach (Organization org in orgs)
