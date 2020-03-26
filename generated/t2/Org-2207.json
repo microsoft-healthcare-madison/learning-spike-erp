@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-524",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-524"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-26T16:46:04.4110176-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-2207",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-2207",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "2207"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "FRYE REGIONAL MEDICAL CENTER",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "420 NORTH CENTER ST"
+            ],
+            "city": "HICKORY",
+            "state": "NC",
+            "postalCode": "28601",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-2207",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-2207",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "420 NORTH CENTER ST"
+          ],
+          "city": "HICKORY",
+          "state": "NC",
+          "postalCode": "28601",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -81.337270844,
+          "latitude": 35.737346474
+        }
+      }
+    }
+  ]
+}

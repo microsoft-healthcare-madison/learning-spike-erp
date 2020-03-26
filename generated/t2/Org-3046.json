@@ -1,0 +1,82 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-2453",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-2453"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-26T16:46:06.4710848-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-3046",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-3046",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "3046"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "416 E MAUMEE ST"
+            ],
+            "city": "ANGOLA",
+            "state": "IN",
+            "postalCode": "46703",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-3046",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-3046",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "416 E MAUMEE ST"
+          ],
+          "city": "ANGOLA",
+          "state": "IN",
+          "postalCode": "46703",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -84.994689108,
+          "latitude": 41.634378767
+        }
+      }
+    }
+  ]
+}

@@ -1,18 +1,149 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1912",
+  "id": "FHIR-1363",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1912"
+    "value": "FHIR-1363"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:22.9052182-05:00",
+  "timestamp": "2020-03-26T16:46:05.388907-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1913",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1364",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1913",
+        "id": "FHIR-1364",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-NEGISO",
+        "quantity": 4,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1365",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1365",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NEGISO) Flagged active & U"
         },
@@ -27,7 +158,7 @@
           ]
         },
         "name": "active-ICU-U-NEGISO",
-        "quantity": 4,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -36,7 +167,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -52,7 +183,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -68,7 +199,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -88,7 +219,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -108,7 +239,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -117,15 +248,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1914",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1366",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1914",
+        "id": "FHIR-1366",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NEGISO) Flagged inactive & C"
         },
@@ -140,7 +289,7 @@
           ]
         },
         "name": "inactive-ICU-C-NEGISO",
-        "quantity": 3,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -149,7 +298,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -165,7 +314,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -181,7 +330,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -201,7 +350,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -221,7 +370,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -230,15 +379,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1915",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1367",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1915",
+        "id": "FHIR-1367",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NEGISO) Flagged suspended & C"
         },
@@ -253,7 +420,7 @@
           ]
         },
         "name": "suspended-ICU-C-NEGISO",
-        "quantity": 2,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -262,7 +429,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -278,7 +445,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -294,7 +461,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -314,7 +481,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -334,7 +501,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -343,15 +510,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1916",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1368",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1916",
+        "id": "FHIR-1368",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (OTHISO) Flagged active & O"
         },
@@ -366,7 +551,7 @@
           ]
         },
         "name": "active-ICU-O-OTHISO",
-        "quantity": 3,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -375,7 +560,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -391,7 +576,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -407,7 +592,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -427,7 +612,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -447,7 +632,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -456,15 +641,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1917",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1369",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1917",
+        "id": "FHIR-1369",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (OTHISO) Flagged active & U"
         },
@@ -479,7 +682,7 @@
           ]
         },
         "name": "active-ICU-U-OTHISO",
-        "quantity": 1,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -488,7 +691,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -504,7 +707,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -520,7 +723,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -540,7 +743,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -560,7 +763,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -569,128 +772,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1918",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1918",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (OTHISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
             }
-          ]
-        },
-        "name": "inactive-ICU-C-OTHISO",
-        "quantity": 2,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1919",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1370",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1919",
+        "id": "FHIR-1370",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (OTHISO) Flagged suspended & C"
         },
@@ -705,7 +813,7 @@
           ]
         },
         "name": "suspended-ICU-C-OTHISO",
-        "quantity": 1,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -714,7 +822,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -730,7 +838,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -746,7 +854,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -766,7 +874,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -786,7 +894,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -795,15 +903,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1920",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1371",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1920",
+        "id": "FHIR-1371",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NONISO) Flagged active & O"
         },
@@ -818,7 +944,7 @@
           ]
         },
         "name": "active-ICU-O-NONISO",
-        "quantity": 3,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -827,7 +953,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -843,7 +969,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -859,7 +985,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -879,7 +1005,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -899,7 +1025,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -908,15 +1034,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1921",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1372",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1921",
+        "id": "FHIR-1372",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NONISO) Flagged active & U"
         },
@@ -931,7 +1075,7 @@
           ]
         },
         "name": "active-ICU-U-NONISO",
-        "quantity": 2,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -940,7 +1084,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -956,7 +1100,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -972,7 +1116,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -992,7 +1136,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1012,7 +1156,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1021,15 +1165,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1922",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1373",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1922",
+        "id": "FHIR-1373",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NONISO) Flagged inactive & C"
         },
@@ -1044,7 +1206,7 @@
           ]
         },
         "name": "inactive-ICU-C-NONISO",
-        "quantity": 1,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -1053,7 +1215,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1069,7 +1231,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1085,7 +1247,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1105,7 +1267,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1125,7 +1287,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1134,15 +1296,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1923",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1374",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1923",
+        "id": "FHIR-1374",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ICU (NONISO) Flagged suspended & C"
         },
@@ -1157,7 +1337,7 @@
           ]
         },
         "name": "suspended-ICU-C-NONISO",
-        "quantity": 2,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -1166,7 +1346,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1182,7 +1362,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1198,7 +1378,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1218,7 +1398,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1238,7 +1418,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1247,15 +1427,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1924",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1375",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1924",
+        "id": "FHIR-1375",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NEGISO) Flagged active & O"
         },
@@ -1270,7 +1468,7 @@
           ]
         },
         "name": "active-ER-O-NEGISO",
-        "quantity": 6,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -1279,7 +1477,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1295,7 +1493,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1311,7 +1509,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1331,7 +1529,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1351,7 +1549,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1360,15 +1558,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1925",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1376",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1925",
+        "id": "FHIR-1376",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NEGISO) Flagged active & U"
         },
@@ -1383,7 +1599,7 @@
           ]
         },
         "name": "active-ER-U-NEGISO",
-        "quantity": 6,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -1392,7 +1608,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1408,7 +1624,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1424,7 +1640,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1444,7 +1660,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1464,7 +1680,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1473,15 +1689,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1926",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1377",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1926",
+        "id": "FHIR-1377",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NEGISO) Flagged inactive & C"
         },
@@ -1496,7 +1730,7 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 3,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -1505,7 +1739,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1521,7 +1755,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1537,7 +1771,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1557,7 +1791,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1577,7 +1811,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1586,15 +1820,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1927",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1378",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1927",
+        "id": "FHIR-1378",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NEGISO) Flagged suspended & C"
         },
@@ -1609,7 +1861,7 @@
           ]
         },
         "name": "suspended-ER-C-NEGISO",
-        "quantity": 4,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -1618,7 +1870,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1634,7 +1886,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1650,7 +1902,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1670,7 +1922,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1690,7 +1942,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1699,17 +1951,35 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1928",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1379",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1928",
+        "id": "FHIR-1379",
         "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged active & U"
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -1721,346 +1991,7 @@
             }
           ]
         },
-        "name": "active-ER-U-OTHISO",
-        "quantity": 4,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1929",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1929",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "inactive-ER-C-OTHISO",
-        "quantity": 3,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1930",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1930",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged suspended & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "suspended-ER-C-OTHISO",
-        "quantity": 4,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "suspended",
-              "display": "The location is temporarily closed."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1931",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1931",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NONISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ER-O-NONISO",
+        "name": "active-ER-O-OTHISO",
         "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
@@ -2070,7 +2001,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2086,7 +2017,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2102,7 +2033,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2122,7 +2053,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2131,10 +2062,10 @@
               "coding": [
                 {
                   "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
+                  "code": "OTHISO"
                 }
               ],
-              "text": "Non-isolating unit."
+              "text": "Isolation beds (airflow is not a concern)."
             },
             "exclude": false
           },
@@ -2142,7 +2073,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2151,17 +2082,35 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1932",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1380",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1932",
+        "id": "FHIR-1380",
         "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NONISO) Flagged active & U"
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -2173,8 +2122,8 @@
             }
           ]
         },
-        "name": "active-ER-U-NONISO",
-        "quantity": 1,
+        "name": "active-ER-U-OTHISO",
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -2183,7 +2132,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2199,7 +2148,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2215,7 +2164,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2235,7 +2184,400 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1381",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1381",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-OTHISO",
+        "quantity": 5,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1382",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1382",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-OTHISO",
+        "quantity": 1,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1383",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1383",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-NONISO",
+        "quantity": 3,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2255,7 +2597,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2264,15 +2606,295 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1933",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1384",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1933",
+        "id": "FHIR-1384",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-NONISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1385",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1385",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-NONISO",
+        "quantity": 4,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1386",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1386",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: ER (NONISO) Flagged suspended & C"
         },
@@ -2296,7 +2918,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2312,7 +2934,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2328,7 +2950,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2348,7 +2970,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2368,7 +2990,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2377,15 +2999,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1934",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1387",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1934",
+        "id": "FHIR-1387",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NEGISO) Flagged active & O"
         },
@@ -2400,7 +3040,7 @@
           ]
         },
         "name": "active-HU-O-NEGISO",
-        "quantity": 2,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -2409,7 +3049,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2425,7 +3065,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2441,7 +3081,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2461,7 +3101,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2481,7 +3121,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2490,15 +3130,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1935",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1388",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1935",
+        "id": "FHIR-1388",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NEGISO) Flagged active & U"
         },
@@ -2522,7 +3180,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2538,7 +3196,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2554,7 +3212,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2574,7 +3232,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2594,7 +3252,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2603,15 +3261,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1936",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1389",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1936",
+        "id": "FHIR-1389",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NEGISO) Flagged inactive & C"
         },
@@ -2635,7 +3311,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2651,7 +3327,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2667,7 +3343,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2687,7 +3363,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2707,7 +3383,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2716,15 +3392,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1937",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1390",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1937",
+        "id": "FHIR-1390",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NEGISO) Flagged suspended & C"
         },
@@ -2739,7 +3433,7 @@
           ]
         },
         "name": "suspended-HU-C-NEGISO",
-        "quantity": 1,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -2748,7 +3442,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2764,7 +3458,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2780,7 +3474,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2800,7 +3494,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2820,7 +3514,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2829,15 +3523,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1938",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1391",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1938",
+        "id": "FHIR-1391",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (OTHISO) Flagged active & O"
         },
@@ -2852,7 +3564,7 @@
           ]
         },
         "name": "active-HU-O-OTHISO",
-        "quantity": 3,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -2861,7 +3573,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2877,7 +3589,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2893,7 +3605,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2913,7 +3625,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2933,7 +3645,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2942,15 +3654,33 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1939",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1392",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1939",
+        "id": "FHIR-1392",
         "text": {
           "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (OTHISO) Flagged active & U"
         },
@@ -2965,7 +3695,7 @@
           ]
         },
         "name": "active-HU-U-OTHISO",
-        "quantity": 3,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -2974,7 +3704,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2990,7 +3720,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3006,7 +3736,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3026,7 +3756,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3046,7 +3776,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3055,17 +3785,35 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1940",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1393",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1940",
+        "id": "FHIR-1393",
         "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (OTHISO) Flagged inactive & C"
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (OTHISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -3077,8 +3825,8 @@
             }
           ]
         },
-        "name": "inactive-HU-C-OTHISO",
-        "quantity": 3,
+        "name": "suspended-HU-C-OTHISO",
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-1107"
         },
@@ -3087,346 +3835,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "HU",
-                  "display": "Hospital unit."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1941",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1941",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-HU-O-NONISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "HU",
-                  "display": "Hospital unit."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
-                }
-              ],
-              "text": "Non-isolating unit."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1942",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1942",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "inactive-HU-C-NONISO",
-        "quantity": 4,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "HU",
-                  "display": "Hospital unit."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
-                }
-              ],
-              "text": "Non-isolating unit."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-1107"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1943",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1943",
-        "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged suspended & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "suspended-HU-C-NONISO",
-        "quantity": 5,
-        "managingEntity": {
-          "reference": "Organization/Org-1107"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3442,7 +3851,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3458,7 +3867,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3478,7 +3887,138 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1394",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1394",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-NONISO",
+        "quantity": 5,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3498,7 +4038,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3507,6 +4047,417 @@
               "reference": "Location/Loc-Org-1107"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1395",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1395",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-NONISO",
+        "quantity": 1,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1396",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1396",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-NONISO",
+        "quantity": 1,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1397",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-1397",
+        "text": {
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Beds of type: HU (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-NONISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-1107"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-1107"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }

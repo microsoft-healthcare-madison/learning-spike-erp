@@ -32,7 +32,10 @@ namespace generator_cli.Generators
         public const string RootLocationPrefix = "Loc-";
 
         /// <summary>The SANER-IG characteristic system.</summary>
-        private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/location-definitions";
+        private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/R4/StructureDefinition/Location";
+
+        /// <summary>The fake code text.</summary>
+        private const string _fakeCodeText = "This code is not used, but is required.";
 
         /// <summary>The random.</summary>
         private static Random _rand = new Random();
@@ -157,6 +160,9 @@ namespace generator_cli.Generators
 
             /// <summary>Parent location.</summary>
             Location,
+
+            /// <summary>Time this group represents.</summary>
+            Period,
         }
 
         /// <summary>Gets the identifier of the next.</summary>
@@ -357,13 +363,15 @@ namespace generator_cli.Generators
         /// <param name="name">          The name.</param>
         /// <param name="bedConfig">     The bed configuration this group represents.</param>
         /// <param name="bedCount">      Number of beds.</param>
+        /// <param name="period">        The period.</param>
         /// <returns>The group.</returns>
         public static Group GenerateGroup(
             Organization org,
             Location parentLocation,
             string name,
             BedConfiguration bedConfig,
-            int bedCount)
+            int bedCount,
+            Period period)
         {
             if (org == null)
             {
@@ -410,6 +418,16 @@ namespace generator_cli.Generators
                 {
                     Code = ConceptForSaner(SanerCharacteristic.Location),
                     Value = new ResourceReference($"{parentLocation.ResourceType}/{parentLocation.Id}"),
+                    Exclude = false,
+                },
+                new Group.CharacteristicComponent()
+                {
+                    // Code = ConceptForSaner(SanerCharacteristic.Period),
+                    Code = new CodeableConcept(
+                        "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                        "MeasureReport.period"),
+                    Value = new CodeableConcept() { Text = _fakeCodeText, },
+                    Period = period,
                     Exclude = false,
                 },
             };
@@ -464,6 +482,7 @@ namespace generator_cli.Generators
                 throw new ArgumentNullException(nameof(bedsByConfig));
             }
 
+            int totalBedCount = 0;
             List<MeasureReport.StratifierGroupComponent> stratums = new List<MeasureReport.StratifierGroupComponent>();
 
             foreach (BedConfiguration bedConfig in bedsByConfig.Keys)
@@ -472,6 +491,8 @@ namespace generator_cli.Generators
                 {
                     continue;
                 }
+
+                totalBedCount += bedsByConfig[bedConfig].Count;
 
                 stratums.Add(new MeasureReport.StratifierGroupComponent()
                 {
@@ -509,13 +530,9 @@ namespace generator_cli.Generators
                 });
             }
 
-            stratums = stratums.Where(x => x.MeasureScore.Value > 0).ToList();
-
             MeasureReport.GroupComponent component = new MeasureReport.GroupComponent()
             {
-                MeasureScore = new Quantity(){
-                    Value = bedsByConfig.Values.Select(v => v.Count).Sum()
-                },
+                MeasureScore = new Quantity(totalBedCount, "Number"),
                 Stratifier = new List<MeasureReport.StratifierComponent>()
                 {
                     new MeasureReport.StratifierComponent()
@@ -576,6 +593,11 @@ namespace generator_cli.Generators
                     return new CodeableConcept(
                         _sanerCharacteristicSystem,
                         "Location.partOf");
+
+                case SanerCharacteristic.Period:
+                    return new CodeableConcept(
+                        _sanerCharacteristicSystem,
+                        "Period");
             }
 
             return null;

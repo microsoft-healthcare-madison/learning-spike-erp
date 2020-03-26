@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1838",
+  "id": "FHIR-926",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1838"
+    "value": "FHIR-926"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:22.8428446-05:00",
+  "timestamp": "2020-03-26T16:46:04.686874-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1839",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-927",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1839",
+        "id": "FHIR-927",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NEGISO) Flagged active & O"
         },
@@ -27,7 +27,7 @@
           ]
         },
         "name": "active-ICU-O-NEGISO",
-        "quantity": 20,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -36,7 +36,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -52,7 +52,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -68,7 +68,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -88,7 +88,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -108,7 +108,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -117,15 +117,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1840",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-928",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1840",
+        "id": "FHIR-928",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NEGISO) Flagged active & U"
         },
@@ -140,7 +158,7 @@
           ]
         },
         "name": "active-ICU-U-NEGISO",
-        "quantity": 10,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -149,7 +167,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -165,7 +183,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -181,7 +199,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -201,7 +219,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -221,7 +239,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -230,15 +248,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1841",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-929",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1841",
+        "id": "FHIR-929",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NEGISO) Flagged inactive & C"
         },
@@ -253,7 +289,7 @@
           ]
         },
         "name": "inactive-ICU-C-NEGISO",
-        "quantity": 10,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -262,7 +298,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -278,7 +314,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -294,7 +330,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -314,7 +350,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -334,7 +370,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -343,15 +379,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1842",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-930",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1842",
+        "id": "FHIR-930",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NEGISO) Flagged suspended & C"
         },
@@ -366,7 +420,7 @@
           ]
         },
         "name": "suspended-ICU-C-NEGISO",
-        "quantity": 5,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -375,7 +429,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -391,7 +445,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -407,7 +461,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -427,7 +481,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -447,7 +501,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -456,15 +510,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1843",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-931",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1843",
+        "id": "FHIR-931",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (OTHISO) Flagged active & O"
         },
@@ -479,7 +551,7 @@
           ]
         },
         "name": "active-ICU-O-OTHISO",
-        "quantity": 11,
+        "quantity": 16,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -488,7 +560,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -504,7 +576,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -520,7 +592,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -540,7 +612,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -560,7 +632,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -569,15 +641,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1844",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-932",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1844",
+        "id": "FHIR-932",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (OTHISO) Flagged active & U"
         },
@@ -592,7 +682,7 @@
           ]
         },
         "name": "active-ICU-U-OTHISO",
-        "quantity": 7,
+        "quantity": 14,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -601,7 +691,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -617,7 +707,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -633,7 +723,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -653,7 +743,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -673,7 +763,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -682,15 +772,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1845",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-933",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1845",
+        "id": "FHIR-933",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (OTHISO) Flagged inactive & C"
         },
@@ -705,7 +813,7 @@
           ]
         },
         "name": "inactive-ICU-C-OTHISO",
-        "quantity": 8,
+        "quantity": 13,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -714,7 +822,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -730,7 +838,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -746,7 +854,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -766,7 +874,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -786,7 +894,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -795,15 +903,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1846",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-934",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1846",
+        "id": "FHIR-934",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (OTHISO) Flagged suspended & C"
         },
@@ -818,7 +944,7 @@
           ]
         },
         "name": "suspended-ICU-C-OTHISO",
-        "quantity": 11,
+        "quantity": 15,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -827,7 +953,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -843,7 +969,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -859,7 +985,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -879,7 +1005,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -899,7 +1025,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -908,15 +1034,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1847",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-935",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1847",
+        "id": "FHIR-935",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NONISO) Flagged active & O"
         },
@@ -931,7 +1075,7 @@
           ]
         },
         "name": "active-ICU-O-NONISO",
-        "quantity": 13,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -940,7 +1084,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -956,7 +1100,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -972,7 +1116,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -992,7 +1136,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1012,7 +1156,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1021,15 +1165,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1848",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-936",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1848",
+        "id": "FHIR-936",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NONISO) Flagged active & U"
         },
@@ -1044,7 +1206,7 @@
           ]
         },
         "name": "active-ICU-U-NONISO",
-        "quantity": 11,
+        "quantity": 15,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1053,7 +1215,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1069,7 +1231,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1085,7 +1247,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1105,7 +1267,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1125,7 +1287,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1134,15 +1296,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1849",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-937",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1849",
+        "id": "FHIR-937",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NONISO) Flagged inactive & C"
         },
@@ -1157,7 +1337,7 @@
           ]
         },
         "name": "inactive-ICU-C-NONISO",
-        "quantity": 7,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1166,7 +1346,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1182,7 +1362,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1198,7 +1378,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1218,7 +1398,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1238,7 +1418,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1247,15 +1427,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1850",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-938",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1850",
+        "id": "FHIR-938",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ICU (NONISO) Flagged suspended & C"
         },
@@ -1270,7 +1468,7 @@
           ]
         },
         "name": "suspended-ICU-C-NONISO",
-        "quantity": 13,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1279,7 +1477,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1295,7 +1493,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1311,7 +1509,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1331,7 +1529,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1351,7 +1549,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1360,15 +1558,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1851",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-939",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1851",
+        "id": "FHIR-939",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NEGISO) Flagged active & O"
         },
@@ -1383,7 +1599,7 @@
           ]
         },
         "name": "active-ER-O-NEGISO",
-        "quantity": 8,
+        "quantity": 10,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1392,7 +1608,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1408,7 +1624,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1424,7 +1640,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1444,7 +1660,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1464,7 +1680,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1473,15 +1689,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1852",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-940",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1852",
+        "id": "FHIR-940",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NEGISO) Flagged active & U"
         },
@@ -1496,7 +1730,7 @@
           ]
         },
         "name": "active-ER-U-NEGISO",
-        "quantity": 12,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1505,7 +1739,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1521,7 +1755,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1537,7 +1771,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1557,7 +1791,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1577,7 +1811,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1586,15 +1820,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1853",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-941",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1853",
+        "id": "FHIR-941",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NEGISO) Flagged inactive & C"
         },
@@ -1609,7 +1861,7 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 7,
+        "quantity": 12,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1618,7 +1870,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1634,7 +1886,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1650,7 +1902,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1670,7 +1922,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1690,7 +1942,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1699,15 +1951,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1854",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-942",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1854",
+        "id": "FHIR-942",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NEGISO) Flagged suspended & C"
         },
@@ -1722,7 +1992,7 @@
           ]
         },
         "name": "suspended-ER-C-NEGISO",
-        "quantity": 5,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1731,7 +2001,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1747,7 +2017,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1763,7 +2033,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1783,7 +2053,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1803,7 +2073,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1812,15 +2082,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1855",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-943",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1855",
+        "id": "FHIR-943",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (OTHISO) Flagged active & O"
         },
@@ -1835,7 +2123,7 @@
           ]
         },
         "name": "active-ER-O-OTHISO",
-        "quantity": 12,
+        "quantity": 14,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1844,7 +2132,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1860,7 +2148,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1876,7 +2164,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1896,7 +2184,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1916,7 +2204,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1925,15 +2213,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1856",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-944",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1856",
+        "id": "FHIR-944",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (OTHISO) Flagged active & U"
         },
@@ -1948,7 +2254,7 @@
           ]
         },
         "name": "active-ER-U-OTHISO",
-        "quantity": 14,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -1957,7 +2263,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1973,7 +2279,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1989,7 +2295,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2009,7 +2315,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2029,7 +2335,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2038,15 +2344,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1857",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-945",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1857",
+        "id": "FHIR-945",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (OTHISO) Flagged inactive & C"
         },
@@ -2061,7 +2385,7 @@
           ]
         },
         "name": "inactive-ER-C-OTHISO",
-        "quantity": 9,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2070,7 +2394,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2086,7 +2410,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2102,7 +2426,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2122,7 +2446,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2142,7 +2466,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2151,15 +2475,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1858",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-946",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1858",
+        "id": "FHIR-946",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (OTHISO) Flagged suspended & C"
         },
@@ -2174,7 +2516,7 @@
           ]
         },
         "name": "suspended-ER-C-OTHISO",
-        "quantity": 10,
+        "quantity": 14,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2183,7 +2525,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2199,7 +2541,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2215,7 +2557,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2235,7 +2577,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2255,7 +2597,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2264,15 +2606,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1859",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-947",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1859",
+        "id": "FHIR-947",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NONISO) Flagged active & O"
         },
@@ -2287,7 +2647,7 @@
           ]
         },
         "name": "active-ER-O-NONISO",
-        "quantity": 6,
+        "quantity": 14,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2296,7 +2656,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2312,7 +2672,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2328,7 +2688,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2348,7 +2708,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2368,7 +2728,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2377,15 +2737,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1860",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-948",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1860",
+        "id": "FHIR-948",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NONISO) Flagged active & U"
         },
@@ -2400,7 +2778,7 @@
           ]
         },
         "name": "active-ER-U-NONISO",
-        "quantity": 7,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2409,7 +2787,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2425,7 +2803,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2441,7 +2819,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2461,7 +2839,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2481,7 +2859,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2490,15 +2868,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1861",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-949",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1861",
+        "id": "FHIR-949",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NONISO) Flagged inactive & C"
         },
@@ -2513,7 +2909,7 @@
           ]
         },
         "name": "inactive-ER-C-NONISO",
-        "quantity": 15,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2522,7 +2918,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2538,7 +2934,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2554,7 +2950,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2574,7 +2970,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2594,7 +2990,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2603,15 +2999,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1862",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-950",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1862",
+        "id": "FHIR-950",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: ER (NONISO) Flagged suspended & C"
         },
@@ -2626,7 +3040,7 @@
           ]
         },
         "name": "suspended-ER-C-NONISO",
-        "quantity": 9,
+        "quantity": 7,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2635,7 +3049,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2651,7 +3065,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2667,7 +3081,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2687,7 +3101,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2707,7 +3121,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2716,15 +3130,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1863",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-951",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1863",
+        "id": "FHIR-951",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NEGISO) Flagged active & O"
         },
@@ -2739,7 +3171,7 @@
           ]
         },
         "name": "active-HU-O-NEGISO",
-        "quantity": 10,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2748,7 +3180,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2764,7 +3196,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2780,7 +3212,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2800,7 +3232,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2820,7 +3252,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2829,15 +3261,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1864",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-952",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1864",
+        "id": "FHIR-952",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NEGISO) Flagged active & U"
         },
@@ -2852,7 +3302,7 @@
           ]
         },
         "name": "active-HU-U-NEGISO",
-        "quantity": 12,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2861,7 +3311,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2877,7 +3327,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2893,7 +3343,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2913,7 +3363,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2933,7 +3383,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2942,15 +3392,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1865",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-953",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1865",
+        "id": "FHIR-953",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NEGISO) Flagged inactive & C"
         },
@@ -2965,7 +3433,7 @@
           ]
         },
         "name": "inactive-HU-C-NEGISO",
-        "quantity": 18,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -2974,7 +3442,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2990,7 +3458,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3006,7 +3474,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3026,7 +3494,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3046,7 +3514,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3055,15 +3523,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1866",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-954",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1866",
+        "id": "FHIR-954",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NEGISO) Flagged suspended & C"
         },
@@ -3078,7 +3564,7 @@
           ]
         },
         "name": "suspended-HU-C-NEGISO",
-        "quantity": 7,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3087,7 +3573,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3103,7 +3589,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3119,7 +3605,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3139,7 +3625,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3159,7 +3645,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3168,15 +3654,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1867",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-955",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1867",
+        "id": "FHIR-955",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (OTHISO) Flagged active & O"
         },
@@ -3191,7 +3695,7 @@
           ]
         },
         "name": "active-HU-O-OTHISO",
-        "quantity": 15,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3200,7 +3704,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3216,7 +3720,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3232,7 +3736,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3252,7 +3756,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3272,7 +3776,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3281,15 +3785,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1868",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-956",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1868",
+        "id": "FHIR-956",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (OTHISO) Flagged active & U"
         },
@@ -3304,7 +3826,7 @@
           ]
         },
         "name": "active-HU-U-OTHISO",
-        "quantity": 5,
+        "quantity": 10,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3313,7 +3835,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3329,7 +3851,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3345,7 +3867,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3365,7 +3887,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3385,7 +3907,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3394,15 +3916,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1869",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-957",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1869",
+        "id": "FHIR-957",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (OTHISO) Flagged inactive & C"
         },
@@ -3417,7 +3957,7 @@
           ]
         },
         "name": "inactive-HU-C-OTHISO",
-        "quantity": 6,
+        "quantity": 16,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3426,7 +3966,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3442,7 +3982,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3458,7 +3998,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3478,7 +4018,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3498,7 +4038,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3507,15 +4047,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1870",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-958",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1870",
+        "id": "FHIR-958",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (OTHISO) Flagged suspended & C"
         },
@@ -3530,7 +4088,7 @@
           ]
         },
         "name": "suspended-HU-C-OTHISO",
-        "quantity": 7,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3539,7 +4097,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3555,7 +4113,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3571,7 +4129,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3591,7 +4149,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3611,7 +4169,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3620,15 +4178,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1871",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-959",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1871",
+        "id": "FHIR-959",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NONISO) Flagged active & O"
         },
@@ -3643,7 +4219,7 @@
           ]
         },
         "name": "active-HU-O-NONISO",
-        "quantity": 10,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3652,7 +4228,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3668,7 +4244,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3684,7 +4260,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3704,7 +4280,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3724,7 +4300,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3733,15 +4309,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1872",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-960",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1872",
+        "id": "FHIR-960",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NONISO) Flagged active & U"
         },
@@ -3756,7 +4350,7 @@
           ]
         },
         "name": "active-HU-U-NONISO",
-        "quantity": 5,
+        "quantity": 12,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3765,7 +4359,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3781,7 +4375,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3797,7 +4391,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3817,7 +4411,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3837,7 +4431,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3846,15 +4440,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1873",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-961",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1873",
+        "id": "FHIR-961",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NONISO) Flagged inactive & C"
         },
@@ -3869,7 +4481,7 @@
           ]
         },
         "name": "inactive-HU-C-NONISO",
-        "quantity": 16,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3878,7 +4490,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3894,7 +4506,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3910,7 +4522,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3930,7 +4542,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3950,7 +4562,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3959,15 +4571,33 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1874",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-962",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1874",
+        "id": "FHIR-962",
         "text": {
           "div": "LOURDES HOSPITAL Beds of type: HU (NONISO) Flagged suspended & C"
         },
@@ -3982,7 +4612,7 @@
           ]
         },
         "name": "suspended-HU-C-NONISO",
-        "quantity": 8,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-3474"
         },
@@ -3991,7 +4621,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -4007,7 +4637,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -4023,7 +4653,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -4043,7 +4673,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -4063,7 +4693,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -4072,6 +4702,24 @@
               "reference": "Location/Loc-Org-3474"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }

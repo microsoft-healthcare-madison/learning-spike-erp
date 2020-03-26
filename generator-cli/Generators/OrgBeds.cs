@@ -167,6 +167,9 @@ namespace generator_cli.Generators
                 beds.AddRange(kvp.Value);
             }
 
+            // sort beds on id for sanity
+            beds.Sort((a, b) => string.Compare(a.Id, b.Id, StringComparison.Ordinal));
+
             return beds;
         }
 

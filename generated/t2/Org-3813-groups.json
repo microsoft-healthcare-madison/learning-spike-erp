@@ -1,0 +1,4728 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-2346",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-2346"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-26T16:46:06.3372738-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2347",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2347",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-NEGISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2348",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2348",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-NEGISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2349",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2349",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-NEGISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2350",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2350",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-NEGISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2351",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2351",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-OTHISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2352",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2352",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-OTHISO",
+        "quantity": 6,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2353",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2353",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-OTHISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2354",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2354",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-OTHISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2355",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2355",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-NONISO",
+        "quantity": 14,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2356",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2356",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-NONISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2357",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2357",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-NONISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2358",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2358",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ICU (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-NONISO",
+        "quantity": 12,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2359",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2359",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-NEGISO",
+        "quantity": 7,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2360",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2360",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-NEGISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2361",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2361",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-NEGISO",
+        "quantity": 9,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2362",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2362",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-NEGISO",
+        "quantity": 5,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2363",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2363",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-OTHISO",
+        "quantity": 9,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2364",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2364",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-OTHISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2365",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2365",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-OTHISO",
+        "quantity": 9,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2366",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2366",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-OTHISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2367",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2367",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-NONISO",
+        "quantity": 19,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2368",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2368",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-NONISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2369",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2369",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-NONISO",
+        "quantity": 12,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2370",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2370",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: ER (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-NONISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2371",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2371",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-NEGISO",
+        "quantity": 4,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2372",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2372",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-NEGISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2373",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2373",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-NEGISO",
+        "quantity": 15,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2374",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2374",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-NEGISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2375",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2375",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-OTHISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2376",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2376",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-OTHISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2377",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2377",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-OTHISO",
+        "quantity": 6,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2378",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2378",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-OTHISO",
+        "quantity": 7,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2379",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2379",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-NONISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2380",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2380",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-NONISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2381",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2381",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-NONISO",
+        "quantity": 6,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2382",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2382",
+        "text": {
+          "div": "HERITAGE VALLEY BEAVER Beds of type: HU (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-NONISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-3813"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3813"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-25",
+              "end": "2020-03-25"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1801",
+  "id": "FHIR-444",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1801"
+    "value": "FHIR-444"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:22.8083333-05:00",
+  "timestamp": "2020-03-26T16:46:04.1288109-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1802",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-445",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1802",
+        "id": "FHIR-445",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged active & O"
         },
@@ -27,7 +27,7 @@
           ]
         },
         "name": "active-ICU-O-NEGISO",
-        "quantity": 8,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -36,7 +36,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -52,7 +52,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -68,7 +68,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -88,7 +88,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -108,7 +108,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -117,15 +117,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1803",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-446",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1803",
+        "id": "FHIR-446",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged active & U"
         },
@@ -140,7 +158,7 @@
           ]
         },
         "name": "active-ICU-U-NEGISO",
-        "quantity": 11,
+        "quantity": 10,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -149,7 +167,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -165,7 +183,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -181,7 +199,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -201,7 +219,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -221,7 +239,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -230,15 +248,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1804",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-447",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1804",
+        "id": "FHIR-447",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged inactive & C"
         },
@@ -253,7 +289,7 @@
           ]
         },
         "name": "inactive-ICU-C-NEGISO",
-        "quantity": 9,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -262,7 +298,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -278,7 +314,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -294,7 +330,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -314,7 +350,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -334,7 +370,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -343,15 +379,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1805",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-448",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1805",
+        "id": "FHIR-448",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged suspended & C"
         },
@@ -366,7 +420,7 @@
           ]
         },
         "name": "suspended-ICU-C-NEGISO",
-        "quantity": 11,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -375,7 +429,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -391,7 +445,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -407,7 +461,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -427,7 +481,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -447,7 +501,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -456,15 +510,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1806",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-449",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1806",
+        "id": "FHIR-449",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged active & O"
         },
@@ -479,7 +551,7 @@
           ]
         },
         "name": "active-ICU-O-OTHISO",
-        "quantity": 8,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -488,7 +560,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -504,7 +576,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -520,7 +592,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -540,7 +612,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -560,7 +632,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -569,15 +641,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1807",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-450",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1807",
+        "id": "FHIR-450",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged active & U"
         },
@@ -592,7 +682,7 @@
           ]
         },
         "name": "active-ICU-U-OTHISO",
-        "quantity": 7,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -601,7 +691,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -617,7 +707,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -633,7 +723,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -653,7 +743,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -673,7 +763,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -682,15 +772,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1808",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-451",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1808",
+        "id": "FHIR-451",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged inactive & C"
         },
@@ -705,7 +813,7 @@
           ]
         },
         "name": "inactive-ICU-C-OTHISO",
-        "quantity": 7,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -714,7 +822,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -730,7 +838,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -746,7 +854,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -766,7 +874,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -786,7 +894,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -795,15 +903,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1809",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-452",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1809",
+        "id": "FHIR-452",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged suspended & C"
         },
@@ -818,7 +944,7 @@
           ]
         },
         "name": "suspended-ICU-C-OTHISO",
-        "quantity": 10,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -827,7 +953,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -843,7 +969,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -859,7 +985,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -879,7 +1005,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -899,7 +1025,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -908,15 +1034,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1810",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-453",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1810",
+        "id": "FHIR-453",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged active & O"
         },
@@ -931,7 +1075,7 @@
           ]
         },
         "name": "active-ICU-O-NONISO",
-        "quantity": 5,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -940,7 +1084,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -956,7 +1100,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -972,7 +1116,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -992,7 +1136,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1012,7 +1156,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1021,15 +1165,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1811",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-454",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1811",
+        "id": "FHIR-454",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged active & U"
         },
@@ -1044,7 +1206,7 @@
           ]
         },
         "name": "active-ICU-U-NONISO",
-        "quantity": 10,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1053,7 +1215,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1069,7 +1231,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1085,7 +1247,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1105,7 +1267,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1125,7 +1287,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1134,15 +1296,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1812",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-455",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1812",
+        "id": "FHIR-455",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged inactive & C"
         },
@@ -1157,7 +1337,7 @@
           ]
         },
         "name": "inactive-ICU-C-NONISO",
-        "quantity": 7,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1166,7 +1346,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1182,7 +1362,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1198,7 +1378,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1218,7 +1398,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1238,7 +1418,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1247,15 +1427,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1813",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-456",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1813",
+        "id": "FHIR-456",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged suspended & C"
         },
@@ -1270,7 +1468,7 @@
           ]
         },
         "name": "suspended-ICU-C-NONISO",
-        "quantity": 7,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1279,7 +1477,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1295,7 +1493,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1311,7 +1509,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1331,7 +1529,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1351,7 +1549,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1360,15 +1558,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1814",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-457",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1814",
+        "id": "FHIR-457",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged active & O"
         },
@@ -1383,7 +1599,7 @@
           ]
         },
         "name": "active-ER-O-NEGISO",
-        "quantity": 14,
+        "quantity": 12,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1392,7 +1608,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1408,7 +1624,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1424,7 +1640,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1444,7 +1660,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1464,7 +1680,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1473,15 +1689,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1815",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-458",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1815",
+        "id": "FHIR-458",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged active & U"
         },
@@ -1496,7 +1730,7 @@
           ]
         },
         "name": "active-ER-U-NEGISO",
-        "quantity": 11,
+        "quantity": 13,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1505,7 +1739,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1521,7 +1755,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1537,7 +1771,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1557,7 +1791,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1577,7 +1811,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1586,15 +1820,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1816",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-459",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1816",
+        "id": "FHIR-459",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged inactive & C"
         },
@@ -1609,7 +1861,7 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 9,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1618,7 +1870,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1634,7 +1886,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1650,7 +1902,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1670,7 +1922,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1690,7 +1942,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1699,15 +1951,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1817",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-460",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1817",
+        "id": "FHIR-460",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged suspended & C"
         },
@@ -1722,7 +1992,7 @@
           ]
         },
         "name": "suspended-ER-C-NEGISO",
-        "quantity": 10,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1731,7 +2001,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1747,7 +2017,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1763,7 +2033,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1783,7 +2053,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1803,7 +2073,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1812,15 +2082,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1818",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-461",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1818",
+        "id": "FHIR-461",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged active & O"
         },
@@ -1835,7 +2123,7 @@
           ]
         },
         "name": "active-ER-O-OTHISO",
-        "quantity": 12,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -1844,7 +2132,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1860,7 +2148,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1876,7 +2164,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1896,7 +2184,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1916,7 +2204,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1925,15 +2213,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1819",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-462",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1819",
+        "id": "FHIR-462",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged active & U"
         },
@@ -1957,7 +2263,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1973,7 +2279,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1989,7 +2295,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2009,7 +2315,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2029,7 +2335,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2038,15 +2344,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1820",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-463",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1820",
+        "id": "FHIR-463",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged inactive & C"
         },
@@ -2061,7 +2385,7 @@
           ]
         },
         "name": "inactive-ER-C-OTHISO",
-        "quantity": 7,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -2070,7 +2394,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2086,7 +2410,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2102,7 +2426,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2122,7 +2446,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2142,7 +2466,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2151,15 +2475,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1821",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-464",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1821",
+        "id": "FHIR-464",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged suspended & C"
         },
@@ -2174,7 +2516,7 @@
           ]
         },
         "name": "suspended-ER-C-OTHISO",
-        "quantity": 14,
+        "quantity": 17,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -2183,7 +2525,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2199,7 +2541,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2215,7 +2557,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2235,7 +2577,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2255,7 +2597,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2264,15 +2606,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1822",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-465",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1822",
+        "id": "FHIR-465",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged active & O"
         },
@@ -2296,7 +2656,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2312,7 +2672,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2328,7 +2688,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2348,7 +2708,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2368,7 +2728,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2377,15 +2737,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1823",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-466",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1823",
+        "id": "FHIR-466",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged active & U"
         },
@@ -2400,7 +2778,7 @@
           ]
         },
         "name": "active-ER-U-NONISO",
-        "quantity": 13,
+        "quantity": 10,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -2409,7 +2787,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2425,7 +2803,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2441,7 +2819,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2461,7 +2839,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2481,7 +2859,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2490,15 +2868,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1824",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-467",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1824",
+        "id": "FHIR-467",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged inactive & C"
         },
@@ -2513,7 +2909,7 @@
           ]
         },
         "name": "inactive-ER-C-NONISO",
-        "quantity": 10,
+        "quantity": 11,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -2522,7 +2918,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2538,7 +2934,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2554,7 +2950,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2574,7 +2970,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2594,7 +2990,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2603,15 +2999,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1825",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-468",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1825",
+        "id": "FHIR-468",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged suspended & C"
         },
@@ -2626,7 +3040,7 @@
           ]
         },
         "name": "suspended-ER-C-NONISO",
-        "quantity": 14,
+        "quantity": 12,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -2635,7 +3049,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2651,7 +3065,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2667,7 +3081,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2687,7 +3101,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2707,7 +3121,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2716,15 +3130,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1826",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-469",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1826",
+        "id": "FHIR-469",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged active & O"
         },
@@ -2748,7 +3180,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2764,7 +3196,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2780,7 +3212,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2800,7 +3232,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2820,7 +3252,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2829,15 +3261,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1827",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-470",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1827",
+        "id": "FHIR-470",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged active & U"
         },
@@ -2852,7 +3302,7 @@
           ]
         },
         "name": "active-HU-U-NEGISO",
-        "quantity": 11,
+        "quantity": 13,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -2861,7 +3311,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2877,7 +3327,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2893,7 +3343,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2913,7 +3363,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2933,7 +3383,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2942,15 +3392,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1828",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-471",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1828",
+        "id": "FHIR-471",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged inactive & C"
         },
@@ -2974,7 +3442,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2990,7 +3458,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3006,7 +3474,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3026,7 +3494,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3046,7 +3514,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3055,15 +3523,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1829",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-472",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1829",
+        "id": "FHIR-472",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged suspended & C"
         },
@@ -3078,7 +3564,7 @@
           ]
         },
         "name": "suspended-HU-C-NEGISO",
-        "quantity": 7,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3087,7 +3573,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3103,7 +3589,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3119,7 +3605,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3139,7 +3625,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3159,7 +3645,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3168,15 +3654,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1830",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-473",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1830",
+        "id": "FHIR-473",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged active & O"
         },
@@ -3191,7 +3695,7 @@
           ]
         },
         "name": "active-HU-O-OTHISO",
-        "quantity": 12,
+        "quantity": 14,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3200,7 +3704,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3216,7 +3720,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3232,7 +3736,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3252,7 +3756,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3272,7 +3776,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3281,15 +3785,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1831",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-474",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1831",
+        "id": "FHIR-474",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged active & U"
         },
@@ -3304,7 +3826,7 @@
           ]
         },
         "name": "active-HU-U-OTHISO",
-        "quantity": 13,
+        "quantity": 14,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3313,7 +3835,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3329,7 +3851,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3345,7 +3867,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3365,7 +3887,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3385,7 +3907,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3394,15 +3916,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1832",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-475",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1832",
+        "id": "FHIR-475",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged inactive & C"
         },
@@ -3417,7 +3957,7 @@
           ]
         },
         "name": "inactive-HU-C-OTHISO",
-        "quantity": 11,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3426,7 +3966,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3442,7 +3982,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3458,7 +3998,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3478,7 +4018,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3498,7 +4038,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3507,15 +4047,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1833",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-476",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1833",
+        "id": "FHIR-476",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged suspended & C"
         },
@@ -3530,7 +4088,7 @@
           ]
         },
         "name": "suspended-HU-C-OTHISO",
-        "quantity": 14,
+        "quantity": 13,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3539,7 +4097,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3555,7 +4113,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3571,7 +4129,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3591,7 +4149,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3611,7 +4169,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3620,15 +4178,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1834",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-477",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1834",
+        "id": "FHIR-477",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged active & O"
         },
@@ -3652,7 +4228,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3668,7 +4244,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3684,7 +4260,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3704,7 +4280,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3724,7 +4300,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3733,15 +4309,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1835",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-478",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1835",
+        "id": "FHIR-478",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged active & U"
         },
@@ -3756,7 +4350,7 @@
           ]
         },
         "name": "active-HU-U-NONISO",
-        "quantity": 10,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3765,7 +4359,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3781,7 +4375,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3797,7 +4391,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3817,7 +4411,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3837,7 +4431,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3846,15 +4440,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1836",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-479",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1836",
+        "id": "FHIR-479",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged inactive & C"
         },
@@ -3878,7 +4490,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3894,7 +4506,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3910,7 +4522,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3930,7 +4542,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3950,7 +4562,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3959,15 +4571,33 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1837",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-480",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1837",
+        "id": "FHIR-480",
         "text": {
           "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged suspended & C"
         },
@@ -3982,7 +4612,7 @@
           ]
         },
         "name": "suspended-HU-C-NONISO",
-        "quantity": 9,
+        "quantity": 10,
         "managingEntity": {
           "reference": "Organization/Org-2207"
         },
@@ -3991,7 +4621,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -4007,7 +4637,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -4023,7 +4653,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -4043,7 +4673,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -4063,7 +4693,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -4072,6 +4702,24 @@
               "reference": "Location/Loc-Org-2207"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
+            },
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
