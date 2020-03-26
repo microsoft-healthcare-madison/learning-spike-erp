@@ -44,6 +44,16 @@ dotnet  build generator-cli/generator-cli.sln
 ./generator-cli/bin/Debug/netcoreapp3.1/generator-cli  --output-directory generated --seed 100
 ```
 
+# Data Loading
+```
+cd python
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+python3 server-loader.py --files ../generated/t0
+```
+
+
 
 # Contributing
 
