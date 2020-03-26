@@ -37,6 +37,7 @@ namespace generator_cli
         /// <summary>Main entry-point for this application.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
         /// <param name="outputDirectory">    Directory to write files.</param>
+        /// <param name="dataDirectory">      Allow passing in of data directory.</param>
         /// <param name="outputFormat">       The output format, JSON or XML (default: JSON).</param>
         /// <param name="state">              State to restrict generation to (default: none).</param>
         /// <param name="postalCode">         Postal code to restrict generation to (default: none).</param>
@@ -52,6 +53,7 @@ namespace generator_cli
         /// <param name="maxBedsPerOrg">      The maximum number of beds per hospital (default: 1000).</param>
         public static void Main(
             string outputDirectory,
+            string dataDirectory = null,
             string outputFormat = "JSON",
             string state = null,
             string postalCode = null,
@@ -69,7 +71,7 @@ namespace generator_cli
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
             {
-                Console.WriteLine($"Invalid {nameof(outputDirectory)}: --output-directory is required");
+                throw new ArgumentNullException(nameof(outputDirectory));
             }
 
             if (string.IsNullOrEmpty(outputFormat))
@@ -108,7 +110,7 @@ namespace generator_cli
             _useLookup = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() != "GENERATE");
 
             // always need the geo manager
-            GeoManager.Init(seed);
+            GeoManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
 
             _bedConfigurations = BedConfiguration.StatesForParams(
                 string.Empty,
@@ -121,7 +123,7 @@ namespace generator_cli
             // only need hospital manager if we are using lookup (avoid loading otherwise)
             if (_useLookup)
             {
-                HospitalManager.Init(seed, minBedsPerOrg, maxBedsPerOrg);
+                HospitalManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
             }
 
             // create our organization records

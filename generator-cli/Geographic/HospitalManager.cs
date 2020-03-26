@@ -28,13 +28,15 @@ namespace generator_cli.Geographic
         private static int _maxBeds = 0;
 
         /// <summary>Initializes this object.</summary>
-        /// <param name="seed">   (Optional) The seed.</param>
-        /// <param name="minBeds">(Optional) The minimum beds.</param>
-        /// <param name="maxBeds">(Optional) The maximum beds.</param>
+        /// <param name="seed">         (Optional) The seed.</param>
+        /// <param name="minBeds">      (Optional) The minimum beds.</param>
+        /// <param name="maxBeds">      (Optional) The maximum beds.</param>
+        /// <param name="dataDirectory">(Optional) Pathname of the data directory.</param>
         public static void Init(
             int seed = 0,
             int minBeds = 10,
-            int maxBeds = 5000)
+            int maxBeds = 5000,
+            string dataDirectory = null)
         {
             if (seed == 0)
             {
@@ -48,7 +50,9 @@ namespace generator_cli.Geographic
             _minBeds = minBeds;
             _maxBeds = maxBeds;
 
-            string filename = Path.Combine(Directory.GetCurrentDirectory(), "data", "Hospitals.csv");
+            string filename = string.IsNullOrEmpty(dataDirectory) 
+                ? Path.Combine(Directory.GetCurrentDirectory(), "data", "Hospitals.csv")
+                : Path.Combine(dataDirectory, "Hospitals.csv");
 
             IEnumerable<HospitalRecord> raw;
 
