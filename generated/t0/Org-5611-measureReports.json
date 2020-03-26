@@ -6,28 +6,31 @@
     "value": "FHIR-1376"
   },
   "type": "collection",
-  "timestamp": "2020-03-25T21:34:47.5078045-05:00",
+  "timestamp": "2020-03-26T08:21:25.1247783-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/",
       "resource": {
         "resourceType": "MeasureReport",
         "text": {
-          "div": "HENRY FORD WEST BLOOMFIELD HOSPITAL Bed report for 2020-03-25T00:00:00-05:00 to 2020-03-25T00:00:00-05:00"
+          "div": "HENRY FORD WEST BLOOMFIELD HOSPITAL Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-25T21:34:47.5086024-05:00",
+        "date": "2020-03-26T08:21:25.1253902-05:00",
         "reporter": {
           "reference": "Organization/Org-5611"
         },
         "period": {
-          "start": "2020-03-25T00:00:00-05:00",
-          "end": "2020-03-25T00:00:00-05:00"
+          "start": "2020-03-26T00:00:00-05:00",
+          "end": "2020-03-26T00:00:00-05:00"
         },
         "group": [
           {
+            "measureScore": {
+              "value": 191
+            },
             "stratifier": [
               {
                 "stratum": [
@@ -83,11 +86,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -187,11 +190,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -291,11 +294,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -395,11 +398,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -499,11 +502,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -603,11 +606,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -707,11 +710,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -811,11 +814,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -915,11 +918,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -1019,11 +1022,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -1123,11 +1126,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -1227,11 +1230,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ICU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
                             }
-                          ],
-                          "text": "Adult ICU bed type."
+                          ]
                         }
                       },
                       {
@@ -1331,11 +1334,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -1435,11 +1438,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -1539,11 +1542,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -1643,11 +1646,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -1747,11 +1750,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -1851,11 +1854,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -1955,11 +1958,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -2059,11 +2062,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -2163,11 +2166,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -2267,11 +2270,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -2371,11 +2374,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -2475,11 +2478,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "ER"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
                             }
-                          ],
-                          "text": "Emergency Department beds."
+                          ]
                         }
                       },
                       {
@@ -2579,11 +2582,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -2683,11 +2686,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -2787,11 +2790,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -2891,11 +2894,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -2995,11 +2998,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3099,11 +3102,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3203,11 +3206,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3307,11 +3310,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3411,11 +3414,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3515,11 +3518,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3619,11 +3622,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
@@ -3723,11 +3726,11 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType",
-                              "code": "HU"
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
                             }
-                          ],
-                          "text": "Hospital beds."
+                          ]
                         }
                       },
                       {
