@@ -23,6 +23,8 @@ a) generate a new Group for each combination for each day (and put it in name?)
 b) reuse/update the same set of Groups each day (if the server supports this, and versioning)
 c) something else?
 
+Note that while MeasureReports take up more space when pretty-printed, they're quite similar in size to Group-based reports -- when looking at compacted JSON, the MeasureReport approach is actually smaller on-disk.
+
 ### Coming soon:
 
 Change datasets for time periods. Will allow for variation over time (hence the t0 folder). Upload scripts.
