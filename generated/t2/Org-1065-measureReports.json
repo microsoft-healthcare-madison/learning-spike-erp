@@ -6,7 +6,7 @@
     "value": "FHIR-2522"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T16:15:26.6350602-05:00",
+  "timestamp": "2020-03-26T16:46:06.5971327-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2523",
@@ -14,23 +14,26 @@
         "resourceType": "MeasureReport",
         "id": "FHIR-2523",
         "text": {
-          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON Bed report for 2020-03-25T00:00:00-05:00 to 2020-03-25T00:00:00-05:00"
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON Bed report for 2020-03-25 to 2020-03-25"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T16:15:26.6351889-05:00",
+        "date": "2020-03-26T16:46:06.5973251-05:00",
         "reporter": {
           "reference": "Organization/Org-1065"
         },
         "period": {
-          "start": "2020-03-25T00:00:00-05:00",
-          "end": "2020-03-25T00:00:00-05:00"
+          "start": "2020-03-25",
+          "end": "2020-03-25"
         },
         "group": [
           {
             "measureScore": {
-              "value": 10
+              "value": 10,
+              "unit": "Number",
+              "system": "http://unitsofmeasure.org",
+              "code": "Number"
             },
             "stratifier": [
               {
@@ -41,7 +44,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -60,7 +63,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -79,7 +82,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -98,7 +101,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -117,7 +120,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -125,7 +128,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -145,7 +148,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -164,7 +167,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -183,7 +186,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -202,7 +205,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -221,7 +224,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -229,7 +232,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -249,7 +252,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -268,7 +271,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -287,7 +290,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -306,7 +309,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -325,7 +328,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -333,7 +336,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -353,7 +356,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -372,7 +375,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -391,7 +394,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -410,7 +413,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -429,7 +432,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -437,7 +440,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -457,7 +460,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -476,7 +479,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -495,7 +498,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -514,7 +517,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -533,7 +536,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -541,7 +544,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -561,7 +564,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -580,7 +583,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -599,7 +602,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -618,7 +621,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -637,7 +640,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -645,7 +648,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -665,7 +668,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -684,7 +687,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -703,7 +706,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -722,7 +725,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -741,7 +744,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -749,7 +752,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]
@@ -769,7 +772,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.status"
                             }
                           ]
@@ -788,7 +791,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.operationalStatus"
                             }
                           ]
@@ -807,7 +810,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.type"
                             }
                           ]
@@ -826,7 +829,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.Feature"
                             }
                           ]
@@ -845,7 +848,7 @@
                         "code": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                               "code": "Location.partOf"
                             }
                           ]
@@ -853,7 +856,7 @@
                         "value": {
                           "coding": [
                             {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "system": "http://hl7.org/fhir/R4/StructureDefinition/Location/partOf",
                               "code": "Location/Loc-Org-1065"
                             }
                           ]

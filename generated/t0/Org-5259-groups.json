@@ -6,7 +6,7 @@
     "value": "FHIR-1164"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T16:15:25.2281722-05:00",
+  "timestamp": "2020-03-26T16:46:05.1306327-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1165",
@@ -36,7 +36,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -52,7 +52,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -68,7 +68,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -88,7 +88,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -108,7 +108,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -122,16 +122,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -164,7 +167,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -180,7 +183,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -196,7 +199,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -216,7 +219,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -236,7 +239,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -250,16 +253,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -292,7 +298,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -308,7 +314,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -324,7 +330,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -344,7 +350,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -364,7 +370,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -378,16 +384,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -420,7 +429,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -436,7 +445,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -452,7 +461,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -472,7 +481,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -492,7 +501,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -506,16 +515,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -548,7 +560,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -564,7 +576,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -580,7 +592,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -600,7 +612,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -620,7 +632,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -634,16 +646,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -676,7 +691,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -692,7 +707,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -708,7 +723,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -728,7 +743,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -748,7 +763,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -762,16 +777,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -804,7 +822,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -820,7 +838,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -836,7 +854,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -856,7 +874,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -876,7 +894,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -890,16 +908,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -932,7 +953,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -948,7 +969,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -964,7 +985,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -984,7 +1005,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1004,7 +1025,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1018,16 +1039,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1060,7 +1084,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1076,7 +1100,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1092,7 +1116,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1112,7 +1136,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1132,7 +1156,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1146,16 +1170,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1188,7 +1215,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1204,7 +1231,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1220,7 +1247,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1240,7 +1267,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1260,7 +1287,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1274,16 +1301,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1316,7 +1346,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1332,7 +1362,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1348,7 +1378,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1368,7 +1398,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1388,7 +1418,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1402,16 +1432,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1444,7 +1477,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1460,7 +1493,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1476,7 +1509,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1496,7 +1529,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1516,7 +1549,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1530,16 +1563,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1572,7 +1608,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1588,7 +1624,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1604,7 +1640,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1624,7 +1660,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1644,7 +1680,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1658,16 +1694,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1700,7 +1739,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1716,7 +1755,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1732,7 +1771,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1752,7 +1791,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1772,7 +1811,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1786,16 +1825,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1828,7 +1870,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1844,7 +1886,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1860,7 +1902,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -1880,7 +1922,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -1900,7 +1942,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -1914,16 +1956,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -1956,7 +2001,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -1972,7 +2017,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -1988,7 +2033,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2008,7 +2053,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2028,7 +2073,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2042,16 +2087,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2084,7 +2132,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2100,7 +2148,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2116,7 +2164,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2136,7 +2184,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2156,7 +2204,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2170,16 +2218,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2212,7 +2263,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2228,7 +2279,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2244,7 +2295,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2264,7 +2315,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2284,7 +2335,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2298,16 +2349,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2340,7 +2394,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2356,7 +2410,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2372,7 +2426,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2392,7 +2446,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2412,7 +2466,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2426,16 +2480,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2468,7 +2525,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2484,7 +2541,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2500,7 +2557,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2520,7 +2577,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2540,7 +2597,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2554,16 +2611,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2596,7 +2656,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2612,7 +2672,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2628,7 +2688,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2648,7 +2708,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2668,7 +2728,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2682,16 +2742,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2724,7 +2787,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2740,7 +2803,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2756,7 +2819,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2776,7 +2839,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2796,7 +2859,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2810,16 +2873,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2852,7 +2918,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2868,7 +2934,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -2884,7 +2950,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -2904,7 +2970,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -2924,7 +2990,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -2938,16 +3004,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -2980,7 +3049,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -2996,7 +3065,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3012,7 +3081,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3032,7 +3101,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3052,7 +3121,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3066,16 +3135,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3108,7 +3180,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3124,7 +3196,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3140,7 +3212,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3160,7 +3232,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3180,7 +3252,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3194,16 +3266,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3236,7 +3311,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3252,7 +3327,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3268,7 +3343,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3288,7 +3363,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3308,7 +3383,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3322,16 +3397,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3364,7 +3442,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3380,7 +3458,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3396,7 +3474,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3416,7 +3494,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3436,7 +3514,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3450,16 +3528,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3492,7 +3573,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3508,7 +3589,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3524,7 +3605,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3544,7 +3625,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3564,7 +3645,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3578,16 +3659,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3620,7 +3704,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3636,7 +3720,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3652,7 +3736,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3672,7 +3756,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3692,7 +3776,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3706,16 +3790,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3748,7 +3835,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3764,7 +3851,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3780,7 +3867,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3800,7 +3887,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3820,7 +3907,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3834,16 +3921,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -3876,7 +3966,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -3892,7 +3982,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -3908,7 +3998,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -3928,7 +4018,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -3948,7 +4038,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -3962,16 +4052,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -4004,7 +4097,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -4020,7 +4113,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -4036,7 +4129,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -4056,7 +4149,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -4076,7 +4169,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -4090,16 +4183,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -4132,7 +4228,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -4148,7 +4244,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -4164,7 +4260,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -4184,7 +4280,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -4204,7 +4300,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -4218,16 +4314,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }
@@ -4260,7 +4359,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.status"
                 }
               ]
@@ -4276,7 +4375,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.operationalStatus"
                 }
               ]
@@ -4292,7 +4391,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.type"
                 }
               ]
@@ -4312,7 +4411,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.Feature"
                 }
               ]
@@ -4332,7 +4431,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/Location",
                   "code": "Location.partOf"
                 }
               ]
@@ -4346,16 +4445,19 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Period"
+                  "system": "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                  "code": "MeasureReport.period"
                 }
               ]
             },
-            "valuePeriod": {
-              "start": "2020-03-23T00:00:00-05:00",
-              "end": "2020-03-23T00:00:00-05:00"
+            "valueCodeableConcept": {
+              "text": "This code is not used, but is required."
             },
-            "exclude": false
+            "exclude": false,
+            "period": {
+              "start": "2020-03-23",
+              "end": "2020-03-23"
+            }
           }
         ]
       }

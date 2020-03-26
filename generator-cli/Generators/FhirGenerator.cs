@@ -32,7 +32,10 @@ namespace generator_cli.Generators
         public const string RootLocationPrefix = "Loc-";
 
         /// <summary>The SANER-IG characteristic system.</summary>
-        private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/location-definitions";
+        private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/R4/StructureDefinition/Location";
+
+        /// <summary>The fake code text.</summary>
+        private const string _fakeCodeText = "This code is not used, but is required.";
 
         /// <summary>The random.</summary>
         private static Random _rand = new Random();
@@ -419,8 +422,12 @@ namespace generator_cli.Generators
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = ConceptForSaner(SanerCharacteristic.Period),
-                    Value = period,
+                    // Code = ConceptForSaner(SanerCharacteristic.Period),
+                    Code = new CodeableConcept(
+                        "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
+                        "MeasureReport.period"),
+                    Value = new CodeableConcept() { Text = _fakeCodeText, },
+                    Period = period,
                     Exclude = false,
                 },
             };

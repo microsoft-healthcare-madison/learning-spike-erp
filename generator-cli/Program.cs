@@ -160,8 +160,8 @@ namespace generator_cli
                     }
 
                     TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
-                    DateTimeOffset offset = new DateTimeOffset(DateTime.Now.Subtract(hoursToSubtract).Date);
-                    FhirDateTime dateTime = new FhirDateTime(offset);
+                    DateTime dt = DateTime.UtcNow.Subtract(hoursToSubtract);
+                    FhirDateTime dateTime = new FhirDateTime(dt.Year, dt.Month, dt.Day);
                     Period period = new Period(dateTime, dateTime);
 
                     WriteOrgBundle(orgId, dir);
