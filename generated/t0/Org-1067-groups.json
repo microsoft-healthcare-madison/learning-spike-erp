@@ -6,12 +6,15 @@
     "value": "FHIR-1369"
   },
   "type": "collection",
-  "timestamp": "2020-03-25T20:07:49.8815242-05:00",
+  "timestamp": "2020-03-25T21:04:14.8708261-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: ICU (NEGISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -25,7 +28,7 @@
         "name": "active-ICU-O-NEGISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -110,7 +113,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -121,6 +124,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: ICU (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -134,7 +140,7 @@
         "name": "active-ICU-U-OTHISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -219,7 +225,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -230,6 +236,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: ICU (NONISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -243,7 +252,7 @@
         "name": "active-ICU-O-NONISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -328,7 +337,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -339,6 +348,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: ICU (NONISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -352,7 +364,7 @@
         "name": "active-ICU-U-NONISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -437,7 +449,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -448,6 +460,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: ER (OTHISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -461,7 +476,7 @@
         "name": "active-ER-O-OTHISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -546,7 +561,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -557,6 +572,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: ER (OTHISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -570,7 +588,7 @@
         "name": "inactive-ER-C-OTHISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -655,7 +673,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -666,6 +684,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: HU (NEGISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -679,7 +700,7 @@
         "name": "suspended-HU-C-NEGISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -764,7 +785,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -775,6 +796,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: HU (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -788,7 +812,7 @@
         "name": "active-HU-U-OTHISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -873,7 +897,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }
@@ -884,6 +908,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HEALTHSOUTH REHABILITATION HOSPITAL OF ALEXANDRIA Beds of type: HU (NONISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -897,7 +924,7 @@
         "name": "inactive-HU-C-NONISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-1067"
+          "reference": "Organization/Org-1067"
         },
         "characteristic": [
           {
@@ -982,7 +1009,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-1067"
+              "reference": "Location/Loc-Org-1067"
             },
             "exclude": false
           }

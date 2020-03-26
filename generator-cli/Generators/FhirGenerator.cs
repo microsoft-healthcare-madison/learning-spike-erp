@@ -4,6 +4,7 @@
 // </copyright>
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,6 +16,9 @@ namespace generator_cli.Generators
     /// <summary>A ben generator.</summary>
     public abstract class FhirGenerator
     {
+        /// <summary>The measure report measurement.</summary>
+        public const string MeasureReportMeasurement = "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure";
+
         /// <summary>The internal system.</summary>
         public const string InternalSystem = "https://github.com/microsoft-healthcare-madison/learning-spike-erp/";
 
@@ -288,14 +292,14 @@ namespace generator_cli.Generators
         /// <param name="availabilityStatus">The availability status.</param>
         /// <param name="operationalStatus"> The operational status.</param>
         /// <param name="bedTypes">          List of types of the bed.</param>
-        /// <param name="managing">          The managing organization.</param>
+        /// <param name="org">          The managing organization.</param>
         /// <param name="parentLocation">    The parent location.</param>
         /// <returns>The bed.</returns>
         public static Location GenerateBed(
             string availabilityStatus,
             string operationalStatus,
             List<string> bedTypes,
-            Organization managing,
+            Organization org,
             Location parentLocation)
         {
             Location loc = new Location()
@@ -308,14 +312,14 @@ namespace generator_cli.Generators
                 PhysicalType = ConceptForPhysicalTypeBed(),
             };
 
-            if (managing != null)
+            if (org != null)
             {
-                loc.ManagingOrganization = new ResourceReference(managing.Id);
+                loc.ManagingOrganization = new ResourceReference($"{org.ResourceType}/{org.Id}");
             }
 
             if (parentLocation != null)
             {
-                loc.PartOf = new ResourceReference(parentLocation.Id);
+                loc.PartOf = new ResourceReference($"{loc.ResourceType}/{parentLocation.Id}");
             }
 
             return loc;
@@ -344,22 +348,22 @@ namespace generator_cli.Generators
 
         /// <summary>Generates a group.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
-        /// <param name="managingOrganization">The managing organization.</param>
-        /// <param name="parentLocation">      The parent location.</param>
-        /// <param name="name">                The name.</param>
-        /// <param name="bedConfig">           The bed configuration this group represents.</param>
-        /// <param name="bedCount">            Number of beds.</param>
+        /// <param name="org">           The managing organization.</param>
+        /// <param name="parentLocation">The parent location.</param>
+        /// <param name="name">          The name.</param>
+        /// <param name="bedConfig">     The bed configuration this group represents.</param>
+        /// <param name="bedCount">      Number of beds.</param>
         /// <returns>The group.</returns>
         public static Group GenerateGroup(
-            Organization managingOrganization,
+            Organization org,
             Location parentLocation,
             string name,
             BedConfiguration bedConfig,
             int bedCount)
         {
-            if (managingOrganization == null)
+            if (org == null)
             {
-                throw new ArgumentNullException(nameof(managingOrganization));
+                throw new ArgumentNullException(nameof(org));
             }
 
             if (parentLocation == null)
@@ -401,7 +405,7 @@ namespace generator_cli.Generators
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.Location),
-                    Value = new ResourceReference(parentLocation.Id),
+                    Value = new ResourceReference($"{parentLocation.ResourceType}/{parentLocation.Id}"),
                     Exclude = false,
                 },
             };
@@ -413,8 +417,115 @@ namespace generator_cli.Generators
                 Code = ConceptForPhysicalTypeBed(),
                 Name = name,
                 Quantity = bedCount,
-                ManagingEntity = new ResourceReference(managingOrganization.Id),
+                ManagingEntity = new ResourceReference($"{org.ResourceType}/{org.Id}"),
                 Characteristic = characteristics,
+                Text = new Narrative()
+                {
+                    Div = $"{org.Name} Beds of type: {bedConfig.Type} ({bedConfig.Feature})" +
+                        $" Flagged {bedConfig.Availability} & {bedConfig.Status}",
+                },
+            };
+        }
+
+        /// <summary>Generates a measure report.</summary>
+        /// <param name="org">           The organization.</param>
+        /// <param name="parentLocation">The parent location.</param>
+        /// <param name="period">        The period.</param>
+        /// <param name="bedsByConfig">  The beds by configuration.</param>
+        /// <returns>The measure report.</returns>
+        public static MeasureReport GenerateMeasureReport(
+            Organization org,
+            Location parentLocation,
+            Period period,
+            Dictionary<BedConfiguration, List<Location>> bedsByConfig)
+        {
+            if (org == null)
+            {
+                throw new ArgumentNullException(nameof(org));
+            }
+
+            if (parentLocation == null)
+            {
+                throw new ArgumentNullException(nameof(parentLocation));
+            }
+
+            if (period == null)
+            {
+                throw new ArgumentNullException(nameof(period));
+            }
+
+            if (bedsByConfig == null)
+            {
+                throw new ArgumentNullException(nameof(bedsByConfig));
+            }
+
+            List<MeasureReport.StratifierGroupComponent> stratums = new List<MeasureReport.StratifierGroupComponent>();
+
+            foreach (BedConfiguration bedConfig in bedsByConfig.Keys)
+            {
+                stratums.Add(new MeasureReport.StratifierGroupComponent()
+                {
+                    MeasureScore = new Quantity(bedsByConfig[bedConfig].Count, "Number"),
+                    Component = new List<MeasureReport.ComponentComponent>()
+                    {
+                        new MeasureReport.ComponentComponent()
+                        {
+                            Code = ConceptForSaner(SanerCharacteristic.Status),
+                            Value = ConceptForAvailabilityStatus(bedConfig.Availability),
+                        },
+                        new MeasureReport.ComponentComponent()
+                        {
+                            Code = ConceptForSaner(SanerCharacteristic.OperationalStatus),
+                            Value = ConceptForOperationalStatus(bedConfig.Status),
+                        },
+                        new MeasureReport.ComponentComponent()
+                        {
+                            Code = ConceptForSaner(SanerCharacteristic.Type),
+                            Value = ConceptForBedType(bedConfig.Type),
+                        },
+                        new MeasureReport.ComponentComponent()
+                        {
+                            Code = ConceptForSaner(SanerCharacteristic.Feature),
+                            Value = ConceptForBedFeature(bedConfig.Feature),
+                        },
+                        new MeasureReport.ComponentComponent()
+                        {
+                            Code = ConceptForSaner(SanerCharacteristic.Location),
+                            Value = new CodeableConcept(
+                                $"{_sanerCharacteristicSystem}/partOf",
+                                $"{parentLocation.ResourceType}/{parentLocation.Id}"),
+                        },
+                    },
+                });
+            }
+
+            MeasureReport.GroupComponent component = new MeasureReport.GroupComponent()
+            {
+                Stratifier = new List<MeasureReport.StratifierComponent>()
+                {
+                    new MeasureReport.StratifierComponent()
+                    {
+                        Stratum = stratums,
+                    },
+                },
+            };
+
+            return new MeasureReport()
+            {
+                Status = MeasureReport.MeasureReportStatus.Complete,
+                Type = MeasureReport.MeasureReportType.Summary,
+                Date = new FhirDateTime(new DateTimeOffset(DateTime.Now)).ToString(),
+                Period = period,
+                Measure = MeasureReportMeasurement,
+                Reporter = new ResourceReference($"{org.ResourceType}/{org.Id}"),
+                Group = new List<MeasureReport.GroupComponent>() { component },
+                Text = new Narrative()
+                {
+                    Div = $"{org.Name} Bed report for" +
+                        $" {period.Start.ToString(CultureInfo.InvariantCulture)}" +
+                        $" to" +
+                        $" {period.End.ToString(CultureInfo.InvariantCulture)}",
+                },
             };
         }
 
@@ -523,6 +634,35 @@ namespace generator_cli.Generators
             return null;
         }
 
+        /// <summary>Concept for availability status.</summary>
+        /// <param name="status">The status.</param>
+        /// <returns>A CodeableConcept.</returns>
+        private static CodeableConcept ConceptForAvailabilityStatus(string status)
+        {
+            switch (status)
+            {
+                case AvailabilityStatusActive:
+                    return new CodeableConcept(
+                        "http://hl7.org/fhir/location-status",
+                        "active",
+                        "The location is operational.");
+
+                case AvailabilityStatusSuspended:
+                    return new CodeableConcept(
+                        "http://hl7.org/fhir/location-status",
+                        "suspended",
+                        "The location is temporarily closed.");
+
+                case AvailabilityStatusInactive:
+                    return new CodeableConcept(
+                        "http://hl7.org/fhir/location-status",
+                        "inactive",
+                        "The location is no longer used.");
+            }
+
+            return null;
+        }
+
         /// <summary>Coding for status.</summary>
         /// <param name="status">The status.</param>
         /// <returns>A Coding.</returns>
@@ -556,6 +696,47 @@ namespace generator_cli.Generators
 
                 case OperationalStatusUnoccupied:
                     return new Coding(
+                        "http://terminology.hl7.org/CodeSystem/v2-0116",
+                        "U",
+                        "Unoccupied");
+            }
+
+            return null;
+        }
+
+        /// <summary>Concept for operational status.</summary>
+        /// <param name="status">The status.</param>
+        /// <returns>A CodeableConcept.</returns>
+        private static CodeableConcept ConceptForOperationalStatus(string status)
+        {
+            switch (status)
+            {
+                case OperationalStatusContaminated:
+                    return new CodeableConcept(
+                        "http://terminology.hl7.org/CodeSystem/v2-0116",
+                        "K",
+                        "Contaminated");
+
+                case OperationalStatusClosed:
+                    return new CodeableConcept(
+                        "http://terminology.hl7.org/CodeSystem/v2-0116",
+                        "C",
+                        "Closed");
+
+                case OperationalStatusHousekeeping:
+                    return new CodeableConcept(
+                        "http://terminology.hl7.org/CodeSystem/v2-0116",
+                        "H",
+                        "Housekeeping");
+
+                case OperationalStatusOccupied:
+                    return new CodeableConcept(
+                        "http://terminology.hl7.org/CodeSystem/v2-0116",
+                        "O",
+                        "Occupied");
+
+                case OperationalStatusUnoccupied:
+                    return new CodeableConcept(
                         "http://terminology.hl7.org/CodeSystem/v2-0116",
                         "U",
                         "Unoccupied");

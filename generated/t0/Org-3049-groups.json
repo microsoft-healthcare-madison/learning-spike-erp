@@ -6,12 +6,15 @@
     "value": "FHIR-1368"
   },
   "type": "collection",
-  "timestamp": "2020-03-25T20:07:49.8547402-05:00",
+  "timestamp": "2020-03-25T21:04:14.8395293-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NEGISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -25,7 +28,7 @@
         "name": "active-ICU-O-NEGISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -110,7 +113,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -121,6 +124,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NEGISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -134,7 +140,7 @@
         "name": "active-ICU-U-NEGISO",
         "quantity": 9,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -219,7 +225,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -230,6 +236,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NEGISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -243,7 +252,7 @@
         "name": "inactive-ICU-C-NEGISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -328,7 +337,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -339,6 +348,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NEGISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -352,7 +364,7 @@
         "name": "suspended-ICU-C-NEGISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -437,7 +449,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -448,6 +460,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (OTHISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -461,7 +476,7 @@
         "name": "active-ICU-O-OTHISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -546,7 +561,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -557,6 +572,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -570,7 +588,7 @@
         "name": "active-ICU-U-OTHISO",
         "quantity": 8,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -655,7 +673,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -666,6 +684,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (OTHISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -679,7 +700,7 @@
         "name": "inactive-ICU-C-OTHISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -764,7 +785,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -775,6 +796,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (OTHISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -788,7 +812,7 @@
         "name": "suspended-ICU-C-OTHISO",
         "quantity": 3,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -873,7 +897,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -884,6 +908,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NONISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -897,7 +924,7 @@
         "name": "active-ICU-O-NONISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -982,7 +1009,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -993,6 +1020,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NONISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1006,7 +1036,7 @@
         "name": "active-ICU-U-NONISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1091,7 +1121,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1102,6 +1132,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NONISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1115,7 +1148,7 @@
         "name": "inactive-ICU-C-NONISO",
         "quantity": 10,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1200,7 +1233,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1211,6 +1244,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ICU (NONISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1224,7 +1260,7 @@
         "name": "suspended-ICU-C-NONISO",
         "quantity": 10,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1309,7 +1345,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1320,6 +1356,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NEGISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1333,7 +1372,7 @@
         "name": "active-ER-O-NEGISO",
         "quantity": 11,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1418,7 +1457,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1429,6 +1468,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NEGISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1442,7 +1484,7 @@
         "name": "active-ER-U-NEGISO",
         "quantity": 9,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1527,7 +1569,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1538,6 +1580,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NEGISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1551,7 +1596,7 @@
         "name": "inactive-ER-C-NEGISO",
         "quantity": 8,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1636,7 +1681,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1647,6 +1692,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NEGISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1660,7 +1708,7 @@
         "name": "suspended-ER-C-NEGISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1745,7 +1793,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1756,6 +1804,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (OTHISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1769,7 +1820,7 @@
         "name": "active-ER-O-OTHISO",
         "quantity": 7,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1854,7 +1905,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1865,6 +1916,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1878,7 +1932,7 @@
         "name": "active-ER-U-OTHISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -1963,7 +2017,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -1974,6 +2028,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (OTHISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1987,7 +2044,7 @@
         "name": "inactive-ER-C-OTHISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2072,7 +2129,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2083,6 +2140,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (OTHISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2096,7 +2156,7 @@
         "name": "suspended-ER-C-OTHISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2181,7 +2241,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2192,6 +2252,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NONISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2205,7 +2268,7 @@
         "name": "active-ER-O-NONISO",
         "quantity": 5,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2290,7 +2353,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2301,6 +2364,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NONISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2314,7 +2380,7 @@
         "name": "active-ER-U-NONISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2399,7 +2465,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2410,6 +2476,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NONISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2423,7 +2492,7 @@
         "name": "inactive-ER-C-NONISO",
         "quantity": 8,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2508,7 +2577,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2519,6 +2588,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: ER (NONISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2532,7 +2604,7 @@
         "name": "suspended-ER-C-NONISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2617,7 +2689,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2628,6 +2700,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NEGISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2641,7 +2716,7 @@
         "name": "active-HU-O-NEGISO",
         "quantity": 7,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2726,7 +2801,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2737,6 +2812,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NEGISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2750,7 +2828,7 @@
         "name": "active-HU-U-NEGISO",
         "quantity": 3,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2835,7 +2913,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2846,6 +2924,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NEGISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2859,7 +2940,7 @@
         "name": "inactive-HU-C-NEGISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -2944,7 +3025,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -2955,6 +3036,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NEGISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -2968,7 +3052,7 @@
         "name": "suspended-HU-C-NEGISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3053,7 +3137,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3064,6 +3148,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (OTHISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3077,7 +3164,7 @@
         "name": "active-HU-O-OTHISO",
         "quantity": 8,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3162,7 +3249,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3173,6 +3260,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3186,7 +3276,7 @@
         "name": "active-HU-U-OTHISO",
         "quantity": 7,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3271,7 +3361,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3282,6 +3372,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (OTHISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3295,7 +3388,7 @@
         "name": "inactive-HU-C-OTHISO",
         "quantity": 8,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3380,7 +3473,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3391,6 +3484,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (OTHISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3404,7 +3500,7 @@
         "name": "suspended-HU-C-OTHISO",
         "quantity": 4,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3489,7 +3585,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3500,6 +3596,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NONISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3513,7 +3612,7 @@
         "name": "active-HU-O-NONISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3598,7 +3697,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3609,6 +3708,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NONISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3622,7 +3724,7 @@
         "name": "active-HU-U-NONISO",
         "quantity": 6,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3707,7 +3809,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3718,6 +3820,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NONISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3731,7 +3836,7 @@
         "name": "inactive-HU-C-NONISO",
         "quantity": 8,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3816,7 +3921,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }
@@ -3827,6 +3932,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "HOSPITAL FOR SPECIAL CARE Beds of type: HU (NONISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -3840,7 +3948,7 @@
         "name": "suspended-HU-C-NONISO",
         "quantity": 5,
         "managingEntity": {
-          "reference": "Org-3049"
+          "reference": "Organization/Org-3049"
         },
         "characteristic": [
           {
@@ -3925,7 +4033,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-3049"
+              "reference": "Location/Loc-Org-3049"
             },
             "exclude": false
           }

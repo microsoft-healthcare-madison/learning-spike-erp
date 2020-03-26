@@ -133,6 +133,69 @@ namespace generator_cli
             WriteBedBundles(Path.Combine(outputDirectory, "t0"));
 
             WriteGroupBundles(Path.Combine(outputDirectory, "t0"));
+
+            WriteMeasureReportBundles(Path.Combine(outputDirectory, "t0"));
+        }
+
+        /// <summary>Writes a measure report bundles.</summary>
+        /// <param name="dir">The dir.</param>
+        private static void WriteMeasureReportBundles(string dir)
+        {
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
+            foreach (string orgId in _orgById.Keys)
+            {
+                WriteMeasureReportBundle(orgId, dir);
+            }
+        }
+
+        /// <summary>Writes a measure report bundle.</summary>
+        /// <param name="orgId">The organization.</param>
+        /// <param name="dir">  The dir.</param>
+        private static void WriteMeasureReportBundle(
+            string orgId,
+            string dir)
+        {
+            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForMeasureReports}{_extension}");
+
+            string bundleId = FhirGenerator.NextId;
+
+            Bundle bundle = new Bundle()
+            {
+                Id = bundleId,
+                Identifier = FhirGenerator.IdentifierForId(bundleId),
+                Type = Bundle.BundleType.Collection,
+                Timestamp = new DateTimeOffset(DateTime.Now),
+                Meta = new Meta(),
+            };
+
+            bundle.Entry = new List<Bundle.EntryComponent>();
+
+            FhirDateTime dateTime = new FhirDateTime(new DateTimeOffset(DateTime.Now.Date));
+
+            Period period = new Period(dateTime, dateTime);
+
+            MeasureReport report = FhirGenerator.GenerateMeasureReport(
+                _orgById[orgId],
+                _rootLocationByOrgId[orgId],
+                period,
+                _bedsByOrgId[orgId].BedsByConfig);
+
+            bundle.AddResourceEntry(
+                report,
+                $"{FhirGenerator.InternalSystem}{report.ResourceType}/{report.Id}");
+
+            if (_useJson)
+            {
+                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
+            }
+            else
+            {
+                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
+            }
         }
 
         /// <summary>Writes bed group bundles.</summary>

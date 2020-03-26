@@ -6,12 +6,15 @@
     "value": "FHIR-1361"
   },
   "type": "collection",
-  "timestamp": "2020-03-25T20:07:49.7013361-05:00",
+  "timestamp": "2020-03-25T21:04:14.6855376-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: ICU (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -25,7 +28,7 @@
         "name": "active-ICU-U-OTHISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -110,7 +113,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -121,6 +124,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: ER (NEGISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -134,7 +140,7 @@
         "name": "active-ER-O-NEGISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -219,7 +225,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -230,6 +236,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: ER (NEGISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -243,7 +252,7 @@
         "name": "active-ER-U-NEGISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -328,7 +337,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -339,6 +348,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: ER (OTHISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -352,7 +364,7 @@
         "name": "active-ER-U-OTHISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -437,7 +449,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -448,6 +460,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: ER (OTHISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -461,7 +476,7 @@
         "name": "suspended-ER-C-OTHISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -546,7 +561,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -557,6 +572,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: ER (NONISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -570,7 +588,7 @@
         "name": "active-ER-U-NONISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -655,7 +673,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -666,6 +684,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: HU (NEGISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -679,7 +700,7 @@
         "name": "active-HU-O-NEGISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -764,7 +785,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -775,6 +796,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: HU (NEGISO) Flagged active & U"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -788,7 +812,7 @@
         "name": "active-HU-U-NEGISO",
         "quantity": 1,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -873,7 +897,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -884,6 +908,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: HU (NONISO) Flagged active & O"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -897,7 +924,7 @@
         "name": "active-HU-O-NONISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -982,7 +1009,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -993,6 +1020,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: HU (NONISO) Flagged inactive & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1006,7 +1036,7 @@
         "name": "inactive-HU-C-NONISO",
         "quantity": 3,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -1091,7 +1121,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }
@@ -1102,6 +1132,9 @@
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/",
       "resource": {
         "resourceType": "Group",
+        "text": {
+          "div": "THAYER COUNTY HEALTH SERVICES Beds of type: HU (NONISO) Flagged suspended & C"
+        },
         "type": "device",
         "actual": true,
         "code": {
@@ -1115,7 +1148,7 @@
         "name": "suspended-HU-C-NONISO",
         "quantity": 2,
         "managingEntity": {
-          "reference": "Org-5764"
+          "reference": "Organization/Org-5764"
         },
         "characteristic": [
           {
@@ -1200,7 +1233,7 @@
               ]
             },
             "valueReference": {
-              "reference": "Loc-Org-5764"
+              "reference": "Location/Loc-Org-5764"
             },
             "exclude": false
           }

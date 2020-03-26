@@ -72,6 +72,10 @@ namespace generator_cli.Generators
         /// <value>The identifier of the organization.</value>
         public string OrgId { get; }
 
+        /// <summary>Gets the beds by configuration.</summary>
+        /// <value>The beds by configuration.</value>
+        public Dictionary<BedConfiguration, List<Location>> BedsByConfig => _bedsByConfig;
+
         /// <summary>Updates the beds for time step described by changeFactor.</summary>
         /// <param name="changeFactor">(Optional) The change factor.</param>
         public void UpdateBedStatusForTimeStep(
