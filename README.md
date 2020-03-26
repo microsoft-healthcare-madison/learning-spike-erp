@@ -25,7 +25,11 @@ a) generate a new Group for each combination for each day (and put it in name?)
 b) reuse/update the same set of Groups each day (if the server supports this, and versioning)
 c) something else?
 
-Note that while MeasureReports take up more space when pretty-printed, they're quite similar in size to Group-based reports -- when looking at compacted JSON, the MeasureReport approach is actually smaller on-disk.
+
+#### Payload size / complexity
+
+The MeasureReport- and Group-based approaches are are similar in terms of line count and file size. When pretty-printed, MeasureReport bundles are shorte in line-count but ~25% larger on-disk; in compacted JSON, MeasureReport bundles are slightly smaller on-disk.
+
 
 ### Coming soon:
 
