@@ -37,7 +37,7 @@ Change datasets for time periods. Will allow for variation over time (hence the 
 git clone https://github.com/microsoft-healthcare-madison/learning-spike-erp
 cd learning-spike-erp
 dotnet  build generator-cli/generator-cli.sln
-./generator-cli/bin/Debug/netcoreapp3.1/generator-cli  --output-directory generated --seed 0
+./generator-cli/bin/Debug/netcoreapp3.1/generator-cli  --output-directory generated --seed 100
 ```
 
 
