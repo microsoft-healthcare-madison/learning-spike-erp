@@ -51,6 +51,7 @@ namespace generator_cli
         /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: O|U).</param>
         /// <param name="minBedsPerOrg">      The minimum number of beds per hospital (default: 10).</param>
         /// <param name="maxBedsPerOrg">      The maximum number of beds per hospital (default: 1000).</param>
+        /// <param name="changeFactor">       The amount of change in bed state per step (default 0.2).</param>
         public static void Main(
             string outputDirectory,
             string dataDirectory = null,
@@ -58,7 +59,7 @@ namespace generator_cli
             string state = null,
             string postalCode = null,
             int facilityCount = 10,
-            int timeSteps = 10,
+            int timeSteps = 2,
             int timePeriodHours = 24,
             int seed = 0,
             string orgSource = "csv",
@@ -66,7 +67,8 @@ namespace generator_cli
             string bedTypes = "ICU|ER|HU",
             string operationalStatuses = "O|U",
             int minBedsPerOrg = 10,
-            int maxBedsPerOrg = 1000)
+            int maxBedsPerOrg = 1000,
+            double changeFactor = 0.2)
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -126,22 +128,56 @@ namespace generator_cli
                 HospitalManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
             }
 
+            string dir;
+
+            // create our time step directories
+            for (int step = 0; step < timeSteps; step++)
+            {
+                dir = Path.Combine(outputDirectory, $"t{step}");
+
+                if (!Directory.Exists(dir))
+                {
+                    Directory.CreateDirectory(dir);
+                }
+            }
+
             // create our organization records
             CreateOrgs(facilityCount, state, postalCode);
-            CreateOrgBeds();
 
-            WriteOrgBundles(Path.Combine(outputDirectory, "t0"));
+            // iterate over the orgs generating their data
+            foreach (string orgId in _orgById.Keys)
+            {
+                CreateOrgBed(orgId);
 
-            WriteBedBundles(Path.Combine(outputDirectory, "t0"));
+                // loop over timeSteps
+                for (int step = 0; step < timeSteps; step++)
+                {
+                    dir = Path.Combine(outputDirectory, $"t{step}");
 
-            WriteGroupBundles(Path.Combine(outputDirectory, "t0"));
+                    if (step != 0)
+                    {
+                        _bedsByOrgId[orgId].UpdateBedStatusForTimeStep(changeFactor);
+                    }
 
-            WriteMeasureReportBundles(Path.Combine(outputDirectory, "t0"));
+                    TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
+                    DateTimeOffset offset = new DateTimeOffset(DateTime.Now.Subtract(hoursToSubtract).Date);
+                    FhirDateTime dateTime = new FhirDateTime(offset);
+                    Period period = new Period(dateTime, dateTime);
+
+                    WriteOrgBundle(orgId, dir);
+                    WriteBedBundle(orgId, dir);
+                    WriteGroupBundle(orgId, dir, period);
+                    WriteMeasureReportBundle(orgId, dir, period);
+                }
+
+                DeleteOrgBed(orgId);
+            }
         }
 
         /// <summary>Writes a measure report bundles.</summary>
-        /// <param name="dir">The dir.</param>
-        private static void WriteMeasureReportBundles(string dir)
+        /// <param name="dir">   The dir.</param>
+        /// <param name="period">The period.</param>
+        private static void WriteMeasureReportBundles(string dir, Period period)
         {
             if (!Directory.Exists(dir))
             {
@@ -150,16 +186,18 @@ namespace generator_cli
 
             foreach (string orgId in _orgById.Keys)
             {
-                WriteMeasureReportBundle(orgId, dir);
+                WriteMeasureReportBundle(orgId, dir, period);
             }
         }
 
         /// <summary>Writes a measure report bundle.</summary>
-        /// <param name="orgId">The organization.</param>
-        /// <param name="dir">  The dir.</param>
+        /// <param name="orgId"> The organization.</param>
+        /// <param name="dir">   The dir.</param>
+        /// <param name="period">The period.</param>
         private static void WriteMeasureReportBundle(
             string orgId,
-            string dir)
+            string dir,
+            Period period)
         {
             string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForMeasureReports}{_extension}");
 
@@ -175,10 +213,6 @@ namespace generator_cli
             };
 
             bundle.Entry = new List<Bundle.EntryComponent>();
-
-            FhirDateTime dateTime = new FhirDateTime(new DateTimeOffset(DateTime.Now.Date));
-
-            Period period = new Period(dateTime, dateTime);
 
             MeasureReport report = FhirGenerator.GenerateMeasureReport(
                 _orgById[orgId],
@@ -201,8 +235,9 @@ namespace generator_cli
         }
 
         /// <summary>Writes bed group bundles.</summary>
-        /// <param name="dir">The dir.</param>
-        private static void WriteGroupBundles(string dir)
+        /// <param name="dir">   The dir.</param>
+        /// <param name="period">The period.</param>
+        private static void WriteGroupBundles(string dir, Period period)
         {
             if (!Directory.Exists(dir))
             {
@@ -211,16 +246,18 @@ namespace generator_cli
 
             foreach (string orgId in _orgById.Keys)
             {
-                WriteGroupBundle(orgId, dir);
+                WriteGroupBundle(orgId, dir, period);
             }
         }
 
         /// <summary>Writes a group bundle.</summary>
-        /// <param name="orgId">The organization.</param>
-        /// <param name="dir">  The dir.</param>
+        /// <param name="orgId"> The organization.</param>
+        /// <param name="dir">   The dir.</param>
+        /// <param name="period">The period.</param>
         private static void WriteGroupBundle(
             string orgId,
-            string dir)
+            string dir,
+            Period period)
         {
             string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForGroups}{_extension}");
 
@@ -252,7 +289,8 @@ namespace generator_cli
                     _rootLocationByOrgId[orgId],
                     $"{config.ToString()}",
                     config,
-                    bedCount);
+                    bedCount,
+                    period);
 
                 bundle.AddResourceEntry(
                     group,
@@ -274,22 +312,36 @@ namespace generator_cli
         {
             foreach (string orgId in _orgById.Keys)
             {
-                int initialBedCount;
-
-                if (_useLookup)
-                {
-                    initialBedCount = HospitalManager.BedsForHospital(orgId);
-                }
-                else
-                {
-                    initialBedCount = GeoManager.BedsForHospital();
-                }
-
-                _bedsByOrgId.Add(orgId, new OrgBeds(
-                    _orgById[orgId],
-                    _rootLocationByOrgId[orgId],
-                    initialBedCount));
+                CreateOrgBed(orgId);
             }
+        }
+
+        /// <summary>Creates organization bed.</summary>
+        /// <param name="orgId">The organization.</param>
+        private static void CreateOrgBed(string orgId)
+        {
+            int initialBedCount;
+
+            if (_useLookup)
+            {
+                initialBedCount = HospitalManager.BedsForHospital(orgId);
+            }
+            else
+            {
+                initialBedCount = GeoManager.BedsForHospital();
+            }
+
+            _bedsByOrgId.Add(orgId, new OrgBeds(
+                _orgById[orgId],
+                _rootLocationByOrgId[orgId],
+                initialBedCount));
+        }
+
+        /// <summary>Deletes the organization bed described by orgId.</summary>
+        /// <param name="orgId">The organization.</param>
+        private static void DeleteOrgBed(string orgId)
+        {
+            _bedsByOrgId.Remove(orgId);
         }
 
         /// <summary>Writes a bed bundles.</summary>

@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1875",
+  "id": "FHIR-1164",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1875"
+    "value": "FHIR-1164"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:22.8727124-05:00",
+  "timestamp": "2020-03-26T16:15:25.2281722-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1876",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1165",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1876",
+        "id": "FHIR-1165",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NEGISO) Flagged active & O"
         },
@@ -27,7 +27,7 @@
           ]
         },
         "name": "active-ICU-O-NEGISO",
-        "quantity": 1,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -117,15 +117,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1877",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1166",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1877",
+        "id": "FHIR-1166",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NEGISO) Flagged active & U"
         },
@@ -230,15 +245,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1878",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1167",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1878",
+        "id": "FHIR-1167",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NEGISO) Flagged inactive & C"
         },
@@ -253,7 +283,7 @@
           ]
         },
         "name": "inactive-ICU-C-NEGISO",
-        "quantity": 6,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -343,15 +373,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1879",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1168",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1879",
+        "id": "FHIR-1168",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NEGISO) Flagged suspended & C"
         },
@@ -366,7 +411,7 @@
           ]
         },
         "name": "suspended-ICU-C-NEGISO",
-        "quantity": 1,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -456,15 +501,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1880",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1169",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1880",
+        "id": "FHIR-1169",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (OTHISO) Flagged active & O"
         },
@@ -479,7 +539,7 @@
           ]
         },
         "name": "active-ICU-O-OTHISO",
-        "quantity": 2,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -569,15 +629,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1881",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1170",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1881",
+        "id": "FHIR-1170",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (OTHISO) Flagged active & U"
         },
@@ -592,7 +667,7 @@
           ]
         },
         "name": "active-ICU-U-OTHISO",
-        "quantity": 1,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -682,15 +757,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1882",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1171",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1882",
+        "id": "FHIR-1171",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (OTHISO) Flagged inactive & C"
         },
@@ -705,7 +795,7 @@
           ]
         },
         "name": "inactive-ICU-C-OTHISO",
-        "quantity": 1,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -795,15 +885,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1883",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1172",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1883",
+        "id": "FHIR-1172",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (OTHISO) Flagged suspended & C"
         },
@@ -908,15 +1013,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1884",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1173",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1884",
+        "id": "FHIR-1173",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NONISO) Flagged active & O"
         },
@@ -931,7 +1051,7 @@
           ]
         },
         "name": "active-ICU-O-NONISO",
-        "quantity": 1,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -1021,117 +1141,19 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1885",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1885",
-        "text": {
-          "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NONISO) Flagged active & U"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-U-NONISO",
-        "quantity": 2,
-        "managingEntity": {
-          "reference": "Organization/Org-5259"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
           },
           {
             "code": {
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
+                  "code": "Period"
                 }
               ]
             },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
-                }
-              ],
-              "text": "Non-isolating unit."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-5259"
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }
@@ -1139,10 +1161,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1886",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1174",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1886",
+        "id": "FHIR-1174",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NONISO) Flagged inactive & C"
         },
@@ -1157,7 +1179,7 @@
           ]
         },
         "name": "inactive-ICU-C-NONISO",
-        "quantity": 3,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -1247,15 +1269,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1887",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1175",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1887",
+        "id": "FHIR-1175",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ICU (NONISO) Flagged suspended & C"
         },
@@ -1360,15 +1397,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1888",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1176",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1888",
+        "id": "FHIR-1176",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NEGISO) Flagged active & O"
         },
@@ -1383,7 +1435,7 @@
           ]
         },
         "name": "active-ER-O-NEGISO",
-        "quantity": 4,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -1473,15 +1525,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1889",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1177",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1889",
+        "id": "FHIR-1177",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NEGISO) Flagged active & U"
         },
@@ -1586,15 +1653,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1890",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1178",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1890",
+        "id": "FHIR-1178",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NEGISO) Flagged inactive & C"
         },
@@ -1609,7 +1691,7 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 1,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -1699,15 +1781,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1891",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1179",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1891",
+        "id": "FHIR-1179",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NEGISO) Flagged suspended & C"
         },
@@ -1722,7 +1819,7 @@
           ]
         },
         "name": "suspended-ER-C-NEGISO",
-        "quantity": 1,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -1812,15 +1909,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1892",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1180",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1892",
+        "id": "FHIR-1180",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (OTHISO) Flagged active & O"
         },
@@ -1925,15 +2037,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1893",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1181",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1893",
+        "id": "FHIR-1181",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (OTHISO) Flagged active & U"
         },
@@ -1948,7 +2075,7 @@
           ]
         },
         "name": "active-ER-U-OTHISO",
-        "quantity": 4,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2038,15 +2165,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1894",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1182",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1894",
+        "id": "FHIR-1182",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (OTHISO) Flagged inactive & C"
         },
@@ -2061,7 +2203,7 @@
           ]
         },
         "name": "inactive-ER-C-OTHISO",
-        "quantity": 2,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2151,15 +2293,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1895",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1183",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1895",
+        "id": "FHIR-1183",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (OTHISO) Flagged suspended & C"
         },
@@ -2174,7 +2331,7 @@
           ]
         },
         "name": "suspended-ER-C-OTHISO",
-        "quantity": 2,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2264,15 +2421,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1896",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1184",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1896",
+        "id": "FHIR-1184",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NONISO) Flagged active & O"
         },
@@ -2287,7 +2459,7 @@
           ]
         },
         "name": "active-ER-O-NONISO",
-        "quantity": 3,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2377,15 +2549,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1897",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1185",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1897",
+        "id": "FHIR-1185",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NONISO) Flagged active & U"
         },
@@ -2400,7 +2587,7 @@
           ]
         },
         "name": "active-ER-U-NONISO",
-        "quantity": 5,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2490,15 +2677,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1898",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1186",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1898",
+        "id": "FHIR-1186",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NONISO) Flagged inactive & C"
         },
@@ -2513,7 +2715,7 @@
           ]
         },
         "name": "inactive-ER-C-NONISO",
-        "quantity": 1,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2603,15 +2805,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1899",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1187",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1899",
+        "id": "FHIR-1187",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: ER (NONISO) Flagged suspended & C"
         },
@@ -2626,7 +2843,7 @@
           ]
         },
         "name": "suspended-ER-C-NONISO",
-        "quantity": 6,
+        "quantity": 7,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2716,15 +2933,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1900",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1188",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1900",
+        "id": "FHIR-1188",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NEGISO) Flagged active & O"
         },
@@ -2739,7 +2971,7 @@
           ]
         },
         "name": "active-HU-O-NEGISO",
-        "quantity": 4,
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -2829,15 +3061,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1901",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1189",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1901",
+        "id": "FHIR-1189",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NEGISO) Flagged active & U"
         },
@@ -2942,15 +3189,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1902",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1190",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1902",
+        "id": "FHIR-1190",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NEGISO) Flagged inactive & C"
         },
@@ -3055,15 +3317,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1903",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1191",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1903",
+        "id": "FHIR-1191",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NEGISO) Flagged suspended & C"
         },
@@ -3078,7 +3355,7 @@
           ]
         },
         "name": "suspended-HU-C-NEGISO",
-        "quantity": 1,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -3168,15 +3445,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1904",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1192",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1904",
+        "id": "FHIR-1192",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (OTHISO) Flagged active & O"
         },
@@ -3191,7 +3483,7 @@
           ]
         },
         "name": "active-HU-O-OTHISO",
-        "quantity": 2,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -3281,117 +3573,19 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1905",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-1905",
-        "text": {
-          "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (OTHISO) Flagged active & U"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-HU-U-OTHISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-5259"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
           },
           {
             "code": {
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
+                  "code": "Period"
                 }
               ]
             },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "HU",
-                  "display": "Hospital unit."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-5259"
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }
@@ -3399,10 +3593,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1906",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1193",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1906",
+        "id": "FHIR-1193",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (OTHISO) Flagged inactive & C"
         },
@@ -3417,7 +3611,7 @@
           ]
         },
         "name": "inactive-HU-C-OTHISO",
-        "quantity": 8,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -3507,15 +3701,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1907",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1194",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1907",
+        "id": "FHIR-1194",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (OTHISO) Flagged suspended & C"
         },
@@ -3530,7 +3739,7 @@
           ]
         },
         "name": "suspended-HU-C-OTHISO",
-        "quantity": 6,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -3620,15 +3829,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1908",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1195",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1908",
+        "id": "FHIR-1195",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NONISO) Flagged active & O"
         },
@@ -3733,15 +3957,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1909",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1196",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1909",
+        "id": "FHIR-1196",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NONISO) Flagged active & U"
         },
@@ -3756,7 +3995,7 @@
           ]
         },
         "name": "active-HU-U-NONISO",
-        "quantity": 6,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -3846,15 +4085,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1910",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1197",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1910",
+        "id": "FHIR-1197",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NONISO) Flagged inactive & C"
         },
@@ -3959,15 +4213,30 @@
               "reference": "Location/Loc-Org-5259"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1911",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-1198",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-1911",
+        "id": "FHIR-1198",
         "text": {
           "div": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL Beds of type: HU (NONISO) Flagged suspended & C"
         },
@@ -3982,7 +4251,7 @@
           ]
         },
         "name": "suspended-HU-C-NONISO",
-        "quantity": 4,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-5259"
         },
@@ -4070,6 +4339,21 @@
             },
             "valueReference": {
               "reference": "Location/Loc-Org-5259"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }

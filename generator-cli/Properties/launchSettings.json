@@ -2,7 +2,11 @@
   "profiles": {
     "generator-cli": {
       "commandName": "Project",
-      "commandLineArgs": "--output-directory ..\\..\\..\\..\\generated --seed 100 --output-format JSON --facility-count 10"
+      "commandLineArgs": "--output-directory ..\\..\\..\\..\\generated --seed 100 --output-format JSON --facility-count 10 --time-steps 3"
+    },
+    "large-export": {
+      "commandName": "Project",
+      "commandLineArgs": "--output-directory e:\\fhir-json --seed 100 --output-format JSON --facility-count 1000"
     }
   }
 }

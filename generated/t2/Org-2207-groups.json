@@ -1,0 +1,4620 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-526",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-526"
+  },
+  "type": "collection",
+  "timestamp": "2020-03-26T16:15:24.7024585-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-527",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-527",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-NEGISO",
+        "quantity": 14,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-528",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-528",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-NEGISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-529",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-529",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-NEGISO",
+        "quantity": 5,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-530",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-530",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-NEGISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-531",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-531",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-OTHISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-532",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-532",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-OTHISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-533",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-533",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-OTHISO",
+        "quantity": 6,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-534",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-534",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-OTHISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-535",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-535",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-NONISO",
+        "quantity": 6,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-536",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-536",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-NONISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-537",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-537",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-NONISO",
+        "quantity": 4,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-538",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-538",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ICU (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-NONISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-539",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-539",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-NEGISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-540",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-540",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-NEGISO",
+        "quantity": 15,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-541",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-541",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-NEGISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-542",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-542",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-NEGISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-543",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-543",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-OTHISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-544",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-544",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-OTHISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-545",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-545",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-OTHISO",
+        "quantity": 6,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-546",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-546",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-OTHISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-547",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-547",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-O-NONISO",
+        "quantity": 7,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-548",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-548",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-NONISO",
+        "quantity": 9,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-549",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-549",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ER-C-NONISO",
+        "quantity": 7,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-550",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-550",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: ER (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ER-C-NONISO",
+        "quantity": 14,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-551",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-551",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-NEGISO",
+        "quantity": 7,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-552",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-552",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-NEGISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-553",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-553",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-NEGISO",
+        "quantity": 15,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-554",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-554",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-NEGISO",
+        "quantity": 9,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-555",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-555",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-OTHISO",
+        "quantity": 16,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-556",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-556",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-OTHISO",
+        "quantity": 15,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-557",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-557",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-OTHISO",
+        "quantity": 7,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-558",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-558",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-OTHISO",
+        "quantity": 11,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-559",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-559",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-O-NONISO",
+        "quantity": 8,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-560",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-560",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-HU-U-NONISO",
+        "quantity": 9,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-561",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-561",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-NONISO",
+        "quantity": 10,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-562",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-562",
+        "text": {
+          "div": "FRYE REGIONAL MEDICAL CENTER Beds of type: HU (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-NONISO",
+        "quantity": 13,
+        "managingEntity": {
+          "reference": "Organization/Org-2207"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2207"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-25T00:00:00-05:00",
+              "end": "2020-03-25T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    }
+  ]
+}

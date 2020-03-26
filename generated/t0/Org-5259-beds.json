@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-1779",
+  "id": "FHIR-1163",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-1779"
+    "value": "FHIR-1163"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:22.437421-05:00",
+  "timestamp": "2020-03-26T16:15:25.1759321-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-795",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1088",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-795",
+        "id": "FHIR-1088",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -48,439 +48,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-775",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1093",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-775",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-827",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-827",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-833",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-833",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-837",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-837",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-744",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-744",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-747",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-747",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-751",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-751",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-799",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-799",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-805",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-805",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-825",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-825",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-809",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-809",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-754",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-754",
+        "id": "FHIR-1093",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -516,10 +87,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-778",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1128",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-778",
+        "id": "FHIR-1128",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -555,400 +126,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-767",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1150",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-767",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-850",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-850",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-756",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-756",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-792",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-792",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-806",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-806",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-823",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-823",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-842",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-842",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-845",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-845",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-847",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-847",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-853",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-853",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-820",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-820",
+        "id": "FHIR-1150",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -984,10 +165,49 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-844",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1160",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-844",
+        "id": "FHIR-1160",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1082",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1082",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1023,10 +243,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-852",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1098",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-852",
+        "id": "FHIR-1098",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1062,10 +282,88 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-758",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1106",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-758",
+        "id": "FHIR-1106",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1124",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1124",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1127",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1127",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1101,10 +399,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-779",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1135",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-779",
+        "id": "FHIR-1135",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1140,49 +438,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-802",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1072",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-802",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ICU",
-                "display": "Adult ICU bed type."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-748",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-748",
+        "id": "FHIR-1072",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1218,10 +477,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-830",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1151",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-830",
+        "id": "FHIR-1151",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1257,10 +516,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-836",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1159",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-836",
+        "id": "FHIR-1159",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1296,10 +555,400 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-846",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1051",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-846",
+        "id": "FHIR-1051",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1057",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1057",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1092",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1092",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1048",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1048",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1137",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1137",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1147",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1147",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1155",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1155",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1053",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1053",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1060",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1060",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1154",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1154",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1052",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1052",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1335,10 +984,673 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-783",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1083",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-783",
+        "id": "FHIR-1083",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1086",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1086",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1090",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1090",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1091",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1091",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1114",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1114",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1130",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1130",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1142",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1142",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1054",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1054",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1069",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1069",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1097",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1097",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1111",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1111",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "O",
+          "display": "Occupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1116",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1116",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1134",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1134",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1095",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1095",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1109",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1109",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1115",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1115",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1152",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1152",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ICU",
+                "display": "Adult ICU bed type."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1061",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1061",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1374,10 +1686,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-794",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1064",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-794",
+        "id": "FHIR-1064",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1413,10 +1725,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-810",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1121",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-810",
+        "id": "FHIR-1121",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1452,10 +1764,322 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-851",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1078",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-851",
+        "id": "FHIR-1078",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1055",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1055",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1089",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1089",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1108",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1108",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1123",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1123",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1153",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1153",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1107",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1107",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1131",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1131",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1129",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1129",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1491,127 +2115,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-817",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1132",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-817",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-800",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-800",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-759",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-759",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-741",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-741",
+        "id": "FHIR-1132",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1647,10 +2154,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-749",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1146",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-749",
+        "id": "FHIR-1146",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1686,10 +2193,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-760",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1149",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-760",
+        "id": "FHIR-1149",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1725,10 +2232,283 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-822",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1063",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-822",
+        "id": "FHIR-1063",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1077",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1077",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1100",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1100",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1138",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1138",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1157",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1157",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1120",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1120",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1084",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1084",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1101",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1101",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1764,10 +2544,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-753",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1049",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-753",
+        "id": "FHIR-1049",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1803,127 +2583,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-761",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1087",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-761",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-828",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-828",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-849",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-849",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-766",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-766",
+        "id": "FHIR-1087",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1959,10 +2622,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-804",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1117",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-804",
+        "id": "FHIR-1117",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -1998,400 +2661,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-812",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1119",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-812",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-821",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-821",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-743",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-743",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-780",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-780",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-811",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-811",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-742",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-742",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-781",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-781",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-789",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-789",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-803",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-803",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-843",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-843",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "ER",
-                "display": "Emergency Department beds."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-776",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-776",
+        "id": "FHIR-1119",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2427,10 +2700,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-757",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1047",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-757",
+        "id": "FHIR-1047",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2466,10 +2739,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-763",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1050",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-763",
+        "id": "FHIR-1050",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2505,10 +2778,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-764",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1076",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-764",
+        "id": "FHIR-1076",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2544,10 +2817,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-777",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1080",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-777",
+        "id": "FHIR-1080",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2583,10 +2856,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-782",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1125",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-782",
+        "id": "FHIR-1125",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2622,10 +2895,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-826",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1133",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-826",
+        "id": "FHIR-1133",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2661,10 +2934,49 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-752",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1144",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-752",
+        "id": "FHIR-1144",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "ER",
+                "display": "Emergency Department beds."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1143",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1143",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2700,10 +3012,634 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-801",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1056",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-801",
+        "id": "FHIR-1056",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1096",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1096",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1099",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1099",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1140",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1140",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1156",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1156",
+        "status": "active",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "U",
+          "display": "Unoccupied"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1065",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1065",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1085",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1085",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1104",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1104",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1110",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1110",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1112",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1112",
+        "status": "inactive",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1058",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1058",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1074",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1074",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1094",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1094",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1105",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1105",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1126",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1126",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1141",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1141",
+        "status": "suspended",
+        "operationalStatus": {
+          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+          "code": "C",
+          "display": "Closed"
+        },
+        "mode": "instance",
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "HU",
+                "display": "Hospital unit."
+              }
+            ]
+          }
+        ],
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "managingOrganization": {
+          "reference": "Organization/Org-5259"
+        },
+        "partOf": {
+          "reference": "Location/Loc-Org-5259"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1068",
+      "resource": {
+        "resourceType": "Location",
+        "id": "FHIR-1068",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2739,10 +3675,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-818",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1073",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-818",
+        "id": "FHIR-1073",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2778,10 +3714,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-831",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1079",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-831",
+        "id": "FHIR-1079",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -2817,439 +3753,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-769",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1139",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-769",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-788",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-788",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-819",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-819",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-829",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-829",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-832",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-832",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-762",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-762",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-774",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-774",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-796",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-796",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-808",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-808",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-840",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-840",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-786",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-786",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-768",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-768",
+        "id": "FHIR-1139",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3285,10 +3792,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-790",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1148",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-790",
+        "id": "FHIR-1148",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3324,49 +3831,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-746",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1062",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-746",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-773",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-773",
+        "id": "FHIR-1062",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3402,10 +3870,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-793",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1070",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-793",
+        "id": "FHIR-1070",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3441,10 +3909,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-807",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1081",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-807",
+        "id": "FHIR-1081",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3480,10 +3948,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-815",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1158",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-815",
+        "id": "FHIR-1158",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3519,166 +3987,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-816",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1059",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-816",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-838",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-838",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-854",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-854",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-855",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-855",
-        "status": "inactive",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-771",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-771",
+        "id": "FHIR-1059",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3714,10 +4026,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-772",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1071",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-772",
+        "id": "FHIR-1071",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3753,10 +4065,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-791",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1102",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-791",
+        "id": "FHIR-1102",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3792,10 +4104,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-814",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1122",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-814",
+        "id": "FHIR-1122",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3831,88 +4143,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-834",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1067",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-834",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-835",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-835",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-839",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-839",
+        "id": "FHIR-1067",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3948,10 +4182,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-841",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1103",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-841",
+        "id": "FHIR-1103",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -3987,10 +4221,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-745",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1075",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-745",
+        "id": "FHIR-1075",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -4026,10 +4260,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-750",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1118",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-750",
+        "id": "FHIR-1118",
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -4065,166 +4299,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-770",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1066",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-770",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-785",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-785",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-798",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-798",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-824",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-824",
-        "status": "active",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-755",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-755",
+        "id": "FHIR-1066",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -4260,10 +4338,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-787",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1145",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-787",
+        "id": "FHIR-1145",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -4299,10 +4377,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-797",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1161",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-797",
+        "id": "FHIR-1161",
         "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -4338,10 +4416,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-765",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1113",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-765",
+        "id": "FHIR-1113",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -4377,88 +4455,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-784",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1136",
       "resource": {
         "resourceType": "Location",
-        "id": "FHIR-784",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-813",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-813",
-        "status": "suspended",
-        "operationalStatus": {
-          "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "C",
-          "display": "Closed"
-        },
-        "mode": "instance",
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "HU",
-                "display": "Hospital unit."
-              }
-            ]
-          }
-        ],
-        "physicalType": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "managingOrganization": {
-          "reference": "Organization/Org-5259"
-        },
-        "partOf": {
-          "reference": "Location/Loc-Org-5259"
-        }
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-848",
-      "resource": {
-        "resourceType": "Location",
-        "id": "FHIR-848",
+        "id": "FHIR-1136",
         "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",

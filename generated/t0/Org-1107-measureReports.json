@@ -1,31 +1,31 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-2092",
+  "id": "FHIR-1398",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-2092"
+    "value": "FHIR-1398"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:23.2285426-05:00",
+  "timestamp": "2020-03-26T16:15:25.5137845-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-2093",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-1399",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-2093",
+        "id": "FHIR-1399",
         "text": {
-          "div": "MAYO CLINIC HEALTH SYS AUSTIN Bed report for 2020-03-26T00:00:00-05:00 to 2020-03-26T00:00:00-05:00"
+          "div": "MAYO CLINIC HEALTH SYS AUSTIN Bed report for 2020-03-23T00:00:00-05:00 to 2020-03-23T00:00:00-05:00"
         },
         "status": "complete",
         "type": "summary",
         "measure": "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure",
-        "date": "2020-03-26T14:44:23.2292579-05:00",
+        "date": "2020-03-26T16:15:25.5142514-05:00",
         "reporter": {
           "reference": "Organization/Org-1107"
         },
         "period": {
-          "start": "2020-03-26T00:00:00-05:00",
-          "end": "2020-03-26T00:00:00-05:00"
+          "start": "2020-03-23T00:00:00-05:00",
+          "end": "2020-03-23T00:00:00-05:00"
         },
         "group": [
           {
@@ -69,10 +69,10 @@
                           "coding": [
                             {
                               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "U"
+                              "code": "O"
                             }
                           ],
-                          "text": "Unoccupied"
+                          "text": "Occupied"
                         }
                       },
                       {
@@ -154,6 +154,110 @@
                           "coding": [
                             {
                               "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "U"
+                            }
+                          ],
+                          "text": "Unoccupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ICU",
+                              "display": "Adult ICU bed type."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 3,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
                               "code": "inactive"
                             }
                           ],
@@ -237,7 +341,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 3,
+                      "value": 1,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -341,7 +445,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 2,
+                      "value": 1,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -445,7 +549,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 3,
+                      "value": 1,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -549,111 +653,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 1,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "inactive"
-                            }
-                          ],
-                          "text": "The location is no longer used."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "ICU",
-                              "display": "Adult ICU bed type."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "OTHISO"
-                            }
-                          ],
-                          "text": "Isolation beds (airflow is not a concern)."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 2,
+                      "value": 4,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -757,7 +757,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 1,
+                      "value": 2,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -861,7 +861,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 3,
+                      "value": 2,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -965,7 +965,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 2,
+                      "value": 5,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -1069,7 +1069,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 1,
+                      "value": 2,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -1173,7 +1173,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 2,
+                      "value": 4,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -1217,318 +1217,6 @@
                             }
                           ],
                           "text": "Occupied"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "ER",
-                              "display": "Emergency Department beds."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NEGISO"
-                            }
-                          ],
-                          "text": "Negative airflow isolation beds."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 6,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "active"
-                            }
-                          ],
-                          "text": "The location is operational."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "U"
-                            }
-                          ],
-                          "text": "Unoccupied"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "ER",
-                              "display": "Emergency Department beds."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NEGISO"
-                            }
-                          ],
-                          "text": "Negative airflow isolation beds."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 6,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "inactive"
-                            }
-                          ],
-                          "text": "The location is no longer used."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "ER",
-                              "display": "Emergency Department beds."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NEGISO"
-                            }
-                          ],
-                          "text": "Negative airflow isolation beds."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 3,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "suspended"
-                            }
-                          ],
-                          "text": "The location is temporarily closed."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
                         }
                       },
                       {
@@ -1667,6 +1355,318 @@
                           "coding": [
                             {
                               "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "inactive"
+                            }
+                          ],
+                          "text": "The location is no longer used."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "suspended"
+                            }
+                          ],
+                          "text": "The location is temporarily closed."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 2,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "O"
+                            }
+                          ],
+                          "text": "Occupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
                               "code": "OTHISO"
                             }
                           ],
@@ -1693,7 +1693,111 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 4,
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "U"
+                            }
+                          ],
+                          "text": "Unoccupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "OTHISO"
+                            }
+                          ],
+                          "text": "Isolation beds (airflow is not a concern)."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 2,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -1797,7 +1901,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 3,
+                      "value": 5,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -1901,7 +2005,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 4,
+                      "value": 1,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -2005,7 +2109,7 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 1,
+                      "value": 3,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -2109,7 +2213,111 @@
                       }
                     ],
                     "measureScore": {
-                      "value": 1,
+                      "value": 2,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "inactive"
+                            }
+                          ],
+                          "text": "The location is no longer used."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "ER",
+                              "display": "Emergency Department beds."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NONISO"
+                            }
+                          ],
+                          "text": "Non-isolating unit."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 4,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"
@@ -2317,6 +2525,630 @@
                       }
                     ],
                     "measureScore": {
+                      "value": 4,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "U"
+                            }
+                          ],
+                          "text": "Unoccupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "inactive"
+                            }
+                          ],
+                          "text": "The location is no longer used."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "suspended"
+                            }
+                          ],
+                          "text": "The location is temporarily closed."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NEGISO"
+                            }
+                          ],
+                          "text": "Negative airflow isolation beds."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 5,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "O"
+                            }
+                          ],
+                          "text": "Occupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "OTHISO"
+                            }
+                          ],
+                          "text": "Isolation beds (airflow is not a concern)."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "U"
+                            }
+                          ],
+                          "text": "Unoccupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "OTHISO"
+                            }
+                          ],
+                          "text": "Isolation beds (airflow is not a concern)."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 2,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "suspended"
+                            }
+                          ],
+                          "text": "The location is temporarily closed."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "OTHISO"
+                            }
+                          ],
+                          "text": "Isolation beds (airflow is not a concern)."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
                       "value": 2,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
@@ -2357,842 +3189,10 @@
                           "coding": [
                             {
                               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "U"
-                            }
-                          ],
-                          "text": "Unoccupied"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NEGISO"
-                            }
-                          ],
-                          "text": "Negative airflow isolation beds."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 1,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "inactive"
-                            }
-                          ],
-                          "text": "The location is no longer used."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NEGISO"
-                            }
-                          ],
-                          "text": "Negative airflow isolation beds."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 1,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "suspended"
-                            }
-                          ],
-                          "text": "The location is temporarily closed."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NEGISO"
-                            }
-                          ],
-                          "text": "Negative airflow isolation beds."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 1,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "active"
-                            }
-                          ],
-                          "text": "The location is operational."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
                               "code": "O"
                             }
                           ],
                           "text": "Occupied"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "OTHISO"
-                            }
-                          ],
-                          "text": "Isolation beds (airflow is not a concern)."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 3,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "active"
-                            }
-                          ],
-                          "text": "The location is operational."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "U"
-                            }
-                          ],
-                          "text": "Unoccupied"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "OTHISO"
-                            }
-                          ],
-                          "text": "Isolation beds (airflow is not a concern)."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 3,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "inactive"
-                            }
-                          ],
-                          "text": "The location is no longer used."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "OTHISO"
-                            }
-                          ],
-                          "text": "Isolation beds (airflow is not a concern)."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 3,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "active"
-                            }
-                          ],
-                          "text": "The location is operational."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "O"
-                            }
-                          ],
-                          "text": "Occupied"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NONISO"
-                            }
-                          ],
-                          "text": "Non-isolating unit."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 1,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "inactive"
-                            }
-                          ],
-                          "text": "The location is no longer used."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.type"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                              "code": "HU",
-                              "display": "Hospital unit."
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.Feature"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                              "code": "NONISO"
-                            }
-                          ],
-                          "text": "Non-isolating unit."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.partOf"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions/partOf",
-                              "code": "Location/Loc-Org-1107"
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "measureScore": {
-                      "value": 4,
-                      "unit": "Number",
-                      "system": "http://unitsofmeasure.org",
-                      "code": "Number"
-                    }
-                  },
-                  {
-                    "component": [
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.status"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-status",
-                              "code": "suspended"
-                            }
-                          ],
-                          "text": "The location is temporarily closed."
-                        }
-                      },
-                      {
-                        "code": {
-                          "coding": [
-                            {
-                              "system": "http://hl7.org/fhir/location-definitions",
-                              "code": "Location.operationalStatus"
-                            }
-                          ]
-                        },
-                        "value": {
-                          "coding": [
-                            {
-                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-                              "code": "C"
-                            }
-                          ],
-                          "text": "Closed"
                         }
                       },
                       {
@@ -3254,6 +3254,318 @@
                     ],
                     "measureScore": {
                       "value": 5,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "active"
+                            }
+                          ],
+                          "text": "The location is operational."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "U"
+                            }
+                          ],
+                          "text": "Unoccupied"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NONISO"
+                            }
+                          ],
+                          "text": "Non-isolating unit."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "inactive"
+                            }
+                          ],
+                          "text": "The location is no longer used."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NONISO"
+                            }
+                          ],
+                          "text": "Non-isolating unit."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 1,
+                      "unit": "Number",
+                      "system": "http://unitsofmeasure.org",
+                      "code": "Number"
+                    }
+                  },
+                  {
+                    "component": [
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.status"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-status",
+                              "code": "suspended"
+                            }
+                          ],
+                          "text": "The location is temporarily closed."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.operationalStatus"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+                              "code": "C"
+                            }
+                          ],
+                          "text": "Closed"
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.type"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                              "code": "HU",
+                              "display": "Hospital unit."
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.Feature"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                              "code": "NONISO"
+                            }
+                          ],
+                          "text": "Non-isolating unit."
+                        }
+                      },
+                      {
+                        "code": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions",
+                              "code": "Location.partOf"
+                            }
+                          ]
+                        },
+                        "value": {
+                          "coding": [
+                            {
+                              "system": "http://hl7.org/fhir/location-definitions/partOf",
+                              "code": "Location/Loc-Org-1107"
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "measureScore": {
+                      "value": 2,
                       "unit": "Number",
                       "system": "http://unitsofmeasure.org",
                       "code": "Number"

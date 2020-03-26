@@ -1,20 +1,20 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-2018",
+  "id": "FHIR-2412",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-2018"
+    "value": "FHIR-2412"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:22.983341-05:00",
+  "timestamp": "2020-03-26T16:15:26.4540576-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2019",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2413",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2019",
+        "id": "FHIR-2413",
         "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NEGISO) Flagged inactive & C"
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NEGISO) Flagged active & U"
         },
         "type": "device",
         "actual": true,
@@ -26,234 +26,8 @@
             }
           ]
         },
-        "name": "inactive-ICU-C-NEGISO",
+        "name": "active-ICU-U-NEGISO",
         "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2020",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2020",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NEGISO) Flagged suspended & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "suspended-ICU-C-NEGISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "suspended",
-              "display": "The location is temporarily closed."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2021",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2021",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (OTHISO) Flagged active & U"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-U-OTHISO",
-        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-3046"
         },
@@ -323,10 +97,10 @@
               "coding": [
                 {
                   "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
+                  "code": "NEGISO"
                 }
               ],
-              "text": "Isolation beds (airflow is not a concern)."
+              "text": "Negative airflow isolation beds."
             },
             "exclude": false
           },
@@ -343,17 +117,32 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2022",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2414",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2022",
+        "id": "FHIR-2414",
         "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (OTHISO) Flagged inactive & C"
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NEGISO) Flagged inactive & C"
         },
         "type": "device",
         "actual": true,
@@ -365,8 +154,8 @@
             }
           ]
         },
-        "name": "inactive-ICU-C-OTHISO",
-        "quantity": 1,
+        "name": "inactive-ICU-C-NEGISO",
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-3046"
         },
@@ -436,6 +225,134 @@
               "coding": [
                 {
                   "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3046"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2415",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2415",
+        "text": {
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-OTHISO",
+        "quantity": 1,
+        "managingEntity": {
+          "reference": "Organization/Org-3046"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
                   "code": "OTHISO"
                 }
               ],
@@ -456,15 +373,30 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2023",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2416",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2023",
+        "id": "FHIR-2416",
         "text": {
           "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NONISO) Flagged active & O"
         },
@@ -479,7 +411,7 @@
           ]
         },
         "name": "active-ICU-O-NONISO",
-        "quantity": 1,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-3046"
         },
@@ -569,15 +501,30 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2024",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2417",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2024",
+        "id": "FHIR-2417",
         "text": {
           "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NONISO) Flagged active & U"
         },
@@ -682,117 +629,19 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2025",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2025",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ICU (NONISO) Flagged suspended & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "suspended-ICU-C-NONISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "suspended",
-              "display": "The location is temporarily closed."
-            },
-            "exclude": false
           },
           {
             "code": {
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
+                  "code": "Period"
                 }
               ]
             },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
-                }
-              ],
-              "text": "Non-isolating unit."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }
@@ -800,123 +649,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2026",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2418",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2026",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (NEGISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ER-O-NEGISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2027",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2027",
+        "id": "FHIR-2418",
         "text": {
           "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (NEGISO) Flagged active & U"
         },
@@ -931,7 +667,7 @@
           ]
         },
         "name": "active-ER-U-NEGISO",
-        "quantity": 1,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-3046"
         },
@@ -1021,15 +757,30 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2028",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2419",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2028",
+        "id": "FHIR-2419",
         "text": {
           "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (NEGISO) Flagged inactive & C"
         },
@@ -1044,458 +795,6 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2029",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2029",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (NEGISO) Flagged suspended & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "suspended-ER-C-NEGISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "suspended",
-              "display": "The location is temporarily closed."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2030",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2030",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (OTHISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ER-O-OTHISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2031",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2031",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (OTHISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "inactive-ER-C-OTHISO",
-        "quantity": 1,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ER",
-                  "display": "Emergency Department beds."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2032",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2032",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (NONISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ER-O-NONISO",
         "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-3046"
@@ -1512,8 +811,8 @@
             },
             "valueCoding": {
               "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
+              "code": "inactive",
+              "display": "The location is no longer used."
             },
             "exclude": false
           },
@@ -1528,8 +827,8 @@
             },
             "valueCoding": {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
+              "code": "C",
+              "display": "Closed"
             },
             "exclude": false
           },
@@ -1566,10 +865,10 @@
               "coding": [
                 {
                   "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
+                  "code": "NEGISO"
                 }
               ],
-              "text": "Non-isolating unit."
+              "text": "Negative airflow isolation beds."
             },
             "exclude": false
           },
@@ -1586,15 +885,158 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2033",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2420",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2033",
+        "id": "FHIR-2420",
+        "text": {
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ER-U-OTHISO",
+        "quantity": 3,
+        "managingEntity": {
+          "reference": "Organization/Org-3046"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ER",
+                  "display": "Emergency Department beds."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3046"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2421",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2421",
         "text": {
           "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: ER (NONISO) Flagged suspended & C"
         },
@@ -1699,17 +1141,32 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2034",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2422",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2034",
+        "id": "FHIR-2422",
         "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NEGISO) Flagged active & U"
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NEGISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -1721,8 +1178,8 @@
             }
           ]
         },
-        "name": "active-HU-U-NEGISO",
-        "quantity": 2,
+        "name": "active-HU-O-NEGISO",
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-3046"
         },
@@ -1754,8 +1211,8 @@
             },
             "valueCoding": {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
+              "code": "O",
+              "display": "Occupied"
             },
             "exclude": false
           },
@@ -1812,117 +1269,19 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2035",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2035",
-        "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NEGISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "inactive-HU-C-NEGISO",
-        "quantity": 2,
-        "managingEntity": {
-          "reference": "Organization/Org-3046"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
           },
           {
             "code": {
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
+                  "code": "Period"
                 }
               ]
             },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "HU",
-                  "display": "Hospital unit."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-3046"
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }
@@ -1930,10 +1289,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2036",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2423",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2036",
+        "id": "FHIR-2423",
         "text": {
           "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NEGISO) Flagged suspended & C"
         },
@@ -2038,17 +1397,32 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2037",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2424",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2037",
+        "id": "FHIR-2424",
         "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (OTHISO) Flagged active & U"
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (OTHISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -2060,8 +1434,8 @@
             }
           ]
         },
-        "name": "active-HU-U-OTHISO",
-        "quantity": 2,
+        "name": "active-HU-O-OTHISO",
+        "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-3046"
         },
@@ -2093,8 +1467,8 @@
             },
             "valueCoding": {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
+              "code": "O",
+              "display": "Occupied"
             },
             "exclude": false
           },
@@ -2151,17 +1525,32 @@
               "reference": "Location/Loc-Org-3046"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2038",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2425",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2038",
+        "id": "FHIR-2425",
         "text": {
-          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NONISO) Flagged active & U"
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NONISO) Flagged active & O"
         },
         "type": "device",
         "actual": true,
@@ -2173,7 +1562,7 @@
             }
           ]
         },
-        "name": "active-HU-U-NONISO",
+        "name": "active-HU-O-NONISO",
         "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-3046"
@@ -2206,8 +1595,8 @@
             },
             "valueCoding": {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
+              "code": "O",
+              "display": "Occupied"
             },
             "exclude": false
           },
@@ -2262,6 +1651,277 @@
             },
             "valueReference": {
               "reference": "Location/Loc-Org-3046"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2426",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2426",
+        "text": {
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NONISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-HU-C-NONISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-3046"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3046"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2427",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2427",
+        "text": {
+          "div": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC Beds of type: HU (NONISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-HU-C-NONISO",
+        "quantity": 3,
+        "managingEntity": {
+          "reference": "Organization/Org-3046"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "HU",
+                  "display": "Hospital unit."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NONISO"
+                }
+              ],
+              "text": "Non-isolating unit."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-3046"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }

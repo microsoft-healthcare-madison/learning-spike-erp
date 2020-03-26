@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-2049",
+  "id": "FHIR-2653",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-2049"
+    "value": "FHIR-2653"
   },
   "type": "collection",
-  "timestamp": "2020-03-26T14:44:23.0119732-05:00",
+  "timestamp": "2020-03-26T16:15:26.6807482-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2050",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2654",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2050",
+        "id": "FHIR-2654",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NEGISO) Flagged active & O"
         },
@@ -27,6 +27,1030 @@
           ]
         },
         "name": "active-ICU-O-NEGISO",
+        "quantity": 4,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2655",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2655",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NEGISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-NEGISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2656",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2656",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NEGISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-NEGISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2657",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2657",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NEGISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-NEGISO",
+        "quantity": 1,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "NEGISO"
+                }
+              ],
+              "text": "Negative airflow isolation beds."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2658",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2658",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-OTHISO",
+        "quantity": 5,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "O",
+              "display": "Occupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2659",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2659",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged active & U"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-U-OTHISO",
+        "quantity": 1,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "active",
+              "display": "The location is operational."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "U",
+              "display": "Unoccupied"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2660",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2660",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged inactive & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "inactive-ICU-C-OTHISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "inactive",
+              "display": "The location is no longer used."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2661",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2661",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged suspended & C"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "suspended-ICU-C-OTHISO",
+        "quantity": 2,
+        "managingEntity": {
+          "reference": "Organization/Org-2127"
+        },
+        "characteristic": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.status"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://hl7.org/fhir/location-status",
+              "code": "suspended",
+              "display": "The location is temporarily closed."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.operationalStatus"
+                }
+              ]
+            },
+            "valueCoding": {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
+              "code": "C",
+              "display": "Closed"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                  "code": "ICU",
+                  "display": "Adult ICU bed type."
+                }
+              ]
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.Feature"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
+                  "code": "OTHISO"
+                }
+              ],
+              "text": "Isolation beds (airflow is not a concern)."
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Location.partOf"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2662",
+      "resource": {
+        "resourceType": "Group",
+        "id": "FHIR-2662",
+        "text": {
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NONISO) Flagged active & O"
+        },
+        "type": "device",
+        "actual": true,
+        "code": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "bd"
+            }
+          ]
+        },
+        "name": "active-ICU-O-NONISO",
         "quantity": 1,
         "managingEntity": {
           "reference": "Organization/Org-2127"
@@ -97,797 +1121,6 @@
               "coding": [
                 {
                   "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2051",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2051",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NEGISO) Flagged active & U"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-U-NEGISO",
-        "quantity": 5,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2052",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2052",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NEGISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "inactive-ICU-C-NEGISO",
-        "quantity": 4,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NEGISO"
-                }
-              ],
-              "text": "Negative airflow isolation beds."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2053",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2053",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-O-OTHISO",
-        "quantity": 8,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2054",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2054",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged active & U"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-U-OTHISO",
-        "quantity": 3,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2055",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2055",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged inactive & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "inactive-ICU-C-OTHISO",
-        "quantity": 5,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "inactive",
-              "display": "The location is no longer used."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2056",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2056",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (OTHISO) Flagged suspended & C"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "suspended-ICU-C-OTHISO",
-        "quantity": 3,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "suspended",
-              "display": "The location is temporarily closed."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "C",
-              "display": "Closed"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
-                }
-              ],
-              "text": "Isolation beds (airflow is not a concern)."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
-            },
-            "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2057",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2057",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NONISO) Flagged active & O"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-O-NONISO",
-        "quantity": 4,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
                   "code": "NONISO"
                 }
               ],
@@ -908,117 +1141,19 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2058",
-      "resource": {
-        "resourceType": "Group",
-        "id": "FHIR-2058",
-        "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NONISO) Flagged active & U"
-        },
-        "type": "device",
-        "actual": true,
-        "code": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
-              "code": "bd"
-            }
-          ]
-        },
-        "name": "active-ICU-U-NONISO",
-        "quantity": 8,
-        "managingEntity": {
-          "reference": "Organization/Org-2127"
-        },
-        "characteristic": [
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.status"
-                }
-              ]
-            },
-            "valueCoding": {
-              "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
-            },
-            "exclude": false
           },
           {
             "code": {
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.operationalStatus"
+                  "code": "Period"
                 }
               ]
             },
-            "valueCoding": {
-              "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "U",
-              "display": "Unoccupied"
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.type"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                  "code": "ICU",
-                  "display": "Adult ICU bed type."
-                }
-              ]
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.Feature"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "NONISO"
-                }
-              ],
-              "text": "Non-isolating unit."
-            },
-            "exclude": false
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/location-definitions",
-                  "code": "Location.partOf"
-                }
-              ]
-            },
-            "valueReference": {
-              "reference": "Location/Loc-Org-2127"
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }
@@ -1026,10 +1161,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2059",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2663",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2059",
+        "id": "FHIR-2663",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NONISO) Flagged inactive & C"
         },
@@ -1044,7 +1179,7 @@
           ]
         },
         "name": "inactive-ICU-C-NONISO",
-        "quantity": 2,
+        "quantity": 7,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1134,15 +1269,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2060",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2664",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2060",
+        "id": "FHIR-2664",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ICU (NONISO) Flagged suspended & C"
         },
@@ -1157,7 +1307,7 @@
           ]
         },
         "name": "suspended-ICU-C-NONISO",
-        "quantity": 5,
+        "quantity": 8,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1247,15 +1397,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2061",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2665",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2061",
+        "id": "FHIR-2665",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NEGISO) Flagged active & O"
         },
@@ -1270,7 +1435,7 @@
           ]
         },
         "name": "active-ER-O-NEGISO",
-        "quantity": 6,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1360,15 +1525,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2062",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2666",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2062",
+        "id": "FHIR-2666",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NEGISO) Flagged active & U"
         },
@@ -1383,7 +1563,7 @@
           ]
         },
         "name": "active-ER-U-NEGISO",
-        "quantity": 2,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1473,15 +1653,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2063",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2667",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2063",
+        "id": "FHIR-2667",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NEGISO) Flagged inactive & C"
         },
@@ -1496,7 +1691,7 @@
           ]
         },
         "name": "inactive-ER-C-NEGISO",
-        "quantity": 4,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1586,17 +1781,32 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2064",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2668",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2064",
+        "id": "FHIR-2668",
         "text": {
-          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (OTHISO) Flagged active & O"
+          "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NEGISO) Flagged suspended & C"
         },
         "type": "device",
         "actual": true,
@@ -1608,8 +1818,8 @@
             }
           ]
         },
-        "name": "active-ER-O-OTHISO",
-        "quantity": 2,
+        "name": "suspended-ER-C-NEGISO",
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1625,8 +1835,8 @@
             },
             "valueCoding": {
               "system": "http://hl7.org/fhir/location-status",
-              "code": "active",
-              "display": "The location is operational."
+              "code": "suspended",
+              "display": "The location is temporarily closed."
             },
             "exclude": false
           },
@@ -1641,8 +1851,8 @@
             },
             "valueCoding": {
               "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-              "code": "O",
-              "display": "Occupied"
+              "code": "C",
+              "display": "Closed"
             },
             "exclude": false
           },
@@ -1679,10 +1889,10 @@
               "coding": [
                 {
                   "system": "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                  "code": "OTHISO"
+                  "code": "NEGISO"
                 }
               ],
-              "text": "Isolation beds (airflow is not a concern)."
+              "text": "Negative airflow isolation beds."
             },
             "exclude": false
           },
@@ -1699,15 +1909,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2065",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2669",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2065",
+        "id": "FHIR-2669",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (OTHISO) Flagged active & U"
         },
@@ -1812,15 +2037,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2066",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2670",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2066",
+        "id": "FHIR-2670",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (OTHISO) Flagged inactive & C"
         },
@@ -1835,7 +2075,7 @@
           ]
         },
         "name": "inactive-ER-C-OTHISO",
-        "quantity": 3,
+        "quantity": 9,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -1925,15 +2165,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2067",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2671",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2067",
+        "id": "FHIR-2671",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (OTHISO) Flagged suspended & C"
         },
@@ -2038,15 +2293,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2068",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2672",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2068",
+        "id": "FHIR-2672",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NONISO) Flagged active & O"
         },
@@ -2061,7 +2331,7 @@
           ]
         },
         "name": "active-ER-O-NONISO",
-        "quantity": 1,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -2151,15 +2421,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2069",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2673",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2069",
+        "id": "FHIR-2673",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NONISO) Flagged active & U"
         },
@@ -2174,7 +2459,7 @@
           ]
         },
         "name": "active-ER-U-NONISO",
-        "quantity": 2,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -2264,15 +2549,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2070",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2674",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2070",
+        "id": "FHIR-2674",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NONISO) Flagged inactive & C"
         },
@@ -2287,7 +2587,7 @@
           ]
         },
         "name": "inactive-ER-C-NONISO",
-        "quantity": 3,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -2377,15 +2677,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2071",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2675",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2071",
+        "id": "FHIR-2675",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: ER (NONISO) Flagged suspended & C"
         },
@@ -2490,15 +2805,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2072",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2676",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2072",
+        "id": "FHIR-2676",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NEGISO) Flagged active & O"
         },
@@ -2513,7 +2843,7 @@
           ]
         },
         "name": "active-HU-O-NEGISO",
-        "quantity": 4,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -2603,15 +2933,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2073",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2677",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2073",
+        "id": "FHIR-2677",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NEGISO) Flagged active & U"
         },
@@ -2716,15 +3061,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2074",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2678",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2074",
+        "id": "FHIR-2678",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NEGISO) Flagged inactive & C"
         },
@@ -2829,15 +3189,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2075",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2679",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2075",
+        "id": "FHIR-2679",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NEGISO) Flagged suspended & C"
         },
@@ -2852,7 +3227,7 @@
           ]
         },
         "name": "suspended-HU-C-NEGISO",
-        "quantity": 3,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -2942,15 +3317,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2076",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2680",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2076",
+        "id": "FHIR-2680",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (OTHISO) Flagged active & O"
         },
@@ -2965,7 +3355,7 @@
           ]
         },
         "name": "active-HU-O-OTHISO",
-        "quantity": 1,
+        "quantity": 6,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3055,15 +3445,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2077",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2681",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2077",
+        "id": "FHIR-2681",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (OTHISO) Flagged active & U"
         },
@@ -3078,7 +3483,7 @@
           ]
         },
         "name": "active-HU-U-OTHISO",
-        "quantity": 11,
+        "quantity": 5,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3168,15 +3573,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2078",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2682",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2078",
+        "id": "FHIR-2682",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (OTHISO) Flagged inactive & C"
         },
@@ -3191,7 +3611,7 @@
           ]
         },
         "name": "inactive-HU-C-OTHISO",
-        "quantity": 7,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3281,15 +3701,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2079",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2683",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2079",
+        "id": "FHIR-2683",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (OTHISO) Flagged suspended & C"
         },
@@ -3304,7 +3739,7 @@
           ]
         },
         "name": "suspended-HU-C-OTHISO",
-        "quantity": 2,
+        "quantity": 3,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3394,15 +3829,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2080",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2684",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2080",
+        "id": "FHIR-2684",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NONISO) Flagged active & O"
         },
@@ -3417,7 +3867,7 @@
           ]
         },
         "name": "active-HU-O-NONISO",
-        "quantity": 4,
+        "quantity": 7,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3507,15 +3957,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2081",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2685",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2081",
+        "id": "FHIR-2685",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NONISO) Flagged active & U"
         },
@@ -3530,7 +3995,7 @@
           ]
         },
         "name": "active-HU-U-NONISO",
-        "quantity": 2,
+        "quantity": 4,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3620,15 +4085,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2082",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2686",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2082",
+        "id": "FHIR-2686",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NONISO) Flagged inactive & C"
         },
@@ -3733,15 +4213,30 @@
               "reference": "Location/Loc-Org-2127"
             },
             "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
+            },
+            "exclude": false
           }
         ]
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2083",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Group/FHIR-2687",
       "resource": {
         "resourceType": "Group",
-        "id": "FHIR-2083",
+        "id": "FHIR-2687",
         "text": {
           "div": "DOUGLAS COUNTY HOSPITAL Beds of type: HU (NONISO) Flagged suspended & C"
         },
@@ -3756,7 +4251,7 @@
           ]
         },
         "name": "suspended-HU-C-NONISO",
-        "quantity": 6,
+        "quantity": 2,
         "managingEntity": {
           "reference": "Organization/Org-2127"
         },
@@ -3844,6 +4339,21 @@
             },
             "valueReference": {
               "reference": "Location/Loc-Org-2127"
+            },
+            "exclude": false
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/location-definitions",
+                  "code": "Period"
+                }
+              ]
+            },
+            "valuePeriod": {
+              "start": "2020-03-23T00:00:00-05:00",
+              "end": "2020-03-23T00:00:00-05:00"
             },
             "exclude": false
           }
