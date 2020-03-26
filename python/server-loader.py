@@ -15,9 +15,10 @@ import socket
 import sys
 from urllib.parse import urlparse
 
-# pip3 install fhir.resources  ### TODO: remove if not needed
-from fhir.resources.group import Group
-from fhir.resources.location import Location
+RESOURCE_TAGS = [{
+    'system': 'https://github.com/microsoft-healthcare-madison/learning-spike-erp',  # nopep8
+    'code': 'sample-data-carl',
+}]
 
 TEST_SERVER = 'https://prototype-erp-fhir.azurewebsites.net/'
 
@@ -57,18 +58,19 @@ class DataSource:
     def __init__(self, folder):
         self._data_files = []
 
-        if not os.path.isdir(folder):
-            raise Error(f'{folder} is not a directory.')
+        if folder:
+            if not os.path.isdir(folder):
+                raise Error(f'{folder} is not a directory.')
 
-        # Find all the contained data files in the root folder.
-        data_files = []
-        for dirname, _, files in os.walk(folder):
-            for file in files:
-                filename = os.path.join(dirname, file)
-                if DataSource.is_data_file(filename):
-                    data_files.append(filename)
+            # Find all the contained data files in the root folder.
+            data_files = []
+            for dirname, _, files in os.walk(folder):
+                for file in files:
+                    filename = os.path.join(dirname, file)
+                    if DataSource.is_data_file(filename):
+                        data_files.append(filename)
 
-        self._data_files = data_files
+            self._data_files = data_files
 
     def __iter__(self):
         return self._data_files.__iter__()
@@ -76,14 +78,6 @@ class DataSource:
 
 class Server:
     """A FHIR Server to receive data."""
-
-    # This tag is applied to each loaded bundle.
-    _resource_tags = [
-        {
-            'system': 'https://github.com/microsoft-healthcare-madison/learning-spike-erp',
-            'code': 'sample-data',
-        },
-    ]
 
     _headers = {
         'accept': 'application/fhir+json',
@@ -98,7 +92,8 @@ class Server:
             raise Error('Refusing to send data over http.')
 
         self._capabilities = None
-        self._ip = socket.gethostbyname(url.netloc)  # Confirm DNS resolution.
+        hostname = url.netloc.split(':')[0]
+        self._ip = socket.gethostbyname(hostname)  # Confirm DNS resolution.
         self._metadata = None
         self._url = url
 
@@ -121,11 +116,15 @@ class Server:
 
     def post(self, relative_url, json_body):
         print("POSTing", json_body)  # XXX
-        response = requests.post(self.url + relative_url, json=json_body, headers=self.headers)
+        response = requests.post(
+            self.url + relative_url,
+            json=json_body,
+            headers=self.headers
+        )
         return json.loads(response.text)
 
     def get_all_tagged_resource_entries(self):
-        tag = self._resource_tags[0]
+        tag = RESOURCE_TAGS[0]
         tag_query = '|'.join([tag['system'], tag['code']])
         paged_query = f'?_count=1000&_tag={tag_query}'
 
@@ -135,31 +134,33 @@ class Server:
             for entry in resource.get('entry'):
                 yield entry
             resource = self.get(paged_query)
-            resource = {}
 
     def delete_all_tagged_resources(self):
-        tag = self._resource_tags[0]
+        tag = RESOURCE_TAGS[0]
         tag_query = "|".join([tag['system'], tag['code']])
 
         def get_next_deletes():
             return self.get(f'?_count=1000&_tag={tag_query}')
 
-        to_delete = get_next_deletes()
-        while to_delete.get('entry', []):
-            print("Deleting a batch of %s"%len(to_delete['entry']))
+        to_delete = get_next_deletes().get('entry', [])
+        while to_delete:
+            print(f'Deleting a batch of { len(to_delete) }')
             delete_result = self.post('', {
                 'resourceType': 'Bundle',
                 'type': 'batch',
                 'entry': [{
                     'request': {
                         'method': 'DELETE',
-                        'url': e['resource']['resourceType'] + '/' + e['resource']['id']
+                        'url': '/'.join([
+                            e['resource']['resourceType'],
+                            e['resource']['id'],
+                        ])
                     },
                     'resource': e['resource']
-                } for e in to_delete['entry']]
+                } for e in to_delete]
             })
             print("deleted", delete_result)
-            to_delete = get_next_deletes()
+            to_delete = get_next_deletes().get('entry', [])
 
     @classmethod
     def annotate_bundle_entry(cls, entry):  # XXX keep???
@@ -171,12 +172,10 @@ class Server:
                 e['resource']['id']
             ]),
         }
-        e['resource'].setdefault('meta', {})['tag'] = cls._resource_tags
+        e['resource'].setdefault('meta', {})['tag'] = RESOURCE_TAGS
         return e
 
     def annotate_bundle_entries(self, bundle):
-        print('annotating bundle:')  # XXX
-        pprint.pprint(bundle['entry'])
         for e in bundle['entry']:
             e['request'] = {
                 'method': 'PUT',
@@ -185,34 +184,26 @@ class Server:
                     e['resource']['id']
                 ]),
             }
-            e['resource'].setdefault('meta', {})['tag'] = self._resource_tags
-        return bundle
+            e['resource'].setdefault('meta', {})['tag'] = RESOURCE_TAGS
+
+    def annotate_bundle(self, bundle):
+        self.annotate_bundle_entries(bundle)
+        bundle['type'] = 'batch'
 
     def receive(self, filename):
-
-        # http://hl7.org/fhir/bundle-definitions.html#Bundle.entry.request has details 
-        # * method, url are required
-        # method = "PUT"
-        # URL = "Organization" for example -- more specifically, `${entry.resourceType}`
-
         with open(filename, 'rb') as fd:
+            print(f'LOADING FILE: {filename}...')  # XXX
             resource = json.load(fd)
         if resource.get('resourceType') == 'Bundle':
-            self.annotate_bundle_entries(resource)
-            resource['type'] = 'batch'
-        headers = {
-            'accept': 'application/fhir+json',
-            'content-type': 'application/fhir+json'
-        }
-        
-        # https://prototype-erp-fhir.azurewebsites.net/Organization/Org-1067?_format=json
-        # http://prototype-erp-fhir.azurewebsites.net/Organization?_tag=sample-data&_format=json
-        # http://prototype-erp-fhir.azurewebsites.net/?_tag=sample-data&_format=json
-        #  :-( not supported curl -X DELETE 'http://prototype-erp-fhir.azurewebsites.net/?_tag=sample-data&_format=json'
-        
-        r = requests.post(self._url.geturl(), json=resource, headers=headers)
+            self.annotate_bundle(resource)
+
+        r = requests.post(
+            self._url.geturl(), json=resource, headers=self.headers
+        )
         if r.status_code != 200:
             print('failed to send bundle to server', r.reason)
+            pprint.pprint(r.__dict__)  # XXX
+            pprint.pprint(r.raw.__dict__)  # XXX
             return
         print(json.loads(r.content))
         for entry in json.loads(r.content)['entry']:
@@ -221,13 +212,21 @@ class Server:
 
 
 @click.command()
-@click.option('--server-url', default=TEST_SERVER, help='FHIR server URL.')
-@click.option('--delete-all', default=False, is_flag=True, help='Set this to delete all tagged resources from the sevrver')
-@click.option('--files', default='.', help='Path to a directory containing .json files to send to the server.')
+@click.option(
+    '--server-url', default=TEST_SERVER, help='FHIR server URL.'
+)
+@click.option(
+    '--delete-all', default=False, is_flag=True,
+    help='Set this to delete all tagged resources from the sevrver'
+)
+@click.option(
+    '--files',
+    help='Path to a directory containing .json files to send to the server.'
+)
 def main(server_url, delete_all, files):
     server = Server(server_url)
     if delete_all:
-#        print(list(server.get_all_tagged_resource_entries()))  # XXX
+        # TODO: print out the number of deleted resources.
         server.delete_all_tagged_resources()
 
     for filename in DataSource(files):
@@ -235,4 +234,4 @@ def main(server_url, delete_all, files):
 
 
 if __name__ == '__main__':
-    main()
+    main()  # pylint: disable=no-value-for-parameter
