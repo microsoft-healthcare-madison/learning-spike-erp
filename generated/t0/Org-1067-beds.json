@@ -6,7 +6,7 @@
     "value": "FHIR-1359"
   },
   "type": "collection",
-  "timestamp": "2020-03-25T17:06:05.0731265-05:00",
+  "timestamp": "2020-03-25T19:13:24.9824205-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-1139",
@@ -94,8 +94,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -133,8 +133,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "O",
+          "display": "Occupied"
         },
         "mode": "instance",
         "type": [
@@ -247,11 +247,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-1144",
-        "status": "active",
+        "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -286,11 +286,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-1141",
-        "status": "active",
+        "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -328,8 +328,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -364,11 +364,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-1140",
-        "status": "active",
+        "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [

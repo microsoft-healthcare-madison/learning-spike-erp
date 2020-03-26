@@ -6,7 +6,7 @@
     "value": "FHIR-1351"
   },
   "type": "collection",
-  "timestamp": "2020-03-25T17:06:04.6114937-05:00",
+  "timestamp": "2020-03-25T19:13:24.5490875-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/FHIR-3",
@@ -16,8 +16,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -55,8 +55,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -172,8 +172,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -211,8 +211,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -250,8 +250,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -289,8 +289,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -325,11 +325,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-13",
-        "status": "active",
+        "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -445,8 +445,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "O",
-          "display": "Occupied"
+          "code": "U",
+          "display": "Unoccupied"
         },
         "mode": "instance",
         "type": [
@@ -484,8 +484,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "O",
+          "display": "Occupied"
         },
         "mode": "instance",
         "type": [
@@ -523,8 +523,8 @@
         "status": "active",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "O",
+          "display": "Occupied"
         },
         "mode": "instance",
         "type": [
@@ -559,11 +559,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-2",
-        "status": "active",
+        "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -598,11 +598,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-7",
-        "status": "active",
+        "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -637,11 +637,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-12",
-        "status": "active",
+        "status": "inactive",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -676,11 +676,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-16",
-        "status": "active",
+        "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [
@@ -715,11 +715,11 @@
       "resource": {
         "resourceType": "Location",
         "id": "FHIR-19",
-        "status": "active",
+        "status": "suspended",
         "operationalStatus": {
           "system": "http://terminology.hl7.org/CodeSystem/v2-0116",
-          "code": "U",
-          "display": "Unoccupied"
+          "code": "C",
+          "display": "Closed"
         },
         "mode": "instance",
         "type": [

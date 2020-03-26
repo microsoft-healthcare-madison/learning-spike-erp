@@ -1,8 +1,9 @@
 example.pypf
 
-Example measure report (pseudo-yaml-pseydo-FHIR)(TM)
+## Example measure report (pseudo-yaml-pseydo-FHIR)(TM)
 ----
 
+```
 resourceType: MeasureReport
 status: complete
 type: summary (??)
@@ -79,11 +80,14 @@ group[0 -- I think we only ever need one, even though this repeats]
         stratum[9] just like stratum[3] but Feature = Isolating
         stratum[10] just like stratum[4] but Feature = Isolating
         stratum[11] just like stratum[5] but Feature = Isolating
+```
 
 
-    ## Notes
-    * Can report "leaf-level" strata (pinning down all variables as components) when available, and can roll up values into coarser-grained strata if the detailed sub-counts aren't known
+## Notes
+* Can report "leaf-level" strata (pinning down all variables as components) when available, and can roll up values into coarser-grained strata if the detailed sub-counts aren't known
 
-    * Keeps semantics of an entire report together, and handles reporting periods cleanly
+* Keeps semantics of an entire report together, and handles reporting periods cleanly
 
-    * No good way to convey a stratifier component for valueReferences; the whole mechanism is focused on CodeableConcepts, but we can "hack it" (As proposed here) or use an extension.valueReference, or we use distinction top-level MeasureReport.groups per-ward.
+* No good way to convey a stratifier component for valueReferences; the whole mechanism is focused on CodeableConcepts, but we can "hack it" (As proposed here) or use an extension.valueReference, or we use distinction top-level MeasureReport.groups per-ward.
+
+* Searching across multiple days worth of MeasureReports appears to be simpler than Groups (a MeasureReport is immutable, so a server would naturally host a Day 1 report, a Day 2 report, etc -- whereas for Groups... would you define a new one for each day, or update an existing group each day? If nwe ones are defined how do you tie them all together?)

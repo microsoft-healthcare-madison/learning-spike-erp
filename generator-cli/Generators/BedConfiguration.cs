@@ -100,19 +100,35 @@ namespace generator_cli.Generators
                 features);
 
             // nested traverse each list to build the expansion
-            foreach (string availability in availabilityList)
+            foreach (string bedType in typeList)
             {
-                foreach (string bedType in typeList)
+                foreach (string feature in featureList)
                 {
-                    foreach (string status in statusList)
+                    foreach (string availability in availabilityList)
                     {
-                        foreach (string feature in featureList)
+                        switch (availability)
                         {
-                            states.Add(new BedConfiguration(
-                                availability,
-                                bedType,
-                                status,
-                                feature));
+                            case FhirGenerator.AvailabilityStatusActive:
+                                foreach (string status in statusList)
+                                {
+                                    states.Add(new BedConfiguration(
+                                        availability,
+                                        bedType,
+                                        status,
+                                        feature));
+                                }
+
+                                break;
+
+                            case FhirGenerator.AvailabilityStatusInactive:
+                            case FhirGenerator.AvailabilityStatusSuspended:
+                                states.Add(new BedConfiguration(
+                                    availability,
+                                    bedType,
+                                    FhirGenerator.OperationalStatusClosed,
+                                    feature));
+
+                                break;
                         }
                     }
                 }
