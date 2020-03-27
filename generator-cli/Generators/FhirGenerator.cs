@@ -393,13 +393,13 @@ namespace generator_cli.Generators
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.Status),
-                    Value = CodingForAvailabilityStatus(bedConfig.Availability),
+                    Value = ConceptForAvailabilityStatus(bedConfig.Availability),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
                     Code = ConceptForSaner(SanerCharacteristic.OperationalStatus),
-                    Value = CodingForOperationalStatus(bedConfig.Status),
+                    Value = ConceptForOperationalStatus(bedConfig.Status),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
