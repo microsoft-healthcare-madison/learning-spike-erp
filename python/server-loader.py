@@ -5,22 +5,22 @@ TODO:
     [ ] convert this to use setuptools (so it works in windows)
 """
 
-import click  # pip3 install click
 import copy
 import json
 import os
 import pprint  # XXX
-import requests
+import re
 import socket
 import sys
 from urllib.parse import urlparse
 
+import click  # pip3 install click
+import requests  # pip3 install requests
+
 RESOURCE_TAGS = [{
     'system': 'https://github.com/microsoft-healthcare-madison/learning-spike-erp',  # nopep8
-    'code': 'sample-data',
+    'code': 'sample-data',  # TODO: make this code a flag called --tag-code
 }]
-
-RESOURCS_CREATED = ['MeasureReport', 'Group', 'Location', 'Organization']
 
 TEST_SERVER = 'https://prototype-erp-fhir.azurewebsites.net/'
 
@@ -31,6 +31,14 @@ class Error(Exception):
 
 class DataSource:
     """A folder of files containing data to send to a server."""
+
+    _resource_file_matcher = re.compile(r'^Org-([0-9]+)(-.+)?\.json$')
+    _resource_type_load_priorities = {
+        '-measureReports': 4,
+        '-groups': 3,
+        '-beds': 2,
+        None: 1,
+    }
 
     @classmethod
     def has_json_contents(cls, filename):
@@ -55,7 +63,25 @@ class DataSource:
         if not os.path.isfile(filename):
             raise Error(f'File: {filename} does not exist.')
         extension = filename.lower().rsplit('.', 1)[-1]
-        return extension in ['json', 'xml']
+        return extension in ['json']
+
+    @classmethod
+    def get_resource_load_priority(cls, filename):
+        """Returns the load priority based on resource type and org id."""
+        match = cls._resource_file_matcher.match(filename)
+        if not match:
+            return (0, 0)
+        org, resource_type = match.groups()
+        priority = cls._resource_type_load_priorities.get(resource_type, 0)
+        return (priority, int(org))
+
+    @classmethod
+    def get_data_files(cls, folder):
+        for dirname, _, files in os.walk(folder):
+            for file in sorted(files, key=cls.get_resource_load_priority):
+                filename = os.path.join(dirname, file)
+                if DataSource.is_data_file(filename):
+                    yield filename
 
     def __init__(self, folder):
         self._data_files = []
@@ -64,16 +90,8 @@ class DataSource:
             if not os.path.isdir(folder):
                 raise Error(f'{folder} is not a directory.')
 
-            # Find all the contained data files in the root folder.
-            data_files = []
-            for dirname, _, files in os.walk(folder):
-                for file in sorted(files, key=lambda f: 4 if "-measureReport" in f else 3 if "-group" in f else 2 if "-bed" in f else 1):
-                    filename = os.path.join(dirname, file)
-                    if DataSource.is_data_file(filename):
-                        data_files.append(filename)
-
-            self._data_files = data_files
-            print("Data files", data_files)
+            self._data_files = list(self.get_data_files(folder))
+            print("Data files", self._data_files)  # XXX
 
     def __iter__(self):
         return self._data_files.__iter__()
@@ -81,6 +99,10 @@ class DataSource:
 
 class Server:
     """A FHIR Server to receive data."""
+
+    # The order of resource types matters because HAPI won't allow dangling
+    # links by default.
+    _deletion_order = ['MeasureReport', 'Group', 'Location', 'Organization']
 
     _headers = {
         'accept': 'application/fhir+json',
@@ -116,11 +138,9 @@ class Server:
     def get(self, url):
         full_url = url if url.startswith('http') else self.url + url
         response = requests.get(full_url, headers=self.headers)
-        print("got", url, response.status_code)
         return json.loads(response.text)
 
     def post(self, relative_url, json_body):
-        print("POSTing to", relative_url)  # XXX
         response = requests.post(
             self.url + relative_url,
             json=json_body,
@@ -128,34 +148,21 @@ class Server:
         )
         return json.loads(response.text)
 
-    def get_all_tagged_resource_entries(self):
+    def delete_all_tagged_resources(self):
         tag = RESOURCE_TAGS[0]
         tag_query = '|'.join([tag['system'], tag['code']])
-        paged_query = f'?_count=1000&_tag={tag_query}'
 
-        resource = self.get(paged_query)
-        while resource.get('entry'):
-            print("RESOURCE", resource)  # XXX
-            for entry in resource.get('entry'):
-                yield entry
-            resource = self.get(paged_query)
-
-    # The order of resource_types matter because HAPI won't allow dangling links by default
-    def delete_all_tagged_resources(self, resource_types = RESOURCS_CREATED):
-        tag = RESOURCE_TAGS[0]
-        tag_query = "|".join([tag['system'], tag['code']])
-
-        def search_for_deletes_deletes(resource_type):
+        def search_for_deletes(resource_type):
             sort = '&_sort=partof' if resource_type == 'Location' else ''
-            next_deletes = self.get(f'/{resource_type}?_count=1000&_tag={tag_query}{sort}')
-            print("Num next deltes", len(next_deletes))
-            return next_deletes
+            query = f'/{resource_type}?_count=1000&_tag={tag_query}{sort}'
+            return self.get(query)
 
-        for resource_type in resource_types:
-            to_delete = search_for_deletes_deletes(resource_type)
+        for resource_type in self._deletion_order:
+            print(f'DELETING RESOURCE: {resource_type}')
+            to_delete = search_for_deletes(resource_type)
             while to_delete:
-                print(f'Deleting a batch of { len(to_delete.get("entry", [])) }')
-                delete_result = self.post('', {
+                entries = to_delete.get('entry', [])
+                self.post('', {
                     'resourceType': 'Bundle',
                     'type': 'batch',
                     'entry': [{
@@ -166,25 +173,14 @@ class Server:
                                 e['resource']['id'],
                             ])
                         },
-                    } for e in to_delete.get('entry', [])]
+                    } for e in entries]
                 })
-                print("deleted", delete_result)
-                bundle_next_link = [link['url'] for link in to_delete.get('link', []) if link.get('relation', '') == 'next']
-                to_delete = self.get(bundle_next_link[0]) if bundle_next_link else []
-            print("Finished ", resource_type)
-
-    @classmethod
-    def annotate_bundle_entry(cls, entry):  # XXX keep???
-        e = copy.deepcopy(entry)
-        e['request'] = {
-            'method': 'PUT',
-            'url': '/'.join([
-                e['resource']['resourceType'],
-                e['resource']['id']
-            ]),
-        }
-        e['resource'].setdefault('meta', {})['tag'] = RESOURCE_TAGS
-        return e
+                more = [x for x in to_delete['link'] if x['relation'] == 'next']  # nopep8
+                if not more:
+                    break
+                print('  ..')
+                to_delete = self.get(more[0]['url'])
+            print(f'DELETED RESOURCES: {resource_type}')
 
     def annotate_bundle_entries(self, bundle):
         for e in bundle['entry']:
@@ -205,7 +201,7 @@ class Server:
         with open(filename, 'rb') as fd:
             print(f'LOADING FILE: {filename}...')  # XXX
             resource = json.load(fd)
-        if resource.get('resourceType') == 'Bundle':
+        if resource['resourceType'] == 'Bundle':
             self.annotate_bundle(resource)
 
         r = requests.post(
@@ -216,7 +212,10 @@ class Server:
             pprint.pprint(r.__dict__)  # XXX
             pprint.pprint(r.raw.__dict__)  # XXX
             return
-        print(json.loads(r.content))
+#        print(json.loads(r.content))
+        for entry in json.loads(r.content)['entry']:
+            if entry['response']['status'] not in ['200', '201']:
+                print(f'Entry failed to load: {entry}')
 
 
 @click.command()
