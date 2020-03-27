@@ -444,8 +444,9 @@ namespace generator_cli.Generators
                 Characteristic = characteristics,
                 Text = new Narrative()
                 {
-                    Div = $"{org.Name} Beds of type: {bedConfig.Type} ({bedConfig.Feature})" +
-                        $" Flagged {bedConfig.Availability} & {bedConfig.Status}",
+                    Div = $"<div xmlns=\"http://www.w3.org/1999/xhtml\">" +
+                        $" {org.Name} Beds of type: {bedConfig.Type} ({bedConfig.Feature})" +
+                        $" Flagged {bedConfig.Availability} & {bedConfig.Status}</div>",
                 },
             };
         }
@@ -554,10 +555,11 @@ namespace generator_cli.Generators
                 Group = new List<MeasureReport.GroupComponent>() { component },
                 Text = new Narrative()
                 {
-                    Div = $"{org.Name} Bed report for" +
+                    Div = $"<div xmlns=\"http://www.w3.org/1999/xhtml\">" + 
+                        $" {org.Name} Bed report for" +
                         $" {period.Start.ToString(CultureInfo.InvariantCulture)}" +
                         $" to" +
-                        $" {period.End.ToString(CultureInfo.InvariantCulture)}",
+                        $" {period.End.ToString(CultureInfo.InvariantCulture)}</div>",
                 },
             };
         }
