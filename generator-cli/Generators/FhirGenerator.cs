@@ -446,7 +446,7 @@ namespace generator_cli.Generators
                 {
                     Div = $"<div xmlns=\"http://www.w3.org/1999/xhtml\">" +
                         $" {org.Name} Beds of type: {bedConfig.Type} ({bedConfig.Feature})" +
-                        $" Flagged {bedConfig.Availability} & {bedConfig.Status}</div>",
+                        $" Flagged {bedConfig.Availability} and {bedConfig.Status}</div>",
                 },
             };
         }
