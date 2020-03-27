@@ -67,12 +67,13 @@ class DataSource:
             # Find all the contained data files in the root folder.
             data_files = []
             for dirname, _, files in os.walk(folder):
-                for file in files:
+                for file in sorted(files, key=lambda f: 4 if "-measureReport" in f else 3 if "-group" in f else 2 if "-bed" in f else 1):
                     filename = os.path.join(dirname, file)
                     if DataSource.is_data_file(filename):
                         data_files.append(filename)
 
             self._data_files = data_files
+            print("Data files", data_files)
 
     def __iter__(self):
         return self._data_files.__iter__()
@@ -216,9 +217,6 @@ class Server:
             pprint.pprint(r.raw.__dict__)  # XXX
             return
         print(json.loads(r.content))
-        for entry in json.loads(r.content)['entry']:
-            if entry['response']['status'] != '200':
-                print(f'Entry failed to load: {entry}')
 
 
 @click.command()
