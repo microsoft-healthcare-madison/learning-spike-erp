@@ -36,23 +36,25 @@ namespace generator_cli
 
         /// <summary>Main entry-point for this application.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
-        /// <param name="outputDirectory">    Directory to write files.</param>
-        /// <param name="dataDirectory">      Allow passing in of data directory.</param>
-        /// <param name="outputFormat">       The output format, JSON or XML (default: JSON).</param>
-        /// <param name="state">              State to restrict generation to (default: none).</param>
-        /// <param name="postalCode">         Postal code to restrict generation to (default: none).</param>
-        /// <param name="facilityCount">      Number of facilities to generate.</param>
-        /// <param name="timeSteps">          Number of time-step updates to generate.</param>
-        /// <param name="timePeriodHours">    Time-step period in hours (default: 24).</param>
-        /// <param name="seed">               Starting seed to use in generation, 0 for none (default: 0).</param>
-        /// <param name="recordsToSkip">      Number of records to skip before starting generation (default: 0).</param>
-        /// <param name="orgSource">          Source for organization records: generate|csv (default: csv).</param>
-        /// <param name="prettyPrint">        If output files should be formatted for display.</param>
-        /// <param name="bedTypes">           Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
-        /// <param name="operationalStatuses">Bar separated operational status: U|O|K (default: O|U).</param>
-        /// <param name="minBedsPerOrg">      The minimum number of beds per hospital (default: 10).</param>
-        /// <param name="maxBedsPerOrg">      The maximum number of beds per hospital (default: 1000).</param>
-        /// <param name="changeFactor">       The amount of change in bed state per step (default 0.2).</param>
+        /// <param name="outputDirectory">     Directory to write files.</param>
+        /// <param name="dataDirectory">       Allow passing in of data directory.</param>
+        /// <param name="outputFormat">        The output format, JSON or XML (default: JSON).</param>
+        /// <param name="state">               State to restrict generation to (default: none).</param>
+        /// <param name="postalCode">          Postal code to restrict generation to (default: none).</param>
+        /// <param name="facilityCount">       Number of facilities to generate.</param>
+        /// <param name="timeSteps">           Number of time-step updates to generate.</param>
+        /// <param name="timePeriodHours">     Time-step period in hours (default: 24).</param>
+        /// <param name="seed">                Starting seed to use in generation, 0 for none (default: 0).</param>
+        /// <param name="recordsToSkip">       Number of records to skip before starting generation (default: 0).</param>             
+        /// <param name="orgSource">           Source for organization records: generate|csv (default: csv).</param>
+        /// <param name="prettyPrint">         If output files should be formatted for display.</param>
+        /// <param name="bedTypes">            Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
+        /// <param name="operationalStatuses"> Bar separated operational status: U|O|K (default: O|U).</param>
+        /// <param name="minBedsPerOrg">       The minimum number of beds per hospital (default: 10).</param>
+        /// <param name="maxBedsPerOrg">       The maximum number of beds per hospital (default: 1000).</param>
+        /// <param name="exportBeds">          If bundles of individual beds should be exported (default: true).</param>
+        /// <param name="exportGroups">        If SANER-IG groups should be generated (deprecated - default: false).</param>
+        /// <param name="changeFactor">        The amount of change in bed state per step (default 0.2).</param>
         public static void Main(
             string outputDirectory,
             string dataDirectory = null,
@@ -70,6 +72,8 @@ namespace generator_cli
             string operationalStatuses = "O|U",
             int minBedsPerOrg = 10,
             int maxBedsPerOrg = 1000,
+            bool exportBeds = true,
+            bool exportGroups = false,
             double changeFactor = 0.2)
         {
             // sanity checks
@@ -151,7 +155,7 @@ namespace generator_cli
             {
                 Console.WriteLine($"Processing org: {orgId}");
 
-                CreateOrgBed(orgId);
+                CreateOrgBeds(orgId);
 
                 // loop over timeSteps
                 for (int step = 0; step < timeSteps; step++)
@@ -169,12 +173,21 @@ namespace generator_cli
                     Period period = new Period(dateTime, dateTime);
 
                     WriteOrgBundle(orgId, dir);
-                    WriteBedBundle(orgId, dir);
-                    WriteGroupBundle(orgId, dir, period);
+
+                    if (exportBeds)
+                    {
+                        WriteBedBundle(orgId, dir);
+                    }
+
                     WriteMeasureReportBundle(orgId, dir, period);
+
+                    if (exportGroups)
+                    {
+                        WriteGroupBundle(orgId, dir, period);
+                    }
                 }
 
-                DeleteOrgBed(orgId);
+                DeleteOrgBeds(orgId);
             }
         }
 
@@ -316,13 +329,13 @@ namespace generator_cli
         {
             foreach (string orgId in _orgById.Keys)
             {
-                CreateOrgBed(orgId);
+                CreateOrgBeds(orgId);
             }
         }
 
         /// <summary>Creates organization bed.</summary>
         /// <param name="orgId">The organization.</param>
-        private static void CreateOrgBed(string orgId)
+        private static void CreateOrgBeds(string orgId)
         {
             int initialBedCount;
 
@@ -343,7 +356,7 @@ namespace generator_cli
 
         /// <summary>Deletes the organization bed described by orgId.</summary>
         /// <param name="orgId">The organization.</param>
-        private static void DeleteOrgBed(string orgId)
+        private static void DeleteOrgBeds(string orgId)
         {
             _bedsByOrgId.Remove(orgId);
         }
