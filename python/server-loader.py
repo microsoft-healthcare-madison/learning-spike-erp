@@ -17,8 +17,10 @@ from urllib.parse import urlparse
 
 RESOURCE_TAGS = [{
     'system': 'https://github.com/microsoft-healthcare-madison/learning-spike-erp',  # nopep8
-    'code': 'sample-data-carl',
+    'code': 'sample-data',
 }]
+
+RESOURCS_CREATED = ['MeasureReport', 'Group', 'Location', 'Organization']
 
 TEST_SERVER = 'https://prototype-erp-fhir.azurewebsites.net/'
 
@@ -110,12 +112,14 @@ class Server:
     def url(self):
         return self._url.geturl()
 
-    def get(self, relative_url):
-        response = requests.get(self.url + relative_url, headers=self.headers)
+    def get(self, url):
+        full_url = url if url.startswith('http') else self.url + url
+        response = requests.get(full_url, headers=self.headers)
+        print("got", url, response.status_code)
         return json.loads(response.text)
 
     def post(self, relative_url, json_body):
-        print("POSTing", json_body)  # XXX
+        print("POSTing to", relative_url)  # XXX
         response = requests.post(
             self.url + relative_url,
             json=json_body,
@@ -135,32 +139,38 @@ class Server:
                 yield entry
             resource = self.get(paged_query)
 
-    def delete_all_tagged_resources(self):
+    # The order of resource_types matter because HAPI won't allow dangling links by default
+    def delete_all_tagged_resources(self, resource_types = RESOURCS_CREATED):
         tag = RESOURCE_TAGS[0]
         tag_query = "|".join([tag['system'], tag['code']])
 
-        def get_next_deletes():
-            return self.get(f'?_count=1000&_tag={tag_query}')
+        def search_for_deletes_deletes(resource_type):
+            sort = '&_sort=partof' if resource_type == 'Location' else ''
+            next_deletes = self.get(f'/{resource_type}?_count=1000&_tag={tag_query}{sort}')
+            print("Num next deltes", len(next_deletes))
+            return next_deletes
 
-        to_delete = get_next_deletes().get('entry', [])
-        while to_delete:
-            print(f'Deleting a batch of { len(to_delete) }')
-            delete_result = self.post('', {
-                'resourceType': 'Bundle',
-                'type': 'batch',
-                'entry': [{
-                    'request': {
-                        'method': 'DELETE',
-                        'url': '/'.join([
-                            e['resource']['resourceType'],
-                            e['resource']['id'],
-                        ])
-                    },
-                    'resource': e['resource']
-                } for e in to_delete]
-            })
-            print("deleted", delete_result)
-            to_delete = get_next_deletes().get('entry', [])
+        for resource_type in resource_types:
+            to_delete = search_for_deletes_deletes(resource_type)
+            while to_delete:
+                print(f'Deleting a batch of { len(to_delete.get("entry", [])) }')
+                delete_result = self.post('', {
+                    'resourceType': 'Bundle',
+                    'type': 'batch',
+                    'entry': [{
+                        'request': {
+                            'method': 'DELETE',
+                            'url': '/'.join([
+                                e['resource']['resourceType'],
+                                e['resource']['id'],
+                            ])
+                        },
+                    } for e in to_delete.get('entry', [])]
+                })
+                print("deleted", delete_result)
+                bundle_next_link = [link['url'] for link in to_delete.get('link', []) if link.get('relation', '') == 'next']
+                to_delete = self.get(bundle_next_link[0]) if bundle_next_link else []
+            print("Finished ", resource_type)
 
     @classmethod
     def annotate_bundle_entry(cls, entry):  # XXX keep???
