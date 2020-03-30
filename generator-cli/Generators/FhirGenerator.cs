@@ -1,4 +1,4 @@
-﻿// <copyright file="BenGenerator.cs" company="Microsoft Corporation">
+﻿// <copyright file="FhirGenerator.cs" company="Microsoft Corporation">
 //     Copyright (c) Microsoft Corporation. All rights reserved.
 //     Licensed under the MIT License (MIT). See LICENSE in the repo root for license information.
 // </copyright>
@@ -16,12 +16,6 @@ namespace generator_cli.Generators
     /// <summary>A ben generator.</summary>
     public abstract class FhirGenerator
     {
-        /// <summary>The measure report measurement.</summary>
-        public const string MeasureReportMeasurement = "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure";
-
-        /// <summary>The internal system.</summary>
-        public const string InternalSystem = "https://github.com/microsoft-healthcare-madison/learning-spike-erp/";
-
         /// <summary>The fhir identifier prefix.</summary>
         public const string FhirIdPrefix = "FHIR-";
 
@@ -31,11 +25,32 @@ namespace generator_cli.Generators
         /// <summary>The root location prefix.</summary>
         public const string RootLocationPrefix = "Loc-";
 
-        /// <summary>The SANER-IG characteristic system.</summary>
-        private const string _sanerCharacteristicSystem = "http://hl7.org/fhir/R4/StructureDefinition/Location";
+        /// <summary>The measure report measurement.</summary>
+        public const string MeasureReportMeasurement = "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure";
 
-        /// <summary>The fake code text.</summary>
-        private const string _fakeCodeText = "This code is not used, but is required.";
+        /// <summary>The internal system.</summary>
+        public const string SystemInternal = "https://github.com/microsoft-healthcare-madison/learning-spike-erp/";
+
+        /// <summary>The SANER-IG characteristic system.</summary>
+        public const string SystemSanerCharacteristic = "http://hl7.org/fhir/R4/StructureDefinition/Location";
+
+        /// <summary>The system saner bed feature.</summary>
+        public const string SystemSanerBedFeature = "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType";
+
+        /// <summary>Type of the system location physical.</summary>
+        public const string SystemLocationPhysicalType = "http://terminology.hl7.org/CodeSystem/location-physical-type";
+
+        /// <summary>The system measure report.</summary>
+        public const string SystemMeasureReport = "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport";
+
+        /// <summary>The system availability status.</summary>
+        public const string SystemAvailabilityStatus = "http://hl7.org/fhir/location-status";
+
+        /// <summary>The system operational status.</summary>
+        public const string SystemOperationalStatus = "http://terminology.hl7.org/CodeSystem/v2-0116";
+
+        /// <summary>Type of the system bed.</summary>
+        public const string SystemBedType = "http://terminology.hl7.org/CodeSystem/v3-RoleCode";
 
         /// <summary>The random.</summary>
         private static Random _rand = new Random();
@@ -191,7 +206,7 @@ namespace generator_cli.Generators
         public static Hl7.Fhir.Model.Identifier IdentifierForId(string id)
         {
             return new Hl7.Fhir.Model.Identifier(
-                    InternalSystem,
+                    SystemInternal,
                     id);
         }
 
@@ -203,7 +218,7 @@ namespace generator_cli.Generators
             return new List<Identifier>()
             {
                 new Hl7.Fhir.Model.Identifier(
-                        InternalSystem,
+                        SystemInternal,
                         id),
             };
         }
@@ -293,7 +308,7 @@ namespace generator_cli.Generators
                 Address = org.Address[0],
                 Status = GetLocationStatus(AvailabilityStatusActive),
                 Mode = Location.LocationMode.Instance,
-                PhysicalType = ConceptForPhysicalTypeSite(),
+                PhysicalType = FhirTriplet.PhysicalTypeSite.Concept,
                 Position = position,
             };
         }
@@ -316,10 +331,10 @@ namespace generator_cli.Generators
             {
                 Id = NextId,
                 Status = GetLocationStatus(availabilityStatus),
-                OperationalStatus = CodingForOperationalStatus(operationalStatus),
+                OperationalStatus = FhirTriplet.OperationalStatus(operationalStatus).Coding,
                 Type = (bedTypes == null) ? null : ConceptsForBedTypes(bedTypes),
                 Mode = Location.LocationMode.Instance,
-                PhysicalType = ConceptForPhysicalTypeBed(),
+                PhysicalType = FhirTriplet.PhysicalTypeBed.Concept,
             };
 
             if (org != null)
@@ -353,7 +368,7 @@ namespace generator_cli.Generators
             }
 
             bed.Status = GetLocationStatus(next.Availability);
-            bed.OperationalStatus = CodingForOperationalStatus(next.Status);
+            bed.OperationalStatus = FhirTriplet.OperationalStatus(next.Status).Coding;
         }
 
         /// <summary>Generates a group.</summary>
@@ -392,41 +407,39 @@ namespace generator_cli.Generators
             {
                 new Group.CharacteristicComponent()
                 {
-                    Code = ConceptForSaner(SanerCharacteristic.Status),
-                    Value = ConceptForAvailabilityStatus(bedConfig.Availability),
+                    Code = FhirTriplet.SanerAvailabilityStatus.Concept,
+                    Value = FhirTriplet.AvailabilityStatus(bedConfig.Availability).Concept,
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = ConceptForSaner(SanerCharacteristic.OperationalStatus),
-                    Value = ConceptForOperationalStatus(bedConfig.Status),
+                    Code = FhirTriplet.SanerOperationalStatus.Concept,
+                    Value = FhirTriplet.OperationalStatus(bedConfig.Status).Concept,
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = ConceptForSaner(SanerCharacteristic.Type),
-                    Value = ConceptForBedType(bedConfig.Type),
+                    Code = FhirTriplet.SanerType.Concept,
+                    Value = FhirTriplet.BedType(bedConfig.Type).Concept,
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = ConceptForSaner(SanerCharacteristic.Feature),
-                    Value = ConceptForBedFeature(bedConfig.Feature),
+                    Code = FhirTriplet.SanerFeature.Concept,
+                    Value = FhirTriplet.BedFeature(bedConfig.Feature).Concept,
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = ConceptForSaner(SanerCharacteristic.Location),
+                    Code = FhirTriplet.SanerLocation.Concept,
                     Value = new ResourceReference($"{parentLocation.ResourceType}/{parentLocation.Id}"),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    // Code = ConceptForSaner(SanerCharacteristic.Period),
-                    Code = new CodeableConcept(
-                        "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport",
-                        "MeasureReport.period"),
-                    Value = new CodeableConcept() { Text = _fakeCodeText, },
+                    // Code = FhirTriplet.SanerPeriod.Concept,
+                    Code = FhirTriplet.MeasureReportPeriod.Concept,
+                    Value = FhirTriplet.EmptyRequired.Concept,
                     Period = period,
                     Exclude = false,
                 },
@@ -437,7 +450,7 @@ namespace generator_cli.Generators
                 Id = NextId,
                 Type = Group.GroupType.Device,
                 Actual = true,
-                Code = ConceptForPhysicalTypeBed(),
+                Code = FhirTriplet.PhysicalTypeBed.Concept,
                 Name = name,
                 Quantity = bedCount,
                 ManagingEntity = new ResourceReference($"{org.ResourceType}/{org.Id}"),
@@ -451,13 +464,18 @@ namespace generator_cli.Generators
             };
         }
 
+        public static MeasureReport GenerateScreeningRateReport()
+        {
+            return null;
+        }
+
         /// <summary>Generates a measure report.</summary>
         /// <param name="org">           The organization.</param>
         /// <param name="parentLocation">The parent location.</param>
         /// <param name="period">        The period.</param>
         /// <param name="bedsByConfig">  The beds by configuration.</param>
         /// <returns>The measure report.</returns>
-        public static MeasureReport GenerateMeasureReport(
+        public static MeasureReport GenerateBedMeasureReportV01(
             Organization org,
             Location parentLocation,
             Period period,
@@ -502,29 +520,29 @@ namespace generator_cli.Generators
                     {
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = ConceptForSaner(SanerCharacteristic.Status),
-                            Value = ConceptForAvailabilityStatus(bedConfig.Availability),
+                            Code = FhirTriplet.SanerAvailabilityStatus.Concept,
+                            Value = FhirTriplet.AvailabilityStatus(bedConfig.Availability).Concept,
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = ConceptForSaner(SanerCharacteristic.OperationalStatus),
-                            Value = ConceptForOperationalStatus(bedConfig.Status),
+                            Code = FhirTriplet.SanerOperationalStatus.Concept,
+                            Value = FhirTriplet.OperationalStatus(bedConfig.Status).Concept,
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = ConceptForSaner(SanerCharacteristic.Type),
-                            Value = ConceptForBedType(bedConfig.Type),
+                            Code = FhirTriplet.SanerType.Concept,
+                            Value = FhirTriplet.BedType(bedConfig.Type).Concept,
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = ConceptForSaner(SanerCharacteristic.Feature),
-                            Value = ConceptForBedFeature(bedConfig.Feature),
+                            Code = FhirTriplet.SanerFeature.Concept,
+                            Value = FhirTriplet.BedFeature(bedConfig.Feature).Concept,
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = ConceptForSaner(SanerCharacteristic.Location),
+                            Code = FhirTriplet.SanerLocation.Concept,
                             Value = new CodeableConcept(
-                                $"{_sanerCharacteristicSystem}/partOf",
+                                $"{SystemSanerCharacteristic}/partOf",
                                 $"{parentLocation.ResourceType}/{parentLocation.Id}"),
                         },
                     },
@@ -564,65 +582,6 @@ namespace generator_cli.Generators
             };
         }
 
-        /// <summary>Concept for saner.</summary>
-        /// <param name="saner">The saner.</param>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForSaner(SanerCharacteristic saner)
-        {
-            switch (saner)
-            {
-                case SanerCharacteristic.Status:
-                    return new CodeableConcept(
-                        _sanerCharacteristicSystem,
-                        "Location.status");
-
-                case SanerCharacteristic.OperationalStatus:
-                    return new CodeableConcept(
-                        _sanerCharacteristicSystem,
-                        "Location.operationalStatus");
-
-                case SanerCharacteristic.Type:
-                    return new CodeableConcept(
-                        _sanerCharacteristicSystem,
-                        "Location.type");
-
-                case SanerCharacteristic.Feature:
-                    return new CodeableConcept(
-                        _sanerCharacteristicSystem,
-                        "Location.Feature");
-
-                case SanerCharacteristic.Location:
-                    return new CodeableConcept(
-                        _sanerCharacteristicSystem,
-                        "Location.partOf");
-
-                case SanerCharacteristic.Period:
-                    return new CodeableConcept(
-                        _sanerCharacteristicSystem,
-                        "Period");
-            }
-
-            return null;
-        }
-
-        /// <summary>Concept for physical type bed.</summary>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForPhysicalTypeBed()
-        {
-            return new CodeableConcept(
-                "http://terminology.hl7.org/CodeSystem/location-physical-type",
-                "bd");
-        }
-
-        /// <summary>Concept for physical type site.</summary>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForPhysicalTypeSite()
-        {
-            return new CodeableConcept(
-                "http://terminology.hl7.org/CodeSystem/location-physical-type",
-                "si");
-        }
-
         /// <summary>Gets location status.</summary>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when one or more arguments are outside the
         ///  required range.</exception>
@@ -645,226 +604,6 @@ namespace generator_cli.Generators
             throw new ArgumentOutOfRangeException(nameof(status));
         }
 
-        /// <summary>Coding for availability status.</summary>
-        /// <param name="status">The status.</param>
-        /// <returns>A Coding.</returns>
-        private static Coding CodingForAvailabilityStatus(string status)
-        {
-            switch (status)
-            {
-                case AvailabilityStatusActive:
-                    return new Coding(
-                        "http://hl7.org/fhir/location-status",
-                        "active",
-                        "The location is operational.");
-
-                case AvailabilityStatusSuspended:
-                    return new Coding(
-                        "http://hl7.org/fhir/location-status",
-                        "suspended",
-                        "The location is temporarily closed.");
-
-                case AvailabilityStatusInactive:
-                    return new Coding(
-                        "http://hl7.org/fhir/location-status",
-                        "inactive",
-                        "The location is no longer used.");
-            }
-
-            return null;
-        }
-
-        /// <summary>Concept for availability status.</summary>
-        /// <param name="status">The status.</param>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForAvailabilityStatus(string status)
-        {
-            switch (status)
-            {
-                case AvailabilityStatusActive:
-                    return new CodeableConcept(
-                        "http://hl7.org/fhir/location-status",
-                        "active",
-                        "The location is operational.");
-
-                case AvailabilityStatusSuspended:
-                    return new CodeableConcept(
-                        "http://hl7.org/fhir/location-status",
-                        "suspended",
-                        "The location is temporarily closed.");
-
-                case AvailabilityStatusInactive:
-                    return new CodeableConcept(
-                        "http://hl7.org/fhir/location-status",
-                        "inactive",
-                        "The location is no longer used.");
-            }
-
-            return null;
-        }
-
-        /// <summary>Coding for status.</summary>
-        /// <param name="status">The status.</param>
-        /// <returns>A Coding.</returns>
-        private static Coding CodingForOperationalStatus(string status)
-        {
-            switch (status)
-            {
-                case OperationalStatusContaminated:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "K",
-                        "Contaminated");
-
-                case OperationalStatusClosed:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "C",
-                        "Closed");
-
-                case OperationalStatusHousekeeping:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "H",
-                        "Housekeeping");
-
-                case OperationalStatusOccupied:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "O",
-                        "Occupied");
-
-                case OperationalStatusUnoccupied:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "U",
-                        "Unoccupied");
-            }
-
-            return null;
-        }
-
-        /// <summary>Concept for operational status.</summary>
-        /// <param name="status">The status.</param>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForOperationalStatus(string status)
-        {
-            switch (status)
-            {
-                case OperationalStatusContaminated:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "K",
-                        "Contaminated");
-
-                case OperationalStatusClosed:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "C",
-                        "Closed");
-
-                case OperationalStatusHousekeeping:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "H",
-                        "Housekeeping");
-
-                case OperationalStatusOccupied:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "O",
-                        "Occupied");
-
-                case OperationalStatusUnoccupied:
-                    return new CodeableConcept(
-                        "http://terminology.hl7.org/CodeSystem/v2-0116",
-                        "U",
-                        "Unoccupied");
-            }
-
-            return null;
-        }
-
-        /// <summary>Codings for bed types.</summary>
-        /// <param name="bedTypes">List of types of the bed.</param>
-        /// <returns>A List&lt;Coding&gt;</returns>
-        private static List<Coding> CodingsForBedTypes(List<string> bedTypes)
-        {
-            List<Coding> codings = new List<Coding>();
-
-            foreach (string bedType in bedTypes)
-            {
-                codings.Add(CodingForBedType(bedType));
-            }
-
-            return codings;
-        }
-
-        /// <summary>Coding for bed type.</summary>
-        /// <param name="type">The type.</param>
-        /// <returns>A Coding.</returns>
-        private static Coding CodingForBedType(string type)
-        {
-            switch (type)
-            {
-                case BedTypeAdultICU:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "ICU",
-                        "Adult ICU bed type.");
-
-                case BedTypePediatricICU:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "PEDICU",
-                        "Pediatric ICU beds.");
-
-                case BedTypeNeonatalICU:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "PEDNICU",
-                        "Neonatal ICU beds.");
-
-                case BedTypeEmergencyRoom:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "ER",
-                        "Emergency Department beds.");
-
-                case BedTypeHospitalUnit:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "HU",
-                        "Hospital unit.");
-
-                case BedTypeRehabLongTermCare:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "RHU",
-                        "Rehabilitation - long term care beds.");
-
-                case BedTypePediatric:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "PEDU",
-                        "Pediatric beds.");
-
-                case BedTypePsychiatric:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "PHU",
-                        "Psyciatric beds.");
-
-                case BedTypeOperatingRoom:
-                    return new Coding(
-                        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                        "OR",
-                        "Operating Rooms");
-            }
-
-            return null;
-        }
-
         /// <summary>Concepts for bed types.</summary>
         /// <param name="bedTypes">List of types of the bed.</param>
         /// <returns>A List&lt;CodeableConcept&gt;</returns>
@@ -874,49 +613,10 @@ namespace generator_cli.Generators
 
             foreach (string bedType in bedTypes)
             {
-                concepts.Add(ConceptForBedType(bedType));
+                concepts.Add(FhirTriplet.BedType(bedType).Concept);
             }
 
             return concepts;
-        }
-
-        /// <summary>Concept for bed type.</summary>
-        /// <param name="type">The type.</param>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForBedType(string type)
-        {
-            var ret = new CodeableConcept();
-            ret.Coding.Add(CodingForBedType(type));
-            return ret;
-        }
-
-        /// <summary>Concept for bed feature.</summary>
-        /// <param name="feature">The feature.</param>
-        /// <returns>A CodeableConcept.</returns>
-        private static CodeableConcept ConceptForBedFeature(string feature)
-        {
-            switch (feature)
-            {
-                case BedFeatureNegativeFlowIsolation:
-                    return new CodeableConcept(
-                        "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                        "NEGISO",
-                        "Negative airflow isolation beds.");
-
-                case BedFeatureOtherIsolation:
-                    return new CodeableConcept(
-                        "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                        "OTHISO",
-                        "Isolation beds (airflow is not a concern).");
-
-                case BedFeatureNonIsolating:
-                    return new CodeableConcept(
-                        "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType",
-                        "NONISO",
-                        "Non-isolating unit.");
-            }
-
-            return null;
         }
     }
 }

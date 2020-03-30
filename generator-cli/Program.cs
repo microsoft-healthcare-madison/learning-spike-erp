@@ -52,7 +52,7 @@ namespace generator_cli
         /// <param name="operationalStatuses"> Bar separated operational status: U|O|K (default: O|U).</param>
         /// <param name="minBedsPerOrg">       The minimum number of beds per hospital (default: 10).</param>
         /// <param name="maxBedsPerOrg">       The maximum number of beds per hospital (default: 1000).</param>
-        /// <param name="exportBeds">          If bundles of individual beds should be exported (default: true).</param>
+        /// <param name="exportBeds">          If bundles of individual beds should be exported (default: false).</param>
         /// <param name="exportGroups">        If SANER-IG groups should be generated (deprecated - default: false).</param>
         /// <param name="changeFactor">        The amount of change in bed state per step (default 0.2).</param>
         public static void Main(
@@ -72,7 +72,7 @@ namespace generator_cli
             string operationalStatuses = "O|U",
             int minBedsPerOrg = 10,
             int maxBedsPerOrg = 1000,
-            bool exportBeds = true,
+            bool exportBeds = false,
             bool exportGroups = false,
             double changeFactor = 0.2)
         {
@@ -231,7 +231,7 @@ namespace generator_cli
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
-            MeasureReport report = FhirGenerator.GenerateMeasureReport(
+            MeasureReport report = FhirGenerator.GenerateBedMeasureReportV01(
                 _orgById[orgId],
                 _rootLocationByOrgId[orgId],
                 period,
@@ -239,7 +239,7 @@ namespace generator_cli
 
             bundle.AddResourceEntry(
                 report,
-                $"{FhirGenerator.InternalSystem}{report.ResourceType}/{report.Id}");
+                $"{FhirGenerator.SystemInternal}{report.ResourceType}/{report.Id}");
 
             if (_useJson)
             {
@@ -311,7 +311,7 @@ namespace generator_cli
 
                 bundle.AddResourceEntry(
                     group,
-                    $"{FhirGenerator.InternalSystem}{group.ResourceType}/{group.Id}");
+                    $"{FhirGenerator.SystemInternal}{group.ResourceType}/{group.Id}");
             }
 
             if (_useJson)
@@ -402,7 +402,7 @@ namespace generator_cli
             {
                 bundle.AddResourceEntry(
                     bed,
-                    $"{FhirGenerator.InternalSystem}{bed.ResourceType}/{bed.Id}");
+                    $"{FhirGenerator.SystemInternal}{bed.ResourceType}/{bed.Id}");
             }
 
             if (_useJson)
@@ -454,11 +454,11 @@ namespace generator_cli
 
             bundle.AddResourceEntry(
                 _orgById[orgId],
-                $"{FhirGenerator.InternalSystem}{_orgById[orgId].ResourceType}/{orgId}");
+                $"{FhirGenerator.SystemInternal}{_orgById[orgId].ResourceType}/{orgId}");
 
             bundle.AddResourceEntry(
                 _rootLocationByOrgId[orgId],
-                $"{FhirGenerator.InternalSystem}{_rootLocationByOrgId[orgId].ResourceType}/{_rootLocationByOrgId[orgId].Id}");
+                $"{FhirGenerator.SystemInternal}{_rootLocationByOrgId[orgId].ResourceType}/{_rootLocationByOrgId[orgId].Id}");
 
             if (_useJson)
             {
