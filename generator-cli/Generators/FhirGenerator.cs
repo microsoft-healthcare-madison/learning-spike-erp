@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using generator_cli.Geographic;
+using generator_cli.Models;
 using Hl7.Fhir.Model;
 
 namespace generator_cli.Generators

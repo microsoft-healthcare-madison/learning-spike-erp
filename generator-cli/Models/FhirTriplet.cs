@@ -8,7 +8,7 @@ using System.Text;
 using Hl7.Fhir.Model;
 using static generator_cli.Generators.FhirGenerator;
 
-namespace generator_cli.Generators
+namespace generator_cli.Models
 {
     /// <summary>A fhir triplet.</summary>
     public class FhirTriplet
@@ -91,6 +91,12 @@ namespace generator_cli.Generators
         /// <value>The coding.</value>
         public Coding Coding => new Coding(System, Code, Display);
 
+        /// <summary>The empty required.</summary>
+        public static FhirTriplet EmptyRequired = new FhirTriplet(string.Empty, string.Empty, _fakeCodeText);
+
+        /// <summary>The measure report period.</summary>
+        public static FhirTriplet MeasureReportPeriod = new FhirTriplet(SystemMeasureReport, "MeasureReport.period");
+
         /// <summary>Gets the physical type bed.</summary>
         /// <value>The physical type bed.</value>
         public static FhirTriplet PhysicalTypeBed => new FhirTriplet(SystemLocationPhysicalType, "bd");
@@ -98,12 +104,6 @@ namespace generator_cli.Generators
         /// <summary>Gets the physical type site.</summary>
         /// <value>The physical type site.</value>
         public static FhirTriplet PhysicalTypeSite => new FhirTriplet(SystemLocationPhysicalType, "si");
-
-        /// <summary>The measure report period.</summary>
-        public static FhirTriplet MeasureReportPeriod = new FhirTriplet(SystemMeasureReport, "MeasureReport.period");
-
-        /// <summary>The empty required.</summary>
-        public static FhirTriplet EmptyRequired = new FhirTriplet(string.Empty, string.Empty, _fakeCodeText);
 
         /// <summary>Gets the saner status.</summary>
         /// <value>The saner status.</value>
