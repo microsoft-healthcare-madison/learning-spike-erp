@@ -43,7 +43,7 @@ namespace generator_cli
         private static double _ventilatorsPerIcu = 0;
         private static double _initialOccupancy = 0;
         private static double _positiveTestRate = 0;
-        private static double _hospitilizationRate = 0;
+        private static double _hospitalizationRate = 0;
         private static double _patientToIcuRate = 0;
         private static double _icuToVentilatorRate = 0;
         private static double _recoveryRate = 0;
@@ -82,11 +82,11 @@ namespace generator_cli
         /// <param name="ventilatorsPerIcu">   Average number of ventilators per ICU bed.</param>
         /// <param name="initialOccupancy">    Initial occupancy of bed percentage.</param>
         /// <param name="positiveTestRate">    Rate of people being tested returning positive.</param>
-        /// <param name="hospitilizationRate"> Rate of people testing positive requiring hospitalization.</param>
+        /// <param name="hospitalizationRate"> Rate of people testing positive requiring hospitalization.</param>
         /// <param name="patientToIcuRate">    Rate of people hospitalized requiring ICU.</param>
         /// <param name="icuToVentilatorRate"> Rate of people in ICU requiring ventilators.</param>
-        /// <param name="recoveryRate">        Rate of people recovering during hospitilzation.</param>
-        /// <param name="deathRate">           Rate of people dying in hospitilization, when care is available.</param>
+        /// <param name="recoveryRate">        Rate of people recovering during hospitalzation.</param>
+        /// <param name="deathRate">           Rate of people dying in hospitalization, when care is available.</param>
         public static void Main(
             string outputDirectory,
             string dataDirectory = null,
@@ -111,8 +111,8 @@ namespace generator_cli
             double maxIcuPercent = 0.20,
             double ventilatorsPerIcu = 0.20,
             double initialOccupancy = 0.20,
-            double positiveTestRate = 0.15,
-            double hospitilizationRate = 0.30,
+            double positiveTestRate = 0.5,
+            double hospitalizationRate = 0.30,
             double patientToIcuRate = 0.30,
             double icuToVentilatorRate = 0.70,
             double recoveryRate = 0.1,
@@ -140,7 +140,7 @@ namespace generator_cli
             _ventilatorsPerIcu = ventilatorsPerIcu;
             _initialOccupancy = initialOccupancy;
             _positiveTestRate = positiveTestRate;
-            _hospitilizationRate = hospitilizationRate;
+            _hospitalizationRate = hospitalizationRate;
             _patientToIcuRate = patientToIcuRate;
             _icuToVentilatorRate = icuToVentilatorRate;
             _recoveryRate = recoveryRate;
@@ -370,13 +370,13 @@ namespace generator_cli
 
             int positive = patient.Positive
                 - patientsRemoved
-                + Math.Max((int)(testPositiveDelta * _hospitilizationRate), 1);
+                + Math.Max((int)(testPositiveDelta * _hospitalizationRate), 1);
             int patients = patient.Total - patient.Positive + positive;
             int positiveNeedIcu = (int)(positive * _patientToIcuRate);
             int positiveNeedVent = (int)(positive * _icuToVentilatorRate);
             int negative = patients - positive;
-            int negativeNeedIcu = (int)(negative * _patientToIcuRate);
-            int negativeNeedVent = (int)(negativeNeedIcu * _icuToVentilatorRate);
+            int negativeNeedIcu = 0; // (int)(negative * _patientToIcuRate);
+            int negativeNeedVent = 0; // (int)(negativeNeedIcu * _icuToVentilatorRate);
 
             int dead = patient.Died + patientsDied;
             int recovered = patient.Recovered + patientsRecovered;
@@ -446,8 +446,8 @@ namespace generator_cli
             int positiveNeedIcu = (int)(positive * _patientToIcuRate);
             int positiveNeedVent = (int)(positive * _icuToVentilatorRate);
             int negative = patients - positive;
-            int negativeNeedIcu = (int)(negative * _patientToIcuRate);
-            int negativeNeedVent = (int)(negativeNeedIcu * _icuToVentilatorRate);
+            int negativeNeedIcu = 0; // (int)(negative * _patientToIcuRate);
+            int negativeNeedVent = 0; // (int)(negativeNeedIcu * _icuToVentilatorRate);
             int onsetInCare = 0;
             int recovered = 0;
             int dead = 0;
@@ -466,7 +466,7 @@ namespace generator_cli
                 dead);
 
             // extrapolate test data
-            int performedTests = (int)(patients / _hospitilizationRate);
+            int performedTests = (int)(patients / _hospitalizationRate);
             int positiveTests = (int)(performedTests * _positiveTestRate);
             int negativeTests = performedTests - positive;
             int pendingTests = _rand.Next(0, 10);

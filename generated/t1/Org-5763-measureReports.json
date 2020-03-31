@@ -6,7 +6,7 @@
     "value": "FHIR-21"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T14:31:28.3830578-05:00",
+  "timestamp": "2020-03-31T16:27:20.0958336-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-22",
@@ -19,7 +19,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3830896-05:00",
+        "date": "2020-03-31T16:27:20.0958631-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -47,7 +47,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3831161-05:00",
+        "date": "2020-03-31T16:27:20.0958966-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -58,7 +58,7 @@
         "group": [
           {
             "measureScore": {
-              "value": 2
+              "value": 9
             }
           }
         ]
@@ -75,7 +75,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3831342-05:00",
+        "date": "2020-03-31T16:27:20.0959172-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -103,7 +103,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3831514-05:00",
+        "date": "2020-03-31T16:27:20.0959371-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -131,7 +131,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3831768-05:00",
+        "date": "2020-03-31T16:27:20.0959581-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -159,7 +159,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3831957-05:00",
+        "date": "2020-03-31T16:27:20.0959784-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -187,7 +187,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832083-05:00",
+        "date": "2020-03-31T16:27:20.0960094-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -198,7 +198,7 @@
         "group": [
           {
             "measureScore": {
-              "value": 1
+              "value": 0
             }
           }
         ]
@@ -215,7 +215,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832188-05:00",
+        "date": "2020-03-31T16:27:20.0960281-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -243,35 +243,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832295-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763"
-        },
-        "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-31",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-31",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
-        "subject": {
-          "reference": "Location/Loc-Org-5763"
-        },
-        "date": "2020-03-31T14:31:28.3832402-05:00",
+        "date": "2020-03-31T16:27:20.0960493-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -289,17 +261,17 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-32",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-31",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-32",
+        "id": "FHIR-31",
         "status": "complete",
         "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832503-05:00",
+        "date": "2020-03-31T16:27:20.0960704-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -310,7 +282,35 @@
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-32",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-32",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763"
+        },
+        "date": "2020-03-31T16:27:20.096089-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763"
+        },
+        "period": {
+          "start": "2020-03-29",
+          "end": "2020-03-29"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 1
             }
           }
         ]
@@ -327,7 +327,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832734-05:00",
+        "date": "2020-03-31T16:27:20.096106-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -355,7 +355,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832845-05:00",
+        "date": "2020-03-31T16:27:20.0961176-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -383,7 +383,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3832951-05:00",
+        "date": "2020-03-31T16:27:20.0961264-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -394,7 +394,7 @@
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 1
             }
           }
         ]
@@ -411,7 +411,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.3833057-05:00",
+        "date": "2020-03-31T16:27:20.0961344-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },
@@ -439,7 +439,7 @@
         "subject": {
           "reference": "Location/Loc-Org-5763"
         },
-        "date": "2020-03-31T14:31:28.383316-05:00",
+        "date": "2020-03-31T16:27:20.0961423-05:00",
         "reporter": {
           "reference": "Organization/Org-5763"
         },

@@ -4,15 +4,18 @@
 // </copyright>
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using CsvHelper;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
+using measureReportTransformer.CDC;
 using Newtonsoft.Json;
 
 namespace measureReportTransformer
 {
     /// <summary>A program.</summary>
-    public class Program
+    public static class Program
     {
         /// <summary>The JSON parser.</summary>
         private static FhirJsonParser _jsonParser = new FhirJsonParser();
@@ -34,7 +37,47 @@ namespace measureReportTransformer
                 throw new ArgumentNullException(nameof(inputDirectory));
             }
 
+            if (string.IsNullOrEmpty(outputDirectory))
+            {
+                throw new ArgumentNullException(nameof(outputDirectory));
+            }
+
             LoadFromDirectory(inputDirectory);
+
+            foreach (string orgRef in _orgsByRef.Keys)
+            {
+                WriteCdcCsv(orgRef, outputDirectory);
+            }
+        }
+
+        /// <summary>Writes a CDC CSV.</summary>
+        /// <param name="orgRef">Identifier for the organization.</param>
+        /// <param name="dir">  The dir.</param>
+        private static void WriteCdcCsv(
+            string orgRef,
+            string dir)
+        {
+            if (!_reportsByOrgRef.ContainsKey(orgRef))
+            {
+                return;
+            }
+
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
+            List<CdcModel> cdcData = _reportsByOrgRef[orgRef].CdcData;
+
+            string orgId = _orgsByRef[orgRef].Id;
+
+            string filename = Path.Combine(dir, $"{orgId}-cdc.csv");
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            using (CsvWriter csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(cdcData);
+            }
         }
 
         /// <summary>Loads from directory.</summary>
@@ -106,7 +149,7 @@ namespace measureReportTransformer
                         case "MeasureReport":
                             MeasureReport report = (MeasureReport)entry.Resource;
 
-                            if (_reportsByOrgRef.ContainsKey(report.Reporter.Reference))
+                            if (!_reportsByOrgRef.ContainsKey(report.Reporter.Reference))
                             {
                                 _reportsByOrgRef.Add(
                                     report.Reporter.Reference,
