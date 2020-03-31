@@ -15,30 +15,26 @@ namespace measureReportTransformer
     public class Program
     {
         /// <summary>The JSON parser.</summary>
-        private static FhirJsonParser _jsonParser = null;
+        private static FhirJsonParser _jsonParser = new FhirJsonParser();
 
-        private static Dictionary<string, Organization> _orgsByRef = null;
-        private static Dictionary<string, Location> _locationsByRef = null;
-        private static Dictionary<string, MeasureReport> _reportsByRef = null;
+        private static Dictionary<string, Organization> _orgsByRef = new Dictionary<string, Organization>();
+        private static Dictionary<string, Location> _locationsByRef = new Dictionary<string, Location>();
+        private static Dictionary<string, Measure> _measuresByUrl = new Dictionary<string, Measure>();
+        private static Dictionary<string, ReportCollection> _reportsByOrgRef = new Dictionary<string, ReportCollection>();
 
         /// <summary>Main entry-point for this application.</summary>
         /// <param name="inputDirectory"> Source Bundle folder (either this or --fhir-server-url is required).</param>
-        /// <param name="fhirServerUrl">  FHIR server to use (either this or --input-directory is required).</param>
         /// <param name="outputDirectory">Location to write formatted data.</param>
         public static void Main(
             string inputDirectory,
-            string fhirServerUrl,
             string outputDirectory)
         {
-            _jsonParser = new FhirJsonParser();
-            _orgsByRef = new Dictionary<string, Organization>();
-            _locationsByRef = new Dictionary<string, Location>();
-            _reportsByRef = new Dictionary<string, MeasureReport>();
-
-            if (!string.IsNullOrEmpty(inputDirectory))
+            if (string.IsNullOrEmpty(inputDirectory))
             {
-                LoadFromDirectory(inputDirectory);
+                throw new ArgumentNullException(nameof(inputDirectory));
             }
+
+            LoadFromDirectory(inputDirectory);
         }
 
         /// <summary>Loads from directory.</summary>
@@ -80,6 +76,7 @@ namespace measureReportTransformer
                             {
                                 _orgsByRef.Add(orgId, (Organization)entry.Resource);
                             }
+
                             break;
 
                         case "Location":
@@ -96,8 +93,27 @@ namespace measureReportTransformer
 
                             break;
 
+                        case "Measure":
+                            Measure measure = (Measure)entry.Resource;
+
+                            if (!_measuresByUrl.ContainsKey(measure.Url))
+                            {
+                                _measuresByUrl.Add(measure.Url, measure);
+                            }
+
+                            break;
+
                         case "MeasureReport":
-                            _reportsByRef.Add($"MeasureReport/{entry.Resource.Id}", (MeasureReport)entry.Resource);
+                            MeasureReport report = (MeasureReport)entry.Resource;
+
+                            if (_reportsByOrgRef.ContainsKey(report.Reporter.Reference))
+                            {
+                                _reportsByOrgRef.Add(
+                                    report.Reporter.Reference,
+                                    new ReportCollection(report.Reporter.Reference));
+                            }
+
+                            _reportsByOrgRef[report.Reporter.Reference].AddReport(report);
                             break;
                     }
                 }

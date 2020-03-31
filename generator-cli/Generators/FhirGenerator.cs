@@ -11,175 +11,18 @@ using System.Threading;
 using generator_cli.Geographic;
 using generator_cli.Models;
 using Hl7.Fhir.Model;
+using static generator_cli.Generators.CommonLiterals;
 
 namespace generator_cli.Generators
 {
     /// <summary>A ben generator.</summary>
     public abstract class FhirGenerator
     {
-        /// <summary>The fhir identifier prefix.</summary>
-        public const string FhirIdPrefix = "FHIR-";
-
-        /// <summary>The hospital prefix.</summary>
-        public const string OrgPrefix = "Org-";
-
-        /// <summary>The root location prefix.</summary>
-        public const string RootLocationPrefix = "Loc-";
-
-        /// <summary>The measure report measurement.</summary>
-        public const string MeasureReportMeasurement = "https://audaciousinquiry.github.io/saner-ig/Measure/bed-availability-measure";
-
-        /// <summary>The internal system.</summary>
-        public const string SystemInternal = "https://github.com/microsoft-healthcare-madison/learning-spike-erp/";
-
-        /// <summary>The SANER-IG characteristic system.</summary>
-        public const string SystemSanerCharacteristic = "http://hl7.org/fhir/R4/StructureDefinition/Location";
-
-        /// <summary>The system saner bed feature.</summary>
-        public const string SystemSanerBedFeature = "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType";
-
-        /// <summary>Type of the system location physical.</summary>
-        public const string SystemLocationPhysicalType = "http://terminology.hl7.org/CodeSystem/location-physical-type";
-
-        /// <summary>The system measure report.</summary>
-        public const string SystemMeasureReport = "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport";
-
-        /// <summary>The system availability status.</summary>
-        public const string SystemAvailabilityStatus = "http://hl7.org/fhir/location-status";
-
-        /// <summary>The system operational status.</summary>
-        public const string SystemOperationalStatus = "http://terminology.hl7.org/CodeSystem/v2-0116";
-
-        /// <summary>Type of the system bed.</summary>
-        public const string SystemBedType = "http://terminology.hl7.org/CodeSystem/v3-RoleCode";
-
         /// <summary>The random.</summary>
         private static Random _rand = new Random();
 
         /// <summary>The identifier.</summary>
         private static long _id = 1;
-
-        /// <summary>This location is operational (but may be in use).</summary>
-        public const string AvailabilityStatusActive = "active";
-
-        /// <summary>This location is temporarily out of service.</summary>
-        public const string AvailabilityStatusSuspended = "suspended";
-
-        /// <summary>This location is no longer operational.</summary>
-        public const string AvailabilityStatusInactive = "inactive";
-
-        /// <summary>The availability statuses.</summary>
-        public static readonly string[] AvailabilityStatuses =
-        {
-            AvailabilityStatusActive,
-            AvailabilityStatusInactive,
-            AvailabilityStatusSuspended,
-        };
-
-        /// <summary>This bed needs decontamination before it can be readied for use.</summary>
-        public const string OperationalStatusContaminated = "K";
-
-        /// <summary>This bed is no longer in service.</summary>
-        public const string OperationalStatusClosed = "C";
-
-        /// <summary>This bed is not in use, but is presently ready for use.</summary>
-        public const string OperationalStatusHousekeeping = "H";
-
-        /// <summary>This bed is presently in use.</summary>
-        public const string OperationalStatusOccupied = "O";
-
-        /// <summary>This bed is presently ready for use.</summary>
-        public const string OperationalStatusUnoccupied = "U";
-
-        /// <summary>The operational statuses.</summary>
-        public static readonly string[] OperationalStatuses =
-        {
-            OperationalStatusContaminated,
-            OperationalStatusClosed,
-            OperationalStatusHousekeeping,
-            OperationalStatusOccupied,
-            OperationalStatusUnoccupied,
-        };
-
-        /// <summary>The bed type adult icu.</summary>
-        public const string BedTypeAdultICU = "ICU";
-
-        /// <summary>The bed type pediactric icu.</summary>
-        public const string BedTypePediatricICU = "PEDICU";
-
-        /// <summary>The bed type neonatal icu.</summary>
-        public const string BedTypeNeonatalICU = "PEDNICU";
-
-        /// <summary>The bed type emergency room.</summary>
-        public const string BedTypeEmergencyRoom = "ER";
-
-        /// <summary>The bed type hospital unit.</summary>
-        public const string BedTypeHospitalUnit = "HU";
-
-        /// <summary>The bed type rehab long term care.</summary>
-        public const string BedTypeRehabLongTermCare = "RHU";
-
-        /// <summary>The bed type pediatric.</summary>
-        public const string BedTypePediatric = "PEDU";
-
-        /// <summary>The bed type psychiatric.</summary>
-        public const string BedTypePsychiatric = "PHU";
-
-        /// <summary>The bed type operating room.</summary>
-        public const string BedTypeOperatingRoom = "OR";
-
-        /// <summary>List of types of the bed.</summary>
-        public static readonly string[] BedTypes =
-        {
-            BedTypeAdultICU,
-            BedTypePediatricICU,
-            BedTypeNeonatalICU,
-            BedTypeEmergencyRoom,
-            BedTypeHospitalUnit,
-            BedTypeRehabLongTermCare,
-            BedTypePediatric,
-            BedTypePsychiatric,
-            BedTypeOperatingRoom,
-        };
-
-        /// <summary>Negative airflow isolation beds.</summary>
-        public const string BedFeatureNegativeFlowIsolation = "NEGISO";
-
-        /// <summary>Isolation beds (airflow is not a concern).</summary>
-        public const string BedFeatureOtherIsolation = "OTHISO";
-
-        /// <summary>Bed in a unit that does not support isolation.</summary>
-        public const string BedFeatureNonIsolating = "NONISO";
-
-        /// <summary>The bed features.</summary>
-        public static readonly string[] BedFeatures =
-        {
-            BedFeatureNegativeFlowIsolation,
-            BedFeatureOtherIsolation,
-            BedFeatureNonIsolating,
-        };
-
-        /// <summary>Values that represent SANER-IG characteristics.</summary>
-        public enum SanerCharacteristic
-        {
-            /// <summary>Location Status.</summary>
-            Status,
-
-            /// <summary>Location Operational Status.</summary>
-            OperationalStatus,
-
-            /// <summary>Location Role Type.</summary>
-            Type,
-
-            /// <summary>Bed Feature.</summary>
-            Feature,
-
-            /// <summary>Parent location.</summary>
-            Location,
-
-            /// <summary>Time this group represents.</summary>
-            Period,
-        }
 
         /// <summary>Gets the identifier of the next.</summary>
         /// <value>The identifier of the next.</value>
@@ -203,35 +46,35 @@ namespace generator_cli.Generators
 
         /// <summary>Identifier for identifier.</summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
+        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;.</returns>
         public static Hl7.Fhir.Model.Identifier IdentifierForId(string id)
         {
             return new Hl7.Fhir.Model.Identifier(
-                    SystemInternal,
+                    SystemLiterals.Internal,
                     id);
         }
 
         /// <summary>Identifier list for identifier.</summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
+        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;.</returns>
         public static List<Hl7.Fhir.Model.Identifier> IdentifierListForId(string id)
         {
             return new List<Identifier>()
             {
                 new Hl7.Fhir.Model.Identifier(
-                        SystemInternal,
+                        SystemLiterals.Internal,
                         id),
             };
         }
 
         /// <summary>Concept for organization type.</summary>
-        /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
+        /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;.</returns>
         public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForOrganizationType() =>
             new List<Hl7.Fhir.Model.CodeableConcept>()
             {
                 new Hl7.Fhir.Model.CodeableConcept(
-                    "http://hl7.org/fhir/CodeSystem/organization-type",
-                    "prov"),
+                    SystemLiterals.OrganizationType,
+                    OrganizationTypeProvider),
             };
 
         /// <summary>Identifier for organization root location.</summary>
@@ -289,7 +132,7 @@ namespace generator_cli.Generators
 
             if ((org.Address == null) || (org.Address.Count == 0))
             {
-                throw new ArgumentException($"Organization Address is required!");
+                throw new ArgumentException("Organization Address is required!");
             }
 
             Location.PositionComponent position = null;
@@ -465,11 +308,6 @@ namespace generator_cli.Generators
             };
         }
 
-        public static MeasureReport GenerateScreeningRateReport()
-        {
-            return null;
-        }
-
         /// <summary>Generates a measure report.</summary>
         /// <param name="org">           The organization.</param>
         /// <param name="parentLocation">The parent location.</param>
@@ -543,7 +381,7 @@ namespace generator_cli.Generators
                         {
                             Code = FhirTriplet.SanerLocation.Concept,
                             Value = new CodeableConcept(
-                                $"{SystemSanerCharacteristic}/partOf",
+                                $"{SystemLiterals.SanerCharacteristic}/partOf",
                                 $"{parentLocation.ResourceType}/{parentLocation.Id}"),
                         },
                     },
@@ -569,55 +407,18 @@ namespace generator_cli.Generators
                 Type = MeasureReport.MeasureReportType.Summary,
                 Date = new FhirDateTime(new DateTimeOffset(DateTime.Now)).ToString(),
                 Period = period,
-                Measure = MeasureReportMeasurement,
+                Measure = SystemLiterals.MeasureReportMeasurement,
                 Reporter = new ResourceReference($"{org.ResourceType}/{org.Id}"),
                 Group = new List<MeasureReport.GroupComponent>() { component },
                 Text = new Narrative()
                 {
-                    Div = $"<div xmlns=\"http://www.w3.org/1999/xhtml\">" + 
+                    Div = $"<div xmlns=\"http://www.w3.org/1999/xhtml\">" +
                         $" {org.Name} Bed report for" +
                         $" {period.Start.ToString(CultureInfo.InvariantCulture)}" +
                         $" to" +
                         $" {period.End.ToString(CultureInfo.InvariantCulture)}</div>",
                 },
             };
-        }
-
-        /// <summary>Gets location status.</summary>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown when one or more arguments are outside the
-        ///  required range.</exception>
-        /// <param name="status">The status.</param>
-        /// <returns>The location status.</returns>
-        private static Location.LocationStatus GetLocationStatus(string status)
-        {
-            switch (status)
-            {
-                case AvailabilityStatusActive:
-                    return Location.LocationStatus.Active;
-
-                case AvailabilityStatusSuspended:
-                    return Location.LocationStatus.Suspended;
-
-                case AvailabilityStatusInactive:
-                    return Location.LocationStatus.Inactive;
-            }
-
-            throw new ArgumentOutOfRangeException(nameof(status));
-        }
-
-        /// <summary>Concepts for bed types.</summary>
-        /// <param name="bedTypes">List of types of the bed.</param>
-        /// <returns>A List&lt;CodeableConcept&gt;</returns>
-        private static List<CodeableConcept> ConceptsForBedTypes(List<string> bedTypes)
-        {
-            List<CodeableConcept> concepts = new List<CodeableConcept>();
-
-            foreach (string bedType in bedTypes)
-            {
-                concepts.Add(FhirTriplet.BedType(bedType).Concept);
-            }
-
-            return concepts;
         }
     }
 }

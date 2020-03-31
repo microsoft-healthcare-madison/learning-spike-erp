@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using generator_cli.Generators;
 using generator_cli.Geographic;
+using generator_cli.Models;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using Newtonsoft.Json;
@@ -15,8 +16,10 @@ using Newtonsoft.Json;
 namespace generator_cli
 {
     /// <summary>A program.</summary>
-    public class Program
+    public static class Program
     {
+        private const string _filenameBaseForMeasures = "Measures";
+
         private const string _filenameAdditionForBeds = "-beds";
         private const string _filenameAdditionForGroups = "-groups";
         private const string _filenameAdditionForMeasureReports = "-measureReports";
@@ -25,10 +28,29 @@ namespace generator_cli
         private static Dictionary<string, Location> _rootLocationByOrgId = new Dictionary<string, Location>();
         private static Dictionary<string, OrgBeds> _bedsByOrgId = new Dictionary<string, OrgBeds>();
 
+        private static Dictionary<string, OrgDeviceData> _deviceDataByOrgId = new Dictionary<string, OrgDeviceData>();
+        private static Dictionary<string, OrgPatientData> _patientDataByOrgId = new Dictionary<string, OrgPatientData>();
+        private static Dictionary<string, OrgTestData> _testDataByOrgId = new Dictionary<string, OrgTestData>();
+
         private static List<BedConfiguration> _bedConfigurations = null;
 
+        private static Random _rand = null;
         private static bool _useLookup = false;
         private static bool _useJson = false;
+        private static double _changeFactor = 0;
+        private static double _minIcuPercent = 0;
+        private static double _maxIcuPercent = 0;
+        private static double _ventilatorsPerIcu = 0;
+        private static double _initialOccupancy = 0;
+        private static double _positiveTestRate = 0;
+        private static double _hospitilizationRate = 0;
+        private static double _patientToIcuRate = 0;
+        private static double _icuToVentilatorRate = 0;
+        private static double _recoveryRate = 0;
+        private static double _deathRate = 0;
+        private static double _noResourceRecoveryRate = 0;
+        private static double _noResourceDeathRate = 0;
+
         private static FhirJsonSerializer _jsonSerializer = null;
         private static FhirXmlSerializer _xmlSerializer = null;
 
@@ -45,7 +67,7 @@ namespace generator_cli
         /// <param name="timeSteps">           Number of time-step updates to generate.</param>
         /// <param name="timePeriodHours">     Time-step period in hours (default: 24).</param>
         /// <param name="seed">                Starting seed to use in generation, 0 for none (default: 0).</param>
-        /// <param name="recordsToSkip">       Number of records to skip before starting generation (default: 0).</param>             
+        /// <param name="recordsToSkip">       Number of records to skip before starting generation (default: 0).</param>
         /// <param name="orgSource">           Source for organization records: generate|csv (default: csv).</param>
         /// <param name="prettyPrint">         If output files should be formatted for display.</param>
         /// <param name="bedTypes">            Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
@@ -55,6 +77,16 @@ namespace generator_cli
         /// <param name="exportBeds">          If bundles of individual beds should be exported (default: false).</param>
         /// <param name="exportGroups">        If SANER-IG groups should be generated (deprecated - default: false).</param>
         /// <param name="changeFactor">        The amount of change in bed state per step (default 0.2).</param>
+        /// <param name="minIcuPercent">       Minimum percentage of beds for an org which are ICU type.</param>
+        /// <param name="maxIcuPercent">       Maximum percentage of beds for an org which are ICU type.</param>
+        /// <param name="ventilatorsPerIcu">   Average number of ventilators per ICU bed.</param>
+        /// <param name="initialOccupancy">    Initial occupancy of bed percentage.</param>
+        /// <param name="positiveTestRate">    Rate of people being tested returning positive.</param>
+        /// <param name="hospitilizationRate"> Rate of people testing positive requiring hospitalization.</param>
+        /// <param name="patientToIcuRate">    Rate of people hospitalized requiring ICU.</param>
+        /// <param name="icuToVentilatorRate"> Rate of people in ICU requiring ventilators.</param>
+        /// <param name="recoveryRate">        Rate of people recovering during hospitilzation.</param>
+        /// <param name="deathRate">           Rate of people dying in hospitilization, when care is available.</param>
         public static void Main(
             string outputDirectory,
             string dataDirectory = null,
@@ -74,7 +106,17 @@ namespace generator_cli
             int maxBedsPerOrg = 1000,
             bool exportBeds = false,
             bool exportGroups = false,
-            double changeFactor = 0.2)
+            double changeFactor = 0.2,
+            double minIcuPercent = 0.05,
+            double maxIcuPercent = 0.20,
+            double ventilatorsPerIcu = 0.20,
+            double initialOccupancy = 0.20,
+            double positiveTestRate = 0.15,
+            double hospitilizationRate = 0.30,
+            double patientToIcuRate = 0.30,
+            double icuToVentilatorRate = 0.70,
+            double recoveryRate = 0.1,
+            double deathRate = 0.05)
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -91,6 +133,20 @@ namespace generator_cli
             {
                 Directory.CreateDirectory(outputDirectory);
             }
+
+            _changeFactor = changeFactor;
+            _minIcuPercent = minIcuPercent;
+            _maxIcuPercent = maxIcuPercent;
+            _ventilatorsPerIcu = ventilatorsPerIcu;
+            _initialOccupancy = initialOccupancy;
+            _positiveTestRate = positiveTestRate;
+            _hospitilizationRate = hospitilizationRate;
+            _patientToIcuRate = patientToIcuRate;
+            _icuToVentilatorRate = icuToVentilatorRate;
+            _recoveryRate = recoveryRate;
+            _noResourceRecoveryRate = recoveryRate * 0.1;
+            _deathRate = deathRate;
+            _noResourceDeathRate = Math.Min(deathRate * 10, 1.0);
 
             _useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
 
@@ -116,6 +172,15 @@ namespace generator_cli
             }
 
             _useLookup = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() != "GENERATE");
+
+            if (seed == 0)
+            {
+                _rand = new Random();
+            }
+            else
+            {
+                _rand = new Random(seed);
+            }
 
             // always need the geo manager
             GeoManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
@@ -150,6 +215,293 @@ namespace generator_cli
             // create our organization records
             CreateOrgs(facilityCount, state, postalCode, recordsToSkip);
 
+            if (exportBeds)
+            {
+                ExportByBeds(
+                    outputDirectory,
+                    timeSteps,
+                    timePeriodHours,
+                    exportBeds,
+                    exportGroups);
+            }
+
+            ExportAggregate(outputDirectory, timeSteps, timePeriodHours);
+        }
+
+        /// <summary>Export aggregate.</summary>
+        /// <param name="outputDirectory">Directory to write files.</param>
+        /// <param name="timeSteps">      Number of time-step updates to generate.</param>
+        /// <param name="timePeriodHours">Time-step period in hours (default: 24).</param>
+        private static void ExportAggregate(
+            string outputDirectory,
+            int timeSteps,
+            int timePeriodHours)
+        {
+            // write measures only in t0
+            WriteMeasureBundle(Path.Combine(outputDirectory, "t0"));
+
+            // iterate over the orgs generating their data
+            foreach (string orgId in _orgById.Keys)
+            {
+                Console.WriteLine($"Processing org: {orgId}");
+
+                CreateAggregateData(orgId);
+
+                // loop over timeSteps
+                for (int step = 0; step < timeSteps; step++)
+                {
+                    string dir = Path.Combine(outputDirectory, $"t{step}");
+
+                    if (step == 0)
+                    {
+                        WriteOrgBundle(orgId, dir);
+                    }
+
+                    if (step != 0)
+                    {
+                        UpdateAggregateDataForStep(orgId);
+                    }
+
+                    TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
+                    DateTime dt = DateTime.UtcNow.Subtract(hoursToSubtract);
+                    FhirDateTime dateTime = new FhirDateTime(dt.Year, dt.Month, dt.Day);
+                    Period period = new Period(dateTime, dateTime);
+
+                    WriteOrgReportBundle(orgId, dir, period);
+                }
+            }
+        }
+
+        /// <summary>Writes a measure bundle.</summary>
+        /// <param name="dir">The dir.</param>
+        private static void WriteMeasureBundle(string dir)
+        {
+            string filename = Path.Combine(dir, $"{_filenameBaseForMeasures}{_extension}");
+
+            if (_useJson)
+            {
+                File.WriteAllText(filename, _jsonSerializer.SerializeToString(MeasureGenerator.GetMeasureBundle()));
+            }
+            else
+            {
+                File.WriteAllText(filename, _xmlSerializer.SerializeToString(MeasureGenerator.GetMeasureBundle()));
+            }
+        }
+
+        /// <summary>Writes an organisation reports.</summary>
+        /// <param name="orgId"> The organization.</param>
+        /// <param name="dir">   The dir.</param>
+        /// <param name="period">The period.</param>
+        private static void WriteOrgReportBundle(
+            string orgId,
+            string dir,
+            Period period)
+        {
+            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForMeasureReports}{_extension}");
+
+            MeasureReportGenerator reportGen = new MeasureReportGenerator(
+                _orgById[orgId],
+                _rootLocationByOrgId[orgId],
+                _deviceDataByOrgId[orgId],
+                _patientDataByOrgId[orgId],
+                _testDataByOrgId[orgId],
+                period);
+
+            if (_useJson)
+            {
+                File.WriteAllText(filename, _jsonSerializer.SerializeToString(reportGen.GetReportBundle()));
+            }
+            else
+            {
+                File.WriteAllText(filename, _xmlSerializer.SerializeToString(reportGen.GetReportBundle()));
+            }
+        }
+
+        /// <summary>Updates the aggregate data for step.</summary>
+        private static void UpdateAggregateDataForStep(string orgId)
+        {
+            OrgDeviceData device = _deviceDataByOrgId[orgId];
+            OrgPatientData patient = _patientDataByOrgId[orgId];
+            OrgTestData test = _testDataByOrgId[orgId];
+
+            // increase testing
+            int testDelta = (int)(test.Performed * _changeFactor);
+            if (testDelta == 0)
+            {
+                testDelta = 1;
+            }
+
+            int testPositiveDelta = (int)(testDelta * _positiveTestRate);
+            int testNegativeDelta = testDelta - testPositiveDelta;
+            int testPending = _rand.Next(0, 10);
+
+            int patientsShortCare =
+                Math.Max(0, patient.PositiveNeedVent - device.Ventilators) +
+                Math.Max(0, patient.PositiveNeedIcu - device.ICU) +
+                Math.Max(0, patient.PositiveNonIcu - device.Inpatient);
+
+            int patientsWithCare = patient.Positive - patientsShortCare;
+
+            double effectiveRecoveryRate = (patient.Positive == 0)
+                ? 0
+                : ((_recoveryRate * patientsWithCare) + (_noResourceRecoveryRate * patientsShortCare)) /
+                  ((double)patientsWithCare + (double)patientsShortCare);
+
+            double effectiveDeathRate = (patient.Positive == 0)
+                ? 0
+                : ((_deathRate * patientsWithCare) + (_noResourceDeathRate * patientsShortCare)) /
+                  ((double)patientsWithCare + (double)patientsShortCare);
+
+            double patientRemovalRate = effectiveDeathRate + effectiveRecoveryRate;
+
+            int patientsRemoved = (int)(patient.Positive * patientRemovalRate);
+            int patientsDied;
+            int patientsRecovered;
+            if (_rand.NextDouble() < 0.5)
+            {
+                patientsDied = (int)((double)patient.Positive * effectiveDeathRate);
+                patientsRecovered = patientsRemoved - patientsDied;
+            }
+            else
+            {
+                patientsRecovered = (int)((double)patient.Positive * effectiveRecoveryRate);
+                patientsDied = patientsRemoved - patientsRecovered;
+            }
+
+            int positive = patient.Positive
+                - patientsRemoved
+                + Math.Max((int)(testPositiveDelta * _hospitilizationRate), 1);
+            int patients = patient.Total - patient.Positive + positive;
+            int positiveNeedIcu = (int)(positive * _patientToIcuRate);
+            int positiveNeedVent = (int)(positive * _icuToVentilatorRate);
+            int negative = patients - positive;
+            int negativeNeedIcu = (int)(negative * _patientToIcuRate);
+            int negativeNeedVent = (int)(negativeNeedIcu * _icuToVentilatorRate);
+
+            int dead = patient.Died + patientsDied;
+            int recovered = patient.Recovered + patientsRecovered;
+
+            // update records
+            test.Update(
+                testDelta,
+                testPositiveDelta,
+                testNegativeDelta,
+                testPending);
+
+            patient.Update(
+                patients,
+                positive,
+                positiveNeedIcu,
+                positiveNeedVent,
+                negative,
+                negativeNeedIcu,
+                negativeNeedVent,
+                0,
+                recovered,
+                dead);
+
+            // Console.WriteLine($" - Tests: {test.Performed}, {test.Positive}, {test.Negative}, {test.Pending}");
+            // Console.WriteLine($" - Patients: {patient.Total}, {patient.Positive}, {patient.Negative}, {patient.Recovered}, {patient.Died}");
+        }
+
+        /// <summary>Creates aggregate data.</summary>
+        private static void CreateAggregateData(string orgId)
+        {
+            int initialBedCount;
+
+            if (_useLookup)
+            {
+                initialBedCount = HospitalManager.BedsForHospital(orgId);
+            }
+            else
+            {
+                initialBedCount = GeoManager.BedsForHospital();
+            }
+
+            double icuRate = (_rand.NextDouble() * (_maxIcuPercent - _minIcuPercent)) + _minIcuPercent;
+            int icuBeds = (int)(initialBedCount * icuRate);
+            if (icuBeds < 1)
+            {
+                icuBeds = 1;
+            }
+
+            int inpatientBeds = initialBedCount - icuBeds;
+
+            int ventilators = (int)(icuBeds * _ventilatorsPerIcu);
+            if (ventilators < 1)
+            {
+                ventilators = 1;
+            }
+
+            // create device data for this org
+            OrgDeviceData device = new OrgDeviceData(
+                initialBedCount,
+                inpatientBeds,
+                icuBeds,
+                ventilators);
+
+            // figure out patient numbers based on initial capacity
+            int patients = (int)(initialBedCount * _initialOccupancy);
+            int positive = (int)(patients * _positiveTestRate);
+            int positiveNeedIcu = (int)(positive * _patientToIcuRate);
+            int positiveNeedVent = (int)(positive * _icuToVentilatorRate);
+            int negative = patients - positive;
+            int negativeNeedIcu = (int)(negative * _patientToIcuRate);
+            int negativeNeedVent = (int)(negativeNeedIcu * _icuToVentilatorRate);
+            int onsetInCare = 0;
+            int recovered = 0;
+            int dead = 0;
+
+            // create patient data
+            OrgPatientData patient = new OrgPatientData(
+                patients,
+                positive,
+                positiveNeedIcu,
+                positiveNeedVent,
+                negative,
+                negativeNeedIcu,
+                negativeNeedVent,
+                onsetInCare,
+                recovered,
+                dead);
+
+            // extrapolate test data
+            int performedTests = (int)(patients / _hospitilizationRate);
+            int positiveTests = (int)(performedTests * _positiveTestRate);
+            int negativeTests = performedTests - positive;
+            int pendingTests = _rand.Next(0, 10);
+            performedTests += pendingTests;
+
+            // create test data record
+            OrgTestData test = new OrgTestData(
+                performedTests,
+                positiveTests,
+                negativeTests,
+                pendingTests);
+
+            // add records
+            _deviceDataByOrgId.Add(orgId, device);
+            _patientDataByOrgId.Add(orgId, patient);
+            _testDataByOrgId.Add(orgId, test);
+
+            // Console.WriteLine($" - Tests: {test.Performed}, {test.Positive}, {test.Negative}, {test.Pending}");
+            // Console.WriteLine($" - Patients: {patient.Total}, {patient.Positive}, {patient.Negative}, {patient.Recovered}, {patient.Died}");
+        }
+
+        /// <summary>Export by beds.</summary>
+        /// <param name="outputDirectory">Directory to write files.</param>
+        /// <param name="timeSteps">      Number of time-step updates to generate.</param>
+        /// <param name="timePeriodHours">Time-step period in hours (default: 24).</param>
+        /// <param name="exportBeds">     If bundles of individual beds should be exported (default: false).</param>
+        /// <param name="exportGroups">   If SANER-IG groups should be generated (deprecated - default:
+        ///  false).</param>
+        private static void ExportByBeds(
+            string outputDirectory,
+            int timeSteps,
+            int timePeriodHours,
+            bool exportBeds,
+            bool exportGroups)
+        {
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)
             {
@@ -160,11 +512,11 @@ namespace generator_cli
                 // loop over timeSteps
                 for (int step = 0; step < timeSteps; step++)
                 {
-                    dir = Path.Combine(outputDirectory, $"t{step}");
+                    string dir = Path.Combine(outputDirectory, $"t{step}");
 
                     if (step != 0)
                     {
-                        _bedsByOrgId[orgId].UpdateBedStatusForTimeStep(changeFactor);
+                        _bedsByOrgId[orgId].UpdateBedStatusForTimeStep(_changeFactor);
                     }
 
                     TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
@@ -188,22 +540,6 @@ namespace generator_cli
                 }
 
                 DeleteOrgBeds(orgId);
-            }
-        }
-
-        /// <summary>Writes a measure report bundles.</summary>
-        /// <param name="dir">   The dir.</param>
-        /// <param name="period">The period.</param>
-        private static void WriteMeasureReportBundles(string dir, Period period)
-        {
-            if (!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-
-            foreach (string orgId in _orgById.Keys)
-            {
-                WriteMeasureReportBundle(orgId, dir, period);
             }
         }
 
@@ -239,7 +575,7 @@ namespace generator_cli
 
             bundle.AddResourceEntry(
                 report,
-                $"{FhirGenerator.SystemInternal}{report.ResourceType}/{report.Id}");
+                $"{SystemLiterals.Internal}{report.ResourceType}/{report.Id}");
 
             if (_useJson)
             {
@@ -248,22 +584,6 @@ namespace generator_cli
             else
             {
                 File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
-        }
-
-        /// <summary>Writes bed group bundles.</summary>
-        /// <param name="dir">   The dir.</param>
-        /// <param name="period">The period.</param>
-        private static void WriteGroupBundles(string dir, Period period)
-        {
-            if (!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-
-            foreach (string orgId in _orgById.Keys)
-            {
-                WriteGroupBundle(orgId, dir, period);
             }
         }
 
@@ -311,7 +631,7 @@ namespace generator_cli
 
                 bundle.AddResourceEntry(
                     group,
-                    $"{FhirGenerator.SystemInternal}{group.ResourceType}/{group.Id}");
+                    $"{SystemLiterals.Internal}{group.ResourceType}/{group.Id}");
             }
 
             if (_useJson)
@@ -321,15 +641,6 @@ namespace generator_cli
             else
             {
                 File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
-        }
-
-        /// <summary>Creates organization beds.</summary>
-        private static void CreateOrgBeds()
-        {
-            foreach (string orgId in _orgById.Keys)
-            {
-                CreateOrgBeds(orgId);
             }
         }
 
@@ -361,21 +672,6 @@ namespace generator_cli
             _bedsByOrgId.Remove(orgId);
         }
 
-        /// <summary>Writes a bed bundles.</summary>
-        /// <param name="dir">The dir.</param>
-        private static void WriteBedBundles(string dir)
-        {
-            if (!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-
-            foreach (string orgId in _orgById.Keys)
-            {
-                WriteBedBundle(orgId, dir);
-            }
-        }
-
         /// <summary>Writes a bed bundle.</summary>
         /// <param name="orgId">The organization.</param>
         /// <param name="dir">  The dir.</param>
@@ -402,7 +698,7 @@ namespace generator_cli
             {
                 bundle.AddResourceEntry(
                     bed,
-                    $"{FhirGenerator.SystemInternal}{bed.ResourceType}/{bed.Id}");
+                    $"{SystemLiterals.Internal}{bed.ResourceType}/{bed.Id}");
             }
 
             if (_useJson)
@@ -412,21 +708,6 @@ namespace generator_cli
             else
             {
                 File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
-        }
-
-        /// <summary>Writes an organisation bundles.</summary>
-        /// <param name="dir">The dir.</param>
-        private static void WriteOrgBundles(string dir)
-        {
-            if (!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-
-            foreach (string orgId in _orgById.Keys)
-            {
-                WriteOrgBundle(orgId, dir);
             }
         }
 
@@ -454,11 +735,11 @@ namespace generator_cli
 
             bundle.AddResourceEntry(
                 _orgById[orgId],
-                $"{FhirGenerator.SystemInternal}{_orgById[orgId].ResourceType}/{orgId}");
+                $"{SystemLiterals.Internal}{_orgById[orgId].ResourceType}/{orgId}");
 
             bundle.AddResourceEntry(
                 _rootLocationByOrgId[orgId],
-                $"{FhirGenerator.SystemInternal}{_rootLocationByOrgId[orgId].ResourceType}/{_rootLocationByOrgId[orgId].Id}");
+                $"{SystemLiterals.Internal}{_rootLocationByOrgId[orgId].ResourceType}/{_rootLocationByOrgId[orgId].Id}");
 
             if (_useJson)
             {

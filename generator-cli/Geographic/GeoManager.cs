@@ -1,4 +1,4 @@
-﻿// <copyright file="LocationManager.cs" company="Microsoft Corporation">
+﻿// <copyright file="GeoManager.cs" company="Microsoft Corporation">
 //     Copyright (c) Microsoft Corporation. All rights reserved.
 //     Licensed under the MIT License (MIT). See LICENSE in the repo root for license information.
 // </copyright>
@@ -171,7 +171,10 @@ namespace generator_cli.Geographic
         {
             List<Hl7.Fhir.Model.Organization> orgs = new List<Hl7.Fhir.Model.Organization>();
 
-            orgs.Add(GetOrganization(state, postalCode));
+            for (int index = 0; index < requestedCount; index++)
+            {
+                orgs.Add(GetOrganization(state, postalCode));
+            }
 
             return orgs;
         }

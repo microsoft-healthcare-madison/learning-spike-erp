@@ -5,7 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using generator_cli.Generators;
 using Hl7.Fhir.Model;
+using static generator_cli.Generators.CommonLiterals;
 using static generator_cli.Generators.FhirGenerator;
 
 namespace generator_cli.Models
@@ -83,6 +85,12 @@ namespace generator_cli.Models
         /// <value>The display.</value>
         public string Display { get; }
 
+        /// <summary>The empty required.</summary>
+        public static FhirTriplet EmptyRequired = new FhirTriplet(string.Empty, string.Empty, _fakeCodeText);
+
+        /// <summary>The measure report period.</summary>
+        public static FhirTriplet MeasureReportPeriod = new FhirTriplet(SystemLiterals.MeasureReport, "MeasureReport.period");
+
         /// <summary>Gets the concept.</summary>
         /// <value>The concept.</value>
         public CodeableConcept Concept => new CodeableConcept(System, Code, Display);
@@ -91,19 +99,34 @@ namespace generator_cli.Models
         /// <value>The coding.</value>
         public Coding Coding => new Coding(System, Code, Display);
 
-        /// <summary>The empty required.</summary>
-        public static FhirTriplet EmptyRequired = new FhirTriplet(string.Empty, string.Empty, _fakeCodeText);
+        /// <summary>Gets the sct covid.</summary>
+        /// <value>The sct covid.</value>
+        public static FhirTriplet SctCovid => new FhirTriplet(
+            SystemLiterals.SnomedSct,
+            SctCovidCode,
+            SctCovidDisplay);
 
-        /// <summary>The measure report period.</summary>
-        public static FhirTriplet MeasureReportPeriod = new FhirTriplet(SystemMeasureReport, "MeasureReport.period");
+        /// <summary>Gets the numerator.</summary>
+        /// <value>The numerator.</value>
+        public static FhirTriplet Numerator => new FhirTriplet(
+            string.Empty,
+            "numerator",
+            "Numerator");
+
+        /// <summary>Gets the denominator.</summary>
+        /// <value>The denominator.</value>
+        public static FhirTriplet Denominator => new FhirTriplet(
+            string.Empty,
+            "denominator",
+            "Denominator");
 
         /// <summary>Gets the physical type bed.</summary>
         /// <value>The physical type bed.</value>
-        public static FhirTriplet PhysicalTypeBed => new FhirTriplet(SystemLocationPhysicalType, "bd");
+        public static FhirTriplet PhysicalTypeBed => new FhirTriplet(SystemLiterals.LocationPhysicalType, LocationPhysicalTypeBed);
 
         /// <summary>Gets the physical type site.</summary>
         /// <value>The physical type site.</value>
-        public static FhirTriplet PhysicalTypeSite => new FhirTriplet(SystemLocationPhysicalType, "si");
+        public static FhirTriplet PhysicalTypeSite => new FhirTriplet(SystemLiterals.LocationPhysicalType, LocationPhysicalTypeSite);
 
         /// <summary>Gets the saner status.</summary>
         /// <value>The saner status.</value>
@@ -129,6 +152,32 @@ namespace generator_cli.Models
         /// <value>The saner period.</value>
         public static FhirTriplet SanerPeriod => Saner(SanerCharacteristic.Period);
 
+        /// <summary>Concepts.</summary>
+        /// <param name="system"> The system.</param>
+        /// <param name="code">   The code.</param>
+        /// <param name="display">(Optional) The display.</param>
+        /// <returns>A CodeableConcept.</returns>
+        public static CodeableConcept GetConcept(
+            string system,
+            string code,
+            string display = "")
+        {
+            return new FhirTriplet(system, code, display).Concept;
+        }
+
+        /// <summary>Gets a coding.</summary>
+        /// <param name="system"> The system.</param>
+        /// <param name="code">   The code.</param>
+        /// <param name="display">(Optional) The display.</param>
+        /// <returns>The coding.</returns>
+        public static Coding GetCode(
+            string system,
+            string code,
+            string display = "")
+        {
+            return new FhirTriplet(system, code, display).Coding;
+        }
+
         /// <summary>For saner.</summary>
         /// <param name="characteristic">The characteristic.</param>
         /// <returns>A FhirTriplet.</returns>
@@ -138,32 +187,32 @@ namespace generator_cli.Models
             {
                 case SanerCharacteristic.Status:
                     return new FhirTriplet(
-                        SystemSanerCharacteristic,
+                        SystemLiterals.SanerCharacteristic,
                         "Location.status");
 
                 case SanerCharacteristic.OperationalStatus:
                     return new FhirTriplet(
-                        SystemSanerCharacteristic,
+                        SystemLiterals.SanerCharacteristic,
                         "Location.operationalStatus");
 
                 case SanerCharacteristic.Type:
                     return new FhirTriplet(
-                        SystemSanerCharacteristic,
+                        SystemLiterals.SanerCharacteristic,
                         "Location.type");
 
                 case SanerCharacteristic.Feature:
                     return new FhirTriplet(
-                        SystemSanerCharacteristic,
+                        SystemLiterals.SanerCharacteristic,
                         "Location.Feature");
 
                 case SanerCharacteristic.Location:
                     return new FhirTriplet(
-                        SystemSanerCharacteristic,
+                        SystemLiterals.SanerCharacteristic,
                         "Location.partOf");
 
                 case SanerCharacteristic.Period:
                     return new FhirTriplet(
-                        SystemSanerCharacteristic,
+                        SystemLiterals.SanerCharacteristic,
                         "Period");
             }
 
@@ -179,20 +228,20 @@ namespace generator_cli.Models
             {
                 case AvailabilityStatusActive:
                     return new FhirTriplet(
-                        SystemAvailabilityStatus,
-                        "active",
+                        SystemLiterals.AvailabilityStatus,
+                        AvailabilityStatusActive,
                         "The location is operational.");
 
                 case AvailabilityStatusSuspended:
                     return new FhirTriplet(
-                        SystemAvailabilityStatus,
-                        "suspended",
+                        SystemLiterals.AvailabilityStatus,
+                        AvailabilityStatusSuspended,
                         "The location is temporarily closed.");
 
                 case AvailabilityStatusInactive:
                     return new FhirTriplet(
-                        SystemAvailabilityStatus,
-                        "inactive",
+                        SystemLiterals.AvailabilityStatus,
+                        AvailabilityStatusInactive,
                         "The location is no longer used.");
             }
 
@@ -208,32 +257,32 @@ namespace generator_cli.Models
             {
                 case OperationalStatusContaminated:
                     return new FhirTriplet(
-                        SystemOperationalStatus,
-                        "K",
+                        SystemLiterals.OperationalStatus,
+                        OperationalStatusContaminated,
                         "Contaminated");
 
                 case OperationalStatusClosed:
                     return new FhirTriplet(
-                        SystemOperationalStatus,
-                        "C",
+                        SystemLiterals.OperationalStatus,
+                        OperationalStatusClosed,
                         "Closed");
 
                 case OperationalStatusHousekeeping:
                     return new FhirTriplet(
-                        SystemOperationalStatus,
-                        "H",
+                        SystemLiterals.OperationalStatus,
+                        OperationalStatusHousekeeping,
                         "Housekeeping");
 
                 case OperationalStatusOccupied:
                     return new FhirTriplet(
-                        SystemOperationalStatus,
-                        "O",
+                        SystemLiterals.OperationalStatus,
+                        OperationalStatusOccupied,
                         "Occupied");
 
                 case OperationalStatusUnoccupied:
                     return new FhirTriplet(
-                        SystemOperationalStatus,
-                        "U",
+                        SystemLiterals.OperationalStatus,
+                        OperationalStatusUnoccupied,
                         "Unoccupied");
             }
 
@@ -249,56 +298,56 @@ namespace generator_cli.Models
             {
                 case BedTypeAdultICU:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "ICU",
+                        SystemLiterals.BedType,
+                        BedTypeAdultICU,
                         "Adult ICU bed type.");
 
                 case BedTypePediatricICU:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "PEDICU",
+                        SystemLiterals.BedType,
+                        BedTypePediatricICU,
                         "Pediatric ICU beds.");
 
                 case BedTypeNeonatalICU:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "PEDNICU",
+                        SystemLiterals.BedType,
+                        BedTypeNeonatalICU,
                         "Neonatal ICU beds.");
 
                 case BedTypeEmergencyRoom:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "ER",
+                        SystemLiterals.BedType,
+                        BedTypeEmergencyRoom,
                         "Emergency Department beds.");
 
                 case BedTypeHospitalUnit:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "HU",
+                        SystemLiterals.BedType,
+                        BedTypeHospitalUnit,
                         "Hospital unit.");
 
                 case BedTypeRehabLongTermCare:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "RHU",
+                        SystemLiterals.BedType,
+                        BedTypeRehabLongTermCare,
                         "Rehabilitation - long term care beds.");
 
                 case BedTypePediatric:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "PEDU",
+                        SystemLiterals.BedType,
+                        BedTypePediatric,
                         "Pediatric beds.");
 
                 case BedTypePsychiatric:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "PHU",
+                        SystemLiterals.BedType,
+                        BedTypePsychiatric,
                         "Psyciatric beds.");
 
                 case BedTypeOperatingRoom:
                     return new FhirTriplet(
-                        SystemBedType,
-                        "OR",
+                        SystemLiterals.BedType,
+                        BedTypeOperatingRoom,
                         "Operating Rooms");
             }
 
@@ -314,20 +363,20 @@ namespace generator_cli.Models
             {
                 case BedFeatureNegativeFlowIsolation:
                     return new FhirTriplet(
-                        SystemSanerBedFeature,
-                        "NEGISO",
+                        SystemLiterals.SanerBedFeature,
+                        BedFeatureNegativeFlowIsolation,
                         "Negative airflow isolation beds.");
 
                 case BedFeatureOtherIsolation:
                     return new FhirTriplet(
-                        SystemSanerBedFeature,
-                        "OTHISO",
+                        SystemLiterals.SanerBedFeature,
+                        BedFeatureOtherIsolation,
                         "Isolation beds (airflow is not a concern).");
 
                 case BedFeatureNonIsolating:
                     return new FhirTriplet(
-                        SystemSanerBedFeature,
-                        "NONISO",
+                        SystemLiterals.SanerBedFeature,
+                        BedFeatureNonIsolating,
                         "Non-isolating unit.");
             }
 

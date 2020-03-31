@@ -302,7 +302,7 @@ namespace generator_cli.Geographic
 
         /// <summary>Identifier for identifier.</summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
+        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;.</returns>
         private static List<Hl7.Fhir.Model.Identifier> IdentifierForOrg(long id) =>
             new List<Hl7.Fhir.Model.Identifier>()
             {
@@ -314,7 +314,7 @@ namespace generator_cli.Geographic
         /// <summary>Identifier for organization.</summary>
         /// <param name="id">The identifier.</param>
         /// <returns>A string.</returns>
-        private static string IdForOrg(long id) => $"{FhirGenerator.OrgPrefix}{id}";
+        private static string IdForOrg(long id) => $"{CommonLiterals.OrgPrefix}{id}";
 
         /// <summary>Query if 'id' is hospital known.</summary>
         /// <param name="id">The identifier.</param>

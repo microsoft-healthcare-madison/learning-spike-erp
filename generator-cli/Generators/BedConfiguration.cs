@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using static generator_cli.Generators.CommonLiterals;
 
 namespace generator_cli.Generators
 {
@@ -73,7 +74,7 @@ namespace generator_cli.Generators
         /// <param name="bedTypes">           List of types of the bed.</param>
         /// <param name="operationalStatuses">The operational statuses.</param>
         /// <param name="features">           The features.</param>
-        /// <returns>A List&lt;BedInformation&gt;</returns>
+        /// <returns>A List&lt;BedInformation&gt;.</returns>
         public static List<BedConfiguration> StatesForParams(
             string availabilities,
             string bedTypes,
@@ -85,22 +86,22 @@ namespace generator_cli.Generators
             // parse various strings into lists we can work with
             ItemsInSet(
                 out List<string> availabilityList,
-                FhirGenerator.AvailabilityStatuses,
+                AvailabilityStatuses,
                 availabilities);
 
             ItemsInSet(
                 out List<string> typeList,
-                FhirGenerator.BedTypes,
+                BedTypes,
                 bedTypes);
 
             ItemsInSet(
                 out List<string> statusList,
-                FhirGenerator.OperationalStatuses,
+                OperationalStatuses,
                 operationalStatuses);
 
             ItemsInSet(
                 out List<string> featureList,
-                FhirGenerator.BedFeatures,
+                BedFeatures,
                 features);
 
             // nested traverse each list to build the expansion
@@ -112,7 +113,7 @@ namespace generator_cli.Generators
                     {
                         switch (availability)
                         {
-                            case FhirGenerator.AvailabilityStatusActive:
+                            case AvailabilityStatusActive:
                                 foreach (string status in statusList)
                                 {
                                     states.Add(new BedConfiguration(
@@ -124,12 +125,12 @@ namespace generator_cli.Generators
 
                                 break;
 
-                            case FhirGenerator.AvailabilityStatusInactive:
-                            case FhirGenerator.AvailabilityStatusSuspended:
+                            case AvailabilityStatusInactive:
+                            case AvailabilityStatusSuspended:
                                 states.Add(new BedConfiguration(
                                     availability,
                                     bedType,
-                                    FhirGenerator.OperationalStatusClosed,
+                                    OperationalStatusClosed,
                                     feature));
 
                                 break;

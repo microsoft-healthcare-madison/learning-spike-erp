@@ -151,7 +151,7 @@ namespace generator_cli.Generators
 
         /// <summary>Gets the beds.</summary>
         /// <param name="config">(Optional) The configuration.</param>
-        /// <returns>A List&lt;Location&gt;</returns>
+        /// <returns>A List&lt;Location&gt;.</returns>
         public List<Location> Beds(
             BedConfiguration config = null)
         {

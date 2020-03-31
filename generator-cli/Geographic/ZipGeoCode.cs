@@ -5,29 +5,72 @@ using System.Text;
 
 namespace generator_cli.Geographic
 {
+    /// <summary>A zip geo code.</summary>
     public class ZipGeoCode
     {
+        /// <summary>Gets or sets the datasetid.</summary>
+        /// <value>The datasetid.</value>
         public string datasetid { get; set; }
+
+        /// <summary>Gets or sets the recordid.</summary>
+        /// <value>The recordid.</value>
         public string recordid { get; set; }
+
+        /// <summary>Gets or sets the fields.</summary>
+        /// <value>The fields.</value>
         public Fields fields { get; set; }
+
+        /// <summary>Gets or sets the geometry.</summary>
+        /// <value>The geometry.</value>
         public Geometry geometry { get; set; }
+
+        /// <summary>Gets or sets the Date/Time of the record timestamp.</summary>
+        /// <value>The record timestamp.</value>
         public DateTime record_timestamp { get; set; }
 
+        /// <summary>A fields.</summary>
         public class Fields
         {
+            /// <summary>Gets or sets the city.</summary>
+            /// <value>The city.</value>
             public string city { get; set; }
+
+            /// <summary>Gets or sets the zip.</summary>
+            /// <value>The zip.</value>
             public string zip { get; set; }
+
+            /// <summary>Gets or sets the Destination for the.</summary>
+            /// <value>The destination.</value>
             public int dst { get; set; }
+
+            /// <summary>Gets or sets the geopoint.</summary>
+            /// <value>The geopoint.</value>
             public float[] geopoint { get; set; }
+
+            /// <summary>Gets or sets the longitude.</summary>
+            /// <value>The longitude.</value>
             public float longitude { get; set; }
+            /// <summary>The state.</summary>
             public string state { get; set; }
+
+            /// <summary>Gets or sets the latitude.</summary>
+            /// <value>The latitude.</value>
             public float latitude { get; set; }
+
+            /// <summary>Gets or sets the timezone.</summary>
+            /// <value>The timezone.</value>
             public int timezone { get; set; }
         }
 
+        /// <summary>A geometry.</summary>
         public class Geometry
         {
+            /// <summary>Gets or sets the type.</summary>
+            /// <value>The type.</value>
             public string type { get; set; }
+
+            /// <summary>Gets or sets the coordinates.</summary>
+            /// <value>The coordinates.</value>
             public float[] coordinates { get; set; }
         }
     }
