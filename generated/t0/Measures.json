@@ -6,7 +6,7 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-04-01T10:49:59.5974801-05:00",
+  "timestamp": "2020-04-01T12:55:58.731221-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/covid-19-test-count",
@@ -17,6 +17,14 @@
         "name": "covid-19-test-count",
         "title": "COVID-19 Tests Performed",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "The total number of patients for whom a test for COVID-19 was ordered.",
@@ -24,20 +32,38 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -45,11 +71,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Tests Performed",
                 "criteria": {
@@ -70,6 +95,14 @@
         "name": "covid-19-test-positive-count",
         "title": "COVID-19 Positive Tests",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "The total number of patients for whom a positive result for a COVID-19 test was documented.",
@@ -77,20 +110,38 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -98,11 +149,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Positive Tests",
                 "criteria": {
@@ -123,6 +173,14 @@
         "name": "numTotBeds",
         "title": "All Hospital Beds",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.",
@@ -130,20 +188,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -151,11 +233,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "All Hospital Beds",
                 "criteria": {
@@ -176,6 +257,14 @@
         "name": "numbeds",
         "title": "Hospital Inpatient Beds",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
@@ -183,20 +272,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -204,11 +317,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "Hospital Inpatient Beds",
                 "criteria": {
@@ -229,6 +341,14 @@
         "name": "numBedsOcc",
         "title": "Hospital Inpatient Bed Occupancy",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Total number of staffed inpatient beds that are occupied.",
@@ -236,20 +356,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -257,11 +401,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "Hospital Inpatient Bed Occupancy",
                 "criteria": {
@@ -282,6 +425,14 @@
         "name": "numICUBeds",
         "title": "Hospital ICU Beds",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Total number of staffed inpatient intensive care unit (ICU) beds.",
@@ -289,20 +440,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -310,11 +485,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "Hospital ICU Beds",
                 "criteria": {
@@ -335,6 +509,14 @@
         "name": "numICUBedsOcc",
         "title": "Hospital ICU Bed Occupancy",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Total number of staffed inpatient ICU beds that are occupied.",
@@ -342,20 +524,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -363,11 +569,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "Hospital ICU Bed Occupancy",
                 "criteria": {
@@ -388,6 +593,14 @@
         "name": "numVent",
         "title": "Mechanical Ventilators",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Total number of ventilators available.",
@@ -395,20 +608,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -416,11 +653,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "Mechanical Ventilators",
                 "criteria": {
@@ -441,6 +677,14 @@
         "name": "numVentUse",
         "title": "Mechanical Ventilators In Use",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Total number of ventilators in use.",
@@ -448,20 +692,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -469,11 +737,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "Mechanical Ventilators In Use",
                 "criteria": {
@@ -494,6 +761,14 @@
         "name": "numC19HospPats",
         "title": "COVID-19 Patients Hospitalized",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
@@ -501,20 +776,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -522,11 +821,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Patients Hospitalized",
                 "criteria": {
@@ -547,6 +845,14 @@
         "name": "numC19MechVentPats",
         "title": "COVID-19 Patients Hospitalized and Ventilated",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator.",
@@ -554,20 +860,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -575,11 +905,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Patients Hospitalized and Ventilated",
                 "criteria": {
@@ -600,6 +929,14 @@
         "name": "numC19HOPats",
         "title": "COVID-19 Hospital Onset",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization.",
@@ -607,20 +944,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -628,11 +989,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Hospital Onset",
                 "criteria": {
@@ -653,6 +1013,14 @@
         "name": "numC19OverflowPats",
         "title": "ED/Overflow",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
@@ -660,20 +1028,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -681,11 +1073,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "ED/Overflow",
                 "criteria": {
@@ -706,6 +1097,14 @@
         "name": "numC19OFMechVentPats",
         "title": "ED/Overflow and ventilated",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
@@ -713,20 +1112,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -734,11 +1157,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "ED/Overflow and ventilated",
                 "criteria": {
@@ -759,6 +1181,14 @@
         "name": "covid-19-recovered",
         "title": "COVID-19 Patients Recovered",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients with suspected or confirmed COVID-19 who have recovered and been discharged.",
@@ -766,20 +1196,38 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -787,11 +1235,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Patients Recovered",
                 "criteria": {
@@ -812,6 +1259,14 @@
         "name": "numC19Died",
         "title": "COVID-19 Patients Died",
         "status": "draft",
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
         "date": "2020-03-31T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
@@ -819,20 +1274,44 @@
           {
             "code": {
               "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus",
-              "display": ""
+              "code": "focus"
             },
             "valueCodeableConcept": {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000"
+                  "code": "840535000",
+                  "display": "COVID-19"
                 }
-              ],
-              "text": "COVID-19"
+              ]
             }
           }
         ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+          }
+        ],
+        "scoring": {
+          "coding": [
+            {
+              "code": "continuous-variable",
+              "display": "Continuous Variable"
+            }
+          ]
+        },
         "group": [
           {
             "population": [
@@ -840,11 +1319,10 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "",
-                      "code": "measure-population"
+                      "code": "measure-population",
+                      "display": "Measure Population"
                     }
-                  ],
-                  "text": "Measure Population"
+                  ]
                 },
                 "description": "COVID-19 Patients Died",
                 "criteria": {
