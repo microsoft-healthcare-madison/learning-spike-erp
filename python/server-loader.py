@@ -17,9 +17,17 @@ from urllib.parse import urlparse
 import click  # pip3 install click
 import requests  # pip3 install requests
 
+LOADABLE_TYPES = [
+    'Group',  # TODO: Decide whether to keep this capability or not.
+    'Location',
+    'Measure',
+    'MeasureReport',
+    'Organization',
+]
+
 RESOURCE_TAGS = [{
     'system': 'https://github.com/microsoft-healthcare-madison/learning-spike-erp',  # nopep8
-    'code': 'sample-data',  # TODO: make this code a flag called --tag-code
+    'code': 'sample-data-carl',  # TODO: make this code a flag called --tag-code
 }]
 
 TEST_SERVER = 'https://prototype-erp-fhir.azurewebsites.net/'
@@ -29,15 +37,28 @@ class Error(Exception):
     pass
 
 
+class FileProperties:
+    """A simple struct to for loadable file type features."""
+
+    load_priority = 0
+    contained_resource_types = set()
+
+    def __init__(self, load_priority, resource_types):
+        self.load_priority = load_priority
+        self.contained_resource_types = set(resource_types)
+
+
 class DataSource:
     """A folder of files containing data to send to a server."""
 
-    _resource_file_matcher = re.compile(r'^Org-([0-9]+)(-.+)?\.json$')
-    _resource_type_load_priorities = {
-        '-measureReports': 4,
-        '-groups': 3,
-        '-beds': 2,
-        None: 1,
+    # Examples: Org-1234.json, Org-123-beds.json, Measures.json.
+    _resource_file_matcher = re.compile(r'^(Org-([0-9]+)-?)?(.+)?\.json$')
+    _resource_file_properties = {
+        'measureReports': FileProperties(5, ['MeasureReport']),
+        'Measures': FileProperties(4, ['Measure']),
+        'groups': FileProperties(3, ['Group']),
+        'beds': FileProperties(2, ['Location']),
+        None: FileProperties(1, ['Organization', 'Location']),  # Org files.
     }
 
     @classmethod
@@ -66,32 +87,51 @@ class DataSource:
         return extension in ['json']
 
     @classmethod
+    def contains_requested_resources(cls, filename, requested_types):
+        """Returns True when the filename should contain the requested types.
+
+        Param:
+            filename: str, a filename which is expected to exist.
+            requested_types: list of str, the resource types requested to load.
+        """
+        match = cls._resource_file_matcher.match(filename)
+        if not match:
+            print(f'Warning, unknown file type: {filename}, skipping...')
+            return False
+        available_types = cls._resource_file_properties.get(
+            match.groups()[2]
+        ).contained_resource_types
+        return available_types.issubset(requested_types)
+
+    @classmethod
     def get_resource_load_priority(cls, filename):
         """Returns the load priority based on resource type and org id."""
+
         match = cls._resource_file_matcher.match(filename)
         if not match:
             return (0, 0)
-        org, resource_type = match.groups()
-        priority = cls._resource_type_load_priorities.get(resource_type, 0)
-        return (priority, int(org))
+        _, org, file_type = match.groups()
+        priority = cls._resource_file_properties[file_type].load_priority
+        return (priority, int(org or 0))
 
     @classmethod
-    def get_data_files(cls, folder):
+    def get_data_files(cls, folder, load_types):
+        resource_types = set(load_types)
         for dirname, _, files in os.walk(folder):
             for file in sorted(files, key=cls.get_resource_load_priority):
                 filename = os.path.join(dirname, file)
-                if DataSource.is_data_file(filename):
-                    yield filename
+                if cls.is_data_file(filename):
+                    if cls.contains_requested_resources(file, resource_types):
+                        yield filename
 
-    def __init__(self, folder):
+    def __init__(self, folder, load_types):
         self._data_files = []
 
         if folder:
             if not os.path.isdir(folder):
                 raise Error(f'{folder} is not a directory.')
 
-            self._data_files = list(self.get_data_files(folder))
-            print("Data files", self._data_files)  # XXX
+            self._data_files = list(self.get_data_files(folder, load_types))
 
     def __iter__(self):
         return self._data_files.__iter__()
@@ -102,7 +142,9 @@ class Server:
 
     # The order of resource types matters because HAPI won't allow dangling
     # links by default.
-    _deletion_order = ['MeasureReport', 'Group', 'Location', 'Organization']
+    _deletion_order = [
+        'MeasureReport', 'Measure', 'Group', 'Location', 'Organization'
+    ]
 
     _headers = {
         'accept': 'application/fhir+json',
@@ -212,7 +254,7 @@ class Server:
             pprint.pprint(r.__dict__)  # XXX
             pprint.pprint(r.raw.__dict__)  # XXX
             return
-#        print(json.loads(r.content))
+
         for entry in json.loads(r.content)['entry']:
             if entry['response']['status'] not in ['200', '201']:
                 print(f'Entry failed to load: {entry}')
@@ -220,23 +262,32 @@ class Server:
 
 @click.command()
 @click.option(
-    '--server-url', default=TEST_SERVER, help='FHIR server URL.'
+    '--server-url', '-s', default=TEST_SERVER, help='FHIR server URL.'
 )
 @click.option(
-    '--delete-all', default=False, is_flag=True,
+    '--delete-all', '-D', default=False, is_flag=True,
     help='Set this to delete all tagged resources from the sevrver'
 )
 @click.option(
-    '--files',
+    '--load', '-l', multiple=True, default=LOADABLE_TYPES,
+    type=click.Choice(LOADABLE_TYPES),
+    help='Load resources of this type (flag can be used more than once).'
+)
+@click.option(
+    '--files', '-f',
     help='Path to a directory containing .json files to send to the server.'
 )
-def main(server_url, delete_all, files):
+def main(server_url, delete_all, load, files):
+    data_files = DataSource(files, load)
+
+    # TODO: wrap this in a try block, saving any failed files somewhere.
+    # TODO: parallelize this so multiple files can be loaded at once.
     server = Server(server_url)
     if delete_all:
         # TODO: print out the number of deleted resources.
         server.delete_all_tagged_resources()
 
-    for filename in DataSource(files):
+    for filename in data_files:
         server.receive(filename)
 
 
