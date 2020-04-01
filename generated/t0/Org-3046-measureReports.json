@@ -6,7 +6,7 @@
     "value": "FHIR-368"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.2954167-05:00",
+  "timestamp": "2020-04-01T10:50:00.7074692-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-369",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2954384-05:00",
+        "date": "2020-04-01T10:50:00.707492-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 21
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 21
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2954646-05:00",
+        "date": "2020-04-01T10:50:00.7075285-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 8
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 8
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2954786-05:00",
+        "date": "2020-04-01T10:50:00.7075573-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 25
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 25
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2954872-05:00",
+        "date": "2020-04-01T10:50:00.707579-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 23
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 23
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2954952-05:00",
+        "date": "2020-04-01T10:50:00.7075997-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 5
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 5
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955036-05:00",
+        "date": "2020-04-01T10:50:00.7076202-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955114-05:00",
+        "date": "2020-04-01T10:50:00.7076394-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955196-05:00",
+        "date": "2020-04-01T10:50:00.7076698-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955275-05:00",
+        "date": "2020-04-01T10:50:00.707688-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955439-05:00",
+        "date": "2020-04-01T10:50:00.7076997-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955526-05:00",
+        "date": "2020-04-01T10:50:00.7077098-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955605-05:00",
+        "date": "2020-04-01T10:50:00.7077196-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955684-05:00",
+        "date": "2020-04-01T10:50:00.7077292-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955762-05:00",
+        "date": "2020-04-01T10:50:00.7077393-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955844-05:00",
+        "date": "2020-04-01T10:50:00.7077487-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-3046"
+          "reference": "Location/Loc-Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-03-31T16:27:20.2955923-05:00",
+        "date": "2020-04-01T10:50:00.707766-05:00",
         "reporter": {
-          "reference": "Organization/Org-3046"
+          "reference": "Organization/Org-3046",
+          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }

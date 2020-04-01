@@ -108,6 +108,13 @@ namespace generator_cli.Models
 
         /// <summary>Gets the numerator.</summary>
         /// <value>The numerator.</value>
+        public static FhirTriplet MeasurePopulation => new FhirTriplet(
+            string.Empty,
+            "measure-population",
+            "Measure Population");
+
+        /// <summary>Gets the numerator.</summary>
+        /// <value>The numerator.</value>
         public static FhirTriplet Numerator => new FhirTriplet(
             string.Empty,
             "numerator",

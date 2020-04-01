@@ -6,7 +6,7 @@
     "value": "FHIR-108"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.145283-05:00",
+  "timestamp": "2020-04-01T10:50:00.5558955-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-109",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.145316-05:00",
+        "date": "2020-04-01T10:50:00.5559236-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 240
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 240
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1453418-05:00",
+        "date": "2020-04-01T10:50:00.5559455-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 118
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 118
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1453537-05:00",
+        "date": "2020-04-01T10:50:00.5559567-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 359
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 359
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1453737-05:00",
+        "date": "2020-04-01T10:50:00.5559759-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 321
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 321
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1453853-05:00",
+        "date": "2020-04-01T10:50:00.5559947-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 71
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 71
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454022-05:00",
+        "date": "2020-04-01T10:50:00.556006-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 38
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 38
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454132-05:00",
+        "date": "2020-04-01T10:50:00.5560158-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 10
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 10
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454237-05:00",
+        "date": "2020-04-01T10:50:00.5560366-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 7
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 7
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454359-05:00",
+        "date": "2020-04-01T10:50:00.5560475-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 7
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 7
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454472-05:00",
+        "date": "2020-04-01T10:50:00.5560579-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 35
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 35
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454581-05:00",
+        "date": "2020-04-01T10:50:00.5560676-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 7
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 7
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454688-05:00",
+        "date": "2020-04-01T10:50:00.5560775-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454794-05:00",
+        "date": "2020-04-01T10:50:00.5560874-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1454938-05:00",
+        "date": "2020-04-01T10:50:00.5560972-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 17
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 17
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1455107-05:00",
+        "date": "2020-04-01T10:50:00.5561068-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-3474"
+          "reference": "Location/Loc-Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1455276-05:00",
+        "date": "2020-04-01T10:50:00.5561213-05:00",
         "reporter": {
-          "reference": "Organization/Org-3474"
+          "reference": "Organization/Org-3474",
+          "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }

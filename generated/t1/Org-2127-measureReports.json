@@ -6,7 +6,7 @@
     "value": "FHIR-489"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.3783386-05:00",
+  "timestamp": "2020-04-01T10:50:00.786233-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-490",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3783639-05:00",
+        "date": "2020-04-01T10:50:00.7862612-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 105
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 105
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3783971-05:00",
+        "date": "2020-04-01T10:50:00.7862828-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 49
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 49
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784059-05:00",
+        "date": "2020-04-01T10:50:00.7863003-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 127
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 127
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784131-05:00",
+        "date": "2020-04-01T10:50:00.7863112-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 117
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 117
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.37842-05:00",
+        "date": "2020-04-01T10:50:00.7863218-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 24
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 24
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784274-05:00",
+        "date": "2020-04-01T10:50:00.7863319-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 10
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 10
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784346-05:00",
+        "date": "2020-04-01T10:50:00.7863531-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 3
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 3
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784414-05:00",
+        "date": "2020-04-01T10:50:00.786364-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784483-05:00",
+        "date": "2020-04-01T10:50:00.7863743-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784552-05:00",
+        "date": "2020-04-01T10:50:00.7863844-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 11
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 11
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.378462-05:00",
+        "date": "2020-04-01T10:50:00.7863995-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784692-05:00",
+        "date": "2020-04-01T10:50:00.78641-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784762-05:00",
+        "date": "2020-04-01T10:50:00.7864202-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784872-05:00",
+        "date": "2020-04-01T10:50:00.7864302-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 5
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 5
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3784948-05:00",
+        "date": "2020-04-01T10:50:00.7864398-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-2127"
+          "reference": "Location/Loc-Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.3785019-05:00",
+        "date": "2020-04-01T10:50:00.7864497-05:00",
         "reporter": {
-          "reference": "Organization/Org-2127"
+          "reference": "Organization/Org-2127",
+          "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 3
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 3
+              }
+            ]
           }
         ]
       }

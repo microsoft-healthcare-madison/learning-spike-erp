@@ -6,7 +6,7 @@
     "value": "FHIR-264"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.2393372-05:00",
+  "timestamp": "2020-04-01T10:50:00.6482768-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-265",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2393547-05:00",
+        "date": "2020-04-01T10:50:00.6482965-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 210
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 210
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2393719-05:00",
+        "date": "2020-04-01T10:50:00.6483167-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 101
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 101
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.239381-05:00",
+        "date": "2020-04-01T10:50:00.6483279-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 305
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 305
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2393895-05:00",
+        "date": "2020-04-01T10:50:00.648338-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 285
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 285
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394058-05:00",
+        "date": "2020-04-01T10:50:00.6483482-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 61
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 61
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394154-05:00",
+        "date": "2020-04-01T10:50:00.6483584-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 20
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 20
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394238-05:00",
+        "date": "2020-04-01T10:50:00.6483688-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 9
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 9
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394319-05:00",
+        "date": "2020-04-01T10:50:00.6483863-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.23944-05:00",
+        "date": "2020-04-01T10:50:00.6483974-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394483-05:00",
+        "date": "2020-04-01T10:50:00.6484075-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 30
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 30
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394563-05:00",
+        "date": "2020-04-01T10:50:00.6484177-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394643-05:00",
+        "date": "2020-04-01T10:50:00.6484274-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394726-05:00",
+        "date": "2020-04-01T10:50:00.6484375-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394807-05:00",
+        "date": "2020-04-01T10:50:00.6484472-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 17
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 17
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2394916-05:00",
+        "date": "2020-04-01T10:50:00.6484574-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-5610"
+          "reference": "Location/Loc-Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-03-31T16:27:20.2395169-05:00",
+        "date": "2020-04-01T10:50:00.6484701-05:00",
         "reporter": {
-          "reference": "Organization/Org-5610"
+          "reference": "Organization/Org-5610",
+          "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }

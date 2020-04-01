@@ -6,7 +6,7 @@
     "value": "FHIR-177"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.1811208-05:00",
+  "timestamp": "2020-04-01T10:50:00.5970924-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-178",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1811492-05:00",
+        "date": "2020-04-01T10:50:00.5971177-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 91
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 91
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1811852-05:00",
+        "date": "2020-04-01T10:50:00.5971398-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 45
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 45
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1812026-05:00",
+        "date": "2020-04-01T10:50:00.5971504-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 115
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 115
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.181219-05:00",
+        "date": "2020-04-01T10:50:00.5971607-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 103
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 103
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1812476-05:00",
+        "date": "2020-04-01T10:50:00.5971703-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 22
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 22
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1812663-05:00",
+        "date": "2020-04-01T10:50:00.5971807-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 12
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 12
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1812824-05:00",
+        "date": "2020-04-01T10:50:00.5971905-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 3
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 3
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.181298-05:00",
+        "date": "2020-04-01T10:50:00.5972005-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1813146-05:00",
+        "date": "2020-04-01T10:50:00.5972216-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1813306-05:00",
+        "date": "2020-04-01T10:50:00.5972333-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 10
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 10
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1813471-05:00",
+        "date": "2020-04-01T10:50:00.5972429-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1813633-05:00",
+        "date": "2020-04-01T10:50:00.5972529-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1813794-05:00",
+        "date": "2020-04-01T10:50:00.5972629-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1813954-05:00",
+        "date": "2020-04-01T10:50:00.5972725-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 5
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 5
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1814113-05:00",
+        "date": "2020-04-01T10:50:00.5972824-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-5259"
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-03-31T16:27:20.1814272-05:00",
+        "date": "2020-04-01T10:50:00.597292-05:00",
         "reporter": {
-          "reference": "Organization/Org-5259"
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-03-29",
-          "end": "2020-03-29"
+          "start": "2020-03-30",
+          "end": "2020-03-30"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }

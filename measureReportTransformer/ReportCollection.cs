@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using Hl7.Fhir.Model;
 using measureReportTransformer.CDC;
+using measureReportTransformer.Plotting;
 
 namespace measureReportTransformer
 {
@@ -26,6 +27,26 @@ namespace measureReportTransformer
         public ReportCollection(string orgRef)
         {
             _orgRef = orgRef;
+        }
+
+        /// <summary>Gets information describing the plotting.</summary>
+        /// <value>Information describing the plotting.</value>
+        public List<PlottingModel> PlottingData
+        {
+            get
+            {
+                List<PlottingModel> plotData = new List<PlottingModel>();
+
+                List<string> periods = _periods.ToList();
+                periods.Sort();
+
+                foreach (string period in periods)
+                {
+                    plotData.Add(GetPlotModel(period));
+                }
+
+                return plotData;
+            }
         }
 
         /// <summary>Gets information describing the cdc.</summary>
@@ -70,6 +91,25 @@ namespace measureReportTransformer
                 GetIntCdc(period, CdcLiterals.CDCAwaitingBeds),
                 GetIntCdc(period, CdcLiterals.CDCAwaitingVentilators),
                 GetIntCdc(period, CdcLiterals.CDCDied));
+        }
+
+        /// <summary>Gets cdc model.</summary>
+        /// <param name="period">The date.</param>
+        /// <returns>The cdc model.</returns>
+        private PlottingModel GetPlotModel(string period)
+        {
+            DateTime periodDateTime = DateTime.ParseExact(period, "yyyy-MM-dd", null);
+
+            Program.LocationDataForOrg(_orgRef, out double latitude, out double longitude);
+
+            return new PlottingModel(
+                latitude,
+                longitude,
+                periodDateTime.ToString("MM/dd/yyyy", null),
+                (int)GetIntCdc(period, CdcLiterals.CDCTotalBeds),
+                (int)GetIntCdc(period, CdcLiterals.CDCInpatientBeds),
+                (int)GetIntCdc(period, CdcLiterals.CDCInpatientBedOccupancy),
+                (int)GetIntCdc(period, CdcLiterals.CDCHospitalizedPatients));
         }
 
         /// <summary>Value for identifier.</summary>

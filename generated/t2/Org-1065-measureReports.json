@@ -6,7 +6,7 @@
     "value": "FHIR-454"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.3566053-05:00",
+  "timestamp": "2020-04-01T10:50:00.7652379-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-455",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3566894-05:00",
+        "date": "2020-04-01T10:50:00.7653602-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 14
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 14
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567112-05:00",
+        "date": "2020-04-01T10:50:00.765398-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 5
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 5
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567208-05:00",
+        "date": "2020-04-01T10:50:00.7654366-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 10
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 10
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567288-05:00",
+        "date": "2020-04-01T10:50:00.7654582-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 9
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 9
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567369-05:00",
+        "date": "2020-04-01T10:50:00.7654786-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567451-05:00",
+        "date": "2020-04-01T10:50:00.7654992-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.356753-05:00",
+        "date": "2020-04-01T10:50:00.7655192-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.356761-05:00",
+        "date": "2020-04-01T10:50:00.7655384-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567689-05:00",
+        "date": "2020-04-01T10:50:00.765559-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567833-05:00",
+        "date": "2020-04-01T10:50:00.7655768-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 3
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 3
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3567923-05:00",
+        "date": "2020-04-01T10:50:00.765589-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3568002-05:00",
+        "date": "2020-04-01T10:50:00.7656031-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3568079-05:00",
+        "date": "2020-04-01T10:50:00.765614-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3568158-05:00",
+        "date": "2020-04-01T10:50:00.7656241-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3568236-05:00",
+        "date": "2020-04-01T10:50:00.7656339-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-1065"
+          "reference": "Location/Loc-Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-03-31T16:27:20.3568312-05:00",
+        "date": "2020-04-01T10:50:00.7656453-05:00",
         "reporter": {
-          "reference": "Organization/Org-1065"
+          "reference": "Organization/Org-1065",
+          "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }

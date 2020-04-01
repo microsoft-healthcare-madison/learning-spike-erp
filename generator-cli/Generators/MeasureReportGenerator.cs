@@ -170,35 +170,81 @@ namespace generator_cli.Generators
         }
 
         /// <summary>Reports for measure.</summary>
-        /// <param name="id">     [out] The identifier.</param>
-        /// <param name="measure">The measure.</param>
-        /// <param name="score">  The score.</param>
+        /// <param name="id">         [out] The identifier.</param>
+        /// <param name="measure">    The measure.</param>
+        /// <param name="numerator">  The total or numerator.</param>
+        /// <param name="denominator">(Optional) The denominator.</param>
         /// <returns>A MeasureReport.</returns>
         private MeasureReport ReportForMeasure(
             out string id,
             Measure measure,
-            decimal score)
+            decimal numerator,
+            decimal? denominator = null)
         {
             id = FhirGenerator.NextId;
 
-            return new MeasureReport()
+            MeasureReport report = new MeasureReport()
             {
                 Id = id,
-                Subject = new ResourceReference($"{_location.ResourceType}/{_location.Id}"),
+                Subject = new ResourceReference(
+                    $"{_location.ResourceType}/{_location.Id}",
+                    _org.Name),
                 Status = MeasureReport.MeasureReportStatus.Complete,
                 Type = MeasureReport.MeasureReportType.Summary,
                 Date = new FhirDateTime(new DateTimeOffset(DateTime.Now)).ToString(),
                 Period = _period,
                 Measure = $"{MeasureGenerator.CDCCanonicalUrl}/{measure.Id}",
-                Reporter = new ResourceReference($"{_org.ResourceType}/{_org.Id}"),
+                Reporter = new ResourceReference(
+                    $"{_org.ResourceType}/{_org.Id}",
+                    _org.Name),
                 Group = new List<MeasureReport.GroupComponent>()
                 {
-                    new MeasureReport.GroupComponent()
-                    {
-                        MeasureScore = new Quantity() { Value = score },
-                    },
+                    new MeasureReport.GroupComponent(),
                 },
             };
+
+            // figure out the shaping on this measure
+            if (measure.Group[0].Population == null)
+            {
+                report.Group[0].MeasureScore = new Quantity() { Value = numerator };
+
+                return report;
+            }
+
+            if (measure.Group[0].Population.Count == 1)
+            {
+                report.Group[0].Population = new List<MeasureReport.PopulationComponent>()
+                {
+                    new MeasureReport.PopulationComponent()
+                    {
+                        Code = measure.Group[0].Population[0].Code,
+                        Count = (int)numerator,
+                    },
+                };
+
+                return report;
+            }
+
+            if (measure.Group[0].Population.Count == 2)
+            {
+                report.Group[0].Population = new List<MeasureReport.PopulationComponent>()
+                {
+                    new MeasureReport.PopulationComponent()
+                    {
+                        Code = measure.Group[0].Population[0].Code,
+                        Count = (int)numerator,
+                    },
+                    new MeasureReport.PopulationComponent()
+                    {
+                        Code = measure.Group[0].Population[1].Code,
+                        Count = (int?)denominator,
+                    },
+                };
+
+                return report;
+            }
+
+            return report;
         }
     }
 }

@@ -10,6 +10,7 @@ using CsvHelper;
 using Hl7.Fhir.Model;
 using Hl7.Fhir.Serialization;
 using measureReportTransformer.CDC;
+using measureReportTransformer.Plotting;
 using Newtonsoft.Json;
 
 namespace measureReportTransformer
@@ -18,7 +19,7 @@ namespace measureReportTransformer
     public static class Program
     {
         /// <summary>The JSON parser.</summary>
-        private static FhirJsonParser _jsonParser = new FhirJsonParser();
+        private static FhirJsonParser _fhirJsonParser = new FhirJsonParser();
 
         private static Dictionary<string, Organization> _orgsByRef = new Dictionary<string, Organization>();
         private static Dictionary<string, Location> _locationsByRef = new Dictionary<string, Location>();
@@ -26,11 +27,16 @@ namespace measureReportTransformer
         private static Dictionary<string, ReportCollection> _reportsByOrgRef = new Dictionary<string, ReportCollection>();
 
         /// <summary>Main entry-point for this application.</summary>
-        /// <param name="inputDirectory"> Source Bundle folder (either this or --fhir-server-url is required).</param>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="inputDirectory"> Source Bundle folder.</param>
         /// <param name="outputDirectory">Location to write formatted data.</param>
+        /// <param name="exportCdc">      True to export CDC CSV files.</param>
+        /// <param name="exportPlotting"> True to export CSV Plotting files (experimental).</param>
         public static void Main(
             string inputDirectory,
-            string outputDirectory)
+            string outputDirectory,
+            bool exportCdc = true,
+            bool exportPlotting = true)
         {
             if (string.IsNullOrEmpty(inputDirectory))
             {
@@ -46,8 +52,41 @@ namespace measureReportTransformer
 
             foreach (string orgRef in _orgsByRef.Keys)
             {
-                WriteCdcCsv(orgRef, outputDirectory);
+                if (exportCdc)
+                {
+                    WriteCdcCsv(orgRef, outputDirectory);
+                }
             }
+
+            if (exportPlotting)
+            {
+                WritePlottingCsv(outputDirectory);
+            }
+        }
+
+        /// <summary>Location data for organization.</summary>
+        /// <param name="orgRef">   Identifier for the organization.</param>
+        /// <param name="latitude"> [out] The latitude.</param>
+        /// <param name="longitude">[out] The longitude.</param>
+        public static void LocationDataForOrg(
+            string orgRef,
+            out double latitude,
+            out double longitude)
+        {
+            string locRef = $"Location/Loc-{_orgsByRef[orgRef].Id}";
+
+            if (_locationsByRef.ContainsKey(locRef) &&
+                (_locationsByRef[locRef].Position != null) &&
+                (_locationsByRef[locRef].Position.Latitude != null) &&
+                (_locationsByRef[locRef].Position.Longitude != null))
+            {
+                latitude = (double)_locationsByRef[locRef].Position.Latitude;
+                longitude = (double)_locationsByRef[locRef].Position.Longitude;
+                return;
+            }
+
+            latitude = 0;
+            longitude = 0;
         }
 
         /// <summary>Writes a CDC CSV.</summary>
@@ -80,6 +119,32 @@ namespace measureReportTransformer
             }
         }
 
+        /// <summary>Writes a plotting JSON.</summary>
+        /// <param name="dir">The dir.</param>
+        private static void WritePlottingCsv(
+            string dir)
+        {
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
+            List<PlottingModel> data = new List<PlottingModel>();
+
+            foreach (string orgRef in _orgsByRef.Keys)
+            {
+                data.AddRange(_reportsByOrgRef[orgRef].PlottingData);
+            }
+
+            string filename = Path.Combine(dir, "plotting.csv");
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            using (CsvWriter csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(data);
+            }
+        }
+
         /// <summary>Loads from directory.</summary>
         /// <exception cref="DirectoryNotFoundException">Thrown when the requested directory is not
         ///  present.</exception>
@@ -95,7 +160,7 @@ namespace measureReportTransformer
 
             foreach (string filename in files)
             {
-                Bundle bundle = _jsonParser.Parse<Bundle>(File.ReadAllText(filename));
+                Bundle bundle = _fhirJsonParser.Parse<Bundle>(File.ReadAllText(filename));
 
                 if ((bundle.Entry == null) || (bundle.Entry.Count == 0))
                 {
@@ -113,11 +178,11 @@ namespace measureReportTransformer
                     switch (entry.Resource.TypeName)
                     {
                         case "Organization":
-                            string orgId = $"Organization/{entry.Resource.Id}";
+                            string orgRef = $"Organization/{entry.Resource.Id}";
 
-                            if (!_orgsByRef.ContainsKey(orgId))
+                            if (!_orgsByRef.ContainsKey(orgRef))
                             {
-                                _orgsByRef.Add(orgId, (Organization)entry.Resource);
+                                _orgsByRef.Add(orgRef, (Organization)entry.Resource);
                             }
 
                             break;
@@ -131,7 +196,12 @@ namespace measureReportTransformer
                                 (loc.PhysicalType.Coding.Count != 0) &&
                                 (loc.PhysicalType.Coding[0].Code == "si"))
                             {
-                                _locationsByRef.Add($"Location/{entry.Resource.Id}", loc);
+                                string locRef = $"Location/{entry.Resource.Id}";
+
+                                if (!_locationsByRef.ContainsKey(locRef))
+                                {
+                                    _locationsByRef.Add(locRef, loc);
+                                }
                             }
 
                             break;

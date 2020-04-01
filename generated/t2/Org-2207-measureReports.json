@@ -6,7 +6,7 @@
     "value": "FHIR-90"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.1335169-05:00",
+  "timestamp": "2020-04-01T10:50:00.5400993-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-91",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.133539-05:00",
+        "date": "2020-04-01T10:50:00.5401905-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 348
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 348
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1335599-05:00",
+        "date": "2020-04-01T10:50:00.5402236-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 171
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 171
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1335786-05:00",
+        "date": "2020-04-01T10:50:00.5402564-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 355
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 355
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.133591-05:00",
+        "date": "2020-04-01T10:50:00.5402696-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 300
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 300
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336045-05:00",
+        "date": "2020-04-01T10:50:00.5402802-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 68
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 68
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336155-05:00",
+        "date": "2020-04-01T10:50:00.5402908-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 55
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 55
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336286-05:00",
+        "date": "2020-04-01T10:50:00.5403008-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 9
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 9
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336393-05:00",
+        "date": "2020-04-01T10:50:00.5403102-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 11
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 11
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336498-05:00",
+        "date": "2020-04-01T10:50:00.5403203-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 11
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 11
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336604-05:00",
+        "date": "2020-04-01T10:50:00.5403302-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 32
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 32
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336708-05:00",
+        "date": "2020-04-01T10:50:00.5403404-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 11
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 11
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336839-05:00",
+        "date": "2020-04-01T10:50:00.5403534-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1336942-05:00",
+        "date": "2020-04-01T10:50:00.5403642-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1337125-05:00",
+        "date": "2020-04-01T10:50:00.5403743-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 11
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 11
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1337238-05:00",
+        "date": "2020-04-01T10:50:00.5403839-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-2207"
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-03-31T16:27:20.1337343-05:00",
+        "date": "2020-04-01T10:50:00.5403938-05:00",
         "reporter": {
-          "reference": "Organization/Org-2207"
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 14
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 14
+              }
+            ]
           }
         ]
       }

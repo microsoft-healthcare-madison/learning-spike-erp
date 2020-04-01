@@ -6,7 +6,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.070263-05:00",
+  "timestamp": "2020-04-01T10:50:00.4583335-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-5",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0725412-05:00",
+        "date": "2020-04-01T10:50:00.4607744-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 17
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 17
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0734379-05:00",
+        "date": "2020-04-01T10:50:00.4619274-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 8
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 8
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0735028-05:00",
+        "date": "2020-04-01T10:50:00.4619945-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 25
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 25
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0735603-05:00",
+        "date": "2020-04-01T10:50:00.4620544-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 21
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 21
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0736159-05:00",
+        "date": "2020-04-01T10:50:00.4621121-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 5
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 5
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0736706-05:00",
+        "date": "2020-04-01T10:50:00.4621693-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.073765-05:00",
+        "date": "2020-04-01T10:50:00.4622672-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0738181-05:00",
+        "date": "2020-04-01T10:50:00.462321-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0739534-05:00",
+        "date": "2020-04-01T10:50:00.4624212-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0740985-05:00",
+        "date": "2020-04-01T10:50:00.4625089-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0741208-05:00",
+        "date": "2020-04-01T10:50:00.4625221-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 1
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 1
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0741938-05:00",
+        "date": "2020-04-01T10:50:00.462574-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0742129-05:00",
+        "date": "2020-04-01T10:50:00.4625883-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0742278-05:00",
+        "date": "2020-04-01T10:50:00.4625989-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0743024-05:00",
+        "date": "2020-04-01T10:50:00.4626515-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-5763"
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-03-31T16:27:20.0743799-05:00",
+        "date": "2020-04-01T10:50:00.4627166-05:00",
         "reporter": {
-          "reference": "Organization/Org-5763"
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }

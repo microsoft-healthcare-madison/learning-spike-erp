@@ -6,7 +6,7 @@
     "value": "FHIR-350"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.2805488-05:00",
+  "timestamp": "2020-04-01T10:50:00.6955877-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-351",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2805696-05:00",
+        "date": "2020-04-01T10:50:00.6956153-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 352
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 352
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2805897-05:00",
+        "date": "2020-04-01T10:50:00.6956409-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 173
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 173
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2805987-05:00",
+        "date": "2020-04-01T10:50:00.6956539-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 361
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 361
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806069-05:00",
+        "date": "2020-04-01T10:50:00.6956724-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 297
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 297
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.280615-05:00",
+        "date": "2020-04-01T10:50:00.6956862-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 69
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 69
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806234-05:00",
+        "date": "2020-04-01T10:50:00.6956965-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 64
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 64
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806412-05:00",
+        "date": "2020-04-01T10:50:00.6957065-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 9
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 9
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806496-05:00",
+        "date": "2020-04-01T10:50:00.6957291-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 12
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 12
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806576-05:00",
+        "date": "2020-04-01T10:50:00.6957399-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 12
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 12
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806658-05:00",
+        "date": "2020-04-01T10:50:00.6957502-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 33
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 33
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806736-05:00",
+        "date": "2020-04-01T10:50:00.6957604-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 12
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 12
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806815-05:00",
+        "date": "2020-04-01T10:50:00.6957699-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806894-05:00",
+        "date": "2020-04-01T10:50:00.6957798-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2806973-05:00",
+        "date": "2020-04-01T10:50:00.6957895-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 11
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 11
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2807057-05:00",
+        "date": "2020-04-01T10:50:00.6957992-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 4
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 4
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-3813"
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-03-31T16:27:20.2807138-05:00",
+        "date": "2020-04-01T10:50:00.6958086-05:00",
         "reporter": {
-          "reference": "Organization/Org-3813"
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
+          "start": "2020-03-31",
+          "end": "2020-03-31"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 14
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 14
+              }
+            ]
           }
         ]
       }

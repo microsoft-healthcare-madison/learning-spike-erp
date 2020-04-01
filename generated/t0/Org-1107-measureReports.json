@@ -6,7 +6,7 @@
     "value": "FHIR-212"
   },
   "type": "collection",
-  "timestamp": "2020-03-31T16:27:20.2141448-05:00",
+  "timestamp": "2020-04-01T10:50:00.6190922-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-213",
@@ -17,21 +17,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2141646-05:00",
+        "date": "2020-04-01T10:50:00.6191206-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 61
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 61
+              }
+            ]
           }
         ]
       }
@@ -45,21 +58,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2141904-05:00",
+        "date": "2020-04-01T10:50:00.6191543-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 26
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 26
+              }
+            ]
           }
         ]
       }
@@ -73,21 +99,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2142079-05:00",
+        "date": "2020-04-01T10:50:00.6191665-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 82
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 82
+              }
+            ]
           }
         ]
       }
@@ -101,21 +140,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2142264-05:00",
+        "date": "2020-04-01T10:50:00.6191764-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 72
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 72
+              }
+            ]
           }
         ]
       }
@@ -129,21 +181,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2142431-05:00",
+        "date": "2020-04-01T10:50:00.6191865-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 16
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 16
+              }
+            ]
           }
         ]
       }
@@ -157,21 +222,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2142597-05:00",
+        "date": "2020-04-01T10:50:00.6191971-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 10
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 10
+              }
+            ]
           }
         ]
       }
@@ -185,21 +263,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2142759-05:00",
+        "date": "2020-04-01T10:50:00.619207-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -213,21 +304,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2142918-05:00",
+        "date": "2020-04-01T10:50:00.6192164-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -241,21 +345,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2143084-05:00",
+        "date": "2020-04-01T10:50:00.6192262-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -269,21 +386,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2143397-05:00",
+        "date": "2020-04-01T10:50:00.6192361-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 8
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 8
+              }
+            ]
           }
         ]
       }
@@ -297,21 +427,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.214357-05:00",
+        "date": "2020-04-01T10:50:00.6192541-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 2
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 2
+              }
+            ]
           }
         ]
       }
@@ -325,21 +468,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2143732-05:00",
+        "date": "2020-04-01T10:50:00.6192643-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -353,21 +509,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.214389-05:00",
+        "date": "2020-04-01T10:50:00.6192743-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -381,21 +550,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2144051-05:00",
+        "date": "2020-04-01T10:50:00.6192838-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 3
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 3
+              }
+            ]
           }
         ]
       }
@@ -409,21 +591,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2144211-05:00",
+        "date": "2020-04-01T10:50:00.6192937-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
@@ -437,21 +632,34 @@
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
-          "reference": "Location/Loc-Org-1107"
+          "reference": "Location/Loc-Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-03-31T16:27:20.2144375-05:00",
+        "date": "2020-04-01T10:50:00.6193036-05:00",
         "reporter": {
-          "reference": "Organization/Org-1107"
+          "reference": "Organization/Org-1107",
+          "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-03-28",
-          "end": "2020-03-28"
+          "start": "2020-03-29",
+          "end": "2020-03-29"
         },
         "group": [
           {
-            "measureScore": {
-              "value": 0
-            }
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "",
+                      "code": "measure-population"
+                    }
+                  ],
+                  "text": "Measure Population"
+                },
+                "count": 0
+              }
+            ]
           }
         ]
       }
