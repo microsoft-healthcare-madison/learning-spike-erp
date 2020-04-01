@@ -27,7 +27,7 @@ LOADABLE_TYPES = [
 
 RESOURCE_TAGS = [{
     'system': 'https://github.com/microsoft-healthcare-madison/learning-spike-erp',  # nopep8
-    'code': 'sample-data-carl',  # TODO: make this code a flag called --tag-code
+    'code': 'sample-data',
 }]
 
 TEST_SERVER = 'https://prototype-erp-fhir.azurewebsites.net/'
@@ -277,7 +277,14 @@ class Server:
     '--files', '-f',
     help='Path to a directory containing .json files to send to the server.'
 )
-def main(server_url, delete_all, load, files):
+@click.option(
+    '--tag-code', '-t', default=RESOURCE_TAGS[0]['code'],
+    help='A tag code to apply to all loaded resources.',
+)
+def main(server_url, delete_all, load, files, tag_code):
+    global RESOURCE_TAGS
+    RESOURCE_TAGS[0]['code'] = tag_code
+
     data_files = DataSource(files, load)
 
     # TODO: wrap this in a try block, saving any failed files somewhere.
