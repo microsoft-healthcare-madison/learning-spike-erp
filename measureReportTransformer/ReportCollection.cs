@@ -146,7 +146,43 @@ namespace measureReportTransformer
                 return null;
             }
 
-            return (int?)_reportByKey[key].Group[0].MeasureScore.Value;
+            if (_reportByKey[key].Group[0].MeasureScore != null)
+            {
+                return (int?)_reportByKey[key].Group[0].MeasureScore.Value;
+            }
+
+            if ((_reportByKey[key].Group[0].Population != null) &&
+                (_reportByKey[key].Group[0].Population.Count != 0))
+            {
+                return _reportByKey[key].Group[0].Population[0].Count;
+            }
+
+            return null;
+        }
+
+        /// <summary>Gets int cdc denominator.</summary>
+        /// <param name="period">  The date.</param>
+        /// <param name="cdcField">The cdc field.</param>
+        /// <returns>The int cdc denominator.</returns>
+        private int? GetIntCdcDenom(string period, string cdcField)
+        {
+            string key = $"{period}{CdcLiterals.Canonical(cdcField)}";
+
+            if ((!_reportByKey.ContainsKey(key)) ||
+                (_reportByKey[key].Group == null) ||
+                (_reportByKey[key].Group.Count == 0) ||
+                (_reportByKey[key].Group[0] == null))
+            {
+                return null;
+            }
+
+            if ((_reportByKey[key].Group[0].Population != null) &&
+                (_reportByKey[key].Group[0].Population.Count >= 2))
+            {
+                return _reportByKey[key].Group[0].Population[1].Count;
+            }
+
+            return null;
         }
 
         /// <summary>Adds a report.</summary>

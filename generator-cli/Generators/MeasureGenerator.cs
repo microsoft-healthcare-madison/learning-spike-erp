@@ -14,6 +14,9 @@ namespace generator_cli.Generators
     /// <summary>A measure generator.</summary>
     public static class MeasureGenerator
     {
+        /// <summary>The measure version.</summary>
+        private const string MeasureVersion = "20200401.06";
+
         /// <summary>The publication date.</summary>
         private const string PublicationDate = "2020-03-31T00:00:00Z";
 
@@ -333,6 +336,7 @@ namespace generator_cli.Generators
                 Id = id,
                 Name = id,
                 Url = $"{urlBase}/{id}",
+                Version = MeasureVersion,
                 Title = title,
                 Status = PublicationStatus.Draft,
                 Subject = new CodeableConcept("Location", "Location"),
