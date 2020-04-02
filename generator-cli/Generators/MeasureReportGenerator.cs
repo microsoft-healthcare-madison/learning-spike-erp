@@ -203,12 +203,11 @@ namespace generator_cli.Generators
                 },
             };
 
+            report.Group[0].MeasureScore = new Quantity() { Value = numerator };
+
             // figure out the shaping on this measure
             if (measure.Group[0].Population == null)
             {
-                report.Group[0].MeasureScore = new Quantity() { Value = numerator };
-
-                return report;
             }
 
             if (measure.Group[0].Population.Count == 1)
@@ -218,7 +217,7 @@ namespace generator_cli.Generators
                     new MeasureReport.PopulationComponent()
                     {
                         Code = measure.Group[0].Population[0].Code,
-                        Count = (int)numerator,
+                        Count = 1,
                     },
                 };
 

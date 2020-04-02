@@ -28,13 +28,15 @@ namespace measureReportTransformer
 
         /// <summary>Main entry-point for this application.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
-        /// <param name="inputDirectory"> Source Bundle folder.</param>
-        /// <param name="outputDirectory">Location to write formatted data.</param>
-        /// <param name="exportCdc">      True to export CDC CSV files.</param>
-        /// <param name="exportPlotting"> True to export CSV Plotting files (experimental).</param>
+        /// <param name="inputDirectory">   Source Bundle folder.</param>
+        /// <param name="outputDirectory">  Location to write formatted data.</param>
+        /// <param name="templateDirectory">Location of template files.</param>
+        /// <param name="exportCdc">        True to export CDC CSV files.</param>
+        /// <param name="exportPlotting">   True to export CSV Plotting files (experimental).</param>
         public static void Main(
             string inputDirectory,
             string outputDirectory,
+            string templateDirectory = null,
             bool exportCdc = true,
             bool exportPlotting = true)
         {
@@ -62,6 +64,29 @@ namespace measureReportTransformer
             {
                 WritePlottingCsv(outputDirectory);
             }
+        }
+
+        /// <summary>Writes a fema sheets.</summary>
+        /// <exception cref="FileNotFoundException">Thrown when the requested file is not present.</exception>
+        /// <param name="orgRef">           Identifier for the organization.</param>
+        /// <param name="dir">              The dir.</param>
+        /// <param name="templateDirectory">Pathname of the data directory.</param>
+        public static void WriteFemaSheets(
+            string orgRef,
+            string dir,
+            string templateDirectory)
+        {
+            string templateFilename = string.IsNullOrEmpty(templateDirectory)
+                ? Path.Combine(Directory.GetCurrentDirectory(), "data", "FEMA_Template.xlsx")
+                : Path.Combine(templateDirectory, "FEMA_Template.xlsx");
+
+            if (!File.Exists(templateFilename))
+            {
+                throw new FileNotFoundException($"Could not find: {templateFilename}");
+            }
+
+
+
         }
 
         /// <summary>Location data for organization.</summary>

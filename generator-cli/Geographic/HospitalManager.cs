@@ -267,6 +267,7 @@ namespace generator_cli.Geographic
                         },
                         City = hosp.CITY,
                         State = hosp.STATE,
+                        District = hosp.COUNTY,
                         PostalCode = hosp.ZIP,
                         Country = "USA",
                     },
