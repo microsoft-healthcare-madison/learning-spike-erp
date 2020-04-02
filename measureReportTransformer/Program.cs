@@ -85,8 +85,27 @@ namespace measureReportTransformer
                 throw new FileNotFoundException($"Could not find: {templateFilename}");
             }
 
+            if (!_reportsByOrgRef.ContainsKey(orgRef))
+            {
+                return;
+            }
 
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
 
+            List<CdcModel> cdcData = _reportsByOrgRef[orgRef].CdcData;
+
+            string orgId = _orgsByRef[orgRef].Id;
+
+            string filename = Path.Combine(dir, $"{orgId}-cdc.csv");
+
+            using (StreamWriter writer = new StreamWriter(filename))
+            using (CsvWriter csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(cdcData);
+            }
         }
 
         /// <summary>Location data for organization.</summary>

@@ -166,9 +166,30 @@ namespace generator_cli.Models
         /// <summary>Gets the numerator.</summary>
         /// <value>The numerator.</value>
         public static FhirTriplet MeasurePopulation => new FhirTriplet(
-            string.Empty,
+            "http://terminology.hl7.org/CodeSystem/measure-population",
             "measure-population",
             "Measure Population");
+
+        /// <summary>Gets the measure observation.</summary>
+        /// <value>The measure observation.</value>
+        public static FhirTriplet MeasureObservation => new FhirTriplet(
+            "http://terminology.hl7.org/CodeSystem/measure-population",
+            "measure-observation",
+            "Measure Observation");
+
+        /// <summary>Gets the measure type structure.</summary>
+        /// <value>The measure type structure.</value>
+        public static FhirTriplet MeasureTypeStructure => new FhirTriplet(
+            "http://hl7.org/fhir/ValueSet/measure-type",
+            "structure",
+            "Structure");
+
+        /// <summary>Gets the measure type outcome.</summary>
+        /// <value>The measure type outcome.</value>
+        public static FhirTriplet MeasureTypeOutcome => new FhirTriplet(
+            "http://hl7.org/fhir/ValueSet/measure-type",
+            "outcome",
+            "Outcome");
 
         /// <summary>Gets the numerator.</summary>
         /// <value>The numerator.</value>
@@ -180,7 +201,7 @@ namespace generator_cli.Models
         /// <summary>Gets the scoring continuous variable.</summary>
         /// <value>The scoring continuous variable.</value>
         public static FhirTriplet ScoringContinuousVariable => new FhirTriplet(
-            string.Empty,
+            "http://terminology.hl7.org/CodeSystem/measure-scoring",
             "continuous-variable",
             "Continuous Variable");
 

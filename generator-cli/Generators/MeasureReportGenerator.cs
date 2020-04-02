@@ -172,14 +172,16 @@ namespace generator_cli.Generators
         /// <summary>Reports for measure.</summary>
         /// <param name="id">         [out] The identifier.</param>
         /// <param name="measure">    The measure.</param>
-        /// <param name="numerator">  The total or numerator.</param>
+        /// <param name="score">      The score.</param>
+        /// <param name="numerator">  (Optional) The numerator.</param>
         /// <param name="denominator">(Optional) The denominator.</param>
         /// <returns>A MeasureReport.</returns>
         private MeasureReport ReportForMeasure(
             out string id,
             Measure measure,
-            decimal numerator,
-            decimal? denominator = null)
+            decimal score,
+            int? numerator = null,
+            int? denominator = null)
         {
             id = FhirGenerator.NextId;
 
@@ -203,44 +205,56 @@ namespace generator_cli.Generators
                 },
             };
 
-            report.Group[0].MeasureScore = new Quantity() { Value = numerator };
+            report.Group[0].MeasureScore = new Quantity() { Value = score };
+            report.Group[0].Population = new List<MeasureReport.PopulationComponent>();
 
-            // figure out the shaping on this measure
-            if (measure.Group[0].Population == null)
+            if (measure.Group[0].Population != null)
             {
+                foreach (Measure.PopulationComponent population in measure.Group[0].Population)
+                {
+                    if ((population.Code == null) ||
+                        (population.Code.Coding == null) ||
+                        (population.Code.Coding.Count == 0))
+                    {
+                        continue;
+                    }
+
+                    switch (population.Code.Coding[0].Code)
+                    {
+                        case "measure-population":
+                            report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = 1,
+                            });
+                            break;
+
+                        case "measure-observation":
+                            // ignore
+                            break;
+
+                        case "numerator":
+                            report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = numerator ?? 1,
+                            });
+                            break;
+
+                        case "denominator":
+                            report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = denominator ?? 1,
+                            });
+                            break;
+                    }
+                }
             }
 
-            if (measure.Group[0].Population.Count == 1)
+            if (report.Group[0].Population.Count == 0)
             {
-                report.Group[0].Population = new List<MeasureReport.PopulationComponent>()
-                {
-                    new MeasureReport.PopulationComponent()
-                    {
-                        Code = measure.Group[0].Population[0].Code,
-                        Count = 1,
-                    },
-                };
-
-                return report;
-            }
-
-            if (measure.Group[0].Population.Count == 2)
-            {
-                report.Group[0].Population = new List<MeasureReport.PopulationComponent>()
-                {
-                    new MeasureReport.PopulationComponent()
-                    {
-                        Code = measure.Group[0].Population[0].Code,
-                        Count = (int)numerator,
-                    },
-                    new MeasureReport.PopulationComponent()
-                    {
-                        Code = measure.Group[0].Population[1].Code,
-                        Count = (int?)denominator,
-                    },
-                };
-
-                return report;
+                report.Group[0].Population = null;
             }
 
             return report;

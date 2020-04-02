@@ -86,33 +86,6 @@ namespace generator_cli.Generators
             "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
         };
 
-        /// <summary>The measure type structure.</summary>
-        private static readonly List<FhirTriplet> _measureTypeStructure = new List<FhirTriplet>()
-        {
-            new FhirTriplet(string.Empty, "structure"),
-        };
-
-        /// <summary>The measure type outcome.</summary>
-        private static readonly List<FhirTriplet> _measureTypeOutcome = new List<FhirTriplet>()
-        {
-            new FhirTriplet(string.Empty, "outcome"),
-        };
-
-        /// <summary>Gets the screening rate.</summary>
-        /// <value>The screening rate.</value>
-        public static Measure ScreeningRate => BuildMeasure(
-            IdScreeningRate,
-            CDCCanonicalUrl,
-            "Screening Rate",
-            "Percentage of patients with a face-to-face, telehealth, telephone, or admission " +
-                "encounter for whom a COVID-19 communicable disease screening was performed.",
-            FhirPopulation.Ratio(
-                "Patients for whom a COVID-19 communicable disease screening was performed.",
-                "Patients with a face-to-face, telehealth, telephone, or admission encounter."),
-            null,
-            _cdcDocumentList,
-            _measureTypeOutcome);
-
         /// <summary>Gets the test total.</summary>
         /// <value>The test total.</value>
         public static Measure TestTotal => BuildMeasure(
@@ -120,10 +93,10 @@ namespace generator_cli.Generators
             CanonicalUrl,
             "COVID-19 Tests Performed",
             "The total number of patients for whom a test for COVID-19 was ordered.",
-            FhirPopulation.MeasurePopulation("COVID-19 Tests Performed"),
+            new FhirPopulation("Location - facility", "COVID-19 Tests Performed", "Count([???])"),
             null,
             null,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeOutcome);
 
         /// <summary>Gets the test positive total.</summary>
         /// <value>The test positive total.</value>
@@ -132,10 +105,10 @@ namespace generator_cli.Generators
             CanonicalUrl,
             "COVID-19 Positive Tests",
             "The total number of patients for whom a positive result for a COVID-19 test was documented.",
-            FhirPopulation.MeasurePopulation("COVID-19 Positive Tests"),
+            new FhirPopulation("Location - facility", "COVID-19 Positive Tests", "Count([???])"),
             null,
             null,
-            _measureTypeOutcome);
+            FhirTriplet.MeasureTypeOutcome);
 
         /// <summary>Gets the beds total.</summary>
         /// <value>The beds total.</value>
@@ -146,10 +119,10 @@ namespace generator_cli.Generators
             "Total number of all Inpatient and outpatient beds, " +
                 "including all staffed, ICU, licensed, and overflow(surge) beds used for " +
                 "inpatients or outpatients.",
-            FhirPopulation.MeasurePopulation("All Hospital Beds"),
+            new FhirPopulation("Location - facility", "All Hospital Beds", "Count([Supply: Beds])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the inpatient beds total.</summary>
         /// <value>The inpatient beds total.</value>
@@ -158,10 +131,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "Hospital Inpatient Beds",
             "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
-            FhirPopulation.MeasurePopulation("Hospital Inpatient Beds"),
+            new FhirPopulation("Location - facility", "Hospital Inpatient Beds", "Count([Supply: Beds])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the inpatient beds occupied.</summary>
         /// <value>The inpatient beds occupied.</value>
@@ -170,10 +143,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "Hospital Inpatient Bed Occupancy",
             "Total number of staffed inpatient beds that are occupied.",
-            FhirPopulation.MeasurePopulation("Hospital Inpatient Bed Occupancy"),
+            new FhirPopulation("Location - facility", "Hospital Inpatient Bed Occupancy", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the icu beds total.</summary>
         /// <value>The icu beds total.</value>
@@ -182,10 +155,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "Hospital ICU Beds",
             "Total number of staffed inpatient intensive care unit (ICU) beds.",
-            FhirPopulation.MeasurePopulation("Hospital ICU Beds"),
+            new FhirPopulation("Location - facility", "Hospital ICU Beds", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the icu beds occupied.</summary>
         /// <value>The icu beds occupied.</value>
@@ -194,10 +167,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "Hospital ICU Bed Occupancy",
             "Total number of staffed inpatient ICU beds that are occupied.",
-            FhirPopulation.MeasurePopulation("Hospital ICU Bed Occupancy"),
+            new FhirPopulation("Location - facility", "Hospital ICU Bed Occupancy", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the ventilators total.</summary>
         /// <value>The ventilators total.</value>
@@ -206,10 +179,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "Mechanical Ventilators",
             "Total number of ventilators available.",
-            FhirPopulation.MeasurePopulation("Mechanical Ventilators"),
+            new FhirPopulation("Location - facility", "Mechanical Ventilators", "Count([Supply: Ventilators])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the ventilators in use.</summary>
         /// <value>The ventilators in use.</value>
@@ -218,10 +191,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "Mechanical Ventilators In Use",
             "Total number of ventilators in use.",
-            FhirPopulation.MeasurePopulation("Mechanical Ventilators In Use"),
+            new FhirPopulation("Location - facility", "Mechanical Ventilators In Use", "Count(???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the COVID patients hospitalized.</summary>
         /// <value>The COVID patients hospitalized.</value>
@@ -230,10 +203,10 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "COVID-19 Patients Hospitalized",
             "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
-            FhirPopulation.MeasurePopulation("COVID-19 Patients Hospitalized"),
+            new FhirPopulation("Location - facility", "COVID-19 Patients Hospitalized", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the covid patients ventilated.</summary>
         /// <value>The covid patients ventilated.</value>
@@ -243,10 +216,10 @@ namespace generator_cli.Generators
             "COVID-19 Patients Hospitalized and Ventilated",
             "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed " +
                 "COVID - 19 and are on a mechanical ventilator.",
-            FhirPopulation.MeasurePopulation("COVID-19 Patients Hospitalized and Ventilated"),
+            new FhirPopulation("Location - facility", "COVID-19 Patients Hospitalized and Ventilated", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the covid hospital onset.</summary>
         /// <value>The covid hospital onset.</value>
@@ -256,10 +229,10 @@ namespace generator_cli.Generators
             "COVID-19 Hospital Onset",
             "Patients hospitalized in an NHSN inpatient care location with onset of suspected " +
                 "or confirmed COVID - 19 14 or more days after hospitalization.",
-            FhirPopulation.MeasurePopulation("COVID-19 Hospital Onset"),
+            new FhirPopulation("Location - facility", "COVID-19 Hospital Onset", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeOutcome);
+            FhirTriplet.MeasureTypeOutcome);
 
         /// <summary>Gets the covid awaiting inpatient.</summary>
         /// <value>The covid awaiting inpatient.</value>
@@ -269,10 +242,10 @@ namespace generator_cli.Generators
             "ED/Overflow",
             "Patients with suspected or confirmed COVID-19 who are in " +
                 "the ED or any overflow location awaiting an inpatient bed.",
-            FhirPopulation.MeasurePopulation("ED/Overflow"),
+            new FhirPopulation("Location - facility", "ED/Overflow", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the covid awaiting ventilator.</summary>
         /// <value>The covid awaiting ventilator.</value>
@@ -282,10 +255,10 @@ namespace generator_cli.Generators
             "ED/Overflow and ventilated",
             "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location " +
                 "awaiting an inpatient bed and on a mechanical ventilator.",
-            FhirPopulation.MeasurePopulation("ED/Overflow and ventilated"),
+            new FhirPopulation("Location - facility", "ED/Overflow and ventilated", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeStructure);
+            FhirTriplet.MeasureTypeStructure);
 
         /// <summary>Gets the covid recovered.</summary>
         /// <value>The covid recovered.</value>
@@ -294,10 +267,10 @@ namespace generator_cli.Generators
             CanonicalUrl,
             "COVID-19 Patients Recovered",
             "Patients with suspected or confirmed COVID-19 who have recovered and been discharged.",
-            FhirPopulation.MeasurePopulation("COVID-19 Patients Recovered"),
+            new FhirPopulation("Location - facility", "COVID-19 Patients Recovered", "Count([???])"),
             null,
             null,
-            _measureTypeOutcome);
+            FhirTriplet.MeasureTypeOutcome);
 
         /// <summary>Gets the covid died.</summary>
         /// <value>The covid died.</value>
@@ -306,17 +279,17 @@ namespace generator_cli.Generators
             CDCCanonicalUrl,
             "COVID-19 Patients Died",
             "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
-            FhirPopulation.MeasurePopulation("COVID-19 Patients Died"),
+            new FhirPopulation("Location - facility", "COVID-19 Patients Died", "Count([???])"),
             null,
             _cdcDocumentList,
-            _measureTypeOutcome);
+            FhirTriplet.MeasureTypeOutcome);
 
         /// <summary>Builds a measure.</summary>
         /// <param name="id">                 The identifier.</param>
         /// <param name="urlBase">            The URL base.</param>
         /// <param name="title">              The title.</param>
         /// <param name="description">        The description.</param>
-        /// <param name="populations">        (Optional) The populations.</param>
+        /// <param name="population">         (Optional) The population.</param>
         /// <param name="topics">             (Optional) The topics.</param>
         /// <param name="relatedDocumentUrls">(Optional) The related document urls.</param>
         /// <param name="measureTypes">       (Optional) List of types of the measures.</param>
@@ -326,10 +299,10 @@ namespace generator_cli.Generators
             string urlBase,
             string title,
             string description,
-            List<FhirPopulation> populations = null,
+            FhirPopulation population = null,
             List<FhirTriplet> topics = null,
             List<string> relatedDocumentUrls = null,
-            List<FhirTriplet> measureTypes = null)
+            FhirTriplet measureType = null)
         {
             Measure measure = new Measure()
             {
@@ -357,13 +330,12 @@ namespace generator_cli.Generators
                 },
             };
 
-            if ((measureTypes != null) && (measureTypes.Count > 0))
+            if (measureType != null)
             {
-                measure.Type = new List<CodeableConcept>();
-                foreach (FhirTriplet measureType in measureTypes)
+                measure.Type = new List<CodeableConcept>()
                 {
-                    measure.Type.Add(measureType.Concept);
-                }
+                    measureType.Concept,
+                };
             }
 
             if ((relatedDocumentUrls != null) && (relatedDocumentUrls.Count > 0))
@@ -391,30 +363,18 @@ namespace generator_cli.Generators
                 }
             }
 
-            if ((populations != null) && (populations.Count > 0))
+            if (population != null)
             {
                 measure.Group = new List<Measure.GroupComponent>()
                 {
                     new Measure.GroupComponent()
                     {
-                        Population = new List<Measure.PopulationComponent>(),
+                        Population = population.ComponentList,
                     },
                 };
-
-                foreach (FhirPopulation population in populations)
-                {
-                    measure.Group[0].Population.Add(population.Component);
-                }
             }
 
-            if ((populations == null) || (populations.Count < 2))
-            {
-                measure.Scoring = FhirTriplet.ScoringContinuousVariable.Concept;
-            }
-            else if (populations.Count == 2)
-            {
-                measure.Scoring = FhirTriplet.ScoringProportion.Concept;
-            }
+            measure.Scoring = FhirTriplet.ScoringContinuousVariable.Concept;
 
             return measure;
         }
