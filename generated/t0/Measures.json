@@ -6,218 +6,8 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T10:57:14.9999342-05:00",
+  "timestamp": "2020-04-02T15:12:35.1654304-05:00",
   "entry": [
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/covid-19-test-count",
-      "resource": {
-        "resourceType": "Measure",
-        "id": "covid-19-test-count",
-        "url": "http://saner.example.org/covid19/20200331/covid-19-test-count",
-        "version": "20200401.06",
-        "name": "covid-19-test-count",
-        "title": "COVID-19 Tests Performed",
-        "status": "draft",
-        "subjectCodeableConcept": {
-          "coding": [
-            {
-              "system": "Location",
-              "code": "Location"
-            }
-          ]
-        },
-        "date": "2020-03-31T00:00:00Z",
-        "publisher": "SANER-IG",
-        "description": "The total number of patients for whom a test for COVID-19 was ordered.",
-        "useContext": [
-          {
-            "code": {
-              "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus"
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "840535000",
-                  "display": "COVID-19"
-                }
-              ]
-            }
-          }
-        ],
-        "jurisdiction": [
-          {
-            "coding": [
-              {
-                "system": "urn:iso:std:iso:3166",
-                "code": "US",
-                "display": "United States of America"
-              }
-            ]
-          }
-        ],
-        "scoring": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
-            }
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/ValueSet/measure-type",
-                "code": "outcome",
-                "display": "Outcome"
-              }
-            ]
-          }
-        ],
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "COVID-19 Tests Performed",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/covid-19-test-positive-count",
-      "resource": {
-        "resourceType": "Measure",
-        "id": "covid-19-test-positive-count",
-        "url": "http://saner.example.org/covid19/20200331/covid-19-test-positive-count",
-        "version": "20200401.06",
-        "name": "covid-19-test-positive-count",
-        "title": "COVID-19 Positive Tests",
-        "status": "draft",
-        "subjectCodeableConcept": {
-          "coding": [
-            {
-              "system": "Location",
-              "code": "Location"
-            }
-          ]
-        },
-        "date": "2020-03-31T00:00:00Z",
-        "publisher": "SANER-IG",
-        "description": "The total number of patients for whom a positive result for a COVID-19 test was documented.",
-        "useContext": [
-          {
-            "code": {
-              "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus"
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "840535000",
-                  "display": "COVID-19"
-                }
-              ]
-            }
-          }
-        ],
-        "jurisdiction": [
-          {
-            "coding": [
-              {
-                "system": "urn:iso:std:iso:3166",
-                "code": "US",
-                "display": "United States of America"
-              }
-            ]
-          }
-        ],
-        "scoring": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
-            }
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/ValueSet/measure-type",
-                "code": "outcome",
-                "display": "Outcome"
-              }
-            ]
-          }
-        ],
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "COVID-19 Positive Tests",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    },
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/numTotBeds",
       "resource": {
@@ -277,8 +67,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -306,22 +96,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "All Hospital Beds",
-                  "language": "text/cql",
-                  "expression": "Count([Supply: Beds])"
+                  "description": "CDC defined field: numTotBeds",
+                  "language": "text/plain",
+                  "expression": "Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients."
                 }
               }
             ]
@@ -388,8 +166,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -417,22 +195,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "Hospital Inpatient Beds",
-                  "language": "text/cql",
-                  "expression": "Count([Supply: Beds])"
+                  "description": "CDC defined field: numbeds",
+                  "language": "text/plain",
+                  "expression": "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients."
                 }
               }
             ]
@@ -499,8 +265,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -528,22 +294,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "Hospital Inpatient Bed Occupancy",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numBedsOcc",
+                  "language": "text/plain",
+                  "expression": "Total number of staffed inpatient beds that are occupied."
                 }
               }
             ]
@@ -610,8 +364,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -639,22 +393,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "Hospital ICU Beds",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numICUBeds",
+                  "language": "text/plain",
+                  "expression": "Total number of staffed inpatient intensive care unit (ICU) beds."
                 }
               }
             ]
@@ -721,8 +463,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -750,22 +492,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "Hospital ICU Bed Occupancy",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numICUBedsOcc",
+                  "language": "text/plain",
+                  "expression": "Total number of staffed inpatient ICU beds that are occupied."
                 }
               }
             ]
@@ -832,8 +562,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -861,22 +591,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "Mechanical Ventilators",
-                  "language": "text/cql",
-                  "expression": "Count([Supply: Ventilators])"
+                  "description": "CDC defined field: numVent",
+                  "language": "text/plain",
+                  "expression": "Total number of ventilators available."
                 }
               }
             ]
@@ -943,8 +661,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -972,22 +690,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "Mechanical Ventilators In Use",
-                  "language": "text/cql",
-                  "expression": "Count(???])"
+                  "description": "CDC defined field: numVentUse",
+                  "language": "text/plain",
+                  "expression": "Total number of ventilators in use."
                 }
               }
             ]
@@ -1054,8 +760,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -1083,22 +789,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "COVID-19 Patients Hospitalized",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numC19HospPats",
+                  "language": "text/plain",
+                  "expression": "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19."
                 }
               }
             ]
@@ -1165,8 +859,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -1194,22 +888,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "COVID-19 Patients Hospitalized and Ventilated",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numC19MechVentPats",
+                  "language": "text/plain",
+                  "expression": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator."
                 }
               }
             ]
@@ -1276,8 +958,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -1286,8 +968,8 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/ValueSet/measure-type",
-                "code": "outcome",
-                "display": "Outcome"
+                "code": "structure",
+                "display": "Structure"
               }
             ]
           }
@@ -1305,22 +987,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "COVID-19 Hospital Onset",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numC19HOPats",
+                  "language": "text/plain",
+                  "expression": "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization."
                 }
               }
             ]
@@ -1387,8 +1057,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -1416,22 +1086,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "ED/Overflow",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numC19OverflowPats",
+                  "language": "text/plain",
+                  "expression": "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed."
                 }
               }
             ]
@@ -1447,7 +1105,7 @@
         "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
         "version": "20200401.06",
         "name": "numC19OFMechVentPats",
-        "title": "ED/Overflow and ventilated",
+        "title": "ED/Overflow and Ventilated",
         "status": "draft",
         "subjectCodeableConcept": {
           "coding": [
@@ -1498,8 +1156,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -1527,127 +1185,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "ED/Overflow and ventilated",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
-                }
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/covid-19-recovered",
-      "resource": {
-        "resourceType": "Measure",
-        "id": "covid-19-recovered",
-        "url": "http://saner.example.org/covid19/20200331/covid-19-recovered",
-        "version": "20200401.06",
-        "name": "covid-19-recovered",
-        "title": "COVID-19 Patients Recovered",
-        "status": "draft",
-        "subjectCodeableConcept": {
-          "coding": [
-            {
-              "system": "Location",
-              "code": "Location"
-            }
-          ]
-        },
-        "date": "2020-03-31T00:00:00Z",
-        "publisher": "SANER-IG",
-        "description": "Patients with suspected or confirmed COVID-19 who have recovered and been discharged.",
-        "useContext": [
-          {
-            "code": {
-              "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
-              "code": "focus"
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "http://snomed.info/sct",
-                  "code": "840535000",
-                  "display": "COVID-19"
-                }
-              ]
-            }
-          }
-        ],
-        "jurisdiction": [
-          {
-            "coding": [
-              {
-                "system": "urn:iso:std:iso:3166",
-                "code": "US",
-                "display": "United States of America"
-              }
-            ]
-          }
-        ],
-        "scoring": {
-          "coding": [
-            {
-              "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
-            }
-          ]
-        },
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/ValueSet/measure-type",
-                "code": "outcome",
-                "display": "Outcome"
-              }
-            ]
-          }
-        ],
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "COVID-19 Patients Recovered",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numC19OFMechVentPats",
+                  "language": "text/plain",
+                  "expression": "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator."
                 }
               }
             ]
@@ -1714,8 +1255,8 @@
           "coding": [
             {
               "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-              "code": "continuous-variable",
-              "display": "Continuous Variable"
+              "code": "cohort",
+              "display": "Cohort"
             }
           ]
         },
@@ -1724,8 +1265,8 @@
             "coding": [
               {
                 "system": "http://hl7.org/fhir/ValueSet/measure-type",
-                "code": "outcome",
-                "display": "Outcome"
+                "code": "structure",
+                "display": "Structure"
               }
             ]
           }
@@ -1743,22 +1284,10 @@
                     }
                   ]
                 },
-                "description": "Location - facility"
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-observation",
-                      "display": "Measure Observation"
-                    }
-                  ]
-                },
                 "criteria": {
-                  "description": "COVID-19 Patients Died",
-                  "language": "text/cql",
-                  "expression": "Count([???])"
+                  "description": "CDC defined field: numC19Died",
+                  "language": "text/plain",
+                  "expression": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location."
                 }
               }
             ]

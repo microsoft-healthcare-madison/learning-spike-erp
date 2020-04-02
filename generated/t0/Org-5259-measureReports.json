@@ -1,106 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-160",
+  "id": "FHIR-133",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-160"
+    "value": "FHIR-133"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T10:57:16.0631994-05:00",
+  "timestamp": "2020-04-02T15:12:36.1507168-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-161",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-134",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-161",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
-        "subject": {
-          "reference": "Location/Loc-Org-5259",
-          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
-        },
-        "date": "2020-04-02T10:57:16.0633276-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5259",
-          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 76
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-162",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-162",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
-        "subject": {
-          "reference": "Location/Loc-Org-5259",
-          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
-        },
-        "date": "2020-04-02T10:57:16.0633772-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5259",
-          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 38
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-163",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-163",
+        "id": "FHIR-134",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
@@ -108,7 +20,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0634113-05:00",
+        "date": "2020-04-02T15:12:36.1507367-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -130,7 +42,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 115
               }
             ],
             "measureScore": {
@@ -141,10 +53,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-164",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-135",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-164",
+        "id": "FHIR-135",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
@@ -152,7 +64,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0634421-05:00",
+        "date": "2020-04-02T15:12:36.150778-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -174,7 +86,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 103
               }
             ],
             "measureScore": {
@@ -185,10 +97,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-165",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-136",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-165",
+        "id": "FHIR-136",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
@@ -196,7 +108,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0634922-05:00",
+        "date": "2020-04-02T15:12:36.1508004-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -218,7 +130,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 23
               }
             ],
             "measureScore": {
@@ -229,10 +141,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-166",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-137",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-166",
+        "id": "FHIR-137",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
@@ -240,7 +152,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0635256-05:00",
+        "date": "2020-04-02T15:12:36.1508157-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -262,7 +174,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 12
               }
             ],
             "measureScore": {
@@ -273,10 +185,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-167",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-138",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-167",
+        "id": "FHIR-138",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
@@ -284,7 +196,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0635556-05:00",
+        "date": "2020-04-02T15:12:36.1508348-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -306,7 +218,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 3
               }
             ],
             "measureScore": {
@@ -317,10 +229,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-168",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-139",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-168",
+        "id": "FHIR-139",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
@@ -328,7 +240,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0635862-05:00",
+        "date": "2020-04-02T15:12:36.1508544-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -350,7 +262,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -361,10 +273,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-169",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-140",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-169",
+        "id": "FHIR-140",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
@@ -372,7 +284,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0636095-05:00",
+        "date": "2020-04-02T15:12:36.1508694-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -394,7 +306,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -405,10 +317,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-170",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-141",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-170",
+        "id": "FHIR-141",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
@@ -416,7 +328,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0636312-05:00",
+        "date": "2020-04-02T15:12:36.1508889-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -438,7 +350,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 11
               }
             ],
             "measureScore": {
@@ -449,10 +361,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-171",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-142",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-171",
+        "id": "FHIR-142",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
@@ -460,7 +372,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0636472-05:00",
+        "date": "2020-04-02T15:12:36.1509077-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -482,7 +394,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -493,10 +405,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-172",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-143",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-172",
+        "id": "FHIR-143",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
@@ -504,7 +416,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0636627-05:00",
+        "date": "2020-04-02T15:12:36.1509228-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -526,7 +438,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -537,10 +449,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-173",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-144",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-173",
+        "id": "FHIR-144",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
@@ -548,7 +460,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0636775-05:00",
+        "date": "2020-04-02T15:12:36.1509423-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -570,7 +482,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -581,10 +493,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-174",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-145",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-174",
+        "id": "FHIR-145",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
@@ -592,7 +504,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0636926-05:00",
+        "date": "2020-04-02T15:12:36.1509662-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -614,7 +526,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 5
               }
             ],
             "measureScore": {
@@ -625,54 +537,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-175",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-146",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-175",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
-        "subject": {
-          "reference": "Location/Loc-Org-5259",
-          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
-        },
-        "date": "2020-04-02T10:57:16.0637064-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5259",
-          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-176",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-176",
+        "id": "FHIR-146",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
@@ -680,7 +548,7 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.0637245-05:00",
+        "date": "2020-04-02T15:12:36.1509816-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
@@ -702,7 +570,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {

@@ -1,106 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-333",
+  "id": "FHIR-276",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-333"
+    "value": "FHIR-276"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T10:57:16.1797297-05:00",
+  "timestamp": "2020-04-02T15:12:36.2534978-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-334",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-277",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-334",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
-        "subject": {
-          "reference": "Location/Loc-Org-3813",
-          "display": "HERITAGE VALLEY BEAVER"
-        },
-        "date": "2020-04-02T10:57:16.1798312-05:00",
-        "reporter": {
-          "reference": "Organization/Org-3813",
-          "display": "HERITAGE VALLEY BEAVER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 294
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-335",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-335",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
-        "subject": {
-          "reference": "Location/Loc-Org-3813",
-          "display": "HERITAGE VALLEY BEAVER"
-        },
-        "date": "2020-04-02T10:57:16.1799545-05:00",
-        "reporter": {
-          "reference": "Organization/Org-3813",
-          "display": "HERITAGE VALLEY BEAVER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 144
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-336",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-336",
+        "id": "FHIR-277",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
@@ -108,7 +20,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1800956-05:00",
+        "date": "2020-04-02T15:12:36.2535132-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -130,7 +42,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 361
               }
             ],
             "measureScore": {
@@ -141,10 +53,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-337",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-278",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-337",
+        "id": "FHIR-278",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
@@ -152,7 +64,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1801992-05:00",
+        "date": "2020-04-02T15:12:36.2535369-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -174,7 +86,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 297
               }
             ],
             "measureScore": {
@@ -185,10 +97,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-338",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-279",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-338",
+        "id": "FHIR-279",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
@@ -196,7 +108,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1802738-05:00",
+        "date": "2020-04-02T15:12:36.2535462-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -218,7 +130,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 69
               }
             ],
             "measureScore": {
@@ -229,10 +141,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-339",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-280",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-339",
+        "id": "FHIR-280",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
@@ -240,7 +152,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1803463-05:00",
+        "date": "2020-04-02T15:12:36.2535546-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -262,7 +174,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 64
               }
             ],
             "measureScore": {
@@ -273,10 +185,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-340",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-281",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-340",
+        "id": "FHIR-281",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
@@ -284,7 +196,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1804228-05:00",
+        "date": "2020-04-02T15:12:36.2535626-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -306,7 +218,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 9
               }
             ],
             "measureScore": {
@@ -317,10 +229,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-341",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-282",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-341",
+        "id": "FHIR-282",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
@@ -328,7 +240,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1804902-05:00",
+        "date": "2020-04-02T15:12:36.2535706-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -350,7 +262,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 12
               }
             ],
             "measureScore": {
@@ -361,10 +273,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-342",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-283",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-342",
+        "id": "FHIR-283",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
@@ -372,7 +284,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1805563-05:00",
+        "date": "2020-04-02T15:12:36.2535785-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -394,7 +306,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 12
               }
             ],
             "measureScore": {
@@ -405,10 +317,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-343",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-284",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-343",
+        "id": "FHIR-284",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
@@ -416,7 +328,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1806538-05:00",
+        "date": "2020-04-02T15:12:36.2535864-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -438,7 +350,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 33
               }
             ],
             "measureScore": {
@@ -449,10 +361,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-344",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-285",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-344",
+        "id": "FHIR-285",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
@@ -460,7 +372,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1807364-05:00",
+        "date": "2020-04-02T15:12:36.253594-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -482,7 +394,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 12
               }
             ],
             "measureScore": {
@@ -493,10 +405,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-345",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-286",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-345",
+        "id": "FHIR-286",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
@@ -504,7 +416,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1808544-05:00",
+        "date": "2020-04-02T15:12:36.2536019-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -526,7 +438,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -537,10 +449,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-346",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-287",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-346",
+        "id": "FHIR-287",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
@@ -548,7 +460,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1810034-05:00",
+        "date": "2020-04-02T15:12:36.2536096-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -570,7 +482,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -581,10 +493,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-347",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-288",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-347",
+        "id": "FHIR-288",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
@@ -592,7 +504,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1810696-05:00",
+        "date": "2020-04-02T15:12:36.2536172-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -614,7 +526,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 11
               }
             ],
             "measureScore": {
@@ -625,54 +537,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-348",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-289",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-348",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
-        "subject": {
-          "reference": "Location/Loc-Org-3813",
-          "display": "HERITAGE VALLEY BEAVER"
-        },
-        "date": "2020-04-02T10:57:16.1810883-05:00",
-        "reporter": {
-          "reference": "Organization/Org-3813",
-          "display": "HERITAGE VALLEY BEAVER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 2
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-349",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-349",
+        "id": "FHIR-289",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
@@ -680,7 +548,7 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-02T10:57:16.1811094-05:00",
+        "date": "2020-04-02T15:12:36.2536251-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
@@ -702,7 +570,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 8
               }
             ],
             "measureScore": {

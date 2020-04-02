@@ -52,8 +52,7 @@ namespace generator_cli.Models
                 Code = FhirTriplet.MeasureObservation.Concept,
                 Criteria = new Expression()
                 {
-                    Description = CriteriaDescription,
-                    Language = "text/cql",
+                    Language = "text/plain",
                     Expression_ = CriteriaExpression,
                 },
             },

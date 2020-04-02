@@ -199,6 +199,8 @@ namespace generator_cli
                 HospitalManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
             }
 
+            MeasureGenerator.Init();
+
             string dir;
 
             // create our time step directories

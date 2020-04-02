@@ -143,11 +143,18 @@ namespace generator_cli.Models
             }
         }
 
-        /// <summary>The empty required.</summary>
-        public static FhirTriplet EmptyRequired = new FhirTriplet(string.Empty, string.Empty, _fakeCodeText);
+        /// <summary>Gets the empty required.</summary>
+        /// <value>The empty required.</value>
+        public static FhirTriplet EmptyRequired => new FhirTriplet(
+            string.Empty,
+            string.Empty,
+            _fakeCodeText);
 
-        /// <summary>The measure report period.</summary>
-        public static FhirTriplet MeasureReportPeriod = new FhirTriplet(SystemLiterals.MeasureReport, "MeasureReport.period");
+        /// <summary>Gets the measure report period.</summary>
+        /// <value>The measure report period.</value>
+        public static FhirTriplet MeasureReportPeriod => new FhirTriplet(
+            SystemLiterals.MeasureReport,
+            "MeasureReport.period");
 
         /// <summary>Gets the sct covid.</summary>
         /// <value>The sct covid.</value>
@@ -194,9 +201,16 @@ namespace generator_cli.Models
         /// <summary>Gets the numerator.</summary>
         /// <value>The numerator.</value>
         public static FhirTriplet Numerator => new FhirTriplet(
-            string.Empty,
+            "http://terminology.hl7.org/CodeSystem/measure-population",
             "numerator",
             "Numerator");
+
+        /// <summary>Gets the denominator.</summary>
+        /// <value>The denominator.</value>
+        public static FhirTriplet Denominator => new FhirTriplet(
+            "http://terminology.hl7.org/CodeSystem/measure-population",
+            "denominator",
+            "Denominator");
 
         /// <summary>Gets the scoring continuous variable.</summary>
         /// <value>The scoring continuous variable.</value>
@@ -208,16 +222,23 @@ namespace generator_cli.Models
         /// <summary>Gets the scoring proportion.</summary>
         /// <value>The scoring proportion.</value>
         public static FhirTriplet ScoringProportion => new FhirTriplet(
-            string.Empty,
+            "http://terminology.hl7.org/CodeSystem/measure-scoring",
             "proportion",
             "proportion");
 
-        /// <summary>Gets the denominator.</summary>
-        /// <value>The denominator.</value>
-        public static FhirTriplet Denominator => new FhirTriplet(
-            string.Empty,
-            "denominator",
-            "Denominator");
+        /// <summary>Gets the scoring ratio.</summary>
+        /// <value>The scoring ratio.</value>
+        public static FhirTriplet ScoringRatio => new FhirTriplet(
+            "http://terminology.hl7.org/CodeSystem/measure-scoring",
+            "ratio",
+            "Ratio");
+
+        /// <summary>Gets the scoring cohort.</summary>
+        /// <value>The scoring cohort.</value>
+        public static FhirTriplet ScoringCohort => new FhirTriplet(
+            "http://terminology.hl7.org/CodeSystem/measure-scoring",
+            "cohort",
+            "Cohort");
 
         /// <summary>Gets a list of states of the united.</summary>
         /// <value>The united states.</value>

@@ -1,106 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-368",
+  "id": "FHIR-305",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-368"
+    "value": "FHIR-305"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T10:57:16.2055787-05:00",
+  "timestamp": "2020-04-02T15:12:36.2754723-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-369",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-306",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-369",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
-        "subject": {
-          "reference": "Location/Loc-Org-3046",
-          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
-        },
-        "date": "2020-04-02T10:57:16.2056427-05:00",
-        "reporter": {
-          "reference": "Organization/Org-3046",
-          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 21
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-370",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-370",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
-        "subject": {
-          "reference": "Location/Loc-Org-3046",
-          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
-        },
-        "date": "2020-04-02T10:57:16.2056972-05:00",
-        "reporter": {
-          "reference": "Organization/Org-3046",
-          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 8
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-371",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-371",
+        "id": "FHIR-306",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
@@ -108,7 +20,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2057498-05:00",
+        "date": "2020-04-02T15:12:36.2756194-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -130,7 +42,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 25
               }
             ],
             "measureScore": {
@@ -141,10 +53,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-372",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-307",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-372",
+        "id": "FHIR-307",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
@@ -152,7 +64,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2057906-05:00",
+        "date": "2020-04-02T15:12:36.27582-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -174,7 +86,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 23
               }
             ],
             "measureScore": {
@@ -185,10 +97,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-373",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-308",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-373",
+        "id": "FHIR-308",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
@@ -196,7 +108,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.205825-05:00",
+        "date": "2020-04-02T15:12:36.2759396-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -218,7 +130,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 5
               }
             ],
             "measureScore": {
@@ -229,10 +141,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-374",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-309",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-374",
+        "id": "FHIR-309",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
@@ -240,7 +152,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2058557-05:00",
+        "date": "2020-04-02T15:12:36.2760442-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -262,7 +174,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -273,10 +185,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-375",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-310",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-375",
+        "id": "FHIR-310",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
@@ -284,7 +196,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2058951-05:00",
+        "date": "2020-04-02T15:12:36.2761515-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -306,7 +218,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -317,10 +229,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-376",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-311",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-376",
+        "id": "FHIR-311",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
@@ -328,7 +240,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2059371-05:00",
+        "date": "2020-04-02T15:12:36.2762825-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -361,10 +273,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-377",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-312",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-377",
+        "id": "FHIR-312",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
@@ -372,7 +284,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2059743-05:00",
+        "date": "2020-04-02T15:12:36.2764236-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -405,10 +317,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-378",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-313",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-378",
+        "id": "FHIR-313",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
@@ -416,7 +328,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2060105-05:00",
+        "date": "2020-04-02T15:12:36.2765382-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -438,7 +350,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -449,10 +361,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-379",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-314",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-379",
+        "id": "FHIR-314",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
@@ -460,7 +372,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2060473-05:00",
+        "date": "2020-04-02T15:12:36.2766246-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -493,10 +405,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-380",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-315",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-380",
+        "id": "FHIR-315",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
@@ -504,7 +416,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2060807-05:00",
+        "date": "2020-04-02T15:12:36.2766985-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -526,7 +438,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -537,10 +449,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-381",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-316",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-381",
+        "id": "FHIR-316",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
@@ -548,7 +460,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2061259-05:00",
+        "date": "2020-04-02T15:12:36.2767793-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -570,7 +482,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -581,10 +493,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-382",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-317",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-382",
+        "id": "FHIR-317",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
@@ -592,7 +504,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2061603-05:00",
+        "date": "2020-04-02T15:12:36.2768778-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -614,7 +526,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -625,54 +537,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-383",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-318",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-383",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
-        "subject": {
-          "reference": "Location/Loc-Org-3046",
-          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
-        },
-        "date": "2020-04-02T10:57:16.2061957-05:00",
-        "reporter": {
-          "reference": "Organization/Org-3046",
-          "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-384",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-384",
+        "id": "FHIR-318",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
@@ -680,7 +548,7 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-02T10:57:16.2062288-05:00",
+        "date": "2020-04-02T15:12:36.2769833-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
@@ -702,7 +570,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {

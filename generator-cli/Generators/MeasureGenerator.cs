@@ -23,23 +23,8 @@ namespace generator_cli.Generators
         /// <summary>The publisher.</summary>
         private const string Publisher = "SANER-IG";
 
-        /// <summary>The canonical URL base.</summary>
-        public const string CDCCanonicalUrl = "http://cdcmeasures.example.org/modules/covid19/20200331";
-
-        /// <summary>The canonical URL base.</summary>
-        public const string CanonicalUrl = "http://saner.example.org/covid19/20200331";
-
-        /// <summary>The identifier screening rate.</summary>
-        public const string IdScreeningRate = "screening-rate";
-
-        /// <summary>Number of identifier tests.</summary>
-        public const string IdTestCount = "covid-19-test-count";
-
-        /// <summary>Number of identifier test positives.</summary>
-        public const string IdTestPositiveCount = "covid-19-test-positive-count";
-
-        /// <summary>The identifier recovered.</summary>
-        public const string IdRecovered = "covid-19-recovered";
+        /// <summary>The cdc measures.</summary>
+        private static Dictionary<string, Measure> _cdcMeasures = new Dictionary<string, Measure>();
 
         /// <summary>The CDC total beds.</summary>
         public const string CDCTotalBeds = "numTotBeds";
@@ -80,242 +65,136 @@ namespace generator_cli.Generators
         /// <summary>The cdc died.</summary>
         public const string CDCDied = "numC19Died";
 
-        /// <summary>List of cdc documents.</summary>
-        private static readonly List<string> _cdcDocumentList = new List<string>()
+        /// <summary>The cdc measures.</summary>
+        private static readonly List<MeasureInfo> _cdcMeasureInfo = new List<MeasureInfo>()
         {
-            "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCTotalBeds,
+                "All Hospital Beds",
+                "Total number of all Inpatient and outpatient beds, " +
+                    "including all staffed, ICU, licensed, and overflow(surge) beds used for " +
+                    "inpatients or outpatients.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCInpatientBeds,
+                "Hospital Inpatient Beds",
+                "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCInpatientBedOccupancy,
+                "Hospital Inpatient Bed Occupancy",
+                "Total number of staffed inpatient beds that are occupied.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCIcuBeds,
+                "Hospital ICU Beds",
+                "Total number of staffed inpatient intensive care unit (ICU) beds.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCIcuBedOccupancy,
+                "Hospital ICU Bed Occupancy",
+                "Total number of staffed inpatient ICU beds that are occupied.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCVentilators,
+                "Mechanical Ventilators",
+                "Total number of ventilators available.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCVentilatorsInUse,
+                "Mechanical Ventilators In Use",
+                "Total number of ventilators in use.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCHospitalizedPatients,
+                "COVID-19 Patients Hospitalized",
+                "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCVentilatedPatients,
+                "COVID-19 Patients Hospitalized and Ventilated",
+                "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed " +
+                    "COVID - 19 and are on a mechanical ventilator.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCHospitalOnset,
+                "COVID-19 Hospital Onset",
+                "Patients hospitalized in an NHSN inpatient care location with onset of suspected " +
+                    "or confirmed COVID - 19 14 or more days after hospitalization.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCAwaitingBeds,
+                "ED/Overflow",
+                "Patients with suspected or confirmed COVID-19 who are in " +
+                    "the ED or any overflow location awaiting an inpatient bed.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCAwaitingVentilators,
+                "ED/Overflow and Ventilated",
+                "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location " +
+                    "awaiting an inpatient bed and on a mechanical ventilator.",
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.CDC,
+                CDCDied,
+                "COVID-19 Patients Died",
+                "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+                FhirTriplet.MeasureTypeStructure),
         };
 
-        /// <summary>Gets the test total.</summary>
-        /// <value>The test total.</value>
-        public static Measure TestTotal => BuildMeasure(
-            IdTestCount,
-            CanonicalUrl,
-            "COVID-19 Tests Performed",
-            "The total number of patients for whom a test for COVID-19 was ordered.",
-            new FhirPopulation("Location - facility", "COVID-19 Tests Performed", "Count([???])"),
-            null,
-            null,
-            FhirTriplet.MeasureTypeOutcome);
-
-        /// <summary>Gets the test positive total.</summary>
-        /// <value>The test positive total.</value>
-        public static Measure TestPositiveTotal => BuildMeasure(
-            IdTestPositiveCount,
-            CanonicalUrl,
-            "COVID-19 Positive Tests",
-            "The total number of patients for whom a positive result for a COVID-19 test was documented.",
-            new FhirPopulation("Location - facility", "COVID-19 Positive Tests", "Count([???])"),
-            null,
-            null,
-            FhirTriplet.MeasureTypeOutcome);
-
-        /// <summary>Gets the beds total.</summary>
-        /// <value>The beds total.</value>
-        public static Measure BedsTotal => BuildMeasure(
-            CDCTotalBeds,
-            CDCCanonicalUrl,
-            "All Hospital Beds",
-            "Total number of all Inpatient and outpatient beds, " +
-                "including all staffed, ICU, licensed, and overflow(surge) beds used for " +
-                "inpatients or outpatients.",
-            new FhirPopulation("Location - facility", "All Hospital Beds", "Count([Supply: Beds])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the inpatient beds total.</summary>
-        /// <value>The inpatient beds total.</value>
-        public static Measure InpatientBedsTotal => BuildMeasure(
-            CDCInpatientBeds,
-            CDCCanonicalUrl,
-            "Hospital Inpatient Beds",
-            "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
-            new FhirPopulation("Location - facility", "Hospital Inpatient Beds", "Count([Supply: Beds])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the inpatient beds occupied.</summary>
-        /// <value>The inpatient beds occupied.</value>
-        public static Measure InpatientBedsOccupied => BuildMeasure(
-            CDCInpatientBedOccupancy,
-            CDCCanonicalUrl,
-            "Hospital Inpatient Bed Occupancy",
-            "Total number of staffed inpatient beds that are occupied.",
-            new FhirPopulation("Location - facility", "Hospital Inpatient Bed Occupancy", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the icu beds total.</summary>
-        /// <value>The icu beds total.</value>
-        public static Measure IcuBedsTotal => BuildMeasure(
-            CDCIcuBeds,
-            CDCCanonicalUrl,
-            "Hospital ICU Beds",
-            "Total number of staffed inpatient intensive care unit (ICU) beds.",
-            new FhirPopulation("Location - facility", "Hospital ICU Beds", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the icu beds occupied.</summary>
-        /// <value>The icu beds occupied.</value>
-        public static Measure IcuBedsOccupied => BuildMeasure(
-            CDCIcuBedOccupancy,
-            CDCCanonicalUrl,
-            "Hospital ICU Bed Occupancy",
-            "Total number of staffed inpatient ICU beds that are occupied.",
-            new FhirPopulation("Location - facility", "Hospital ICU Bed Occupancy", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the ventilators total.</summary>
-        /// <value>The ventilators total.</value>
-        public static Measure VentilatorsTotal => BuildMeasure(
-            CDCVentilators,
-            CDCCanonicalUrl,
-            "Mechanical Ventilators",
-            "Total number of ventilators available.",
-            new FhirPopulation("Location - facility", "Mechanical Ventilators", "Count([Supply: Ventilators])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the ventilators in use.</summary>
-        /// <value>The ventilators in use.</value>
-        public static Measure VentilatorsInUse => BuildMeasure(
-            CDCVentilatorsInUse,
-            CDCCanonicalUrl,
-            "Mechanical Ventilators In Use",
-            "Total number of ventilators in use.",
-            new FhirPopulation("Location - facility", "Mechanical Ventilators In Use", "Count(???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the COVID patients hospitalized.</summary>
-        /// <value>The COVID patients hospitalized.</value>
-        public static Measure CovidPatientsHospitalized => BuildMeasure(
-            CDCHospitalizedPatients,
-            CDCCanonicalUrl,
-            "COVID-19 Patients Hospitalized",
-            "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
-            new FhirPopulation("Location - facility", "COVID-19 Patients Hospitalized", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the covid patients ventilated.</summary>
-        /// <value>The covid patients ventilated.</value>
-        public static Measure CovidPatientsVentilated => BuildMeasure(
-            CDCVentilatedPatients,
-            CDCCanonicalUrl,
-            "COVID-19 Patients Hospitalized and Ventilated",
-            "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed " +
-                "COVID - 19 and are on a mechanical ventilator.",
-            new FhirPopulation("Location - facility", "COVID-19 Patients Hospitalized and Ventilated", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the covid hospital onset.</summary>
-        /// <value>The covid hospital onset.</value>
-        public static Measure CovidHospitalOnset => BuildMeasure(
-            CDCHospitalOnset,
-            CDCCanonicalUrl,
-            "COVID-19 Hospital Onset",
-            "Patients hospitalized in an NHSN inpatient care location with onset of suspected " +
-                "or confirmed COVID - 19 14 or more days after hospitalization.",
-            new FhirPopulation("Location - facility", "COVID-19 Hospital Onset", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeOutcome);
-
-        /// <summary>Gets the covid awaiting inpatient.</summary>
-        /// <value>The covid awaiting inpatient.</value>
-        public static Measure CovidAwaitingBed => BuildMeasure(
-            CDCAwaitingBeds,
-            CDCCanonicalUrl,
-            "ED/Overflow",
-            "Patients with suspected or confirmed COVID-19 who are in " +
-                "the ED or any overflow location awaiting an inpatient bed.",
-            new FhirPopulation("Location - facility", "ED/Overflow", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the covid awaiting ventilator.</summary>
-        /// <value>The covid awaiting ventilator.</value>
-        public static Measure CovidAwaitingVentilator => BuildMeasure(
-            CDCAwaitingVentilators,
-            CDCCanonicalUrl,
-            "ED/Overflow and ventilated",
-            "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location " +
-                "awaiting an inpatient bed and on a mechanical ventilator.",
-            new FhirPopulation("Location - facility", "ED/Overflow and ventilated", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeStructure);
-
-        /// <summary>Gets the covid recovered.</summary>
-        /// <value>The covid recovered.</value>
-        public static Measure CovidRecovered => BuildMeasure(
-            IdRecovered,
-            CanonicalUrl,
-            "COVID-19 Patients Recovered",
-            "Patients with suspected or confirmed COVID-19 who have recovered and been discharged.",
-            new FhirPopulation("Location - facility", "COVID-19 Patients Recovered", "Count([???])"),
-            null,
-            null,
-            FhirTriplet.MeasureTypeOutcome);
-
-        /// <summary>Gets the covid died.</summary>
-        /// <value>The covid died.</value>
-        public static Measure CovidDied => BuildMeasure(
-            CDCDied,
-            CDCCanonicalUrl,
-            "COVID-19 Patients Died",
-            "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
-            new FhirPopulation("Location - facility", "COVID-19 Patients Died", "Count([???])"),
-            null,
-            _cdcDocumentList,
-            FhirTriplet.MeasureTypeOutcome);
+        /// <summary>The other measures.</summary>
+        private static readonly List<MeasureInfo> _otherMeasureInfo = new List<MeasureInfo>()
+        {
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.SANER,
+                "covid-19-test-count",
+                "COVID-19 Tests Performed",
+                "The total number of patients for whom a test for COVID-19 was ordered.",
+                FhirTriplet.MeasureTypeOutcome),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.SANER,
+                "covid-19-test-positive-count",
+                "COVID-19 Positive Tests",
+                "The total number of patients for whom a positive result for a COVID-19 test was documented.",
+                FhirTriplet.MeasureTypeOutcome),
+            new MeasureInfo(
+                MeasureInfo.MeasureSource.SANER,
+                "covid-19-test-positive-count",
+                "COVID-19 Positive Tests",
+                "The total number of patients for whom a positive result for a COVID-19 test was documented.",
+                FhirTriplet.MeasureTypeOutcome),
+        };
 
         /// <summary>Builds a measure.</summary>
-        /// <param name="id">                 The identifier.</param>
-        /// <param name="urlBase">            The URL base.</param>
-        /// <param name="title">              The title.</param>
-        /// <param name="description">        The description.</param>
-        /// <param name="population">         (Optional) The population.</param>
-        /// <param name="topics">             (Optional) The topics.</param>
-        /// <param name="relatedDocumentUrls">(Optional) The related document urls.</param>
-        /// <param name="measureTypes">       (Optional) List of types of the measures.</param>
+        /// <param name="info">The identifier.</param>
         /// <returns>A Measure.</returns>
         private static Measure BuildMeasure(
-            string id,
-            string urlBase,
-            string title,
-            string description,
-            FhirPopulation population = null,
-            List<FhirTriplet> topics = null,
-            List<string> relatedDocumentUrls = null,
-            FhirTriplet measureType = null)
+            MeasureInfo info)
         {
             Measure measure = new Measure()
             {
-                Id = id,
-                Name = id,
-                Url = $"{urlBase}/{id}",
+                Id = info.Name,
+                Name = info.Name,
+                Url = $"{info.Canonical}/{info.Name}",
                 Version = MeasureVersion,
-                Title = title,
+                Title = info.Title,
                 Status = PublicationStatus.Draft,
                 Subject = new CodeableConcept("Location", "Location"),
                 Date = PublicationDate,
                 Publisher = Publisher,
-                Description = new Markdown(description),
+                Description = new Markdown(info.Description),
                 Jurisdiction = new List<CodeableConcept>()
                 {
                     FhirTriplet.UnitedStates.Concept,
@@ -330,19 +209,19 @@ namespace generator_cli.Generators
                 },
             };
 
-            if (measureType != null)
+            if (info.MeasureType != null)
             {
                 measure.Type = new List<CodeableConcept>()
                 {
-                    measureType.Concept,
+                    info.MeasureType.Concept,
                 };
             }
 
-            if ((relatedDocumentUrls != null) && (relatedDocumentUrls.Count > 0))
+            if ((info.DocumentUrls != null) && (info.DocumentUrls.Count > 0))
             {
                 measure.RelatedArtifact = new List<RelatedArtifact>();
 
-                foreach (string relatedDocumentUrl in relatedDocumentUrls)
+                foreach (string relatedDocumentUrl in info.DocumentUrls)
                 {
                     measure.RelatedArtifact.Add(
                         new RelatedArtifact()
@@ -353,30 +232,53 @@ namespace generator_cli.Generators
                 }
             }
 
-            if ((topics != null) && (topics.Count > 0))
+            measure.Group = new List<Measure.GroupComponent>()
             {
-                measure.Topic = new List<CodeableConcept>();
-
-                foreach (FhirTriplet topic in topics)
+                new Measure.GroupComponent()
                 {
-                    measure.Topic.Add(topic.Concept);
-                }
-            }
-
-            if (population != null)
-            {
-                measure.Group = new List<Measure.GroupComponent>()
-                {
-                    new Measure.GroupComponent()
+                    Population = new List<Measure.PopulationComponent>()
                     {
-                        Population = population.ComponentList,
+                        new Measure.PopulationComponent()
+                        {
+                            Code = FhirTriplet.MeasurePopulation.Concept,
+                            Criteria = new Expression()
+                            {
+                                Description = info.CriteriaDescription,
+                                Language = "text/plain",
+                                Expression_ = info.Description,
+                            },
+                        },
                     },
-                };
-            }
+                },
+            };
 
-            measure.Scoring = FhirTriplet.ScoringContinuousVariable.Concept;
+            // change from continuous variable to cohort since we are always counting things
+            measure.Scoring = FhirTriplet.ScoringCohort.Concept;
 
             return measure;
+        }
+
+        /// <summary>Initializes this object.</summary>
+        public static void Init()
+        {
+            // build CDC measures
+            foreach (MeasureInfo info in _cdcMeasureInfo)
+            {
+                _cdcMeasures.Add(info.Name, BuildMeasure(info));
+            }
+        }
+
+        /// <summary>Cdc measure.</summary>
+        /// <param name="name">The name.</param>
+        /// <returns>A Measure.</returns>
+        public static Measure CDCMeasure(string name)
+        {
+            if (!_cdcMeasures.ContainsKey(name))
+            {
+                return null;
+            }
+
+            return _cdcMeasures[name];
         }
 
         /// <summary>Gets report bundle.</summary>
@@ -396,69 +298,12 @@ namespace generator_cli.Generators
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
-            bundle.AddResourceEntry(
-                TestTotal,
-                $"{SystemLiterals.Internal}Measure/{TestTotal.Id}");
-
-            bundle.AddResourceEntry(
-                TestPositiveTotal,
-                $"{SystemLiterals.Internal}Measure/{TestPositiveTotal.Id}");
-
-            bundle.AddResourceEntry(
-                BedsTotal,
-                $"{SystemLiterals.Internal}Measure/{BedsTotal.Id}");
-
-            bundle.AddResourceEntry(
-                InpatientBedsTotal,
-                $"{SystemLiterals.Internal}Measure/{InpatientBedsTotal.Id}");
-
-            bundle.AddResourceEntry(
-                InpatientBedsOccupied,
-                $"{SystemLiterals.Internal}Measure/{InpatientBedsOccupied.Id}");
-
-            bundle.AddResourceEntry(
-                IcuBedsTotal,
-                $"{SystemLiterals.Internal}Measure/{IcuBedsTotal.Id}");
-
-            bundle.AddResourceEntry(
-                IcuBedsOccupied,
-                $"{SystemLiterals.Internal}Measure/{IcuBedsOccupied.Id}");
-
-            bundle.AddResourceEntry(
-                VentilatorsTotal,
-                $"{SystemLiterals.Internal}Measure/{VentilatorsTotal.Id}");
-
-            bundle.AddResourceEntry(
-                VentilatorsInUse,
-                $"{SystemLiterals.Internal}Measure/{VentilatorsInUse.Id}");
-
-            bundle.AddResourceEntry(
-                CovidPatientsHospitalized,
-                $"{SystemLiterals.Internal}Measure/{CovidPatientsHospitalized.Id}");
-
-            bundle.AddResourceEntry(
-                CovidPatientsVentilated,
-                $"{SystemLiterals.Internal}Measure/{CovidPatientsVentilated.Id}");
-
-            bundle.AddResourceEntry(
-                CovidHospitalOnset,
-                $"{SystemLiterals.Internal}Measure/{CovidHospitalOnset.Id}");
-
-            bundle.AddResourceEntry(
-                CovidAwaitingBed,
-                $"{SystemLiterals.Internal}Measure/{CovidAwaitingBed.Id}");
-
-            bundle.AddResourceEntry(
-                CovidAwaitingVentilator,
-                $"{SystemLiterals.Internal}Measure/{CovidAwaitingVentilator.Id}");
-
-            bundle.AddResourceEntry(
-                CovidRecovered,
-                $"{SystemLiterals.Internal}Measure/{CovidRecovered.Id}");
-
-            bundle.AddResourceEntry(
-                CovidDied,
-                $"{SystemLiterals.Internal}Measure/{CovidDied.Id}");
+            foreach (MeasureInfo info in _cdcMeasureInfo)
+            {
+                bundle.AddResourceEntry(
+                    BuildMeasure(info),
+                    $"{SystemLiterals.Internal}Measure/{info.Name}");
+            }
 
             return bundle;
         }

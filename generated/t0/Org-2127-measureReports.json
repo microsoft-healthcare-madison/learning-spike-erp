@@ -1,106 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-472",
+  "id": "FHIR-391",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-472"
+    "value": "FHIR-391"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T10:57:16.2790138-05:00",
+  "timestamp": "2020-04-02T15:12:36.352451-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-473",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-392",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-473",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
-        "subject": {
-          "reference": "Location/Loc-Org-2127",
-          "display": "DOUGLAS COUNTY HOSPITAL"
-        },
-        "date": "2020-04-02T10:57:16.2790531-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2127",
-          "display": "DOUGLAS COUNTY HOSPITAL"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 88
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-474",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-474",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
-        "subject": {
-          "reference": "Location/Loc-Org-2127",
-          "display": "DOUGLAS COUNTY HOSPITAL"
-        },
-        "date": "2020-04-02T10:57:16.2790977-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2127",
-          "display": "DOUGLAS COUNTY HOSPITAL"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 41
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-475",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-475",
+        "id": "FHIR-392",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
@@ -108,7 +20,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2791442-05:00",
+        "date": "2020-04-02T15:12:36.3524816-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -130,7 +42,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 127
               }
             ],
             "measureScore": {
@@ -141,10 +53,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-476",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-393",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-476",
+        "id": "FHIR-393",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
@@ -152,7 +64,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2791711-05:00",
+        "date": "2020-04-02T15:12:36.3525147-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -174,7 +86,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 117
               }
             ],
             "measureScore": {
@@ -185,10 +97,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-477",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-394",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-477",
+        "id": "FHIR-394",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
@@ -196,7 +108,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2792036-05:00",
+        "date": "2020-04-02T15:12:36.3525278-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -218,7 +130,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 25
               }
             ],
             "measureScore": {
@@ -229,10 +141,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-478",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-395",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-478",
+        "id": "FHIR-395",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
@@ -240,7 +152,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2792331-05:00",
+        "date": "2020-04-02T15:12:36.3525396-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -262,7 +174,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 10
               }
             ],
             "measureScore": {
@@ -273,10 +185,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-479",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-396",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-479",
+        "id": "FHIR-396",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
@@ -284,7 +196,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2792647-05:00",
+        "date": "2020-04-02T15:12:36.3525508-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -306,7 +218,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 3
               }
             ],
             "measureScore": {
@@ -317,10 +229,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-480",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-397",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-480",
+        "id": "FHIR-397",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
@@ -328,7 +240,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2793043-05:00",
+        "date": "2020-04-02T15:12:36.3525639-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -350,7 +262,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -361,10 +273,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-481",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-398",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-481",
+        "id": "FHIR-398",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
@@ -372,7 +284,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2793366-05:00",
+        "date": "2020-04-02T15:12:36.352575-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -394,7 +306,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -405,10 +317,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-482",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-399",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-482",
+        "id": "FHIR-399",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
@@ -416,7 +328,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2793625-05:00",
+        "date": "2020-04-02T15:12:36.3525963-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -438,7 +350,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 12
               }
             ],
             "measureScore": {
@@ -449,10 +361,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-483",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-400",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-483",
+        "id": "FHIR-400",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
@@ -460,7 +372,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2793939-05:00",
+        "date": "2020-04-02T15:12:36.3526081-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -482,7 +394,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 2
               }
             ],
             "measureScore": {
@@ -493,10 +405,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-484",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-401",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-484",
+        "id": "FHIR-401",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
@@ -504,7 +416,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2794233-05:00",
+        "date": "2020-04-02T15:12:36.3526191-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -526,7 +438,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -537,10 +449,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-485",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-402",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-485",
+        "id": "FHIR-402",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
@@ -548,7 +460,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2794608-05:00",
+        "date": "2020-04-02T15:12:36.3526303-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -570,7 +482,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
@@ -581,10 +493,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-486",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-403",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-486",
+        "id": "FHIR-403",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
@@ -592,7 +504,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2794907-05:00",
+        "date": "2020-04-02T15:12:36.3526405-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -614,7 +526,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 6
               }
             ],
             "measureScore": {
@@ -625,54 +537,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-487",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-404",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-487",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
-        "subject": {
-          "reference": "Location/Loc-Org-2127",
-          "display": "DOUGLAS COUNTY HOSPITAL"
-        },
-        "date": "2020-04-02T10:57:16.2795266-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2127",
-          "display": "DOUGLAS COUNTY HOSPITAL"
-        },
-        "period": {
-          "start": "2020-03-30",
-          "end": "2020-03-30"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-488",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-488",
+        "id": "FHIR-404",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
@@ -680,7 +548,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-02T10:57:16.2795622-05:00",
+        "date": "2020-04-02T15:12:36.3526513-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -702,7 +570,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {

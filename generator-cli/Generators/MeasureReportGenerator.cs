@@ -95,75 +95,109 @@ namespace generator_cli.Generators
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
+            // bundle.AddResourceEntry(
+            //     ReportForMeasure(out id, MeasureGenerator.TestTotal, _testData.Performed),
+            //     $"{SystemLiterals.Internal}MeasureReport/{id}");
+            // bundle.AddResourceEntry(
+            //     ReportForMeasure(out id, MeasureGenerator.TestPositiveTotal, _testData.Positive),
+            //     $"{SystemLiterals.Internal}MeasureReport/{id}");
+
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.TestTotal, _testData.Performed),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCTotalBeds),
+                    _deviceData.TotalBeds),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.TestPositiveTotal, _testData.Positive),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.BedsTotal, _deviceData.TotalBeds),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.InpatientBedsTotal, _deviceData.Inpatient),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCInpatientBeds),
+                    _deviceData.Inpatient),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Min(_deviceData.Inpatient, _patientData.Total);
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.InpatientBedsOccupied, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCInpatientBedOccupancy),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.IcuBedsTotal, _deviceData.ICU),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCIcuBeds),
+                    _deviceData.ICU),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Min(_deviceData.ICU, _patientData.NegativeNeedIcu + _patientData.PositiveNeedIcu);
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.IcuBedsOccupied, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCIcuBedOccupancy),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.VentilatorsTotal, _deviceData.Ventilators),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCVentilators),
+                    _deviceData.Ventilators),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Min(_deviceData.Ventilators, _patientData.NegativeNeedVent + _patientData.PositiveNeedVent);
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.VentilatorsInUse, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCVentilatorsInUse),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Min(_deviceData.TotalBeds - _patientData.Negative, _patientData.Positive);
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidPatientsHospitalized, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCHospitalizedPatients),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Min(_deviceData.Ventilators - _patientData.NegativeNeedVent, _patientData.PositiveNeedVent);
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidPatientsVentilated, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCVentilatedPatients),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidHospitalOnset, _patientData.OnsetInCare),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCHospitalOnset),
+                    _patientData.OnsetInCare),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Max(0, _patientData.Positive - (_deviceData.TotalBeds - _patientData.Negative));
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidAwaitingBed, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCAwaitingBeds),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             val = Math.Max(0, _patientData.PositiveNeedVent - (_deviceData.Ventilators - _patientData.NegativeNeedVent));
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidAwaitingVentilator, val),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCAwaitingVentilators),
+                    val),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidRecovered, _patientData.Recovered),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(out id, MeasureGenerator.CovidDied, _patientData.Died),
+                ReportForMeasure(
+                    out id,
+                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCDied),
+                    _patientData.Died),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             return bundle;
@@ -195,7 +229,7 @@ namespace generator_cli.Generators
                 Type = MeasureReport.MeasureReportType.Summary,
                 Date = new FhirDateTime(new DateTimeOffset(DateTime.Now)).ToString(),
                 Period = _period,
-                Measure = $"{MeasureGenerator.CDCCanonicalUrl}/{measure.Id}",
+                Measure = measure.Url,
                 Reporter = new ResourceReference(
                     $"{_org.ResourceType}/{_org.Id}",
                     _org.Name),
@@ -225,7 +259,7 @@ namespace generator_cli.Generators
                             report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = 1,
+                                Count = (int)score,
                             });
                             break;
 

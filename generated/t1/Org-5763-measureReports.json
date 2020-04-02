@@ -1,26 +1,26 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-21",
+  "id": "FHIR-18",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-21"
+    "value": "FHIR-18"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T10:57:15.961426-05:00",
+  "timestamp": "2020-04-02T15:12:36.0628327-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-22",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-19",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-22",
+        "id": "FHIR-19",
         "status": "complete",
         "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-count",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-02T10:57:15.9614586-05:00",
+        "date": "2020-04-02T15:12:36.0629132-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
@@ -42,11 +42,143 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 25
               }
             ],
             "measureScore": {
-              "value": 20
+              "value": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-20",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-20",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0629424-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 21
+              }
+            ],
+            "measureScore": {
+              "value": 21
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-21",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-21",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0629547-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 6
+              }
+            ],
+            "measureScore": {
+              "value": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-22",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-22",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0629653-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 4
+              }
+            ],
+            "measureScore": {
+              "value": 4
             }
           }
         ]
@@ -59,12 +191,12 @@
         "id": "FHIR-23",
         "status": "complete",
         "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-test-positive-count",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-02T10:57:15.9614945-05:00",
+        "date": "2020-04-02T15:12:36.0629759-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
@@ -86,11 +218,11 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
-              "value": 9
+              "value": 0
             }
           }
         ]
@@ -103,232 +235,12 @@
         "id": "FHIR-24",
         "status": "complete",
         "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9615185-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 25
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-25",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-25",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9615555-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 21
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-26",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-26",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9616046-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 6
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-27",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-27",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9616428-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 4
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-28",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-28",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9616682-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-29",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-29",
-        "status": "complete",
-        "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-02T10:57:15.9616914-05:00",
+        "date": "2020-04-02T15:12:36.0629874-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
@@ -361,10 +273,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-30",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-25",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-30",
+        "id": "FHIR-25",
         "status": "complete",
         "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
@@ -372,7 +284,227 @@
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-02T10:57:15.9617117-05:00",
+        "date": "2020-04-02T15:12:36.0629978-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 1
+              }
+            ],
+            "measureScore": {
+              "value": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-26",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-26",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0630086-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 3
+              }
+            ],
+            "measureScore": {
+              "value": 3
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-27",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-27",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0630195-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 1
+              }
+            ],
+            "measureScore": {
+              "value": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-28",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-28",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.06303-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 0
+              }
+            ],
+            "measureScore": {
+              "value": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-29",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-29",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0630412-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-03-31",
+          "end": "2020-03-31"
+        },
+        "group": [
+          {
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 0
+              }
+            ],
+            "measureScore": {
+              "value": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-30",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-30",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-02T15:12:36.0630525-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
@@ -411,276 +543,12 @@
         "id": "FHIR-31",
         "status": "complete",
         "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9617402-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 3
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-32",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-32",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.961761-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 1
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-33",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-33",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9617834-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-34",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-34",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.961805-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-35",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-35",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9618278-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 1
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-36",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-36",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/covid-19-recovered",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-02T10:57:15.9618499-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "measure-population",
-                      "display": "Measure Population"
-                    }
-                  ]
-                },
-                "count": 1
-              }
-            ],
-            "measureScore": {
-              "value": 0
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-37",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-37",
-        "status": "complete",
-        "type": "summary",
         "measure": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-02T10:57:15.96187-05:00",
+        "date": "2020-04-02T15:12:36.0630629-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
@@ -702,7 +570,7 @@
                     }
                   ]
                 },
-                "count": 1
+                "count": 0
               }
             ],
             "measureScore": {
