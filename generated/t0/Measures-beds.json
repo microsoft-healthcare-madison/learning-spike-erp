@@ -6,14 +6,14 @@
     "value": "FHIR-3"
   },
   "type": "collection",
-  "timestamp": "2020-04-03T10:56:06.4214635-05:00",
+  "timestamp": "2020-04-03T11:50:44.9843045-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/cdcbeds",
       "resource": {
         "resourceType": "Measure",
         "id": "cdcBeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/beds",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/beds",
         "version": "20200401.06",
         "name": "cdcBeds",
         "title": "CDC Bed Measurement Group",
@@ -39,7 +39,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -60,6 +60,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -88,7 +90,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numTotBeds"
                 }
               ]
@@ -117,7 +119,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numbeds"
                 }
               ]
@@ -146,7 +148,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numBedsOcc"
                 }
               ]
@@ -175,7 +177,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numICUBeds"
                 }
               ]
@@ -204,7 +206,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numICUBedsOcc"
                 }
               ]

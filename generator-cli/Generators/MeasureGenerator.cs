@@ -353,15 +353,7 @@ namespace generator_cli.Generators
                 Scoring = FhirTriplet.ScoringCohort.Concept,
             };
 
-            foreach (string relatedDocumentUrl in MeasureInfo.CdcDocumentList)
-            {
-                measure.RelatedArtifact.Add(
-                    new RelatedArtifact()
-                    {
-                        Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                        Url = relatedDocumentUrl,
-                    });
-            }
+            measure.RelatedArtifact.AddRange(_cdcMeasureInfo[0].Artifacts);
 
             measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCTotalBeds]));
             measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCInpatientBeds]));
@@ -430,17 +422,7 @@ namespace generator_cli.Generators
 
             if ((info.DocumentUrls != null) && (info.DocumentUrls.Count > 0))
             {
-                measure.RelatedArtifact = new List<RelatedArtifact>();
-
-                foreach (string relatedDocumentUrl in info.DocumentUrls)
-                {
-                    measure.RelatedArtifact.Add(
-                        new RelatedArtifact()
-                        {
-                            Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                            Url = relatedDocumentUrl,
-                        });
-                }
+                measure.RelatedArtifact = info.Artifacts;
             }
 
             measure.Group = new List<Measure.GroupComponent>()

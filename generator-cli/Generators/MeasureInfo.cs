@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using generator_cli.Models;
+using Hl7.Fhir.Model;
 
 namespace generator_cli.Generators
 {
@@ -13,10 +14,10 @@ namespace generator_cli.Generators
     public class MeasureInfo
     {
         /// <summary>The canonical URL base.</summary>
-        public const string CdcCanonicalUrl = "http://cdcmeasures.example.org/modules/covid19/20200403";
+        public const string CdcCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
 
         /// <summary>The canonical URL base.</summary>
-        public const string SanerCanonicalUrl = "http://saner.example.org/covid19/20200403";
+        public const string SanerCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
 
         /// <summary>List of cdc documents.</summary>
         public static readonly List<string> CdcDocumentList = new List<string>()
@@ -163,6 +164,65 @@ namespace generator_cli.Generators
                 }
 
                 return null;
+            }
+        }
+
+        /// <summary>Gets the artifacts.</summary>
+        /// <value>The artifacts.</value>
+        public List<RelatedArtifact> Artifacts
+        {
+            get
+            {
+                List<RelatedArtifact> artifactList = new List<RelatedArtifact>();
+
+                foreach (string relatedDocumentUrl in DocumentUrls)
+                {
+                    switch (Source)
+                    {
+                        case MeasureSource.CDC:
+                            artifactList.Add(
+                                new RelatedArtifact()
+                                {
+                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                                    Url = relatedDocumentUrl,
+                                    Label = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+                                    Display = "NHSN COVID-19 Patient Module Denominator Import File Format",
+                                });
+                            break;
+
+                        case MeasureSource.FEMA:
+                            artifactList.Add(
+                                new RelatedArtifact()
+                                {
+                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                                    Url = relatedDocumentUrl,
+                                });
+                            break;
+                        case MeasureSource.SANER:
+                            artifactList.Add(
+                                new RelatedArtifact()
+                                {
+                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                                    Url = relatedDocumentUrl,
+                                });
+                            break;
+                        default:
+                            artifactList.Add(
+                                new RelatedArtifact()
+                                {
+                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                                    Url = relatedDocumentUrl,
+                                });
+                            break;
+                    }
+                }
+
+                if (artifactList.Count == 0)
+                {
+                    return null;
+                }
+
+                return artifactList;
             }
         }
     }

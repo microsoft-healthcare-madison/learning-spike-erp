@@ -6,14 +6,14 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-04-03T10:56:05.5782142-05:00",
+  "timestamp": "2020-04-03T11:50:44.0187497-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/numTotBeds",
       "resource": {
         "resourceType": "Measure",
         "id": "numTotBeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numTotBeds",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numTotBeds",
         "version": "20200401.06",
         "name": "numTotBeds",
         "title": "All Hospital Beds",
@@ -39,7 +39,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -60,6 +60,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -112,7 +114,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numbeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numbeds",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numbeds",
         "version": "20200401.06",
         "name": "numbeds",
         "title": "Hospital Inpatient Beds",
@@ -138,7 +140,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -159,6 +161,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -211,7 +215,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numBedsOcc",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numBedsOcc",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numBedsOcc",
         "version": "20200401.06",
         "name": "numBedsOcc",
         "title": "Hospital Inpatient Bed Occupancy",
@@ -237,7 +241,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -258,6 +262,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -310,7 +316,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numICUBeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numICUBeds",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBeds",
         "version": "20200401.06",
         "name": "numICUBeds",
         "title": "Hospital ICU Beds",
@@ -336,7 +342,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -357,6 +363,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -409,7 +417,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numICUBedsOcc",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numICUBedsOcc",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBedsOcc",
         "version": "20200401.06",
         "name": "numICUBedsOcc",
         "title": "Hospital ICU Bed Occupancy",
@@ -435,7 +443,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -456,6 +464,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -508,7 +518,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numVent",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numVent",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVent",
         "version": "20200401.06",
         "name": "numVent",
         "title": "Mechanical Ventilators",
@@ -534,7 +544,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -555,6 +565,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -607,7 +619,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numVentUse",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numVentUse",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVentUse",
         "version": "20200401.06",
         "name": "numVentUse",
         "title": "Mechanical Ventilators In Use",
@@ -633,7 +645,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -654,6 +666,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -706,7 +720,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19HospPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19HospPats",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HospPats",
         "version": "20200401.06",
         "name": "numC19HospPats",
         "title": "COVID-19 Patients Hospitalized",
@@ -732,7 +746,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -753,6 +767,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -805,7 +821,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19MechVentPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19MechVentPats",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19MechVentPats",
         "version": "20200401.06",
         "name": "numC19MechVentPats",
         "title": "COVID-19 Patients Hospitalized and Ventilated",
@@ -831,7 +847,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -852,6 +868,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -904,7 +922,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19HOPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19HOPats",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HOPats",
         "version": "20200401.06",
         "name": "numC19HOPats",
         "title": "COVID-19 Hospital Onset",
@@ -930,7 +948,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -951,6 +969,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -1003,7 +1023,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19OverflowPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19OverflowPats",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OverflowPats",
         "version": "20200401.06",
         "name": "numC19OverflowPats",
         "title": "ED/Overflow",
@@ -1029,7 +1049,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -1050,6 +1070,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -1102,7 +1124,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19OFMechVentPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19OFMechVentPats",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OFMechVentPats",
         "version": "20200401.06",
         "name": "numC19OFMechVentPats",
         "title": "ED/Overflow and Ventilated",
@@ -1128,7 +1150,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -1149,6 +1171,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],
@@ -1201,7 +1225,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19Died",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19Died",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19Died",
         "version": "20200401.06",
         "name": "numC19Died",
         "title": "COVID-19 Patients Died",
@@ -1227,7 +1251,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "840535000",
+                  "code": "840539006",
                   "display": "COVID-19"
                 }
               ]
@@ -1248,6 +1272,8 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
             "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           }
         ],

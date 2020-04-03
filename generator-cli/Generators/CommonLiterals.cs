@@ -32,7 +32,7 @@ namespace generator_cli.Generators
         public const string LocationPhysicalTypeSite = "si";
 
         /// <summary>The sct covid code.</summary>
-        public const string SctCovidCode = "840535000";
+        public const string SctCovidCode = "840539006";
 
         /// <summary>The sct covid display.</summary>
         public const string SctCovidDisplay = "COVID-19";

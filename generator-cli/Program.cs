@@ -287,7 +287,7 @@ namespace generator_cli
                 MeasureGenerator.GetGroupedMeasureBundle("beds"));
         }
 
-        /// <summary>Writes an organisation reports.</summary>
+        /// <summary>Writes an organization reports.</summary>
         /// <param name="orgId"> The organization.</param>
         /// <param name="dir">   The dir.</param>
         /// <param name="period">The period.</param>

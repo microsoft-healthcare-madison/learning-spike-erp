@@ -6,7 +6,7 @@
     "value": "FHIR-231"
   },
   "type": "collection",
-  "timestamp": "2020-04-03T10:56:06.6911879-05:00",
+  "timestamp": "2020-04-03T11:50:45.2659436-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-232",
@@ -15,12 +15,12 @@
         "id": "FHIR-232",
         "status": "complete",
         "type": "summary",
-        "measure": "http://cdcmeasures.example.org/modules/covid19/20200403/beds",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/beds",
         "subject": {
           "reference": "Location/Loc-Org-1107",
           "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-04-03T10:56:06.6913254-05:00",
+        "date": "2020-04-03T11:50:45.2659882-05:00",
         "reporter": {
           "reference": "Organization/Org-1107",
           "display": "MAYO CLINIC HEALTH SYS AUSTIN"
@@ -34,7 +34,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numTotBeds"
                 }
               ]
@@ -61,7 +61,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numbeds"
                 }
               ]
@@ -88,7 +88,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numBedsOcc"
                 }
               ]
@@ -115,7 +115,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numICUBeds"
                 }
               ]
@@ -142,7 +142,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
                   "code": "numICUBedsOcc"
                 }
               ]
