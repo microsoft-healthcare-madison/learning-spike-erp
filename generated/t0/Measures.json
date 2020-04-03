@@ -6,14 +6,14 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-04-02T15:12:35.1654304-05:00",
+  "timestamp": "2020-04-03T10:56:05.5782142-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/numTotBeds",
       "resource": {
         "resourceType": "Measure",
         "id": "numTotBeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numTotBeds",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numTotBeds",
         "version": "20200401.06",
         "name": "numTotBeds",
         "title": "All Hospital Beds",
@@ -112,7 +112,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numbeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numbeds",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numbeds",
         "version": "20200401.06",
         "name": "numbeds",
         "title": "Hospital Inpatient Beds",
@@ -211,7 +211,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numBedsOcc",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numBedsOcc",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numBedsOcc",
         "version": "20200401.06",
         "name": "numBedsOcc",
         "title": "Hospital Inpatient Bed Occupancy",
@@ -310,7 +310,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numICUBeds",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBeds",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numICUBeds",
         "version": "20200401.06",
         "name": "numICUBeds",
         "title": "Hospital ICU Beds",
@@ -409,7 +409,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numICUBedsOcc",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numICUBedsOcc",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numICUBedsOcc",
         "version": "20200401.06",
         "name": "numICUBedsOcc",
         "title": "Hospital ICU Bed Occupancy",
@@ -508,7 +508,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numVent",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numVent",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numVent",
         "version": "20200401.06",
         "name": "numVent",
         "title": "Mechanical Ventilators",
@@ -607,7 +607,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numVentUse",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numVentUse",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numVentUse",
         "version": "20200401.06",
         "name": "numVentUse",
         "title": "Mechanical Ventilators In Use",
@@ -706,7 +706,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19HospPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HospPats",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19HospPats",
         "version": "20200401.06",
         "name": "numC19HospPats",
         "title": "COVID-19 Patients Hospitalized",
@@ -805,7 +805,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19MechVentPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19MechVentPats",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19MechVentPats",
         "version": "20200401.06",
         "name": "numC19MechVentPats",
         "title": "COVID-19 Patients Hospitalized and Ventilated",
@@ -904,7 +904,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19HOPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19HOPats",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19HOPats",
         "version": "20200401.06",
         "name": "numC19HOPats",
         "title": "COVID-19 Hospital Onset",
@@ -1003,7 +1003,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19OverflowPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OverflowPats",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19OverflowPats",
         "version": "20200401.06",
         "name": "numC19OverflowPats",
         "title": "ED/Overflow",
@@ -1102,7 +1102,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19OFMechVentPats",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19OFMechVentPats",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19OFMechVentPats",
         "version": "20200401.06",
         "name": "numC19OFMechVentPats",
         "title": "ED/Overflow and Ventilated",
@@ -1201,7 +1201,7 @@
       "resource": {
         "resourceType": "Measure",
         "id": "numC19Died",
-        "url": "http://cdcmeasures.example.org/modules/covid19/20200331/numC19Died",
+        "url": "http://cdcmeasures.example.org/modules/covid19/20200403/numC19Died",
         "version": "20200401.06",
         "name": "numC19Died",
         "title": "COVID-19 Patients Died",

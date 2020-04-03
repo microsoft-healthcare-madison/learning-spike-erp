@@ -1,0 +1,172 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-329",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-329"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-03T10:56:06.789243-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-330",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-330",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://cdcmeasures.example.org/modules/covid19/20200403/beds",
+        "subject": {
+          "reference": "Location/Loc-Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
+        },
+        "date": "2020-04-03T10:56:06.7892668-05:00",
+        "reporter": {
+          "reference": "Organization/Org-3813",
+          "display": "HERITAGE VALLEY BEAVER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "code": "numTotBeds"
+                }
+              ]
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 361
+              }
+            ],
+            "measureScore": {
+              "value": 361
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "code": "numbeds"
+                }
+              ]
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 297
+              }
+            ],
+            "measureScore": {
+              "value": 297
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "code": "numBedsOcc"
+                }
+              ]
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 69
+              }
+            ],
+            "measureScore": {
+              "value": 69
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "code": "numICUBeds"
+                }
+              ]
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 64
+              }
+            ],
+            "measureScore": {
+              "value": 64
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://cdcmeasures.example.org/modules/covid19/20200403",
+                  "code": "numICUBedsOcc"
+                }
+              ]
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "measure-population",
+                      "display": "Measure Population"
+                    }
+                  ]
+                },
+                "count": 9
+              }
+            ],
+            "measureScore": {
+              "value": 9
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

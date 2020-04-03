@@ -249,11 +249,15 @@ namespace generator_cli.Models
 
         /// <summary>Gets the physical type bed.</summary>
         /// <value>The physical type bed.</value>
-        public static FhirTriplet PhysicalTypeBed => new FhirTriplet(SystemLiterals.LocationPhysicalType, LocationPhysicalTypeBed);
+        public static FhirTriplet PhysicalTypeBed => new FhirTriplet(
+            SystemLiterals.LocationPhysicalType,
+            LocationPhysicalTypeBed);
 
         /// <summary>Gets the physical type site.</summary>
         /// <value>The physical type site.</value>
-        public static FhirTriplet PhysicalTypeSite => new FhirTriplet(SystemLiterals.LocationPhysicalType, LocationPhysicalTypeSite);
+        public static FhirTriplet PhysicalTypeSite => new FhirTriplet(
+            SystemLiterals.LocationPhysicalType,
+            LocationPhysicalTypeSite);
 
         /// <summary>Gets the saner status.</summary>
         /// <value>The saner status.</value>

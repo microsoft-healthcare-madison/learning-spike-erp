@@ -19,6 +19,7 @@ namespace generator_cli.Generators
         private OrgPatientData _patientData;
         private OrgTestData _testData;
         private Period _period;
+        Dictionary<string, decimal> _scoresByGroupCode = new Dictionary<string, decimal>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasureReportGenerator"/> class.
@@ -73,6 +74,47 @@ namespace generator_cli.Generators
             _patientData = patientData;
             _testData = testData;
             _period = period;
+
+            BuildScoreDict();
+        }
+
+        /// <summary>Builds score dictionaries.</summary>
+        private void BuildScoreDict()
+        {
+            int val;
+
+            _scoresByGroupCode.Add(MeasureGenerator.CDCTotalBeds, _deviceData.TotalBeds);
+
+            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBeds, _deviceData.Inpatient);
+
+            val = Math.Min(_deviceData.Inpatient, _patientData.Total);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBedOccupancy, val);
+
+            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBeds, _deviceData.ICU);
+
+            val = Math.Min(_deviceData.ICU, _patientData.NegativeNeedIcu + _patientData.PositiveNeedIcu);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBedOccupancy, val);
+
+            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilators, _deviceData.Ventilators);
+
+            val = Math.Min(_deviceData.Ventilators, _patientData.NegativeNeedVent + _patientData.PositiveNeedVent);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatorsInUse, val);
+
+            val = Math.Min(_deviceData.TotalBeds - _patientData.Negative, _patientData.Positive);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalizedPatients, val);
+
+            val = Math.Min(_deviceData.Ventilators - _patientData.NegativeNeedVent, _patientData.PositiveNeedVent);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatedPatients, val);
+
+            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalOnset, _patientData.OnsetInCare);
+
+            val = Math.Max(0, _patientData.Positive - (_deviceData.TotalBeds - _patientData.Negative));
+            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingBeds, val);
+
+            val = Math.Max(0, _patientData.PositiveNeedVent - (_deviceData.Ventilators - _patientData.NegativeNeedVent));
+            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingVentilators, val);
+
+            _scoresByGroupCode.Add(MeasureGenerator.CDCDied, _patientData.Died);
         }
 
         /// <summary>Gets report bundle.</summary>
@@ -91,7 +133,6 @@ namespace generator_cli.Generators
             };
 
             string id;
-            int val;
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
@@ -102,105 +143,162 @@ namespace generator_cli.Generators
             //     ReportForMeasure(out id, MeasureGenerator.TestPositiveTotal, _testData.Positive),
             //     $"{SystemLiterals.Internal}MeasureReport/{id}");
 
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCTotalBeds);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCInpatientBeds);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCInpatientBedOccupancy);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCIcuBeds);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCIcuBedOccupancy);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCVentilators);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCVentilatorsInUse);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCHospitalizedPatients);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCVentilatedPatients);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCHospitalOnset);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCAwaitingBeds);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCAwaitingVentilators);
+            AddCdcMeasure(ref bundle, MeasureGenerator.CDCDied);
+
+            return bundle;
+        }
+
+        /// <summary>Adds a cdc measure to 'measureName'.</summary>
+        /// <param name="bundle">     [in,out] The bundle.</param>
+        /// <param name="measureName">Name of the measure.</param>
+        private void AddCdcMeasure(ref Bundle bundle, string measureName)
+        {
             bundle.AddResourceEntry(
                 ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCTotalBeds),
-                    _deviceData.TotalBeds),
+                    out string id,
+                    MeasureGenerator.CDCMeasure(measureName),
+                    _scoresByGroupCode[measureName]),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
+        }
+
+        /// <summary>Gets group report bundle.</summary>
+        /// <returns>The group report bundle.</returns>
+        public Bundle GetGroupReportBundle()
+        {
+            string bundleId = FhirGenerator.NextId;
+
+            Bundle bundle = new Bundle()
+            {
+                Id = bundleId,
+                Identifier = FhirGenerator.IdentifierForId(bundleId),
+                Type = Bundle.BundleType.Collection,
+                Timestamp = new DateTimeOffset(DateTime.Now),
+                Meta = new Meta(),
+            };
+
+            string id;
+
+            bundle.Entry = new List<Bundle.EntryComponent>();
 
             bundle.AddResourceEntry(
-                ReportForMeasure(
+                ReportForCdcGroupedMeasure(
                     out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCInpatientBeds),
-                    _deviceData.Inpatient),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Min(_deviceData.Inpatient, _patientData.Total);
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCInpatientBedOccupancy),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCIcuBeds),
-                    _deviceData.ICU),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Min(_deviceData.ICU, _patientData.NegativeNeedIcu + _patientData.PositiveNeedIcu);
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCIcuBedOccupancy),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCVentilators),
-                    _deviceData.Ventilators),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Min(_deviceData.Ventilators, _patientData.NegativeNeedVent + _patientData.PositiveNeedVent);
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCVentilatorsInUse),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Min(_deviceData.TotalBeds - _patientData.Negative, _patientData.Positive);
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCHospitalizedPatients),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Min(_deviceData.Ventilators - _patientData.NegativeNeedVent, _patientData.PositiveNeedVent);
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCVentilatedPatients),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCHospitalOnset),
-                    _patientData.OnsetInCare),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Max(0, _patientData.Positive - (_deviceData.TotalBeds - _patientData.Negative));
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCAwaitingBeds),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            val = Math.Max(0, _patientData.PositiveNeedVent - (_deviceData.Ventilators - _patientData.NegativeNeedVent));
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCAwaitingVentilators),
-                    val),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
-
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out id,
-                    MeasureGenerator.CDCMeasure(MeasureGenerator.CDCDied),
-                    _patientData.Died),
+                    MeasureGenerator.CDCGroupedMeasure("beds")),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             return bundle;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeasureReportGenerator"/> class.
+        /// </summary>
+        /// <param name="id">     [out] The identifier.</param>
+        /// <param name="measure">The measure.</param>
+        /// <returns>A MeasureReport.</returns>
+        private MeasureReport ReportForCdcGroupedMeasure(
+            out string id,
+            Measure measure)
+        {
+            id = FhirGenerator.NextId;
+
+            MeasureReport report = new MeasureReport()
+            {
+                Id = id,
+                Subject = new ResourceReference(
+                    $"{_location.ResourceType}/{_location.Id}",
+                    _org.Name),
+                Status = MeasureReport.MeasureReportStatus.Complete,
+                Type = MeasureReport.MeasureReportType.Summary,
+                Date = new FhirDateTime(new DateTimeOffset(DateTime.Now)).ToString(),
+                Period = _period,
+                Measure = measure.Url,
+                Reporter = new ResourceReference(
+                    $"{_org.ResourceType}/{_org.Id}",
+                    _org.Name),
+                Group = new List<MeasureReport.GroupComponent>(),
+            };
+
+            foreach (Measure.GroupComponent measureGroup in measure.Group)
+            {
+                string groupName = measureGroup.Code.Coding[0].Code;
+
+                if (!_scoresByGroupCode.ContainsKey(groupName))
+                {
+                    continue;
+                }
+
+                MeasureReport.GroupComponent reportGroup = new MeasureReport.GroupComponent()
+                {
+                    Code = measureGroup.Code,
+                    Population = new List<MeasureReport.PopulationComponent>(),
+                    MeasureScore = new Quantity() { Value = _scoresByGroupCode[groupName], },
+                };
+
+                foreach (Measure.PopulationComponent population in measure.Group[0].Population)
+                {
+                    if ((population.Code == null) ||
+                        (population.Code.Coding == null) ||
+                        (population.Code.Coding.Count == 0))
+                    {
+                        continue;
+                    }
+
+                    switch (population.Code.Coding[0].Code)
+                    {
+                        case "measure-population":
+                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = (int)_scoresByGroupCode[groupName],
+                            });
+                            break;
+
+                        case "measure-observation":
+                            // ignore
+                            break;
+
+                        // TODO: need numerators and denominators
+                        case "numerator":
+                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = 1,
+                            });
+                            break;
+
+                        // TODO: need numerators and denominators
+                        case "denominator":
+                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = 1,
+                            });
+                            break;
+                    }
+                }
+
+                if (reportGroup.Population.Count == 0)
+                {
+                    reportGroup.Population = null;
+                }
+
+                report.Group.Add(reportGroup);
+            }
+
+            return report;
+
         }
 
         /// <summary>Reports for measure.</summary>

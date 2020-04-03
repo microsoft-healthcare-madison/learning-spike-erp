@@ -240,7 +240,11 @@ namespace generator_cli
             int timePeriodHours)
         {
             // write measures only in t0
-            WriteMeasureBundle(Path.Combine(outputDirectory, "t0"));
+            WriteBundle(
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}{_extension}"),
+                MeasureGenerator.GetMeasureBundle());
+
+            WriteGroupedMeasureBundles(Path.Combine(outputDirectory, "t0"));
 
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)
@@ -274,20 +278,13 @@ namespace generator_cli
             }
         }
 
-        /// <summary>Writes a measure bundle.</summary>
+        /// <summary>Writes a grouped measure bundles.</summary>
         /// <param name="dir">The dir.</param>
-        private static void WriteMeasureBundle(string dir)
+        private static void WriteGroupedMeasureBundles(string dir)
         {
-            string filename = Path.Combine(dir, $"{_filenameBaseForMeasures}{_extension}");
-
-            if (_useJson)
-            {
-                File.WriteAllText(filename, _jsonSerializer.SerializeToString(MeasureGenerator.GetMeasureBundle()));
-            }
-            else
-            {
-                File.WriteAllText(filename, _xmlSerializer.SerializeToString(MeasureGenerator.GetMeasureBundle()));
-            }
+            WriteBundle(
+                Path.Combine(dir, $"{_filenameBaseForMeasures}-beds{_extension}"),
+                MeasureGenerator.GetGroupedMeasureBundle("beds"));
         }
 
         /// <summary>Writes an organisation reports.</summary>
@@ -309,14 +306,11 @@ namespace generator_cli
                 _testDataByOrgId[orgId],
                 period);
 
-            if (_useJson)
-            {
-                File.WriteAllText(filename, _jsonSerializer.SerializeToString(reportGen.GetReportBundle()));
-            }
-            else
-            {
-                File.WriteAllText(filename, _xmlSerializer.SerializeToString(reportGen.GetReportBundle()));
-            }
+            WriteBundle(filename, reportGen.GetReportBundle());
+
+            WriteBundle(
+                Path.Combine(dir, $"{orgId}-measureReportsGrouped{_extension}"),
+                reportGen.GetGroupReportBundle());
         }
 
         /// <summary>Updates the aggregate data for step.</summary>
@@ -579,14 +573,7 @@ namespace generator_cli
                 report,
                 $"{SystemLiterals.Internal}{report.ResourceType}/{report.Id}");
 
-            if (_useJson)
-            {
-                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
-            }
-            else
-            {
-                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
+            WriteBundle(filename, bundle);
         }
 
         /// <summary>Writes a group bundle.</summary>
@@ -636,14 +623,7 @@ namespace generator_cli
                     $"{SystemLiterals.Internal}{group.ResourceType}/{group.Id}");
             }
 
-            if (_useJson)
-            {
-                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
-            }
-            else
-            {
-                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
+            WriteBundle(filename, bundle);
         }
 
         /// <summary>Creates organization bed.</summary>
@@ -703,14 +683,7 @@ namespace generator_cli
                     $"{SystemLiterals.Internal}{bed.ResourceType}/{bed.Id}");
             }
 
-            if (_useJson)
-            {
-                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
-            }
-            else
-            {
-                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
+            WriteBundle(filename, bundle);
         }
 
         /// <summary>Writes an organization bundle.</summary>
@@ -743,14 +716,7 @@ namespace generator_cli
                 _rootLocationByOrgId[orgId],
                 $"{SystemLiterals.Internal}{_rootLocationByOrgId[orgId].ResourceType}/{_rootLocationByOrgId[orgId].Id}");
 
-            if (_useJson)
-            {
-                File.WriteAllText(filename, _jsonSerializer.SerializeToString(bundle));
-            }
-            else
-            {
-                File.WriteAllText(filename, _xmlSerializer.SerializeToString(bundle));
-            }
+            WriteBundle(filename, bundle);
         }
 
         /// <summary>Creates the orgs.</summary>
@@ -781,6 +747,25 @@ namespace generator_cli
 
                 Location orgLoc = FhirGenerator.RootLocationForOrg(org);
                 _rootLocationByOrgId.Add(org.Id, orgLoc);
+            }
+        }
+
+        /// <summary>Writes a bundle.</summary>
+        /// <param name="filename">Filename of the file.</param>
+        /// <param name="bundle">  The bundle.</param>
+        private static void WriteBundle(string filename, Bundle bundle)
+        {
+            if (_useJson)
+            {
+                File.WriteAllText(
+                    filename,
+                    _jsonSerializer.SerializeToString(bundle));
+            }
+            else
+            {
+                File.WriteAllText(
+                    filename,
+                    _xmlSerializer.SerializeToString(bundle));
             }
         }
     }

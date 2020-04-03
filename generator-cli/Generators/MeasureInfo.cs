@@ -13,13 +13,13 @@ namespace generator_cli.Generators
     public class MeasureInfo
     {
         /// <summary>The canonical URL base.</summary>
-        private const string _cdcCanonicalUrl = "http://cdcmeasures.example.org/modules/covid19/20200331";
+        public const string CdcCanonicalUrl = "http://cdcmeasures.example.org/modules/covid19/20200403";
 
         /// <summary>The canonical URL base.</summary>
-        private const string _sanerCanonicalUrl = "http://saner.example.org/covid19/20200331";
+        public const string SanerCanonicalUrl = "http://saner.example.org/covid19/20200403";
 
         /// <summary>List of cdc documents.</summary>
-        private static readonly List<string> _cdcDocumentList = new List<string>()
+        public static readonly List<string> CdcDocumentList = new List<string>()
         {
             "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
         };
@@ -30,18 +30,21 @@ namespace generator_cli.Generators
         /// <param name="title">      The title.</param>
         /// <param name="description">The description.</param>
         /// <param name="measureType">The type of the measure.</param>
+        /// <param name="style">      The style.</param>
         public MeasureInfo(
             MeasureSource source,
             string name,
             string title,
             string description,
-            FhirTriplet measureType)
+            FhirTriplet measureType,
+            MeasureStyle style)
         {
             Source = source;
             Name = name;
             Title = title;
             Description = description;
             MeasureType = measureType;
+            Style = style;
         }
 
         /// <summary>Values that represent measure sources.</summary>
@@ -55,6 +58,16 @@ namespace generator_cli.Generators
 
             /// <summary>An enum constant representing the saner option.</summary>
             SANER,
+        }
+
+        /// <summary>Values that represent measure styles.</summary>
+        public enum MeasureStyle
+        {
+            /// <summary>An enum constant representing the count option.</summary>
+            Count,
+
+            /// <summary>An enum constant representing the ratio option.</summary>
+            Ratio,
         }
 
         /// <summary>Gets the source for the.</summary>
@@ -77,6 +90,10 @@ namespace generator_cli.Generators
         /// <value>The type of the measure.</value>
         public FhirTriplet MeasureType { get; }
 
+        /// <summary>Gets the measure style.</summary>
+        /// <value>The measure style.</value>
+        public MeasureStyle Style { get; }
+
         /// <summary>Gets the canonical.</summary>
         /// <value>The canonical.</value>
         public string Canonical
@@ -86,12 +103,12 @@ namespace generator_cli.Generators
                 switch (Source)
                 {
                     case MeasureSource.CDC:
-                        return _cdcCanonicalUrl;
+                        return CdcCanonicalUrl;
 
                     case MeasureSource.FEMA:
                         break;
                     case MeasureSource.SANER:
-                        return _sanerCanonicalUrl;
+                        return SanerCanonicalUrl;
 
                     default:
                         break;
@@ -135,7 +152,7 @@ namespace generator_cli.Generators
                 switch (Source)
                 {
                     case MeasureSource.CDC:
-                        return _cdcDocumentList;
+                        return CdcDocumentList;
 
                     case MeasureSource.FEMA:
                         break;
