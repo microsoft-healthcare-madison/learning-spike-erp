@@ -119,6 +119,50 @@ namespace generator_cli.Generators
             }
         }
 
+        /// <summary>Gets the group the measure belongs to.</summary>
+        /// <value>The measure group.</value>
+        public Measure.GroupComponent MeasureGroup
+        {
+            get
+            {
+                Measure.GroupComponent component = null;
+
+                switch (Style)
+                {
+                    case MeasureStyle.Count:
+                        component = new Measure.GroupComponent()
+                        {
+                            Code = new CodeableConcept(
+                                CdcCanonicalUrl,
+                                Name,
+                                Description),
+                            Population = new List<Measure.PopulationComponent>()
+                            {
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.InitialPopulation.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = CriteriaDescription,
+                                        Language = "text/plain",
+                                        Expression_ = Description,
+                                    },
+                                },
+                            },
+                        };
+
+                        break;
+                    case MeasureStyle.Ratio:
+                        break;
+
+                    default:
+                        break;
+                }
+
+                return component;
+            }
+        }
+
         /// <summary>Gets information describing the criteria.</summary>
         /// <value>Information describing the criteria.</value>
         public string CriteriaDescription

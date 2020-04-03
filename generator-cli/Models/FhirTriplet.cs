@@ -177,6 +177,13 @@ namespace generator_cli.Models
             "measure-population",
             "Measure Population");
 
+        /// <summary>Gets the initial population.</summary>
+        /// <value>The initial population.</value>
+        public static FhirTriplet InitialPopulation => new FhirTriplet(
+            "http://terminology.hl7.org/CodeSystem/measure-population",
+            "initial-population",
+            "Initial Population");
+
         /// <summary>Gets the measure observation.</summary>
         /// <value>The measure observation.</value>
         public static FhirTriplet MeasureObservation => new FhirTriplet(

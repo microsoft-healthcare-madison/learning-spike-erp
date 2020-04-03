@@ -15,16 +15,16 @@ namespace generator_cli.Generators
     public static class MeasureGenerator
     {
         /// <summary>The measure version.</summary>
-        private const string MeasureVersion = "20200401.06";
+        private const string MeasureVersion = "20200403.04";
 
         /// <summary>The publication date.</summary>
-        private const string PublicationDate = "2020-03-31T00:00:00Z";
+        private const string PublicationDate = "2020-04-03T00:00:00Z";
 
         /// <summary>The publisher.</summary>
         private const string Publisher = "SANER-IG";
 
         /// <summary>The cdc grouped measures.</summary>
-        private static Dictionary<string, Measure> _cdcGroupedMeasures = new Dictionary<string, Measure>();
+        private static Measure _cdcCompleteMeasure = null;
 
         /// <summary>The cdc measures.</summary>
         private static Dictionary<string, Measure> _cdcMeasures = new Dictionary<string, Measure>();
@@ -69,117 +69,144 @@ namespace generator_cli.Generators
         public const string CDCDied = "numC19Died";
 
         /// <summary>The cdc measures.</summary>
-        private static readonly List<MeasureInfo> _cdcMeasureInfo = new List<MeasureInfo>()
+        private static readonly Dictionary<string, MeasureInfo> _cdcMeasureInfoByName = new Dictionary<string, MeasureInfo>()
         {
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+            {
                 CDCTotalBeds,
-                "All Hospital Beds",
-                "Total number of all Inpatient and outpatient beds, " +
-                    "including all staffed, ICU, licensed, and overflow(surge) beds used for " +
-                    "inpatients or outpatients.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCTotalBeds,
+                    "All Hospital Beds",
+                    "Total number of all Inpatient and outpatient beds, " +
+                        "including all staffed, ICU, licensed, and overflow(surge) beds used for " +
+                        "inpatients or outpatients.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCInpatientBeds,
-                "Hospital Inpatient Beds",
-                "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCInpatientBeds,
+                    "Hospital Inpatient Beds",
+                    "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCInpatientBedOccupancy,
-                "Hospital Inpatient Bed Occupancy",
-                "Total number of staffed inpatient beds that are occupied.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCInpatientBedOccupancy,
+                    "Hospital Inpatient Bed Occupancy",
+                    "Total number of staffed inpatient beds that are occupied.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCIcuBeds,
-                "Hospital ICU Beds",
-                "Total number of staffed inpatient intensive care unit (ICU) beds.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCIcuBeds,
+                    "Hospital ICU Beds",
+                    "Total number of staffed inpatient intensive care unit (ICU) beds.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCIcuBedOccupancy,
-                "Hospital ICU Bed Occupancy",
-                "Total number of staffed inpatient ICU beds that are occupied.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCIcuBedOccupancy,
+                    "Hospital ICU Bed Occupancy",
+                    "Total number of staffed inpatient ICU beds that are occupied.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCVentilators,
-                "Mechanical Ventilators",
-                "Total number of ventilators available.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCVentilators,
+                    "Mechanical Ventilators",
+                    "Total number of ventilators available.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCVentilatorsInUse,
-                "Mechanical Ventilators In Use",
-                "Total number of ventilators in use.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCVentilatorsInUse,
+                    "Mechanical Ventilators In Use",
+                    "Total number of ventilators in use.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCHospitalizedPatients,
-                "COVID-19 Patients Hospitalized",
-                "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCHospitalizedPatients,
+                    "COVID-19 Patients Hospitalized",
+                    "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCVentilatedPatients,
-                "COVID-19 Patients Hospitalized and Ventilated",
-                "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed " +
-                    "COVID - 19 and are on a mechanical ventilator.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCVentilatedPatients,
+                    "COVID-19 Patients Hospitalized and Ventilated",
+                    "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed " +
+                        "COVID - 19 and are on a mechanical ventilator.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCHospitalOnset,
-                "COVID-19 Hospital Onset",
-                "Patients hospitalized in an NHSN inpatient care location with onset of suspected " +
-                    "or confirmed COVID - 19 14 or more days after hospitalization.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCHospitalOnset,
+                    "COVID-19 Hospital Onset",
+                    "Patients hospitalized in an NHSN inpatient care location with onset of suspected " +
+                        "or confirmed COVID - 19 14 or more days after hospitalization.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCAwaitingBeds,
-                "ED/Overflow",
-                "Patients with suspected or confirmed COVID-19 who are in " +
-                    "the ED or any overflow location awaiting an inpatient bed.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCAwaitingBeds,
+                    "ED/Overflow",
+                    "Patients with suspected or confirmed COVID-19 who are in " +
+                        "the ED or any overflow location awaiting an inpatient bed.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCAwaitingVentilators,
-                "ED/Overflow and Ventilated",
-                "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location " +
-                    "awaiting an inpatient bed and on a mechanical ventilator.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.CDC,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCAwaitingVentilators,
+                    "ED/Overflow and Ventilated",
+                    "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location " +
+                        "awaiting an inpatient bed and on a mechanical ventilator.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 CDCDied,
-                "COVID-19 Patients Died",
-                "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.CDC,
+                    CDCDied,
+                    "COVID-19 Patients Died",
+                    "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
         };
 
         /// <summary>The fema measures.</summary>
@@ -318,20 +345,20 @@ namespace generator_cli.Generators
 
         /// <summary>Builds cdc bed measure.</summary>
         /// <returns>A Measure.</returns>
-        private static Measure BuildCdcBedMeasure()
+        private static Measure BuildCdcCompleteMeasure()
         {
             Measure measure = new Measure()
             {
-                Id = "cdcBeds",
-                Name = "cdcBeds",
-                Url = $"{MeasureInfo.CdcCanonicalUrl}/beds",
+                Id = "sanerCDC",
+                Name = "sanerCDC",
+                Url = $"{MeasureInfo.CdcCanonicalUrl}/sanerCDC",
                 Version = MeasureVersion,
-                Title = "CDC Bed Measurement Group",
+                Title = "CDC Measurement Group",
                 Status = PublicationStatus.Draft,
                 Subject = new CodeableConcept("Location", "Location"),
                 Date = PublicationDate,
                 Publisher = Publisher,
-                Description = new Markdown("CDC Bed Measurement Group"),
+                Description = new Markdown("CDC Measurement Group"),
                 Jurisdiction = new List<CodeableConcept>()
                 {
                     FhirTriplet.UnitedStates.Concept,
@@ -353,31 +380,25 @@ namespace generator_cli.Generators
                 Scoring = FhirTriplet.ScoringCohort.Concept,
             };
 
-            measure.RelatedArtifact.AddRange(_cdcMeasureInfo[0].Artifacts);
+            measure.RelatedArtifact.AddRange(_cdcMeasureInfoByName[CDCTotalBeds].Artifacts);
 
-            measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCTotalBeds]));
-            measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCInpatientBeds]));
-            measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCInpatientBedOccupancy]));
-            measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCIcuBeds]));
-            measure.Group.Add(GroupComponentFromCdcMeasure(_cdcMeasures[CDCIcuBedOccupancy]));
+            measure.Group.Add(_cdcMeasureInfoByName[CDCTotalBeds].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBeds].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBedOccupancy].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCIcuBeds].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCIcuBedOccupancy].MeasureGroup);
+
+            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilators].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilatorsInUse].MeasureGroup);
+
+            measure.Group.Add(_cdcMeasureInfoByName[CDCHospitalizedPatients].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilatedPatients].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCHospitalOnset].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingBeds].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingVentilators].MeasureGroup);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCDied].MeasureGroup);
 
             return measure;
-        }
-
-        /// <summary>Group component from measure.</summary>
-        /// <param name="measure">The measure.</param>
-        /// <returns>A Measure.GroupComponent.</returns>
-        private static Measure.GroupComponent GroupComponentFromCdcMeasure(
-            Measure measure)
-        {
-            return new Measure.GroupComponent()
-            {
-                Code = new CodeableConcept(
-                    MeasureInfo.CdcCanonicalUrl,
-                    measure.Name),
-                Description = measure.Description.ToString(),
-                Population = measure.Group[0].Population,
-            };
         }
 
         /// <summary>Builds a measure.</summary>
@@ -433,7 +454,7 @@ namespace generator_cli.Generators
                     {
                         new Measure.PopulationComponent()
                         {
-                            Code = FhirTriplet.MeasurePopulation.Concept,
+                            Code = FhirTriplet.InitialPopulation.Concept,
                             Criteria = new Expression()
                             {
                                 Description = info.CriteriaDescription,
@@ -455,12 +476,12 @@ namespace generator_cli.Generators
         public static void Init()
         {
             // build CDC measures
-            foreach (MeasureInfo info in _cdcMeasureInfo)
+            foreach (MeasureInfo info in _cdcMeasureInfoByName.Values)
             {
                 _cdcMeasures.Add(info.Name, BuildMeasure(info));
             }
 
-            _cdcGroupedMeasures.Add("beds", BuildCdcBedMeasure());
+            _cdcCompleteMeasure = BuildCdcCompleteMeasure();
 
             // build FEMA measures
             foreach (MeasureInfo info in _femaMeasureInfo)
@@ -483,16 +504,10 @@ namespace generator_cli.Generators
         }
 
         /// <summary>Cdc grouped measure.</summary>
-        /// <param name="name">The name.</param>
         /// <returns>A Measure.</returns>
-        public static Measure CDCGroupedMeasure(string name)
+        public static Measure CDCCompleteMeasure()
         {
-            if (!_cdcGroupedMeasures.ContainsKey(name))
-            {
-                return null;
-            }
-
-            return _cdcGroupedMeasures[name];
+            return _cdcCompleteMeasure;
         }
 
         /// <summary>Fema measure.</summary>
@@ -509,15 +524,9 @@ namespace generator_cli.Generators
         }
 
         /// <summary>Gets report bundle.</summary>
-        /// <param name="groupName">Name of the group.</param>
         /// <returns>The report bundle.</returns>
-        public static Bundle GetGroupedMeasureBundle(string groupName)
+        public static Bundle GetCompleteMeasureBundle()
         {
-            if (!_cdcGroupedMeasures.ContainsKey(groupName))
-            {
-                return null;
-            }
-
             string bundleId = FhirGenerator.NextId;
 
             Bundle bundle = new Bundle()
@@ -532,8 +541,8 @@ namespace generator_cli.Generators
             bundle.Entry = new List<Bundle.EntryComponent>();
 
             bundle.AddResourceEntry(
-                _cdcGroupedMeasures[groupName],
-                $"{SystemLiterals.Internal}Measure/cdc{groupName}");
+                _cdcCompleteMeasure,
+                $"{SystemLiterals.Internal}Measure/sanerCDC");
 
             return bundle;
         }
@@ -555,7 +564,7 @@ namespace generator_cli.Generators
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
-            foreach (MeasureInfo info in _cdcMeasureInfo)
+            foreach (MeasureInfo info in _cdcMeasureInfoByName.Values)
             {
                 bundle.AddResourceEntry(
                     BuildMeasure(info),

@@ -283,8 +283,8 @@ namespace generator_cli
         private static void WriteGroupedMeasureBundles(string dir)
         {
             WriteBundle(
-                Path.Combine(dir, $"{_filenameBaseForMeasures}-beds{_extension}"),
-                MeasureGenerator.GetGroupedMeasureBundle("beds"));
+                Path.Combine(dir, $"{_filenameBaseForMeasures}-CDC{_extension}"),
+                MeasureGenerator.GetCompleteMeasureBundle());
         }
 
         /// <summary>Writes an organization reports.</summary>
@@ -309,8 +309,8 @@ namespace generator_cli
             WriteBundle(filename, reportGen.GetReportBundle());
 
             WriteBundle(
-                Path.Combine(dir, $"{orgId}-measureReportsGrouped{_extension}"),
-                reportGen.GetGroupReportBundle());
+                Path.Combine(dir, $"{orgId}-measureReports-CDC{_extension}"),
+                reportGen.GetCdcCompleteReportBundle());
         }
 
         /// <summary>Updates the aggregate data for step.</summary>

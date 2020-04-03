@@ -175,7 +175,7 @@ namespace generator_cli.Generators
 
         /// <summary>Gets group report bundle.</summary>
         /// <returns>The group report bundle.</returns>
-        public Bundle GetGroupReportBundle()
+        public Bundle GetCdcCompleteReportBundle()
         {
             string bundleId = FhirGenerator.NextId;
 
@@ -193,21 +193,19 @@ namespace generator_cli.Generators
             bundle.Entry = new List<Bundle.EntryComponent>();
 
             bundle.AddResourceEntry(
-                ReportForCdcGroupedMeasure(
+                ReportForCdcCompleteMeasure(
                     out id,
-                    MeasureGenerator.CDCGroupedMeasure("beds")),
+                    MeasureGenerator.CDCCompleteMeasure()),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             return bundle;
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MeasureReportGenerator"/> class.
-        /// </summary>
+        /// <summary>Reports for cdc grouped measure.</summary>
         /// <param name="id">     [out] The identifier.</param>
         /// <param name="measure">The measure.</param>
         /// <returns>A MeasureReport.</returns>
-        private MeasureReport ReportForCdcGroupedMeasure(
+        private MeasureReport ReportForCdcCompleteMeasure(
             out string id,
             Measure measure)
         {
@@ -242,11 +240,12 @@ namespace generator_cli.Generators
                 MeasureReport.GroupComponent reportGroup = new MeasureReport.GroupComponent()
                 {
                     Code = measureGroup.Code,
-                    Population = new List<MeasureReport.PopulationComponent>(),
                     MeasureScore = new Quantity() { Value = _scoresByGroupCode[groupName], },
+                    Population = new List<MeasureReport.PopulationComponent>(),
+                    Stratifier = new List<MeasureReport.StratifierComponent>(),
                 };
 
-                foreach (Measure.PopulationComponent population in measure.Group[0].Population)
+                foreach (Measure.PopulationComponent population in measureGroup.Population)
                 {
                     if ((population.Code == null) ||
                         (population.Code.Coding == null) ||
@@ -257,6 +256,14 @@ namespace generator_cli.Generators
 
                     switch (population.Code.Coding[0].Code)
                     {
+                        case "initial-population":
+                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = (int)_scoresByGroupCode[groupName],
+                            });
+                            break;
+
                         case "measure-population":
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
