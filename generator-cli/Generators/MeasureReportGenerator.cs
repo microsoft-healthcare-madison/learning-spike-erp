@@ -19,12 +19,12 @@ namespace generator_cli.Generators
         private OrgPatientData _patientData;
         private OrgTestData _testData;
         private Period _period;
-        Dictionary<string, decimal> _scoresByGroupCode = new Dictionary<string, decimal>();
+        private Dictionary<string, Score> _scoresByGroupCode = new Dictionary<string, Score>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasureReportGenerator"/> class.
         /// </summary>
-        /// <param name="org">        The organisation.</param>
+        /// <param name="org">        The organization.</param>
         /// <param name="location">   The location.</param>
         /// <param name="deviceData"> Information describing the device.</param>
         /// <param name="patientData">Information describing the patient.</param>
@@ -75,46 +75,79 @@ namespace generator_cli.Generators
             _testData = testData;
             _period = period;
 
-            BuildScoreDict();
+            ComputeCdcScores();
+            ComputeFemaScores();
         }
 
         /// <summary>Builds score dictionaries.</summary>
-        private void BuildScoreDict()
+        private void ComputeCdcScores()
         {
             int val;
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCTotalBeds, _deviceData.TotalBeds);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCTotalBeds, new Score(_deviceData.TotalBeds));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBeds, _deviceData.Inpatient);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBeds, new Score(_deviceData.Inpatient));
 
             val = Math.Min(_deviceData.Inpatient, _patientData.Total);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBedOccupancy, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBedOccupancy, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBeds, _deviceData.ICU);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBeds, new Score(_deviceData.ICU));
 
             val = Math.Min(_deviceData.ICU, _patientData.NegativeNeedIcu + _patientData.PositiveNeedIcu);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBedOccupancy, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBedOccupancy, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilators, _deviceData.Ventilators);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilators, new Score(_deviceData.Ventilators));
 
             val = Math.Min(_deviceData.Ventilators, _patientData.NegativeNeedVent + _patientData.PositiveNeedVent);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatorsInUse, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatorsInUse, new Score(val));
 
             val = Math.Min(_deviceData.TotalBeds - _patientData.Negative, _patientData.Positive);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalizedPatients, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalizedPatients, new Score(val));
 
             val = Math.Min(_deviceData.Ventilators - _patientData.NegativeNeedVent, _patientData.PositiveNeedVent);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatedPatients, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatedPatients, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalOnset, _patientData.OnsetInCare);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalOnset, new Score(_patientData.OnsetInCare));
 
             val = Math.Max(0, _patientData.Positive - (_deviceData.TotalBeds - _patientData.Negative));
-            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingBeds, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingBeds, new Score(val));
 
             val = Math.Max(0, _patientData.PositiveNeedVent - (_deviceData.Ventilators - _patientData.NegativeNeedVent));
-            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingVentilators, val);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingVentilators, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCDied, _patientData.Died);
+            _scoresByGroupCode.Add(MeasureGenerator.CDCDied, new Score(_patientData.Died));
+        }
+
+        /// <summary>Calculates the fema scores.</summary>
+        private void ComputeFemaScores()
+        {
+            decimal val;
+
+            val = _testData.PerformedToday * 2;
+            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsOrderedToday, new Score(val));
+
+            val = _testData.Performed * 2;
+            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsOrderedTotal, new Score(val));
+
+            val = (_testData.Positive + _testData.Negative) * 2;
+            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsWithResultsToday, new Score(val));
+
+            _scoresByGroupCode.Add(MeasureGenerator.FemaSpecimensRejectedTotal, new Score(_testData.Rejected));
+
+            val = (_testData.Performed * 2) - _testData.Rejected - _testData.Pending;
+            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsCompletedTotal, new Score(val));
+
+            _scoresByGroupCode.Add(MeasureGenerator.FemaPositiveC19Today, new Score(_testData.PositiveToday));
+
+            _scoresByGroupCode.Add(MeasureGenerator.FemaPositiveC19Total, new Score(_testData.Positive));
+
+            _scoresByGroupCode.Add(
+                MeasureGenerator.FemaPercentC19PositiveToday,
+                new Score(_testData.PositiveToday, _testData.PositiveToday * 2));
+
+            _scoresByGroupCode.Add(
+                MeasureGenerator.FemaPercentC19PositiveTotal,
+                new Score(_testData.Positive, _testData.Positive * 2));
         }
 
         /// <summary>Gets report bundle.</summary>
@@ -132,16 +165,7 @@ namespace generator_cli.Generators
                 Meta = new Meta(),
             };
 
-            string id;
-
             bundle.Entry = new List<Bundle.EntryComponent>();
-
-            // bundle.AddResourceEntry(
-            //     ReportForMeasure(out id, MeasureGenerator.TestTotal, _testData.Performed),
-            //     $"{SystemLiterals.Internal}MeasureReport/{id}");
-            // bundle.AddResourceEntry(
-            //     ReportForMeasure(out id, MeasureGenerator.TestPositiveTotal, _testData.Positive),
-            //     $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             AddCdcMeasure(ref bundle, MeasureGenerator.CDCTotalBeds);
             AddCdcMeasure(ref bundle, MeasureGenerator.CDCInpatientBeds);
@@ -177,6 +201,21 @@ namespace generator_cli.Generators
         /// <returns>The group report bundle.</returns>
         public Bundle GetCdcCompleteReportBundle()
         {
+            return GetReportBundleForMeasure(MeasureGenerator.CDCCompleteMeasure());
+        }
+
+        /// <summary>Gets group report bundle.</summary>
+        /// <returns>The group report bundle.</returns>
+        public Bundle GetFemaCompleteReportBundle()
+        {
+            return GetReportBundleForMeasure(MeasureGenerator.FemaCompleteMeasure());
+        }
+
+        /// <summary>Gets bundle for measure.</summary>
+        /// <param name="measure">The measure.</param>
+        /// <returns>The bundle for measure.</returns>
+        private Bundle GetReportBundleForMeasure(Measure measure)
+        {
             string bundleId = FhirGenerator.NextId;
 
             Bundle bundle = new Bundle()
@@ -193,9 +232,9 @@ namespace generator_cli.Generators
             bundle.Entry = new List<Bundle.EntryComponent>();
 
             bundle.AddResourceEntry(
-                ReportForCdcCompleteMeasure(
+                ReportForCompleteMeasure(
                     out id,
-                    MeasureGenerator.CDCCompleteMeasure()),
+                    measure),
                 $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             return bundle;
@@ -205,7 +244,7 @@ namespace generator_cli.Generators
         /// <param name="id">     [out] The identifier.</param>
         /// <param name="measure">The measure.</param>
         /// <returns>A MeasureReport.</returns>
-        private MeasureReport ReportForCdcCompleteMeasure(
+        private MeasureReport ReportForCompleteMeasure(
             out string id,
             Measure measure)
         {
@@ -240,7 +279,7 @@ namespace generator_cli.Generators
                 MeasureReport.GroupComponent reportGroup = new MeasureReport.GroupComponent()
                 {
                     Code = measureGroup.Code,
-                    MeasureScore = new Quantity() { Value = _scoresByGroupCode[groupName], },
+                    MeasureScore = new Quantity() { Value = _scoresByGroupCode[groupName].MeasureScore, },
                     Population = new List<MeasureReport.PopulationComponent>(),
                     Stratifier = new List<MeasureReport.StratifierComponent>(),
                 };
@@ -260,7 +299,7 @@ namespace generator_cli.Generators
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = (int)_scoresByGroupCode[groupName],
+                                Count = (int)_scoresByGroupCode[groupName].MeasureScore,
                             });
                             break;
 
@@ -268,7 +307,7 @@ namespace generator_cli.Generators
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = (int)_scoresByGroupCode[groupName],
+                                Count = (int)_scoresByGroupCode[groupName].MeasureScore,
                             });
                             break;
 
@@ -276,21 +315,19 @@ namespace generator_cli.Generators
                             // ignore
                             break;
 
-                        // TODO: need numerators and denominators
                         case "numerator":
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = 1,
+                                Count = _scoresByGroupCode[groupName].Numerator,
                             });
                             break;
 
-                        // TODO: need numerators and denominators
                         case "denominator":
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = 1,
+                                Count = _scoresByGroupCode[groupName].Denominator,
                             });
                             break;
                     }
@@ -305,22 +342,17 @@ namespace generator_cli.Generators
             }
 
             return report;
-
         }
 
         /// <summary>Reports for measure.</summary>
-        /// <param name="id">         [out] The identifier.</param>
-        /// <param name="measure">    The measure.</param>
-        /// <param name="score">      The score.</param>
-        /// <param name="numerator">  (Optional) The numerator.</param>
-        /// <param name="denominator">(Optional) The denominator.</param>
+        /// <param name="id">     [out] The identifier.</param>
+        /// <param name="measure">The measure.</param>
+        /// <param name="score">  The score.</param>
         /// <returns>A MeasureReport.</returns>
         private MeasureReport ReportForMeasure(
             out string id,
             Measure measure,
-            decimal score,
-            int? numerator = null,
-            int? denominator = null)
+            Score score)
         {
             id = FhirGenerator.NextId;
 
@@ -344,7 +376,7 @@ namespace generator_cli.Generators
                 },
             };
 
-            report.Group[0].MeasureScore = new Quantity() { Value = score };
+            report.Group[0].MeasureScore = new Quantity() { Value = score.MeasureScore };
             report.Group[0].Population = new List<MeasureReport.PopulationComponent>();
 
             if (measure.Group[0].Population != null)
@@ -364,7 +396,7 @@ namespace generator_cli.Generators
                             report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = (int)score,
+                                Count = (int)score.MeasureScore,
                             });
                             break;
 
@@ -376,7 +408,7 @@ namespace generator_cli.Generators
                             report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = numerator ?? 1,
+                                Count = score.Numerator,
                             });
                             break;
 
@@ -384,7 +416,7 @@ namespace generator_cli.Generators
                             report.Group[0].Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = denominator ?? 1,
+                                Count = score.Denominator,
                             });
                             break;
                     }

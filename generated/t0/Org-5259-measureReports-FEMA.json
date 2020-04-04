@@ -1,0 +1,313 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-187",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-187"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-04T14:57:30.3234061-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-188",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-188",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
+        "subject": {
+          "reference": "Location/Loc-Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
+        },
+        "date": "2020-04-04T14:57:30.3234276-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5259",
+          "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "newDiagnosticTests"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, tests ordered on previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 152
+              }
+            ],
+            "measureScore": {
+              "value": 152
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativeDiagnosticTests"
+                }
+              ],
+              "text": "All tests ordered to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 152
+              }
+            ],
+            "measureScore": {
+              "value": 152
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "newTestsResulted"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, test results released on previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 206
+              }
+            ],
+            "measureScore": {
+              "value": 206
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativeSpecimensRejected"
+                }
+              ],
+              "text": "All specimens rejected for testing to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 3
+              }
+            ],
+            "measureScore": {
+              "value": 3
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativeTestsPerformed"
+                }
+              ],
+              "text": "All tests with results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 149
+              }
+            ],
+            "measureScore": {
+              "value": 149
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "newPositiveC19Tests"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, positive test results released on the previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 38
+              }
+            ],
+            "measureScore": {
+              "value": 38
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativePositiveC19Tests"
+                }
+              ],
+              "text": "All positivetest results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 38
+              }
+            ],
+            "measureScore": {
+              "value": 38
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "percentPositiveAmongNewlyResultedTests"
+                }
+              ],
+              "text": "# of new positive test results / # of total new tests released for previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 38
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 76
+              }
+            ],
+            "measureScore": {
+              "value": 0.5
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativePercentPositiveAmongResultedTests"
+                }
+              ],
+              "text": "# of total positive results to released date / # of total test results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 38
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 76
+              }
+            ],
+            "measureScore": {
+              "value": 0.5
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -11,6 +11,11 @@ namespace generator_cli.Models
     /// <summary>An organization test data.</summary>
     public class OrgTestData
     {
+        private int _performedToday;
+        private int _positiveToday;
+        private int _negativeToday;
+        private int _rejected;
+        private int _rejectedToday;
         private int _performed;
         private int _positive;
         private int _negative;
@@ -31,6 +36,12 @@ namespace generator_cli.Models
             _positive = positive;
             _negative = negative;
             _pending = pending;
+
+            _performedToday = performed;
+            _positiveToday = positive;
+            _negativeToday = negative;
+            _rejected = (int)(performed * 0.05);
+            _rejectedToday = _rejected;
         }
 
         /// <summary>Gets the tests performed.</summary>
@@ -49,6 +60,26 @@ namespace generator_cli.Models
         /// <value>The test pending.</value>
         public int Pending => _pending;
 
+        /// <summary>Gets the performed today.</summary>
+        /// <value>The performed today.</value>
+        public int PerformedToday => _performedToday;
+
+        /// <summary>Gets the positive today.</summary>
+        /// <value>The positive today.</value>
+        public int PositiveToday => _positiveToday;
+
+        /// <summary>Gets the negative today.</summary>
+        /// <value>The negative today.</value>
+        public int NegativeToday => _negativeToday;
+
+        /// <summary>Gets the rejected.</summary>
+        /// <value>The rejected.</value>
+        public int Rejected => _rejected;
+
+        /// <summary>Gets the rejected today.</summary>
+        /// <value>The rejected today.</value>
+        public int RejectedToday => _rejectedToday;
+
         /// <summary>Updates this object.</summary>
         /// <param name="performedDelta">The performed delta.</param>
         /// <param name="positiveDelta"> The positive delta.</param>
@@ -64,6 +95,12 @@ namespace generator_cli.Models
             _positive += positiveDelta;
             _negative += negativeDelta;
             _pending = pending;
+
+            _performedToday = performedDelta;
+            _positiveToday = positiveDelta;
+            _negativeToday = negativeDelta;
+            _rejected = (int)((double)_pending * 0.05);
+            _rejectedToday = (int)((double)performedDelta * 0.05);
         }
     }
 }

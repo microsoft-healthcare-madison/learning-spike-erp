@@ -284,7 +284,11 @@ namespace generator_cli
         {
             WriteBundle(
                 Path.Combine(dir, $"{_filenameBaseForMeasures}-CDC{_extension}"),
-                MeasureGenerator.GetCompleteMeasureBundle());
+                MeasureGenerator.GetCdcMeasureBundle());
+
+            WriteBundle(
+                Path.Combine(dir, $"{_filenameBaseForMeasures}-FEMA{_extension}"),
+                MeasureGenerator.GetFemaMeasureBundle());
         }
 
         /// <summary>Writes an organization reports.</summary>
@@ -311,6 +315,10 @@ namespace generator_cli
             WriteBundle(
                 Path.Combine(dir, $"{orgId}-measureReports-CDC{_extension}"),
                 reportGen.GetCdcCompleteReportBundle());
+
+            WriteBundle(
+                Path.Combine(dir, $"{orgId}-measureReports-FEMA{_extension}"),
+                reportGen.GetFemaCompleteReportBundle());
         }
 
         /// <summary>Updates the aggregate data for step.</summary>

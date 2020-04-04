@@ -1,223 +1,13 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-54",
+  "id": "FHIR-61",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-54"
+    "value": "FHIR-61"
   },
   "type": "collection",
-  "timestamp": "2020-04-03T16:35:38.5414485-05:00",
+  "timestamp": "2020-04-04T14:57:30.1573088-05:00",
   "entry": [
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-55",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-55",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numTotBeds",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415192-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 355
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-56",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-56",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numbeds",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415385-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 300
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-57",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-57",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numBedsOcc",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415453-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 71
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-58",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-58",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBeds",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415515-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 55
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-59",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-59",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBedsOcc",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415578-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 10
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-60",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-60",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVent",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415636-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 11
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-61",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-61",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVentUse",
-        "subject": {
-          "reference": "Location/Loc-Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "date": "2020-04-03T16:35:38.5415697-05:00",
-        "reporter": {
-          "reference": "Organization/Org-2207",
-          "display": "FRYE REGIONAL MEDICAL CENTER"
-        },
-        "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 11
-            }
-          }
-        ]
-      }
-    },
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-62",
       "resource": {
@@ -225,24 +15,24 @@
         "id": "FHIR-62",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HospPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numTotBeds",
         "subject": {
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-03T16:35:38.5415755-05:00",
+        "date": "2020-04-04T14:57:30.1573228-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
+          "start": "2020-04-01",
+          "end": "2020-04-01"
         },
         "group": [
           {
             "measureScore": {
-              "value": 35
+              "value": 355
             }
           }
         ]
@@ -255,24 +45,24 @@
         "id": "FHIR-63",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19MechVentPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numbeds",
         "subject": {
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-03T16:35:38.541581-05:00",
+        "date": "2020-04-04T14:57:30.1573435-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
+          "start": "2020-04-01",
+          "end": "2020-04-01"
         },
         "group": [
           {
             "measureScore": {
-              "value": 11
+              "value": 300
             }
           }
         ]
@@ -285,24 +75,24 @@
         "id": "FHIR-64",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HOPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numBedsOcc",
         "subject": {
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-03T16:35:38.541587-05:00",
+        "date": "2020-04-04T14:57:30.1573505-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
+          "start": "2020-04-01",
+          "end": "2020-04-01"
         },
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 71
             }
           }
         ]
@@ -315,24 +105,24 @@
         "id": "FHIR-65",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OverflowPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBeds",
         "subject": {
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-03T16:35:38.5415928-05:00",
+        "date": "2020-04-04T14:57:30.1573593-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
+          "start": "2020-04-01",
+          "end": "2020-04-01"
         },
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 55
             }
           }
         ]
@@ -345,24 +135,24 @@
         "id": "FHIR-66",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OFMechVentPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBedsOcc",
         "subject": {
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-03T16:35:38.5416072-05:00",
+        "date": "2020-04-04T14:57:30.157368-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
+          "start": "2020-04-01",
+          "end": "2020-04-01"
         },
         "group": [
           {
             "measureScore": {
-              "value": 13
+              "value": 10
             }
           }
         ]
@@ -375,19 +165,229 @@
         "id": "FHIR-67",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19Died",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVent",
         "subject": {
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-03T16:35:38.5416138-05:00",
+        "date": "2020-04-04T14:57:30.1573742-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-03-31",
-          "end": "2020-03-31"
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-68",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-68",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVentUse",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1573829-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-69",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-69",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HospPats",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1573889-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 35
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-70",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-70",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19MechVentPats",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1573977-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 11
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-71",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-71",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HOPats",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1574089-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-72",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-72",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OverflowPats",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1574151-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-73",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-73",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OFMechVentPats",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1574237-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 13
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-74",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-74",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19Died",
+        "subject": {
+          "reference": "Location/Loc-Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "date": "2020-04-04T14:57:30.1574295-05:00",
+        "reporter": {
+          "reference": "Organization/Org-2207",
+          "display": "FRYE REGIONAL MEDICAL CENTER"
+        },
+        "period": {
+          "start": "2020-04-01",
+          "end": "2020-04-01"
         },
         "group": [
           {

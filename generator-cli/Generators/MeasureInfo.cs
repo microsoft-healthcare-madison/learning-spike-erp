@@ -17,12 +17,21 @@ namespace generator_cli.Generators
         public const string CdcCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
 
         /// <summary>The canonical URL base.</summary>
+        public const string FemaCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
+
+        /// <summary>The canonical URL base.</summary>
         public const string SanerCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
 
         /// <summary>List of cdc documents.</summary>
         public static readonly List<string> CdcDocumentList = new List<string>()
         {
             "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+        };
+
+        /// <summary>List of fema documents.</summary>
+        public static readonly List<string> FemaDocumentList = new List<string>()
+        {
+            "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
         };
 
         /// <summary>Initializes a new instance of the <see cref="MeasureInfo"/> class.</summary>
@@ -107,7 +116,8 @@ namespace generator_cli.Generators
                         return CdcCanonicalUrl;
 
                     case MeasureSource.FEMA:
-                        break;
+                        return FemaCanonicalUrl;
+
                     case MeasureSource.SANER:
                         return SanerCanonicalUrl;
 
@@ -153,6 +163,47 @@ namespace generator_cli.Generators
 
                         break;
                     case MeasureStyle.Ratio:
+                        SplitForRatio(
+                            CriteriaDescription,
+                            out string numeratorCriteria,
+                            out string denominatorCriteria);
+
+                        SplitForRatio(
+                            Description,
+                            out string numeratorDescription,
+                            out string denominatorDescription);
+
+                        component = new Measure.GroupComponent()
+                        {
+                            Code = new CodeableConcept(
+                                CdcCanonicalUrl,
+                                Name,
+                                Description),
+                            Population = new List<Measure.PopulationComponent>()
+                            {
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.Numerator.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = numeratorCriteria,
+                                        Language = "text/plain",
+                                        Expression_ = numeratorDescription,
+                                    },
+                                },
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.Denominator.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = denominatorCriteria,
+                                        Language = "text/plain",
+                                        Expression_ = denominatorDescription,
+                                    },
+                                },
+                            },
+                        };
+
                         break;
 
                     default:
@@ -200,7 +251,8 @@ namespace generator_cli.Generators
                         return CdcDocumentList;
 
                     case MeasureSource.FEMA:
-                        break;
+                        return FemaDocumentList;
+
                     case MeasureSource.SANER:
                         break;
                     default:
@@ -240,6 +292,8 @@ namespace generator_cli.Generators
                                 {
                                     Type = RelatedArtifact.RelatedArtifactType.Documentation,
                                     Url = relatedDocumentUrl,
+                                    Label = "FEMA Template for Daily Hospital COVID-19 Reporting",
+                                    Display = "FEMA Template for Daily Hospital COVID-19 Reporting",
                                 });
                             break;
                         case MeasureSource.SANER:
@@ -268,6 +322,35 @@ namespace generator_cli.Generators
 
                 return artifactList;
             }
+        }
+
+        /// <summary>Splits for ratio.</summary>
+        /// <param name="value">      The value.</param>
+        /// <param name="numerator">  [out] The numerator.</param>
+        /// <param name="denominator">[out] The denominator.</param>
+        private static void SplitForRatio(
+            string value,
+            out string numerator,
+            out string denominator)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                numerator = string.Empty;
+                denominator = string.Empty;
+                return;
+            }
+
+            string[] split = value.Split('/');
+            if (split.Length == 2)
+            {
+                numerator = split[0].Trim();
+                denominator = split[1].Trim();
+                return;
+            }
+
+            numerator = value;
+            denominator = value;
+            return;
         }
     }
 }

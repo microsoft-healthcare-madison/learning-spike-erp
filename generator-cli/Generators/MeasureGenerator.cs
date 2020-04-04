@@ -209,6 +209,9 @@ namespace generator_cli.Generators
             },
         };
 
+        /// <summary>The fema grouped measures.</summary>
+        private static Measure _femaCompleteMeasure = null;
+
         /// <summary>The fema measures.</summary>
         private static Dictionary<string, Measure> _femaMeasures = new Dictionary<string, Measure>();
 
@@ -225,7 +228,7 @@ namespace generator_cli.Generators
         public const string FemaSpecimensRejectedTotal = "cumulativeSpecimensRejected";
 
         /// <summary>The fema tests performed total.</summary>
-        public const string FemaTestsPerformedTotal = "cumulativeTestsPerformed";
+        public const string FemaTestsCompletedTotal = "cumulativeTestsPerformed";
 
         /// <summary>The fema positive c 19 today.</summary>
         public const string FemaPositiveC19Today = "newPositiveC19Tests";
@@ -234,85 +237,104 @@ namespace generator_cli.Generators
         public const string FemaPositiveC19Total = "cumulativePositiveC19Tests";
 
         /// <summary>The fema percent c 19 postive.</summary>
-        public const string FemaPercentC19PostiveToday = "percentPositiveAmongNewlyResultedTests";
+        public const string FemaPercentC19PositiveToday = "percentPositiveAmongNewlyResultedTests";
 
         /// <summary>The fema percent c 19 positive total.</summary>
         public const string FemaPercentC19PositiveTotal = "cumulativePercentPositiveAmongResultedTests";
 
         /// <summary>Information describing the fema measure.</summary>
-        private static readonly List<MeasureInfo> _femaMeasureInfo = new List<MeasureInfo>()
+        private static readonly Dictionary<string, MeasureInfo> _femaMeasureInfoByName = new Dictionary<string, MeasureInfo>()
         {
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+            {
                 FemaTestsOrderedToday,
-                "New Diagnostic Tests Ordered/Received",
-                "Midnight to midnight cutoff, tests ordered on previous date queried.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaTestsOrderedToday,
+                    "New Diagnostic Tests Ordered/Received",
+                    "Midnight to midnight cutoff, tests ordered on previous date queried.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 FemaTestsOrderedTotal,
-                "Cumulative Diagnostic Tests Ordered/Received",
-                "All tests ordered to date.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaTestsOrderedTotal,
+                    "Cumulative Diagnostic Tests Ordered/Received",
+                    "All tests ordered to date.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 FemaTestsWithResultsToday,
-                "New Tests Resulted",
-                "Midnight to midnight cutoff, test results released on previous date queried.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaTestsWithResultsToday,
+                    "New Tests Resulted",
+                    "Midnight to midnight cutoff, test results released on previous date queried.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 FemaSpecimensRejectedTotal,
-                "Cumulative Specimens Rejected",
-                "All specimens rejected for testing to date.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
-                FemaTestsPerformedTotal,
-                "Cumulative Tests Performed",
-                "All tests with results released to date.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaSpecimensRejectedTotal,
+                    "Cumulative Specimens Rejected",
+                    "All specimens rejected for testing to date.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
+                FemaTestsCompletedTotal,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaTestsCompletedTotal,
+                    "Cumulative Tests Performed",
+                    "All tests with results released to date.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 FemaPositiveC19Today,
-                "New Positive COVID-19 Tests",
-                "Midnight to midnight cutoff, positive test results released on the previous date queried.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaPositiveC19Today,
+                    "New Positive COVID-19 Tests",
+                    "Midnight to midnight cutoff, positive test results released on the previous date queried.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
                 FemaPositiveC19Total,
-                "Cumulative Positive COVID-19 Tests",
-                "All positivetest results released to date.",
-                FhirTriplet.MeasureTypeStructure,
-                MeasureInfo.MeasureStyle.Count),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
-                FemaPercentC19PostiveToday,
-                "Percent Positive among Newly Resulted Tests",
-                "# of new positive test results / # of total new tests released for previous date queried.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Ratio),
-
-            new MeasureInfo(
-                MeasureInfo.MeasureSource.FEMA,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaPositiveC19Total,
+                    "Cumulative Positive COVID-19 Tests",
+                    "All positivetest results released to date.",
+                    FhirTriplet.MeasureTypeStructure,
+                    MeasureInfo.MeasureStyle.Count)
+            },
+            {
+                FemaPercentC19PositiveToday,
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaPercentC19PositiveToday,
+                    "Percent Positive among Newly Resulted Tests",
+                    "# of new positive test results / # of total new tests released for previous date queried.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Ratio)
+            },
+            {
                 FemaPercentC19PositiveTotal,
-                "Cumulative Percent Positive among Resulted Tests",
-                "# of total positive results to released date / # of total test results released to date.",
-                FhirTriplet.MeasureTypeOutcome,
-                MeasureInfo.MeasureStyle.Ratio),
+                new MeasureInfo(
+                    MeasureInfo.MeasureSource.FEMA,
+                    FemaPercentC19PositiveTotal,
+                    "Cumulative Percent Positive among Resulted Tests",
+                    "# of total positive results to released date / # of total test results released to date.",
+                    FhirTriplet.MeasureTypeOutcome,
+                    MeasureInfo.MeasureStyle.Ratio)
+            },
         };
 
         /// <summary>The other measures.</summary>
@@ -343,7 +365,7 @@ namespace generator_cli.Generators
                 MeasureInfo.MeasureStyle.Count),
         };
 
-        /// <summary>Builds cdc bed measure.</summary>
+        /// <summary>Builds cdc complete measure.</summary>
         /// <returns>A Measure.</returns>
         private static Measure BuildCdcCompleteMeasure()
         {
@@ -397,6 +419,60 @@ namespace generator_cli.Generators
             measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingBeds].MeasureGroup);
             measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingVentilators].MeasureGroup);
             measure.Group.Add(_cdcMeasureInfoByName[CDCDied].MeasureGroup);
+
+            return measure;
+        }
+
+        /// <summary>Builds fema complete measure.</summary>
+        /// <returns>A Measure.</returns>
+        private static Measure BuildFemaCompleteMeasure()
+        {
+            Measure measure = new Measure()
+            {
+                Id = "sanerFEMA",
+                Name = "sanerFEMA",
+                Url = $"{MeasureInfo.CdcCanonicalUrl}/sanerFEMA",
+                Version = MeasureVersion,
+                Title = "FEMA Measurement Group",
+                Status = PublicationStatus.Draft,
+                Subject = new CodeableConcept("Location", "Location"),
+                Date = PublicationDate,
+                Publisher = Publisher,
+                Description = new Markdown("FEMA Measurement Group"),
+                Jurisdiction = new List<CodeableConcept>()
+                {
+                    FhirTriplet.UnitedStates.Concept,
+                },
+                UseContext = new List<UsageContext>()
+                {
+                    new UsageContext()
+                    {
+                        Code = FhirTriplet.GetCode(SystemLiterals.UsageContextType, ContextFocus),
+                        Value = FhirTriplet.SctCovid.Concept,
+                    },
+                },
+                Type = new List<CodeableConcept>()
+                {
+                    FhirTriplet.MeasureTypeStructure.Concept,
+                },
+                RelatedArtifact = new List<RelatedArtifact>(),
+                Group = new List<Measure.GroupComponent>(),
+                Scoring = FhirTriplet.ScoringCohort.Concept,
+            };
+
+            measure.RelatedArtifact.AddRange(_femaMeasureInfoByName[FemaTestsOrderedToday].Artifacts);
+
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedToday].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedTotal].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsWithResultsToday].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaSpecimensRejectedTotal].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsCompletedTotal].MeasureGroup);
+
+            measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Today].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Total].MeasureGroup);
+
+            measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveToday].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveTotal].MeasureGroup);
 
             return measure;
         }
@@ -484,10 +560,12 @@ namespace generator_cli.Generators
             _cdcCompleteMeasure = BuildCdcCompleteMeasure();
 
             // build FEMA measures
-            foreach (MeasureInfo info in _femaMeasureInfo)
+            foreach (MeasureInfo info in _femaMeasureInfoByName.Values)
             {
                 _femaMeasures.Add(info.Name, BuildMeasure(info));
             }
+
+            _femaCompleteMeasure = BuildFemaCompleteMeasure();
         }
 
         /// <summary>Cdc measure.</summary>
@@ -523,9 +601,34 @@ namespace generator_cli.Generators
             return _femaMeasures[name];
         }
 
+        /// <summary>Fema complete measure.</summary>
+        /// <returns>A Measure.</returns>
+        public static Measure FemaCompleteMeasure()
+        {
+            return _femaCompleteMeasure;
+        }
+
         /// <summary>Gets report bundle.</summary>
         /// <returns>The report bundle.</returns>
-        public static Bundle GetCompleteMeasureBundle()
+        public static Bundle GetCdcMeasureBundle()
+        {
+            return GetBundleForMeasure(_cdcCompleteMeasure, "sanerCDC");
+        }
+
+        /// <summary>Gets fema measure bundle.</summary>
+        /// <returns>The fema measure bundle.</returns>
+        public static Bundle GetFemaMeasureBundle()
+        {
+            return GetBundleForMeasure(_femaCompleteMeasure, "sanerFEMA");
+        }
+
+        /// <summary>Gets bundle for measure.</summary>
+        /// <param name="measure">The measure.</param>
+        /// <param name="id">     The identifier.</param>
+        /// <returns>The bundle for measure.</returns>
+        private static Bundle GetBundleForMeasure(
+            Measure measure,
+            string id)
         {
             string bundleId = FhirGenerator.NextId;
 
@@ -541,8 +644,8 @@ namespace generator_cli.Generators
             bundle.Entry = new List<Bundle.EntryComponent>();
 
             bundle.AddResourceEntry(
-                _cdcCompleteMeasure,
-                $"{SystemLiterals.Internal}Measure/sanerCDC");
+                measure,
+                $"{SystemLiterals.Internal}MeasureReport/{id}");
 
             return bundle;
         }

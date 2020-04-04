@@ -1,103 +1,13 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-21",
+  "id": "FHIR-24",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-21"
+    "value": "FHIR-24"
   },
   "type": "collection",
-  "timestamp": "2020-04-03T16:35:38.5059248-05:00",
+  "timestamp": "2020-04-04T14:57:30.1059261-05:00",
   "entry": [
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-22",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-22",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numTotBeds",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-03T16:35:38.5059396-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 25
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-23",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-23",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numbeds",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-03T16:35:38.5059581-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 21
-            }
-          }
-        ]
-      }
-    },
-    {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-24",
-      "resource": {
-        "resourceType": "MeasureReport",
-        "id": "FHIR-24",
-        "status": "complete",
-        "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numBedsOcc",
-        "subject": {
-          "reference": "Location/Loc-Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "date": "2020-04-03T16:35:38.5059654-05:00",
-        "reporter": {
-          "reference": "Organization/Org-5763",
-          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
-        },
-        "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
-        },
-        "group": [
-          {
-            "measureScore": {
-              "value": 6
-            }
-          }
-        ]
-      }
-    },
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-25",
       "resource": {
@@ -105,24 +15,24 @@
         "id": "FHIR-25",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBeds",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numTotBeds",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5059721-05:00",
+        "date": "2020-04-04T14:57:30.1059437-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 4
+              "value": 25
             }
           }
         ]
@@ -135,24 +45,24 @@
         "id": "FHIR-26",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBedsOcc",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numbeds",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.505978-05:00",
+        "date": "2020-04-04T14:57:30.1059617-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 21
             }
           }
         ]
@@ -165,24 +75,24 @@
         "id": "FHIR-27",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVent",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numBedsOcc",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5059846-05:00",
+        "date": "2020-04-04T14:57:30.1059793-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 1
+              "value": 6
             }
           }
         ]
@@ -195,24 +105,24 @@
         "id": "FHIR-28",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVentUse",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBeds",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5059905-05:00",
+        "date": "2020-04-04T14:57:30.1059861-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 1
+              "value": 4
             }
           }
         ]
@@ -225,24 +135,24 @@
         "id": "FHIR-29",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HospPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBedsOcc",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5059966-05:00",
+        "date": "2020-04-04T14:57:30.1059951-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 3
+              "value": 0
             }
           }
         ]
@@ -255,19 +165,19 @@
         "id": "FHIR-30",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19MechVentPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVent",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5060028-05:00",
+        "date": "2020-04-04T14:57:30.1060041-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
@@ -285,24 +195,24 @@
         "id": "FHIR-31",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HOPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVentUse",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5060085-05:00",
+        "date": "2020-04-04T14:57:30.1060101-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 1
             }
           }
         ]
@@ -315,24 +225,24 @@
         "id": "FHIR-32",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OverflowPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HospPats",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5060149-05:00",
+        "date": "2020-04-04T14:57:30.1060189-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
             "measureScore": {
-              "value": 0
+              "value": 3
             }
           }
         ]
@@ -345,19 +255,19 @@
         "id": "FHIR-33",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OFMechVentPats",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19MechVentPats",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5060206-05:00",
+        "date": "2020-04-04T14:57:30.1060246-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
@@ -375,19 +285,109 @@
         "id": "FHIR-34",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19Died",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HOPats",
         "subject": {
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-03T16:35:38.5060348-05:00",
+        "date": "2020-04-04T14:57:30.1060323-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-01",
-          "end": "2020-04-01"
+          "start": "2020-04-02",
+          "end": "2020-04-02"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-35",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-35",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OverflowPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-04T14:57:30.1060437-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-04-02",
+          "end": "2020-04-02"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-36",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-36",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OFMechVentPats",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-04T14:57:30.1060525-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-04-02",
+          "end": "2020-04-02"
+        },
+        "group": [
+          {
+            "measureScore": {
+              "value": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-37",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "FHIR-37",
+        "status": "complete",
+        "type": "summary",
+        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19Died",
+        "subject": {
+          "reference": "Location/Loc-Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "date": "2020-04-04T14:57:30.1060585-05:00",
+        "reporter": {
+          "reference": "Organization/Org-5763",
+          "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
+        },
+        "period": {
+          "start": "2020-04-02",
+          "end": "2020-04-02"
         },
         "group": [
           {
