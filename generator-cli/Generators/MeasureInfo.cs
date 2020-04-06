@@ -23,15 +23,27 @@ namespace generator_cli.Generators
         public const string SanerCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
 
         /// <summary>List of cdc documents.</summary>
-        public static readonly List<string> CdcDocumentList = new List<string>()
+        public static readonly List<RelatedArtifact> CdcDocuments = new List<RelatedArtifact>()
         {
-            "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+            new RelatedArtifact()
+            {
+                Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+                Label = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+                Display = "NHSN COVID-19 Patient Module Denominator Import File Format",
+            },
         };
 
         /// <summary>List of fema documents.</summary>
-        public static readonly List<string> FemaDocumentList = new List<string>()
+        public static readonly List<RelatedArtifact> FemaDocuments = new List<RelatedArtifact>()
         {
-            "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
+            new RelatedArtifact()
+                {
+                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                    Url = "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
+                    Label = "FEMA Template for Daily Hospital COVID-19 Reporting",
+                    Display = "FEMA Template for Daily Hospital COVID-19 Reporting",
+                },
         };
 
         /// <summary>Initializes a new instance of the <see cref="MeasureInfo"/> class.</summary>
@@ -110,28 +122,19 @@ namespace generator_cli.Generators
         {
             get
             {
-                switch (Source)
+                return Source switch
                 {
-                    case MeasureSource.CDC:
-                        return CdcCanonicalUrl;
-
-                    case MeasureSource.FEMA:
-                        return FemaCanonicalUrl;
-
-                    case MeasureSource.SANER:
-                        return SanerCanonicalUrl;
-
-                    default:
-                        break;
-                }
-
-                return null;
+                    MeasureSource.CDC => CdcCanonicalUrl,
+                    MeasureSource.FEMA => FemaCanonicalUrl,
+                    MeasureSource.SANER => SanerCanonicalUrl,
+                    _ => null,
+                };
             }
         }
 
         /// <summary>Gets the group the measure belongs to.</summary>
         /// <value>The measure group.</value>
-        public Measure.GroupComponent MeasureGroup
+        public Measure.GroupComponent MeasureGroupCohort
         {
             get
             {
@@ -214,52 +217,114 @@ namespace generator_cli.Generators
             }
         }
 
+        /// <summary>Gets the measure group proportion.</summary>
+        /// <value>The measure group proportion.</value>
+        public Measure.GroupComponent MeasureGroupProportion
+        {
+            get
+            {
+                Measure.GroupComponent component = null;
+
+                switch (Style)
+                {
+                    case MeasureStyle.Count:
+                        component = new Measure.GroupComponent()
+                        {
+                            Code = new CodeableConcept(
+                                CdcCanonicalUrl,
+                                Name,
+                                Description),
+                            Population = new List<Measure.PopulationComponent>()
+                            {
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.Numerator.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = CriteriaDescription,
+                                        Language = "text/plain",
+                                        Expression_ = Description,
+                                    },
+                                },
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.Denominator.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = "One",
+                                        Language = "text/plain",
+                                        Expression_ = "One",
+                                    },
+                                },
+                            },
+                        };
+
+                        break;
+                    case MeasureStyle.Ratio:
+                        SplitForRatio(
+                            CriteriaDescription,
+                            out string numeratorCriteria,
+                            out string denominatorCriteria);
+
+                        SplitForRatio(
+                            Description,
+                            out string numeratorDescription,
+                            out string denominatorDescription);
+
+                        component = new Measure.GroupComponent()
+                        {
+                            Code = new CodeableConcept(
+                                CdcCanonicalUrl,
+                                Name,
+                                Description),
+                            Population = new List<Measure.PopulationComponent>()
+                            {
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.Numerator.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = numeratorCriteria,
+                                        Language = "text/plain",
+                                        Expression_ = numeratorDescription,
+                                    },
+                                },
+                                new Measure.PopulationComponent()
+                                {
+                                    Code = FhirTriplet.Denominator.Concept,
+                                    Criteria = new Expression()
+                                    {
+                                        Description = denominatorCriteria,
+                                        Language = "text/plain",
+                                        Expression_ = denominatorDescription,
+                                    },
+                                },
+                            },
+                        };
+
+                        break;
+
+                    default:
+                        break;
+                }
+
+                return component;
+            }
+        }
+
         /// <summary>Gets information describing the criteria.</summary>
         /// <value>Information describing the criteria.</value>
         public string CriteriaDescription
         {
             get
             {
-                switch (Source)
+                return Source switch
                 {
-                    case MeasureSource.CDC:
-                        return $"CDC defined field: {Name}";
-
-                    case MeasureSource.FEMA:
-                        return $"FEMA defined field: {Name}";
-
-                    case MeasureSource.SANER:
-                        return $"SANER defined Measure: {Name}";
-
-                    default:
-                        break;
-                }
-
-                return Description;
-            }
-        }
-
-        /// <summary>Gets the documents.</summary>
-        /// <value>The documents.</value>
-        public List<string> DocumentUrls
-        {
-            get
-            {
-                switch (Source)
-                {
-                    case MeasureSource.CDC:
-                        return CdcDocumentList;
-
-                    case MeasureSource.FEMA:
-                        return FemaDocumentList;
-
-                    case MeasureSource.SANER:
-                        break;
-                    default:
-                        break;
-                }
-
-                return null;
+                    MeasureSource.CDC => $"CDC defined field: {Name}",
+                    MeasureSource.FEMA => $"FEMA defined field: {Name}",
+                    MeasureSource.SANER => $"SANER defined Measure: {Name}",
+                    _ => Description,
+                };
             }
         }
 
@@ -269,58 +334,13 @@ namespace generator_cli.Generators
         {
             get
             {
-                List<RelatedArtifact> artifactList = new List<RelatedArtifact>();
-
-                foreach (string relatedDocumentUrl in DocumentUrls)
+                return Source switch
                 {
-                    switch (Source)
-                    {
-                        case MeasureSource.CDC:
-                            artifactList.Add(
-                                new RelatedArtifact()
-                                {
-                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                                    Url = relatedDocumentUrl,
-                                    Label = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-                                    Display = "NHSN COVID-19 Patient Module Denominator Import File Format",
-                                });
-                            break;
-
-                        case MeasureSource.FEMA:
-                            artifactList.Add(
-                                new RelatedArtifact()
-                                {
-                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                                    Url = relatedDocumentUrl,
-                                    Label = "FEMA Template for Daily Hospital COVID-19 Reporting",
-                                    Display = "FEMA Template for Daily Hospital COVID-19 Reporting",
-                                });
-                            break;
-                        case MeasureSource.SANER:
-                            artifactList.Add(
-                                new RelatedArtifact()
-                                {
-                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                                    Url = relatedDocumentUrl,
-                                });
-                            break;
-                        default:
-                            artifactList.Add(
-                                new RelatedArtifact()
-                                {
-                                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                                    Url = relatedDocumentUrl,
-                                });
-                            break;
-                    }
-                }
-
-                if (artifactList.Count == 0)
-                {
-                    return null;
-                }
-
-                return artifactList;
+                    MeasureSource.CDC => CdcDocuments,
+                    MeasureSource.FEMA => FemaDocuments,
+                    MeasureSource.SANER => null,
+                    _ => null,
+                };
             }
         }
 

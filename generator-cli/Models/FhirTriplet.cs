@@ -205,6 +205,13 @@ namespace generator_cli.Models
             "outcome",
             "Outcome");
 
+        /// <summary>Gets the measure type composite.</summary>
+        /// <value>The measure type composite.</value>
+        public static FhirTriplet MeasureTypeComposite => new FhirTriplet(
+            "http://terminology.hl7.org/CodeSystem/measure-type",
+            "composite",
+            "Composite");
+
         /// <summary>Gets the numerator.</summary>
         /// <value>The numerator.</value>
         public static FhirTriplet Numerator => new FhirTriplet(
@@ -231,7 +238,7 @@ namespace generator_cli.Models
         public static FhirTriplet ScoringProportion => new FhirTriplet(
             "http://terminology.hl7.org/CodeSystem/measure-scoring",
             "proportion",
-            "proportion");
+            "Proportion");
 
         /// <summary>Gets the scoring ratio.</summary>
         /// <value>The scoring ratio.</value>

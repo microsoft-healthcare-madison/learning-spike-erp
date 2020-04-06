@@ -319,7 +319,7 @@ namespace generator_cli.Generators
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = _scoresByGroupCode[groupName].Numerator,
+                                Count = _scoresByGroupCode[groupName].Numerator ?? (int)_scoresByGroupCode[groupName].MeasureScore,
                             });
                             break;
 
@@ -327,7 +327,7 @@ namespace generator_cli.Generators
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = _scoresByGroupCode[groupName].Denominator,
+                                Count = _scoresByGroupCode[groupName].Denominator ?? 1,
                             });
                             break;
                     }
