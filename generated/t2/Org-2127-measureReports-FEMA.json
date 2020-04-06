@@ -6,7 +6,7 @@
     "value": "FHIR-553"
   },
   "type": "collection",
-  "timestamp": "2020-04-06T10:10:47.4365799-05:00",
+  "timestamp": "2020-04-06T10:48:36.6879193-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-554",
@@ -20,7 +20,7 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-06T10:10:47.4366036-05:00",
+        "date": "2020-04-06T10:48:36.6879396-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
@@ -224,6 +224,86 @@
             ],
             "measureScore": {
               "value": 59
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "percentPositiveAmongNewlyResultedTests"
+                }
+              ],
+              "text": "# of new positive test results / # of total new tests released for previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 10
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 20
+              }
+            ],
+            "measureScore": {
+              "value": 0.5
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativePercentPositiveAmongResultedTests"
+                }
+              ],
+              "text": "# of total positive results to released date / # of total test results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 59
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 118
+              }
+            ],
+            "measureScore": {
+              "value": 0.5
             }
           }
         ]

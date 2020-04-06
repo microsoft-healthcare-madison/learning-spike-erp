@@ -15,7 +15,7 @@ namespace generator_cli.Generators
     public static class MeasureGenerator
     {
         /// <summary>The measure version.</summary>
-        private const string MeasureVersion = "20200406.01";
+        private const string MeasureVersion = "20200406.02";
 
         /// <summary>The publication date.</summary>
         private const string PublicationDate = "2020-04-06T00:00:00Z";
@@ -471,9 +471,8 @@ namespace generator_cli.Generators
             measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Today].MeasureGroup);
             measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Total].MeasureGroup);
 
-            // cannot add ratios to cohort type measures
-            // measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveToday].MeasureGroup);
-            // measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveTotal].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveToday].MeasureGroup);
+            measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveTotal].MeasureGroup);
 
             return measure;
         }

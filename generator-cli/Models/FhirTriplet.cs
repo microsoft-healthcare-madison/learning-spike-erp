@@ -194,14 +194,14 @@ namespace generator_cli.Models
         /// <summary>Gets the measure type structure.</summary>
         /// <value>The measure type structure.</value>
         public static FhirTriplet MeasureTypeStructure => new FhirTriplet(
-            "http://hl7.org/fhir/ValueSet/measure-type",
+            "http://terminology.hl7.org/CodeSystem/measure-type",
             "structure",
             "Structure");
 
         /// <summary>Gets the measure type outcome.</summary>
         /// <value>The measure type outcome.</value>
         public static FhirTriplet MeasureTypeOutcome => new FhirTriplet(
-            "http://hl7.org/fhir/ValueSet/measure-type",
+            "http://terminology.hl7.org/CodeSystem/measure-type",
             "outcome",
             "Outcome");
 

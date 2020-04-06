@@ -6,7 +6,7 @@
     "value": "FHIR-3"
   },
   "type": "collection",
-  "timestamp": "2020-04-06T10:10:46.7332743-05:00",
+  "timestamp": "2020-04-06T10:48:35.9664024-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/sanerCDC",
@@ -14,7 +14,7 @@
         "resourceType": "Measure",
         "id": "sanerCDC",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
-        "version": "20200406.01",
+        "version": "20200406.02",
         "name": "sanerCDC",
         "title": "CDC Measurement Group",
         "status": "draft",
@@ -78,7 +78,7 @@
           {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/ValueSet/measure-type",
+                "system": "http://terminology.hl7.org/CodeSystem/measure-type",
                 "code": "structure",
                 "display": "Structure"
               }
