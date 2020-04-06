@@ -6,7 +6,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-04-04T14:57:30.041663-05:00",
+  "timestamp": "2020-04-06T10:10:46.7470427-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/sanerFEMA",
@@ -14,7 +14,7 @@
         "resourceType": "Measure",
         "id": "sanerFEMA",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
-        "version": "20200403.04",
+        "version": "20200406.01",
         "name": "sanerFEMA",
         "title": "FEMA Measurement Group",
         "status": "draft",
@@ -26,7 +26,7 @@
             }
           ]
         },
-        "date": "2020-04-03T00:00:00Z",
+        "date": "2020-04-06T00:00:00Z",
         "publisher": "SANER-IG",
         "description": "FEMA Measurement Group",
         "useContext": [
@@ -285,96 +285,6 @@
                   "description": "FEMA defined field: cumulativePositiveC19Tests",
                   "language": "text/plain",
                   "expression": "All positivetest results released to date."
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
-                  "code": "percentPositiveAmongNewlyResultedTests"
-                }
-              ],
-              "text": "# of new positive test results / # of total new tests released for previous date queried."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "FEMA defined field: percentPositiveAmongNewlyResultedTests",
-                  "language": "text/plain",
-                  "expression": "# of new positive test results"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "FEMA defined field: percentPositiveAmongNewlyResultedTests",
-                  "language": "text/plain",
-                  "expression": "# of total new tests released for previous date queried."
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
-                  "code": "cumulativePercentPositiveAmongResultedTests"
-                }
-              ],
-              "text": "# of total positive results to released date / # of total test results released to date."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "FEMA defined field: cumulativePercentPositiveAmongResultedTests",
-                  "language": "text/plain",
-                  "expression": "# of total positive results to released date"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "FEMA defined field: cumulativePercentPositiveAmongResultedTests",
-                  "language": "text/plain",
-                  "expression": "# of total test results released to date."
                 }
               }
             ]
