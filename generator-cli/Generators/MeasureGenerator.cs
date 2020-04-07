@@ -15,10 +15,10 @@ namespace generator_cli.Generators
     public static class MeasureGenerator
     {
         /// <summary>The measure version.</summary>
-        private const string MeasureVersion = "20200406.02";
+        private const string MeasureVersion = "20200407.02";
 
         /// <summary>The publication date.</summary>
-        private const string PublicationDate = "2020-04-06T00:00:00Z";
+        private const string PublicationDate = "2020-04-07T00:00:00Z";
 
         /// <summary>The publisher.</summary>
         private const string Publisher = "SANER-IG";
@@ -399,26 +399,26 @@ namespace generator_cli.Generators
                 },
                 RelatedArtifact = new List<RelatedArtifact>(),
                 Group = new List<Measure.GroupComponent>(),
-                Scoring = FhirTriplet.ScoringCohort.Concept,
+                //Scoring = FhirTriplet.ScoringCohort.Concept,
             };
 
             measure.RelatedArtifact.AddRange(_cdcMeasureInfoByName[CDCTotalBeds].Artifacts);
 
-            measure.Group.Add(_cdcMeasureInfoByName[CDCTotalBeds].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBeds].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBedOccupancy].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCIcuBeds].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCIcuBedOccupancy].MeasureGroupProportion);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCTotalBeds].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBeds].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBedOccupancy].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCIcuBeds].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCIcuBedOccupancy].MeasureGroupCohort);
 
-            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilators].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilatorsInUse].MeasureGroupProportion);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilators].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilatorsInUse].MeasureGroupCohort);
 
-            measure.Group.Add(_cdcMeasureInfoByName[CDCHospitalizedPatients].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilatedPatients].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCHospitalOnset].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingBeds].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingVentilators].MeasureGroupProportion);
-            measure.Group.Add(_cdcMeasureInfoByName[CDCDied].MeasureGroupProportion);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCHospitalizedPatients].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCVentilatedPatients].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCHospitalOnset].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingBeds].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCAwaitingVentilators].MeasureGroupCohort);
+            measure.Group.Add(_cdcMeasureInfoByName[CDCDied].MeasureGroupCohort);
 
             return measure;
         }
@@ -453,7 +453,7 @@ namespace generator_cli.Generators
                 },
                 RelatedArtifact = new List<RelatedArtifact>(),
                 Group = new List<Measure.GroupComponent>(),
-                Scoring = FhirTriplet.ScoringProportion.Concept,
+                //Scoring = FhirTriplet.ScoringProportion.Concept,
                 Type = new List<CodeableConcept>()
                 {
                     FhirTriplet.MeasureTypeComposite.Concept,
@@ -462,14 +462,14 @@ namespace generator_cli.Generators
 
             measure.RelatedArtifact.AddRange(_femaMeasureInfoByName[FemaTestsOrderedToday].Artifacts);
 
-            measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedToday].MeasureGroupProportion);
-            measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedTotal].MeasureGroupProportion);
-            measure.Group.Add(_femaMeasureInfoByName[FemaTestsWithResultsToday].MeasureGroupProportion);
-            measure.Group.Add(_femaMeasureInfoByName[FemaSpecimensRejectedTotal].MeasureGroupProportion);
-            measure.Group.Add(_femaMeasureInfoByName[FemaTestsCompletedTotal].MeasureGroupProportion);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedToday].MeasureGroupCohort);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedTotal].MeasureGroupCohort);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsWithResultsToday].MeasureGroupCohort);
+            measure.Group.Add(_femaMeasureInfoByName[FemaSpecimensRejectedTotal].MeasureGroupCohort);
+            measure.Group.Add(_femaMeasureInfoByName[FemaTestsCompletedTotal].MeasureGroupCohort);
 
-            measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Today].MeasureGroupProportion);
-            measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Total].MeasureGroupProportion);
+            measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Today].MeasureGroupCohort);
+            measure.Group.Add(_femaMeasureInfoByName[FemaPositiveC19Total].MeasureGroupCohort);
 
             measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveToday].MeasureGroupProportion);
             measure.Group.Add(_femaMeasureInfoByName[FemaPercentC19PositiveTotal].MeasureGroupProportion);

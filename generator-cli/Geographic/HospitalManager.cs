@@ -95,6 +95,11 @@ namespace generator_cli.Geographic
                         }
 
                         _hospitalsByState[hosp.STATE].Add(hosp);
+
+                        if ((hosp.STATE == "WI") && (hosp.COUNTY == "DANE"))
+                        {
+                            Console.WriteLine($"{hosp.NAME} - {hosp.ADDRESS} {hosp.CITY}, {hosp.STATE}, {hosp.ZIP}");
+                        }
                     }
                 }
             }
