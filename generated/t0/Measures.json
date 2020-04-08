@@ -6,7 +6,7 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-04-07T17:02:51.8536699-05:00",
+  "timestamp": "2020-04-08T10:44:02.8915447-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/numTotBeds",
@@ -14,7 +14,7 @@
         "resourceType": "Measure",
         "id": "numTotBeds",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numTotBeds",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numTotBeds",
         "title": "All Hospital Beds",
         "status": "draft",
@@ -26,8 +26,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.",
         "useContext": [
           {
@@ -60,9 +60,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -115,7 +146,7 @@
         "resourceType": "Measure",
         "id": "numbeds",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numbeds",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numbeds",
         "title": "Hospital Inpatient Beds",
         "status": "draft",
@@ -127,8 +158,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
         "useContext": [
           {
@@ -161,9 +192,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -216,7 +278,7 @@
         "resourceType": "Measure",
         "id": "numBedsOcc",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numBedsOcc",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numBedsOcc",
         "title": "Hospital Inpatient Bed Occupancy",
         "status": "draft",
@@ -228,8 +290,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Total number of staffed inpatient beds that are occupied.",
         "useContext": [
           {
@@ -262,9 +324,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -317,7 +410,7 @@
         "resourceType": "Measure",
         "id": "numICUBeds",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBeds",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numICUBeds",
         "title": "Hospital ICU Beds",
         "status": "draft",
@@ -329,8 +422,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Total number of staffed inpatient intensive care unit (ICU) beds.",
         "useContext": [
           {
@@ -363,9 +456,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -418,7 +542,7 @@
         "resourceType": "Measure",
         "id": "numICUBedsOcc",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numICUBedsOcc",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numICUBedsOcc",
         "title": "Hospital ICU Bed Occupancy",
         "status": "draft",
@@ -430,8 +554,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Total number of staffed inpatient ICU beds that are occupied.",
         "useContext": [
           {
@@ -464,9 +588,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -519,7 +674,7 @@
         "resourceType": "Measure",
         "id": "numVent",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVent",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numVent",
         "title": "Mechanical Ventilators",
         "status": "draft",
@@ -531,8 +686,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Total number of ventilators available.",
         "useContext": [
           {
@@ -565,9 +720,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -620,7 +806,7 @@
         "resourceType": "Measure",
         "id": "numVentUse",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numVentUse",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numVentUse",
         "title": "Mechanical Ventilators In Use",
         "status": "draft",
@@ -632,8 +818,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Total number of ventilators in use.",
         "useContext": [
           {
@@ -666,9 +852,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -721,7 +938,7 @@
         "resourceType": "Measure",
         "id": "numC19HospPats",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HospPats",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numC19HospPats",
         "title": "COVID-19 Patients Hospitalized",
         "status": "draft",
@@ -733,8 +950,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
         "useContext": [
           {
@@ -767,9 +984,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -822,7 +1070,7 @@
         "resourceType": "Measure",
         "id": "numC19MechVentPats",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19MechVentPats",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numC19MechVentPats",
         "title": "COVID-19 Patients Hospitalized and Ventilated",
         "status": "draft",
@@ -834,8 +1082,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator.",
         "useContext": [
           {
@@ -868,9 +1116,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -923,7 +1202,7 @@
         "resourceType": "Measure",
         "id": "numC19HOPats",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19HOPats",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numC19HOPats",
         "title": "COVID-19 Hospital Onset",
         "status": "draft",
@@ -935,8 +1214,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization.",
         "useContext": [
           {
@@ -969,9 +1248,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -1024,7 +1334,7 @@
         "resourceType": "Measure",
         "id": "numC19OverflowPats",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OverflowPats",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numC19OverflowPats",
         "title": "ED/Overflow",
         "status": "draft",
@@ -1036,8 +1346,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
         "useContext": [
           {
@@ -1070,9 +1380,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -1125,7 +1466,7 @@
         "resourceType": "Measure",
         "id": "numC19OFMechVentPats",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19OFMechVentPats",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numC19OFMechVentPats",
         "title": "ED/Overflow and Ventilated",
         "status": "draft",
@@ -1137,8 +1478,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
         "useContext": [
           {
@@ -1171,9 +1512,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {
@@ -1226,7 +1598,7 @@
         "resourceType": "Measure",
         "id": "numC19Died",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/numC19Died",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "numC19Died",
         "title": "COVID-19 Patients Died",
         "status": "draft",
@@ -1238,8 +1610,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
         "useContext": [
           {
@@ -1272,9 +1644,40 @@
         "relatedArtifact": [
           {
             "type": "documentation",
+            "label": "COVID-19 Patient Impact & Hospital Capacity Module",
+            "display": "The Module enables hospitals to report daily counts of patients with suspected and confirmed COVID-19 diagnoses and current use and availability of hospital beds and mechanical ventilators.",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
             "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-            "display": "NHSN COVID-19 Patient Module Denominator Import File Format",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+              "creation": "27-Mar-2020"
+            }
+          },
+          {
+            "type": "documentation",
+            "label": "covi19-test-csv-import",
+            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
+            "document": {
+              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+              "creation": "27-Mar-2020"
+            }
           }
         ],
         "scoring": {

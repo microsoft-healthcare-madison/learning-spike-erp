@@ -22,28 +22,79 @@ namespace generator_cli.Generators
         /// <summary>The canonical URL base.</summary>
         public const string SanerCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
 
+        /// <summary>The cdc citation.</summary>
+        private static readonly Markdown _cdcCitation = new Markdown(
+            "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)");
+
+        private static readonly Markdown _femaCitation = new Markdown(
+            "Federal Emergency Management Agency (FEMA)");
+
         /// <summary>List of cdc documents.</summary>
-        public static readonly List<RelatedArtifact> CdcDocuments = new List<RelatedArtifact>()
+        public static readonly List<RelatedArtifact> CdcArtifacts = new List<RelatedArtifact>()
         {
             new RelatedArtifact()
             {
                 Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+                Label = "COVID-19 Patient Impact & Hospital Capacity Module",
+                Display = "The Module enables hospitals to report daily counts of patients with " +
+                    "suspected and confirmed COVID-19 diagnoses and current use and availability of hospital " +
+                    "beds and mechanical ventilators.",
+                Citation = _cdcCitation,
+                Document = new Attachment()
+                {
+                    Url = "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
+                    Creation = "27-Mar-2020",
+                },
+            },
+            new RelatedArtifact()
+            {
+                Type = RelatedArtifact.RelatedArtifactType.Documentation,
                 Label = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-                Display = "NHSN COVID-19 Patient Module Denominator Import File Format",
+                Citation = _cdcCitation,
+                Document = new Attachment()
+                {
+                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
+                    Creation = "27-Mar-2020",
+                },
+            },
+            new RelatedArtifact()
+            {
+                Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                Label = "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+                Citation = _cdcCitation,
+                Document = new Attachment()
+                {
+                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
+                    Creation = "27-Mar-2020",
+                },
+            },
+            new RelatedArtifact()
+            {
+                Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                Label = "covi19-test-csv-import",
+                Citation = _cdcCitation,
+                Document = new Attachment()
+                {
+                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
+                    Creation = "27-Mar-2020",
+                },
             },
         };
 
         /// <summary>List of fema documents.</summary>
-        public static readonly List<RelatedArtifact> FemaDocuments = new List<RelatedArtifact>()
+        public static readonly List<RelatedArtifact> FemaArtifacts = new List<RelatedArtifact>()
         {
             new RelatedArtifact()
+            {
+                Type = RelatedArtifact.RelatedArtifactType.Documentation,
+                Label = "Template for daily Hospital COVID-19 Reporting",
+                Citation = _femaCitation,
+                Document = new Attachment()
                 {
-                    Type = RelatedArtifact.RelatedArtifactType.Documentation,
                     Url = "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
-                    Label = "FEMA Template for Daily Hospital COVID-19 Reporting",
-                    Display = "FEMA Template for Daily Hospital COVID-19 Reporting",
+                    Creation = "29-Mar-2020",
                 },
+            },
         };
 
         /// <summary>Initializes a new instance of the <see cref="MeasureInfo"/> class.</summary>
@@ -336,8 +387,8 @@ namespace generator_cli.Generators
             {
                 return Source switch
                 {
-                    MeasureSource.CDC => CdcDocuments,
-                    MeasureSource.FEMA => FemaDocuments,
+                    MeasureSource.CDC => CdcArtifacts,
+                    MeasureSource.FEMA => FemaArtifacts,
                     MeasureSource.SANER => null,
                     _ => null,
                 };

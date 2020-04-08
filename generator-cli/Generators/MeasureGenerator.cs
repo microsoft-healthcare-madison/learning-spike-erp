@@ -15,13 +15,13 @@ namespace generator_cli.Generators
     public static class MeasureGenerator
     {
         /// <summary>The measure version.</summary>
-        private const string MeasureVersion = "20200407.02";
+        private const string MeasureVersion = "20200408.03";
 
         /// <summary>The publication date.</summary>
-        private const string PublicationDate = "2020-04-07T00:00:00Z";
+        private const string PublicationDate = "2020-04-08T00:00:00Z";
 
         /// <summary>The publisher.</summary>
-        private const string Publisher = "SANER-IG";
+        private const string Publisher = "HL7 SANER-IG";
 
         /// <summary>The cdc grouped measures.</summary>
         private static Measure _cdcCompleteMeasure = null;
@@ -402,7 +402,7 @@ namespace generator_cli.Generators
                 //Scoring = FhirTriplet.ScoringCohort.Concept,
             };
 
-            measure.RelatedArtifact.AddRange(_cdcMeasureInfoByName[CDCTotalBeds].Artifacts);
+            measure.RelatedArtifact.AddRange(MeasureInfo.CdcArtifacts);
 
             measure.Group.Add(_cdcMeasureInfoByName[CDCTotalBeds].MeasureGroupCohort);
             measure.Group.Add(_cdcMeasureInfoByName[CDCInpatientBeds].MeasureGroupCohort);
@@ -460,7 +460,7 @@ namespace generator_cli.Generators
                 },
             };
 
-            measure.RelatedArtifact.AddRange(_femaMeasureInfoByName[FemaTestsOrderedToday].Artifacts);
+            measure.RelatedArtifact.AddRange(MeasureInfo.FemaArtifacts);
 
             measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedToday].MeasureGroupCohort);
             measure.Group.Add(_femaMeasureInfoByName[FemaTestsOrderedTotal].MeasureGroupCohort);

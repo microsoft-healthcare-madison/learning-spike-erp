@@ -6,7 +6,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-04-07T17:02:52.7127681-05:00",
+  "timestamp": "2020-04-08T10:44:03.7780055-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/sanerFEMA",
@@ -14,7 +14,7 @@
         "resourceType": "Measure",
         "id": "sanerFEMA",
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
-        "version": "20200407.02",
+        "version": "20200408.03",
         "name": "sanerFEMA",
         "title": "FEMA Measurement Group",
         "status": "draft",
@@ -26,8 +26,8 @@
             }
           ]
         },
-        "date": "2020-04-07T00:00:00Z",
-        "publisher": "SANER-IG",
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
         "description": "FEMA Measurement Group",
         "useContext": [
           {
@@ -60,9 +60,12 @@
         "relatedArtifact": [
           {
             "type": "documentation",
-            "label": "FEMA Template for Daily Hospital COVID-19 Reporting",
-            "display": "FEMA Template for Daily Hospital COVID-19 Reporting",
-            "url": "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx"
+            "label": "Template for daily Hospital COVID-19 Reporting",
+            "citation": "Federal Emergency Management Agency (FEMA)",
+            "document": {
+              "url": "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
+              "creation": "29-Mar-2020"
+            }
           }
         ],
         "type": [
