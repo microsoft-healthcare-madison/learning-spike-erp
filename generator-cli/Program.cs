@@ -241,10 +241,12 @@ namespace generator_cli
         {
             // write measures only in t0
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}{_extension}"),
-                MeasureGenerator.GetMeasureBundle());
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC{_extension}"),
+                MeasureGenerator.GetCdcMeasureBundle());
 
-            WriteGroupedMeasureBundles(Path.Combine(outputDirectory, "t0"));
+            WriteBundle(
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA{_extension}"),
+                MeasureGenerator.GetFemaMeasureBundle());
 
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)
@@ -278,19 +280,6 @@ namespace generator_cli
             }
         }
 
-        /// <summary>Writes a grouped measure bundles.</summary>
-        /// <param name="dir">The dir.</param>
-        private static void WriteGroupedMeasureBundles(string dir)
-        {
-            WriteBundle(
-                Path.Combine(dir, $"{_filenameBaseForMeasures}-CDC{_extension}"),
-                MeasureGenerator.GetCdcMeasureBundle());
-
-            WriteBundle(
-                Path.Combine(dir, $"{_filenameBaseForMeasures}-FEMA{_extension}"),
-                MeasureGenerator.GetFemaMeasureBundle());
-        }
-
         /// <summary>Writes an organization reports.</summary>
         /// <param name="orgId"> The organization.</param>
         /// <param name="dir">   The dir.</param>
@@ -300,8 +289,6 @@ namespace generator_cli
             string dir,
             Period period)
         {
-            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForMeasureReports}{_extension}");
-
             MeasureReportGenerator reportGen = new MeasureReportGenerator(
                 _orgById[orgId],
                 _rootLocationByOrgId[orgId],
@@ -309,8 +296,6 @@ namespace generator_cli
                 _patientDataByOrgId[orgId],
                 _testDataByOrgId[orgId],
                 period);
-
-            WriteBundle(filename, reportGen.GetReportBundle());
 
             WriteBundle(
                 Path.Combine(dir, $"{orgId}-measureReports-CDC{_extension}"),

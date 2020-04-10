@@ -265,13 +265,6 @@ namespace generator_cli.Generators
                     $"{_org.ResourceType}/{_org.Id}",
                     _org.Name),
                 Group = new List<MeasureReport.GroupComponent>(),
-                Contained = new List<Resource>()
-                {
-                    new Location()
-                    {
-                        Position = _location.Position,
-                    },
-                },
             };
 
             foreach (Measure.GroupComponent measureGroup in measure.Group)

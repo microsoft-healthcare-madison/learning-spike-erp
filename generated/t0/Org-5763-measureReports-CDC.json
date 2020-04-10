@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-20",
+  "id": "FHIR-5",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-20"
+    "value": "FHIR-5"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:03.8304765-05:00",
+  "timestamp": "2020-04-10T12:19:25.2708521-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-21",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-6",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-21",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -102.199851834,
-              "latitude": 42.8121775180001
-            }
-          }
-        ],
+        "id": "FHIR-6",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-08T10:44:03.8316377-05:00",
+        "date": "2020-04-10T12:19:25.2730051-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-05",
-          "end": "2020-04-05"
+          "start": "2020-04-07",
+          "end": "2020-04-07"
         },
         "group": [
           {

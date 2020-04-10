@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-352",
+  "id": "FHIR-85",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-352"
+    "value": "FHIR-85"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.2630552-05:00",
+  "timestamp": "2020-04-10T12:19:25.5881841-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-353",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-86",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-353",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -80.323298436,
-              "latitude": 40.712044516
-            }
-          }
-        ],
+        "id": "FHIR-86",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-08T10:44:04.2631317-05:00",
+        "date": "2020-04-10T12:19:25.5883406-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-04-05",
-          "end": "2020-04-05"
+          "start": "2020-04-07",
+          "end": "2020-04-07"
         },
         "group": [
           {

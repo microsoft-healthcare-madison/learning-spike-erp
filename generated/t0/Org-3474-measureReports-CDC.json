@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-130",
+  "id": "FHIR-31",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-130"
+    "value": "FHIR-31"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:03.9775735-05:00",
+  "timestamp": "2020-04-10T12:19:25.3837906-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-131",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-32",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-131",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -88.647368956,
-              "latitude": 37.0506390190001
-            }
-          }
-        ],
+        "id": "FHIR-32",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-3474",
           "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-04-08T10:44:03.9776594-05:00",
+        "date": "2020-04-10T12:19:25.383804-05:00",
         "reporter": {
           "reference": "Organization/Org-3474",
           "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-04-05",
-          "end": "2020-04-05"
+          "start": "2020-04-07",
+          "end": "2020-04-07"
         },
         "group": [
           {

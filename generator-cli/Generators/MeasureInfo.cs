@@ -43,7 +43,7 @@ namespace generator_cli.Generators
                 Document = new Attachment()
                 {
                     Url = "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
-                    Creation = "27-Mar-2020",
+                    Creation = "2020-03-27",
                 },
             },
             new RelatedArtifact()
@@ -54,7 +54,7 @@ namespace generator_cli.Generators
                 Document = new Attachment()
                 {
                     Url = "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
-                    Creation = "27-Mar-2020",
+                    Creation = "2020-03-27",
                 },
             },
             new RelatedArtifact()
@@ -65,7 +65,7 @@ namespace generator_cli.Generators
                 Document = new Attachment()
                 {
                     Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
-                    Creation = "27-Mar-2020",
+                    Creation = "2020-03-27",
                 },
             },
             new RelatedArtifact()
@@ -76,7 +76,7 @@ namespace generator_cli.Generators
                 Document = new Attachment()
                 {
                     Url = "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
-                    Creation = "27-Mar-2020",
+                    Creation = "2020-03-27",
                 },
             },
         };
@@ -92,7 +92,7 @@ namespace generator_cli.Generators
                 Document = new Attachment()
                 {
                     Url = "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
-                    Creation = "29-Mar-2020",
+                    Creation = "2020-03-29",
                 },
             },
         };

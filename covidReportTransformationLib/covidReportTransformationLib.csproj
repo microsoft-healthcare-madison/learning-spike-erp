@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Connected Services\EmergencyCrisisResponse\**" />
+    <EmbeddedResource Remove="Connected Services\EmergencyCrisisResponse\**" />
+    <None Remove="Connected Services\EmergencyCrisisResponse\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" Link="stylecop.json" />
   </ItemGroup>
 
@@ -20,6 +26,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.OData.Client" Version="7.6.4" />
+    <PackageReference Include="Microsoft.OData.Core" Version="7.6.4" />
+    <PackageReference Include="Microsoft.OData.Edm" Version="7.6.4" />
+    <PackageReference Include="Microsoft.Spatial" Version="7.6.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
       <PrivateAssets>all</PrivateAssets>
@@ -29,6 +39,11 @@
 
   <ItemGroup>
     <Folder Include="data\" />
+    <Folder Include="Formats\MicrosoftECR\" />
+    <Folder Include="Formats\CDC\" />
+    <Folder Include="Formats\FEMA\" />
+    <Folder Include="Formats\" />
+    <Folder Include="Formats\SANER\" />
   </ItemGroup>
 
 </Project>

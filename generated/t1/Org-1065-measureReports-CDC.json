@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-478",
+  "id": "FHIR-113",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-478"
+    "value": "FHIR-113"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.4044742-05:00",
+  "timestamp": "2020-04-10T12:19:25.6821519-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-479",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-114",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-479",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -105.000098158,
-              "latitude": 39.5745418340001
-            }
-          }
-        ],
+        "id": "FHIR-114",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-1065",
           "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
-        "date": "2020-04-08T10:44:04.4044956-05:00",
+        "date": "2020-04-10T12:19:25.6821676-05:00",
         "reporter": {
           "reference": "Organization/Org-1065",
           "display": "HEALTHSOUTH REHABILITATION HOSPITAL OF LITTLETON"
         },
         "period": {
-          "start": "2020-04-06",
-          "end": "2020-04-06"
+          "start": "2020-04-08",
+          "end": "2020-04-08"
         },
         "group": [
           {

@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-517",
+  "id": "FHIR-124",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-517"
+    "value": "FHIR-124"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.4512977-05:00",
+  "timestamp": "2020-04-10T12:19:25.7197215-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-518",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-125",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-518",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -95.376879242,
-              "latitude": 45.873891137
-            }
-          }
-        ],
+        "id": "FHIR-125",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
-        "date": "2020-04-08T10:44:04.4513212-05:00",
+        "date": "2020-04-10T12:19:25.7197399-05:00",
         "reporter": {
           "reference": "Organization/Org-2127",
           "display": "DOUGLAS COUNTY HOSPITAL"
         },
         "period": {
-          "start": "2020-04-05",
-          "end": "2020-04-05"
+          "start": "2020-04-07",
+          "end": "2020-04-07"
         },
         "group": [
           {

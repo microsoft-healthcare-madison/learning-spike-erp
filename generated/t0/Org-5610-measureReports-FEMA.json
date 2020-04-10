@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-297",
+  "id": "FHIR-72",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-297"
+    "value": "FHIR-72"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.1990002-05:00",
+  "timestamp": "2020-04-10T12:19:25.5331789-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-298",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-73",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-298",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -83.32365014,
-              "latitude": 42.446340031
-            }
-          }
-        ],
+        "id": "FHIR-73",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-5610",
           "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-04-08T10:44:04.1990227-05:00",
+        "date": "2020-04-10T12:19:25.5332051-05:00",
         "reporter": {
           "reference": "Organization/Org-5610",
           "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-04-05",
-          "end": "2020-04-05"
+          "start": "2020-04-07",
+          "end": "2020-04-07"
         },
         "group": [
           {

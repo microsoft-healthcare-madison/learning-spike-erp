@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-258",
+  "id": "FHIR-61",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-258"
+    "value": "FHIR-61"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.1430204-05:00",
+  "timestamp": "2020-04-10T12:19:25.49281-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-259",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-62",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-259",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -92.977649755,
-              "latitude": 43.6744847590001
-            }
-          }
-        ],
+        "id": "FHIR-62",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-1107",
           "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-04-08T10:44:04.1430383-05:00",
+        "date": "2020-04-10T12:19:25.4928298-05:00",
         "reporter": {
           "reference": "Organization/Org-1107",
           "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-04-06",
-          "end": "2020-04-06"
+          "start": "2020-04-08",
+          "end": "2020-04-08"
         },
         "group": [
           {

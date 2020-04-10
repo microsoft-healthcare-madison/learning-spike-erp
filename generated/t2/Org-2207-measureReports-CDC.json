@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-111",
+  "id": "FHIR-26",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-111"
+    "value": "FHIR-26"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:03.9522829-05:00",
+  "timestamp": "2020-04-10T12:19:25.3651341-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-112",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-27",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-112",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -81.337270844,
-              "latitude": 35.737346474
-            }
-          }
-        ],
+        "id": "FHIR-27",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
-        "date": "2020-04-08T10:44:03.9523062-05:00",
+        "date": "2020-04-10T12:19:25.3651613-05:00",
         "reporter": {
           "reference": "Organization/Org-2207",
           "display": "FRYE REGIONAL MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-04-07",
-          "end": "2020-04-07"
+          "start": "2020-04-09",
+          "end": "2020-04-09"
         },
         "group": [
           {

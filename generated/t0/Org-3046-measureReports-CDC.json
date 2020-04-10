@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-405",
+  "id": "FHIR-96",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-405"
+    "value": "FHIR-96"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.3227562-05:00",
+  "timestamp": "2020-04-10T12:19:25.6271206-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-406",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-97",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-406",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -84.994689108,
-              "latitude": 41.634378767
-            }
-          }
-        ],
+        "id": "FHIR-97",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-08T10:44:04.3228517-05:00",
+        "date": "2020-04-10T12:19:25.6271378-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-04-05",
-          "end": "2020-04-05"
+          "start": "2020-04-07",
+          "end": "2020-04-07"
         },
         "group": [
           {

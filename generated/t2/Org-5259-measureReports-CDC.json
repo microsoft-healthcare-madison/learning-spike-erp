@@ -1,27 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-221",
+  "id": "FHIR-52",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-221"
+    "value": "FHIR-52"
   },
   "type": "collection",
-  "timestamp": "2020-04-08T10:44:04.0979075-05:00",
+  "timestamp": "2020-04-10T12:19:25.4576555-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-222",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-53",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-222",
-        "contained": [
-          {
-            "resourceType": "Location",
-            "position": {
-              "longitude": -87.6506000269999,
-              "latitude": 41.970299294
-            }
-          }
-        ],
+        "id": "FHIR-53",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
@@ -29,14 +20,14 @@
           "reference": "Location/Loc-Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
-        "date": "2020-04-08T10:44:04.097992-05:00",
+        "date": "2020-04-10T12:19:25.4576802-05:00",
         "reporter": {
           "reference": "Organization/Org-5259",
           "display": "AURORA CHICAGO LAKESHORE HOSPITAL, LLC - DBA AURORA CHICAGO LAKESHORE HOSPITAL"
         },
         "period": {
-          "start": "2020-04-07",
-          "end": "2020-04-07"
+          "start": "2020-04-09",
+          "end": "2020-04-09"
         },
         "group": [
           {
