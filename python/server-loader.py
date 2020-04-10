@@ -98,8 +98,11 @@ class DataSource:
         if not match:
             print(f'Warning, unknown file type: {filename}, skipping...')
             return False
+        file_type = match.groups()[2]
+        if file_type:
+            file_type = file_type.split('-')[0]  # trim off -CDC or -FEMA.
         available_types = cls._resource_file_properties.get(
-            match.groups()[2]
+            file_type
         ).contained_resource_types
         return available_types.issubset(requested_types)
 
@@ -111,6 +114,8 @@ class DataSource:
         if not match:
             return (0, 0)
         _, org, file_type = match.groups()
+        if file_type:
+            file_type = file_type.split('-')[0]  # trim off -CDC or -FEMA.
         priority = cls._resource_file_properties[file_type].load_priority
         return (priority, int(org or 0))
 
@@ -199,11 +204,14 @@ class Server:
             query = f'/{resource_type}?_count=1000&_tag={tag_query}{sort}'
             return self.get(query)
 
+        # TODO: only delete the resources selected to be loaded?
         for resource_type in self._deletion_order:
             print(f'DELETING RESOURCE: {resource_type}')
             to_delete = search_for_deletes(resource_type)
             while to_delete:
                 entries = to_delete.get('entry', [])
+#                print(entries)  # XXX
+#                print(entries[-1:])  # XXX
                 self.post('', {
                     'resourceType': 'Bundle',
                     'type': 'batch',
@@ -235,29 +243,28 @@ class Server:
             }
             e['resource'].setdefault('meta', {})['tag'] = RESOURCE_TAGS
 
-    def annotate_bundle(self, bundle):
-        self.annotate_bundle_entries(bundle)
-        bundle['type'] = 'batch'
-
     def receive(self, filename):
         with open(filename, 'rb') as fd:
-            print(f'LOADING FILE: {filename}...')  # XXX
             resource = json.load(fd)
-        if resource['resourceType'] == 'Bundle':
-            self.annotate_bundle(resource)
+            self.annotate_bundle_entries(resource)
+            resource['type'] = 'batch'
+            return requests.post(
+                self._url.geturl(), json=resource, headers=self.headers
+            )
 
-        r = requests.post(
-            self._url.geturl(), json=resource, headers=self.headers
-        )
-        if r.status_code != 200:
-            print('failed to send bundle to server', r.reason)
-            pprint.pprint(r.__dict__)  # XXX
-            pprint.pprint(r.raw.__dict__)  # XXX
-            return
 
+def load_file(server, filename):
+    print(f'LOADING FILE: {filename}...')
+    r = server.receive(filename)
+    success = ['200', '201', '200 OK', '201 Created']
+    if r.status_code == 200:
         for entry in json.loads(r.content)['entry']:
-            if entry['response']['status'] not in ['200', '201']:
+            if entry['response']['status'] not in success:
                 print(f'Entry failed to load: {entry}')
+    else:
+        print('failed to send bundle to server', r.reason)
+        pprint.pprint(r.__dict__)  # XXX
+        pprint.pprint(r.raw.__dict__)  # XXX
 
 
 @click.command()
@@ -295,7 +302,7 @@ def main(server_url, delete_all, load, files, tag_code):
         server.delete_all_tagged_resources()
 
     for filename in data_files:
-        server.receive(filename)
+        load_file(server, filename)
 
 
 if __name__ == '__main__':
