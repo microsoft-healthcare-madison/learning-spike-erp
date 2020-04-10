@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'generated/**.json'
+      - '.github/workflows/load-server.yml'
 
 env:
   AZURE: https://prototype-erp-fhir.azurewebsites.net/
