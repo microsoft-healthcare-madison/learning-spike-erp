@@ -1,5 +1,11 @@
 name: load generated data into test servers
 
+env:
+  AZURE: https://prototype-erp-fhir.azurewebsites.net/
+  AZURE_SQL: https://deverpfhirsql2.azurewebsites.net/
+  HAPI: https://covid19-under-fhir.smilecdr.com/baseR4/
+  PYTHON_VERSION: 3.7.6
+
 on:
   push:
     branches:
@@ -7,12 +13,6 @@ on:
     paths:
       - 'generated/**.json'
       - '.github/workflows/load-server.yml'
-
-env:
-  AZURE: https://prototype-erp-fhir.azurewebsites.net/
-  AZURE_SQL: https://deverpfhirsql2.azurewebsites.net/
-  HAPI: https://covid19-under-fhir.smilecdr.com/baseR4/
-  PYTHON_VERSION: 3.7.6
 
 jobs:
   load-azure:
@@ -40,6 +40,9 @@ jobs:
         python3 ./python/server-loader.py -s $AZURE -f generated/t2
 
   load-azure-sql:
+    env:
+      PYTHON_VERSION: 3.7.6
+
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
