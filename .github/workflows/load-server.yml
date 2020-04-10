@@ -1,0 +1,87 @@
+name: load generated data into test servers
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'generated/**.json'
+
+env:
+  AZURE: https://prototype-erp-fhir.azurewebsites.net/
+  AZURE_SQL: https://deverpfhirsql2.azurewebsites.net/
+  HAPI: https://covid19-under-fhir.smilecdr.com/baseR4/
+  PYTHON_VERSION: 3.7
+
+jobs:
+  load-azure:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up python $PYTHON_VERSION
+      uses: actions/setup-python@v1
+      with:
+        python-version: $PYTHON_VERSION
+
+    - name: Install requirements.txt
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r python/requirements.txt
+
+    - name: Delete all
+      run: python ./python/server-loader.py -D -s $AZURE
+
+    - name: Load Azure
+      run: |
+        python3 ./python/server-loader.py -s $AZURE -f generated/t0
+        python3 ./python/server-loader.py -s $AZURE -f generated/t1
+        python3 ./python/server-loader.py -s $AZURE -f generated/t2
+
+  load-azure-sql:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up python $PYTHON_VERSION
+      uses: actions/setup-python@v1
+      with:
+        python-version: $PYTHON_VERSION
+
+    - name: Install requirements.txt
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r python/requirements.txt
+
+    - name: Delete all
+      run: python ./python/server-loader.py -D -s $AZURE_SQL
+
+    - name: Load Azure SQL
+      run: |
+        python3 ./python/server-loader.py -s $AZURE_SQL -f generated/t0
+        python3 ./python/server-loader.py -s $AZURE_SQL -f generated/t1
+        python3 ./python/server-loader.py -s $AZURE_SQL -f generated/t2
+
+  load-hapi:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up python $PYTHON_VERSION
+      uses: actions/setup-python@v1
+      with:
+        python-version: $PYTHON_VERSION
+
+    - name: Install requirements.txt
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r python/requirements.txt
+
+    - name: Delete all
+      run: python ./python/server-loader.py -D -s $HAPI
+
+    - name: Load HAPI
+      run: |
+        python3 ./python/server-loader.py -s $HAPI -f generated/t0
+        python3 ./python/server-loader.py -s $HAPI -f generated/t1
+        python3 ./python/server-loader.py -s $HAPI -f generated/t2
