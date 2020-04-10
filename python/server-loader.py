@@ -256,9 +256,10 @@ class Server:
 def load_file(server, filename):
     print(f'LOADING FILE: {filename}...')
     r = server.receive(filename)
+    success = ['200', '201', '200 OK', '201 Created']
     if r.status_code == 200:
         for entry in json.loads(r.content)['entry']:
-            if entry['response']['status'] not in ['200', '201']:
+            if entry['response']['status'] not in success:
                 print(f'Entry failed to load: {entry}')
     else:
         print('failed to send bundle to server', r.reason)
