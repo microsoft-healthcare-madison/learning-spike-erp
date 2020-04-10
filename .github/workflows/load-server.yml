@@ -3,7 +3,7 @@ name: load generated data into test servers
 env:
   AZURE: https://prototype-erp-fhir.azurewebsites.net/
   AZURE_SQL: https://deverpfhirsql2.azurewebsites.net/
-  HAPI: https://covid19-under-fhir.smilecdr.com/baseR4/
+  HAPI: https://covid19-under-fhir.smilecdr.com/baseR4
 
 on:
   push:
