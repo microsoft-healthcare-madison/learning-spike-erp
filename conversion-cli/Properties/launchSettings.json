@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "conversion-cli": {
+      "commandName": "Project",
+      "commandLineArgs": "--source-url https://smartterhealth.crm.dynamics.com/ --source-token-file ..\\..\\..\\..\\tokens\\smartterhealth.txt --source-type msecr --output-directory ..\\..\\..\\..\\transformed --generate-cdc-csv true --generate-fema-xlsx true --generate-saner-bundle true"
+    }
+  }
+}

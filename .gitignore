@@ -376,3 +376,9 @@ bld/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+# Exclude transformations for now
+transformed/**
+
+# Runtime security
+tokens/**
