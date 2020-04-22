@@ -12,6 +12,7 @@ on:
     paths:
       - 'generated/**.json'
       - '.github/workflows/load-server.yml'
+      - 'python/server-loader.py'
 
 jobs:
   load-azure:
