@@ -7,27 +7,15 @@ using System.Collections.Generic;
 using System.Text;
 using covidReportTransformationLib.Formats.CDC;
 using covidReportTransformationLib.Formats.FEMA;
-using covidReportTransformationLib.Models;
 using covidReportTransformationLib.Utils;
 using Hl7.Fhir.Model;
+using static covidReportTransformationLib.Formats.SANER.SanerCommon;
 
 namespace covidReportTransformationLib.Formats.SANER
 {
     /// <summary>A SANER measure generator.</summary>
     public static class SanerMeasure
     {
-        /// <summary>The canonical URL base.</summary>
-        public const string CanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
-
-        /// <summary>The measure version.</summary>
-        private const string MeasureVersion = "20200421.01";
-
-        /// <summary>The publication date.</summary>
-        private const string PublicationDate = "2020-04-21T00:00:00Z";
-
-        /// <summary>The publisher.</summary>
-        private const string Publisher = "HL7 SANER-IG";
-
         /// <summary>True once initialization is complete.</summary>
         private static bool _initialized = false;
 
@@ -51,12 +39,12 @@ namespace covidReportTransformationLib.Formats.SANER
                 throw new ArgumentNullException(nameof(format), $"Invalid IReportingFormat.Name: {format.Name}");
             }
 
-            if (format.Fields == null)
+            if ((format.Fields == null) || (format.Fields.Count == 0))
             {
                 throw new ArgumentNullException(nameof(format), $"Invalid IReportingFormat.Fields: {format.Fields}");
             }
 
-            if (format.MeasureReportFields == null)
+            if ((format.MeasureReportFields == null) || (format.MeasureReportFields.Count == 0))
             {
                 throw new ArgumentNullException(nameof(format), $"Invalid IReportingFormat.MeasureReportFields: {format.MeasureReportFields}");
             }

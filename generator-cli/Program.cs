@@ -230,8 +230,16 @@ namespace generator_cli
                 SanerMeasure.CDCPatientImpactBundle());
 
             WriteBundle(
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC-Q{_extension}"),
+                SanerQuestionnaire.CDCPatientImpactBundle());
+
+            WriteBundle(
                 Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA{_extension}"),
                 SanerMeasure.FEMADailyBundle());
+
+            WriteBundle(
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA-Q{_extension}"),
+                SanerQuestionnaire.FEMADailyBundle());
 
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)

@@ -35,7 +35,7 @@ namespace covidReportTransformationLib.Formats.SANER
                     component = new Measure.GroupComponent()
                     {
                         Code = new CodeableConcept(
-                            SanerMeasure.CanonicalUrl,
+                            SanerCommon.CanonicalUrl,
                             field.Name,
                             description),
                         Population = new List<Measure.PopulationComponent>()
@@ -63,7 +63,7 @@ namespace covidReportTransformationLib.Formats.SANER
                     component = new Measure.GroupComponent()
                     {
                         Code = new CodeableConcept(
-                            SanerMeasure.CanonicalUrl,
+                            SanerCommon.CanonicalUrl,
                             field.Name,
                             description),
                         Population = new List<Measure.PopulationComponent>()
