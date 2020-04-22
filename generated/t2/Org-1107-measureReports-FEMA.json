@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-67",
+  "id": "FHIR-65",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-67"
+    "value": "FHIR-65"
   },
   "type": "collection",
-  "timestamp": "2020-04-10T12:19:25.5137882-05:00",
+  "timestamp": "2020-04-21T20:03:21.5418841-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-68",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-66",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-68",
+        "id": "FHIR-66",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -20,14 +20,14 @@
           "reference": "Location/Loc-Org-1107",
           "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
-        "date": "2020-04-10T12:19:25.5138145-05:00",
+        "date": "2020-04-21T20:03:21.5419016-05:00",
         "reporter": {
           "reference": "Organization/Org-1107",
           "display": "MAYO CLINIC HEALTH SYS AUSTIN"
         },
         "period": {
-          "start": "2020-04-09",
-          "end": "2020-04-09"
+          "start": "2020-04-21",
+          "end": "2020-04-21"
         },
         "group": [
           {
@@ -206,7 +206,7 @@
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
-              "text": "All positivetest results released to date."
+              "text": "All positive test results released to date."
             },
             "population": [
               {

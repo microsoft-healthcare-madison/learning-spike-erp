@@ -156,7 +156,7 @@ namespace conversion_cli
 
                                 data.AddInpatientBeds(
                                     ecrLoc.msft_totalbeds,
-                                    (ecrLoc.msft_totalbeds ?? 0) * (ecrLoc.msft_occupancypercentage ?? 0) / 100);
+                                    ecrLoc.msft_blockedbeds);
 
                                 break;
 
@@ -167,7 +167,7 @@ namespace conversion_cli
 
                                 data.AddIcuBeds(
                                     ecrLoc.msft_totalbeds,
-                                    (ecrLoc.msft_totalbeds ?? 0) * (ecrLoc.msft_occupancypercentage ?? 0) / 100);
+                                    ecrLoc.msft_blockedbeds);
 
                                 break;
 

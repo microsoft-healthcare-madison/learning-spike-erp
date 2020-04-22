@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-89",
+  "id": "FHIR-87",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-89"
+    "value": "FHIR-87"
   },
   "type": "collection",
-  "timestamp": "2020-04-10T12:19:25.6030262-05:00",
+  "timestamp": "2020-04-21T20:03:21.6242478-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-90",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-88",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-90",
+        "id": "FHIR-88",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -20,14 +20,14 @@
           "reference": "Location/Loc-Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
-        "date": "2020-04-10T12:19:25.6031397-05:00",
+        "date": "2020-04-21T20:03:21.6242705-05:00",
         "reporter": {
           "reference": "Organization/Org-3813",
           "display": "HERITAGE VALLEY BEAVER"
         },
         "period": {
-          "start": "2020-04-08",
-          "end": "2020-04-08"
+          "start": "2020-04-20",
+          "end": "2020-04-20"
         },
         "group": [
           {
@@ -206,7 +206,7 @@
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
-              "text": "All positivetest results released to date."
+              "text": "All positive test results released to date."
             },
             "population": [
               {

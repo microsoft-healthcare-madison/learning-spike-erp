@@ -365,7 +365,6 @@ namespace covidReportTransformationLib.Models
             _c19TestsNegativeTotal += negative ?? 0;
         }
 
-
         /// <summary>Adds inpatient beds.</summary>
         /// <param name="total">Number of.</param>
         /// <param name="used"> The used.</param>

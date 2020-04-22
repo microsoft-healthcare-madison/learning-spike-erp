@@ -11,238 +11,71 @@ using Hl7.Fhir.Model;
 namespace covidReportTransformationLib.Formats.SANER
 {
     /// <summary>Information about the SANER measure.</summary>
-    public class SanerMeasureInfo
+    public abstract class SanerMeasureInfo
     {
-        /// <summary>The canonical URL base.</summary>
-        public const string CdcCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
-
-        /// <summary>The canonical URL base.</summary>
-        public const string FemaCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
-
-        /// <summary>The canonical URL base.</summary>
-        public const string SanerCanonicalUrl = "http://build.fhir.org/ig/AudaciousInquiry/saner-ig";
-
-        /// <summary>The cdc citation.</summary>
-        private static readonly Markdown _cdcCitation = new Markdown(
-            "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)");
-
-        private static readonly Markdown _femaCitation = new Markdown(
-            "Federal Emergency Management Agency (FEMA)");
-
-        /// <summary>List of cdc documents.</summary>
-        public static readonly List<RelatedArtifact> CdcArtifacts = new List<RelatedArtifact>()
+        /// <summary>Gets group component.</summary>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="field">The field.</param>
+        /// <returns>The group component.</returns>
+        public static Measure.GroupComponent GetGroupComponent(FormatField field)
         {
-            new RelatedArtifact()
+            if (field == null)
             {
-                Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "COVID-19 Patient Impact & Hospital Capacity Module",
-                Display = "The Module enables hospitals to report daily counts of patients with " +
-                    "suspected and confirmed COVID-19 diagnoses and current use and availability of hospital " +
-                    "beds and mechanical ventilators.",
-                Citation = _cdcCitation,
-                Document = new Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
-                    Creation = "2020-03-27",
-                },
-            },
-            new RelatedArtifact()
-            {
-                Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
-                Citation = _cdcCitation,
-                Document = new Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
-                    Creation = "2020-03-27",
-                },
-            },
-            new RelatedArtifact()
-            {
-                Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
-                Citation = _cdcCitation,
-                Document = new Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
-                    Creation = "2020-03-27",
-                },
-            },
-            new RelatedArtifact()
-            {
-                Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "covi19-test-csv-import",
-                Citation = _cdcCitation,
-                Document = new Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
-                    Creation = "2020-03-27",
-                },
-            },
-        };
-
-        /// <summary>List of fema documents.</summary>
-        public static readonly List<RelatedArtifact> FemaArtifacts = new List<RelatedArtifact>()
-        {
-            new RelatedArtifact()
-            {
-                Type = RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "Template for daily Hospital COVID-19 Reporting",
-                Citation = _femaCitation,
-                Document = new Attachment()
-                {
-                    Url = "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
-                    Creation = "2020-03-29",
-                },
-            },
-        };
-
-        /// <summary>Initializes a new instance of the <see cref="SanerMeasureInfo"/> class.</summary>
-        /// <param name="source">     The source.</param>
-        /// <param name="name">       The name.</param>
-        /// <param name="title">      The title.</param>
-        /// <param name="description">The description.</param>
-        /// <param name="measureType">The type of the measure.</param>
-        /// <param name="style">      The style.</param>
-        public SanerMeasureInfo(
-            MeasureSource source,
-            string name,
-            string title,
-            string description,
-            FhirTriplet measureType,
-            MeasureStyle style)
-        {
-            Source = source;
-            Name = name;
-            Title = title;
-            Description = description;
-            MeasureType = measureType;
-            Style = style;
-        }
-
-        /// <summary>Values that represent measure sources.</summary>
-        public enum MeasureSource
-        {
-            /// <summary>An enum constant representing the cdc option.</summary>
-            CDC,
-
-            /// <summary>An enum constant representing the fema option.</summary>
-            FEMA,
-
-            /// <summary>An enum constant representing the saner option.</summary>
-            SANER,
-        }
-
-        /// <summary>Values that represent measure styles.</summary>
-        public enum MeasureStyle
-        {
-            /// <summary>An enum constant representing the count option.</summary>
-            Count,
-
-            /// <summary>An enum constant representing the ratio option.</summary>
-            Ratio,
-        }
-
-        /// <summary>Gets the source for the.</summary>
-        /// <value>The source.</value>
-        public MeasureSource Source { get; }
-
-        /// <summary>Gets the name.</summary>
-        /// <value>The name.</value>
-        public string Name { get; }
-
-        /// <summary>Gets the title.</summary>
-        /// <value>The title.</value>
-        public string Title { get; }
-
-        /// <summary>Gets the description.</summary>
-        /// <value>The description.</value>
-        public string Description { get; }
-
-        /// <summary>Gets the type of the measure.</summary>
-        /// <value>The type of the measure.</value>
-        public FhirTriplet MeasureType { get; }
-
-        /// <summary>Gets the measure style.</summary>
-        /// <value>The measure style.</value>
-        public MeasureStyle Style { get; }
-
-        /// <summary>Gets the canonical.</summary>
-        /// <value>The canonical.</value>
-        public string Canonical
-        {
-            get
-            {
-                return Source switch
-                {
-                    MeasureSource.CDC => CdcCanonicalUrl,
-                    MeasureSource.FEMA => FemaCanonicalUrl,
-                    MeasureSource.SANER => SanerCanonicalUrl,
-                    _ => null,
-                };
+                throw new ArgumentNullException(nameof(field));
             }
-        }
 
-        /// <summary>Gets the group the measure belongs to.</summary>
-        /// <value>The measure group.</value>
-        public Measure.GroupComponent MeasureGroupCohort
-        {
-            get
+            Measure.GroupComponent component = null;
+
+            string title = field.Title ?? field.Name;
+            string description = field.Description ?? field.Title ?? field.Name;
+
+            switch (field.Type)
             {
-                Measure.GroupComponent component = null;
-
-                switch (Style)
-                {
-                    case MeasureStyle.Count:
-                        component = new Measure.GroupComponent()
-                        {
-                            Code = new CodeableConcept(
-                                CdcCanonicalUrl,
-                                Name,
-                                Description),
-                            Population = new List<Measure.PopulationComponent>()
+                case FormatField.FieldType.Count:
+                    component = new Measure.GroupComponent()
+                    {
+                        Code = new CodeableConcept(
+                            SanerMeasure.CanonicalUrl,
+                            field.Name,
+                            description),
+                        Population = new List<Measure.PopulationComponent>()
                             {
                                 new Measure.PopulationComponent()
                                 {
                                     Code = FhirTriplet.InitialPopulation.Concept,
                                     Criteria = new Expression()
                                     {
-                                        Description = CriteriaDescription,
+                                        Description = description,
                                         Language = "text/plain",
-                                        Expression_ = Description,
+                                        Expression_ = $"Source defined field: {field.Name}",
                                     },
                                 },
                             },
-                        };
+                    };
 
-                        break;
-                    case MeasureStyle.Ratio:
-                        SplitForRatio(
-                            CriteriaDescription,
-                            out string numeratorCriteria,
-                            out string denominatorCriteria);
+                    break;
+                case FormatField.FieldType.Percentage:
+                    SplitForRatio(
+                        description,
+                        out string numeratorDescription,
+                        out string denominatorDescription);
 
-                        SplitForRatio(
-                            Description,
-                            out string numeratorDescription,
-                            out string denominatorDescription);
-
-                        component = new Measure.GroupComponent()
-                        {
-                            Code = new CodeableConcept(
-                                CdcCanonicalUrl,
-                                Name,
-                                Description),
-                            Population = new List<Measure.PopulationComponent>()
+                    component = new Measure.GroupComponent()
+                    {
+                        Code = new CodeableConcept(
+                            SanerMeasure.CanonicalUrl,
+                            field.Name,
+                            description),
+                        Population = new List<Measure.PopulationComponent>()
                             {
                                 new Measure.PopulationComponent()
                                 {
                                     Code = FhirTriplet.Numerator.Concept,
                                     Criteria = new Expression()
                                     {
-                                        Description = numeratorCriteria,
+                                        Description = numeratorDescription,
                                         Language = "text/plain",
-                                        Expression_ = numeratorDescription,
+                                        Expression_ = $"Numerator for source defined field: {field.Name}",
                                     },
                                 },
                                 new Measure.PopulationComponent()
@@ -250,149 +83,24 @@ namespace covidReportTransformationLib.Formats.SANER
                                     Code = FhirTriplet.Denominator.Concept,
                                     Criteria = new Expression()
                                     {
-                                        Description = denominatorCriteria,
+                                        Description = denominatorDescription,
                                         Language = "text/plain",
-                                        Expression_ = denominatorDescription,
+                                        Expression_ = $"Denominator for source defined field: {field.Name}",
                                     },
                                 },
                             },
-                        };
+                    };
 
-                        break;
+                    break;
 
-                    default:
-                        break;
-                }
-
-                return component;
+                case FormatField.FieldType.Date:
+                case FormatField.FieldType.Boolean:
+                case FormatField.FieldType.Choice:
+                case FormatField.FieldType.Text:
+                    return null;
             }
-        }
 
-        /// <summary>Gets the measure group proportion.</summary>
-        /// <value>The measure group proportion.</value>
-        public Measure.GroupComponent MeasureGroupProportion
-        {
-            get
-            {
-                Measure.GroupComponent component = null;
-
-                switch (Style)
-                {
-                    case MeasureStyle.Count:
-                        component = new Measure.GroupComponent()
-                        {
-                            Code = new CodeableConcept(
-                                CdcCanonicalUrl,
-                                Name,
-                                Description),
-                            Population = new List<Measure.PopulationComponent>()
-                            {
-                                new Measure.PopulationComponent()
-                                {
-                                    Code = FhirTriplet.Numerator.Concept,
-                                    Criteria = new Expression()
-                                    {
-                                        Description = CriteriaDescription,
-                                        Language = "text/plain",
-                                        Expression_ = Description,
-                                    },
-                                },
-                                new Measure.PopulationComponent()
-                                {
-                                    Code = FhirTriplet.Denominator.Concept,
-                                    Criteria = new Expression()
-                                    {
-                                        Description = "One",
-                                        Language = "text/plain",
-                                        Expression_ = "One",
-                                    },
-                                },
-                            },
-                        };
-
-                        break;
-                    case MeasureStyle.Ratio:
-                        SplitForRatio(
-                            CriteriaDescription,
-                            out string numeratorCriteria,
-                            out string denominatorCriteria);
-
-                        SplitForRatio(
-                            Description,
-                            out string numeratorDescription,
-                            out string denominatorDescription);
-
-                        component = new Measure.GroupComponent()
-                        {
-                            Code = new CodeableConcept(
-                                CdcCanonicalUrl,
-                                Name,
-                                Description),
-                            Population = new List<Measure.PopulationComponent>()
-                            {
-                                new Measure.PopulationComponent()
-                                {
-                                    Code = FhirTriplet.Numerator.Concept,
-                                    Criteria = new Expression()
-                                    {
-                                        Description = numeratorCriteria,
-                                        Language = "text/plain",
-                                        Expression_ = numeratorDescription,
-                                    },
-                                },
-                                new Measure.PopulationComponent()
-                                {
-                                    Code = FhirTriplet.Denominator.Concept,
-                                    Criteria = new Expression()
-                                    {
-                                        Description = denominatorCriteria,
-                                        Language = "text/plain",
-                                        Expression_ = denominatorDescription,
-                                    },
-                                },
-                            },
-                        };
-
-                        break;
-
-                    default:
-                        break;
-                }
-
-                return component;
-            }
-        }
-
-        /// <summary>Gets information describing the criteria.</summary>
-        /// <value>Information describing the criteria.</value>
-        public string CriteriaDescription
-        {
-            get
-            {
-                return Source switch
-                {
-                    MeasureSource.CDC => $"CDC defined field: {Name}",
-                    MeasureSource.FEMA => $"FEMA defined field: {Name}",
-                    MeasureSource.SANER => $"SANER defined Measure: {Name}",
-                    _ => Description,
-                };
-            }
-        }
-
-        /// <summary>Gets the artifacts.</summary>
-        /// <value>The artifacts.</value>
-        public List<RelatedArtifact> Artifacts
-        {
-            get
-            {
-                return Source switch
-                {
-                    MeasureSource.CDC => CdcArtifacts,
-                    MeasureSource.FEMA => FemaArtifacts,
-                    MeasureSource.SANER => null,
-                    _ => null,
-                };
-            }
+            return component;
         }
 
         /// <summary>Splits for ratio.</summary>

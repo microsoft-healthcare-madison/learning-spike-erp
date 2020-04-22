@@ -14,9 +14,6 @@ namespace covidReportTransformationLib.Utils
     /// <summary>A fhir identifier.</summary>
     public abstract class FhirIds
     {
-        /// <summary>The random.</summary>
-        private static Random _rand = new Random();
-
         /// <summary>The identifier.</summary>
         private static long _id = 1;
 

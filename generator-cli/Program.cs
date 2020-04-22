@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using covidReportTransformationLib.Formats.SANER;
 using generator_cli.Generators;
 using generator_cli.Geographic;
 using generator_cli.Models;
@@ -74,8 +75,6 @@ namespace generator_cli
         /// <param name="operationalStatuses"> Bar separated operational status: U|O|K (default: O|U).</param>
         /// <param name="minBedsPerOrg">       The minimum number of beds per hospital (default: 10).</param>
         /// <param name="maxBedsPerOrg">       The maximum number of beds per hospital (default: 1000).</param>
-        /// <param name="exportBeds">          If bundles of individual beds should be exported (default: false).</param>
-        /// <param name="exportGroups">        If SANER-IG groups should be generated (deprecated - default: false).</param>
         /// <param name="changeFactor">        The amount of change in bed state per step (default 0.2).</param>
         /// <param name="minIcuPercent">       Minimum percentage of beds for an org which are ICU type.</param>
         /// <param name="maxIcuPercent">       Maximum percentage of beds for an org which are ICU type.</param>
@@ -85,7 +84,7 @@ namespace generator_cli
         /// <param name="hospitalizationRate"> Rate of people testing positive requiring hospitalization.</param>
         /// <param name="patientToIcuRate">    Rate of people hospitalized requiring ICU.</param>
         /// <param name="icuToVentilatorRate"> Rate of people in ICU requiring ventilators.</param>
-        /// <param name="recoveryRate">        Rate of people recovering during hospitalzation.</param>
+        /// <param name="recoveryRate">        Rate of people recovering during hospitalization.</param>
         /// <param name="deathRate">           Rate of people dying in hospitalization, when care is available.</param>
         public static void Main(
             string outputDirectory,
@@ -104,8 +103,6 @@ namespace generator_cli
             string operationalStatuses = "O|U",
             int minBedsPerOrg = 10,
             int maxBedsPerOrg = 1000,
-            bool exportBeds = false,
-            bool exportGroups = false,
             double changeFactor = 0.2,
             double minIcuPercent = 0.05,
             double maxIcuPercent = 0.20,
@@ -199,8 +196,6 @@ namespace generator_cli
                 HospitalManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
             }
 
-            MeasureGenerator.Init();
-
             string dir;
 
             // create our time step directories
@@ -217,16 +212,6 @@ namespace generator_cli
             // create our organization records
             CreateOrgs(facilityCount, state, postalCode, recordsToSkip);
 
-            if (exportBeds)
-            {
-                ExportByBeds(
-                    outputDirectory,
-                    timeSteps,
-                    timePeriodHours,
-                    exportBeds,
-                    exportGroups);
-            }
-
             ExportAggregate(outputDirectory, timeSteps, timePeriodHours);
         }
 
@@ -242,11 +227,11 @@ namespace generator_cli
             // write measures only in t0
             WriteBundle(
                 Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC{_extension}"),
-                MeasureGenerator.GetCdcMeasureBundle());
+                SanerMeasure.CDCPatientImpactBundle());
 
             WriteBundle(
                 Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA{_extension}"),
-                MeasureGenerator.GetFemaMeasureBundle());
+                SanerMeasure.FEMADailyBundle());
 
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)
@@ -475,61 +460,6 @@ namespace generator_cli
 
             // Console.WriteLine($" - Tests: {test.Performed}, {test.Positive}, {test.Negative}, {test.Pending}");
             // Console.WriteLine($" - Patients: {patient.Total}, {patient.Positive}, {patient.Negative}, {patient.Recovered}, {patient.Died}");
-        }
-
-        /// <summary>Export by beds.</summary>
-        /// <param name="outputDirectory">Directory to write files.</param>
-        /// <param name="timeSteps">      Number of time-step updates to generate.</param>
-        /// <param name="timePeriodHours">Time-step period in hours (default: 24).</param>
-        /// <param name="exportBeds">     If bundles of individual beds should be exported (default: false).</param>
-        /// <param name="exportGroups">   If SANER-IG groups should be generated (deprecated - default:
-        ///  false).</param>
-        private static void ExportByBeds(
-            string outputDirectory,
-            int timeSteps,
-            int timePeriodHours,
-            bool exportBeds,
-            bool exportGroups)
-        {
-            // iterate over the orgs generating their data
-            foreach (string orgId in _orgById.Keys)
-            {
-                Console.WriteLine($"Processing org: {orgId}");
-
-                CreateOrgBeds(orgId);
-
-                // loop over timeSteps
-                for (int step = 0; step < timeSteps; step++)
-                {
-                    string dir = Path.Combine(outputDirectory, $"t{step}");
-
-                    if (step != 0)
-                    {
-                        _bedsByOrgId[orgId].UpdateBedStatusForTimeStep(_changeFactor);
-                    }
-
-                    TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
-                    DateTime dt = DateTime.UtcNow.Subtract(hoursToSubtract);
-                    FhirDateTime dateTime = new FhirDateTime(dt.Year, dt.Month, dt.Day);
-                    Period period = new Period(dateTime, dateTime);
-
-                    WriteOrgBundle(orgId, dir);
-
-                    if (exportBeds)
-                    {
-                        WriteBedBundle(orgId, dir);
-                    }
-
-                    WriteMeasureReportBundle(orgId, dir, period);
-
-                    if (exportGroups)
-                    {
-                        WriteGroupBundle(orgId, dir, period);
-                    }
-                }
-
-                DeleteOrgBeds(orgId);
-            }
         }
 
         /// <summary>Writes a measure report bundle.</summary>

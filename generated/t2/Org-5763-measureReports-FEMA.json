@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-15",
+  "id": "FHIR-13",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-15"
+    "value": "FHIR-13"
   },
   "type": "collection",
-  "timestamp": "2020-04-10T12:19:25.3269048-05:00",
+  "timestamp": "2020-04-21T20:03:21.3635984-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-16",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-14",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-16",
+        "id": "FHIR-14",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -20,14 +20,14 @@
           "reference": "Location/Loc-Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
-        "date": "2020-04-10T12:19:25.3269234-05:00",
+        "date": "2020-04-21T20:03:21.3636198-05:00",
         "reporter": {
           "reference": "Organization/Org-5763",
           "display": "GORDON MEMORIAL HOSPITAL DISTRICT"
         },
         "period": {
-          "start": "2020-04-09",
-          "end": "2020-04-09"
+          "start": "2020-04-21",
+          "end": "2020-04-21"
         },
         "group": [
           {
@@ -206,7 +206,7 @@
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
-              "text": "All positivetest results released to date."
+              "text": "All positive test results released to date."
             },
             "population": [
               {

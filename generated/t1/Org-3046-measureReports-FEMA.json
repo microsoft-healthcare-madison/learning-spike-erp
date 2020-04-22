@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-102",
+  "id": "FHIR-100",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-102"
+    "value": "FHIR-100"
   },
   "type": "collection",
-  "timestamp": "2020-04-10T12:19:25.6467651-05:00",
+  "timestamp": "2020-04-21T20:03:21.6702291-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-103",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-101",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-103",
+        "id": "FHIR-101",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -20,14 +20,14 @@
           "reference": "Location/Loc-Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
-        "date": "2020-04-10T12:19:25.646874-05:00",
+        "date": "2020-04-21T20:03:21.6702516-05:00",
         "reporter": {
           "reference": "Organization/Org-3046",
           "display": "CAMERON MEMORIAL COMMUNITY HOSPITAL INC"
         },
         "period": {
-          "start": "2020-04-08",
-          "end": "2020-04-08"
+          "start": "2020-04-20",
+          "end": "2020-04-20"
         },
         "group": [
           {
@@ -206,7 +206,7 @@
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
-              "text": "All positivetest results released to date."
+              "text": "All positive test results released to date."
             },
             "population": [
               {

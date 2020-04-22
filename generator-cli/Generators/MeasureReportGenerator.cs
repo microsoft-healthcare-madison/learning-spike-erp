@@ -5,6 +5,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using covidReportTransformationLib.Formats.CDC;
+using covidReportTransformationLib.Formats.FEMA;
+using covidReportTransformationLib.Formats.SANER;
 using generator_cli.Models;
 using Hl7.Fhir.Model;
 
@@ -84,38 +87,38 @@ namespace generator_cli.Generators
         {
             int val;
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCTotalBeds, new Score(_deviceData.TotalBeds));
+            _scoresByGroupCode.Add(PatientImpact.TotalBeds, new Score(_deviceData.TotalBeds));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBeds, new Score(_deviceData.Inpatient));
+            _scoresByGroupCode.Add(PatientImpact.InpatientBeds, new Score(_deviceData.Inpatient));
 
             val = Math.Min(_deviceData.Inpatient, _patientData.Total);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCInpatientBedOccupancy, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.InpatientBedOccupancy, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBeds, new Score(_deviceData.ICU));
+            _scoresByGroupCode.Add(PatientImpact.IcuBeds, new Score(_deviceData.ICU));
 
             val = Math.Min(_deviceData.ICU, _patientData.NegativeNeedIcu + _patientData.PositiveNeedIcu);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCIcuBedOccupancy, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.IcuBedOccupancy, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilators, new Score(_deviceData.Ventilators));
+            _scoresByGroupCode.Add(PatientImpact.Ventilators, new Score(_deviceData.Ventilators));
 
             val = Math.Min(_deviceData.Ventilators, _patientData.NegativeNeedVent + _patientData.PositiveNeedVent);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatorsInUse, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.VentilatorsInUse, new Score(val));
 
             val = Math.Min(_deviceData.TotalBeds - _patientData.Negative, _patientData.Positive);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalizedPatients, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.HospitalizedPatients, new Score(val));
 
             val = Math.Min(_deviceData.Ventilators - _patientData.NegativeNeedVent, _patientData.PositiveNeedVent);
-            _scoresByGroupCode.Add(MeasureGenerator.CDCVentilatedPatients, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.VentilatedPatients, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCHospitalOnset, new Score(_patientData.OnsetInCare));
+            _scoresByGroupCode.Add(PatientImpact.HospitalOnset, new Score(_patientData.OnsetInCare));
 
             val = Math.Max(0, _patientData.Positive - (_deviceData.TotalBeds - _patientData.Negative));
-            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingBeds, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.AwaitingBeds, new Score(val));
 
             val = Math.Max(0, _patientData.PositiveNeedVent - (_deviceData.Ventilators - _patientData.NegativeNeedVent));
-            _scoresByGroupCode.Add(MeasureGenerator.CDCAwaitingVentilators, new Score(val));
+            _scoresByGroupCode.Add(PatientImpact.AwaitingVentilators, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.CDCDied, new Score(_patientData.Died));
+            _scoresByGroupCode.Add(PatientImpact.Died, new Score(_patientData.Died));
         }
 
         /// <summary>Calculates the fema scores.</summary>
@@ -124,91 +127,44 @@ namespace generator_cli.Generators
             decimal val;
 
             val = _testData.PerformedToday * 2;
-            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsOrderedToday, new Score(val));
+            _scoresByGroupCode.Add(DailyReporting.TestsOrderedToday, new Score(val));
 
             val = _testData.Performed * 2;
-            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsOrderedTotal, new Score(val));
+            _scoresByGroupCode.Add(DailyReporting.TestsOrderedTotal, new Score(val));
 
             val = (_testData.Positive + _testData.Negative) * 2;
-            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsWithResultsToday, new Score(val));
+            _scoresByGroupCode.Add(DailyReporting.TestsWithResultsToday, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.FemaSpecimensRejectedTotal, new Score(_testData.Rejected));
+            _scoresByGroupCode.Add(DailyReporting.SpecimensRejectedTotal, new Score(_testData.Rejected));
 
             val = (_testData.Performed * 2) - _testData.Rejected - _testData.Pending;
-            _scoresByGroupCode.Add(MeasureGenerator.FemaTestsCompletedTotal, new Score(val));
+            _scoresByGroupCode.Add(DailyReporting.TestsCompletedTotal, new Score(val));
 
-            _scoresByGroupCode.Add(MeasureGenerator.FemaPositiveC19Today, new Score(_testData.PositiveToday));
+            _scoresByGroupCode.Add(DailyReporting.PositiveC19Today, new Score(_testData.PositiveToday));
 
-            _scoresByGroupCode.Add(MeasureGenerator.FemaPositiveC19Total, new Score(_testData.Positive));
+            _scoresByGroupCode.Add(DailyReporting.PositiveC19Total, new Score(_testData.Positive));
 
             _scoresByGroupCode.Add(
-                MeasureGenerator.FemaPercentC19PositiveToday,
+                DailyReporting.PercentC19PositiveToday,
                 new Score(_testData.PositiveToday, _testData.PositiveToday * 2));
 
             _scoresByGroupCode.Add(
-                MeasureGenerator.FemaPercentC19PositiveTotal,
+                DailyReporting.PercentC19PositiveTotal,
                 new Score(_testData.Positive, _testData.Positive * 2));
-        }
-
-        /// <summary>Gets report bundle.</summary>
-        /// <returns>The report bundle.</returns>
-        public Bundle GetReportBundle()
-        {
-            string bundleId = FhirGenerator.NextId;
-
-            Bundle bundle = new Bundle()
-            {
-                Id = bundleId,
-                Identifier = FhirGenerator.IdentifierForId(bundleId),
-                Type = Bundle.BundleType.Collection,
-                Timestamp = new DateTimeOffset(DateTime.Now),
-                Meta = new Meta(),
-            };
-
-            bundle.Entry = new List<Bundle.EntryComponent>();
-
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCTotalBeds);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCInpatientBeds);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCInpatientBedOccupancy);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCIcuBeds);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCIcuBedOccupancy);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCVentilators);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCVentilatorsInUse);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCHospitalizedPatients);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCVentilatedPatients);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCHospitalOnset);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCAwaitingBeds);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCAwaitingVentilators);
-            AddCdcMeasure(ref bundle, MeasureGenerator.CDCDied);
-
-            return bundle;
-        }
-
-        /// <summary>Adds a cdc measure to 'measureName'.</summary>
-        /// <param name="bundle">     [in,out] The bundle.</param>
-        /// <param name="measureName">Name of the measure.</param>
-        private void AddCdcMeasure(ref Bundle bundle, string measureName)
-        {
-            bundle.AddResourceEntry(
-                ReportForMeasure(
-                    out string id,
-                    MeasureGenerator.CDCMeasure(measureName),
-                    _scoresByGroupCode[measureName]),
-                $"{SystemLiterals.Internal}MeasureReport/{id}");
         }
 
         /// <summary>Gets group report bundle.</summary>
         /// <returns>The group report bundle.</returns>
         public Bundle GetCdcCompleteReportBundle()
         {
-            return GetReportBundleForMeasure(MeasureGenerator.CDCCompleteMeasure());
+            return GetReportBundleForMeasure(SanerMeasure.CDCPatientImpactMeasure());
         }
 
         /// <summary>Gets group report bundle.</summary>
         /// <returns>The group report bundle.</returns>
         public Bundle GetFemaCompleteReportBundle()
         {
-            return GetReportBundleForMeasure(MeasureGenerator.FemaCompleteMeasure());
+            return GetReportBundleForMeasure(SanerMeasure.FEMADailyMeasure());
         }
 
         /// <summary>Gets bundle for measure.</summary>

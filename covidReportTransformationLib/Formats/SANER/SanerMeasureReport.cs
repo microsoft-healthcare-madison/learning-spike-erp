@@ -56,7 +56,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 bundle.AddResourceEntry(
                     ReportForMeasure(
                         out id,
-                        SanerMeasure.CDCCompleteMeasure(),
+                        SanerMeasure.CDCPatientImpactMeasure(),
                         data,
                         scores),
                     $"{FhirSystems.Internal}MeasureReport/{id}");
@@ -67,7 +67,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 bundle.AddResourceEntry(
                     ReportForMeasure(
                         out id,
-                        SanerMeasure.FemaCompleteMeasure(),
+                        SanerMeasure.FEMADailyMeasure(),
                         data,
                         scores),
                     $"{FhirSystems.Internal}MeasureReport/{id}");
@@ -124,19 +124,19 @@ namespace covidReportTransformationLib.Formats.SANER
             Dictionary<string, Score> scores,
             ReportData data)
         {
-            AddScore(scores, CdcLiterals.TotalBeds, data.BedsTotal);
-            AddScore(scores, CdcLiterals.InpatientBeds, data.BedsInpatientTotal);
-            AddScore(scores, CdcLiterals.InpatientBedOccupancy, data.BedsInpatientInUse);
-            AddScore(scores, CdcLiterals.IcuBeds, data.BedsIcuTotal);
-            AddScore(scores, CdcLiterals.IcuBedOccupancy, data.BedsIcuInUse);
-            AddScore(scores, CdcLiterals.Ventilators, data.VentilatorsTotal);
-            AddScore(scores, CdcLiterals.VentilatorsInUse, data.VentilatorsInUse);
-            AddScore(scores, CdcLiterals.HospitalizedPatients, data.PatientsC19Hospitalized);
-            AddScore(scores, CdcLiterals.VentilatedPatients, data.PatientsC19Ventilated);
-            AddScore(scores, CdcLiterals.HospitalOnset, data.PatientsC19HospitalOnsetTotal);
-            AddScore(scores, CdcLiterals.AwaitingBeds, data.PatientsC19NeedBed);
-            AddScore(scores, CdcLiterals.AwaitingVentilators, data.PatientsC19NeedVent);
-            AddScore(scores, CdcLiterals.Died, data.PatientsC19DiedTotal);
+            AddScore(scores, PatientImpact.TotalBeds, data.BedsTotal);
+            AddScore(scores, PatientImpact.InpatientBeds, data.BedsInpatientTotal);
+            AddScore(scores, PatientImpact.InpatientBedOccupancy, data.BedsInpatientInUse);
+            AddScore(scores, PatientImpact.IcuBeds, data.BedsIcuTotal);
+            AddScore(scores, PatientImpact.IcuBedOccupancy, data.BedsIcuInUse);
+            AddScore(scores, PatientImpact.Ventilators, data.VentilatorsTotal);
+            AddScore(scores, PatientImpact.VentilatorsInUse, data.VentilatorsInUse);
+            AddScore(scores, PatientImpact.HospitalizedPatients, data.PatientsC19Hospitalized);
+            AddScore(scores, PatientImpact.VentilatedPatients, data.PatientsC19Ventilated);
+            AddScore(scores, PatientImpact.HospitalOnset, data.PatientsC19HospitalOnsetTotal);
+            AddScore(scores, PatientImpact.AwaitingBeds, data.PatientsC19NeedBed);
+            AddScore(scores, PatientImpact.AwaitingVentilators, data.PatientsC19NeedVent);
+            AddScore(scores, PatientImpact.Died, data.PatientsC19DiedTotal);
         }
 
         /// <summary>Index fema scores.</summary>
@@ -146,23 +146,23 @@ namespace covidReportTransformationLib.Formats.SANER
             Dictionary<string, Score> scores,
             ReportData data)
         {
-            AddScore(scores, FemaLiterals.TestsOrderedToday, data.TestsPerformedToday);
-            AddScore(scores, FemaLiterals.TestsOrderedTotal, data.TestsPerformedTotal);
-            AddScore(scores, FemaLiterals.TestsWithResultsToday, data.TestsResultedToday);
-            AddScore(scores, FemaLiterals.SpecimensRejectedTotal, data.TestsRejectedTotal);
-            AddScore(scores, FemaLiterals.TestsCompletedTotal, data.TestsResultedTotal);
-            AddScore(scores, FemaLiterals.PositiveC19Today, data.C19TestsPositiveToday);
-            AddScore(scores, FemaLiterals.PositiveC19Total, data.C19TestsPositiveTotal);
+            AddScore(scores, DailyReporting.TestsOrderedToday, data.TestsPerformedToday);
+            AddScore(scores, DailyReporting.TestsOrderedTotal, data.TestsPerformedTotal);
+            AddScore(scores, DailyReporting.TestsWithResultsToday, data.TestsResultedToday);
+            AddScore(scores, DailyReporting.SpecimensRejectedTotal, data.TestsRejectedTotal);
+            AddScore(scores, DailyReporting.TestsCompletedTotal, data.TestsResultedTotal);
+            AddScore(scores, DailyReporting.PositiveC19Today, data.C19TestsPositiveToday);
+            AddScore(scores, DailyReporting.PositiveC19Total, data.C19TestsPositiveTotal);
 
             AddScore(
                 scores,
-                FemaLiterals.PercentC19PositiveToday,
+                DailyReporting.PercentC19PositiveToday,
                 data.C19TestsPositiveToday,
                 data.TestsResultedToday);
 
             AddScore(
                 scores,
-                FemaLiterals.PercentC19PositiveTotal,
+                DailyReporting.PercentC19PositiveTotal,
                 data.C19TestsPositiveTotal,
                 data.TestsResultedTotal);
         }

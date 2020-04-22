@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-76",
+  "id": "FHIR-74",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-76"
+    "value": "FHIR-74"
   },
   "type": "collection",
-  "timestamp": "2020-04-10T12:19:25.5459708-05:00",
+  "timestamp": "2020-04-21T20:03:21.576286-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-77",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-75",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-77",
+        "id": "FHIR-75",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -20,14 +20,14 @@
           "reference": "Location/Loc-Org-5610",
           "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
-        "date": "2020-04-10T12:19:25.545997-05:00",
+        "date": "2020-04-21T20:03:21.5763752-05:00",
         "reporter": {
           "reference": "Organization/Org-5610",
           "display": "BEAUMONT HOSPITAL FARMINGTON HILLS"
         },
         "period": {
-          "start": "2020-04-08",
-          "end": "2020-04-08"
+          "start": "2020-04-20",
+          "end": "2020-04-20"
         },
         "group": [
           {
@@ -206,7 +206,7 @@
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
-              "text": "All positivetest results released to date."
+              "text": "All positive test results released to date."
             },
             "population": [
               {

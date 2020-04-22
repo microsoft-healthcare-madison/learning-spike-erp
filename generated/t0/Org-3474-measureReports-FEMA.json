@@ -1,18 +1,18 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-33",
+  "id": "FHIR-31",
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-33"
+    "value": "FHIR-31"
   },
   "type": "collection",
-  "timestamp": "2020-04-10T12:19:25.3897429-05:00",
+  "timestamp": "2020-04-21T20:03:21.4257331-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-34",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-32",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "FHIR-34",
+        "id": "FHIR-32",
         "status": "complete",
         "type": "summary",
         "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
@@ -20,14 +20,14 @@
           "reference": "Location/Loc-Org-3474",
           "display": "LOURDES HOSPITAL"
         },
-        "date": "2020-04-10T12:19:25.389763-05:00",
+        "date": "2020-04-21T20:03:21.4257541-05:00",
         "reporter": {
           "reference": "Organization/Org-3474",
           "display": "LOURDES HOSPITAL"
         },
         "period": {
-          "start": "2020-04-07",
-          "end": "2020-04-07"
+          "start": "2020-04-19",
+          "end": "2020-04-19"
         },
         "group": [
           {
@@ -206,7 +206,7 @@
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
-              "text": "All positivetest results released to date."
+              "text": "All positive test results released to date."
             },
             "population": [
               {
