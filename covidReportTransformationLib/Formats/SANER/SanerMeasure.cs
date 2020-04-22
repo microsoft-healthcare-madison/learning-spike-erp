@@ -138,6 +138,20 @@ namespace covidReportTransformationLib.Formats.SANER
                 PatientImpact.Current.Name);
         }
 
+        /// <summary>Cdc healthcare worker bundle.</summary>
+        /// <returns>A Bundle.</returns>
+        public static Bundle CDCHealthcareWorkerBundle()
+        {
+            if (!_initialized)
+            {
+                Init();
+            }
+
+            return GetBundleForMeasure(
+                _measures[HealthcareWorker.Current.Name],
+                HealthcareWorker.Current.Name);
+        }
+
         /// <summary>Fema complete measure.</summary>
         /// <returns>A Measure.</returns>
         public static Measure FEMADailyMeasure()

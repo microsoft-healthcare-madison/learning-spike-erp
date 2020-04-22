@@ -46,6 +46,9 @@ namespace covidReportTransformationLib.Formats
         /// <summary>Values that represent field types.</summary>
         public enum FieldType
         {
+            /// <summary>An enum constant representing the display option.</summary>
+            Display,
+
             /// <summary>An enum constant representing the date option.</summary>
             Date,
 

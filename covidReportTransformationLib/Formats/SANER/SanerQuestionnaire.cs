@@ -31,6 +31,7 @@ namespace covidReportTransformationLib.Formats.SANER
             }
 
             _questionnaires.Add(PatientImpact.Current.Name, BuildQuestionnaire(PatientImpact.Current));
+            _questionnaires.Add(HealthcareWorker.Current.Name, BuildQuestionnaire(HealthcareWorker.Current));
             _questionnaires.Add(DailyReporting.Current.Name, BuildQuestionnaire(DailyReporting.Current));
 
             _initialized = true;
@@ -188,6 +189,20 @@ namespace covidReportTransformationLib.Formats.SANER
             return GetBundleForQuestionnaire(
                 _questionnaires[PatientImpact.Current.Name],
                 PatientImpact.Current.Name);
+        }
+
+        /// <summary>Cdc healthcare worker bundle.</summary>
+        /// <returns>A Bundle.</returns>
+        public static Bundle CDCHealthcareWorkerBundle()
+        {
+            if (!_initialized)
+            {
+                Init();
+            }
+
+            return GetBundleForQuestionnaire(
+                _questionnaires[HealthcareWorker.Current.Name],
+                HealthcareWorker.Current.Name);
         }
 
         /// <summary>Fema daily questionnaire.</summary>

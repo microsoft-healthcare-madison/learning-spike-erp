@@ -276,7 +276,7 @@ namespace covidReportTransformationLib.Formats.CDC
         };
 
         /// <summary>The measure report fields.</summary>
-        private static readonly List<string> _measureReportFields = new List<string>
+        private static readonly List<string> _measureReportFields = new List<string>()
         {
             TotalBeds,
             InpatientBeds,
@@ -294,7 +294,7 @@ namespace covidReportTransformationLib.Formats.CDC
         };
 
         /// <summary>The questionnaire sections.</summary>
-        private static readonly List<QuestionnaireSection> _questionnaireSections = new List<QuestionnaireSection>
+        private static readonly List<QuestionnaireSection> _questionnaireSections = new List<QuestionnaireSection>()
         {
             new QuestionnaireSection(
                 "COVID-19 Module: Patient Impact and Hospital Capacity Pathway",
@@ -330,7 +330,7 @@ namespace covidReportTransformationLib.Formats.CDC
         };
 
         /// <summary>The CSV fields.</summary>
-        private static readonly List<string> _csvFields = new List<string>
+        private static readonly List<string> _csvFields = new List<string>()
         {
             CollectionDate,
             TotalBeds,
@@ -358,10 +358,8 @@ namespace covidReportTransformationLib.Formats.CDC
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "COVID-19 Patient Impact & Hospital Capacity Module",
-                Display = "The Module enables hospitals to report daily counts of patients with " +
-                    "suspected and confirmed COVID-19 diagnoses and current use and availability of hospital " +
-                    "beds and mechanical ventilators.",
+                Label = "COVID-19 Module",
+                Display = "CDC’s NHSN is supporting the nation’s COVID-19 response by introducing a new COVID-19 Module.",
                 Citation = _cdcCitation,
                 Document = new Hl7.Fhir.Model.Attachment()
                 {

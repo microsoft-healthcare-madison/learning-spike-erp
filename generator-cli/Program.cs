@@ -20,6 +20,7 @@ namespace generator_cli
     public static class Program
     {
         private const string _filenameBaseForMeasures = "Measures";
+        private const string _filenameBaseForQuestionnaires = "Questionnaires";
 
         private const string _filenameAdditionForBeds = "-beds";
         private const string _filenameAdditionForGroups = "-groups";
@@ -229,16 +230,24 @@ namespace generator_cli
                 Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC{_extension}"),
                 SanerMeasure.CDCPatientImpactBundle());
 
+            //WriteBundle(
+            //    Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC{_extension}"),
+            //    SanerMeasure.CDCHealthcareWorkerBundle());
+
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC-Q{_extension}"),
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForQuestionnaires}-CDC{_extension}"),
                 SanerQuestionnaire.CDCPatientImpactBundle());
+
+            WriteBundle(
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForQuestionnaires}-CDCHCW{_extension}"),
+                SanerQuestionnaire.CDCHealthcareWorkerBundle());
 
             WriteBundle(
                 Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA{_extension}"),
                 SanerMeasure.FEMADailyBundle());
 
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA-Q{_extension}"),
+                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForQuestionnaires}-FEMA{_extension}"),
                 SanerQuestionnaire.FEMADailyBundle());
 
             // iterate over the orgs generating their data

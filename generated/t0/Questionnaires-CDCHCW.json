@@ -1,0 +1,342 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-4",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-4"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-22T12:21:51.3729795-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/sanerCDCHCW",
+      "resource": {
+        "resourceType": "Questionnaire",
+        "id": "sanerCDCHCW",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+        "version": "20200421.01",
+        "name": "sanerCDCHCW",
+        "title": "SANER CDC COVID-19 Healthcare Worker Staffing Pathway",
+        "status": "draft",
+        "date": "2020-04-21T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
+        "description": "SANER implementation of the CDC COVID-19 Healthcare Worker Staffing Pathway",
+        "useContext": [
+          {
+            "code": {
+              "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+              "code": "focus"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "840539006",
+                  "display": "COVID-19"
+                }
+              ]
+            }
+          }
+        ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "item": [
+          {
+            "linkId": "section_0",
+            "text": "COVID-19 Module: Healthcare Worker Staffing Pathway",
+            "type": "group",
+            "item": [
+              {
+                "linkId": "facilityId",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "facilityId"
+                  }
+                ],
+                "text": "Facility ID #:",
+                "type": "text",
+                "required": true
+              },
+              {
+                "linkId": "summaryCensusId",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "summaryCensusId"
+                  }
+                ],
+                "text": "Summary Census ID #:",
+                "type": "text",
+                "required": true
+              },
+              {
+                "linkId": "collectiondate",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "collectiondate"
+                  }
+                ],
+                "text": "Collection Date: Date for which Healthcare Worker Impact Module responses are reported",
+                "type": "date",
+                "required": true
+              }
+            ]
+          },
+          {
+            "linkId": "section_1",
+            "text": "Critical Staffing Shortage Today",
+            "type": "group",
+            "item": [
+              {
+                "linkId": "groupToday",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "groupToday"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY: Does your organization consider that it has a critical staffing shortage in this group today?",
+                "type": "display",
+                "required": true
+              },
+              {
+                "linkId": "shortnurse",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortnurse"
+                  }
+                ],
+                "text": "Nurses: Registered nurses and licensed practical nurses",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shortrt",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortrt"
+                  }
+                ],
+                "text": "Respiratory therapists: Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shortphar",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortphar"
+                  }
+                ],
+                "text": "Pharmacists and pharmacy techs:",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shortphys",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortphys"
+                  }
+                ],
+                "text": "Physicians: Attending physicians, fellows",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shorttemp",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shorttemp"
+                  }
+                ],
+                "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists: 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shortoth",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortoth"
+                  }
+                ],
+                "text": "Other HCP: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shortothlic",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortothlic"
+                  }
+                ],
+                "text": "Other licensed independent practitioners: Advanced practice nurses, physician assistants",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "shortothsfy",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortothsfy"
+                  }
+                ],
+                "text": "Other HCP - Specify the groups: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
+                "type": "text",
+                "required": false
+              }
+            ]
+          },
+          {
+            "linkId": "section_2",
+            "text": "Critical Staffing Shortage Within a Week",
+            "type": "group",
+            "item": [
+              {
+                "linkId": "groupThisWeek",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "groupThisWeek"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK: Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
+                "type": "display",
+                "required": true
+              },
+              {
+                "linkId": "posshortenvsvc",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortenvsvc"
+                  }
+                ],
+                "text": "Environmental services: Front-line persons who clean patient rooms and all areas in a healthcare facility",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortnurse",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortnurse"
+                  }
+                ],
+                "text": "Nurses: Registered nurses and licensed practical nurses",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortrt",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortrt"
+                  }
+                ],
+                "text": "Respiratory therapists: Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortphar",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortphar"
+                  }
+                ],
+                "text": "Pharmacists and pharmacy techs:",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortphys",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortphys"
+                  }
+                ],
+                "text": "Physicians: Attending physicians, fellows",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshorttemp",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshorttemp"
+                  }
+                ],
+                "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists: 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortoth",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortoth"
+                  }
+                ],
+                "text": "Other HCP: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortothlic",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortothlic"
+                  }
+                ],
+                "text": "Other licensed independent practitioners: Advanced practice nurses, physician assistants",
+                "type": "boolean",
+                "required": false
+              },
+              {
+                "linkId": "posshortothsfy",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortothsfy"
+                  }
+                ],
+                "text": "Other HCP - Specify the groups: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
+                "type": "text",
+                "required": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
