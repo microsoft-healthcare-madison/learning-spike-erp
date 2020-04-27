@@ -640,9 +640,7 @@ namespace generator_cli
             string orgId,
             string dir)
         {
-            string filename = _connectathon
-                ? Path.Combine(dir, $"Org-{orgId}{_extension}")
-                : Path.Combine(dir, $"{orgId}{_extension}");
+            string filename = Path.Combine(dir, $"{orgId}{_extension}");
 
             string bundleId = FhirGenerator.NextId;
 
