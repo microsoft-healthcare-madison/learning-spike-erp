@@ -54,6 +54,8 @@ class DataSource:
     # Examples: Org-1234.json, Org-123-beds.json, Measures.json.
     _resource_file_matcher = re.compile(r'^(Org-([0-9]+)-?)?(.+)?\.json$')
     _resource_file_properties = {
+        'QuestionnaireResponses': FileProperties(6, ['QuestionnaireResponse']),
+        'Questionnaires': FileProperties(5, ['Questionnaire']),
         'measureReports': FileProperties(5, ['MeasureReport']),
         'Measures': FileProperties(4, ['Measure']),
         'groups': FileProperties(3, ['Group']),
@@ -116,8 +118,12 @@ class DataSource:
         _, org, file_type = match.groups()
         if file_type:
             file_type = file_type.split('-')[0]  # trim off -CDC or -FEMA.
-        priority = cls._resource_file_properties[file_type].load_priority
-        return (priority, int(org or 0))
+
+        resource_file_type = cls._resource_file_properties.get(file_type)
+        if not resource_file_type:
+            print(f'Unknown file type: {file_type}')
+
+        return (resource_file_type.load_priority, int(org or 0))
 
     @classmethod
     def get_data_files(cls, folder, load_types):
