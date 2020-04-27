@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-444",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-444"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T11:35:48.0991061-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-29",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-29",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "29"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "SAINT VERNOR HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "2900 N LAKE SHORE DR"
+            ],
+            "city": "CHICAGO",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60657",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-29",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-29",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "2900 N LAKE SHORE DR"
+          ],
+          "city": "CHICAGO",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60657",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.636418,
+          "latitude": 41.933928
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-54",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-54"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T11:35:46.4098378-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/Org-19",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Org-19",
+        "identifier": [
+          {
+            "system": "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
+            "value": "19"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "WILHELM HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "3249 OAK PARK AVE"
+            ],
+            "city": "BERWYN",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60402",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-Org-19",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Loc-Org-19",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "3249 OAK PARK AVE"
+          ],
+          "city": "BERWYN",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60402",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.792783,
+          "latitude": 41.832002
+        }
+      }
+    }
+  ]
+}

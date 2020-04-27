@@ -17,7 +17,9 @@ namespace covidReportTransformationLib.Formats
         /// </summary>
         /// <param name="title"> The title.</param>
         /// <param name="fields">The fields.</param>
-        public QuestionnaireSection(string title, List<string> fields)
+        public QuestionnaireSection(
+            string title,
+            List<QuestionnaireQuestion> fields)
         {
             Title = title;
             Fields = fields;
@@ -29,6 +31,6 @@ namespace covidReportTransformationLib.Formats
 
         /// <summary>Gets the fields.</summary>
         /// <value>The fields.</value>
-        public List<string> Fields { get; }
+        public List<QuestionnaireQuestion> Fields { get; }
     }
 }

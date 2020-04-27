@@ -33,7 +33,7 @@ namespace covidReportTransformationLib.Formats.CDC
         public const string PharmShortageToday = "shortphar";
 
         /// <summary>The phyisician shortage today.</summary>
-        public const string PhyisicianShortageToday = "shortphys";
+        public const string PhysicianShortageToday = "shortphys";
 
         /// <summary>The temporary shortage today.</summary>
         public const string TempShortageToday = "shorttemp";
@@ -80,12 +80,28 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The group this week.</summary>
         public const string GroupThisWeek = "groupThisWeek";
 
+        /// <summary>The information.</summary>
+        public const string Information = "information";
+
         /// <summary>The current.</summary>
         private static HealthcareWorker _current = new HealthcareWorker();
 
         /// <summary>The fields.</summary>
         private static readonly Dictionary<string, FormatField> _fields = new Dictionary<string, FormatField>()
         {
+            {
+                Information,
+                new FormatField(
+                    Information,
+                    "Information",
+                    string.Empty,
+                    FormatField.FieldType.Display,
+                    FormatField.FhirMeasureType.None,
+                    true,
+                    null,
+                    null,
+                    null)
+            },
             {
                 GroupToday,
                 new FormatField(
@@ -118,7 +134,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     FacilityId,
                     "Facility ID #",
                     string.Empty,
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
                     null,
@@ -131,7 +147,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     SummaryCensusId,
                     "Summary Census ID #",
                     string.Empty,
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
                     null,
@@ -204,9 +220,9 @@ namespace covidReportTransformationLib.Formats.CDC
                     null)
             },
             {
-                PhyisicianShortageToday,
+                PhysicianShortageToday,
                 new FormatField(
-                    PhyisicianShortageToday,
+                    PhysicianShortageToday,
                     "Physicians",
                     "Attending physicians, fellows",
                     FormatField.FieldType.Boolean,
@@ -261,7 +277,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     HCPShortageToday,
                     "Other HCP - Specify the groups",
                     "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
                     null,
@@ -378,7 +394,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     HCPShortageWeek,
                     "Other HCP - Specify the groups",
                     "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
                     null,
@@ -394,7 +410,7 @@ namespace covidReportTransformationLib.Formats.CDC
             NurseShortageToday,
             RTShortageToday,
             PharmShortageToday,
-            PhyisicianShortageToday,
+            PhysicianShortageToday,
             TempShortageToday,
             OtherShortageToday,
             OtherLicensedShortageToday,
@@ -415,40 +431,128 @@ namespace covidReportTransformationLib.Formats.CDC
         {
             new QuestionnaireSection(
                 "COVID-19 Module: Healthcare Worker Staffing Pathway",
-                new List<string>()
+                new List<QuestionnaireQuestion>()
                 {
-                    FacilityId,
-                    SummaryCensusId,
-                    CollectionDate,
+                    new QuestionnaireQuestion(FacilityId),
+                    new QuestionnaireQuestion(SummaryCensusId),
+                    new QuestionnaireQuestion(CollectionDate),
                 }),
             new QuestionnaireSection(
-                "Critical Staffing Shortage Today",
-                new List<string>()
+                Information,
+                new List<QuestionnaireQuestion>()
                 {
-                    GroupToday,
-                    NurseShortageToday,
-                    RTShortageToday,
-                    PharmShortageToday,
-                    PhyisicianShortageToday,
-                    TempShortageToday,
-                    OtherShortageToday,
-                    OtherLicensedShortageToday,
-                    HCPShortageToday,
+                    new QuestionnaireQuestion(GroupToday),
+                    new QuestionnaireQuestion(GroupThisWeek),
                 }),
             new QuestionnaireSection(
-                "Critical Staffing Shortage Within a Week",
-                new List<string>()
+                EnvironmentalServiceShortageToday,
+                new List<QuestionnaireQuestion>()
                 {
-                    GroupThisWeek,
-                    EnvironmentalServiceShortageWeek,
-                    NurseShortageWeek,
-                    RTShortageWeek,
-                    PharmShortageWeek,
-                    PhysicianShortageWeek,
-                    TempShortageWeek,
-                    OtherShortageWeek,
-                    OtherLicensedShortageWeek,
-                    HCPShortageWeek,
+                    new QuestionnaireQuestion(
+                        EnvironmentalServiceShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        EnvironmentalServiceShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                NurseShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        NurseShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        NurseShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                RTShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        RTShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        RTShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                PharmShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        PharmShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        PharmShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                PhysicianShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        PhysicianShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        PhysicianShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                TempShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        TempShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        TempShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                OtherLicensedShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        OtherLicensedShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        OtherLicensedShortageWeek,
+                        true,
+                        GroupThisWeek),
+                }),
+            new QuestionnaireSection(
+                OtherShortageToday,
+                new List<QuestionnaireQuestion>()
+                {
+                    new QuestionnaireQuestion(
+                        OtherShortageToday,
+                        true,
+                        GroupToday),
+                    new QuestionnaireQuestion(
+                        HCPShortageToday,
+                        true),
+                    new QuestionnaireQuestion(
+                        OtherShortageWeek,
+                        true,
+                        GroupThisWeek),
+                    new QuestionnaireQuestion(
+                        HCPShortageWeek,
+                        true),
                 }),
         };
 
@@ -460,7 +564,7 @@ namespace covidReportTransformationLib.Formats.CDC
             NurseShortageToday,
             RTShortageToday,
             PharmShortageToday,
-            PhyisicianShortageToday,
+            PhysicianShortageToday,
             TempShortageToday,
             OtherShortageToday,
             OtherLicensedShortageToday,

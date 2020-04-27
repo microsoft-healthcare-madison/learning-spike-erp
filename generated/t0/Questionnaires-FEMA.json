@@ -1,24 +1,34 @@
 {
   "resourceType": "Bundle",
   "id": "FHIR-6",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/4.0/StructureDefinition/Bundle"
+    ]
+  },
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
     "value": "FHIR-6"
   },
   "type": "collection",
-  "timestamp": "2020-04-22T12:21:51.4115039-05:00",
+  "timestamp": "2020-04-27T11:35:46.1319703-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/sanerFEMA",
       "resource": {
         "resourceType": "Questionnaire",
         "id": "sanerFEMA",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/4.0/StructureDefinition/Questionnaire"
+          ]
+        },
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
-        "version": "20200421.01",
+        "version": "20200424.01",
         "name": "sanerFEMA",
         "title": "SANER FEMA Template for daily Hospital COVID-19 Reporting",
         "status": "draft",
-        "date": "2020-04-21T00:00:00Z",
+        "date": "2020-04-24T00:00:00Z",
         "publisher": "HL7 SANER-IG",
         "description": "SANER implementation of the FEMA Template for daily Hospital COVID-19 Reporting",
         "useContext": [
@@ -51,11 +61,24 @@
         ],
         "item": [
           {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 0
+              }
+            ],
             "linkId": "section_0",
             "text": "Daily Hospital COVID-19 Reporting",
             "type": "group",
+            "repeats": false,
             "item": [
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
                 "linkId": "collectionDate",
                 "code": [
                   {
@@ -65,9 +88,16 @@
                 ],
                 "text": "Date:",
                 "type": "date",
-                "required": true
+                "required": true,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "state",
                 "code": [
                   {
@@ -76,10 +106,17 @@
                   }
                 ],
                 "text": "State:",
-                "type": "text",
-                "required": false
+                "type": "string",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
                 "linkId": "county",
                 "code": [
                   {
@@ -88,10 +125,17 @@
                   }
                 ],
                 "text": "County:",
-                "type": "text",
-                "required": false
+                "type": "string",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 3
+                  }
+                ],
                 "linkId": "newDiagnosticTests",
                 "code": [
                   {
@@ -101,9 +145,16 @@
                 ],
                 "text": "New Diagnostic Tests Ordered/Received: Midnight to midnight cutoff, tests ordered on previous date queried.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 4
+                  }
+                ],
                 "linkId": "cumulativeDiagnosticTests",
                 "code": [
                   {
@@ -113,9 +164,16 @@
                 ],
                 "text": "Cumulative Diagnostic Tests Ordered/Received: All tests ordered to date.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 5
+                  }
+                ],
                 "linkId": "newTestsResulted",
                 "code": [
                   {
@@ -125,9 +183,16 @@
                 ],
                 "text": "New Tests Resulted: Midnight to midnight cutoff, test results released on previous date queried.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 6
+                  }
+                ],
                 "linkId": "cumulativeSpecimensRejected",
                 "code": [
                   {
@@ -137,9 +202,16 @@
                 ],
                 "text": "Cumulative Specimens Rejected: All specimens rejected for testing to date.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 7
+                  }
+                ],
                 "linkId": "cumulativeTestsPerformed",
                 "code": [
                   {
@@ -149,9 +221,16 @@
                 ],
                 "text": "Cumulative Tests Performed: All tests with results released to date.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 8
+                  }
+                ],
                 "linkId": "newPositiveC19Tests",
                 "code": [
                   {
@@ -161,9 +240,16 @@
                 ],
                 "text": "New Positive COVID-19 Tests: Midnight to midnight cutoff, positive test results released on the previous date queried.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 9
+                  }
+                ],
                 "linkId": "cumulativePositiveC19Tests",
                 "code": [
                   {
@@ -173,7 +259,8 @@
                 ],
                 "text": "Cumulative Positive COVID-19 Tests: All positive test results released to date.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               }
             ]
           }

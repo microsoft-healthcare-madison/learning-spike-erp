@@ -66,10 +66,17 @@ namespace covidReportTransformationLib.Formats.SANER
 
             Questionnaire questionnaire = new Questionnaire()
             {
+                Meta = new Meta()
+                {
+                    Profile = new string[]
+                    {
+                        "http://hl7.org/fhir/4.0/StructureDefinition/Questionnaire",
+                    },
+                },
                 Id = format.Name,
                 Name = format.Name,
                 Url = $"{CanonicalUrl}/{format.Name}",
-                Version = MeasureVersion,
+                Version = QuestionnaireVersion,
                 Title = format.Title,
                 Description = new Markdown(format.Description),
                 Status = PublicationStatus.Draft,
@@ -90,79 +97,167 @@ namespace covidReportTransformationLib.Formats.SANER
                 Item = new List<Questionnaire.ItemComponent>(),
             };
 
-            int sectionNumber = 0;
+            int sectionNumber = -1;
+            int itemNumber = 0;
 
             foreach (QuestionnaireSection questionnaireSection in format.QuestionnaireSections)
             {
+                sectionNumber++;
+                itemNumber = 0;
+
                 Questionnaire.ItemComponent section = new Questionnaire.ItemComponent()
                 {
-                    LinkId = $"section_{sectionNumber++}",
-                    Text = questionnaireSection.Title,
+                    LinkId = $"section_{sectionNumber}",
                     Type = Questionnaire.QuestionnaireItemType.Group,
                     Item = new List<Questionnaire.ItemComponent>(),
+                    Repeats = false,
                 };
 
-                foreach (string fieldName in questionnaireSection.Fields)
+                section.AddExtension(
+                    "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    new FhirDecimal(sectionNumber));
+
+                if (format.Fields.ContainsKey(questionnaireSection.Title))
                 {
-                    if (!format.Fields.ContainsKey(fieldName))
+                    section.Text = $"{format.Fields[questionnaireSection.Title].Title}: {format.Fields[questionnaireSection.Title].Description}";
+                }
+                else
+                {
+                    section.Text = questionnaireSection.Title;
+                }
+
+                foreach (QuestionnaireQuestion question in questionnaireSection.Fields)
+                {
+                    Questionnaire.ItemComponent component = ComponentFromQuestion(
+                        format,
+                        question,
+                        ref itemNumber);
+
+                    if (component == null)
                     {
                         continue;
                     }
 
-                    FormatField field = format.Fields[fieldName];
-
-                    Questionnaire.ItemComponent question = new Questionnaire.ItemComponent()
-                    {
-                        LinkId = field.Name,
-                        Text = $"{field.Title}: {field.Description}",
-                        Code = new List<Coding>()
-                        {
-                            new Coding($"{CanonicalUrl}/{format.Name}", field.Name),
-                        },
-                        Required = field.IsRequired == true,
-                    };
-
-                    switch (field.Type)
-                    {
-                        case FormatField.FieldType.Date:
-                            question.Type = Questionnaire.QuestionnaireItemType.Date;
-                            break;
-                        case FormatField.FieldType.Count:
-                            question.Type = Questionnaire.QuestionnaireItemType.Integer;
-                            break;
-                        case FormatField.FieldType.Percentage:
-                            question.Type = Questionnaire.QuestionnaireItemType.Decimal;
-                            break;
-                        case FormatField.FieldType.Boolean:
-                            question.Type = Questionnaire.QuestionnaireItemType.Boolean;
-                            break;
-                        case FormatField.FieldType.Choice:
-                            question.Type = Questionnaire.QuestionnaireItemType.Choice;
-                            question.AnswerOption = new List<Questionnaire.AnswerOptionComponent>();
-                            foreach (string choice in field.Choices)
-                            {
-                                question.AnswerOption.Add(new Questionnaire.AnswerOptionComponent()
-                                {
-                                    Value = new FhirString(choice),
-                                });
-                            }
-
-                            break;
-                        case FormatField.FieldType.Text:
-                            question.Type = Questionnaire.QuestionnaireItemType.Text;
-                            break;
-                        default:
-                            question.Type = Questionnaire.QuestionnaireItemType.Display;
-                            break;
-                    }
-
-                    section.Item.Add(question);
+                    section.Item.Add(component);
                 }
 
                 questionnaire.Item.Add(section);
             }
 
             return questionnaire;
+        }
+
+        /// <summary>Component from question.</summary>
+        /// <param name="format">   Describes the format to use.</param>
+        /// <param name="question"> The question.</param>
+        /// <param name="itemOrder">[in,out] The item order.</param>
+        /// <returns>A Questionnaire.ItemComponent.</returns>
+        private static Questionnaire.ItemComponent ComponentFromQuestion(
+            IReportingFormat format,
+            QuestionnaireQuestion question,
+            ref int itemOrder)
+        {
+            if (!format.Fields.ContainsKey(question.ValueFieldName))
+            {
+                return null;
+            }
+
+            FormatField valueField = format.Fields[question.ValueFieldName];
+            FormatField displayField;
+
+            if (string.IsNullOrEmpty(question.DisplayFieldName) ||
+                (!format.Fields.ContainsKey(question.DisplayFieldName)))
+            {
+                displayField = valueField;
+            }
+            else
+            {
+                displayField = format.Fields[question.DisplayFieldName];
+            }
+
+            Questionnaire.ItemComponent component = new Questionnaire.ItemComponent()
+            {
+                LinkId = valueField.Name,
+                Code = new List<Coding>()
+                {
+                    new Coding($"{CanonicalUrl}/{format.Name}", valueField.Name),
+                },
+                Required = valueField.IsRequired == true,
+                Repeats = false,
+            };
+
+            component.AddExtension(
+                "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                new FhirDecimal(itemOrder++));
+
+            if (question.UseTitleOnly)
+            {
+                component.Text = $"{displayField.Title}";
+            }
+            else
+            {
+                component.Text = $"{displayField.Title}: {displayField.Description}";
+            }
+
+            switch (valueField.Type)
+            {
+                case FormatField.FieldType.Date:
+                    component.Type = Questionnaire.QuestionnaireItemType.Date;
+                    break;
+
+                case FormatField.FieldType.Count:
+                    component.Type = Questionnaire.QuestionnaireItemType.Integer;
+                    break;
+
+                case FormatField.FieldType.Percentage:
+                    component.Type = Questionnaire.QuestionnaireItemType.Decimal;
+                    break;
+
+                case FormatField.FieldType.Boolean:
+                    component.Type = Questionnaire.QuestionnaireItemType.Boolean;
+                    break;
+
+                case FormatField.FieldType.Choice:
+                    component.Type = Questionnaire.QuestionnaireItemType.Choice;
+                    component.AnswerOption = new List<Questionnaire.AnswerOptionComponent>();
+
+                    int optionOrder = 0;
+                    foreach (FormatFieldOption option in valueField.Options)
+                    {
+                        Element element = new FhirString(option.Text);
+
+                        element.AddExtension(
+                            "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                            new FhirBoolean(option.IsExclusive),
+                            true);
+
+                        element.AddExtension(
+                            "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                            new FhirDecimal(optionOrder++));
+
+                        component.AnswerOption.Add(new Questionnaire.AnswerOptionComponent()
+                        {
+                            Value = element,
+                        });
+                    }
+
+                    break;
+
+                case FormatField.FieldType.Text:
+                    component.Type = Questionnaire.QuestionnaireItemType.Text;
+                    break;
+
+                case FormatField.FieldType.ShortString:
+                    component.Type = Questionnaire.QuestionnaireItemType.String;
+                    break;
+
+                case FormatField.FieldType.Display:
+                default:
+                    component.Type = Questionnaire.QuestionnaireItemType.Display;
+                    break;
+            }
+
+            return component;
         }
 
         /// <summary>Cdc patient impact questionnaire.</summary>
@@ -243,11 +338,17 @@ namespace covidReportTransformationLib.Formats.SANER
 
             Bundle bundle = new Bundle()
             {
+                Meta = new Meta()
+                {
+                    Profile = new string[]
+                    {
+                        "http://hl7.org/fhir/4.0/StructureDefinition/Bundle",
+                    },
+                },
                 Id = bundleId,
                 Identifier = FhirIds.IdentifierForId(bundleId),
                 Type = Bundle.BundleType.Collection,
                 Timestamp = new DateTimeOffset(DateTime.Now),
-                Meta = new Meta(),
             };
 
             bundle.Entry = new List<Bundle.EntryComponent>();

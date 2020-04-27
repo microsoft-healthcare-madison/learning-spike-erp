@@ -20,7 +20,7 @@ namespace covidReportTransformationLib.Formats
         /// <param name="isRequired"> True if this object is required, false if not.</param>
         /// <param name="countMin">   The count minimum.</param>
         /// <param name="countMax">   The count maximum.</param>
-        /// <param name="choices">    The choices.</param>
+        /// <param name="options">    The options allowed for this question (choices).</param>
         public FormatField(
             string name,
             string title,
@@ -30,7 +30,7 @@ namespace covidReportTransformationLib.Formats
             bool isRequired,
             int? countMin,
             int? countMax,
-            List<string> choices)
+            List<FormatFieldOption> options)
         {
             Name = name;
             Title = title;
@@ -40,7 +40,7 @@ namespace covidReportTransformationLib.Formats
             IsRequired = isRequired;
             CountMin = countMin;
             CountMax = countMax;
-            Choices = choices;
+            Options = options;
         }
 
         /// <summary>Values that represent field types.</summary>
@@ -66,6 +66,9 @@ namespace covidReportTransformationLib.Formats
 
             /// <summary>An enum constant representing the Text option.</summary>
             Text,
+
+            /// <summary>An enum constant representing the string option.</summary>
+            ShortString,
         }
 
         /// <summary>Values that represent measure types.</summary>
@@ -118,6 +121,6 @@ namespace covidReportTransformationLib.Formats
 
         /// <summary>Gets the choices.</summary>
         /// <value>The choices.</value>
-        public List<string> Choices { get; }
+        public List<FormatFieldOption> Options { get; }
     }
 }

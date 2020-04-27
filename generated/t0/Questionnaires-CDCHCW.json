@@ -1,24 +1,34 @@
 {
   "resourceType": "Bundle",
   "id": "FHIR-4",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/4.0/StructureDefinition/Bundle"
+    ]
+  },
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-04-22T12:21:51.3729795-05:00",
+  "timestamp": "2020-04-27T11:35:46.1104423-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/sanerCDCHCW",
       "resource": {
         "resourceType": "Questionnaire",
         "id": "sanerCDCHCW",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/4.0/StructureDefinition/Questionnaire"
+          ]
+        },
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-        "version": "20200421.01",
+        "version": "20200424.01",
         "name": "sanerCDCHCW",
         "title": "SANER CDC COVID-19 Healthcare Worker Staffing Pathway",
         "status": "draft",
-        "date": "2020-04-21T00:00:00Z",
+        "date": "2020-04-24T00:00:00Z",
         "publisher": "HL7 SANER-IG",
         "description": "SANER implementation of the CDC COVID-19 Healthcare Worker Staffing Pathway",
         "useContext": [
@@ -51,11 +61,24 @@
         ],
         "item": [
           {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 0
+              }
+            ],
             "linkId": "section_0",
             "text": "COVID-19 Module: Healthcare Worker Staffing Pathway",
             "type": "group",
+            "repeats": false,
             "item": [
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
                 "linkId": "facilityId",
                 "code": [
                   {
@@ -64,10 +87,17 @@
                   }
                 ],
                 "text": "Facility ID #:",
-                "type": "text",
-                "required": true
+                "type": "string",
+                "required": true,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "summaryCensusId",
                 "code": [
                   {
@@ -76,10 +106,17 @@
                   }
                 ],
                 "text": "Summary Census ID #:",
-                "type": "text",
-                "required": true
+                "type": "string",
+                "required": true,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
                 "linkId": "collectiondate",
                 "code": [
                   {
@@ -89,16 +126,30 @@
                 ],
                 "text": "Collection Date: Date for which Healthcare Worker Impact Module responses are reported",
                 "type": "date",
-                "required": true
+                "required": true,
+                "repeats": false
               }
             ]
           },
           {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 1
+              }
+            ],
             "linkId": "section_1",
-            "text": "Critical Staffing Shortage Today",
+            "text": "Information:",
             "type": "group",
+            "repeats": false,
             "item": [
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
                 "linkId": "groupToday",
                 "code": [
                   {
@@ -108,112 +159,16 @@
                 ],
                 "text": "CRITICAL STAFFING SHORTAGE TODAY: Does your organization consider that it has a critical staffing shortage in this group today?",
                 "type": "display",
-                "required": true
+                "required": true,
+                "repeats": false
               },
               {
-                "linkId": "shortnurse",
-                "code": [
+                "extension": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortnurse"
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
                   }
                 ],
-                "text": "Nurses: Registered nurses and licensed practical nurses",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shortrt",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortrt"
-                  }
-                ],
-                "text": "Respiratory therapists: Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shortphar",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortphar"
-                  }
-                ],
-                "text": "Pharmacists and pharmacy techs:",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shortphys",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortphys"
-                  }
-                ],
-                "text": "Physicians: Attending physicians, fellows",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shorttemp",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shorttemp"
-                  }
-                ],
-                "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists: 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shortoth",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortoth"
-                  }
-                ],
-                "text": "Other HCP: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shortothlic",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortothlic"
-                  }
-                ],
-                "text": "Other licensed independent practitioners: Advanced practice nurses, physician assistants",
-                "type": "boolean",
-                "required": false
-              },
-              {
-                "linkId": "shortothsfy",
-                "code": [
-                  {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "shortothsfy"
-                  }
-                ],
-                "text": "Other HCP - Specify the groups: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
-                "type": "text",
-                "required": false
-              }
-            ]
-          },
-          {
-            "linkId": "section_2",
-            "text": "Critical Staffing Shortage Within a Week",
-            "type": "group",
-            "item": [
-              {
                 "linkId": "groupThisWeek",
                 "code": [
                   {
@@ -223,9 +178,49 @@
                 ],
                 "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK: Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
                 "type": "display",
-                "required": true
+                "required": true,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 2
+              }
+            ],
+            "linkId": "section_2",
+            "text": "Environmental services: Front-line persons who clean patient rooms and all areas in a healthcare facility",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortenvsvc",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortenvsvc"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshortenvsvc",
                 "code": [
                   {
@@ -233,11 +228,51 @@
                     "code": "posshortenvsvc"
                   }
                 ],
-                "text": "Environmental services: Front-line persons who clean patient rooms and all areas in a healthcare facility",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 3
+              }
+            ],
+            "linkId": "section_3",
+            "text": "Nurses: Registered nurses and licensed practical nurses",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortnurse",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortnurse"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshortnurse",
                 "code": [
                   {
@@ -245,11 +280,51 @@
                     "code": "posshortnurse"
                   }
                 ],
-                "text": "Nurses: Registered nurses and licensed practical nurses",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 4
+              }
+            ],
+            "linkId": "section_4",
+            "text": "Respiratory therapists: Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortrt",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortrt"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshortrt",
                 "code": [
                   {
@@ -257,11 +332,51 @@
                     "code": "posshortrt"
                   }
                 ],
-                "text": "Respiratory therapists: Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 5
+              }
+            ],
+            "linkId": "section_5",
+            "text": "Pharmacists and pharmacy techs:",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortphar",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortphar"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshortphar",
                 "code": [
                   {
@@ -269,11 +384,51 @@
                     "code": "posshortphar"
                   }
                 ],
-                "text": "Pharmacists and pharmacy techs:",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 6
+              }
+            ],
+            "linkId": "section_6",
+            "text": "Physicians: Attending physicians, fellows",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortphys",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortphys"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshortphys",
                 "code": [
                   {
@@ -281,11 +436,51 @@
                     "code": "posshortphys"
                   }
                 ],
-                "text": "Physicians: Attending physicians, fellows",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 7
+              }
+            ],
+            "linkId": "section_7",
+            "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists: 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shorttemp",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shorttemp"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshorttemp",
                 "code": [
                   {
@@ -293,23 +488,51 @@
                     "code": "posshorttemp"
                   }
                 ],
-                "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists: 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
-              },
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
               {
-                "linkId": "posshortoth",
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 8
+              }
+            ],
+            "linkId": "section_8",
+            "text": "Other licensed independent practitioners: Advanced practice nurses, physician assistants",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortothlic",
                 "code": [
                   {
                     "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-                    "code": "posshortoth"
+                    "code": "shortothlic"
                   }
                 ],
-                "text": "Other HCP: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "posshortothlic",
                 "code": [
                   {
@@ -317,11 +540,89 @@
                     "code": "posshortothlic"
                   }
                 ],
-                "text": "Other licensed independent practitioners: Advanced practice nurses, physician assistants",
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
                 "type": "boolean",
-                "required": false
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 9
+              }
+            ],
+            "linkId": "section_9",
+            "text": "Other HCP: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shortoth",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortoth"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "shortothsfy",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "shortothsfy"
+                  }
+                ],
+                "text": "Other HCP - Specify the groups",
+                "type": "string",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "posshortoth",
+                "code": [
+                  {
+                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "code": "posshortoth"
+                  }
+                ],
+                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 3
+                  }
+                ],
                 "linkId": "posshortothsfy",
                 "code": [
                   {
@@ -329,9 +630,10 @@
                     "code": "posshortothsfy"
                   }
                 ],
-                "text": "Other HCP - Specify the groups: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
-                "type": "text",
-                "required": false
+                "text": "Other HCP - Specify the groups",
+                "type": "string",
+                "required": false,
+                "repeats": false
               }
             ]
           }

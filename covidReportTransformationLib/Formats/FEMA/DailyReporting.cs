@@ -72,7 +72,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     State,
                     "State",
                     string.Empty,
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
                     null,
@@ -85,7 +85,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     County,
                     "County",
                     string.Empty,
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
                     null,
@@ -230,18 +230,18 @@ namespace covidReportTransformationLib.Formats.FEMA
         {
             new QuestionnaireSection(
                 "Daily Hospital COVID-19 Reporting",
-                new List<string>()
+                new List<QuestionnaireQuestion>()
                 {
-                    CollectionDate,
-                    State,
-                    County,
-                    TestsOrderedToday,
-                    TestsOrderedTotal,
-                    TestsWithResultsToday,
-                    SpecimensRejectedTotal,
-                    TestsCompletedTotal,
-                    PositiveC19Today,
-                    PositiveC19Total,
+                    new QuestionnaireQuestion(CollectionDate),
+                    new QuestionnaireQuestion(State),
+                    new QuestionnaireQuestion(County),
+                    new QuestionnaireQuestion(TestsOrderedToday),
+                    new QuestionnaireQuestion(TestsOrderedTotal),
+                    new QuestionnaireQuestion(TestsWithResultsToday),
+                    new QuestionnaireQuestion(SpecimensRejectedTotal),
+                    new QuestionnaireQuestion(TestsCompletedTotal),
+                    new QuestionnaireQuestion(PositiveC19Today),
+                    new QuestionnaireQuestion(PositiveC19Total),
                 }),
         };
 

@@ -71,7 +71,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     FacilityId,
                     "Facility ID #",
                     string.Empty,
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
                     null,
@@ -84,7 +84,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     SummaryCensusId,
                     "Summary Census ID #",
                     string.Empty,
-                    FormatField.FieldType.Text,
+                    FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
                     null,
@@ -298,34 +298,34 @@ namespace covidReportTransformationLib.Formats.CDC
         {
             new QuestionnaireSection(
                 "COVID-19 Module: Patient Impact and Hospital Capacity Pathway",
-                new List<string>()
+                new List<QuestionnaireQuestion>()
                 {
-                    FacilityId,
-                    SummaryCensusId,
-                    CollectionDate,
+                    new QuestionnaireQuestion(FacilityId),
+                    new QuestionnaireQuestion(SummaryCensusId),
+                    new QuestionnaireQuestion(CollectionDate),
                 }),
             new QuestionnaireSection(
                 "Patient Impact Data Elements",
-                new List<string>()
+                new List<QuestionnaireQuestion>()
                 {
-                    HospitalizedPatients,
-                    VentilatedPatients,
-                    HospitalOnset,
-                    AwaitingBeds,
-                    AwaitingVentilators,
-                    Died,
+                    new QuestionnaireQuestion(HospitalizedPatients),
+                    new QuestionnaireQuestion(VentilatedPatients),
+                    new QuestionnaireQuestion(HospitalOnset),
+                    new QuestionnaireQuestion(AwaitingBeds),
+                    new QuestionnaireQuestion(AwaitingVentilators),
+                    new QuestionnaireQuestion(Died),
                 }),
             new QuestionnaireSection(
                 "Hospital Bed/ Intensive Care Unit (ICU)/ Ventilator Capacity Data Elements",
-                new List<string>()
+                new List<QuestionnaireQuestion>()
                 {
-                    TotalBeds,
-                    InpatientBeds,
-                    InpatientBedOccupancy,
-                    IcuBeds,
-                    IcuBedOccupancy,
-                    Ventilators,
-                    VentilatorsInUse,
+                    new QuestionnaireQuestion(TotalBeds),
+                    new QuestionnaireQuestion(InpatientBeds),
+                    new QuestionnaireQuestion(InpatientBedOccupancy),
+                    new QuestionnaireQuestion(IcuBeds),
+                    new QuestionnaireQuestion(IcuBedOccupancy),
+                    new QuestionnaireQuestion(Ventilators),
+                    new QuestionnaireQuestion(VentilatorsInUse),
                 }),
         };
 

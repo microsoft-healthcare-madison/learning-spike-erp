@@ -49,6 +49,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\data\Hospitals_Chef_County.csv" Link="data\Hospitals_Chef_County.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\data\Hospitals_State_of_New_Cyprus.csv" Link="data\Hospitals_State_of_New_Cyprus.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\covidReportTransformationLib\covidReportTransformationLib.csproj" />
   </ItemGroup>
 

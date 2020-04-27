@@ -51,6 +51,13 @@ namespace covidReportTransformationLib.Formats.SANER
 
             Measure measure = new Measure()
             {
+                Meta = new Meta()
+                {
+                    Profile = new string[]
+                    {
+                        "http://hl7.org/fhir/4.0/StructureDefinition/Measure",
+                    },
+                },
                 Id = format.Name,
                 Name = format.Name,
                 Url = $"{CanonicalUrl}/{format.Name}",
@@ -190,11 +197,17 @@ namespace covidReportTransformationLib.Formats.SANER
 
             Bundle bundle = new Bundle()
             {
+                Meta = new Meta()
+                {
+                    Profile = new string[]
+                    {
+                        "http://hl7.org/fhir/4.0/StructureDefinition/Bundle",
+                    },
+                },
                 Id = bundleId,
                 Identifier = FhirIds.IdentifierForId(bundleId),
                 Type = Bundle.BundleType.Collection,
                 Timestamp = new DateTimeOffset(DateTime.Now),
-                Meta = new Meta(),
             };
 
             bundle.Entry = new List<Bundle.EntryComponent>();

@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using CsvHelper;
+using CsvHelper.Configuration;
 using generator_cli.Generators;
 
 namespace generator_cli.Geographic
@@ -28,15 +29,17 @@ namespace generator_cli.Geographic
         private static int _maxBeds = 0;
 
         /// <summary>Initializes this object.</summary>
-        /// <param name="seed">         (Optional) The seed.</param>
-        /// <param name="minBeds">      (Optional) The minimum beds.</param>
-        /// <param name="maxBeds">      (Optional) The maximum beds.</param>
-        /// <param name="dataDirectory">(Optional) Pathname of the data directory.</param>
+        /// <param name="seed">               (Optional) The seed.</param>
+        /// <param name="minBeds">            (Optional) The minimum beds.</param>
+        /// <param name="maxBeds">            (Optional) The maximum beds.</param>
+        /// <param name="dataDirectory">      (Optional) Pathname of the data directory.</param>
+        /// <param name="useConnectathonData">(Optional) True to use connectathon data.</param>
         public static void Init(
             int seed = 0,
             int minBeds = 10,
             int maxBeds = 5000,
-            string dataDirectory = null)
+            string dataDirectory = null,
+            bool useConnectathonData = false)
         {
             if (seed == 0)
             {
@@ -50,31 +53,66 @@ namespace generator_cli.Geographic
             _minBeds = minBeds;
             _maxBeds = maxBeds;
 
+            if (!useConnectathonData)
+            {
+                LoadFromHosptialCsv(dataDirectory, "Hospitals.csv");
+            }
+            else
+            {
+                LoadFromConnectathonCsv(dataDirectory, "Hospitals_Chef_County.csv");
+                LoadFromConnectathonCsv(dataDirectory, "Hospitals_State_of_New_Cyprus.csv");
+            }
+
+            Console.WriteLine(
+                $"Loaded {_hospitals.Count} hospital records" +
+                $", {_hospitalsByState.Count} states" +
+                $", {_hospitalsByZip.Count} zip codes");
+        }
+
+        /// <summary>Loads from CSV.</summary>
+        /// <param name="dataDirectory">Pathname of the data directory.</param>
+        /// <param name="file">         Filename of the file.</param>
+        private static void LoadFromConnectathonCsv(string dataDirectory, string file)
+        {
             string filename = string.IsNullOrEmpty(dataDirectory)
-                ? Path.Combine(Directory.GetCurrentDirectory(), "data", "Hospitals.csv")
-                : Path.Combine(dataDirectory, "Hospitals.csv");
+                ? Path.Combine(Directory.GetCurrentDirectory(), "data", file)
+                : Path.Combine(dataDirectory, file);
 
-            IEnumerable<HospitalRecord> raw;
+            if (!File.Exists(filename))
+            {
+                return;
+            }
 
-            int bedMin = int.MaxValue;
-            int bedMax = int.MinValue;
+            long id = _hospitals.Count;
+
+            IEnumerable<ConnectathonRecord> raw;
 
             using (StreamReader reader = new StreamReader(filename, Encoding.UTF8))
             using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                raw = csv.GetRecords<HospitalRecord>();
+                raw = csv.GetRecords<ConnectathonRecord>();
 
-                using (IEnumerator<HospitalRecord> rawEnumerator = raw.GetEnumerator())
+                using (IEnumerator<ConnectathonRecord> rawEnumerator = raw.GetEnumerator())
                 {
                     while (rawEnumerator.MoveNext())
                     {
-                        HospitalRecord hosp = rawEnumerator.Current;
+                        ConnectathonRecord rec = rawEnumerator.Current;
 
-                        if (int.TryParse(hosp.BEDS, out int beds))
+                        HospitalRecord hosp = new HospitalRecord()
                         {
-                            bedMin = Math.Min(bedMin, beds);
-                            bedMax = Math.Max(bedMax, beds);
-                        }
+                            OBJECTID = ++id,
+                            ID = rec.CCN,
+                            NAME = rec.FacilityName,
+                            ADDRESS = rec.Address,
+                            CITY = rec.City,
+                            COUNTY = rec.County,
+                            STATE = rec.State,
+                            ZIP = rec.Zip,
+                            ZIP4 = rec.ZipPlus4,
+                            TYPE = rec.HospitalType,
+                            LONGITUDE = rec.Longitude,
+                            LATITUDE = rec.Latitude,
+                        };
 
                         _hospitals.Add(hosp);
 
@@ -98,11 +136,57 @@ namespace generator_cli.Geographic
                     }
                 }
             }
+        }
 
-            Console.WriteLine(
-                $"Loaded {_hospitals.Count} hospital records" +
-                $", {_hospitalsByState.Count} states" +
-                $", {_hospitalsByZip.Count} zip codes, beds: {bedMin} - {bedMax}");
+        /// <summary>Loads from CSV.</summary>
+        /// <param name="dataDirectory">Pathname of the data directory.</param>
+        /// <param name="file">         Filename of the file.</param>
+        private static void LoadFromHosptialCsv(string dataDirectory, string file)
+        {
+            string filename = string.IsNullOrEmpty(dataDirectory)
+                ? Path.Combine(Directory.GetCurrentDirectory(), "data", file)
+                : Path.Combine(dataDirectory, file);
+
+            if (!File.Exists(filename))
+            {
+                return;
+            }
+
+            IEnumerable<HospitalRecord> raw;
+
+            using (StreamReader reader = new StreamReader(filename, Encoding.UTF8))
+            using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                raw = csv.GetRecords<HospitalRecord>();
+
+                using (IEnumerator<HospitalRecord> rawEnumerator = raw.GetEnumerator())
+                {
+                    while (rawEnumerator.MoveNext())
+                    {
+                        HospitalRecord hosp = rawEnumerator.Current;
+
+                        _hospitals.Add(hosp);
+
+                        _hospitalsById.Add(
+                            IdForOrg(hosp.OBJECTID),
+                            hosp);
+
+                        if (!_hospitalsByZip.ContainsKey(hosp.ZIP))
+                        {
+                            _hospitalsByZip.Add(hosp.ZIP, new List<HospitalRecord>());
+                        }
+
+                        _hospitalsByZip[hosp.ZIP].Add(hosp);
+
+                        if (!_hospitalsByState.ContainsKey(hosp.STATE))
+                        {
+                            _hospitalsByState.Add(hosp.STATE, new List<HospitalRecord>());
+                        }
+
+                        _hospitalsByState[hosp.STATE].Add(hosp);
+                    }
+                }
+            }
         }
 
         /// <summary>Beds for hospital.</summary>
@@ -168,7 +252,7 @@ namespace generator_cli.Geographic
 
             List<int> indexes = Enumerable.Range(0, records.Count - 1).ToList();
 
-            for (int i = Math.Min(requestedCount + recordsToSkip, records.Count); i > 0; i--)
+            for (int i = Math.Min(requestedCount + recordsToSkip, records.Count - 1); i > 0; i--)
             {
                 int index = _rand.Next(0, indexes.Count);
                 int listIndex = indexes[index];

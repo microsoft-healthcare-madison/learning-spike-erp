@@ -1,24 +1,34 @@
 {
   "resourceType": "Bundle",
   "id": "FHIR-3",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/4.0/StructureDefinition/Bundle"
+    ]
+  },
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
     "value": "FHIR-3"
   },
   "type": "collection",
-  "timestamp": "2020-04-22T12:21:51.3563976-05:00",
+  "timestamp": "2020-04-27T11:35:46.0867652-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/sanerCDC",
       "resource": {
         "resourceType": "Questionnaire",
         "id": "sanerCDC",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/4.0/StructureDefinition/Questionnaire"
+          ]
+        },
         "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
-        "version": "20200421.01",
+        "version": "20200424.01",
         "name": "sanerCDC",
         "title": "SANER CDC COVID-19 Patient Impact & Hospital Capacity Module",
         "status": "draft",
-        "date": "2020-04-21T00:00:00Z",
+        "date": "2020-04-24T00:00:00Z",
         "publisher": "HL7 SANER-IG",
         "description": "SANER implementation of the CDC COVID-19 Patient Impact & Hospital Capacity Module",
         "useContext": [
@@ -51,11 +61,24 @@
         ],
         "item": [
           {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 0
+              }
+            ],
             "linkId": "section_0",
             "text": "COVID-19 Module: Patient Impact and Hospital Capacity Pathway",
             "type": "group",
+            "repeats": false,
             "item": [
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
                 "linkId": "facilityId",
                 "code": [
                   {
@@ -64,10 +87,17 @@
                   }
                 ],
                 "text": "Facility ID #:",
-                "type": "text",
-                "required": true
+                "type": "string",
+                "required": true,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "summaryCensusId",
                 "code": [
                   {
@@ -76,10 +106,17 @@
                   }
                 ],
                 "text": "Summary Census ID #:",
-                "type": "text",
-                "required": true
+                "type": "string",
+                "required": true,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
                 "linkId": "collectionDate",
                 "code": [
                   {
@@ -89,16 +126,30 @@
                 ],
                 "text": "Collection Date: Date for which patient impact and hospital capacity counts are reported",
                 "type": "date",
-                "required": true
+                "required": true,
+                "repeats": false
               }
             ]
           },
           {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 1
+              }
+            ],
             "linkId": "section_1",
             "text": "Patient Impact Data Elements",
             "type": "group",
+            "repeats": false,
             "item": [
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
                 "linkId": "numC19HospPats",
                 "code": [
                   {
@@ -108,9 +159,16 @@
                 ],
                 "text": "HOSPITALIZED: Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "numC19MechVentPats",
                 "code": [
                   {
@@ -120,9 +178,16 @@
                 ],
                 "text": "HOSPITALIZED and VENTILATED: Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
                 "linkId": "numC19HOPats",
                 "code": [
                   {
@@ -132,9 +197,16 @@
                 ],
                 "text": "HOSPITAL ONSET: Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 3
+                  }
+                ],
                 "linkId": "numC19OverflowPats",
                 "code": [
                   {
@@ -144,9 +216,16 @@
                 ],
                 "text": "ED/OVERFLOW: Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 4
+                  }
+                ],
                 "linkId": "numC19OFMechVentPats",
                 "code": [
                   {
@@ -156,9 +235,16 @@
                 ],
                 "text": "ED/OVERFLOW and VENTILATED: Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 5
+                  }
+                ],
                 "linkId": "numC19Died",
                 "code": [
                   {
@@ -168,16 +254,30 @@
                 ],
                 "text": "DEATHS: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               }
             ]
           },
           {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 2
+              }
+            ],
             "linkId": "section_2",
             "text": "Hospital Bed/ Intensive Care Unit (ICU)/ Ventilator Capacity Data Elements",
             "type": "group",
+            "repeats": false,
             "item": [
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
                 "linkId": "numTotBeds",
                 "code": [
                   {
@@ -187,9 +287,16 @@
                 ],
                 "text": "ALL HOSPTIAL BEDS: Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
                 "linkId": "numbeds",
                 "code": [
                   {
@@ -199,9 +306,16 @@
                 ],
                 "text": "HOSPITAL INPATIENT BEDS: Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
                 "type": "integer",
-                "required": true
+                "required": true,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
                 "linkId": "numBedsOcc",
                 "code": [
                   {
@@ -211,9 +325,16 @@
                 ],
                 "text": "HOSPITAL INPATIENT BED OCCUPANCY: Total number of staffed inpatient beds that are occupied.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 3
+                  }
+                ],
                 "linkId": "numICUBeds",
                 "code": [
                   {
@@ -223,9 +344,16 @@
                 ],
                 "text": "ICU BEDS: Total number of staffed inpatient intensive care unit (ICU) beds.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 4
+                  }
+                ],
                 "linkId": "numICUBedsOcc",
                 "code": [
                   {
@@ -235,9 +363,16 @@
                 ],
                 "text": "ICU BED OCCUPANCY: Total number of staffed inpatient ICU beds that are occupied.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 5
+                  }
+                ],
                 "linkId": "numVent",
                 "code": [
                   {
@@ -247,9 +382,16 @@
                 ],
                 "text": "MECHANICAL VENTILATORS: Total number of ventilators available.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               },
               {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 6
+                  }
+                ],
                 "linkId": "numVentUse",
                 "code": [
                   {
@@ -259,7 +401,8 @@
                 ],
                 "text": "MECHANICAL VENTILATORS IN USE: Total number of ventilators in use.",
                 "type": "integer",
-                "required": false
+                "required": false,
+                "repeats": false
               }
             ]
           }

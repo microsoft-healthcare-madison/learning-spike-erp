@@ -38,6 +38,7 @@ namespace generator_cli
 
         private static Random _rand = null;
         private static bool _useLookup = false;
+        private static bool _connectathon = false;
         private static bool _useJson = false;
         private static double _changeFactor = 0;
         private static double _minIcuPercent = 0;
@@ -70,7 +71,7 @@ namespace generator_cli
         /// <param name="timePeriodHours">     Time-step period in hours (default: 24).</param>
         /// <param name="seed">                Starting seed to use in generation, 0 for none (default: 0).</param>
         /// <param name="recordsToSkip">       Number of records to skip before starting generation (default: 0).</param>
-        /// <param name="orgSource">           Source for organization records: generate|csv (default: csv).</param>
+        /// <param name="orgSource">           Source for organization records: generate|csv|connectathon (default: connectathon).</param>
         /// <param name="prettyPrint">         If output files should be formatted for display.</param>
         /// <param name="bedTypes">            Bar separated bed types: ICU|ER... (default: ICU|ER|HU).</param>
         /// <param name="operationalStatuses"> Bar separated operational status: U|O|K (default: O|U).</param>
@@ -98,7 +99,7 @@ namespace generator_cli
             int timePeriodHours = 24,
             int seed = 0,
             int recordsToSkip = 0,
-            string orgSource = "csv",
+            string orgSource = "connectathon",
             bool prettyPrint = true,
             string bedTypes = "ICU|ER|HU",
             string operationalStatuses = "O|U",
@@ -169,7 +170,8 @@ namespace generator_cli
                 _extension = ".xml";
             }
 
-            _useLookup = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() != "GENERATE");
+            _useLookup = (!string.IsNullOrEmpty(orgSource)) || (orgSource.ToUpperInvariant() != "GENERATE");
+            _connectathon = string.IsNullOrEmpty(orgSource) || (orgSource.ToUpperInvariant() == "CONNECTATHON");
 
             if (seed == 0)
             {
@@ -192,9 +194,14 @@ namespace generator_cli
             OrgBeds.Init(seed, _bedConfigurations);
 
             // only need hospital manager if we are using lookup (avoid loading otherwise)
-            if (_useLookup)
+            if (_useLookup || _connectathon)
             {
-                HospitalManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
+                HospitalManager.Init(
+                    seed,
+                    minBedsPerOrg,
+                    maxBedsPerOrg,
+                    dataDirectory,
+                    _connectathon);
             }
 
             string dir;

@@ -97,6 +97,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 case FormatField.FieldType.Boolean:
                 case FormatField.FieldType.Choice:
                 case FormatField.FieldType.Text:
+                case FormatField.FieldType.ShortString:
                     return null;
             }
 
