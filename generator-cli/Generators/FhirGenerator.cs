@@ -87,10 +87,15 @@ namespace generator_cli.Generators
                 return NextId;
             }
 
-            return orgId.Replace(
-                OrgPrefix,
-                $"{RootLocationPrefix}{OrgPrefix}",
-                StringComparison.Ordinal);
+            if (orgId.Contains(OrgPrefix, StringComparison.Ordinal))
+            {
+                return orgId.Replace(
+                    OrgPrefix,
+                    $"{RootLocationPrefix}{OrgPrefix}",
+                    StringComparison.Ordinal);
+            }
+
+            return $"{RootLocationPrefix}-{orgId}";
         }
 
         /// <summary>Generates a bed with random properties.</summary>
