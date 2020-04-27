@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-613",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-613"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T12:00:31.7761867-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140065",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "X140065",
+        "identifier": [
+          {
+            "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+            "value": "X140065"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "BESTER MEMORIAL HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "5101 WILLOW SPRINGS RD"
+            ],
+            "city": "LA GRANGE",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60525",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/X140065",
+      "resource": {
+        "resourceType": "Location",
+        "id": "X140065",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "5101 WILLOW SPRINGS RD"
+          ],
+          "city": "LA GRANGE",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60525",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.888407,
+          "latitude": 41.797382
+        }
+      }
+    }
+  ]
+}

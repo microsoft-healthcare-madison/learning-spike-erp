@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-314",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-314"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T12:00:30.49588-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140117",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "X140117",
+        "identifier": [
+          {
+            "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+            "value": "X140117"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "KEATS MEDICAL CENTER",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "7435 W TALCOTT AVE"
+            ],
+            "city": "CHICAGO",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60631",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/X140117",
+      "resource": {
+        "resourceType": "Location",
+        "id": "X140117",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "7435 W TALCOTT AVE"
+          ],
+          "city": "CHICAGO",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60631",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.81257,
+          "latitude": 41.988458
+        }
+      }
+    }
+  ]
+}

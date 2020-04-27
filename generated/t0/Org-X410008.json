@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-301",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-301"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T12:00:30.4420989-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X410008",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "X410008",
+        "identifier": [
+          {
+            "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+            "value": "X410008"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "CIMMERIAN FOUNDATION HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "100 KENYON AVE"
+            ],
+            "city": "WAKEFIELD",
+            "district": "WASHINGTON",
+            "state": "RI",
+            "postalCode": "02879",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/X410008",
+      "resource": {
+        "resourceType": "Location",
+        "id": "X410008",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "100 KENYON AVE"
+          ],
+          "city": "WAKEFIELD",
+          "district": "WASHINGTON",
+          "state": "RI",
+          "postalCode": "02879",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -71.495882,
+          "latitude": 41.431883
+        }
+      }
+    }
+  ]
+}
