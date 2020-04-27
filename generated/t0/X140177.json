@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-678",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-678"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T11:54:53.0680544-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140177",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "X140177",
+        "identifier": [
+          {
+            "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+            "value": "X140177"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "BRUNNER GROVE HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "7531 S STONY ISLAND AVE"
+            ],
+            "city": "CHICAGO",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60649",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/X140177",
+      "resource": {
+        "resourceType": "Location",
+        "id": "X140177",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "7531 S STONY ISLAND AVE"
+          ],
+          "city": "CHICAGO",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60649",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.58571,
+          "latitude": 41.757332
+        }
+      }
+    }
+  ]
+}

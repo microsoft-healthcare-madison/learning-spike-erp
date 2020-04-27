@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-561",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-561"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T11:54:52.6522482-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140119",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "X140119",
+        "identifier": [
+          {
+            "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+            "value": "X140119"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "LAKESIDE MEDICAL CENTER",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "1653 W CONGRESS PKWY"
+            ],
+            "city": "CHICAGO",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60612",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/X140119",
+      "resource": {
+        "resourceType": "Location",
+        "id": "X140119",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "1653 W CONGRESS PKWY"
+          ],
+          "city": "CHICAGO",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60612",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.66851,
+          "latitude": 41.875166
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-639",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-639"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-27T11:54:52.9293213-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140179",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "X140179",
+        "identifier": [
+          {
+            "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+            "value": "X140179"
+          }
+        ],
+        "active": true,
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "GENERAL PRODUCTS HOSPITAL",
+        "address": [
+          {
+            "use": "work",
+            "type": "both",
+            "line": [
+              "2800 W 95TH ST"
+            ],
+            "city": "EVERGREEN PK",
+            "district": "COOK",
+            "state": "IL",
+            "postalCode": "60805",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/X140179",
+      "resource": {
+        "resourceType": "Location",
+        "id": "X140179",
+        "status": "active",
+        "mode": "instance",
+        "address": {
+          "use": "work",
+          "type": "both",
+          "line": [
+            "2800 W 95TH ST"
+          ],
+          "city": "EVERGREEN PK",
+          "district": "COOK",
+          "state": "IL",
+          "postalCode": "60805",
+          "country": "USA"
+        },
+        "physicalType": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
+              "code": "si"
+            }
+          ]
+        },
+        "position": {
+          "longitude": -87.691966,
+          "latitude": 41.720902
+        }
+      }
+    }
+  ]
+}

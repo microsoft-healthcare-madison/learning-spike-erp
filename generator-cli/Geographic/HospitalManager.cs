@@ -25,6 +25,8 @@ namespace generator_cli.Geographic
 
         private static Random _rand = null;
 
+        private static bool _connectathonFlag = false;
+
         private static int _minBeds = 0;
         private static int _maxBeds = 0;
 
@@ -41,6 +43,8 @@ namespace generator_cli.Geographic
             string dataDirectory = null,
             bool useConnectathonData = false)
         {
+            _connectathonFlag = useConnectathonData;
+
             if (seed == 0)
             {
                 _rand = new Random();
@@ -117,7 +121,7 @@ namespace generator_cli.Geographic
                         _hospitals.Add(hosp);
 
                         _hospitalsById.Add(
-                            IdForOrg(hosp.OBJECTID),
+                            rec.CCN,
                             hosp);
 
                         if (!_hospitalsByZip.ContainsKey(hosp.ZIP))
@@ -334,8 +338,10 @@ namespace generator_cli.Geographic
         {
             return new Hl7.Fhir.Model.Organization()
             {
-                Id = IdForOrg(hosp.OBJECTID),
-                Identifier = IdentifierForOrg(hosp.OBJECTID),
+                Id = _connectathonFlag ? hosp.ID : IdForOrg(hosp.OBJECTID),
+                Identifier = _connectathonFlag
+                    ? IdentifierForConnectathonOrg(hosp.ID)
+                    : IdentifierForOrg(hosp.OBJECTID),
                 Active = true,
                 Type = FhirGenerator.ConceptListForOrganizationType(),
                 Name = hosp.NAME,
@@ -394,6 +400,17 @@ namespace generator_cli.Geographic
                 new Hl7.Fhir.Model.Identifier(
                     "https://hifld-geoplatform.opendata.arcgis.com/datasets/hospitals",
                     $"{id}"),
+            };
+
+        /// <summary>Identifier for connectathon organisation.</summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>A List&lt;Hl7.Fhir.Model.Identifier&gt;</returns>
+        private static List<Hl7.Fhir.Model.Identifier> IdentifierForConnectathonOrg(string id) =>
+            new List<Hl7.Fhir.Model.Identifier>()
+            {
+                new Hl7.Fhir.Model.Identifier(
+                    "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
+                    id),
             };
 
         /// <summary>Identifier for organization.</summary>
