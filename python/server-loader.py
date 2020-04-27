@@ -52,7 +52,7 @@ class DataSource:
     """A folder of files containing data to send to a server."""
 
     # Examples: Org-1234.json, Org-123-beds.json, Measures.json.
-    _resource_file_matcher = re.compile(r'^(Org-([0-9]+)-?)?(.+)?\.json$')
+    _resource_file_matcher = re.compile(r'^(X([0-9]+)-?)?(.+)?\.json$')
     _resource_file_properties = {
         'QuestionnaireResponses': FileProperties(6, ['QuestionnaireResponse']),
         'Questionnaires': FileProperties(5, ['Questionnaire']),
