@@ -6,7 +6,7 @@
     "value": "FHIR-26"
   },
   "type": "collection",
-  "timestamp": "2020-04-27T13:03:25.6691722-05:00",
+  "timestamp": "2020-04-29T11:24:11.800908-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-27",
@@ -15,26 +15,26 @@
         "id": "FHIR-27",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
+        "measure": "http://hl7.org/fhir/us/saner/FEMADailyHospitalCOVID19Reporting",
         "subject": {
-          "reference": "Location/Loc--X140251",
+          "reference": "Location/Loc-X140251",
           "display": "HERBERT MEDICAL CENTER"
         },
-        "date": "2020-04-27T13:03:25.6692613-05:00",
+        "date": "2020-04-29T11:24:11.8010197-05:00",
         "reporter": {
           "reference": "Organization/X140251",
           "display": "HERBERT MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-04-26",
-          "end": "2020-04-26"
+          "start": "2020-04-28",
+          "end": "2020-04-28"
         },
         "group": [
           {
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "newDiagnosticTests"
                 }
               ],
@@ -62,7 +62,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativeDiagnosticTests"
                 }
               ],
@@ -90,7 +90,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "newTestsResulted"
                 }
               ],
@@ -118,7 +118,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativeSpecimensRejected"
                 }
               ],
@@ -146,7 +146,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativeTestsPerformed"
                 }
               ],
@@ -174,7 +174,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "newPositiveC19Tests"
                 }
               ],
@@ -202,7 +202,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
@@ -230,7 +230,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "percentPositiveAmongNewlyResultedTests"
                 }
               ],
@@ -270,7 +270,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativePercentPositiveAmongResultedTests"
                 }
               ],

@@ -32,6 +32,13 @@ namespace covidReportTransformationLib.Formats
             get;
         }
 
+        /// <summary>Gets the definition.</summary>
+        /// <value>The definition.</value>
+        List<string> Definition
+        {
+            get;
+        }
+
         /// <summary>Gets the fields.</summary>
         /// <value>The fields.</value>
         Dictionary<string, FormatField> Fields
@@ -70,6 +77,13 @@ namespace covidReportTransformationLib.Formats
         /// <summary>Gets the artifacts.</summary>
         /// <value>The artifacts.</value>
         List<Hl7.Fhir.Model.RelatedArtifact> Artifacts
+        {
+            get;
+        }
+
+        /// <summary>Gets the authors.</summary>
+        /// <value>The authors.</value>
+        List<Hl7.Fhir.Model.ContactDetail> Authors
         {
             get;
         }

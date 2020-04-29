@@ -11,7 +11,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-04-27T13:03:25.5011788-05:00",
+  "timestamp": "2020-04-29T11:24:11.6145903-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/sanerCDCHCW",
@@ -23,13 +23,13 @@
             "http://hl7.org/fhir/4.0/StructureDefinition/Questionnaire"
           ]
         },
-        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
-        "version": "20200424.01",
+        "url": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
+        "version": "0.1.0",
         "name": "sanerCDCHCW",
         "title": "SANER CDC COVID-19 Healthcare Worker Staffing Pathway",
         "status": "draft",
-        "date": "2020-04-24T00:00:00Z",
-        "publisher": "HL7 SANER-IG",
+        "date": "2020-04-27T07:08:50-04:00",
+        "publisher": "HL7 International",
         "description": "SANER implementation of the CDC COVID-19 Healthcare Worker Staffing Pathway",
         "useContext": [
           {
@@ -82,7 +82,7 @@
                 "linkId": "facilityId",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "facilityId"
                   }
                 ],
@@ -101,7 +101,7 @@
                 "linkId": "summaryCensusId",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "summaryCensusId"
                   }
                 ],
@@ -120,7 +120,7 @@
                 "linkId": "collectiondate",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "collectiondate"
                   }
                 ],
@@ -153,11 +153,11 @@
                 "linkId": "groupToday",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "groupToday"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY: Does your organization consider that it has a critical staffing shortage in this group today?",
+                "text": "Critical Staffing Shortage Today: Does your organization consider that it has a critical staffing shortage in this group today?",
                 "type": "display",
                 "required": true,
                 "repeats": false
@@ -172,11 +172,11 @@
                 "linkId": "groupThisWeek",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "groupThisWeek"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK: Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
+                "text": "Critical Staffing Shortage Within a Week: Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
                 "type": "display",
                 "required": true,
                 "repeats": false
@@ -205,11 +205,11 @@
                 "linkId": "shortenvsvc",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortenvsvc"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -224,11 +224,11 @@
                 "linkId": "posshortenvsvc",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortenvsvc"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -257,11 +257,11 @@
                 "linkId": "shortnurse",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortnurse"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -276,11 +276,11 @@
                 "linkId": "posshortnurse",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortnurse"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -309,11 +309,11 @@
                 "linkId": "shortrt",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortrt"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -328,11 +328,11 @@
                 "linkId": "posshortrt",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortrt"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -361,11 +361,11 @@
                 "linkId": "shortphar",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortphar"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -380,11 +380,11 @@
                 "linkId": "posshortphar",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortphar"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -413,11 +413,11 @@
                 "linkId": "shortphys",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortphys"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -432,11 +432,11 @@
                 "linkId": "posshortphys",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortphys"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -465,11 +465,11 @@
                 "linkId": "shorttemp",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shorttemp"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -484,11 +484,11 @@
                 "linkId": "posshorttemp",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshorttemp"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -517,11 +517,11 @@
                 "linkId": "shortothlic",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortothlic"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -536,11 +536,11 @@
                 "linkId": "posshortothlic",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortothlic"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -569,11 +569,11 @@
                 "linkId": "shortoth",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortoth"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE TODAY",
+                "text": "Critical Staffing Shortage Today",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -588,7 +588,7 @@
                 "linkId": "shortothsfy",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "shortothsfy"
                   }
                 ],
@@ -607,11 +607,11 @@
                 "linkId": "posshortoth",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortoth"
                   }
                 ],
-                "text": "CRITICAL STAFFING SHORTAGE WITHIN A WEEK",
+                "text": "Critical Staffing Shortage Within a Week",
                 "type": "boolean",
                 "required": false,
                 "repeats": false
@@ -626,7 +626,7 @@
                 "linkId": "posshortothsfy",
                 "code": [
                   {
-                    "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDCHCW",
+                    "system": "http://hl7.org/fhir/us/saner/sanerCDCHCW",
                     "code": "posshortothsfy"
                   }
                 ],

@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using covidReportTransformationLib.Utils;
 
 namespace covidReportTransformationLib.Formats.CDC
 {
@@ -41,8 +42,14 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The cdc ventilators in use.</summary>
         public const string VentilatorsInUse = "numVentUse";
 
+        /// <summary>NOT OFFICIAL: The patients.</summary>
+        public const string Patients = "numC19Pats";
+
         /// <summary>The cdc hospitalized patients.</summary>
         public const string HospitalizedPatients = "numC19HospPats";
+
+        /// <summary>NOT OFFICIAL: The ventilated not hospitalized.</summary>
+        public const string VentilatedNotHospitalized = "numC19VentPats";
 
         /// <summary>The cdc ventilated patients.</summary>
         public const string VentilatedPatients = "numC19MechVentPats";
@@ -71,6 +78,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     FacilityId,
                     "Facility ID #",
                     string.Empty,
+                    string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -83,6 +91,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     SummaryCensusId,
                     "Summary Census ID #",
+                    string.Empty,
                     string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
@@ -97,6 +106,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     CollectionDate,
                     "Collection Date",
                     "Date for which patient impact and hospital capacity counts are reported",
+                    string.Empty,
                     FormatField.FieldType.Date,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -105,11 +115,40 @@ namespace covidReportTransformationLib.Formats.CDC
                     null)
             },
             {
+                Patients,
+                new FormatField(
+                    Patients,
+                    "COVID-19 Patients",
+                    "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
+                    "encounter.where(clinicalStatus = 'active' and diagnosis.condition.ofType(Condition).code in %ValueSet-SuspectedOrDiagnosedCOVID19)\n| Encounter.where(clinicalStatus = \"active\" and Condition.where(code in %ValueSet-SuspectedOrDiagnosedCOVID19).encounter = $this)",
+                    FormatField.FieldType.Count,
+                    FormatField.FhirMeasureType.Outcome,
+                    false,
+                    0,
+                    10000,
+                    null)
+            },
+            {
                 HospitalizedPatients,
                 new FormatField(
                     HospitalizedPatients,
-                    "HOSPITALIZED",
+                    "Hospitalized COVID-19 Patients",
                     "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
+                    "%numC19Pats.where(location.where(status='active' and type in %ValueSet-InpatientLocations))",
+                    FormatField.FieldType.Count,
+                    FormatField.FhirMeasureType.Outcome,
+                    false,
+                    0,
+                    10000,
+                    null)
+            },
+            {
+                VentilatedNotHospitalized,
+                new FormatField(
+                    VentilatedNotHospitalized,
+                    "Ventilated COVID-19 Patients",
+                    "Patients in any location who have suspected or confirmed COVID-19 and are currently on a ventilator.",
+                    "%numC19Pats.where(Device.where(type in %ValueSet-VentilatorDevices and status = active).patient = $this.patient)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -121,8 +160,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 VentilatedPatients,
                 new FormatField(
                     VentilatedPatients,
-                    "HOSPITALIZED and VENTILATED",
-                    "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator.",
+                    "Hospitalized and Ventilated COVID-19 Patients",
+                    "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
+                    "%numC19HospPats.intersect(%numC19VentPats)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -134,8 +174,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 HospitalOnset,
                 new FormatField(
                     HospitalOnset,
-                    "HOSPITAL ONSET",
+                    "Hospital Onset COVID-19 Patients",
                     "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization.",
+                    "condition.where(\ncode in %ValueSet-SuspectedOrDiagnosedCOVID19\nand encounter in %numC19HospPats\nand onset + 14 days > encounter.period.start).encounter",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -147,8 +188,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 AwaitingBeds,
                 new FormatField(
                     AwaitingBeds,
-                    "ED/OVERFLOW",
+                    "ED/Overflow COVID-19 Patients",
                     "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
+                    "%numC19Pats.where(location.where(status='active' and type in %ValueSet-EDorOverflowLocations))",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -160,8 +202,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 AwaitingVentilators,
                 new FormatField(
                     AwaitingVentilators,
-                    "ED/OVERFLOW and VENTILATED",
+                    "ED/Overflow and Ventilated COVID-19 Patients",
                     "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
+                    "%numC19OverflowPats.intersect(%numC19VentPats)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -173,8 +216,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 Died,
                 new FormatField(
                     Died,
-                    "DEATHS",
+                    "COVID-19 Patient Deaths",
                     "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+                    "%numC19Pats.hospitalization.dispostion in %ValueSet-PatientDied",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -186,8 +230,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 TotalBeds,
                 new FormatField(
                     TotalBeds,
-                    "ALL HOSPTIAL BEDS",
+                    "All Hospital Beds",
                     "Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.",
+                    "Device.where(type in %ValueSet-BedDeviceTypes and location.physicalType in %ValueSet-BedLocationTypes)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -199,8 +244,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 InpatientBeds,
                 new FormatField(
                     InpatientBeds,
-                    "HOSPITAL INPATIENT BEDS",
+                    "Hospital Inpatient Beds",
                     "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
+                    "%numTotBeds.where(location.type in %ValueSet-InpatientLocations)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -212,8 +258,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 InpatientBedOccupancy,
                 new FormatField(
                     InpatientBedOccupancy,
-                    "HOSPITAL INPATIENT BED OCCUPANCY",
+                    "Hospital Inpatient Bed Occupancy",
                     "Total number of staffed inpatient beds that are occupied.",
+                    "%numBeds.where(location.operationalStatus = %ValueSet-OccupiedBed)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -225,8 +272,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 IcuBeds,
                 new FormatField(
                     IcuBeds,
-                    "ICU BEDS",
+                    "ICU Beds",
                     "Total number of staffed inpatient intensive care unit (ICU) beds.",
+                    "%numBeds.where(location.type in %ValueSet-ICULocations)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -238,8 +286,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 IcuBedOccupancy,
                 new FormatField(
                     IcuBedOccupancy,
-                    "ICU BED OCCUPANCY",
+                    "ICU Bed Occupancy",
                     "Total number of staffed inpatient ICU beds that are occupied.",
+                    "%numICUBeds.where(location.operationalStatus = %ValueSet-OccupiedBed)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -251,8 +300,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 Ventilators,
                 new FormatField(
                     Ventilators,
-                    "MECHANICAL VENTILATORS",
+                    "Mechanical Ventilators",
                     "Total number of ventilators available.",
+                    "Device.where(type in %ValueSet-VentilatorDevices and status = active)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -264,8 +314,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 VentilatorsInUse,
                 new FormatField(
                     VentilatorsInUse,
-                    "MECHANICAL VENTILATORS IN USE",
+                    "Mechanical Ventilators in Use",
                     "Total number of ventilators in use.",
+                    "%numVent.where(patient!={})",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -358,46 +409,49 @@ namespace covidReportTransformationLib.Formats.CDC
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "COVID-19 Module",
-                Display = "CDC’s NHSN is supporting the nation’s COVID-19 response by introducing a new COVID-19 Module.",
+                Label = "NHSN COVID-19 Reporting",
+                Display = "CDC/NHSN COVID-19 Patient Impact & Hospital Capacity Module Home Page",
+                Url = "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
                 Citation = _cdcCitation,
-                Document = new Hl7.Fhir.Model.Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
-                    Creation = "2020-03-27",
-                },
             },
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+                Label = "How to import COVID-19 Summary Data",
+                Display = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
                 Citation = _cdcCitation,
-                Document = new Hl7.Fhir.Model.Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
-                    Creation = "2020-03-27",
-                },
             },
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+                Label = "Table of Instructions",
+                Display = "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
                 Citation = _cdcCitation,
-                Document = new Hl7.Fhir.Model.Attachment()
-                {
-                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
-                    Creation = "2020-03-27",
-                },
             },
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "covi19-test-csv-import",
+                Label = "CSV File Template",
+                Display = "CDC/NHSN COVID-19 Reporting CSV File Template",
+                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
                 Citation = _cdcCitation,
-                Document = new Hl7.Fhir.Model.Attachment()
+            },
+        };
+
+        /// <summary>The authors.</summary>
+        private static readonly List<Hl7.Fhir.Model.ContactDetail> _authors = new List<Hl7.Fhir.Model.ContactDetail>()
+        {
+            new Hl7.Fhir.Model.ContactDetail()
+            {
+                Name = "Centers for Disease Control/National Healthcare Safety Network (CDC/NHSN)",
+                Telecom = new List<Hl7.Fhir.Model.ContactPoint>()
                 {
-                    Url = "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
-                    Creation = "2020-03-27",
+                    new Hl7.Fhir.Model.ContactPoint(
+                        Hl7.Fhir.Model.ContactPoint.ContactPointSystem.Email,
+                        null,
+                        "mailto:nhsn@cdc.gov"),
                 },
             },
         };
@@ -408,15 +462,24 @@ namespace covidReportTransformationLib.Formats.CDC
 
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>
-        public string Name => "sanerCDC";
+        public string Name => "CDCPatientImpactAndHospitalCapacity";
 
         /// <summary>Gets the title.</summary>
         /// <value>The title.</value>
-        public string Title => "SANER CDC COVID-19 Patient Impact & Hospital Capacity Module";
+        public string Title => "Patient Impact and Hospital Capacity";
 
         /// <summary>Gets the description.</summary>
         /// <value>The description.</value>
         public string Description => "SANER implementation of the CDC COVID-19 Patient Impact & Hospital Capacity Module";
+
+        /// <summary>Gets the definition.</summary>
+        /// <value>The definition.</value>
+        public List<string> Definition => new List<string>()
+        {
+            "Ventilator\n: Any device used to support, assist or control respiration (inclusive of the weaning period) through the application of positive\npressure to the airway when delivered via an artificial airway, specifically an oral/nasal endotracheal or tracheostomy tube.\nNote: Ventilation and lung expansion devices that deliver positive pressure to the airway (for example: CPAP, BiPAP, bi-level, IPPB and\nPEEP) via non-invasive means (for example: nasal prongs, nasal mask, full face mask, total mask, etc.) are not considered ventilators\nunless positive pressure is delivered via an artificial airway (oral/nasal endotracheal or tracheostomy tube).",
+            "Beds\n: Baby beds in mom's room count as 1 bed, even if there are multiple baby beds\nFollow-up in progress if staffed is less than licensed.\nTotal includes all beds, even if with surge beds it exceeds licensed beds.",
+            "ICU beds\n: Include NICU (from CDC Webinar 31-Mar-2020) (outstanding question on burn unit)",
+        };
 
         /// <summary>Gets the fields.</summary>
         /// <value>The fields.</value>
@@ -441,5 +504,9 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>Gets the artifacts.</summary>
         /// <value>The artifacts.</value>
         public List<Hl7.Fhir.Model.RelatedArtifact> Artifacts => _artifacts;
+
+        /// <summary>Gets the authors.</summary>
+        /// <value>The authors.</value>
+        public List<Hl7.Fhir.Model.ContactDetail> Authors => _authors;
     }
 }

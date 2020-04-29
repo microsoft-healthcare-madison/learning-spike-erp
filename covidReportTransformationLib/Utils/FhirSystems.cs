@@ -17,6 +17,9 @@ namespace covidReportTransformationLib.Utils
         /// <summary>Type of the system bed.</summary>
         public const string BedType = "http://terminology.hl7.org/CodeSystem/v3-RoleCode";
 
+        /// <summary>The improvement notation.</summary>
+        public const string ImprovementNotation = "http://terminology.hl7.org/CodeSystem/measure-improvement-notation";
+
         /// <summary>The internal system.</summary>
         public const string Internal = "https://github.com/microsoft-healthcare-madison/learning-spike-erp/";
 
@@ -46,6 +49,9 @@ namespace covidReportTransformationLib.Utils
 
         /// <summary>Type of the organization.</summary>
         public const string OrganizationType = "http://hl7.org/fhir/CodeSystem/organization-type";
+
+        /// <summary>Type of the resource.</summary>
+        public const string ResourceType = "http://hl7.org/fhir/resource-types";
 
         /// <summary>The SANER-IG characteristic system.</summary>
         public const string SanerCharacteristic = "http://hl7.org/fhir/R4/StructureDefinition/Location";

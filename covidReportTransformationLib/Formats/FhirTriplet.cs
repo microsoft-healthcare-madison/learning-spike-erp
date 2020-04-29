@@ -9,7 +9,7 @@ using covidReportTransformationLib.Utils;
 using Hl7.Fhir.Model;
 using static covidReportTransformationLib.Utils.CommonLiterals;
 
-namespace covidReportTransformationLib.Formats.SANER
+namespace covidReportTransformationLib.Formats
 {
     /// <summary>A FHIR triplet - usable for Coding and CodeableConcepts.</summary>
     public class FhirTriplet
@@ -166,6 +166,18 @@ namespace covidReportTransformationLib.Formats.SANER
             "91537007",
             "Hospital bed, device (physical object)");
 
+        /// <summary>Gets the improvement increase.</summary>
+        /// <value>The improvement increase.</value>
+        public static FhirTriplet ImprovementIncrease => new FhirTriplet(
+            FhirSystems.ImprovementNotation,
+            "increase");
+
+        /// <summary>Gets the improvement decrease.</summary>
+        /// <value>The improvement decrease.</value>
+        public static FhirTriplet ImprovementDecrease => new FhirTriplet(
+            FhirSystems.ImprovementNotation,
+            "decrease");
+
         /// <summary>Gets the numerator.</summary>
         /// <value>The numerator.</value>
         public static FhirTriplet MeasurePopulation => new FhirTriplet(
@@ -268,6 +280,12 @@ namespace covidReportTransformationLib.Formats.SANER
         public static FhirTriplet PhysicalTypeSite => new FhirTriplet(
             FhirSystems.LocationPhysicalType,
             LocationPhysicalTypeSite);
+
+        /// <summary>Gets the resource location.</summary>
+        /// <value>The resource location.</value>
+        public static FhirTriplet ResourceLocation => new FhirTriplet(
+            FhirSystems.ResourceType,
+            "Location");
 
         /// <summary>Gets the saner status.</summary>
         /// <value>The saner status.</value>

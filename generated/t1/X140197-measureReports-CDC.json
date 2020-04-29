@@ -6,7 +6,7 @@
     "value": "FHIR-280"
   },
   "type": "collection",
-  "timestamp": "2020-04-27T13:03:26.7266064-05:00",
+  "timestamp": "2020-04-29T11:24:12.8117064-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-281",
@@ -15,26 +15,26 @@
         "id": "FHIR-281",
         "status": "complete",
         "type": "summary",
-        "measure": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
+        "measure": "http://hl7.org/fhir/us/saner/CDCPatientImpactAndHospitalCapacity",
         "subject": {
-          "reference": "Location/Loc--X140197",
+          "reference": "Location/Loc-X140197",
           "display": "MCINTYRE HOSPITAL OF CHEF COUNTY"
         },
-        "date": "2020-04-27T13:03:26.726629-05:00",
+        "date": "2020-04-29T11:24:12.8117284-05:00",
         "reporter": {
           "reference": "Organization/X140197",
           "display": "MCINTYRE HOSPITAL OF CHEF COUNTY"
         },
         "period": {
-          "start": "2020-04-25",
-          "end": "2020-04-25"
+          "start": "2020-04-27",
+          "end": "2020-04-27"
         },
         "group": [
           {
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numTotBeds"
                 }
               ],
@@ -62,7 +62,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numbeds"
                 }
               ],
@@ -90,7 +90,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numBedsOcc"
                 }
               ],
@@ -118,7 +118,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numICUBeds"
                 }
               ],
@@ -146,7 +146,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numICUBedsOcc"
                 }
               ],
@@ -174,7 +174,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numVent"
                 }
               ],
@@ -202,7 +202,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numVentUse"
                 }
               ],
@@ -230,7 +230,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19HospPats"
                 }
               ],
@@ -258,11 +258,11 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19MechVentPats"
                 }
               ],
-              "text": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator."
+              "text": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator."
             },
             "population": [
               {
@@ -286,7 +286,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19HOPats"
                 }
               ],
@@ -314,7 +314,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19OverflowPats"
                 }
               ],
@@ -342,7 +342,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19OFMechVentPats"
                 }
               ],
@@ -370,7 +370,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19Died"
                 }
               ],

@@ -11,22 +11,22 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-04-27T13:03:24.5977086-05:00",
+  "timestamp": "2020-04-29T11:24:10.6238039-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/sanerCDC",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/CDCPatientImpactAndHospitalCapacity",
       "resource": {
         "resourceType": "Measure",
-        "id": "sanerCDC",
+        "id": "CDCPatientImpactAndHospitalCapacity",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/4.0/StructureDefinition/Measure"
           ]
         },
-        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerCDC",
-        "version": "20200421.01",
-        "name": "sanerCDC",
-        "title": "SANER CDC COVID-19 Patient Impact & Hospital Capacity Module",
+        "url": "http://hl7.org/fhir/us/saner/CDCPatientImpactAndHospitalCapacity",
+        "version": "0.1.0",
+        "name": "CDCPatientImpactAndHospitalCapacity",
+        "title": "Patient Impact and Hospital Capacity",
         "status": "draft",
         "subjectCodeableConcept": {
           "coding": [
@@ -36,8 +36,37 @@
             }
           ]
         },
-        "date": "2020-04-24T00:00:00Z",
-        "publisher": "HL7 SANER-IG",
+        "date": "2020-04-27T07:08:50-04:00",
+        "publisher": "HL7 International",
+        "contact": [
+          {
+            "name": "HL7 Patient Administration Workgroup",
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+              }
+            ]
+          },
+          {
+            "name": "Audacious Inquiry",
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://ainq.com"
+              }
+            ]
+          },
+          {
+            "name": "Keith W. Boone",
+            "telecom": [
+              {
+                "system": "email",
+                "value": "mailto:kboone@ainq.com"
+              }
+            ]
+          }
+        ],
         "description": "SANER implementation of the CDC COVID-19 Patient Impact & Hospital Capacity Module",
         "useContext": [
           {
@@ -70,40 +99,31 @@
         "relatedArtifact": [
           {
             "type": "documentation",
-            "label": "COVID-19 Module",
-            "display": "CDC’s NHSN is supporting the nation’s COVID-19 response by introducing a new COVID-19 Module.",
+            "label": "NHSN COVID-19 Reporting",
+            "display": "CDC/NHSN COVID-19 Patient Impact & Hospital Capacity Module Home Page",
             "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "document": {
-              "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
-              "creation": "2020-03-27"
-            }
+            "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/"
           },
           {
             "type": "documentation",
-            "label": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+            "label": "How to import COVID-19 Summary Data",
+            "display": "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
             "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "document": {
-              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
-              "creation": "2020-03-27"
-            }
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf"
           },
           {
             "type": "documentation",
-            "label": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+            "label": "Table of Instructions",
+            "display": "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
             "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "document": {
-              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
-              "creation": "2020-03-27"
-            }
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf"
           },
           {
             "type": "documentation",
-            "label": "covi19-test-csv-import",
+            "label": "CSV File Template",
+            "display": "CDC/NHSN COVID-19 Reporting CSV File Template",
             "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "document": {
-              "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
-              "creation": "2020-03-27"
-            }
+            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv"
           }
         ],
         "type": [
@@ -117,12 +137,17 @@
             ]
           }
         ],
+        "definition": [
+          "Ventilator\n: Any device used to support, assist or control respiration (inclusive of the weaning period) through the application of positive\npressure to the airway when delivered via an artificial airway, specifically an oral/nasal endotracheal or tracheostomy tube.\nNote: Ventilation and lung expansion devices that deliver positive pressure to the airway (for example: CPAP, BiPAP, bi-level, IPPB and\nPEEP) via non-invasive means (for example: nasal prongs, nasal mask, full face mask, total mask, etc.) are not considered ventilators\nunless positive pressure is delivered via an artificial airway (oral/nasal endotracheal or tracheostomy tube).",
+          "Beds\n: Baby beds in mom's room count as 1 bed, even if there are multiple baby beds\nFollow-up in progress if staffed is less than licensed.\nTotal includes all beds, even if with surge beds it exceeds licensed beds.",
+          "ICU beds\n: Include NICU (from CDC Webinar 31-Mar-2020) (outstanding question on burn unit)"
+        ],
         "group": [
           {
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numTotBeds"
                 }
               ],
@@ -151,7 +176,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numbeds"
                 }
               ],
@@ -180,7 +205,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numBedsOcc"
                 }
               ],
@@ -209,7 +234,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numICUBeds"
                 }
               ],
@@ -238,7 +263,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numICUBedsOcc"
                 }
               ],
@@ -267,7 +292,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numVent"
                 }
               ],
@@ -296,7 +321,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numVentUse"
                 }
               ],
@@ -325,7 +350,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19HospPats"
                 }
               ],
@@ -354,11 +379,11 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19MechVentPats"
                 }
               ],
-              "text": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator."
+              "text": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator."
             },
             "population": [
               {
@@ -372,7 +397,7 @@
                   ]
                 },
                 "criteria": {
-                  "description": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID - 19 and are on a mechanical ventilator.",
+                  "description": "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
                   "language": "text/plain",
                   "expression": "Source defined field: numC19MechVentPats"
                 }
@@ -383,7 +408,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19HOPats"
                 }
               ],
@@ -412,7 +437,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19OverflowPats"
                 }
               ],
@@ -441,7 +466,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19OFMechVentPats"
                 }
               ],
@@ -470,7 +495,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "numC19Died"
                 }
               ],

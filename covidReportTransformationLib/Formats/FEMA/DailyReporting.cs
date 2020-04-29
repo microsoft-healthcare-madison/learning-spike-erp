@@ -59,6 +59,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     CollectionDate,
                     "Date",
                     string.Empty,
+                    string.Empty,
                     FormatField.FieldType.Date,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -71,6 +72,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                 new FormatField(
                     State,
                     "State",
+                    string.Empty,
                     string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
@@ -85,6 +87,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     County,
                     "County",
                     string.Empty,
+                    string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -98,6 +101,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     TestsOrderedToday,
                     "New Diagnostic Tests Ordered/Received",
                     "Midnight to midnight cutoff, tests ordered on previous date queried.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -111,6 +115,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     TestsOrderedTotal,
                     "Cumulative Diagnostic Tests Ordered/Received",
                     "All tests ordered to date.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -124,6 +129,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     TestsWithResultsToday,
                     "New Tests Resulted",
                     "Midnight to midnight cutoff, test results released on previous date queried.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -137,6 +143,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     SpecimensRejectedTotal,
                     "Cumulative Specimens Rejected",
                     "All specimens rejected for testing to date.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -150,6 +157,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     TestsCompletedTotal,
                     "Cumulative Tests Performed",
                     "All tests with results released to date.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -163,6 +171,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     PositiveC19Today,
                     "New Positive COVID-19 Tests",
                     "Midnight to midnight cutoff, positive test results released on the previous date queried.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -176,6 +185,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     PositiveC19Total,
                     "Cumulative Positive COVID-19 Tests",
                     "All positive test results released to date.",
+                    string.Empty,
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -189,6 +199,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     PercentC19PositiveToday,
                     "Percent Positive among Newly Resulted Tests",
                     "# of new positive test results / # of total new tests released for previous date queried.",
+                    string.Empty,
                     FormatField.FieldType.Percentage,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -202,6 +213,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     PercentC19PositiveTotal,
                     "Cumulative Percent Positive among Resulted Tests",
                     "# of total positive results to released date / # of total test results released to date.",
+                    string.Empty,
                     FormatField.FieldType.Percentage,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -318,12 +330,28 @@ namespace covidReportTransformationLib.Formats.FEMA
             },
         };
 
+        /// <summary>The authors.</summary>
+        private static readonly List<Hl7.Fhir.Model.ContactDetail> _authors = new List<Hl7.Fhir.Model.ContactDetail>()
+        {
+            new Hl7.Fhir.Model.ContactDetail()
+            {
+                Name = "FEMA",
+                Telecom = new List<Hl7.Fhir.Model.ContactPoint>()
+                {
+                    new Hl7.Fhir.Model.ContactPoint(
+                        Hl7.Fhir.Model.ContactPoint.ContactPointSystem.Email,
+                        null,
+                        "mailto:fema-hhs-covid-diagnostics-tf@fema.dhs.gov"),
+                },
+            },
+        };
+
         /// <summary>The current.</summary>
         public static DailyReporting Current = _current;
 
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>
-        public string Name => "sanerFEMA";
+        public string Name => "FEMADailyHospitalCOVID19Reporting";
 
         /// <summary>Gets the title.</summary>
         /// <value>The title.</value>
@@ -332,6 +360,10 @@ namespace covidReportTransformationLib.Formats.FEMA
         /// <summary>Gets the description.</summary>
         /// <value>The description.</value>
         public string Description => "SANER implementation of the FEMA Template for daily Hospital COVID-19 Reporting";
+
+        /// <summary>Gets the definition.</summary>
+        /// <value>The definition.</value>
+        public List<string> Definition => null;
 
         /// <summary>Gets the fields.</summary>
         /// <value>The fields.</value>
@@ -356,5 +388,9 @@ namespace covidReportTransformationLib.Formats.FEMA
         /// <summary>Gets the artifacts.</summary>
         /// <value>The artifacts.</value>
         public List<Hl7.Fhir.Model.RelatedArtifact> Artifacts => _artifacts;
+
+        /// <summary>Gets the authors.</summary>
+        /// <value>The authors.</value>
+        public List<Hl7.Fhir.Model.ContactDetail> Authors => _authors;
     }
 }

@@ -142,6 +142,24 @@ namespace covidReportTransformationLib.Utils
             BedFeatureNonIsolating,
         };
 
+        /// <summary>The scoring.</summary>
+        public const string Scoring = "scoring";
+
+        /// <summary>The subject.</summary>
+        public const string Subject = "subject";
+
+        /// <summary>The type.</summary>
+        public const string Type = "type";
+
+        /// <summary>The improvement notation.</summary>
+        public const string ImprovementNotation = "improvementNotation";
+
+        /// <summary>The rate aggregation.</summary>
+        public const string RateAggregation = "rateAggregation";
+
+        /// <summary>The aggregable by period.</summary>
+        public const string AggregableByPeriod = "aggregable-by-period";
+
         /// <summary>Values that represent SANER-IG characteristics.</summary>
         public enum SanerCharacteristic
         {

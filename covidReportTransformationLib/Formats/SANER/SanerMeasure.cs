@@ -85,7 +85,17 @@ namespace covidReportTransformationLib.Formats.SANER
                     FhirTriplet.MeasureTypeComposite.Concept,
                 },
                 Group = new List<Measure.GroupComponent>(),
+                Contact = SanerCommon.Contacts,
             };
+
+            if ((format.Definition != null) && (format.Definition.Count > 0))
+            {
+                measure.Definition = new List<Markdown>();
+                foreach (string definition in format.Definition)
+                {
+                    measure.Definition.Add(new Markdown(definition));
+                }
+            }
 
             if (format.Artifacts != null)
             {

@@ -11,21 +11,21 @@
     "value": "FHIR-5"
   },
   "type": "collection",
-  "timestamp": "2020-04-27T13:03:25.5125819-05:00",
+  "timestamp": "2020-04-29T11:24:11.6285078-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/sanerFEMA",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FEMADailyHospitalCOVID19Reporting",
       "resource": {
         "resourceType": "Measure",
-        "id": "sanerFEMA",
+        "id": "FEMADailyHospitalCOVID19Reporting",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/4.0/StructureDefinition/Measure"
           ]
         },
-        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
-        "version": "20200421.01",
-        "name": "sanerFEMA",
+        "url": "http://hl7.org/fhir/us/saner/FEMADailyHospitalCOVID19Reporting",
+        "version": "0.1.0",
+        "name": "FEMADailyHospitalCOVID19Reporting",
         "title": "SANER FEMA Template for daily Hospital COVID-19 Reporting",
         "status": "draft",
         "subjectCodeableConcept": {
@@ -36,8 +36,37 @@
             }
           ]
         },
-        "date": "2020-04-24T00:00:00Z",
-        "publisher": "HL7 SANER-IG",
+        "date": "2020-04-27T07:08:50-04:00",
+        "publisher": "HL7 International",
+        "contact": [
+          {
+            "name": "HL7 Patient Administration Workgroup",
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://hl7.org/Special/committees/pafm/index.cfm"
+              }
+            ]
+          },
+          {
+            "name": "Audacious Inquiry",
+            "telecom": [
+              {
+                "system": "url",
+                "value": "http://ainq.com"
+              }
+            ]
+          },
+          {
+            "name": "Keith W. Boone",
+            "telecom": [
+              {
+                "system": "email",
+                "value": "mailto:kboone@ainq.com"
+              }
+            ]
+          }
+        ],
         "description": "SANER implementation of the FEMA Template for daily Hospital COVID-19 Reporting",
         "useContext": [
           {
@@ -94,7 +123,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "newDiagnosticTests"
                 }
               ],
@@ -123,7 +152,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativeDiagnosticTests"
                 }
               ],
@@ -152,7 +181,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "newTestsResulted"
                 }
               ],
@@ -181,7 +210,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativeSpecimensRejected"
                 }
               ],
@@ -210,7 +239,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativeTestsPerformed"
                 }
               ],
@@ -239,7 +268,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "newPositiveC19Tests"
                 }
               ],
@@ -268,7 +297,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativePositiveC19Tests"
                 }
               ],
@@ -297,7 +326,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "percentPositiveAmongNewlyResultedTests"
                 }
               ],
@@ -342,7 +371,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "cumulativePercentPositiveAmongResultedTests"
                 }
               ],

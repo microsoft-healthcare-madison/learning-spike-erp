@@ -6,7 +6,7 @@
     "value": "FHIR-15"
   },
   "type": "collection",
-  "timestamp": "2020-04-27T13:03:25.6277188-05:00",
+  "timestamp": "2020-04-29T11:24:11.7419766-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140251",
@@ -48,10 +48,10 @@
       }
     },
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc--X140251",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Location/Loc-X140251",
       "resource": {
         "resourceType": "Location",
-        "id": "Loc--X140251",
+        "id": "Loc-X140251",
         "status": "active",
         "mode": "instance",
         "address": {
@@ -77,6 +77,9 @@
         "position": {
           "longitude": -87.768287,
           "latitude": 41.94585
+        },
+        "managingOrganization": {
+          "reference": "Organization/X140251"
         }
       }
     }

@@ -95,7 +95,7 @@ namespace generator_cli.Generators
                     StringComparison.Ordinal);
             }
 
-            return $"{RootLocationPrefix}-{orgId}";
+            return $"{RootLocationPrefix}{orgId}";
         }
 
         /// <summary>Generates a bed with random properties.</summary>
@@ -159,6 +159,7 @@ namespace generator_cli.Generators
                 Mode = Location.LocationMode.Instance,
                 PhysicalType = FhirTriplet.PhysicalTypeSite.Concept,
                 Position = position,
+                ManagingOrganization = new ResourceReference($"{org.ResourceType}/{org.Id}"),
             };
         }
 

@@ -12,19 +12,21 @@ namespace covidReportTransformationLib.Formats
     public class FormatField
     {
         /// <summary>Initializes a new instance of the <see cref="FormatField"/> class.</summary>
-        /// <param name="name">       The name.</param>
-        /// <param name="title">      The title.</param>
-        /// <param name="description">The description.</param>
-        /// <param name="type">       The type.</param>
-        /// <param name="measureType">The type of the measure.</param>
-        /// <param name="isRequired"> True if this object is required, false if not.</param>
-        /// <param name="countMin">   The count minimum.</param>
-        /// <param name="countMax">   The count maximum.</param>
-        /// <param name="options">    The options allowed for this question (choices).</param>
+        /// <param name="name">              The name.</param>
+        /// <param name="title">             The title.</param>
+        /// <param name="description">       The description.</param>
+        /// <param name="fhirPathExpression">The fhir path expression.</param>
+        /// <param name="type">              The type.</param>
+        /// <param name="measureType">       The type of the measure.</param>
+        /// <param name="isRequired">        True if this object is required, false if not.</param>
+        /// <param name="countMin">          The count minimum.</param>
+        /// <param name="countMax">          The count maximum.</param>
+        /// <param name="options">           The options allowed for this question (choices).</param>
         public FormatField(
             string name,
             string title,
             string description,
+            string fhirPathExpression,
             FieldType type,
             FhirMeasureType measureType,
             bool isRequired,
@@ -98,6 +100,10 @@ namespace covidReportTransformationLib.Formats
         /// <summary>Gets the description.</summary>
         /// <value>The description.</value>
         public string Description { get; }
+
+        /// <summary>Gets the fhir path expression.</summary>
+        /// <value>The fhir path expression.</value>
+        public string FhirPathExpression { get; }
 
         /// <summary>Gets the type.</summary>
         /// <value>The type.</value>
