@@ -262,17 +262,17 @@ namespace generator_cli
             {
                 Console.WriteLine($"Processing org: {orgId}");
 
+                WriteOrgBundle(orgId, Path.Combine(outputDirectory, "t0"));
+
+                //TODO(ginoc): Temporary exit because of changes to measures - 2020.04.29
+                continue;
+
                 CreateAggregateData(orgId);
 
                 // loop over timeSteps
                 for (int step = 0; step < timeSteps; step++)
                 {
                     string dir = Path.Combine(outputDirectory, $"t{step}");
-
-                    if (step == 0)
-                    {
-                        WriteOrgBundle(orgId, dir);
-                    }
 
                     if (step != 0)
                     {

@@ -137,7 +137,9 @@ namespace generator_cli.Generators
 
             if ((org.Address == null) || (org.Address.Count == 0))
             {
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                 throw new ArgumentException("Organization Address is required!");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
             }
 
             Location.PositionComponent position = null;

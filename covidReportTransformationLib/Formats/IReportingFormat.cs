@@ -46,9 +46,9 @@ namespace covidReportTransformationLib.Formats
             get;
         }
 
-        /// <summary>Gets the measure report fields.</summary>
-        /// <value>The measure report fields.</value>
-        List<string> MeasureReportFields
+        /// <summary>Gets the measure groupings.</summary>
+        /// <value>The measure groupings.</value>
+        List<MeasureGrouping> MeasureGroupings
         {
             get;
         }

@@ -42,14 +42,8 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The cdc ventilators in use.</summary>
         public const string VentilatorsInUse = "numVentUse";
 
-        /// <summary>NOT OFFICIAL: The patients.</summary>
-        public const string Patients = "numC19Pats";
-
         /// <summary>The cdc hospitalized patients.</summary>
         public const string HospitalizedPatients = "numC19HospPats";
-
-        /// <summary>NOT OFFICIAL: The ventilated not hospitalized.</summary>
-        public const string VentilatedNotHospitalized = "numC19VentPats";
 
         /// <summary>The cdc ventilated patients.</summary>
         public const string VentilatedPatients = "numC19MechVentPats";
@@ -66,6 +60,15 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The cdc died.</summary>
         public const string Died = "numC19Died";
 
+        /// <summary>The group beds.</summary>
+        public const string GroupBeds = "Beds";
+
+        /// <summary>The group ventilators.</summary>
+        public const string GroupVentilators = "Ventilators";
+
+        /// <summary>The group encounters.</summary>
+        public const string GroupEncounters = "Encounters";
+
         /// <summary>The current.</summary>
         private static PatientImpact _current = new PatientImpact();
 
@@ -77,7 +80,6 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FacilityId,
                     "Facility ID #",
-                    string.Empty,
                     string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
@@ -92,7 +94,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     SummaryCensusId,
                     "Summary Census ID #",
                     string.Empty,
-                    string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -106,7 +107,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     CollectionDate,
                     "Collection Date",
                     "Date for which patient impact and hospital capacity counts are reported",
-                    string.Empty,
                     FormatField.FieldType.Date,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -115,40 +115,11 @@ namespace covidReportTransformationLib.Formats.CDC
                     null)
             },
             {
-                Patients,
-                new FormatField(
-                    Patients,
-                    "COVID-19 Patients",
-                    "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
-                    "encounter.where(clinicalStatus = 'active' and diagnosis.condition.ofType(Condition).code in %ValueSet-SuspectedOrDiagnosedCOVID19)\n| Encounter.where(clinicalStatus = \"active\" and Condition.where(code in %ValueSet-SuspectedOrDiagnosedCOVID19).encounter = $this)",
-                    FormatField.FieldType.Count,
-                    FormatField.FhirMeasureType.Outcome,
-                    false,
-                    0,
-                    10000,
-                    null)
-            },
-            {
                 HospitalizedPatients,
                 new FormatField(
                     HospitalizedPatients,
                     "Hospitalized COVID-19 Patients",
                     "Patients currently hospitalized in an inpatient care location who have suspected or confirmed COVID-19.",
-                    "%numC19Pats.where(location.where(status='active' and type in %ValueSet-InpatientLocations))",
-                    FormatField.FieldType.Count,
-                    FormatField.FhirMeasureType.Outcome,
-                    false,
-                    0,
-                    10000,
-                    null)
-            },
-            {
-                VentilatedNotHospitalized,
-                new FormatField(
-                    VentilatedNotHospitalized,
-                    "Ventilated COVID-19 Patients",
-                    "Patients in any location who have suspected or confirmed COVID-19 and are currently on a ventilator.",
-                    "%numC19Pats.where(Device.where(type in %ValueSet-VentilatorDevices and status = active).patient = $this.patient)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -162,7 +133,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     VentilatedPatients,
                     "Hospitalized and Ventilated COVID-19 Patients",
                     "Patients hospitalized in an NHSN inpatient care location who have suspected or confirmed COVID-19 and are on a mechanical ventilator.",
-                    "%numC19HospPats.intersect(%numC19VentPats)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -176,7 +146,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     HospitalOnset,
                     "Hospital Onset COVID-19 Patients",
                     "Patients hospitalized in an NHSN inpatient care location with onset of suspected or confirmed COVID - 19 14 or more days after hospitalization.",
-                    "condition.where(\ncode in %ValueSet-SuspectedOrDiagnosedCOVID19\nand encounter in %numC19HospPats\nand onset + 14 days > encounter.period.start).encounter",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -190,7 +159,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     AwaitingBeds,
                     "ED/Overflow COVID-19 Patients",
                     "Patients with suspected or confirmed COVID-19 who are in the ED or any overflow location awaiting an inpatient bed.",
-                    "%numC19Pats.where(location.where(status='active' and type in %ValueSet-EDorOverflowLocations))",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -204,7 +172,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     AwaitingVentilators,
                     "ED/Overflow and Ventilated COVID-19 Patients",
                     "Patients with suspected or confirmed COVID - 19 who are in the ED or any overflow location awaiting an inpatient bed and on a mechanical ventilator.",
-                    "%numC19OverflowPats.intersect(%numC19VentPats)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -218,7 +185,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     Died,
                     "COVID-19 Patient Deaths",
                     "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
-                    "%numC19Pats.hospitalization.dispostion in %ValueSet-PatientDied",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -232,7 +198,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     TotalBeds,
                     "All Hospital Beds",
                     "Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.",
-                    "Device.where(type in %ValueSet-BedDeviceTypes and location.physicalType in %ValueSet-BedLocationTypes)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -246,7 +211,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     InpatientBeds,
                     "Hospital Inpatient Beds",
                     "Inpatient beds, including all staffed, licensed, and overflow(surge) beds used for inpatients.",
-                    "%numTotBeds.where(location.type in %ValueSet-InpatientLocations)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -260,7 +224,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     InpatientBedOccupancy,
                     "Hospital Inpatient Bed Occupancy",
                     "Total number of staffed inpatient beds that are occupied.",
-                    "%numBeds.where(location.operationalStatus = %ValueSet-OccupiedBed)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -274,7 +237,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     IcuBeds,
                     "ICU Beds",
                     "Total number of staffed inpatient intensive care unit (ICU) beds.",
-                    "%numBeds.where(location.type in %ValueSet-ICULocations)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -288,7 +250,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     IcuBedOccupancy,
                     "ICU Bed Occupancy",
                     "Total number of staffed inpatient ICU beds that are occupied.",
-                    "%numICUBeds.where(location.operationalStatus = %ValueSet-OccupiedBed)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -302,7 +263,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     Ventilators,
                     "Mechanical Ventilators",
                     "Total number of ventilators available.",
-                    "Device.where(type in %ValueSet-VentilatorDevices and status = active)",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -316,7 +276,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     VentilatorsInUse,
                     "Mechanical Ventilators in Use",
                     "Total number of ventilators in use.",
-                    "%numVent.where(patient!={})",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -326,22 +285,118 @@ namespace covidReportTransformationLib.Formats.CDC
             },
         };
 
-        /// <summary>The measure report fields.</summary>
-        private static readonly List<string> _measureReportFields = new List<string>()
+        /// <summary>The measure groupings.</summary>
+        private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
-            TotalBeds,
-            InpatientBeds,
-            InpatientBedOccupancy,
-            IcuBeds,
-            IcuBedOccupancy,
-            Ventilators,
-            VentilatorsInUse,
-            HospitalizedPatients,
-            VentilatedPatients,
-            HospitalOnset,
-            AwaitingBeds,
-            AwaitingVentilators,
-            Died,
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    GroupBeds,
+                    "Beds"),
+                "Hospital Bed Reporting",
+                new List<MeasureGroupingExtension>()
+                {
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Scoring,
+                        FhirTriplet.ScoringContinuousVariable),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Subject,
+                        "Hospital Beds",
+                        new List<FhirTriplet>()
+                        {
+                            FhirTriplet.ResourceLocation,
+                            FhirTriplet.SctHospitalBed,
+                        }),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Type,
+                        FhirTriplet.MeasureTypeStructure),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.ImprovementNotation,
+                        FhirTriplet.ImprovementIncrease),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.RateAggregation,
+                        CommonLiterals.AggregableByPeriod),
+                },
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(TotalBeds, FhirTriplet.InitialPopulation),
+                    new MeasureGroupingPopulation(InpatientBeds, null),
+                    new MeasureGroupingPopulation(InpatientBedOccupancy, null),
+                    new MeasureGroupingPopulation(IcuBeds, null),
+                    new MeasureGroupingPopulation(IcuBedOccupancy, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    GroupVentilators,
+                    "Ventilators"),
+                "Hospital Ventilator Reporting",
+                new List<MeasureGroupingExtension>()
+                {
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Scoring,
+                        FhirTriplet.ScoringContinuousVariable),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Subject,
+                        "Mechanical Ventilators",
+                        new List<FhirTriplet>()
+                        {
+                            FhirTriplet.ResourceDevice,
+                            FhirTriplet.SctVentilator,
+                        }),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Type,
+                        FhirTriplet.MeasureTypeStructure),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.ImprovementNotation,
+                        FhirTriplet.ImprovementDecrease),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.RateAggregation,
+                        CommonLiterals.AggregableByPeriod),
+                },
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(Ventilators, FhirTriplet.InitialPopulation),
+                    new MeasureGroupingPopulation(VentilatorsInUse, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    GroupEncounters,
+                    "Encounters"),
+                "Hospital COVID-19 Encounters Reporting",
+                new List<MeasureGroupingExtension>()
+                {
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Scoring,
+                        FhirTriplet.ScoringContinuousVariable),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Subject,
+                        "Encounter",
+                        new List<FhirTriplet>()
+                        {
+                            FhirTriplet.ResourceEncounter,
+                            FhirTriplet.SctPatientEncounter,
+                        }),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Type,
+                        FhirTriplet.MeasureTypeOutcome),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.ImprovementNotation,
+                        FhirTriplet.ImprovementDecrease),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.RateAggregation,
+                        CommonLiterals.AggregableByPeriod),
+                },
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(HospitalizedPatients, null),
+                    new MeasureGroupingPopulation(VentilatedPatients, null),
+                    new MeasureGroupingPopulation(HospitalOnset, null),
+                    new MeasureGroupingPopulation(AwaitingBeds, null),
+                    new MeasureGroupingPopulation(AwaitingVentilators, null),
+                    new MeasureGroupingPopulation(Died, null),
+                }),
         };
 
         /// <summary>The questionnaire sections.</summary>
@@ -476,18 +531,18 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <value>The definition.</value>
         public List<string> Definition => new List<string>()
         {
-            "Ventilator\n: Any device used to support, assist or control respiration (inclusive of the weaning period) through the application of positive\npressure to the airway when delivered via an artificial airway, specifically an oral/nasal endotracheal or tracheostomy tube.\nNote: Ventilation and lung expansion devices that deliver positive pressure to the airway (for example: CPAP, BiPAP, bi-level, IPPB and\nPEEP) via non-invasive means (for example: nasal prongs, nasal mask, full face mask, total mask, etc.) are not considered ventilators\nunless positive pressure is delivered via an artificial airway (oral/nasal endotracheal or tracheostomy tube).",
-            "Beds\n: Baby beds in mom's room count as 1 bed, even if there are multiple baby beds\nFollow-up in progress if staffed is less than licensed.\nTotal includes all beds, even if with surge beds it exceeds licensed beds.",
-            "ICU beds\n: Include NICU (from CDC Webinar 31-Mar-2020) (outstanding question on burn unit)",
+            "Ventilator:\nAny device used to support, assist or control respiration (inclusive of the weaning period) through the application of positive\npressure to the airway when delivered via an artificial airway, specifically an oral/nasal endotracheal or tracheostomy tube.\nNote: Ventilation and lung expansion devices that deliver positive pressure to the airway (for example: CPAP, BiPAP, bi-level, IPPB and\nPEEP) via non-invasive means (for example: nasal prongs, nasal mask, full face mask, total mask, etc.) are not considered ventilators\nunless positive pressure is delivered via an artificial airway (oral/nasal endotracheal or tracheostomy tube).",
+            "Beds:\nBaby beds in mom's room count as 1 bed, even if there are multiple baby beds\nFollow-up in progress if staffed is less than licensed.\nTotal includes all beds, even if with surge beds it exceeds licensed beds.",
+            "ICU beds:\nInclude NICU (from CDC Webinar 31-Mar-2020) (outstanding question on burn unit)",
         };
 
         /// <summary>Gets the fields.</summary>
         /// <value>The fields.</value>
         public Dictionary<string, FormatField> Fields => _fields;
 
-        /// <summary>Gets the measure report fields.</summary>
-        /// <value>The measure report fields.</value>
-        public List<string> MeasureReportFields => _measureReportFields;
+        /// <summary>Gets the measure groupings.</summary>
+        /// <value>The measure groupings.</value>
+        public List<MeasureGrouping> MeasureGroupings => _measureGroupings;
 
         /// <summary>Gets the questionnaire sections.</summary>
         /// <value>The questionnaire sections.</value>

@@ -44,9 +44,9 @@ namespace covidReportTransformationLib.Formats.SANER
                 throw new ArgumentNullException(nameof(format), $"Invalid IReportingFormat.Fields: {format.Fields}");
             }
 
-            if ((format.MeasureReportFields == null) || (format.MeasureReportFields.Count == 0))
+            if ((format.MeasureGroupings == null) || (format.MeasureGroupings.Count == 0))
             {
-                throw new ArgumentNullException(nameof(format), $"Invalid IReportingFormat.MeasureReportFields: {format.MeasureReportFields}");
+                throw new ArgumentNullException(nameof(format), $"Invalid IReportingFormat.MeasureGroupings: {format.MeasureGroupings}");
             }
 
             Measure measure = new Measure()
@@ -56,6 +56,7 @@ namespace covidReportTransformationLib.Formats.SANER
                     Profile = new string[]
                     {
                         "http://hl7.org/fhir/4.0/StructureDefinition/Measure",
+                        "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure",
                     },
                 },
                 Id = format.Name,
@@ -65,27 +66,29 @@ namespace covidReportTransformationLib.Formats.SANER
                 Title = format.Title,
                 Description = new Markdown(format.Description),
                 Status = PublicationStatus.Draft,
+                Experimental = true,
                 Subject = new CodeableConcept("Location", "Location"),
                 Date = PublicationDate,
                 Publisher = Publisher,
                 Jurisdiction = new List<CodeableConcept>()
                 {
-                    FhirTriplet.UnitedStates.Concept,
+                    FhirTriplet.UnitedStates.GetConcept(),
                 },
                 UseContext = new List<UsageContext>()
                 {
                     new UsageContext()
                     {
                         Code = FhirTriplet.GetCode(FhirSystems.UsageContextType, CommonLiterals.ContextFocus),
-                        Value = FhirTriplet.SctCovid.Concept,
+                        Value = FhirTriplet.SctCovid.GetConcept(),
                     },
                 },
                 Type = new List<CodeableConcept>()
                 {
-                    FhirTriplet.MeasureTypeComposite.Concept,
+                    FhirTriplet.MeasureTypeComposite.GetConcept(),
                 },
                 Group = new List<Measure.GroupComponent>(),
                 Contact = SanerCommon.Contacts,
+                Author = format.Authors,
             };
 
             if ((format.Definition != null) && (format.Definition.Count > 0))
@@ -103,14 +106,100 @@ namespace covidReportTransformationLib.Formats.SANER
                 measure.RelatedArtifact.AddRange(format.Artifacts);
             }
 
-            foreach (string field in format.MeasureReportFields)
+            foreach (MeasureGrouping grouping in format.MeasureGroupings)
             {
-                if (!format.Fields.ContainsKey(field))
+                Measure.GroupComponent groupComponent = new Measure.GroupComponent()
                 {
-                    continue;
+                    Code = grouping.CodeCoding.GetConcept(grouping.CodeText),
+                };
+
+                if ((grouping.GroupAttributes != null) && (grouping.GroupAttributes.Count > 0))
+                {
+                    Extension groupAttributes = new Extension()
+                    {
+                        Url = "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes",
+                        Extension = new List<Extension>(),
+                    };
+
+                    foreach (MeasureGroupingExtension ext in grouping.GroupAttributes)
+                    {
+                        Extension attribute = new Extension()
+                        {
+                            Url = ext.Key,
+                        };
+
+                        if ((ext.Properties != null) && (ext.Properties.Count > 0))
+                        {
+                            CodeableConcept value = new CodeableConcept()
+                            {
+                                Coding = new List<Coding>(),
+                            };
+
+                            foreach (FhirTriplet prop in ext.Properties)
+                            {
+                                value.Coding.Add(prop.GetCoding());
+                            }
+
+                            if (!string.IsNullOrEmpty(ext.Text))
+                            {
+                                value.Text = ext.Text;
+                            }
+
+                            attribute.Value = value;
+                        }
+
+                        if (!string.IsNullOrEmpty(ext.ValueString))
+                        {
+                            attribute.Value = new FhirString(ext.ValueString);
+                        }
+
+                        groupAttributes.Extension.Add(attribute);
+                    }
+
+                    groupComponent.Extension = new List<Extension>()
+                    {
+                        groupAttributes,
+                    };
                 }
 
-                measure.Group.Add(SanerMeasureInfo.GetGroupComponent(format.Fields[field]));
+                if ((grouping.PopulationFields != null) && (grouping.PopulationFields.Count > 0))
+                {
+                    groupComponent.Population = new List<Measure.PopulationComponent>();
+
+                    foreach (MeasureGroupingPopulation pop in grouping.PopulationFields)
+                    {
+                        if (!format.Fields.ContainsKey(pop.Name))
+                        {
+                            continue;
+                        }
+
+                        FormatField field = format.Fields[pop.Name];
+
+                        Measure.PopulationComponent populationComponent = new Measure.PopulationComponent()
+                        {
+                            Code = new FhirTriplet(
+                                FhirSystems.SanerPopulation,
+                                field.Name,
+                                field.Title).GetConcept(field.Description),
+                            Description = field.Description,
+                            Criteria = new Expression()
+                            {
+                                Description = field.Title,
+                                Language = "text/plain",
+                                Expression_ = field.Description,
+                            },
+                        };
+
+                        if (pop.PopulationType != null)
+                        {
+                            populationComponent.Code.Coding.Add(pop.PopulationType.GetCoding());
+                        }
+
+                        groupComponent.Population.Add(populationComponent);
+                    }
+                }
+
+                measure.Group.Add(groupComponent);
             }
 
             return measure;

@@ -81,63 +81,6 @@ namespace covidReportTransformationLib.Formats
         /// <value>The display.</value>
         public string Display { get; }
 
-        /// <summary>Gets the concept.</summary>
-        /// <value>The concept.</value>
-        public CodeableConcept Concept
-        {
-            get
-            {
-                CodeableConcept concept = new CodeableConcept();
-                concept.Coding = new List<Coding>()
-                {
-                    new Coding(),
-                };
-
-                if (!string.IsNullOrEmpty(System))
-                {
-                    concept.Coding[0].System = System;
-                }
-
-                if (!string.IsNullOrEmpty(Code))
-                {
-                    concept.Coding[0].Code = Code;
-                }
-
-                if (!string.IsNullOrEmpty(Display))
-                {
-                    concept.Coding[0].Display = Display;
-                }
-
-                return concept;
-            }
-        }
-
-        /// <summary>Gets the coding.</summary>
-        /// <value>The coding.</value>
-        public Coding Coding
-        {
-            get
-            {
-                Coding coding = new Coding();
-
-                if (!string.IsNullOrEmpty(System))
-                {
-                    coding.System = System;
-                }
-
-                if (!string.IsNullOrEmpty(Code))
-                {
-                    coding.Code = Code;
-                }
-
-                if (!string.IsNullOrEmpty(Display))
-                {
-                    coding.Display = Display;
-                }
-
-                return coding;
-            }
-        }
 
         /// <summary>Gets the empty required.</summary>
         /// <value>The empty required.</value>
@@ -165,6 +108,27 @@ namespace covidReportTransformationLib.Formats
             FhirSystems.SnomedSct,
             "91537007",
             "Hospital bed, device (physical object)");
+
+        /// <summary>Gets the sct immunology lab test.</summary>
+        /// <value>The sct immunology lab test.</value>
+        public static FhirTriplet SctImmunologyLabTest => new FhirTriplet(
+            FhirSystems.SnomedSct,
+            "252318005",
+            "Immunology laboratory test (procedure)");
+
+        /// <summary>Gets the sct patient encounter.</summary>
+        /// <value>The sct patient encounter.</value>
+        public static FhirTriplet SctPatientEncounter => new FhirTriplet(
+            FhirSystems.SnomedSct,
+            "308335008",
+            "Patient encounter procedure (procedure)");
+
+        /// <summary>Gets the sct ventilator.</summary>
+        /// <value>The sct ventilator.</value>
+        public static FhirTriplet SctVentilator => new FhirTriplet(
+            FhirSystems.SnomedSct,
+            "706172005",
+            "Ventilator (physical object)");
 
         /// <summary>Gets the improvement increase.</summary>
         /// <value>The improvement increase.</value>
@@ -224,15 +188,19 @@ namespace covidReportTransformationLib.Formats
         /// <value>The numerator.</value>
         public static FhirTriplet Numerator => new FhirTriplet(
             FhirSystems.MeasurePopulation,
-            "numerator",
-            "Numerator");
+            "numerator");
 
         /// <summary>Gets the denominator.</summary>
         /// <value>The denominator.</value>
         public static FhirTriplet Denominator => new FhirTriplet(
             FhirSystems.MeasurePopulation,
-            "denominator",
-            "Denominator");
+            "denominator");
+
+        /// <summary>Gets the denominator exclusion.</summary>
+        /// <value>The denominator exclusion.</value>
+        public static FhirTriplet DenominatorExclusion => new FhirTriplet(
+            FhirSystems.MeasurePopulation,
+            "denominator-exclusion");
 
         /// <summary>Gets the scoring continuous variable.</summary>
         /// <value>The scoring continuous variable.</value>
@@ -281,11 +249,29 @@ namespace covidReportTransformationLib.Formats
             FhirSystems.LocationPhysicalType,
             LocationPhysicalTypeSite);
 
+        /// <summary>Gets the resource device.</summary>
+        /// <value>The resource device.</value>
+        public static FhirTriplet ResourceDevice => new FhirTriplet(
+            FhirSystems.ResourceType,
+            "Device");
+
+        /// <summary>Gets the resource encounter.</summary>
+        /// <value>The resource encounter.</value>
+        public static FhirTriplet ResourceEncounter => new FhirTriplet(
+            FhirSystems.ResourceType,
+            "Encounter");
+
         /// <summary>Gets the resource location.</summary>
         /// <value>The resource location.</value>
         public static FhirTriplet ResourceLocation => new FhirTriplet(
             FhirSystems.ResourceType,
             "Location");
+
+        /// <summary>Gets the resource service request.</summary>
+        /// <value>The resource service request.</value>
+        public static FhirTriplet ResourceServiceRequest => new FhirTriplet(
+            FhirSystems.ResourceType,
+            "ServiceRequest");
 
         /// <summary>Gets the saner status.</summary>
         /// <value>The saner status.</value>
@@ -321,7 +307,7 @@ namespace covidReportTransformationLib.Formats
             string code,
             string display = "")
         {
-            return new FhirTriplet(system, code, display).Concept;
+            return new FhirTriplet(system, code, display).GetConcept();
         }
 
         /// <summary>Gets a coding.</summary>
@@ -334,7 +320,7 @@ namespace covidReportTransformationLib.Formats
             string code,
             string display = "")
         {
-            return new FhirTriplet(system, code, display).Coding;
+            return new FhirTriplet(system, code, display).GetCoding();
         }
 
         /// <summary>For saner.</summary>
@@ -541,5 +527,64 @@ namespace covidReportTransformationLib.Formats
 
             return new FhirTriplet();
         }
+
+        /// <summary>Concepts.</summary>
+        /// <param name="text">(Optional) The text.</param>
+        /// <returns>A CodeableConcept.</returns>
+        public CodeableConcept GetConcept(string text = null)
+        {
+            CodeableConcept concept = new CodeableConcept();
+            concept.Coding = new List<Coding>()
+                {
+                    new Coding(),
+                };
+
+            if (!string.IsNullOrEmpty(System))
+            {
+                concept.Coding[0].System = System;
+            }
+
+            if (!string.IsNullOrEmpty(Code))
+            {
+                concept.Coding[0].Code = Code;
+            }
+
+            if (!string.IsNullOrEmpty(Display))
+            {
+                concept.Coding[0].Display = Display;
+            }
+
+            if (!string.IsNullOrEmpty(text))
+            {
+                concept.Text = text;
+            }
+
+            return concept;
+        }
+
+        /// <summary>Gets the coding.</summary>
+        /// <returns>The coding.</returns>
+        public Coding GetCoding()
+        {
+            Coding coding = new Coding();
+
+            if (!string.IsNullOrEmpty(System))
+            {
+                coding.System = System;
+            }
+
+            if (!string.IsNullOrEmpty(Code))
+            {
+                coding.Code = Code;
+            }
+
+            if (!string.IsNullOrEmpty(Display))
+            {
+                coding.Display = Display;
+            }
+
+            return coding;
+        }
+
     }
 }

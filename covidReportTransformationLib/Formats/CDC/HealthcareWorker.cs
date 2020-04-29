@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using covidReportTransformationLib.Utils;
 
 namespace covidReportTransformationLib.Formats.CDC
 {
@@ -95,7 +96,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     Information,
                     "Information",
                     string.Empty,
-                    string.Empty,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -109,7 +109,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     GroupToday,
                     "Critical Staffing Shortage Today",
                     "Does your organization consider that it has a critical staffing shortage in this group today?",
-                    string.Empty,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -123,7 +122,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     GroupThisWeek,
                     "Critical Staffing Shortage Within a Week",
                     "Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
-                    string.Empty,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -136,7 +134,6 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FacilityId,
                     "Facility ID #",
-                    string.Empty,
                     string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
@@ -151,7 +148,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     SummaryCensusId,
                     "Summary Census ID #",
                     string.Empty,
-                    string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -165,7 +161,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     CollectionDate,
                     "Collection Date",
                     "Date for which Healthcare Worker Impact Module responses are reported",
-                    string.Empty,
                     FormatField.FieldType.Date,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -179,7 +174,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     EnvironmentalServiceShortageToday,
                     "Environmental services",
                     "Front-line persons who clean patient rooms and all areas in a healthcare facility",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -193,7 +187,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     NurseShortageToday,
                     "Nurses",
                     "Registered nurses and licensed practical nurses",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -207,7 +200,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     RTShortageToday,
                     "Respiratory therapists",
                     "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -220,7 +212,6 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     PharmShortageToday,
                     "Pharmacists and pharmacy techs",
-                    string.Empty,
                     string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
@@ -235,7 +226,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     PhysicianShortageToday,
                     "Physicians",
                     "Attending physicians, fellows",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -249,7 +239,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     OtherLicensedShortageToday,
                     "Other licensed independent practitioners",
                     "Advanced practice nurses, physician assistants",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -263,7 +252,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     TempShortageToday,
                     "Temporary physicians, nurses, respiratory therapists, and pharmacists",
                     "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -277,7 +265,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     OtherShortageToday,
                     "Other HCP",
                     "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -291,7 +278,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     HCPShortageToday,
                     "Other HCP - Specify the groups",
                     "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
-                    string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -305,7 +291,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     EnvironmentalServiceShortageWeek,
                     "Environmental services",
                     "Front-line persons who clean patient rooms and all areas in a healthcare facility",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -319,7 +304,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     NurseShortageWeek,
                     "Nurses",
                     "Registered nurses and licensed practical nurses",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -333,7 +317,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     RTShortageWeek,
                     "Respiratory therapists",
                     "Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -346,7 +329,6 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     PharmShortageWeek,
                     "Pharmacists and pharmacy techs",
-                    string.Empty,
                     string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
@@ -361,7 +343,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     PhysicianShortageWeek,
                     "Physicians",
                     "Attending physicians, fellows",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -375,7 +356,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     OtherLicensedShortageWeek,
                     "Other licensed independent practitioners",
                     "Advanced practice nurses, physician assistants",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -389,7 +369,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     TempShortageWeek,
                     "Temporary physicians, nurses, respiratory therapists, and pharmacists",
                     "'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -403,7 +382,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     OtherShortageWeek,
                     "Other HCP",
                     "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
-                    string.Empty,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -417,7 +395,6 @@ namespace covidReportTransformationLib.Formats.CDC
                     HCPShortageWeek,
                     "Other HCP - Specify the groups",
                     "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
-                    string.Empty,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -448,6 +425,77 @@ namespace covidReportTransformationLib.Formats.CDC
             OtherShortageWeek,
             OtherLicensedShortageWeek,
             HCPShortageWeek,
+        };
+
+        /// <summary>The measure groupings.</summary>
+        private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
+        {
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    GroupToday,
+                    "Critical Staffing Shortage Today"),
+                "Aggregated Critical Staffing Shortages Today",
+                new List<MeasureGroupingExtension>()
+                {
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Scoring,
+                        FhirTriplet.ScoringContinuousVariable),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Type,
+                        FhirTriplet.MeasureTypeStructure),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.ImprovementNotation,
+                        FhirTriplet.ImprovementDecrease),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.RateAggregation,
+                        CommonLiterals.AggregableByPeriod),
+                },
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(EnvironmentalServiceShortageToday, null),
+                    new MeasureGroupingPopulation(NurseShortageToday, null),
+                    new MeasureGroupingPopulation(RTShortageToday, null),
+                    new MeasureGroupingPopulation(PharmShortageToday, null),
+                    new MeasureGroupingPopulation(PhysicianShortageToday, null),
+                    new MeasureGroupingPopulation(TempShortageToday, null),
+                    new MeasureGroupingPopulation(OtherShortageToday, null),
+                    new MeasureGroupingPopulation(OtherLicensedShortageToday, null),
+                    new MeasureGroupingPopulation(HCPShortageToday, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    GroupThisWeek,
+                    "Critical Staffing Shortage Within a Week"),
+                "Aggregated Critical Staffing Shortages Within a Week",
+                new List<MeasureGroupingExtension>()
+                {
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Scoring,
+                        FhirTriplet.ScoringContinuousVariable),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.Type,
+                        FhirTriplet.MeasureTypeStructure),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.ImprovementNotation,
+                        FhirTriplet.ImprovementDecrease),
+                    new MeasureGroupingExtension(
+                        CommonLiterals.RateAggregation,
+                        CommonLiterals.AggregableByPeriod),
+                },
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(EnvironmentalServiceShortageWeek, null),
+                    new MeasureGroupingPopulation(NurseShortageWeek, null),
+                    new MeasureGroupingPopulation(RTShortageWeek, null),
+                    new MeasureGroupingPopulation(PharmShortageWeek, null),
+                    new MeasureGroupingPopulation(PhysicianShortageWeek, null),
+                    new MeasureGroupingPopulation(TempShortageWeek, null),
+                    new MeasureGroupingPopulation(OtherShortageWeek, null),
+                    new MeasureGroupingPopulation(OtherLicensedShortageWeek, null),
+                    new MeasureGroupingPopulation(HCPShortageWeek, null),
+                }),
         };
 
         /// <summary>The questionnaire sections.</summary>
@@ -669,11 +717,11 @@ namespace covidReportTransformationLib.Formats.CDC
 
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>
-        public string Name => "sanerCDCHCW";
+        public string Name => "CDCHealthcareWorkerStaffingPathway";
 
         /// <summary>Gets the title.</summary>
         /// <value>The title.</value>
-        public string Title => "SANER CDC COVID-19 Healthcare Worker Staffing Pathway";
+        public string Title => "COVID-19 Healthcare Worker Staffing Pathway";
 
         /// <summary>Gets the description.</summary>
         /// <value>The description.</value>
@@ -687,9 +735,9 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <value>The fields.</value>
         public Dictionary<string, FormatField> Fields => _fields;
 
-        /// <summary>Gets the measure report fields.</summary>
-        /// <value>The measure report fields.</value>
-        public List<string> MeasureReportFields => _measureReportFields;
+        /// <summary>Gets the measure groupings.</summary>
+        /// <value>The measure groupings.</value>
+        public List<MeasureGrouping> MeasureGroupings => _measureGroupings;
 
         /// <summary>Gets the questionnaire sections.</summary>
         /// <value>The questionnaire sections.</value>

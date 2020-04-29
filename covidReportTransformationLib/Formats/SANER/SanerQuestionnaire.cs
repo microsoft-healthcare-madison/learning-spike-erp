@@ -84,14 +84,14 @@ namespace covidReportTransformationLib.Formats.SANER
                 Publisher = Publisher,
                 Jurisdiction = new List<CodeableConcept>()
                 {
-                    FhirTriplet.UnitedStates.Concept,
+                    FhirTriplet.UnitedStates.GetConcept(),
                 },
                 UseContext = new List<UsageContext>()
                 {
                     new UsageContext()
                     {
                         Code = FhirTriplet.GetCode(FhirSystems.UsageContextType, CommonLiterals.ContextFocus),
-                        Value = FhirTriplet.SctCovid.Concept,
+                        Value = FhirTriplet.SctCovid.GetConcept(),
                     },
                 },
                 Item = new List<Questionnaire.ItemComponent>(),

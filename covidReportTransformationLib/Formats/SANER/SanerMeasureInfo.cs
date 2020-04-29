@@ -42,7 +42,7 @@ namespace covidReportTransformationLib.Formats.SANER
                             {
                                 new Measure.PopulationComponent()
                                 {
-                                    Code = FhirTriplet.InitialPopulation.Concept,
+                                    Code = FhirTriplet.InitialPopulation.GetConcept(),
                                     Criteria = new Expression()
                                     {
                                         Description = description,
@@ -70,7 +70,7 @@ namespace covidReportTransformationLib.Formats.SANER
                             {
                                 new Measure.PopulationComponent()
                                 {
-                                    Code = FhirTriplet.Numerator.Concept,
+                                    Code = FhirTriplet.Numerator.GetConcept(),
                                     Criteria = new Expression()
                                     {
                                         Description = numeratorDescription,
@@ -80,7 +80,7 @@ namespace covidReportTransformationLib.Formats.SANER
                                 },
                                 new Measure.PopulationComponent()
                                 {
-                                    Code = FhirTriplet.Denominator.Concept,
+                                    Code = FhirTriplet.Denominator.GetConcept(),
                                     Criteria = new Expression()
                                     {
                                         Description = denominatorDescription,

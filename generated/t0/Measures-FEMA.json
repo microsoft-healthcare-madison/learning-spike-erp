@@ -11,7 +11,7 @@
     "value": "FHIR-5"
   },
   "type": "collection",
-  "timestamp": "2020-04-29T11:24:11.6285078-05:00",
+  "timestamp": "2020-04-29T16:15:30.188347-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FEMADailyHospitalCOVID19Reporting",
@@ -20,7 +20,8 @@
         "id": "FEMADailyHospitalCOVID19Reporting",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/4.0/StructureDefinition/Measure"
+            "http://hl7.org/fhir/4.0/StructureDefinition/Measure",
+            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
           ]
         },
         "url": "http://hl7.org/fhir/us/saner/FEMADailyHospitalCOVID19Reporting",
@@ -28,6 +29,7 @@
         "name": "FEMADailyHospitalCOVID19Reporting",
         "title": "SANER FEMA Template for daily Hospital COVID-19 Reporting",
         "status": "draft",
+        "experimental": true,
         "subjectCodeableConcept": {
           "coding": [
             {
@@ -96,15 +98,42 @@
             ]
           }
         ],
+        "author": [
+          {
+            "name": "FEMA",
+            "telecom": [
+              {
+                "system": "email",
+                "value": "mailto:fema-hhs-covid-diagnostics-tf@fema.dhs.gov"
+              }
+            ]
+          }
+        ],
         "relatedArtifact": [
           {
             "type": "documentation",
-            "label": "Template for daily Hospital COVID-19 Reporting",
+            "label": "CMS Press Release",
+            "display": "Trump Administration Engages America’s Hospitals in Unprecedented Data Sharing",
+            "url": "https://www.cms.gov/newsroom/press-releases/trump-administration-engages-americas-hospitals-unprecedented-data-sharing"
+          },
+          {
+            "type": "documentation",
+            "label": "Vice President Pence Letter to Hospital Administrators",
+            "display": "Text of a Letter from the Vice President to Hospital Administrators",
+            "url": "https://www.whitehouse.gov/briefings-statements/text-letter-vice-president-hospital-administrators/"
+          },
+          {
+            "type": "documentation",
+            "label": "AHA Advisory on COVID-19 Reporting",
+            "display": "Administration Requests Hospitals Report Daily on COVID-19 Testing Results, Bed and Ventilator",
+            "url": "https://www.aha.org/advisory/2020-03-30-coronavirus-update-administration-requests-hospitals-report-daily-covid-19"
+          },
+          {
+            "type": "documentation",
+            "label": "Excel Spreadsheet template for reporting to FEMA",
+            "display": "Template for Daily Hospital COVID-19 Reporting.xlsx",
             "citation": "Federal Emergency Management Agency (FEMA)",
-            "document": {
-              "url": "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
-              "creation": "2020-03-29"
-            }
+            "url": "https://images.magnetmail.net/images/clients/AHA_MCHF/attach/2020/March/0330/Template_for_Daily_Hospital_COVID19_Reporting.xlsx"
           }
         ],
         "type": [
@@ -120,294 +149,311 @@
         ],
         "group": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "scoring",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+                          "code": "continuous-variable",
+                          "display": "Continuous Variable"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "subject",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/resource-types",
+                          "code": "ServiceRequest"
+                        },
+                        {
+                          "system": "http://snomed.info/sct",
+                          "code": "252318005",
+                          "display": "Immunology laboratory test (procedure)"
+                        }
+                      ],
+                      "text": "COVID-19 Diagnostic Testing"
+                    }
+                  },
+                  {
+                    "url": "type",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+                          "code": "outcome",
+                          "display": "Outcome"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "improvementNotation",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                          "code": "decrease"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "rateAggregation",
+                    "valueString": "aggregable-by-period"
+                  }
+                ],
+                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+              }
+            ],
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "newDiagnosticTests"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                  "code": "percentPositiveAmongNewlyResultedTests",
+                  "display": "Percent Positive among Newly Resulted Tests"
                 }
               ],
-              "text": "Midnight to midnight cutoff, tests ordered on previous date queried."
+              "text": "# of new positive test results released / # of total new tests released for previous date queried"
             },
             "population": [
               {
                 "code": {
                   "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "newDiagnosticTestsOrderedReceived",
+                      "display": "New Diagnostic Tests Ordered/Received"
+                    },
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
                       "code": "initial-population",
                       "display": "Initial Population"
                     }
-                  ]
+                  ],
+                  "text": "Midnight to midnight cutoff, tests ordered on previous date queried."
                 },
+                "description": "Midnight to midnight cutoff, tests ordered on previous date queried.",
                 "criteria": {
-                  "description": "Midnight to midnight cutoff, tests ordered on previous date queried.",
+                  "description": "New Diagnostic Tests Ordered/Received",
                   "language": "text/plain",
-                  "expression": "Source defined field: newDiagnosticTests"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "cumulativeDiagnosticTests"
-                }
-              ],
-              "text": "All tests ordered to date."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "All tests ordered to date.",
-                  "language": "text/plain",
-                  "expression": "Source defined field: cumulativeDiagnosticTests"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "newTestsResulted"
-                }
-              ],
-              "text": "Midnight to midnight cutoff, test results released on previous date queried."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "Midnight to midnight cutoff, test results released on previous date queried.",
-                  "language": "text/plain",
-                  "expression": "Source defined field: newTestsResulted"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "cumulativeSpecimensRejected"
-                }
-              ],
-              "text": "All specimens rejected for testing to date."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "All specimens rejected for testing to date.",
-                  "language": "text/plain",
-                  "expression": "Source defined field: cumulativeSpecimensRejected"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "cumulativeTestsPerformed"
-                }
-              ],
-              "text": "All tests with results released to date."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "All tests with results released to date.",
-                  "language": "text/plain",
-                  "expression": "Source defined field: cumulativeTestsPerformed"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "newPositiveC19Tests"
-                }
-              ],
-              "text": "Midnight to midnight cutoff, positive test results released on the previous date queried."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "Midnight to midnight cutoff, positive test results released on the previous date queried.",
-                  "language": "text/plain",
-                  "expression": "Source defined field: newPositiveC19Tests"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "cumulativePositiveC19Tests"
-                }
-              ],
-              "text": "All positive test results released to date."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "initial-population",
-                      "display": "Initial Population"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "All positive test results released to date.",
-                  "language": "text/plain",
-                  "expression": "Source defined field: cumulativePositiveC19Tests"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "percentPositiveAmongNewlyResultedTests"
-                }
-              ],
-              "text": "# of new positive test results / # of total new tests released for previous date queried."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "# of new positive test results",
-                  "language": "text/plain",
-                  "expression": "Numerator for source defined field: percentPositiveAmongNewlyResultedTests"
+                  "expression": "Midnight to midnight cutoff, tests ordered on previous date queried."
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
-                    }
-                  ]
-                },
-                "criteria": {
-                  "description": "# of total new tests released for previous date queried.",
-                  "language": "text/plain",
-                  "expression": "Denominator for source defined field: percentPositiveAmongNewlyResultedTests"
-                }
-              }
-            ]
-          },
-          {
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "cumulativePercentPositiveAmongResultedTests"
-                }
-              ],
-              "text": "# of total positive results to released date / # of total test results released to date."
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "newTestsResulted",
+                      "display": "New Tests Resulted"
+                    },
                     {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "numerator",
-                      "display": "Numerator"
+                      "code": "denominator"
                     }
-                  ]
+                  ],
+                  "text": "Midnight to midnight cutoff, test results released on previous date queried."
                 },
+                "description": "Midnight to midnight cutoff, test results released on previous date queried.",
                 "criteria": {
-                  "description": "# of total positive results to released date",
+                  "description": "New Tests Resulted",
                   "language": "text/plain",
-                  "expression": "Numerator for source defined field: cumulativePercentPositiveAmongResultedTests"
+                  "expression": "Midnight to midnight cutoff, test results released on previous date queried."
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "newPositiveC19Tests",
+                      "display": "New Positive COVID-19 Tests"
+                    },
+                    {
                       "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                      "code": "denominator",
-                      "display": "Denominator"
+                      "code": "numerator"
                     }
-                  ]
+                  ],
+                  "text": "Midnight to midnight cutoff, positive test results released on the previous date queried."
                 },
+                "description": "Midnight to midnight cutoff, positive test results released on the previous date queried.",
                 "criteria": {
-                  "description": "# of total test results released to date.",
+                  "description": "New Positive COVID-19 Tests",
                   "language": "text/plain",
-                  "expression": "Denominator for source defined field: cumulativePercentPositiveAmongResultedTests"
+                  "expression": "Midnight to midnight cutoff, positive test results released on the previous date queried."
+                }
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "scoring",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+                          "code": "continuous-variable",
+                          "display": "Continuous Variable"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "subject",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/resource-types",
+                          "code": "ServiceRequest"
+                        },
+                        {
+                          "system": "http://snomed.info/sct",
+                          "code": "252318005",
+                          "display": "Immunology laboratory test (procedure)"
+                        }
+                      ],
+                      "text": "COVID-19 Diagnostic Testing"
+                    }
+                  },
+                  {
+                    "url": "type",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+                          "code": "outcome",
+                          "display": "Outcome"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "improvementNotation",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                          "code": "decrease"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "rateAggregation",
+                    "valueString": "aggregable-by-period"
+                  }
+                ],
+                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                  "code": "cumulativePercentPositiveAmongResultedTests",
+                  "display": "Cumulative Percent Positive among Newly Resulted Tests"
+                }
+              ],
+              "text": "# of total positive results to released date / # of total tests results released to date"
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "cumulativeDiagnosticTestsOrderedReceived",
+                      "display": "Cumulative Diagnostic Tests Ordered/Received"
+                    },
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ],
+                  "text": "All tests ordered to date."
+                },
+                "description": "All tests ordered to date.",
+                "criteria": {
+                  "description": "Cumulative Diagnostic Tests Ordered/Received",
+                  "language": "text/plain",
+                  "expression": "All tests ordered to date."
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "cumulativeTestsPerformed",
+                      "display": "Cumulative Tests Performed"
+                    },
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator"
+                    }
+                  ],
+                  "text": "All tests with results released to date."
+                },
+                "description": "All tests with results released to date.",
+                "criteria": {
+                  "description": "Cumulative Tests Performed",
+                  "language": "text/plain",
+                  "expression": "All tests with results released to date."
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "cumulativePositiveC19Tests",
+                      "display": "Cumulative Positive COVID-19 Tests"
+                    },
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator"
+                    }
+                  ],
+                  "text": "All positive test results released to date."
+                },
+                "description": "All positive test results released to date.",
+                "criteria": {
+                  "description": "Cumulative Positive COVID-19 Tests",
+                  "language": "text/plain",
+                  "expression": "All positive test results released to date."
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "cumulativeSpecimensRejected",
+                      "display": "Cumulative Specimens Rejected"
+                    },
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator-exclusion"
+                    }
+                  ],
+                  "text": "All specimens rejected for testing to date."
+                },
+                "description": "All specimens rejected for testing to date.",
+                "criteria": {
+                  "description": "Cumulative Specimens Rejected",
+                  "language": "text/plain",
+                  "expression": "All specimens rejected for testing to date."
                 }
               }
             ]

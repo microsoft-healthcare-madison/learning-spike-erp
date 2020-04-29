@@ -11,7 +11,7 @@
     "value": "FHIR-6"
   },
   "type": "collection",
-  "timestamp": "2020-04-29T11:24:11.6412163-05:00",
+  "timestamp": "2020-04-29T16:15:30.1991514-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/FEMADailyHospitalCOVID19Reporting",
@@ -136,11 +136,11 @@
                     "valueDecimal": 3
                   }
                 ],
-                "linkId": "newDiagnosticTests",
+                "linkId": "newDiagnosticTestsOrderedReceived",
                 "code": [
                   {
                     "system": "http://hl7.org/fhir/us/saner/FEMADailyHospitalCOVID19Reporting",
-                    "code": "newDiagnosticTests"
+                    "code": "newDiagnosticTestsOrderedReceived"
                   }
                 ],
                 "text": "New Diagnostic Tests Ordered/Received: Midnight to midnight cutoff, tests ordered on previous date queried.",
@@ -155,11 +155,11 @@
                     "valueDecimal": 4
                   }
                 ],
-                "linkId": "cumulativeDiagnosticTests",
+                "linkId": "cumulativeDiagnosticTestsOrderedReceived",
                 "code": [
                   {
                     "system": "http://hl7.org/fhir/us/saner/FEMADailyHospitalCOVID19Reporting",
-                    "code": "cumulativeDiagnosticTests"
+                    "code": "cumulativeDiagnosticTestsOrderedReceived"
                   }
                 ],
                 "text": "Cumulative Diagnostic Tests Ordered/Received: All tests ordered to date.",

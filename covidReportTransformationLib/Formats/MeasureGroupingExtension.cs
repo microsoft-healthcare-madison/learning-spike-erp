@@ -1,4 +1,4 @@
-﻿// <copyright file="MeasureGroupExtension.cs" company="Microsoft Corporation">
+﻿// <copyright file="MeasureGroupingExtension.cs" company="Microsoft Corporation">
 //     Copyright (c) Microsoft Corporation. All rights reserved.
 //     Licensed under the MIT License (MIT). See LICENSE in the repo root for license information.
 // </copyright>
@@ -9,16 +9,16 @@ using System.Text;
 namespace covidReportTransformationLib.Formats
 {
     /// <summary>A format field extension.</summary>
-    public class MeasureGroupExtension
+    public class MeasureGroupingExtension
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MeasureGroupExtension"/>
+        /// Initializes a new instance of the <see cref="MeasureGroupingExtension"/>
         /// class.
         /// </summary>
         /// <param name="key">       The key.</param>
         /// <param name="text">      The text.</param>
         /// <param name="properties">The properties.</param>
-        public MeasureGroupExtension(string key, string text, List<FhirTriplet> properties)
+        public MeasureGroupingExtension(string key, string text, List<FhirTriplet> properties)
         {
             Key = key;
             Text = text;
@@ -27,12 +27,12 @@ namespace covidReportTransformationLib.Formats
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MeasureGroupExtension"/>
+        /// Initializes a new instance of the <see cref="MeasureGroupingExtension"/>
         /// class.
         /// </summary>
         /// <param name="key">       The key.</param>
         /// <param name="properties">The properties.</param>
-        public MeasureGroupExtension(string key, List<FhirTriplet> properties)
+        public MeasureGroupingExtension(string key, List<FhirTriplet> properties)
         {
             Key = key;
             Text = null;
@@ -41,12 +41,12 @@ namespace covidReportTransformationLib.Formats
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MeasureGroupExtension"/>
+        /// Initializes a new instance of the <see cref="MeasureGroupingExtension"/>
         /// class.
         /// </summary>
         /// <param name="key">     The key.</param>
         /// <param name="property">The property.</param>
-        public MeasureGroupExtension(string key, FhirTriplet property)
+        public MeasureGroupingExtension(string key, FhirTriplet property)
         {
             Key = key;
             Text = null;
@@ -58,12 +58,12 @@ namespace covidReportTransformationLib.Formats
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MeasureGroupExtension"/>
+        /// Initializes a new instance of the <see cref="MeasureGroupingExtension"/>
         /// class.
         /// </summary>
         /// <param name="key">  The key.</param>
         /// <param name="value">The value.</param>
-        public MeasureGroupExtension(string key, string value)
+        public MeasureGroupingExtension(string key, string value)
         {
             Key = key;
             Text = null;
