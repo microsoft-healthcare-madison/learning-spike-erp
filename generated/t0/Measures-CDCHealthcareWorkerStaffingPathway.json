@@ -11,7 +11,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-04-30T19:10:50.4887979-05:00",
+  "timestamp": "2020-05-01T17:14:11.6608731-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/CDCHealthcareWorkerStaffingPathway",
@@ -960,6 +960,63 @@
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/us/saner",
+                  "code": "shortothsfy"
+                }
+              ],
+              "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above"
+            }
+          },
+          {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "scoring",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+                          "code": "continuous-variable",
+                          "display": "Continuous Variable"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "type",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+                          "code": "structure",
+                          "display": "Structure"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "improvementNotation",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                          "code": "increase"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "rateAggregation",
+                    "valueString": "aggregable-by-period"
+                  }
+                ],
+                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner",
                   "code": "posshortenvsvc"
                 }
               ],
@@ -1652,6 +1709,63 @@
                 }
               }
             ]
+          },
+          {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "scoring",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
+                          "code": "continuous-variable",
+                          "display": "Continuous Variable"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "type",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+                          "code": "structure",
+                          "display": "Structure"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "improvementNotation",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                          "code": "increase"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "url": "rateAggregation",
+                    "valueString": "aggregable-by-period"
+                  }
+                ],
+                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner",
+                  "code": "posshortothsfy"
+                }
+              ],
+              "text": "Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above."
+            }
           }
         ]
       }

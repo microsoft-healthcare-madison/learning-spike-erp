@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using covidReportTransformationLib.Utils;
 
 namespace covidReportTransformationLib.Formats.CDC
 {
@@ -609,6 +610,103 @@ namespace covidReportTransformationLib.Formats.CDC
             },
         };
 
+#if true
+        /// <summary>The measure groupings.</summary>
+        private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
+        {
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "Ventilators",
+                    VentilatorDesc),
+                "Ventilator Supply Reporting",
+                MeasureGroupingExtension.VentilatorList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(VentilatorSupply, null),
+                    new MeasureGroupingPopulation(VentilatorReuse, null),
+                    new MeasureGroupingPopulation(VentilatorObtain, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "N95Masks",
+                    N95MaskDesc),
+                "N95 Mask Supply Reporting",
+                MeasureGroupingExtension.UnspecifiedList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(N95MaskSupply, null),
+                    new MeasureGroupingPopulation(N95MaskReuse, null),
+                    new MeasureGroupingPopulation(N95MaskObtain, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "OtherRespirators",
+                    OtherRespDesc),
+                "Other Respirator Supply Reporting",
+                MeasureGroupingExtension.UnspecifiedList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(OtherRespSupply, null),
+                    new MeasureGroupingPopulation(OtherRespReuse, null),
+                    new MeasureGroupingPopulation(OtherRespObtain, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "SurgicalMasks",
+                    SurgicalMaskDesc),
+                "Surgical Mask Supply Reporting",
+                MeasureGroupingExtension.UnspecifiedList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(SurgicalMaskSupply, null),
+                    new MeasureGroupingPopulation(SurgicalMaskReuse, null),
+                    new MeasureGroupingPopulation(SurgicalMaskObtain, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "EyeProtection",
+                    FaceShieldDesc),
+                "Eye Protection Supply Reporting",
+                MeasureGroupingExtension.UnspecifiedList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(FaceShieldSupply, null),
+                    new MeasureGroupingPopulation(FaceShieldReuse, null),
+                    new MeasureGroupingPopulation(FaceShieldObtain, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "Gown",
+                    GownDesc),
+                "Gown Supply Reporting",
+                MeasureGroupingExtension.UnspecifiedList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(GownSupply, null),
+                    new MeasureGroupingPopulation(GownReuse, null),
+                    new MeasureGroupingPopulation(GownObtain, null),
+                }),
+            new MeasureGrouping(
+                new FhirTriplet(
+                    FhirSystems.SanerGroup,
+                    "Glove",
+                    GloveDesc),
+                "Glove Supply Reporting",
+                MeasureGroupingExtension.UnspecifiedList,
+                new List<MeasureGroupingPopulation>()
+                {
+                    new MeasureGroupingPopulation(GloveSupply, null),
+                    new MeasureGroupingPopulation(GloveReuse, null),
+                    new MeasureGroupingPopulation(GloveObtain, null),
+                }),
+        };
+#else
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -634,6 +732,7 @@ namespace covidReportTransformationLib.Formats.CDC
             new MeasureGrouping(GloveReuse, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(GloveObtain, MeasureGroupingExtension.UnspecifiedList),
         };
+#endif
 
         /// <summary>The questionnaire sections.</summary>
         private static readonly List<QuestionnaireSection> _questionnaireSections = new List<QuestionnaireSection>()

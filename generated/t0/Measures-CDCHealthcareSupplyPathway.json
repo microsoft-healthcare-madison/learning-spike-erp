@@ -11,7 +11,7 @@
     "value": "FHIR-6"
   },
   "type": "collection",
-  "timestamp": "2020-04-30T19:10:50.5245071-05:00",
+  "timestamp": "2020-05-01T17:14:11.6930015-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/CDCHealthcareSupplyPathway",
@@ -182,6 +182,23 @@
                     }
                   },
                   {
+                    "url": "subject",
+                    "valueCodeableConcept": {
+                      "coding": [
+                        {
+                          "system": "http://hl7.org/fhir/resource-types",
+                          "code": "Device"
+                        },
+                        {
+                          "system": "http://snomed.info/sct",
+                          "code": "706172005",
+                          "display": "Ventilator (physical object)"
+                        }
+                      ],
+                      "text": "Mechanical Ventilators"
+                    }
+                  },
+                  {
                     "url": "type",
                     "valueCodeableConcept": {
                       "coding": [
@@ -199,7 +216,7 @@
                       "coding": [
                         {
                           "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
+                          "code": "decrease"
                         }
                       ]
                     }
@@ -215,79 +232,66 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "ventsupply"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "Ventilators",
+                  "display": "Ventilator supplies (any, including tubing)"
                 }
               ],
-              "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
+              "text": "Ventilator Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "ventsupply",
+                      "display": "Ventilator supplies (any, including tubing)"
                     }
-                  ]
+                  ],
+                  "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 },
-                "description": "Ventilator supplies (any, including tubing):Zero days",
+                "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
                 "criteria": {
                   "description": "Ventilator supplies (any, including tubing)",
                   "language": "text/plain",
-                  "expression": "Zero days"
+                  "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "ventreuse",
+                      "display": "Ventilator supplies (any, including tubing)"
                     }
-                  ]
+                  ],
+                  "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 },
-                "description": "Ventilator supplies (any, including tubing):1-3 days",
+                "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
                 "criteria": {
                   "description": "Ventilator supplies (any, including tubing)",
                   "language": "text/plain",
-                  "expression": "1-3 days"
+                  "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "ventobtain",
+                      "display": "Ventilator supplies (any, including tubing)"
                     }
-                  ]
+                  ],
+                  "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 },
-                "description": "Ventilator supplies (any, including tubing):4-14 days",
+                "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
                 "criteria": {
                   "description": "Ventilator supplies (any, including tubing)",
                   "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "Ventilator supplies (any, including tubing):15 or more days",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
+                  "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 }
               }
             ]
@@ -342,265 +346,63 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "ventreuse"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "N95Masks",
+                  "display": "N95 masks"
                 }
               ],
-              "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
+              "text": "N95 Mask Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "n95masksupply",
+                      "display": "N95 masks"
                     }
                   ]
                 },
-                "description": "YES - any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO - any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "ventobtain"
-                }
-              ],
-              "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES - any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO - any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "n95masksupply"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
-                    }
-                  ]
-                },
-                "description": "N95 masks:Zero days",
+                "description": "",
                 "criteria": {
                   "description": "N95 masks",
                   "language": "text/plain",
-                  "expression": "Zero days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "n95maskreuse",
+                      "display": "N95 masks"
                     }
                   ]
                 },
-                "description": "N95 masks:1-3 days",
+                "description": "",
                 "criteria": {
                   "description": "N95 masks",
                   "language": "text/plain",
-                  "expression": "1-3 days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "n95maskobtain",
+                      "display": "N95 masks"
                     }
                   ]
                 },
-                "description": "N95 masks:4-14 days",
+                "description": "",
                 "criteria": {
                   "description": "N95 masks",
                   "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "N95 masks:15 or more days",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
+                  "expression": ""
                 }
               }
             ]
@@ -655,265 +457,66 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "n95maskreuse"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "OtherRespirators",
+                  "display": "Other respirators including PAPRs"
                 }
               ],
-              "text": ""
+              "text": "Other Respirator Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "othrespsupply",
+                      "display": "Other respirators including PAPRs"
                     }
-                  ]
+                  ],
+                  "text": "Other respirators such as PAPRs or elastomerics"
                 },
-                "description": "YES -",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "n95maskobtain"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES -",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "othrespsupply"
-                }
-              ],
-              "text": "Other respirators such as PAPRs or elastomerics"
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
-                    }
-                  ]
-                },
-                "description": "Other respirators including PAPRs:Zero days",
+                "description": "Other respirators such as PAPRs or elastomerics",
                 "criteria": {
                   "description": "Other respirators including PAPRs",
                   "language": "text/plain",
-                  "expression": "Zero days"
+                  "expression": "Other respirators such as PAPRs or elastomerics"
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "othrespreuse",
+                      "display": "Other respirators including PAPRs"
                     }
-                  ]
+                  ],
+                  "text": "Other respirators such as PAPRs or elastomerics"
                 },
-                "description": "Other respirators including PAPRs:1-3 days",
+                "description": "Other respirators such as PAPRs or elastomerics",
                 "criteria": {
                   "description": "Other respirators including PAPRs",
                   "language": "text/plain",
-                  "expression": "1-3 days"
+                  "expression": "Other respirators such as PAPRs or elastomerics"
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "othrespobtain",
+                      "display": "Other respirators including PAPRs"
                     }
-                  ]
+                  ],
+                  "text": "Other respirators such as PAPRs or elastomerics"
                 },
-                "description": "Other respirators including PAPRs:4-14 days",
+                "description": "Other respirators such as PAPRs or elastomerics",
                 "criteria": {
                   "description": "Other respirators including PAPRs",
                   "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "Other respirators including PAPRs:15 or more days",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
+                  "expression": "Other respirators such as PAPRs or elastomerics"
                 }
               }
             ]
@@ -968,265 +571,63 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "othrespreuse"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "SurgicalMasks",
+                  "display": "Surgical masks"
                 }
               ],
-              "text": "Other respirators such as PAPRs or elastomerics"
+              "text": "Surgical Mask Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "surgmasksupply",
+                      "display": "Surgical masks"
                     }
                   ]
                 },
-                "description": "YES - Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO - Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "othrespobtain"
-                }
-              ],
-              "text": "Other respirators such as PAPRs or elastomerics"
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES - Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO - Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "surgmasksupply"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
-                    }
-                  ]
-                },
-                "description": "Surgical masks:Zero days",
+                "description": "",
                 "criteria": {
                   "description": "Surgical masks",
                   "language": "text/plain",
-                  "expression": "Zero days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "surgmaskreuse",
+                      "display": "Surgical masks"
                     }
                   ]
                 },
-                "description": "Surgical masks:1-3 days",
+                "description": "",
                 "criteria": {
                   "description": "Surgical masks",
                   "language": "text/plain",
-                  "expression": "1-3 days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "surgmaskobtain",
+                      "display": "Surgical masks"
                     }
                   ]
                 },
-                "description": "Surgical masks:4-14 days",
+                "description": "",
                 "criteria": {
                   "description": "Surgical masks",
                   "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "Surgical masks:15 or more days",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
+                  "expression": ""
                 }
               }
             ]
@@ -1281,265 +682,63 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "surgmaskreuse"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "EyeProtection",
+                  "display": "Eye protection including face shields or goggles"
                 }
               ],
-              "text": ""
+              "text": "Eye Protection Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "shieldsupply",
+                      "display": "Eye protection including face shields or goggles"
                     }
                   ]
                 },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "surgmaskobtain"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "shieldsupply"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
-                    }
-                  ]
-                },
-                "description": "Eye protection including face shields or goggles:Zero days",
+                "description": "",
                 "criteria": {
                   "description": "Eye protection including face shields or goggles",
                   "language": "text/plain",
-                  "expression": "Zero days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "shieldreuse",
+                      "display": "Eye protection including face shields or goggles"
                     }
                   ]
                 },
-                "description": "Eye protection including face shields or goggles:1-3 days",
+                "description": "",
                 "criteria": {
                   "description": "Eye protection including face shields or goggles",
                   "language": "text/plain",
-                  "expression": "1-3 days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "shieldobtain",
+                      "display": "Eye protection including face shields or goggles"
                     }
                   ]
                 },
-                "description": "Eye protection including face shields or goggles:4-14 days",
+                "description": "",
                 "criteria": {
                   "description": "Eye protection including face shields or goggles",
                   "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "Eye protection including face shields or goggles:15 or more days",
-                "criteria": {
-                  "description": "Eye protection including face shields or goggles",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
+                  "expression": ""
                 }
               }
             ]
@@ -1594,45 +793,63 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "shieldreuse"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "Gown",
+                  "display": "Gowns (single use)"
                 }
               ],
-              "text": ""
+              "text": "Gown Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "gownsupply",
+                      "display": "Gowns (single use)"
                     }
                   ]
                 },
-                "description": "YES -",
+                "description": "",
                 "criteria": {
-                  "description": "Eye protection including face shields or goggles",
+                  "description": "Gowns (single use)",
                   "language": "text/plain",
-                  "expression": "true"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "gownreuse",
+                      "display": "Gowns (single use)"
                     }
                   ]
                 },
-                "description": "NO -",
+                "description": "",
                 "criteria": {
-                  "description": "Eye protection including face shields or goggles",
+                  "description": "Gowns (single use)",
                   "language": "text/plain",
-                  "expression": "false"
+                  "expression": ""
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "gownobtain",
+                      "display": "Gowns (single use)"
+                    }
+                  ]
+                },
+                "description": "",
+                "criteria": {
+                  "description": "Gowns (single use)",
+                  "language": "text/plain",
+                  "expression": ""
                 }
               }
             ]
@@ -1687,671 +904,63 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "shieldobtain"
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "code": "Glove",
+                  "display": "Gloves"
                 }
               ],
-              "text": ""
+              "text": "Glove Supply Reporting"
             },
             "population": [
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "glovesupply",
+                      "display": "Gloves"
                     }
                   ]
                 },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Eye protection including face shields or goggles",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Eye protection including face shields or goggles",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "gownsupply"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
-                    }
-                  ]
-                },
-                "description": "Gowns (single use):Zero days",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "Zero days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
-                    }
-                  ]
-                },
-                "description": "Gowns (single use):1-3 days",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "1-3 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
-                    }
-                  ]
-                },
-                "description": "Gowns (single use):4-14 days",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "Gowns (single use):15 or more days",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "gownreuse"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "gownobtain"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "glovesupply"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "Zero days",
-                      "display": "Aggregate count of respondents selecting the option: Zero days"
-                    }
-                  ]
-                },
-                "description": "Gloves:Zero days",
+                "description": "",
                 "criteria": {
                   "description": "Gloves",
                   "language": "text/plain",
-                  "expression": "Zero days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "1-3 days",
-                      "display": "Aggregate count of respondents selecting the option: 1-3 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "glovereuse",
+                      "display": "Gloves"
                     }
                   ]
                 },
-                "description": "Gloves:1-3 days",
+                "description": "",
                 "criteria": {
                   "description": "Gloves",
                   "language": "text/plain",
-                  "expression": "1-3 days"
+                  "expression": ""
                 }
               },
               {
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "4-14 days",
-                      "display": "Aggregate count of respondents selecting the option: 4-14 days"
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "code": "gloveobtain",
+                      "display": "Gloves"
                     }
                   ]
                 },
-                "description": "Gloves:4-14 days",
+                "description": "",
                 "criteria": {
                   "description": "Gloves",
                   "language": "text/plain",
-                  "expression": "4-14 days"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation",
-                      "code": "15 or more days",
-                      "display": "Aggregate count of respondents selecting the option: 15 or more days"
-                    }
-                  ]
-                },
-                "description": "Gloves:15 or more days",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "15 or more days"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "glovereuse"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "false"
-                }
-              }
-            ]
-          },
-          {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner",
-                  "code": "gloveobtain"
-                }
-              ],
-              "text": ""
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "true",
-                      "display": "Count of 'Yes' or 'True' responses for this field"
-                    }
-                  ]
-                },
-                "description": "YES -",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "true"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation",
-                      "code": "false",
-                      "display": "Count of 'No' or 'False' responses for this field"
-                    }
-                  ]
-                },
-                "description": "NO -",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "false"
+                  "expression": ""
                 }
               }
             ]

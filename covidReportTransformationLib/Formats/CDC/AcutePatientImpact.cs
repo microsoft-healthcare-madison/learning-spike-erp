@@ -285,7 +285,7 @@ namespace covidReportTransformationLib.Formats.CDC
             },
         };
 
-#if false
+#if true
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -295,29 +295,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     GroupBeds,
                     "Beds"),
                 "Hospital Bed Reporting",
-                new List<MeasureGroupingExtension>()
-                {
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Scoring,
-                        FhirTriplet.ScoringContinuousVariable),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Subject,
-                        "Hospital Beds",
-                        new List<FhirTriplet>()
-                        {
-                            FhirTriplet.ResourceLocation,
-                            FhirTriplet.SctHospitalBed,
-                        }),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Type,
-                        FhirTriplet.MeasureTypeStructure),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.ImprovementNotation,
-                        FhirTriplet.ImprovementIncrease),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.RateAggregation,
-                        CommonLiterals.AggregableByPeriod),
-                },
+                MeasureGroupingExtension.BedList,
                 new List<MeasureGroupingPopulation>()
                 {
                     new MeasureGroupingPopulation(TotalBeds, FhirTriplet.InitialPopulation),
@@ -332,29 +310,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     GroupVentilators,
                     "Ventilators"),
                 "Hospital Ventilator Reporting",
-                new List<MeasureGroupingExtension>()
-                {
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Scoring,
-                        FhirTriplet.ScoringContinuousVariable),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Subject,
-                        "Mechanical Ventilators",
-                        new List<FhirTriplet>()
-                        {
-                            FhirTriplet.ResourceDevice,
-                            FhirTriplet.SctVentilator,
-                        }),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Type,
-                        FhirTriplet.MeasureTypeStructure),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.ImprovementNotation,
-                        FhirTriplet.ImprovementDecrease),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.RateAggregation,
-                        CommonLiterals.AggregableByPeriod),
-                },
+                MeasureGroupingExtension.VentilatorList,
                 new List<MeasureGroupingPopulation>()
                 {
                     new MeasureGroupingPopulation(Ventilators, FhirTriplet.InitialPopulation),
@@ -366,29 +322,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     GroupEncounters,
                     "Encounters"),
                 "Hospital COVID-19 Encounters Reporting",
-                new List<MeasureGroupingExtension>()
-                {
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Scoring,
-                        FhirTriplet.ScoringContinuousVariable),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Subject,
-                        "Encounter",
-                        new List<FhirTriplet>()
-                        {
-                            FhirTriplet.ResourceEncounter,
-                            FhirTriplet.SctPatientEncounter,
-                        }),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Type,
-                        FhirTriplet.MeasureTypeOutcome),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.ImprovementNotation,
-                        FhirTriplet.ImprovementDecrease),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.RateAggregation,
-                        CommonLiterals.AggregableByPeriod),
-                },
+                MeasureGroupingExtension.EncounterList,
                 new List<MeasureGroupingPopulation>()
                 {
                     new MeasureGroupingPopulation(HospitalizedPatients, null),
@@ -399,8 +333,7 @@ namespace covidReportTransformationLib.Formats.CDC
                     new MeasureGroupingPopulation(Died, null),
                 }),
         };
-#endif
-
+#else
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -420,6 +353,7 @@ namespace covidReportTransformationLib.Formats.CDC
             new MeasureGrouping(AwaitingVentilators, MeasureGroupingExtension.EncounterList),
             new MeasureGrouping(Died, MeasureGroupingExtension.EncounterList),
         };
+#endif
 
         /// <summary>The questionnaire sections.</summary>
         private static readonly List<QuestionnaireSection> _questionnaireSections = new List<QuestionnaireSection>()

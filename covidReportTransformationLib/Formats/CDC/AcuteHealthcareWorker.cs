@@ -404,6 +404,8 @@ namespace covidReportTransformationLib.Formats.CDC
             },
         };
 
+        // TODO(GinoC): Need to figure out groupings for these
+        // TODO(GinoC): Need to figure out what 'specify' field aggregation (HCP*) should look like
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -415,7 +417,7 @@ namespace covidReportTransformationLib.Formats.CDC
             new MeasureGrouping(TempShortageToday, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(OtherShortageToday, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(OtherLicensedShortageToday, MeasureGroupingExtension.UnspecifiedList),
-            //new MeasureGrouping(HCPShortageToday, MeasureGroupingExtension.UnspecifiedList),
+            new MeasureGrouping(HCPShortageToday, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(EnvironmentalServiceShortageWeek, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(NurseShortageWeek, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(RTShortageWeek, MeasureGroupingExtension.UnspecifiedList),
@@ -424,7 +426,7 @@ namespace covidReportTransformationLib.Formats.CDC
             new MeasureGrouping(TempShortageWeek, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(OtherShortageWeek, MeasureGroupingExtension.UnspecifiedList),
             new MeasureGrouping(OtherLicensedShortageWeek, MeasureGroupingExtension.UnspecifiedList),
-            //new MeasureGrouping(HCPShortageWeek, MeasureGroupingExtension.UnspecifiedList),
+            new MeasureGrouping(HCPShortageWeek, MeasureGroupingExtension.UnspecifiedList),
         };
 
         /// <summary>The questionnaire sections.</summary>

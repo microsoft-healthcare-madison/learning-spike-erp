@@ -212,7 +212,7 @@ namespace covidReportTransformationLib.Formats.FEMA
             },
         };
 
-#if false
+#if true
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -222,29 +222,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     PercentC19PositiveToday,
                     "Percent Positive among Newly Resulted Tests"),
                 "# of new positive test results released / # of total new tests released for previous date queried",
-                new List<MeasureGroupingExtension>()
-                {
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Scoring,
-                        FhirTriplet.ScoringContinuousVariable),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Subject,
-                        "COVID-19 Diagnostic Testing",
-                        new List<FhirTriplet>()
-                        {
-                            FhirTriplet.ResourceServiceRequest,
-                            FhirTriplet.SctImmunologyLabTest,
-                        }),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Type,
-                        FhirTriplet.MeasureTypeOutcome),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.ImprovementNotation,
-                        FhirTriplet.ImprovementDecrease),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.RateAggregation,
-                        CommonLiterals.AggregableByPeriod),
-                },
+                MeasureGroupingExtension.LabList,
                 new List<MeasureGroupingPopulation>()
                 {
                     new MeasureGroupingPopulation(TestsOrderedToday, FhirTriplet.InitialPopulation),
@@ -257,29 +235,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     PercentC19PositiveTotal,
                     "Cumulative Percent Positive among Newly Resulted Tests"),
                 "# of total positive results to released date / # of total tests results released to date",
-                new List<MeasureGroupingExtension>()
-                {
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Scoring,
-                        FhirTriplet.ScoringContinuousVariable),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Subject,
-                        "COVID-19 Diagnostic Testing",
-                        new List<FhirTriplet>()
-                        {
-                            FhirTriplet.ResourceServiceRequest,
-                            FhirTriplet.SctImmunologyLabTest,
-                        }),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.Type,
-                        FhirTriplet.MeasureTypeOutcome),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.ImprovementNotation,
-                        FhirTriplet.ImprovementDecrease),
-                    new MeasureGroupingExtension(
-                        CommonLiterals.RateAggregation,
-                        CommonLiterals.AggregableByPeriod),
-                },
+                MeasureGroupingExtension.LabList,
                 new List<MeasureGroupingPopulation>()
                 {
                     new MeasureGroupingPopulation(TestsOrderedTotal, FhirTriplet.InitialPopulation),
@@ -288,8 +244,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                     new MeasureGroupingPopulation(SpecimensRejectedTotal, FhirTriplet.DenominatorExclusion),
                 }),
         };
-#endif
-
+#else
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -303,6 +258,7 @@ namespace covidReportTransformationLib.Formats.FEMA
             new MeasureGrouping(SpecimensRejectedTotal, MeasureGroupingExtension.LabList),
             new MeasureGrouping(PercentC19PositiveTotal, MeasureGroupingExtension.LabList),
         };
+#endif
 
         /// <summary>The questionnaire sections.</summary>
         private static readonly List<QuestionnaireSection> _questionnaireSections = new List<QuestionnaireSection>
