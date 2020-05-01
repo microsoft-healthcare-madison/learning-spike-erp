@@ -59,6 +59,12 @@ namespace covidReportTransformationLib.Utils
         /// <summary>The system saner bed feature.</summary>
         public const string SanerBedFeature = "https://audaciousinquiry.github.io/saner-ig/CodeSystem-SanerBedType";
 
+        /// <summary>The saner aggregate bool.</summary>
+        public const string SanerAggregateBool = "http://hl7.org/fhir/us/saner/CodeSystem/BooleanAggregation";
+
+        /// <summary>The saner aggregate choice.</summary>
+        public const string SanerAggregateChoice = "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation";
+
         /// <summary>Group the saner belongs to.</summary>
         public const string SanerGroup = "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem";
 

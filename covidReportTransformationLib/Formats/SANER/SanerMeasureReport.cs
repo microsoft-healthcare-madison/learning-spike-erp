@@ -130,19 +130,19 @@ namespace covidReportTransformationLib.Formats.SANER
             Dictionary<string, Score> scores,
             ReportData data)
         {
-            AddScore(scores, PatientImpact.TotalBeds, data.BedsTotal);
-            AddScore(scores, PatientImpact.InpatientBeds, data.BedsInpatientTotal);
-            AddScore(scores, PatientImpact.InpatientBedOccupancy, data.BedsInpatientInUse);
-            AddScore(scores, PatientImpact.IcuBeds, data.BedsIcuTotal);
-            AddScore(scores, PatientImpact.IcuBedOccupancy, data.BedsIcuInUse);
-            AddScore(scores, PatientImpact.Ventilators, data.VentilatorsTotal);
-            AddScore(scores, PatientImpact.VentilatorsInUse, data.VentilatorsInUse);
-            AddScore(scores, PatientImpact.HospitalizedPatients, data.PatientsC19Hospitalized);
-            AddScore(scores, PatientImpact.VentilatedPatients, data.PatientsC19Ventilated);
-            AddScore(scores, PatientImpact.HospitalOnset, data.PatientsC19HospitalOnsetTotal);
-            AddScore(scores, PatientImpact.AwaitingBeds, data.PatientsC19NeedBed);
-            AddScore(scores, PatientImpact.AwaitingVentilators, data.PatientsC19NeedVent);
-            AddScore(scores, PatientImpact.Died, data.PatientsC19DiedTotal);
+            AddScore(scores, AcutePatientImpact.TotalBeds, data.BedsTotal);
+            AddScore(scores, AcutePatientImpact.InpatientBeds, data.BedsInpatientTotal);
+            AddScore(scores, AcutePatientImpact.InpatientBedOccupancy, data.BedsInpatientInUse);
+            AddScore(scores, AcutePatientImpact.IcuBeds, data.BedsIcuTotal);
+            AddScore(scores, AcutePatientImpact.IcuBedOccupancy, data.BedsIcuInUse);
+            AddScore(scores, AcutePatientImpact.Ventilators, data.VentilatorsTotal);
+            AddScore(scores, AcutePatientImpact.VentilatorsInUse, data.VentilatorsInUse);
+            AddScore(scores, AcutePatientImpact.HospitalizedPatients, data.PatientsC19Hospitalized);
+            AddScore(scores, AcutePatientImpact.VentilatedPatients, data.PatientsC19Ventilated);
+            AddScore(scores, AcutePatientImpact.HospitalOnset, data.PatientsC19HospitalOnsetTotal);
+            AddScore(scores, AcutePatientImpact.AwaitingBeds, data.PatientsC19NeedBed);
+            AddScore(scores, AcutePatientImpact.AwaitingVentilators, data.PatientsC19NeedVent);
+            AddScore(scores, AcutePatientImpact.Died, data.PatientsC19DiedTotal);
         }
 
         /// <summary>Index fema scores.</summary>

@@ -1,4 +1,4 @@
-﻿// <copyright file="PatientImpact.cs" company="Microsoft Corporation">
+﻿// <copyright file="AcutePatientImpact.cs" company="Microsoft Corporation">
 //     Copyright (c) Microsoft Corporation. All rights reserved.
 //     Licensed under the MIT License (MIT). See LICENSE in the repo root for license information.
 // </copyright>
@@ -10,7 +10,7 @@ using covidReportTransformationLib.Utils;
 namespace covidReportTransformationLib.Formats.CDC
 {
     /// <summary>A cdc literals.</summary>
-    public class PatientImpact : IReportingFormat
+    public class AcutePatientImpact : IReportingFormat
     {
         /// <summary>Identifier for the facility.</summary>
         public const string FacilityId = "facilityId";
@@ -70,7 +70,7 @@ namespace covidReportTransformationLib.Formats.CDC
         public const string GroupEncounters = "Encounters";
 
         /// <summary>The current.</summary>
-        private static PatientImpact _current = new PatientImpact();
+        private static AcutePatientImpact _current = new AcutePatientImpact();
 
         /// <summary>The fields.</summary>
         private static readonly Dictionary<string, FormatField> _fields = new Dictionary<string, FormatField>()
@@ -106,7 +106,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     CollectionDate,
                     "Collection Date",
-                    "Date for which patient impact and hospital capacity counts are reported",
+                    "Select the date for which the recorded data was collected for the following questions.",
                     FormatField.FieldType.Date,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -285,6 +285,7 @@ namespace covidReportTransformationLib.Formats.CDC
             },
         };
 
+#if false
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -398,6 +399,27 @@ namespace covidReportTransformationLib.Formats.CDC
                     new MeasureGroupingPopulation(Died, null),
                 }),
         };
+#endif
+
+        /// <summary>The measure groupings.</summary>
+        private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
+        {
+            new MeasureGrouping(TotalBeds, MeasureGroupingExtension.BedList),
+            new MeasureGrouping(InpatientBeds, MeasureGroupingExtension.BedList),
+            new MeasureGrouping(InpatientBedOccupancy, MeasureGroupingExtension.BedList),
+            new MeasureGrouping(IcuBeds, MeasureGroupingExtension.BedList),
+            new MeasureGrouping(IcuBedOccupancy, MeasureGroupingExtension.BedList),
+
+            new MeasureGrouping(Ventilators, MeasureGroupingExtension.VentilatorList),
+            new MeasureGrouping(VentilatorsInUse, MeasureGroupingExtension.VentilatorList),
+
+            new MeasureGrouping(HospitalizedPatients, MeasureGroupingExtension.EncounterList),
+            new MeasureGrouping(VentilatedPatients, MeasureGroupingExtension.EncounterList),
+            new MeasureGrouping(HospitalOnset, MeasureGroupingExtension.EncounterList),
+            new MeasureGrouping(AwaitingBeds, MeasureGroupingExtension.EncounterList),
+            new MeasureGrouping(AwaitingVentilators, MeasureGroupingExtension.EncounterList),
+            new MeasureGrouping(Died, MeasureGroupingExtension.EncounterList),
+        };
 
         /// <summary>The questionnaire sections.</summary>
         private static readonly List<QuestionnaireSection> _questionnaireSections = new List<QuestionnaireSection>()
@@ -464,8 +486,8 @@ namespace covidReportTransformationLib.Formats.CDC
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
-                Label = "NHSN COVID-19 Reporting",
-                Display = "CDC/NHSN COVID-19 Patient Impact & Hospital Capacity Module Home Page",
+                Label = "NHSN COVID-19 Reporting for Acute Care",
+                Display = "CDC/NHSN COVID-19 Acute Care Module Home Page",
                 Url = "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/",
                 Citation = _cdcCitation,
             },
@@ -473,23 +495,39 @@ namespace covidReportTransformationLib.Formats.CDC
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
                 Label = "How to import COVID-19 Summary Data",
-                Display = "Importing COVID-19 Patient Module Denominator data for Patient Safety Component",
+                Display = "Facility - How to Upload COVID-19 CSV Data Files",
                 Url = "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf",
                 Citation = _cdcCitation,
             },
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
+                Label = "COVID-19 Module Analysis Reports",
+                Display = "NHSN COVID-19 Module Analysis Reports",
+                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/fac-analysis-qrg-508.pdf",
+                Citation = _cdcCitation,
+            },
+            new Hl7.Fhir.Model.RelatedArtifact()
+            {
+                Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
                 Label = "Table of Instructions",
-                Display = "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Module Form (CDC 57.130)",
+                Display = "Instructions for Completion of the COVID-19 Patient Impact and Hospital Capacity Pathway (CDC 57.130)",
                 Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-toi-508.pdf",
                 Citation = _cdcCitation,
             },
             new Hl7.Fhir.Model.RelatedArtifact()
             {
                 Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
+                Label = "PDF Form",
+                Display = "Patient Impact and Hospital Capacity Pathway Form",
+                Url = "https://www.cdc.gov/nhsn/pdfs/covid19/57.130-covid19-pimhc-blank-p.pdf",
+                Citation = _cdcCitation,
+            },
+            new Hl7.Fhir.Model.RelatedArtifact()
+            {
+                Type = Hl7.Fhir.Model.RelatedArtifact.RelatedArtifactType.Documentation,
                 Label = "CSV File Template",
-                Display = "CDC/NHSN COVID-19 Reporting CSV File Template",
+                Display = "CDC/NHSN COVID-19 Acute Care Patient Impact Reporting CSV File Template",
                 Url = "https://www.cdc.gov/nhsn/pdfs/covid19/covid19-test-csv-import.csv",
                 Citation = _cdcCitation,
             },
@@ -513,7 +551,7 @@ namespace covidReportTransformationLib.Formats.CDC
 
         /// <summary>Gets the current.</summary>
         /// <value>The current.</value>
-        public static PatientImpact Current => _current;
+        public static AcutePatientImpact Current => _current;
 
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>

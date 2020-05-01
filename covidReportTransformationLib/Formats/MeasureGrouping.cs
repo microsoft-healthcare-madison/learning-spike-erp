@@ -25,9 +25,27 @@ namespace covidReportTransformationLib.Formats
             List<MeasureGroupingExtension> groupAttributes,
             List<MeasureGroupingPopulation> populationFields)
         {
+            FieldName = null;
             CodeCoding = codeCoding;
             CodeText = codeText;
             PopulationFields = populationFields;
+            GroupAttributes = groupAttributes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeasureGrouping"/>
+        /// class.
+        /// </summary>
+        /// <param name="fieldName">      The name of the field.</param>
+        /// <param name="groupAttributes">The extensions.</param>
+        public MeasureGrouping(
+            string fieldName,
+            List<MeasureGroupingExtension> groupAttributes)
+        {
+            FieldName = fieldName;
+            CodeCoding = null;
+            CodeText = null;
+            PopulationFields = null;
             GroupAttributes = groupAttributes;
         }
 
@@ -46,6 +64,10 @@ namespace covidReportTransformationLib.Formats
             /// <summary>An enum constant representing the encounters option.</summary>
             Encounters,
         }
+
+        /// <summary>Gets the name of the field.</summary>
+        /// <value>The name of the field.</value>
+        public string FieldName { get; }
 
         /// <summary>Gets the code.</summary>
         /// <value>The code.</value>

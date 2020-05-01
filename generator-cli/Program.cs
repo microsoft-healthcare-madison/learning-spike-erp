@@ -232,29 +232,55 @@ namespace generator_cli
             int timeSteps,
             int timePeriodHours)
         {
+            string metaDir = Path.Combine(outputDirectory, "t0");
+
             // write measures only in t0
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC{_extension}"),
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForMeasures}-CDCPatientImpactAndHospitalCapacity{_extension}"),
                 SanerMeasure.CDCPatientImpactBundle());
 
-            //WriteBundle(
-            //    Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-CDC{_extension}"),
-            //    SanerMeasure.CDCHealthcareWorkerBundle());
-
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForQuestionnaires}-CDC{_extension}"),
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForQuestionnaires}-CDCPatientImpactAndHospitalCapacity{_extension}"),
                 SanerQuestionnaire.CDCPatientImpactBundle());
 
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForQuestionnaires}-CDCHCW{_extension}"),
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForMeasures}-CDCHealthcareWorkerStaffingPathway{_extension}"),
+                SanerMeasure.CDCHealthcareWorkerBundle());
+
+            WriteBundle(
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForQuestionnaires}-CDCHealthcareWorkerStaffingPathway{_extension}"),
                 SanerQuestionnaire.CDCHealthcareWorkerBundle());
 
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForMeasures}-FEMA{_extension}"),
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForMeasures}-CDCHealthcareSupplyPathway{_extension}"),
+                SanerMeasure.CDCHealthcareSupplyBundle());
+
+            WriteBundle(
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForQuestionnaires}-CDCHealthcareSupplyPathway{_extension}"),
+                SanerQuestionnaire.CDCHealthcareSupplyBundle());
+
+            WriteBundle(
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForMeasures}-FEMADailyHospitalCOVID19Reporting{_extension}"),
                 SanerMeasure.FEMADailyBundle());
 
             WriteBundle(
-                Path.Combine(outputDirectory, "t0", $"{_filenameBaseForQuestionnaires}-FEMA{_extension}"),
+                Path.Combine(
+                    metaDir,
+                    $"{_filenameBaseForQuestionnaires}-FEMADailyHospitalCOVID19Reporting{_extension}"),
                 SanerQuestionnaire.FEMADailyBundle());
 
             // iterate over the orgs generating their data

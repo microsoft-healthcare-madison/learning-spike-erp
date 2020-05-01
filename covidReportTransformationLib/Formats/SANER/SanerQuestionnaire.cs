@@ -30,8 +30,9 @@ namespace covidReportTransformationLib.Formats.SANER
                 return;
             }
 
-            _questionnaires.Add(PatientImpact.Current.Name, BuildQuestionnaire(PatientImpact.Current));
-            _questionnaires.Add(HealthcareWorker.Current.Name, BuildQuestionnaire(HealthcareWorker.Current));
+            _questionnaires.Add(AcutePatientImpact.Current.Name, BuildQuestionnaire(AcutePatientImpact.Current));
+            _questionnaires.Add(AcuteHealthcareWorker.Current.Name, BuildQuestionnaire(AcuteHealthcareWorker.Current));
+            _questionnaires.Add(AcuteHealthcareSupply.Current.Name, BuildQuestionnaire(AcuteHealthcareSupply.Current));
             _questionnaires.Add(DailyReporting.Current.Name, BuildQuestionnaire(DailyReporting.Current));
 
             _initialized = true;
@@ -269,7 +270,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 Init();
             }
 
-            return _questionnaires[PatientImpact.Current.Name];
+            return _questionnaires[AcutePatientImpact.Current.Name];
         }
 
         /// <summary>Cdc patient impact bundle.</summary>
@@ -282,8 +283,8 @@ namespace covidReportTransformationLib.Formats.SANER
             }
 
             return GetBundleForQuestionnaire(
-                _questionnaires[PatientImpact.Current.Name],
-                PatientImpact.Current.Name);
+                _questionnaires[AcutePatientImpact.Current.Name],
+                AcutePatientImpact.Current.Name);
         }
 
         /// <summary>Cdc healthcare worker bundle.</summary>
@@ -296,8 +297,22 @@ namespace covidReportTransformationLib.Formats.SANER
             }
 
             return GetBundleForQuestionnaire(
-                _questionnaires[HealthcareWorker.Current.Name],
-                HealthcareWorker.Current.Name);
+                _questionnaires[AcuteHealthcareWorker.Current.Name],
+                AcuteHealthcareWorker.Current.Name);
+        }
+
+        /// <summary>Cdc healthcare supply bundle.</summary>
+        /// <returns>A Bundle.</returns>
+        public static Bundle CDCHealthcareSupplyBundle()
+        {
+            if (!_initialized)
+            {
+                Init();
+            }
+
+            return GetBundleForQuestionnaire(
+                _questionnaires[AcuteHealthcareSupply.Current.Name],
+                AcuteHealthcareSupply.Current.Name);
         }
 
         /// <summary>Fema daily questionnaire.</summary>

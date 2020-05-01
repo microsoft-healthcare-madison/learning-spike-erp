@@ -87,38 +87,38 @@ namespace generator_cli.Generators
         {
             int val;
 
-            _scoresByGroupCode.Add(PatientImpact.TotalBeds, new Score(_deviceData.TotalBeds));
+            _scoresByGroupCode.Add(AcutePatientImpact.TotalBeds, new Score(_deviceData.TotalBeds));
 
-            _scoresByGroupCode.Add(PatientImpact.InpatientBeds, new Score(_deviceData.Inpatient));
+            _scoresByGroupCode.Add(AcutePatientImpact.InpatientBeds, new Score(_deviceData.Inpatient));
 
             val = Math.Min(_deviceData.Inpatient, _patientData.Total);
-            _scoresByGroupCode.Add(PatientImpact.InpatientBedOccupancy, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.InpatientBedOccupancy, new Score(val));
 
-            _scoresByGroupCode.Add(PatientImpact.IcuBeds, new Score(_deviceData.ICU));
+            _scoresByGroupCode.Add(AcutePatientImpact.IcuBeds, new Score(_deviceData.ICU));
 
             val = Math.Min(_deviceData.ICU, _patientData.NegativeNeedIcu + _patientData.PositiveNeedIcu);
-            _scoresByGroupCode.Add(PatientImpact.IcuBedOccupancy, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.IcuBedOccupancy, new Score(val));
 
-            _scoresByGroupCode.Add(PatientImpact.Ventilators, new Score(_deviceData.Ventilators));
+            _scoresByGroupCode.Add(AcutePatientImpact.Ventilators, new Score(_deviceData.Ventilators));
 
             val = Math.Min(_deviceData.Ventilators, _patientData.NegativeNeedVent + _patientData.PositiveNeedVent);
-            _scoresByGroupCode.Add(PatientImpact.VentilatorsInUse, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.VentilatorsInUse, new Score(val));
 
             val = Math.Min(_deviceData.TotalBeds - _patientData.Negative, _patientData.Positive);
-            _scoresByGroupCode.Add(PatientImpact.HospitalizedPatients, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.HospitalizedPatients, new Score(val));
 
             val = Math.Min(_deviceData.Ventilators - _patientData.NegativeNeedVent, _patientData.PositiveNeedVent);
-            _scoresByGroupCode.Add(PatientImpact.VentilatedPatients, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.VentilatedPatients, new Score(val));
 
-            _scoresByGroupCode.Add(PatientImpact.HospitalOnset, new Score(_patientData.OnsetInCare));
+            _scoresByGroupCode.Add(AcutePatientImpact.HospitalOnset, new Score(_patientData.OnsetInCare));
 
             val = Math.Max(0, _patientData.Positive - (_deviceData.TotalBeds - _patientData.Negative));
-            _scoresByGroupCode.Add(PatientImpact.AwaitingBeds, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.AwaitingBeds, new Score(val));
 
             val = Math.Max(0, _patientData.PositiveNeedVent - (_deviceData.Ventilators - _patientData.NegativeNeedVent));
-            _scoresByGroupCode.Add(PatientImpact.AwaitingVentilators, new Score(val));
+            _scoresByGroupCode.Add(AcutePatientImpact.AwaitingVentilators, new Score(val));
 
-            _scoresByGroupCode.Add(PatientImpact.Died, new Score(_patientData.Died));
+            _scoresByGroupCode.Add(AcutePatientImpact.Died, new Score(_patientData.Died));
         }
 
         /// <summary>Calculates the fema scores.</summary>

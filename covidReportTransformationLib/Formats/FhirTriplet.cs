@@ -81,7 +81,6 @@ namespace covidReportTransformationLib.Formats
         /// <value>The display.</value>
         public string Display { get; }
 
-
         /// <summary>Gets the empty required.</summary>
         /// <value>The empty required.</value>
         public static FhirTriplet EmptyRequired => new FhirTriplet(
@@ -115,6 +114,13 @@ namespace covidReportTransformationLib.Formats
             FhirSystems.SnomedSct,
             "252318005",
             "Immunology laboratory test (procedure)");
+
+        /// <summary>Gets the sct professional nurse.</summary>
+        /// <value>The sct professional nurse.</value>
+        public static FhirTriplet SctProfessionalNurse => new FhirTriplet(
+            FhirSystems.SnomedSct,
+            "106292003",
+            "Professional nurse (social concept)");
 
         /// <summary>Gets the sct patient encounter.</summary>
         /// <value>The sct patient encounter.</value>
@@ -266,6 +272,12 @@ namespace covidReportTransformationLib.Formats
         public static FhirTriplet ResourceLocation => new FhirTriplet(
             FhirSystems.ResourceType,
             "Location");
+
+        /// <summary>Gets the resource practitioner.</summary>
+        /// <value>The resource practitioner.</value>
+        public static FhirTriplet ResourcePractitioner => new FhirTriplet(
+            FhirSystems.ResourceType,
+            "Practitioner");
 
         /// <summary>Gets the resource service request.</summary>
         /// <value>The resource service request.</value>
@@ -585,6 +597,5 @@ namespace covidReportTransformationLib.Formats
 
             return coding;
         }
-
     }
 }

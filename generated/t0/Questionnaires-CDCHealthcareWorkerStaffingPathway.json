@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-4",
+  "id": "FHIR-5",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/4.0/StructureDefinition/Bundle"
@@ -8,10 +8,10 @@
   },
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-4"
+    "value": "FHIR-5"
   },
   "type": "collection",
-  "timestamp": "2020-04-29T16:15:30.1777344-05:00",
+  "timestamp": "2020-04-30T19:10:50.5151346-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCHealthcareWorkerStaffingPathway",
@@ -124,7 +124,7 @@
                     "code": "collectiondate"
                   }
                 ],
-                "text": "Collection Date: Date for which Healthcare Worker Impact Module responses are reported",
+                "text": "Collection Date: Select the date for which the recorded data was collected for the following questions.",
                 "type": "date",
                 "required": true,
                 "repeats": false

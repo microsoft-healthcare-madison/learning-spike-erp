@@ -212,20 +212,7 @@ namespace covidReportTransformationLib.Formats.FEMA
             },
         };
 
-        /// <summary>The measure report fields.</summary>
-        private static readonly List<string> _measureReportFields = new List<string>
-        {
-            TestsOrderedToday,
-            TestsOrderedTotal,
-            TestsWithResultsToday,
-            SpecimensRejectedTotal,
-            TestsCompletedTotal,
-            PositiveC19Today,
-            PositiveC19Total,
-            PercentC19PositiveToday,
-            PercentC19PositiveTotal,
-        };
-
+#if false
         /// <summary>The measure groupings.</summary>
         private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
         {
@@ -300,6 +287,21 @@ namespace covidReportTransformationLib.Formats.FEMA
                     new MeasureGroupingPopulation(PositiveC19Total, FhirTriplet.Numerator),
                     new MeasureGroupingPopulation(SpecimensRejectedTotal, FhirTriplet.DenominatorExclusion),
                 }),
+        };
+#endif
+
+        /// <summary>The measure groupings.</summary>
+        private static readonly List<MeasureGrouping> _measureGroupings = new List<MeasureGrouping>()
+        {
+            new MeasureGrouping(TestsOrderedToday, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(TestsWithResultsToday, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(PositiveC19Today, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(PercentC19PositiveToday, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(TestsOrderedTotal, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(TestsCompletedTotal, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(PositiveC19Total, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(SpecimensRejectedTotal, MeasureGroupingExtension.LabList),
+            new MeasureGrouping(PercentC19PositiveTotal, MeasureGroupingExtension.LabList),
         };
 
         /// <summary>The questionnaire sections.</summary>
@@ -429,8 +431,9 @@ namespace covidReportTransformationLib.Formats.FEMA
             },
         };
 
-        /// <summary>The current.</summary>
-        public static DailyReporting Current = _current;
+        /// <summary>Gets the current.</summary>
+        /// <value>The current.</value>
+        public static DailyReporting Current => _current;
 
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>

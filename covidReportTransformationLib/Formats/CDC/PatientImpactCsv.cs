@@ -88,96 +88,96 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>Gets the collection date.</summary>
         /// <value>The collection date.</value>
         [CsvHelper.Configuration.Attributes.Index(0)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.CollectionDate)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.CollectionDate)]
         public string CollectionDate { get; }
 
         /// <summary>Gets the total number of beds.</summary>
         /// <value>The total number of beds.</value>
         [CsvHelper.Configuration.Attributes.Index(1)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.TotalBeds)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.TotalBeds)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? TotalBeds { get; }
 
         /// <summary>Gets the inpatient beds.</summary>
         /// <value>The inpatient beds.</value>
         [CsvHelper.Configuration.Attributes.Index(2)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.InpatientBeds)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.InpatientBeds)]
         public int InpatientBeds { get; }
 
         /// <summary>Gets the inpatient bed occupancy.</summary>
         /// <value>The inpatient bed occupancy.</value>
         [CsvHelper.Configuration.Attributes.Index(3)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.InpatientBedOccupancy)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.InpatientBedOccupancy)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? InpatientBedOccupancy { get; }
 
         /// <summary>Gets the icu beds.</summary>
         /// <value>The icu beds.</value>
         [CsvHelper.Configuration.Attributes.Index(4)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.IcuBeds)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.IcuBeds)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? IcuBeds { get; }
 
         /// <summary>Gets the icu bed occupancy.</summary>
         /// <value>The icu bed occupancy.</value>
         [CsvHelper.Configuration.Attributes.Index(5)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.IcuBedOccupancy)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.IcuBedOccupancy)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? IcuBedOccupancy { get; }
 
         /// <summary>Gets the ventilators.</summary>
         /// <value>The ventilators.</value>
         [CsvHelper.Configuration.Attributes.Index(6)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.Ventilators)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.Ventilators)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? Ventilators { get; }
 
         /// <summary>Gets the ventilators in use.</summary>
         /// <value>The ventilators in use.</value>
         [CsvHelper.Configuration.Attributes.Index(7)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.VentilatorsInUse)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.VentilatorsInUse)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? VentilatorsInUse { get; }
 
         /// <summary>Gets the hospitalized patients.</summary>
         /// <value>The hospitalized patients.</value>
         [CsvHelper.Configuration.Attributes.Index(8)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.HospitalizedPatients)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.HospitalizedPatients)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? HospitalizedPatients { get; }
 
         /// <summary>Gets the ventilated patients.</summary>
         /// <value>The ventilated patients.</value>
         [CsvHelper.Configuration.Attributes.Index(9)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.VentilatedPatients)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.VentilatedPatients)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? VentilatedPatients { get; }
 
         /// <summary>Gets the hospital onset.</summary>
         /// <value>The hospital onset.</value>
         [CsvHelper.Configuration.Attributes.Index(10)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.HospitalOnset)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.HospitalOnset)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? HospitalOnset { get; }
 
         /// <summary>Gets the awaiting beds.</summary>
         /// <value>The awaiting beds.</value>
         [CsvHelper.Configuration.Attributes.Index(11)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.AwaitingBeds)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.AwaitingBeds)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? AwaitingBeds { get; }
 
         /// <summary>Gets the awaiting ventilators.</summary>
         /// <value>The awaiting ventilators.</value>
         [CsvHelper.Configuration.Attributes.Index(12)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.AwaitingVentilators)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.AwaitingVentilators)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? AwaitingVentilators { get; }
 
         /// <summary>Gets the died.</summary>
         /// <value>The died.</value>
         [CsvHelper.Configuration.Attributes.Index(13)]
-        [CsvHelper.Configuration.Attributes.Name(PatientImpact.Died)]
+        [CsvHelper.Configuration.Attributes.Name(AcutePatientImpact.Died)]
         [CsvHelper.Configuration.Attributes.Optional]
         public int? Died { get; }
     }

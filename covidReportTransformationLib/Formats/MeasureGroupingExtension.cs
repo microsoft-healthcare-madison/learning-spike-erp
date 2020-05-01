@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using covidReportTransformationLib.Utils;
 
 namespace covidReportTransformationLib.Formats
 {
@@ -86,5 +87,153 @@ namespace covidReportTransformationLib.Formats
         /// <summary>Gets the value string.</summary>
         /// <value>The value string.</value>
         public string ValueString { get; }
+
+        /// <summary>Gets a list of bed.</summary>
+        /// <value>A list of bed.</value>
+        public static List<MeasureGroupingExtension> BedList => new List<MeasureGroupingExtension>()
+        {
+            new MeasureGroupingExtension(
+                CommonLiterals.Scoring,
+                FhirTriplet.ScoringContinuousVariable),
+            new MeasureGroupingExtension(
+                CommonLiterals.Subject,
+                "Hospital Beds",
+                new List<FhirTriplet>()
+                {
+                    FhirTriplet.ResourceLocation,
+                    FhirTriplet.SctHospitalBed,
+                }),
+            new MeasureGroupingExtension(
+                CommonLiterals.Type,
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureGroupingExtension(
+                CommonLiterals.ImprovementNotation,
+                FhirTriplet.ImprovementIncrease),
+            new MeasureGroupingExtension(
+                CommonLiterals.RateAggregation,
+                CommonLiterals.AggregableByPeriod),
+        };
+
+        /// <summary>Gets a list of encounters.</summary>
+        /// <value>A list of encounters.</value>
+        public static List<MeasureGroupingExtension> EncounterList => new List<MeasureGroupingExtension>()
+        {
+            new MeasureGroupingExtension(
+                CommonLiterals.Scoring,
+                FhirTriplet.ScoringContinuousVariable),
+            new MeasureGroupingExtension(
+                CommonLiterals.Subject,
+                "Encounter",
+                new List<FhirTriplet>()
+                {
+                    FhirTriplet.ResourceEncounter,
+                    FhirTriplet.SctPatientEncounter,
+                }),
+            new MeasureGroupingExtension(
+                CommonLiterals.Type,
+                FhirTriplet.MeasureTypeOutcome),
+            new MeasureGroupingExtension(
+                CommonLiterals.ImprovementNotation,
+                FhirTriplet.ImprovementDecrease),
+            new MeasureGroupingExtension(
+                CommonLiterals.RateAggregation,
+                CommonLiterals.AggregableByPeriod),
+        };
+
+        /// <summary>Gets a list of labs.</summary>
+        /// <value>A list of labs.</value>
+        public static List<MeasureGroupingExtension> LabList => new List<MeasureGroupingExtension>()
+        {
+            new MeasureGroupingExtension(
+                CommonLiterals.Scoring,
+                FhirTriplet.ScoringContinuousVariable),
+            new MeasureGroupingExtension(
+                CommonLiterals.Subject,
+                "COVID-19 Diagnostic Testing",
+                new List<FhirTriplet>()
+                {
+                    FhirTriplet.ResourceServiceRequest,
+                    FhirTriplet.SctImmunologyLabTest,
+                }),
+            new MeasureGroupingExtension(
+                CommonLiterals.Type,
+                FhirTriplet.MeasureTypeOutcome),
+            new MeasureGroupingExtension(
+                CommonLiterals.ImprovementNotation,
+                FhirTriplet.ImprovementDecrease),
+            new MeasureGroupingExtension(
+                CommonLiterals.RateAggregation,
+                CommonLiterals.AggregableByPeriod),
+        };
+
+        /// <summary>Gets a list of nurses.</summary>
+        /// <value>A list of nurses.</value>
+        public static List<MeasureGroupingExtension> NurseList => new List<MeasureGroupingExtension>()
+        {
+            new MeasureGroupingExtension(
+                CommonLiterals.Scoring,
+                FhirTriplet.ScoringContinuousVariable),
+            new MeasureGroupingExtension(
+                CommonLiterals.Subject,
+                "Nurses",
+                new List<FhirTriplet>()
+                {
+                    FhirTriplet.ResourcePractitioner,
+                    FhirTriplet.SctProfessionalNurse,
+                }),
+            new MeasureGroupingExtension(
+                CommonLiterals.Type,
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureGroupingExtension(
+                CommonLiterals.ImprovementNotation,
+                FhirTriplet.ImprovementIncrease),
+            new MeasureGroupingExtension(
+                CommonLiterals.RateAggregation,
+                CommonLiterals.AggregableByPeriod),
+        };
+
+        /// <summary>Gets the unspecified.</summary>
+        /// <value>The unspecified.</value>
+        public static List<MeasureGroupingExtension> UnspecifiedList => new List<MeasureGroupingExtension>()
+        {
+            new MeasureGroupingExtension(
+                CommonLiterals.Scoring,
+                FhirTriplet.ScoringContinuousVariable),
+            new MeasureGroupingExtension(
+                CommonLiterals.Type,
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureGroupingExtension(
+                CommonLiterals.ImprovementNotation,
+                FhirTriplet.ImprovementIncrease),
+            new MeasureGroupingExtension(
+                CommonLiterals.RateAggregation,
+                CommonLiterals.AggregableByPeriod),
+        };
+
+        /// <summary>Gets a list of ventilators.</summary>
+        /// <value>A list of ventilators.</value>
+        public static List<MeasureGroupingExtension> VentilatorList => new List<MeasureGroupingExtension>()
+        {
+            new MeasureGroupingExtension(
+                CommonLiterals.Scoring,
+                FhirTriplet.ScoringContinuousVariable),
+            new MeasureGroupingExtension(
+                CommonLiterals.Subject,
+                "Mechanical Ventilators",
+                new List<FhirTriplet>()
+                {
+                    FhirTriplet.ResourceDevice,
+                    FhirTriplet.SctVentilator,
+                }),
+            new MeasureGroupingExtension(
+                CommonLiterals.Type,
+                FhirTriplet.MeasureTypeStructure),
+            new MeasureGroupingExtension(
+                CommonLiterals.ImprovementNotation,
+                FhirTriplet.ImprovementDecrease),
+            new MeasureGroupingExtension(
+                CommonLiterals.RateAggregation,
+                CommonLiterals.AggregableByPeriod),
+        };
     }
 }
