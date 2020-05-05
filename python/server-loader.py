@@ -54,10 +54,10 @@ class DataSource:
     # Examples: ./t0/Org-1234.json, ./data/t1/Org-123-beds.json, Measures.json.
     _resource_file_matcher = re.compile(r'^(.*/)?(X([0-9]+)-?)?(.+)?\.json$')
     _resource_file_properties = {
-        'QuestionnaireResponses': FileProperties(6, ['QuestionnaireResponse']),
-        'Questionnaires': FileProperties(5, ['Questionnaire']),
-        'measureReports': FileProperties(5, ['MeasureReport']),
-        'Measures': FileProperties(4, ['Measure']),
+        'measureReports': FileProperties(7, ['MeasureReport']),
+        'Measures': FileProperties(6, ['Measure']),
+        'QuestionnaireResponses': FileProperties(5, ['QuestionnaireResponse']),
+        'Questionnaires': FileProperties(4, ['Questionnaire']),
         'groups': FileProperties(3, ['Group']),
         'beds': FileProperties(2, ['Location']),
         None: FileProperties(1, ['Organization', 'Location']),  # Org files.
