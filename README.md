@@ -45,14 +45,37 @@ dotnet  build generator-cli/generator-cli.sln
 ```
 
 # Data Loading
+## Loader Setup
+
+Create a new virtual environment and install the script requirements before using the loader script.
+
 ```
 cd python
 python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
-python3 server-loader.py --files ../generated/t0
 ```
 
+## Custom Server Endpoint
+
+You can specify your own server endpoint via a command line flag.
+
+```
+python3 server-loader.py --server-url http://your.server.here/base/
+```
+
+## Deleting Loaded Data
+All loaded data is tagged to make it easier to delete before reloading.  To delete tagged data
+
+```
+python3 server-loader.py --delete-all
+```
+
+## Loading Generated Data
+
+```
+python3 server-loader.py --files ../generated
+```
 
 
 # Contributing
