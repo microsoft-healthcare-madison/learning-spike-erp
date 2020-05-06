@@ -19,11 +19,13 @@ namespace generator_cli.Models
         /// <param name="deviceData"> Information describing the device.</param>
         /// <param name="patientData">Information describing the patient.</param>
         /// <param name="testData">   Information describing the test.</param>
+        /// <param name="workerData"> Information describing the worker.</param>
         /// <returns>A Dictionary&lt;string,FieldValue&gt;</returns>
         public static Dictionary<string, FieldValue> BuildFieldDict(
             OrgDeviceData deviceData,
             OrgPatientData patientData,
-            OrgTestData testData)
+            OrgTestData testData,
+            OrgWorkerData workerData)
         {
             if (deviceData == null)
             {
@@ -40,6 +42,11 @@ namespace generator_cli.Models
                 throw new ArgumentNullException(nameof(testData));
             }
 
+            if (workerData == null)
+            {
+                throw new ArgumentNullException(nameof(workerData));
+            }
+
             Dictionary<string, FieldValue> fieldDict = new Dictionary<string, FieldValue>();
 
             ComputeCdcPatientImpactScores(
@@ -47,11 +54,95 @@ namespace generator_cli.Models
                 deviceData,
                 patientData);
 
+            ComputeCdcWorkerScores(
+                fieldDict,
+                workerData);
+
             ComputeFemaDailyReportingScores(
                 fieldDict,
                 testData);
 
             return fieldDict;
+        }
+
+        /// <summary>Calculates the cdc worker scores.</summary>
+        /// <param name="values">    The values.</param>
+        /// <param name="workerData">Information describing the worker.</param>
+        private static void ComputeCdcWorkerScores(
+            Dictionary<string, FieldValue> values,
+            OrgWorkerData workerData)
+        {
+            values.Add(
+                AcuteHealthcareWorker.EnvironmentalServiceShortageToday,
+                new FieldValue(workerData.IsShortEnvironmentalToday));
+
+            values.Add(
+                AcuteHealthcareWorker.NurseShortageToday,
+                new FieldValue(workerData.IsShortNursesToday));
+
+            values.Add(
+                AcuteHealthcareWorker.RTShortageToday,
+                new FieldValue(workerData.IsShortRTsToday));
+
+            values.Add(
+                AcuteHealthcareWorker.PharmShortageToday,
+                new FieldValue(workerData.IsShortPharmToday));
+
+            values.Add(
+                AcuteHealthcareWorker.PhysicianShortageToday,
+                new FieldValue(workerData.IsShortPhysiciansToday));
+
+            values.Add(
+                AcuteHealthcareWorker.OtherLicensedShortageToday,
+                new FieldValue(workerData.IsShortOtherLicensedToday));
+
+            values.Add(
+                AcuteHealthcareWorker.TempShortageToday,
+                new FieldValue(workerData.IsShortTempToday));
+
+            values.Add(
+                AcuteHealthcareWorker.OtherShortageToday,
+                new FieldValue(workerData.IsShortOtherHCPToday));
+
+            values.Add(
+                AcuteHealthcareWorker.HCPShortageToday,
+                new FieldValue(workerData.ShortHCPGroupsToday));
+
+            values.Add(
+                AcuteHealthcareWorker.EnvironmentalServiceShortageWeek,
+                new FieldValue(workerData.IsShortEnvironmentalNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.NurseShortageWeek,
+                new FieldValue(workerData.IsShortNursesNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.RTShortageWeek,
+                new FieldValue(workerData.IsShortRTsNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.PharmShortageWeek,
+                new FieldValue(workerData.IsShortPharmNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.PhysicianShortageWeek,
+                new FieldValue(workerData.IsShortPhysiciansNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.OtherLicensedShortageWeek,
+                new FieldValue(workerData.IsShortOtherLicensedNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.TempShortageWeek,
+                new FieldValue(workerData.IsShortTempNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.OtherShortageWeek,
+                new FieldValue(workerData.IsShortOtherHCPNextWeek));
+
+            values.Add(
+                AcuteHealthcareWorker.HCPShortageWeek,
+                new FieldValue(workerData.ShortHCPGroupsNextWeek));
         }
 
         /// <summary>Builds score dictionaries.</summary>

@@ -27,8 +27,6 @@ namespace generator_cli
         private const string _filenameBaseForMeasures = "Measures";
         private const string _filenameBaseForQuestionnaires = "Questionnaires";
 
-        private const string _filenameAdditionForBeds = "-beds";
-        private const string _filenameAdditionForGroups = "-groups";
         private const string _filenameAdditionForMeasureReports = "-measureReports";
 
         private static Dictionary<string, Organization> _orgById = new Dictionary<string, Organization>();
@@ -192,6 +190,7 @@ namespace generator_cli
                 string.Empty);
 
             OrgBeds.Init(seed, _bedConfigurations);
+            OrgWorkerData.Init(seed);
 
             // only need hospital manager if we are using lookup (avoid loading otherwise)
             if (_useLookup || _connectathon)
@@ -273,7 +272,8 @@ namespace generator_cli
                     orgId,
                     out OrgDeviceData deviceData,
                     out OrgPatientData patientData,
-                    out OrgTestData testData);
+                    out OrgTestData testData,
+                    out OrgWorkerData workerData);
 
                 // loop over timeSteps
                 for (int step = 0; step < timeSteps; step++)
@@ -283,10 +283,10 @@ namespace generator_cli
                     if (step != 0)
                     {
                         UpdateAggregateDataForStep(
-                            orgId,
                             ref deviceData,
                             ref patientData,
-                            ref testData);
+                            ref testData,
+                            ref workerData);
                     }
 
                     TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
@@ -298,7 +298,8 @@ namespace generator_cli
                         dt,
                         deviceData,
                         patientData,
-                        testData);
+                        testData,
+                        workerData);
                 }
             }
         }
@@ -310,18 +311,21 @@ namespace generator_cli
         /// <param name="deviceData"> Information describing the device.</param>
         /// <param name="patientData">Information describing the patient.</param>
         /// <param name="testData">   Information describing the test.</param>
+        /// <param name="workerData"> [out] Information describing the worker.</param>
         private static void WriteOrgReportBundle(
             string orgId,
             string dir,
             DateTime dateTime,
             OrgDeviceData deviceData,
             OrgPatientData patientData,
-            OrgTestData testData)
+            OrgTestData testData,
+            OrgWorkerData workerData)
         {
             Dictionary<string, FieldValue> fields = OrgUtils.BuildFieldDict(
                 deviceData,
                 patientData,
-                testData);
+                testData,
+                workerData);
 
             ReportData data = new ReportData(
                 dateTime,
@@ -335,15 +339,14 @@ namespace generator_cli
         }
 
         /// <summary>Updates the aggregate data for step.</summary>
-        /// <param name="orgId">      The organization.</param>
         /// <param name="deviceData"> [in,out] Information describing the device.</param>
         /// <param name="patientData">[in,out] Information describing the patient.</param>
         /// <param name="testData">   [in,out] Information describing the test.</param>
         private static void UpdateAggregateDataForStep(
-            string orgId,
             ref OrgDeviceData deviceData,
             ref OrgPatientData patientData,
-            ref OrgTestData testData)
+            ref OrgTestData testData,
+            ref OrgWorkerData workerData)
         {
             // increase testing
             int testDelta = (int)(testData.Performed * _changeFactor);
@@ -421,16 +424,21 @@ namespace generator_cli
                 recovered,
                 dead);
 
-            // Console.WriteLine($" - Tests: {test.Performed}, {test.Positive}, {test.Negative}, {test.Pending}");
-            // Console.WriteLine($" - Patients: {patient.Total}, {patient.Positive}, {patient.Negative}, {patient.Recovered}, {patient.Died}");
+            workerData.Update();
         }
 
         /// <summary>Creates aggregate data.</summary>
+        /// <param name="orgId">      The organization.</param>
+        /// <param name="deviceData"> [out] Information describing the device.</param>
+        /// <param name="patientData">[out] Information describing the patient.</param>
+        /// <param name="testData">   [out] Information describing the test.</param>
+        /// <param name="workerData"> [out] Information describing the worker.</param>
         private static void CreateAggregateData(
             string orgId,
             out OrgDeviceData deviceData,
             out OrgPatientData patientData,
-            out OrgTestData testData)
+            out OrgTestData testData,
+            out OrgWorkerData workerData)
         {
             int initialBedCount;
 
@@ -503,6 +511,8 @@ namespace generator_cli
                 positiveTests,
                 negativeTests,
                 pendingTests);
+
+            workerData = new OrgWorkerData();
         }
 
         /// <summary>Writes an organization bundle.</summary>

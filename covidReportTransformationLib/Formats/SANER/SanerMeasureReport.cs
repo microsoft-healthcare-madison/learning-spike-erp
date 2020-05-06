@@ -279,13 +279,16 @@ namespace covidReportTransformationLib.Formats.SANER
                         continue;
                     }
 
+                    string populationSystem = null;
                     string populationName = null;
                     string populationCode = null;
 
                     foreach (Coding popCoding in population.Code.Coding)
                     {
-                        if (popCoding.System == FhirSystems.MeasurePopulation)
+                        if ((popCoding.System == FhirSystems.MeasurePopulation) ||
+                            (popCoding.System == FhirSystems.SanerAggregateBool))
                         {
+                            populationSystem = popCoding.System;
                             populationCode = popCoding.Code;
                         }
 
@@ -295,48 +298,71 @@ namespace covidReportTransformationLib.Formats.SANER
                         }
                     }
 
-                    if (string.IsNullOrEmpty(populationName))
+                    if (populationSystem == FhirSystems.SanerAggregateBool)
                     {
+                        if (populationCode == "true")
+                        {
+                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                            {
+                                Code = population.Code,
+                                Count = (data.Values[groupName].BoolValue == true) ? 1 : 0,
+                            });
+                        }
+                        else
+                        {
+                            {
+                                reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                {
+                                    Code = population.Code,
+                                    Count = (data.Values[groupName].BoolValue == false) ? 1 : 0,
+                                });
+                            }
+                        }
+
                         continue;
                     }
 
-                    switch (populationCode)
+                    if ((populationCode == FhirSystems.MeasurePopulation) &&
+                        (!string.IsNullOrEmpty(populationName)))
                     {
-                        case "initial-population":
-                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
-                            {
-                                Code = population.Code,
-                                Count = (int)data.Values[populationName].Score,
-                            });
-                            break;
+                        switch (populationCode)
+                        {
+                            case "initial-population":
+                                reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                {
+                                    Code = population.Code,
+                                    Count = (int)data.Values[populationName].Score,
+                                });
+                                break;
 
-                        case "measure-population":
-                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
-                            {
-                                Code = population.Code,
-                                Count = (int)data.Values[populationName].Score,
-                            });
-                            break;
+                            case "measure-population":
+                                reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                {
+                                    Code = population.Code,
+                                    Count = (int)data.Values[populationName].Score,
+                                });
+                                break;
 
-                        case "measure-observation":
-                            // ignore
-                            break;
+                            case "measure-observation":
+                                // ignore
+                                break;
 
-                        case "numerator":
-                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
-                            {
-                                Code = population.Code,
-                                Count = data.Values[populationName].Numerator ?? (int)data.Values[populationName].Score,
-                            });
-                            break;
+                            case "numerator":
+                                reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                {
+                                    Code = population.Code,
+                                    Count = data.Values[populationName].Numerator ?? (int)data.Values[populationName].Score,
+                                });
+                                break;
 
-                        case "denominator":
-                            reportGroup.Population.Add(new MeasureReport.PopulationComponent()
-                            {
-                                Code = population.Code,
-                                Count = data.Values[populationName].Denominator ?? (int?)data.Values[populationName].Score ?? 1,
-                            });
-                            break;
+                            case "denominator":
+                                reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                {
+                                    Code = population.Code,
+                                    Count = data.Values[populationName].Denominator ?? (int?)data.Values[populationName].Score ?? 1,
+                                });
+                                break;
+                        }
                     }
                 }
 

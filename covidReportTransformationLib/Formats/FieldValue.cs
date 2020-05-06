@@ -16,11 +16,13 @@ namespace covidReportTransformationLib.Formats
         /// <param name="numerator">   The numerator.</param>
         /// <param name="denominator"> The denominator.</param>
         /// <param name="stringValue"> The string value.</param>
+        /// <param name="boolValue">   True to value.</param>
         public FieldValue(
             decimal? measureScore,
             int? numerator,
             int? denominator,
-            string stringValue)
+            string stringValue,
+            bool? boolValue)
         {
             if (measureScore != null)
             {
@@ -38,27 +40,40 @@ namespace covidReportTransformationLib.Formats
             }
 
             StringValue = stringValue;
+
+            if (boolValue != null)
+            {
+                IsBoolean = true;
+                BoolValue = boolValue;
+            }
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldValue"/> class.
         /// </summary>
         public FieldValue()
-            : this(null, null, null, null)
+            : this(null, null, null, null, null)
+        {
+        }
+
+        /// <summary>Initializes a new instance of the <see cref="FieldValue"/> class.</summary>
+        /// <param name="boolValue">Boolean value of this field.</param>
+        public FieldValue(bool boolValue)
+            : this(null, null, null, null, boolValue)
         {
         }
 
         /// <summary>Initializes a new instance of the <see cref="FieldValue"/> class.</summary>
         /// <param name="stringValue">The string value.</param>
         public FieldValue(string stringValue)
-            : this(null, null, null, stringValue)
+            : this(null, null, null, stringValue, null)
         {
         }
 
         /// <summary>Initializes a new instance of the <see cref="FieldValue"/> class.</summary>
         /// <param name="measureScore">The measure score.</param>
         public FieldValue(decimal measureScore)
-            : this(measureScore, null, null, null)
+            : this(measureScore, null, null, null, null)
         {
         }
 
@@ -66,7 +81,7 @@ namespace covidReportTransformationLib.Formats
         /// <param name="numerator">  The numerator.</param>
         /// <param name="denominator">The denominator.</param>
         public FieldValue(int numerator, int denominator)
-            : this(null, numerator, denominator, null)
+            : this(null, numerator, denominator, null, null)
         {
         }
 
@@ -77,9 +92,17 @@ namespace covidReportTransformationLib.Formats
         /// <param name="numerator">  The numerator.</param>
         /// <param name="denominator">The denominator.</param>
         public FieldValue(decimal score, int numerator, int denominator)
-            : this(score, numerator, denominator, null)
+            : this(score, numerator, denominator, null, null)
         {
         }
+
+        /// <summary>Gets a value indicating whether this object is boolean.</summary>
+        /// <value>True if this object is boolean, false if not.</value>
+        public bool IsBoolean { get; }
+
+        /// <summary>Gets the value.</summary>
+        /// <value>The bool value.</value>
+        public bool? BoolValue { get; }
 
         /// <summary>Gets the string value.</summary>
         /// <value>The string value.</value>
