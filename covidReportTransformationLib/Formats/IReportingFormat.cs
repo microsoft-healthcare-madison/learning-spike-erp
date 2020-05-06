@@ -11,6 +11,10 @@ namespace covidReportTransformationLib.Formats
     /// <summary>Interface for format.</summary>
     public interface IReportingFormat
     {
+        /// <summary>Gets a value indicating whether the measure report is enabled.</summary>
+        /// <value>True if enable measure report, false if not.</value>
+        bool EnableMeasureReport { get; }
+
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>
         string Name

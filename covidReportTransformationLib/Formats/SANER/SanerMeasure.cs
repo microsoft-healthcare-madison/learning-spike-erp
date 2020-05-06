@@ -492,7 +492,7 @@ namespace covidReportTransformationLib.Formats.SANER
 
             bundle.AddResourceEntry(
                 measure,
-                $"{FhirSystems.Internal}MeasureReport/{id}");
+                $"{FhirSystems.Internal}Measure/{id}");
 
             return bundle;
         }

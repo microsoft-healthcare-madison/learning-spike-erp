@@ -63,6 +63,11 @@ namespace covidReportTransformationLib.Formats.SANER
                     }
                 }
 
+                if (!format.EnableMeasureReport)
+                {
+                    continue;
+                }
+
                 bundle.AddResourceEntry(
                     ReportForMeasure(
                         out id,
@@ -286,7 +291,8 @@ namespace covidReportTransformationLib.Formats.SANER
                     foreach (Coding popCoding in population.Code.Coding)
                     {
                         if ((popCoding.System == FhirSystems.MeasurePopulation) ||
-                            (popCoding.System == FhirSystems.SanerAggregateBool))
+                            (popCoding.System == FhirSystems.SanerAggregateBool) ||
+                            (popCoding.System == FhirSystems.SanerAggregateChoice))
                         {
                             populationSystem = popCoding.System;
                             populationCode = popCoding.Code;

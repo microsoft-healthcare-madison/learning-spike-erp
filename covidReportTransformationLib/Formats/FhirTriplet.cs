@@ -628,6 +628,5 @@ namespace covidReportTransformationLib.Formats
 
             return new List<Coding>() { coding };
         }
-
     }
 }

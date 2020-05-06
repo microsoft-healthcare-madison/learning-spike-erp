@@ -434,5 +434,9 @@ namespace covidReportTransformationLib.Formats.FEMA
         /// <summary>Gets the authors.</summary>
         /// <value>The authors.</value>
         public List<Hl7.Fhir.Model.ContactDetail> Authors => _authors;
+
+        /// <summary>Gets a value indicating whether the measure report is enabled.</summary>
+        /// <value>True if enable measure report, false if not.</value>
+        public bool EnableMeasureReport => true;
     }
 }
