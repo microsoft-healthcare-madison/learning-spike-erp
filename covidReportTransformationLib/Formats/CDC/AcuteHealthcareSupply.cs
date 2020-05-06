@@ -138,6 +138,15 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The group able to obtain.</summary>
         public const string GroupAbleToObtain = "ableToObtain";
 
+        /// <summary>The description hand supply.</summary>
+        private const string DescOnHandSupply = "Please answer based on your organization’s best estimation for the supply of this item.";
+
+        /// <summary>The description reuse.</summary>
+        private const string DescReuse = "Are you currently reusing the item or implementing extended use?";
+
+        /// <summary>The description able to obtain.</summary>
+        private const string DescAbleToObtain = "Are you able to obtain this item? If you have placed an order but  are not able to have that order filled, please answer NO.";
+
         /// <summary>The current.</summary>
         private static AcuteHealthcareSupply _current = new AcuteHealthcareSupply();
 
@@ -158,7 +167,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     Information,
                     "Information",
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -171,7 +180,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GroupOnHandSupply,
                     "On-hand Supply",
-                    "Please answer based on your organization’s best estimation for the supply of this item.",
+                    DescOnHandSupply,
                     FormatField.FieldType.Choice,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -184,7 +193,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GroupReuseOrExtendedUse,
                     "Reusing or Extending Use",
-                    "Are you currently reusing the item or implementing extended use?",
+                    DescReuse,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -197,7 +206,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GroupAbleToObtain,
                     "Able to Obtain",
-                    "Are you able to obtain this item? If you have placed an order but  are not able to have that order filled, please answer NO.",
+                    DescAbleToObtain,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.None,
                     true,
@@ -210,7 +219,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FacilityId,
                     "Facility ID #",
-                    string.Empty,
+                    null,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -223,7 +232,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     SummaryCensusId,
                     "Summary Census ID #",
-                    string.Empty,
+                    null,
                     FormatField.FieldType.ShortString,
                     FormatField.FhirMeasureType.Structure,
                     true,
@@ -301,7 +310,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     N95MaskBase,
                     N95MaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -314,7 +323,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     N95MaskSupply,
                     N95MaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Choice,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -327,7 +336,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     N95MaskReuse,
                     N95MaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -340,7 +349,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     N95MaskObtain,
                     N95MaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -405,7 +414,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     SurgicalMaskBase,
                     SurgicalMaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -418,7 +427,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     SurgicalMaskSupply,
                     SurgicalMaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Choice,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -431,7 +440,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     SurgicalMaskReuse,
                     SurgicalMaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -444,7 +453,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     SurgicalMaskObtain,
                     SurgicalMaskDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -457,7 +466,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FaceShieldBase,
                     FaceShieldDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -470,7 +479,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FaceShieldSupply,
                     FaceShieldDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Choice,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -483,7 +492,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FaceShieldReuse,
                     FaceShieldDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -496,7 +505,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     FaceShieldObtain,
                     FaceShieldDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -509,7 +518,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GownBase,
                     GownDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -522,7 +531,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GownSupply,
                     GownDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Choice,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -535,7 +544,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GownReuse,
                     GownDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -548,7 +557,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GownObtain,
                     GownDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -561,7 +570,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GloveBase,
                     GloveDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Display,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -574,7 +583,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GloveSupply,
                     GloveDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Choice,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -587,7 +596,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GloveReuse,
                     GloveDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,
@@ -600,7 +609,7 @@ namespace covidReportTransformationLib.Formats.CDC
                 new FormatField(
                     GloveObtain,
                     GloveDesc,
-                    string.Empty,
+                    null,
                     FormatField.FieldType.Boolean,
                     FormatField.FhirMeasureType.Structure,
                     false,

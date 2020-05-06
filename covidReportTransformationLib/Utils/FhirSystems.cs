@@ -20,6 +20,9 @@ namespace covidReportTransformationLib.Utils
         /// <summary>Type of the system bed.</summary>
         public const string BedType = "http://terminology.hl7.org/CodeSystem/v3-RoleCode";
 
+        /// <summary>The system measure report.</summary>
+        public const string Bundle = "http://hl7.org/fhir/R4/StructureDefinition/Bundle";
+
         /// <summary>The improvement notation.</summary>
         public const string ImprovementNotation = "http://terminology.hl7.org/CodeSystem/measure-improvement-notation";
 
@@ -39,6 +42,9 @@ namespace covidReportTransformationLib.Utils
         public const string MeasurePopulation = "http://terminology.hl7.org/CodeSystem/measure-population";
 
         /// <summary>The system measure report.</summary>
+        public const string Measure = "http://hl7.org/fhir/R4/StructureDefinition/Measure";
+
+        /// <summary>The system measure report.</summary>
         public const string MeasureReport = "http://hl7.org/fhir/R4/StructureDefinition/MeasureReport";
 
         /// <summary>The measure scoring.</summary>
@@ -51,7 +57,13 @@ namespace covidReportTransformationLib.Utils
         public const string OperationalStatus = "http://terminology.hl7.org/CodeSystem/v2-0116";
 
         /// <summary>Type of the organization.</summary>
-        public const string OrganizationType = "http://hl7.org/fhir/CodeSystem/organization-type";
+        public const string OrganizationType = "http://terminology.hl7.org/CodeSystem/organization-type";
+
+        /// <summary>The system Questionnaire.</summary>
+        public const string Questionnaire = "http://hl7.org/fhir/R4/StructureDefinition/Questionnaire";
+
+        /// <summary>The system Questionnaire response.</summary>
+        public const string QuestionnaireResponse = "http://hl7.org/fhir/R4/StructureDefinition/QuestionnaireResponse";
 
         /// <summary>Type of the resource.</summary>
         public const string ResourceType = "http://hl7.org/fhir/resource-types";

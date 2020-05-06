@@ -55,7 +55,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 {
                     Profile = new string[]
                     {
-                        "http://hl7.org/fhir/4.0/StructureDefinition/Measure",
+                        FhirSystems.Measure,
                         "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure",
                     },
                 },
@@ -209,12 +209,12 @@ namespace covidReportTransformationLib.Formats.SANER
                             FhirSystems.SanerPopulation,
                             popField.Name,
                             popField.Title).GetConcept(popField.Description),
-                        Description = field.Description,
+                        Description = field.Description ?? field.Title,
                         Criteria = new Expression()
                         {
                             Description = popField.Title,
                             Language = "text/plain",
-                            Expression_ = popField.Description,
+                            Expression_ = popField.Description ?? field.Title,
                         },
                     };
 
@@ -372,12 +372,12 @@ namespace covidReportTransformationLib.Formats.SANER
                             FhirSystems.SanerPopulation,
                             field.Name,
                             field.Title).GetConcept(field.Description),
-                        Description = field.Description,
+                        Description = field.Description ?? field.Title,
                         Criteria = new Expression()
                         {
                             Description = field.Title,
                             Language = "text/plain",
-                            Expression_ = field.Description,
+                            Expression_ = field.Description ?? field.Title,
                         },
                     };
 
@@ -479,7 +479,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 {
                     Profile = new string[]
                     {
-                        "http://hl7.org/fhir/4.0/StructureDefinition/Bundle",
+                        FhirSystems.Bundle,
                     },
                 },
                 Id = bundleId,

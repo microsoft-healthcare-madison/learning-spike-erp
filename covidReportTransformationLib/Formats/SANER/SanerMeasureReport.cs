@@ -38,7 +38,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 {
                     Profile = new string[]
                     {
-                        "http://hl7.org/fhir/4.0/StructureDefinition/Bundle",
+                        FhirSystems.Bundle,
                     },
                 },
                 Id = bundleId,
@@ -149,7 +149,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 {
                     Profile = new string[]
                     {
-                        "http://hl7.org/fhir/4.0/StructureDefinition/MeasureReport",
+                        FhirSystems.MeasureReport,
                     },
                     Security = FhirTriplet.SecurityTest.GetCodingList(),
                 },
