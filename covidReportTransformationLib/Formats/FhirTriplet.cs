@@ -94,6 +94,13 @@ namespace covidReportTransformationLib.Formats
             FhirSystems.MeasureReport,
             "MeasureReport.period");
 
+        /// <summary>Gets the security test.</summary>
+        /// <value>The security test.</value>
+        public static FhirTriplet SecurityTest => new FhirTriplet(
+            FhirSystems.ActivityReason,
+            "HTEST",
+            "test health data");
+
         /// <summary>Gets the sct covid.</summary>
         /// <value>The sct covid.</value>
         public static FhirTriplet SctCovid => new FhirTriplet(
@@ -597,5 +604,30 @@ namespace covidReportTransformationLib.Formats
 
             return coding;
         }
+
+        /// <summary>Gets coding list.</summary>
+        /// <returns>The coding list.</returns>
+        public List<Coding> GetCodingList()
+        {
+            Coding coding = new Coding();
+
+            if (!string.IsNullOrEmpty(System))
+            {
+                coding.System = System;
+            }
+
+            if (!string.IsNullOrEmpty(Code))
+            {
+                coding.Code = Code;
+            }
+
+            if (!string.IsNullOrEmpty(Display))
+            {
+                coding.Display = Display;
+            }
+
+            return new List<Coding>() { coding };
+        }
+
     }
 }

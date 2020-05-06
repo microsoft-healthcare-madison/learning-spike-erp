@@ -70,19 +70,6 @@ namespace covidReportTransformationLib.Formats.CDC
             }
 
             CollectionDate = data.CollectionEndDate.ToString("MM/dd/yyyy", null);
-            TotalBeds = data.BedsTotal;
-            InpatientBeds = data.BedsInpatientTotal ?? 0;
-            InpatientBedOccupancy = data.BedsInpatientInUse;
-            IcuBeds = data.BedsIcuTotal;
-            IcuBedOccupancy = data.BedsIcuInUse;
-            Ventilators = data.VentilatorsTotal;
-            VentilatorsInUse = data.VentilatorsInUse;
-            HospitalizedPatients = data.PatientsC19Hospitalized;
-            VentilatedPatients = data.PatientsC19Ventilated;
-            HospitalOnset = data.PatientsC19HospitalOnsetTotal;
-            AwaitingBeds = data.PatientsC19NeedBed;
-            AwaitingVentilators = data.PatientsC19NeedVent;
-            Died = data.PatientsC19DiedTotal;
         }
 
         /// <summary>Gets the collection date.</summary>

@@ -9,6 +9,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using covidReportTransformationLib.Formats;
 using CsvHelper;
 using CsvHelper.Configuration;
 using generator_cli.Generators;
@@ -338,6 +339,10 @@ namespace generator_cli.Geographic
         {
             return new Hl7.Fhir.Model.Organization()
             {
+                Meta = new Hl7.Fhir.Model.Meta()
+                {
+                    Security = FhirTriplet.SecurityTest.GetCodingList(),
+                },
                 Id = _connectathonFlag ? hosp.ID : IdForOrg(hosp.OBJECTID),
                 Identifier = _connectathonFlag
                     ? IdentifierForConnectathonOrg(hosp.ID)

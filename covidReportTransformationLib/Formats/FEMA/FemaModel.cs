@@ -62,23 +62,6 @@ namespace covidReportTransformationLib.Formats.FEMA
             }
 
             ReportDate = data.CollectionStartDate;
-            TestsOrderedToday = data.TestsPerformedToday;
-            TestsOrderedTotal = data.TestsPerformedTotal;
-            TestResultsToday = data.TestsResultedToday;
-            SpecimensRejectedTotal = data.TestsRejectedTotal;
-            TestsPerformedTotal = data.TestsPerformedTotal;
-            C19TestsPositiveToday = data.C19TestsPositiveToday;
-            C19TestsPositiveTotal = data.C19TestsPositiveTotal;
-
-            if ((TestsOrderedToday != null) && (C19TestsPositiveToday != null))
-            {
-                PercentC19PositiveToday = (decimal)C19TestsPositiveToday / (decimal)TestsOrderedToday;
-            }
-
-            if ((TestsOrderedTotal != null) && (C19TestsPositiveTotal != null))
-            {
-                PercentC19PositiveTotal = (decimal)C19TestsPositiveTotal / (decimal)TestsOrderedTotal;
-            }
 
             if (data.CoveredLocation != null)
             {

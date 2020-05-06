@@ -17,24 +17,18 @@ namespace covidReportTransformationLib.Formats.SANER
     public abstract class SanerMeasureReport
     {
         /// <summary>Gets a bundle.</summary>
-        /// <param name="data">       The data.</param>
-        /// <param name="includeCdc"> True to include, false to exclude the cdc.</param>
-        /// <param name="includeFema">True to include, false to exclude the fema.</param>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="data">               The data.</param>
+        /// <param name="includedFormatNames">List of names of the included formats, null or empty includes all.</param>
         /// <returns>The bundle.</returns>
         public static Bundle GetBundle(
             ReportData data,
-            bool includeCdc,
-            bool includeFema)
+            List<string> includedFormatNames)
         {
             if (data == null)
             {
                 throw new ArgumentNullException(nameof(data));
             }
-
-            Dictionary<string, Score> scores = new Dictionary<string, Score>();
-
-            IndexCdcScores(scores, data);
-            IndexFemaScores(scores, data);
 
             string bundleId = Utils.FhirIds.NextId;
 
@@ -57,77 +51,35 @@ namespace covidReportTransformationLib.Formats.SANER
 
             bundle.Entry = new List<Bundle.EntryComponent>();
 
-            if (includeCdc)
-            {
-                bundle.AddResourceEntry(
-                    ReportForMeasure(
-                        out id,
-                        SanerMeasure.CDCPatientImpactMeasure(),
-                        data,
-                        scores),
-                    $"{FhirSystems.Internal}MeasureReport/{id}");
-            }
+            List<IReportingFormat> formats = FormatHelper.GetFormatList();
 
-            if (includeFema)
+            foreach (IReportingFormat format in formats)
             {
+                if ((includedFormatNames != null) && (includedFormatNames.Count > 0))
+                {
+                    if (includedFormatNames.Contains(format.Name))
+                    {
+                        continue;
+                    }
+                }
+
                 bundle.AddResourceEntry(
                     ReportForMeasure(
                         out id,
-                        SanerMeasure.FEMADailyMeasure(),
-                        data,
-                        scores),
+                        SanerMeasure.GetMeasure(format),
+                        data),
                     $"{FhirSystems.Internal}MeasureReport/{id}");
             }
 
             return bundle;
         }
 
-        /// <summary>Adds a score.</summary>
-        /// <param name="scores">The scores.</param>
-        /// <param name="field"> The field.</param>
-        /// <param name="value"> The value.</param>
-        private static void AddScore(Dictionary<string, Score> scores, string field, decimal? value)
-        {
-            if (value == null)
-            {
-                return;
-            }
-
-            if (scores.ContainsKey(field))
-            {
-                scores[field] = new Score((decimal)value);
-                return;
-            }
-
-            scores.Add(field, new Score((decimal)value));
-        }
-
-        /// <summary>Adds a score.</summary>
-        /// <param name="scores">     The scores.</param>
-        /// <param name="field">      The field.</param>
-        /// <param name="numerator">  The numerator.</param>
-        /// <param name="denominator">The denominator.</param>
-        private static void AddScore(Dictionary<string, Score> scores, string field, int? numerator, int? denominator)
-        {
-            if ((numerator == null) || (denominator == null))
-            {
-                return;
-            }
-
-            if (scores.ContainsKey(field))
-            {
-                scores[field] = new Score((int)numerator, (int)denominator);
-                return;
-            }
-
-            scores.Add(field, new Score((int)numerator, (int)denominator));
-        }
-
+        #if false       // 2020.05.04 - changed primary format to dictionary
         /// <summary>Index cdc scores.</summary>
         /// <param name="scores">The scores.</param>
         /// <param name="data">  The data.</param>
         private static void IndexCdcScores(
-            Dictionary<string, Score> scores,
+            Dictionary<string, FieldValue> scores,
             ReportData data)
         {
             AddScore(scores, AcutePatientImpact.TotalBeds, data.BedsTotal);
@@ -149,7 +101,7 @@ namespace covidReportTransformationLib.Formats.SANER
         /// <param name="scores">The scores.</param>
         /// <param name="data">  The data.</param>
         private static void IndexFemaScores(
-            Dictionary<string, Score> scores,
+            Dictionary<string, FieldValue> scores,
             ReportData data)
         {
             AddScore(scores, DailyReporting.TestsOrderedToday, data.TestsPerformedToday);
@@ -172,6 +124,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 data.C19TestsPositiveTotal,
                 data.TestsResultedTotal);
         }
+        #endif
 
         /// <summary>Reports for cdc grouped measure.</summary>
         /// <param name="id">     [out] The identifier.</param>
@@ -181,8 +134,7 @@ namespace covidReportTransformationLib.Formats.SANER
         private static MeasureReport ReportForMeasure(
             out string id,
             Measure measure,
-            ReportData data,
-            Dictionary<string, Score> scores)
+            ReportData data)
         {
             id = FhirIds.NextId;
 
@@ -194,6 +146,7 @@ namespace covidReportTransformationLib.Formats.SANER
                     {
                         "http://hl7.org/fhir/4.0/StructureDefinition/MeasureReport",
                     },
+                    Security = FhirTriplet.SecurityTest.GetCodingList(),
                 },
                 Id = id,
                 Status = MeasureReport.MeasureReportStatus.Complete,
@@ -211,6 +164,11 @@ namespace covidReportTransformationLib.Formats.SANER
 
             if (data.CoveredLocation != null)
             {
+                report.Subject = new ResourceReference(
+                    $"Location/{data.CoveredLocation.Id}",
+                    data.CoveredLocation.Name);
+
+#if false // 2020.05.05 - figure out if we still want contained
                 data.CoveredLocation.ToFhir(
                     out ResourceReference resourceReference,
                     out Resource contained);
@@ -226,10 +184,16 @@ namespace covidReportTransformationLib.Formats.SANER
 
                     report.Contained.Add(contained);
                 }
+#endif
             }
 
             if (data.Reporter != null)
             {
+                report.Reporter = new ResourceReference(
+                    $"Organization/{data.Reporter.Id}",
+                    data.Reporter.Name);
+
+#if false // 2020.05.05 - figure out if we still want contained
                 data.Reporter.ToFhir(
                     out ResourceReference resourceReference,
                     out Resource contained);
@@ -245,10 +209,16 @@ namespace covidReportTransformationLib.Formats.SANER
 
                     report.Contained.Add(contained);
                 }
+#endif
             }
 
             if ((data.Reporter == null) && (data.CoveredOrganization != null))
             {
+                report.Reporter = new ResourceReference(
+                    $"Organization/{data.CoveredOrganization.Id}",
+                    data.CoveredOrganization.Name);
+
+#if false // 2020.05.05 - figure out if we still want contained
                 data.CoveredOrganization.ToFhir(
                     out ResourceReference resourceReference,
                     out Resource contained);
@@ -264,29 +234,41 @@ namespace covidReportTransformationLib.Formats.SANER
 
                     report.Contained.Add(contained);
                 }
+#endif
             }
 
             foreach (Measure.GroupComponent measureGroup in measure.Group)
             {
-                string groupName = measureGroup.Code.Coding[0].Code;
-
-                if (!scores.ContainsKey(groupName))
+                if ((measureGroup.Code == null) ||
+                    (measureGroup.Code.Coding == null) ||
+                    (measureGroup.Code.Coding.Count == 0))
                 {
-                    report.Group.Add(new MeasureReport.GroupComponent()
-                        {
-                            Code = measureGroup.Code,
-                        });
-
                     continue;
                 }
+
+                string groupName = measureGroup.Code.Coding[0].Code;
 
                 MeasureReport.GroupComponent reportGroup = new MeasureReport.GroupComponent()
                 {
                     Code = measureGroup.Code,
-                    MeasureScore = new Quantity() { Value = scores[groupName].MeasureScore, },
                     Population = new List<MeasureReport.PopulationComponent>(),
                     Stratifier = new List<MeasureReport.StratifierComponent>(),
                 };
+
+                if ((measureGroup.Population == null) || (measureGroup.Population.Count == 0))
+                {
+                    if (data.Values.ContainsKey(groupName))
+                    {
+                        reportGroup.MeasureScore = new Quantity()
+                        {
+                            Value = data.Values[groupName].Score,
+                        };
+                    }
+
+                    AddGroupToReport(report, reportGroup);
+
+                    continue;
+                }
 
                 foreach (Measure.PopulationComponent population in measureGroup.Population)
                 {
@@ -297,13 +279,34 @@ namespace covidReportTransformationLib.Formats.SANER
                         continue;
                     }
 
-                    switch (population.Code.Coding[0].Code)
+                    string populationName = null;
+                    string populationCode = null;
+
+                    foreach (Coding popCoding in population.Code.Coding)
+                    {
+                        if (popCoding.System == FhirSystems.MeasurePopulation)
+                        {
+                            populationCode = popCoding.Code;
+                        }
+
+                        if (data.Values.ContainsKey(popCoding.Code))
+                        {
+                            populationName = popCoding.Code;
+                        }
+                    }
+
+                    if (string.IsNullOrEmpty(populationName))
+                    {
+                        continue;
+                    }
+
+                    switch (populationCode)
                     {
                         case "initial-population":
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = (int)scores[groupName].MeasureScore,
+                                Count = (int)data.Values[populationName].Score,
                             });
                             break;
 
@@ -311,7 +314,7 @@ namespace covidReportTransformationLib.Formats.SANER
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = (int)scores[groupName].MeasureScore,
+                                Count = (int)data.Values[populationName].Score,
                             });
                             break;
 
@@ -323,7 +326,7 @@ namespace covidReportTransformationLib.Formats.SANER
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = scores[groupName].Numerator ?? (int)scores[groupName].MeasureScore,
+                                Count = data.Values[populationName].Numerator ?? (int)data.Values[populationName].Score,
                             });
                             break;
 
@@ -331,21 +334,36 @@ namespace covidReportTransformationLib.Formats.SANER
                             reportGroup.Population.Add(new MeasureReport.PopulationComponent()
                             {
                                 Code = population.Code,
-                                Count = scores[groupName].Denominator ?? 1,
+                                Count = data.Values[populationName].Denominator ?? (int?)data.Values[populationName].Score ?? 1,
                             });
                             break;
                     }
                 }
 
-                if (reportGroup.Population.Count == 0)
-                {
-                    reportGroup.Population = null;
-                }
-
-                report.Group.Add(reportGroup);
+                AddGroupToReport(report, reportGroup);
             }
 
             return report;
+        }
+
+        /// <summary>Adds a group to report to 'reportGroup'.</summary>
+        /// <param name="report">     The report.</param>
+        /// <param name="reportGroup">Group the report belongs to.</param>
+        private static void AddGroupToReport(
+            MeasureReport report,
+            MeasureReport.GroupComponent reportGroup)
+        {
+            if (reportGroup.Population.Count == 0)
+            {
+                reportGroup.Population = null;
+            }
+
+            if (reportGroup.Stratifier.Count == 0)
+            {
+                reportGroup.Stratifier = null;
+            }
+
+            report.Group.Add(reportGroup);
         }
     }
 }

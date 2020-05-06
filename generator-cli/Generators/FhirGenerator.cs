@@ -8,6 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using covidReportTransformationLib.Formats;
 using generator_cli.Geographic;
 using generator_cli.Models;
 using Hl7.Fhir.Model;
@@ -155,11 +156,15 @@ namespace generator_cli.Generators
 
             return new Location()
             {
+                Meta = new Hl7.Fhir.Model.Meta()
+                {
+                    Security = FhirTriplet.SecurityTest.GetCodingList(),
+                },
                 Id = IdForOrgRootLocation(org.Id),
                 Address = org.Address[0],
                 Status = GetLocationStatus(AvailabilityStatusActive),
                 Mode = Location.LocationMode.Instance,
-                PhysicalType = FhirTriplet.PhysicalTypeSite.Concept,
+                PhysicalType = FhirTriplet.PhysicalTypeSite.GetConcept(),
                 Position = position,
                 ManagingOrganization = new ResourceReference($"{org.ResourceType}/{org.Id}"),
             };
@@ -183,10 +188,10 @@ namespace generator_cli.Generators
             {
                 Id = NextId,
                 Status = GetLocationStatus(availabilityStatus),
-                OperationalStatus = FhirTriplet.OperationalStatus(operationalStatus).Coding,
+                OperationalStatus = FhirTriplet.OperationalStatus(operationalStatus).GetCoding(),
                 Type = (bedTypes == null) ? null : ConceptsForBedTypes(bedTypes),
                 Mode = Location.LocationMode.Instance,
-                PhysicalType = FhirTriplet.PhysicalTypeBed.Concept,
+                PhysicalType = FhirTriplet.PhysicalTypeBed.GetConcept(),
             };
 
             if (org != null)
@@ -220,7 +225,7 @@ namespace generator_cli.Generators
             }
 
             bed.Status = GetLocationStatus(next.Availability);
-            bed.OperationalStatus = FhirTriplet.OperationalStatus(next.Status).Coding;
+            bed.OperationalStatus = FhirTriplet.OperationalStatus(next.Status).GetCoding();
         }
 
         /// <summary>Generates a group.</summary>
@@ -259,39 +264,39 @@ namespace generator_cli.Generators
             {
                 new Group.CharacteristicComponent()
                 {
-                    Code = FhirTriplet.SanerAvailabilityStatus.Concept,
-                    Value = FhirTriplet.AvailabilityStatus(bedConfig.Availability).Concept,
+                    Code = FhirTriplet.SanerAvailabilityStatus.GetConcept(),
+                    Value = FhirTriplet.AvailabilityStatus(bedConfig.Availability).GetConcept(),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = FhirTriplet.SanerOperationalStatus.Concept,
-                    Value = FhirTriplet.OperationalStatus(bedConfig.Status).Concept,
+                    Code = FhirTriplet.SanerOperationalStatus.GetConcept(),
+                    Value = FhirTriplet.OperationalStatus(bedConfig.Status).GetConcept(),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = FhirTriplet.SanerType.Concept,
-                    Value = FhirTriplet.BedType(bedConfig.Type).Concept,
+                    Code = FhirTriplet.SanerType.GetConcept(),
+                    Value = FhirTriplet.BedType(bedConfig.Type).GetConcept(),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = FhirTriplet.SanerFeature.Concept,
-                    Value = FhirTriplet.BedFeature(bedConfig.Feature).Concept,
+                    Code = FhirTriplet.SanerFeature.GetConcept(),
+                    Value = FhirTriplet.BedFeature(bedConfig.Feature).GetConcept(),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    Code = FhirTriplet.SanerLocation.Concept,
+                    Code = FhirTriplet.SanerLocation.GetConcept(),
                     Value = new ResourceReference($"{parentLocation.ResourceType}/{parentLocation.Id}"),
                     Exclude = false,
                 },
                 new Group.CharacteristicComponent()
                 {
-                    // Code = FhirTriplet.SanerPeriod.Concept,
-                    Code = FhirTriplet.MeasureReportPeriod.Concept,
-                    Value = FhirTriplet.EmptyRequired.Concept,
+                    // Code = FhirTriplet.SanerPeriod.GetConcept(),
+                    Code = FhirTriplet.MeasureReportPeriod.GetConcept(),
+                    Value = FhirTriplet.EmptyRequired.GetConcept(),
                     Period = period,
                     Exclude = false,
                 },
@@ -302,7 +307,7 @@ namespace generator_cli.Generators
                 Id = NextId,
                 Type = Group.GroupType.Device,
                 Actual = true,
-                Code = FhirTriplet.PhysicalTypeBed.Concept,
+                Code = FhirTriplet.PhysicalTypeBed.GetConcept(),
                 Name = name,
                 Quantity = bedCount,
                 ManagingEntity = new ResourceReference($"{org.ResourceType}/{org.Id}"),
@@ -367,27 +372,27 @@ namespace generator_cli.Generators
                     {
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = FhirTriplet.SanerAvailabilityStatus.Concept,
-                            Value = FhirTriplet.AvailabilityStatus(bedConfig.Availability).Concept,
+                            Code = FhirTriplet.SanerAvailabilityStatus.GetConcept(),
+                            Value = FhirTriplet.AvailabilityStatus(bedConfig.Availability).GetConcept(),
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = FhirTriplet.SanerOperationalStatus.Concept,
-                            Value = FhirTriplet.OperationalStatus(bedConfig.Status).Concept,
+                            Code = FhirTriplet.SanerOperationalStatus.GetConcept(),
+                            Value = FhirTriplet.OperationalStatus(bedConfig.Status).GetConcept(),
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = FhirTriplet.SanerType.Concept,
-                            Value = FhirTriplet.BedType(bedConfig.Type).Concept,
+                            Code = FhirTriplet.SanerType.GetConcept(),
+                            Value = FhirTriplet.BedType(bedConfig.Type).GetConcept(),
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = FhirTriplet.SanerFeature.Concept,
-                            Value = FhirTriplet.BedFeature(bedConfig.Feature).Concept,
+                            Code = FhirTriplet.SanerFeature.GetConcept(),
+                            Value = FhirTriplet.BedFeature(bedConfig.Feature).GetConcept(),
                         },
                         new MeasureReport.ComponentComponent()
                         {
-                            Code = FhirTriplet.SanerLocation.Concept,
+                            Code = FhirTriplet.SanerLocation.GetConcept(),
                             Value = new CodeableConcept(
                                 $"{SystemLiterals.SanerCharacteristic}/partOf",
                                 $"{parentLocation.ResourceType}/{parentLocation.Id}"),

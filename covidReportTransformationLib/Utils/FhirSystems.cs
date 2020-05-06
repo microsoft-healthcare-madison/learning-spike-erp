@@ -11,6 +11,9 @@ namespace covidReportTransformationLib.Utils
     /// <summary>A listing of FHIR system urls.</summary>
     public abstract class FhirSystems
     {
+        /// <summary>The activity reason.</summary>
+        public const string ActivityReason = "http://terminology.hl7.org/CodeSystem/v3-ActReason";
+
         /// <summary>The system availability status.</summary>
         public const string AvailabilityStatus = "http://hl7.org/fhir/location-status";
 

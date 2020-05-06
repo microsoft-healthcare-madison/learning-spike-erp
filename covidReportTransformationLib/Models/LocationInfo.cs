@@ -29,7 +29,7 @@ namespace covidReportTransformationLib.Models
         public LocationInfo(
             Uri fhirBaseUrl,
             string fhirId,
-            List<string> identifiers,
+            List<Identifier> identifiers,
             string name,
             string streetAddress,
             string city,
@@ -64,7 +64,7 @@ namespace covidReportTransformationLib.Models
 
         /// <summary>Gets the identifiers.</summary>
         /// <value>The identifiers.</value>
-        public List<string> Identifiers { get; }
+        public List<Identifier> Identifiers { get; }
 
         /// <summary>Gets the name.</summary>
         /// <value>The name.</value>

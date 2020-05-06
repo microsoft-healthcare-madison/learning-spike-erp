@@ -6,7 +6,12 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using covidReportTransformationLib.Formats;
+using covidReportTransformationLib.Formats.CDC;
+using covidReportTransformationLib.Formats.FEMA;
 using covidReportTransformationLib.Formats.SANER;
+using covidReportTransformationLib.Models;
 using generator_cli.Generators;
 using generator_cli.Geographic;
 using generator_cli.Models;
@@ -28,11 +33,6 @@ namespace generator_cli
 
         private static Dictionary<string, Organization> _orgById = new Dictionary<string, Organization>();
         private static Dictionary<string, Location> _rootLocationByOrgId = new Dictionary<string, Location>();
-        private static Dictionary<string, OrgBeds> _bedsByOrgId = new Dictionary<string, OrgBeds>();
-
-        private static Dictionary<string, OrgDeviceData> _deviceDataByOrgId = new Dictionary<string, OrgDeviceData>();
-        private static Dictionary<string, OrgPatientData> _patientDataByOrgId = new Dictionary<string, OrgPatientData>();
-        private static Dictionary<string, OrgTestData> _testDataByOrgId = new Dictionary<string, OrgTestData>();
 
         private static List<BedConfiguration> _bedConfigurations = null;
 
@@ -232,56 +232,35 @@ namespace generator_cli
             int timeSteps,
             int timePeriodHours)
         {
+            // write meta-data (canonical resources) only in t0
             string metaDir = Path.Combine(outputDirectory, "t0");
 
-            // write measures only in t0
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForMeasures}-CDCPatientImpactAndHospitalCapacity{_extension}"),
-                SanerMeasure.CDCPatientImpactBundle());
+            List<IReportingFormat> formats = FormatHelper.GetFormatList();
 
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForQuestionnaires}-CDCPatientImpactAndHospitalCapacity{_extension}"),
-                SanerQuestionnaire.CDCPatientImpactBundle());
+            foreach (IReportingFormat format in formats)
+            {
+                Bundle measureBundle = SanerMeasure.GetBundle(format);
 
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForMeasures}-CDCHealthcareWorkerStaffingPathway{_extension}"),
-                SanerMeasure.CDCHealthcareWorkerBundle());
+                if (measureBundle != null)
+                {
+                    WriteBundle(
+                        Path.Combine(
+                            metaDir,
+                            $"{_filenameBaseForMeasures}-{format.Name}{_extension}"),
+                        measureBundle);
+                }
 
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForQuestionnaires}-CDCHealthcareWorkerStaffingPathway{_extension}"),
-                SanerQuestionnaire.CDCHealthcareWorkerBundle());
+                Bundle questionnaireBundle = SanerQuestionnaire.GetBundle(format);
 
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForMeasures}-CDCHealthcareSupplyPathway{_extension}"),
-                SanerMeasure.CDCHealthcareSupplyBundle());
-
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForQuestionnaires}-CDCHealthcareSupplyPathway{_extension}"),
-                SanerQuestionnaire.CDCHealthcareSupplyBundle());
-
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForMeasures}-FEMADailyHospitalCOVID19Reporting{_extension}"),
-                SanerMeasure.FEMADailyBundle());
-
-            WriteBundle(
-                Path.Combine(
-                    metaDir,
-                    $"{_filenameBaseForQuestionnaires}-FEMADailyHospitalCOVID19Reporting{_extension}"),
-                SanerQuestionnaire.FEMADailyBundle());
+                if (questionnaireBundle != null)
+                {
+                    WriteBundle(
+                        Path.Combine(
+                            metaDir,
+                            $"{_filenameBaseForQuestionnaires}-{format.Name}{_extension}"),
+                        measureBundle);
+                }
+            }
 
             // iterate over the orgs generating their data
             foreach (string orgId in _orgById.Keys)
@@ -290,10 +269,11 @@ namespace generator_cli
 
                 WriteOrgBundle(orgId, Path.Combine(outputDirectory, "t0"));
 
-                //TODO(ginoc): Temporary exit because of changes to measures - 2020.04.29
-                continue;
-
-                CreateAggregateData(orgId);
+                CreateAggregateData(
+                    orgId,
+                    out OrgDeviceData deviceData,
+                    out OrgPatientData patientData,
+                    out OrgTestData testData);
 
                 // loop over timeSteps
                 for (int step = 0; step < timeSteps; step++)
@@ -302,54 +282,71 @@ namespace generator_cli
 
                     if (step != 0)
                     {
-                        UpdateAggregateDataForStep(orgId);
+                        UpdateAggregateDataForStep(
+                            orgId,
+                            ref deviceData,
+                            ref patientData,
+                            ref testData);
                     }
 
                     TimeSpan hoursToSubtract = new TimeSpan(timePeriodHours * (timeSteps - step), 0, 0);
                     DateTime dt = DateTime.UtcNow.Subtract(hoursToSubtract);
-                    FhirDateTime dateTime = new FhirDateTime(dt.Year, dt.Month, dt.Day);
-                    Period period = new Period(dateTime, dateTime);
 
-                    WriteOrgReportBundle(orgId, dir, period);
+                    WriteOrgReportBundle(
+                        orgId,
+                        dir,
+                        dt,
+                        deviceData,
+                        patientData,
+                        testData);
                 }
             }
         }
 
         /// <summary>Writes an organization reports.</summary>
-        /// <param name="orgId"> The organization.</param>
-        /// <param name="dir">   The dir.</param>
-        /// <param name="period">The period.</param>
+        /// <param name="orgId">      The organization.</param>
+        /// <param name="dir">        The dir.</param>
+        /// <param name="dateTime">   The period.</param>
+        /// <param name="deviceData"> Information describing the device.</param>
+        /// <param name="patientData">Information describing the patient.</param>
+        /// <param name="testData">   Information describing the test.</param>
         private static void WriteOrgReportBundle(
             string orgId,
             string dir,
-            Period period)
+            DateTime dateTime,
+            OrgDeviceData deviceData,
+            OrgPatientData patientData,
+            OrgTestData testData)
         {
-            MeasureReportGenerator reportGen = new MeasureReportGenerator(
+            Dictionary<string, FieldValue> fields = OrgUtils.BuildFieldDict(
+                deviceData,
+                patientData,
+                testData);
+
+            ReportData data = new ReportData(
+                dateTime,
                 _orgById[orgId],
                 _rootLocationByOrgId[orgId],
-                _deviceDataByOrgId[orgId],
-                _patientDataByOrgId[orgId],
-                _testDataByOrgId[orgId],
-                period);
+                fields);
 
             WriteBundle(
-                Path.Combine(dir, $"{orgId}-measureReports-CDC{_extension}"),
-                reportGen.GetCdcCompleteReportBundle());
-
-            WriteBundle(
-                Path.Combine(dir, $"{orgId}-measureReports-FEMA{_extension}"),
-                reportGen.GetFemaCompleteReportBundle());
+                Path.Combine(dir, $"{orgId}-measureReports{_extension}"),
+                SanerMeasureReport.GetBundle(data, null));
         }
 
         /// <summary>Updates the aggregate data for step.</summary>
-        private static void UpdateAggregateDataForStep(string orgId)
+        /// <param name="orgId">      The organization.</param>
+        /// <param name="deviceData"> [in,out] Information describing the device.</param>
+        /// <param name="patientData">[in,out] Information describing the patient.</param>
+        /// <param name="testData">   [in,out] Information describing the test.</param>
+        private static void UpdateAggregateDataForStep(
+            string orgId,
+            ref OrgDeviceData deviceData,
+            ref OrgPatientData patientData,
+            ref OrgTestData testData)
         {
-            OrgDeviceData device = _deviceDataByOrgId[orgId];
-            OrgPatientData patient = _patientDataByOrgId[orgId];
-            OrgTestData test = _testDataByOrgId[orgId];
-
             // increase testing
-            int testDelta = (int)(test.Performed * _changeFactor);
+            int testDelta = (int)(testData.Performed * _changeFactor);
             if (testDelta == 0)
             {
                 testDelta = 1;
@@ -360,59 +357,59 @@ namespace generator_cli
             int testPending = _rand.Next(0, 10);
 
             int patientsShortCare =
-                Math.Max(0, patient.PositiveNeedVent - device.Ventilators) +
-                Math.Max(0, patient.PositiveNeedIcu - device.ICU) +
-                Math.Max(0, patient.PositiveNonIcu - device.Inpatient);
+                Math.Max(0, patientData.PositiveNeedVent - deviceData.Ventilators) +
+                Math.Max(0, patientData.PositiveNeedIcu - deviceData.ICU) +
+                Math.Max(0, patientData.PositiveNonIcu - deviceData.Inpatient);
 
-            int patientsWithCare = patient.Positive - patientsShortCare;
+            int patientsWithCare = patientData.Positive - patientsShortCare;
 
-            double effectiveRecoveryRate = (patient.Positive == 0)
+            double effectiveRecoveryRate = (patientData.Positive == 0)
                 ? 0
                 : ((_recoveryRate * patientsWithCare) + (_noResourceRecoveryRate * patientsShortCare)) /
                   ((double)patientsWithCare + (double)patientsShortCare);
 
-            double effectiveDeathRate = (patient.Positive == 0)
+            double effectiveDeathRate = (patientData.Positive == 0)
                 ? 0
                 : ((_deathRate * patientsWithCare) + (_noResourceDeathRate * patientsShortCare)) /
                   ((double)patientsWithCare + (double)patientsShortCare);
 
             double patientRemovalRate = effectiveDeathRate + effectiveRecoveryRate;
 
-            int patientsRemoved = (int)(patient.Positive * patientRemovalRate);
+            int patientsRemoved = (int)(patientData.Positive * patientRemovalRate);
             int patientsDied;
             int patientsRecovered;
             if (_rand.NextDouble() < 0.5)
             {
-                patientsDied = (int)((double)patient.Positive * effectiveDeathRate);
+                patientsDied = (int)((double)patientData.Positive * effectiveDeathRate);
                 patientsRecovered = patientsRemoved - patientsDied;
             }
             else
             {
-                patientsRecovered = (int)((double)patient.Positive * effectiveRecoveryRate);
+                patientsRecovered = (int)((double)patientData.Positive * effectiveRecoveryRate);
                 patientsDied = patientsRemoved - patientsRecovered;
             }
 
-            int positive = patient.Positive
+            int positive = patientData.Positive
                 - patientsRemoved
                 + Math.Max((int)(testPositiveDelta * _hospitalizationRate), 1);
-            int patients = patient.Total - patient.Positive + positive;
+            int patients = patientData.Total - patientData.Positive + positive;
             int positiveNeedIcu = (int)(positive * _patientToIcuRate);
             int positiveNeedVent = (int)(positive * _icuToVentilatorRate);
             int negative = patients - positive;
             int negativeNeedIcu = 0; // (int)(negative * _patientToIcuRate);
             int negativeNeedVent = 0; // (int)(negativeNeedIcu * _icuToVentilatorRate);
 
-            int dead = patient.Died + patientsDied;
-            int recovered = patient.Recovered + patientsRecovered;
+            int dead = patientData.Died + patientsDied;
+            int recovered = patientData.Recovered + patientsRecovered;
 
             // update records
-            test.Update(
+            testData.Update(
                 testDelta,
                 testPositiveDelta,
                 testNegativeDelta,
                 testPending);
 
-            patient.Update(
+            patientData.Update(
                 patients,
                 positive,
                 positiveNeedIcu,
@@ -429,7 +426,11 @@ namespace generator_cli
         }
 
         /// <summary>Creates aggregate data.</summary>
-        private static void CreateAggregateData(string orgId)
+        private static void CreateAggregateData(
+            string orgId,
+            out OrgDeviceData deviceData,
+            out OrgPatientData patientData,
+            out OrgTestData testData)
         {
             int initialBedCount;
 
@@ -458,7 +459,7 @@ namespace generator_cli
             }
 
             // create device data for this org
-            OrgDeviceData device = new OrgDeviceData(
+            deviceData = new OrgDeviceData(
                 initialBedCount,
                 inpatientBeds,
                 icuBeds,
@@ -477,7 +478,7 @@ namespace generator_cli
             int dead = 0;
 
             // create patient data
-            OrgPatientData patient = new OrgPatientData(
+            patientData = new OrgPatientData(
                 patients,
                 positive,
                 positiveNeedIcu,
@@ -497,166 +498,11 @@ namespace generator_cli
             performedTests += pendingTests;
 
             // create test data record
-            OrgTestData test = new OrgTestData(
+            testData = new OrgTestData(
                 performedTests,
                 positiveTests,
                 negativeTests,
                 pendingTests);
-
-            // add records
-            _deviceDataByOrgId.Add(orgId, device);
-            _patientDataByOrgId.Add(orgId, patient);
-            _testDataByOrgId.Add(orgId, test);
-
-            // Console.WriteLine($" - Tests: {test.Performed}, {test.Positive}, {test.Negative}, {test.Pending}");
-            // Console.WriteLine($" - Patients: {patient.Total}, {patient.Positive}, {patient.Negative}, {patient.Recovered}, {patient.Died}");
-        }
-
-        /// <summary>Writes a measure report bundle.</summary>
-        /// <param name="orgId"> The organization.</param>
-        /// <param name="dir">   The dir.</param>
-        /// <param name="period">The period.</param>
-        private static void WriteMeasureReportBundle(
-            string orgId,
-            string dir,
-            Period period)
-        {
-            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForMeasureReports}{_extension}");
-
-            string bundleId = FhirGenerator.NextId;
-
-            Bundle bundle = new Bundle()
-            {
-                Id = bundleId,
-                Identifier = FhirGenerator.IdentifierForId(bundleId),
-                Type = Bundle.BundleType.Collection,
-                Timestamp = new DateTimeOffset(DateTime.Now),
-                Meta = new Meta(),
-            };
-
-            bundle.Entry = new List<Bundle.EntryComponent>();
-
-            MeasureReport report = FhirGenerator.GenerateBedMeasureReportV01(
-                _orgById[orgId],
-                _rootLocationByOrgId[orgId],
-                period,
-                _bedsByOrgId[orgId].BedsByConfig);
-
-            bundle.AddResourceEntry(
-                report,
-                $"{SystemLiterals.Internal}{report.ResourceType}/{report.Id}");
-
-            WriteBundle(filename, bundle);
-        }
-
-        /// <summary>Writes a group bundle.</summary>
-        /// <param name="orgId"> The organization.</param>
-        /// <param name="dir">   The dir.</param>
-        /// <param name="period">The period.</param>
-        private static void WriteGroupBundle(
-            string orgId,
-            string dir,
-            Period period)
-        {
-            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForGroups}{_extension}");
-
-            string bundleId = FhirGenerator.NextId;
-
-            Bundle bundle = new Bundle()
-            {
-                Id = bundleId,
-                Identifier = FhirGenerator.IdentifierForId(bundleId),
-                Type = Bundle.BundleType.Collection,
-                Timestamp = new DateTimeOffset(DateTime.Now),
-                Meta = new Meta(),
-            };
-
-            bundle.Entry = new List<Bundle.EntryComponent>();
-
-            foreach (BedConfiguration config in _bedConfigurations)
-            {
-                int bedCount = _bedsByOrgId[orgId].BedCount(config);
-
-                // check for no beds of this type
-                if (bedCount == 0)
-                {
-                    continue;
-                }
-
-                Group group = FhirGenerator.GenerateGroup(
-                    _orgById[orgId],
-                    _rootLocationByOrgId[orgId],
-                    $"{config.ToString()}",
-                    config,
-                    bedCount,
-                    period);
-
-                bundle.AddResourceEntry(
-                    group,
-                    $"{SystemLiterals.Internal}{group.ResourceType}/{group.Id}");
-            }
-
-            WriteBundle(filename, bundle);
-        }
-
-        /// <summary>Creates organization bed.</summary>
-        /// <param name="orgId">The organization.</param>
-        private static void CreateOrgBeds(string orgId)
-        {
-            int initialBedCount;
-
-            if (_useLookup)
-            {
-                initialBedCount = HospitalManager.BedsForHospital(orgId);
-            }
-            else
-            {
-                initialBedCount = GeoManager.BedsForHospital();
-            }
-
-            _bedsByOrgId.Add(orgId, new OrgBeds(
-                _orgById[orgId],
-                _rootLocationByOrgId[orgId],
-                initialBedCount));
-        }
-
-        /// <summary>Deletes the organization bed described by orgId.</summary>
-        /// <param name="orgId">The organization.</param>
-        private static void DeleteOrgBeds(string orgId)
-        {
-            _bedsByOrgId.Remove(orgId);
-        }
-
-        /// <summary>Writes a bed bundle.</summary>
-        /// <param name="orgId">The organization.</param>
-        /// <param name="dir">  The dir.</param>
-        private static void WriteBedBundle(
-            string orgId,
-            string dir)
-        {
-            string filename = Path.Combine(dir, $"{orgId}{_filenameAdditionForBeds}{_extension}");
-
-            string bundleId = FhirGenerator.NextId;
-
-            Bundle bundle = new Bundle()
-            {
-                Id = bundleId,
-                Identifier = FhirGenerator.IdentifierForId(bundleId),
-                Type = Bundle.BundleType.Collection,
-                Timestamp = new DateTimeOffset(DateTime.Now),
-                Meta = new Meta(),
-            };
-
-            bundle.Entry = new List<Bundle.EntryComponent>();
-
-            foreach (Location bed in _bedsByOrgId[orgId].Beds())
-            {
-                bundle.AddResourceEntry(
-                    bed,
-                    $"{SystemLiterals.Internal}{bed.ResourceType}/{bed.Id}");
-            }
-
-            WriteBundle(filename, bundle);
         }
 
         /// <summary>Writes an organization bundle.</summary>

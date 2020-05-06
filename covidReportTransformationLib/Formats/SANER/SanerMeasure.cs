@@ -401,92 +401,66 @@ namespace covidReportTransformationLib.Formats.SANER
                 return;
             }
 
-            _measures.Add(AcutePatientImpact.Current.Name, BuildMeasure(AcutePatientImpact.Current));
-            _measures.Add(AcuteHealthcareWorker.Current.Name, BuildMeasure(AcuteHealthcareWorker.Current));
-            _measures.Add(AcuteHealthcareSupply.Current.Name, BuildMeasure(AcuteHealthcareSupply.Current));
-            _measures.Add(DailyReporting.Current.Name, BuildMeasure(DailyReporting.Current));
+            List<IReportingFormat> formats = FormatHelper.GetFormatList();
+
+            foreach (IReportingFormat format in formats)
+            {
+                if (format.MeasureGroupings != null)
+                {
+                    _measures.Add(format.Name, BuildMeasure(format));
+                }
+            }
 
             _initialized = true;
         }
 
-        /// <summary>Cdc grouped measure.</summary>
-        /// <returns>A Measure.</returns>
-        public static Measure CDCPatientImpactMeasure()
+        /// <summary>Gets a measure.</summary>
+        /// <param name="format">Describes the format to use.</param>
+        /// <returns>The measure.</returns>
+        public static Measure GetMeasure(IReportingFormat format)
         {
             if (!_initialized)
             {
                 Init();
             }
 
-            return _measures[AcutePatientImpact.Current.Name];
+            if (format == null)
+            {
+                throw new ArgumentNullException(nameof(format));
+            }
+
+            if (!_measures.ContainsKey(format.Name))
+            {
+                return null;
+            }
+
+            return _measures[format.Name];
         }
 
-        /// <summary>Cdc patient impact bundle.</summary>
-        /// <returns>A Bundle.</returns>
-        public static Bundle CDCPatientImpactBundle()
+        /// <summary>Gets a bundle.</summary>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="format">Describes the format to use.</param>
+        /// <returns>The bundle.</returns>
+        public static Bundle GetBundle(IReportingFormat format)
         {
             if (!_initialized)
             {
                 Init();
+            }
+
+            if (format == null)
+            {
+                throw new ArgumentNullException(nameof(format));
+            }
+
+            if (!_measures.ContainsKey(format.Name))
+            {
+                return null;
             }
 
             return GetBundleForMeasure(
-                _measures[AcutePatientImpact.Current.Name],
-                AcutePatientImpact.Current.Name);
-        }
-
-        /// <summary>Cdc healthcare worker bundle.</summary>
-        /// <returns>A Bundle.</returns>
-        public static Bundle CDCHealthcareWorkerBundle()
-        {
-            if (!_initialized)
-            {
-                Init();
-            }
-
-            return GetBundleForMeasure(
-                _measures[AcuteHealthcareWorker.Current.Name],
-                AcuteHealthcareWorker.Current.Name);
-        }
-
-        /// <summary>Cdc healthcare supply bundle.</summary>
-        /// <returns>A Bundle.</returns>
-        public static Bundle CDCHealthcareSupplyBundle()
-        {
-            if (!_initialized)
-            {
-                Init();
-            }
-
-            return GetBundleForMeasure(
-                _measures[AcuteHealthcareSupply.Current.Name],
-                AcuteHealthcareSupply.Current.Name);
-        }
-
-        /// <summary>Fema complete measure.</summary>
-        /// <returns>A Measure.</returns>
-        public static Measure FEMADailyMeasure()
-        {
-            if (!_initialized)
-            {
-                Init();
-            }
-
-            return _measures[DailyReporting.Current.Name];
-        }
-
-        /// <summary>Fema daily bundle.</summary>
-        /// <returns>A Bundle.</returns>
-        public static Bundle FEMADailyBundle()
-        {
-            if (!_initialized)
-            {
-                Init();
-            }
-
-            return GetBundleForMeasure(
-                _measures[DailyReporting.Current.Name],
-                DailyReporting.Current.Name);
+                _measures[format.Name],
+                format.Name);
         }
 
         /// <summary>Gets bundle for measure.</summary>

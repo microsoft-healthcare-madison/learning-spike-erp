@@ -6,13 +6,22 @@
     "value": "FHIR-41"
   },
   "type": "collection",
-  "timestamp": "2020-05-01T17:14:12.0126271-05:00",
+  "timestamp": "2020-05-06T10:57:38.1433649-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140181",
       "resource": {
         "resourceType": "Organization",
         "id": "X140181",
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
         "identifier": [
           {
             "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/hospitals",
@@ -52,6 +61,15 @@
       "resource": {
         "resourceType": "Location",
         "id": "Loc-X140181",
+        "meta": {
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
         "status": "active",
         "mode": "instance",
         "address": {

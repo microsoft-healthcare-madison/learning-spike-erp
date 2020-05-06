@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using covidReportTransformationLib.Formats;
 using generator_cli.Models;
 using Hl7.Fhir.Model;
 
@@ -198,7 +199,7 @@ namespace generator_cli.Generators
 
             foreach (string bedType in bedTypes)
             {
-                concepts.Add(FhirTriplet.BedType(bedType).Concept);
+                concepts.Add(FhirTriplet.BedType(bedType).GetConcept());
             }
 
             return concepts;
