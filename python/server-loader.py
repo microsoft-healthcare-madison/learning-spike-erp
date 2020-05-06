@@ -51,13 +51,13 @@ class FileProperties:
 class DataSource:
     """A folder of files containing data to send to a server."""
 
-    # Examples: Org-1234.json, Org-123-beds.json, Measures.json.
-    _resource_file_matcher = re.compile(r'^(X([0-9]+)-?)?(.+)?\.json$')
+    # Examples: ./t0/Org-1234.json, ./data/t1/Org-123-beds.json, Measures.json.
+    _resource_file_matcher = re.compile(r'^(.*/)?(X([0-9]+)-?)?(.+)?\.json$')
     _resource_file_properties = {
-        'QuestionnaireResponses': FileProperties(6, ['QuestionnaireResponse']),
-        'Questionnaires': FileProperties(5, ['Questionnaire']),
-        'measureReports': FileProperties(5, ['MeasureReport']),
-        'Measures': FileProperties(4, ['Measure']),
+        'measureReports': FileProperties(7, ['MeasureReport']),
+        'Measures': FileProperties(6, ['Measure']),
+        'QuestionnaireResponses': FileProperties(5, ['QuestionnaireResponse']),
+        'Questionnaires': FileProperties(4, ['Questionnaire']),
         'groups': FileProperties(3, ['Group']),
         'beds': FileProperties(2, ['Location']),
         None: FileProperties(1, ['Organization', 'Location']),  # Org files.
@@ -100,7 +100,7 @@ class DataSource:
         if not match:
             print(f'Warning, unknown file type: {filename}, skipping...')
             return False
-        file_type = match.groups()[2]
+        file_type = match.groups()[-1]
         if file_type:
             file_type = file_type.split('-')[0]  # trim off -CDC or -FEMA.
         available_types = cls._resource_file_properties.get(
@@ -114,8 +114,8 @@ class DataSource:
 
         match = cls._resource_file_matcher.match(filename)
         if not match:
-            return (0, 0)
-        _, org, file_type = match.groups()
+            return ('', 0, 0)
+        folder, _, org, file_type = match.groups()
         if file_type:
             file_type = file_type.split('-')[0]  # trim off -CDC or -FEMA.
 
@@ -123,17 +123,18 @@ class DataSource:
         if not resource_file_type:
             print(f'Unknown file type: {file_type}')
 
-        return (resource_file_type.load_priority, int(org or 0))
+        return (folder or '', resource_file_type.load_priority, int(org or 0))
 
     @classmethod
     def get_data_files(cls, folder, load_types):
         resource_types = set(load_types)
-        for dirname, _, files in os.walk(folder):
+        for dirname, dirs, files in os.walk(folder):
+            dirs.sort()  # Needed side-effect: sorts timestamp dir traversal.
+            files = [os.path.join(dirname, x) for x in files]
             for file in sorted(files, key=cls.get_resource_load_priority):
-                filename = os.path.join(dirname, file)
-                if cls.is_data_file(filename):
+                if cls.is_data_file(file):
                     if cls.contains_requested_resources(file, resource_types):
-                        yield filename
+                        yield file
 
     def __init__(self, folder, load_types):
         self._data_files = []
