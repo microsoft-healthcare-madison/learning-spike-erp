@@ -365,6 +365,26 @@ namespace generator_cli.Geographic
                         District = hosp.COUNTY,
                         PostalCode = hosp.ZIP,
                         Country = "USA",
+                        Extension = new List<Hl7.Fhir.Model.Extension>()
+                        {
+                            new Hl7.Fhir.Model.Extension()
+                            {
+                                Url = "http://hl7.org/fhir/StructureDefinition/geolocation",
+                                Extension = new List<Hl7.Fhir.Model.Extension>()
+                                {
+                                    new Hl7.Fhir.Model.Extension()
+                                    {
+                                        Url = "latitude",
+                                        Value = new Hl7.Fhir.Model.FhirDecimal((decimal)hosp.LATITUDE),
+                                    },
+                                    new Hl7.Fhir.Model.Extension()
+                                    {
+                                        Url = "longitude",
+                                        Value = new Hl7.Fhir.Model.FhirDecimal((decimal)hosp.LONGITUDE),
+                                    },
+                                },
+                            },
+                        },
                     },
                 },
             };

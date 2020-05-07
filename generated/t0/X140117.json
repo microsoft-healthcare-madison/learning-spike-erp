@@ -6,7 +6,7 @@
     "value": "FHIR-26"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:45.8427035-05:00",
+  "timestamp": "2020-05-07T14:24:14.4996993-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140117",
@@ -42,6 +42,21 @@
         "name": "KEATS MEDICAL CENTER",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 41.988458
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -87.81257
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 41.988458
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -87.81257
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [

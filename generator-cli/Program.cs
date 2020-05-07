@@ -32,8 +32,6 @@ namespace generator_cli
         private static Dictionary<string, Organization> _orgById = new Dictionary<string, Organization>();
         private static Dictionary<string, Location> _rootLocationByOrgId = new Dictionary<string, Location>();
 
-        private static List<BedConfiguration> _bedConfigurations = null;
-
         private static Random _rand = null;
         private static bool _useLookup = false;
         private static bool _connectathon = false;
@@ -183,13 +181,6 @@ namespace generator_cli
             // always need the geo manager
             GeoManager.Init(seed, minBedsPerOrg, maxBedsPerOrg, dataDirectory);
 
-            _bedConfigurations = BedConfiguration.StatesForParams(
-                string.Empty,
-                bedTypes,
-                operationalStatuses,
-                string.Empty);
-
-            OrgBeds.Init(seed, _bedConfigurations);
             OrgWorkerData.Init(seed);
 
             // only need hospital manager if we are using lookup (avoid loading otherwise)

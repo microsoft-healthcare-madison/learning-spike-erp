@@ -6,7 +6,7 @@
     "value": "FHIR-13"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:45.5375907-05:00",
+  "timestamp": "2020-05-07T14:24:14.1861127-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140080",
@@ -42,6 +42,21 @@
         "name": "SAINT LOIS HOSPITAL",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 42.023951
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -87.685159
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 42.023951
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -87.685159
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [

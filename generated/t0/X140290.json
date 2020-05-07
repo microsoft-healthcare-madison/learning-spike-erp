@@ -6,7 +6,7 @@
     "value": "FHIR-8"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:45.4002049-05:00",
+  "timestamp": "2020-05-07T14:24:14.0501778-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140290",
@@ -42,6 +42,21 @@
         "name": "SITKA MEDICAL CENTER",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 42.052409
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -88.144445
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 42.052409
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -88.144445
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [

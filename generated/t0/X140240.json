@@ -6,7 +6,7 @@
     "value": "FHIR-47"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:46.3435081-05:00",
+  "timestamp": "2020-05-07T14:24:15.0211154-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140240",
@@ -42,6 +42,21 @@
         "name": "KOWEL HOSPITAL",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 41.891794
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -87.848963
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 41.891794
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -87.848963
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [

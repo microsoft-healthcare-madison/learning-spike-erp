@@ -6,7 +6,7 @@
     "value": "FHIR-21"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:45.7267968-05:00",
+  "timestamp": "2020-05-07T14:24:14.3802189-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140208",
@@ -42,6 +42,21 @@
         "name": "CLIFTON MEDICAL CENTER",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 41.720316
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -87.732364
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 41.720316
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -87.732364
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [

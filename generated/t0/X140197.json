@@ -6,7 +6,7 @@
     "value": "FHIR-23"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:45.7750491-05:00",
+  "timestamp": "2020-05-07T14:24:14.4288114-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140197",
@@ -42,6 +42,21 @@
         "name": "MCINTYRE HOSPITAL OF CHEF COUNTY",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 41.973262
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -87.671141
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 41.973262
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -87.671141
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [

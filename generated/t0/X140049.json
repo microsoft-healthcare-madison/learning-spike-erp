@@ -6,7 +6,7 @@
     "value": "FHIR-24"
   },
   "type": "collection",
-  "timestamp": "2020-05-06T16:11:45.7992065-05:00",
+  "timestamp": "2020-05-07T14:24:14.4526958-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Organization/X140049",
@@ -42,6 +42,21 @@
         "name": "JEMISIN MEDICAL CENTER",
         "address": [
           {
+            "extension": [
+              {
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 41.89184
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -87.777471
+                  }
+                ],
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+              }
+            ],
             "use": "work",
             "type": "both",
             "line": [
@@ -73,6 +88,21 @@
         "status": "active",
         "mode": "instance",
         "address": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "latitude",
+                  "valueDecimal": 41.89184
+                },
+                {
+                  "url": "longitude",
+                  "valueDecimal": -87.777471
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/geolocation"
+            }
+          ],
           "use": "work",
           "type": "both",
           "line": [
