@@ -167,8 +167,8 @@ class Server:
         """Initialize a Server object."""
 
         url = urlparse(server_url)
-        if url.scheme == 'http' and not url.netloc.lower() == 'localhost':
-            raise Error('Refusing to send data over http.')
+        # if url.scheme == 'http' and not url.netloc.lower() == 'localhost':
+            # raise Error('Refusing to send data over http.')
 
         self._capabilities = None
         hostname = url.netloc.split(':')[0]
