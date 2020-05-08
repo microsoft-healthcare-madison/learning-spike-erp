@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "FHIR-4",
+  "id": "FHIR-5",
   "meta": {
     "profile": [
       "http://hl7.org/fhir/R4/StructureDefinition/Bundle"
@@ -8,20 +8,19 @@
   },
   "identifier": {
     "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
-    "value": "FHIR-4"
+    "value": "FHIR-5"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:40:53.4553581-05:00",
+  "timestamp": "2020-05-08T12:47:01.9062334-05:00",
   "entry": [
     {
-      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/CDCHealthcareSupplyPathway",
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCHealthcareSupplyPathway",
       "resource": {
-        "resourceType": "Measure",
+        "resourceType": "Questionnaire",
         "id": "CDCHealthcareSupplyPathway",
         "meta": {
           "profile": [
-            "http://hl7.org/fhir/R4/StructureDefinition/Measure",
-            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasure"
+            "http://hl7.org/fhir/R4/StructureDefinition/Questionnaire"
           ]
         },
         "url": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
@@ -29,46 +28,8 @@
         "name": "CDCHealthcareSupplyPathway",
         "title": "COVID-19 Healthcare Supply Pathway",
         "status": "draft",
-        "experimental": true,
-        "subjectCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/resource-types",
-              "code": "Location"
-            }
-          ]
-        },
         "date": "2020-04-27T07:08:50-04:00",
         "publisher": "HL7 International",
-        "contact": [
-          {
-            "name": "HL7 Patient Administration Workgroup",
-            "telecom": [
-              {
-                "system": "url",
-                "value": "http://hl7.org/Special/committees/pafm/index.cfm"
-              }
-            ]
-          },
-          {
-            "name": "Audacious Inquiry",
-            "telecom": [
-              {
-                "system": "url",
-                "value": "http://ainq.com"
-              }
-            ]
-          },
-          {
-            "name": "Keith W. Boone",
-            "telecom": [
-              {
-                "system": "email",
-                "value": "mailto:kboone@ainq.com"
-              }
-            ]
-          }
-        ],
         "description": "SANER implementation of the CDC COVID-19 Healthcare Supply Pathway",
         "useContext": [
           {
@@ -98,870 +59,1120 @@
             ]
           }
         ],
-        "author": [
-          {
-            "name": "Centers for Disease Control/National Healthcare Safety Network (CDC/NHSN)",
-            "telecom": [
-              {
-                "system": "email",
-                "value": "mailto:nhsn@cdc.gov"
-              }
-            ]
-          }
-        ],
-        "relatedArtifact": [
-          {
-            "type": "documentation",
-            "label": "NHSN COVID-19 Reporting for Acute Care",
-            "display": "CDC/NHSN COVID-19 Acute Care Module Home Page",
-            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "url": "https://www.cdc.gov/nhsn/acute-care-hospital/covid19/"
-          },
-          {
-            "type": "documentation",
-            "label": "How to import COVID-19 Summary Data",
-            "display": "Facility - How to Upload COVID-19 CSV Data Files",
-            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/import-covid19-data-508.pdf"
-          },
-          {
-            "type": "documentation",
-            "label": "COVID-19 Module Analysis Reports",
-            "display": "NHSN COVID-19 Module Analysis Reports",
-            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/fac-analysis-qrg-508.pdf"
-          },
-          {
-            "type": "documentation",
-            "label": "Table of Instructions",
-            "display": "Instructions for Completion of the COVID-19 Healthcare Supply Pathway (CDC 57.132)",
-            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.132-toi-508.pdf"
-          },
-          {
-            "type": "documentation",
-            "label": "PDF Form",
-            "display": "Healthcare Supply Pathway Form",
-            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/57.132-covid19-sup-blank-p.pdf"
-          },
-          {
-            "type": "documentation",
-            "label": "CSV File Template",
-            "display": "CDC/NHSN COVID-19 Acute Care Healthcare Supply Reporting CSV File Template",
-            "citation": "Centers for Disease Control and Prevention (CDC), National Healthcare Safety Network (NHSN)",
-            "url": "https://www.cdc.gov/nhsn/pdfs/covid19/facility-import-supplies.csv"
-          }
-        ],
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                "code": "composite",
-                "display": "Composite"
-              }
-            ]
-          }
-        ],
-        "group": [
+        "item": [
           {
             "extension": [
               {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 0
+              }
+            ],
+            "linkId": "section_0",
+            "text": "COVID-19 Module: Healthcare Supply Pathway",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
                 "extension": [
                   {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "facilityId",
+                "code": [
                   {
-                    "url": "subject",
-                    "valueCodeableConcept": {
-                      "coding": [
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "facilityId"
+                  }
+                ],
+                "text": "Facility ID #:",
+                "type": "string",
+                "required": true,
+                "repeats": false
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "summaryCensusId",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "summaryCensusId"
+                  }
+                ],
+                "text": "Summary Census ID #:",
+                "type": "string",
+                "required": true,
+                "repeats": false
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "collectiondate",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "collectiondate"
+                  }
+                ],
+                "text": "Collection Date: Select the date for which the recorded data was collected for the following questions.",
+                "type": "date",
+                "required": true,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 1
+              }
+            ],
+            "linkId": "section_1",
+            "text": "Information:",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "onHandSupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "onHandSupply"
+                  }
+                ],
+                "text": "On-hand Supply: Please answer based on your organization’s best estimation for the supply of this item.",
+                "type": "choice",
+                "required": true,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
                         {
-                          "system": "http://hl7.org/fhir/resource-types",
-                          "code": "Device"
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
                         },
                         {
-                          "system": "http://snomed.info/sct",
-                          "code": "706172005",
-                          "display": "Ventilator (physical object)"
-                        }
-                      ],
-                      "text": "Mechanical Ventilators"
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
                         }
                       ]
                     }
                   },
                   {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
                         {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "decrease"
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
                         }
                       ]
                     }
                   },
                   {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
                   }
                 ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
-              }
-            ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "Ventilators",
-                  "display": "Ventilator supplies (any, including tubing)"
-                }
-              ],
-              "text": "Ventilator Supply Reporting"
-            },
-            "population": [
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "ventsupply",
-                      "display": "Ventilator supplies (any, including tubing)"
-                    }
-                  ],
-                  "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-                },
-                "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-                }
+                "linkId": "reuseOrExtendedUse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "reuseOrExtendedUse"
+                  }
+                ],
+                "text": "Reusing or Extending Use: Are you currently reusing the item or implementing extended use?",
+                "type": "display",
+                "required": true,
+                "repeats": false
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "ventreuse",
-                      "display": "Ventilator supplies (any, including tubing)"
-                    }
-                  ],
-                  "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-                },
-                "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "ventobtain",
-                      "display": "Ventilator supplies (any, including tubing)"
-                    }
-                  ],
-                  "text": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-                },
-                "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
-                "criteria": {
-                  "description": "Ventilator supplies (any, including tubing)",
-                  "language": "text/plain",
-                  "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "ableToObtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "ableToObtain"
+                  }
+                ],
+                "text": "Able to Obtain: Are you able to obtain this item? If you have placed an order but  are not able to have that order filled, please answer NO.",
+                "type": "display",
+                "required": true,
+                "repeats": false
               }
             ]
           },
           {
             "extension": [
               {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 2
               }
             ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "N95Masks",
-                  "display": "N95 masks"
-                }
-              ],
-              "text": "N95 Mask Supply Reporting"
-            },
-            "population": [
+            "linkId": "section_2",
+            "text": "Ventilator supplies (any, including tubing): any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
+            "type": "group",
+            "repeats": false,
+            "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "n95masksupply",
-                      "display": "N95 masks"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "ventsupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "ventsupply"
+                  }
+                ],
+                "text": "On-hand Supply",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ]
-                },
-                "description": "N95 masks",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "N95 masks"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "n95maskreuse",
-                      "display": "N95 masks"
-                    }
-                  ]
-                },
-                "description": "N95 masks",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "N95 masks"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "ventreuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "ventreuse"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "n95maskobtain",
-                      "display": "N95 masks"
-                    }
-                  ]
-                },
-                "description": "N95 masks",
-                "criteria": {
-                  "description": "N95 masks",
-                  "language": "text/plain",
-                  "expression": "N95 masks"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "ventobtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "ventobtain"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               }
             ]
           },
           {
             "extension": [
               {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 3
               }
             ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "OtherRespirators",
-                  "display": "Other respirators including PAPRs"
-                }
-              ],
-              "text": "Other Respirator Supply Reporting"
-            },
-            "population": [
+            "linkId": "section_3",
+            "text": "N95 masks:",
+            "type": "group",
+            "repeats": false,
+            "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "othrespsupply",
-                      "display": "Other respirators including PAPRs"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "n95masksupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "n95masksupply"
+                  }
+                ],
+                "text": "On-hand Supply",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ],
-                  "text": "Other respirators such as PAPRs or elastomerics"
-                },
-                "description": "Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "Other respirators such as PAPRs or elastomerics"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "othrespreuse",
-                      "display": "Other respirators including PAPRs"
-                    }
-                  ],
-                  "text": "Other respirators such as PAPRs or elastomerics"
-                },
-                "description": "Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "Other respirators such as PAPRs or elastomerics"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "n95maskreuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "n95maskreuse"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "othrespobtain",
-                      "display": "Other respirators including PAPRs"
-                    }
-                  ],
-                  "text": "Other respirators such as PAPRs or elastomerics"
-                },
-                "description": "Other respirators such as PAPRs or elastomerics",
-                "criteria": {
-                  "description": "Other respirators including PAPRs",
-                  "language": "text/plain",
-                  "expression": "Other respirators such as PAPRs or elastomerics"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "n95maskobtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "n95maskobtain"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               }
             ]
           },
           {
             "extension": [
               {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 4
               }
             ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "SurgicalMasks",
-                  "display": "Surgical masks"
-                }
-              ],
-              "text": "Surgical Mask Supply Reporting"
-            },
-            "population": [
+            "linkId": "section_4",
+            "text": "Other respirators including PAPRs: Other respirators such as PAPRs or elastomerics",
+            "type": "group",
+            "repeats": false,
+            "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "surgmasksupply",
-                      "display": "Surgical masks"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "othrespsupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "othrespsupply"
+                  }
+                ],
+                "text": "On-hand Supply",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ]
-                },
-                "description": "Surgical masks",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "Surgical masks"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "surgmaskreuse",
-                      "display": "Surgical masks"
-                    }
-                  ]
-                },
-                "description": "Surgical masks",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "Surgical masks"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "othrespreuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "othrespreuse"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "surgmaskobtain",
-                      "display": "Surgical masks"
-                    }
-                  ]
-                },
-                "description": "Surgical masks",
-                "criteria": {
-                  "description": "Surgical masks",
-                  "language": "text/plain",
-                  "expression": "Surgical masks"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "othrespobtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "othrespobtain"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               }
             ]
           },
           {
             "extension": [
               {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 5
               }
             ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "EyeProtection",
-                  "display": "Eye protection including face shields or goggles"
-                }
-              ],
-              "text": "Eye Protection Supply Reporting"
-            },
-            "population": [
+            "linkId": "section_5",
+            "text": "Surgical masks:",
+            "type": "group",
+            "repeats": false,
+            "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "shieldsupply",
-                      "display": "Eye protection including face shields or goggles"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "surgmasksupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "surgmasksupply"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ]
-                },
-                "description": "Eye protection including face shields or goggles",
-                "criteria": {
-                  "description": "Eye protection including face shields or goggles",
-                  "language": "text/plain",
-                  "expression": "Eye protection including face shields or goggles"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "shieldreuse",
-                      "display": "Eye protection including face shields or goggles"
-                    }
-                  ]
-                },
-                "description": "Eye protection including face shields or goggles",
-                "criteria": {
-                  "description": "Eye protection including face shields or goggles",
-                  "language": "text/plain",
-                  "expression": "Eye protection including face shields or goggles"
-                }
-              },
-              {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "shieldobtain",
-                      "display": "Eye protection including face shields or goggles"
-                    }
-                  ]
-                },
-                "description": "Eye protection including face shields or goggles",
-                "criteria": {
-                  "description": "Eye protection including face shields or goggles",
-                  "language": "text/plain",
-                  "expression": "Eye protection including face shields or goggles"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "surgmaskreuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "surgmaskreuse"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               }
             ]
           },
           {
             "extension": [
               {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 6
               }
             ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "Gown",
-                  "display": "Gowns (single use)"
-                }
-              ],
-              "text": "Gown Supply Reporting"
-            },
-            "population": [
+            "linkId": "section_6",
+            "text": "Eye protection including face shields or goggles:",
+            "type": "group",
+            "repeats": false,
+            "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "gownsupply",
-                      "display": "Gowns (single use)"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "shieldsupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "shieldsupply"
+                  }
+                ],
+                "text": "On-hand Supply",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ]
-                },
-                "description": "Gowns (single use)",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "Gowns (single use)"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "gownreuse",
-                      "display": "Gowns (single use)"
-                    }
-                  ]
-                },
-                "description": "Gowns (single use)",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "Gowns (single use)"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "shieldreuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "shieldreuse"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "gownobtain",
-                      "display": "Gowns (single use)"
-                    }
-                  ]
-                },
-                "description": "Gowns (single use)",
-                "criteria": {
-                  "description": "Gowns (single use)",
-                  "language": "text/plain",
-                  "expression": "Gowns (single use)"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "shieldobtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "shieldobtain"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               }
             ]
           },
           {
             "extension": [
               {
-                "extension": [
-                  {
-                    "url": "scoring",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-scoring",
-                          "code": "continuous-variable",
-                          "display": "Continuous Variable"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "type",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-type",
-                          "code": "structure",
-                          "display": "Structure"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "improvementNotation",
-                    "valueCodeableConcept": {
-                      "coding": [
-                        {
-                          "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
-                          "code": "increase"
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "url": "rateAggregation",
-                    "valueString": "aggregable-by-period"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/us/saner/StructureDefinition/MeasureGroupAttributes"
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 7
               }
             ],
-            "code": {
-              "coding": [
-                {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                  "code": "Glove",
-                  "display": "Gloves"
-                }
-              ],
-              "text": "Glove Supply Reporting"
-            },
-            "population": [
+            "linkId": "section_7",
+            "text": "Gowns (single use):",
+            "type": "group",
+            "repeats": false,
+            "item": [
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "glovesupply",
-                      "display": "Gloves"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "gownsupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "gownsupply"
+                  }
+                ],
+                "text": "On-hand Supply",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ]
-                },
-                "description": "Gloves",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "Gloves"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "glovereuse",
-                      "display": "Gloves"
-                    }
-                  ]
-                },
-                "description": "Gloves",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "Gloves"
-                }
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "gownreuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "gownreuse"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               },
               {
-                "code": {
-                  "coding": [
-                    {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                      "code": "gloveobtain",
-                      "display": "Gloves"
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "gownobtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "gownobtain"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                "valueDecimal": 8
+              }
+            ],
+            "linkId": "section_8",
+            "text": "Gloves:",
+            "type": "group",
+            "repeats": false,
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 0
+                  }
+                ],
+                "linkId": "glovesupply",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "glovesupply"
+                  }
+                ],
+                "text": "On-hand Supply",
+                "type": "choice",
+                "required": false,
+                "repeats": false,
+                "answerOption": [
+                  {
+                    "valueString": "Zero days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 0
+                        }
+                      ]
                     }
-                  ]
-                },
-                "description": "Gloves",
-                "criteria": {
-                  "description": "Gloves",
-                  "language": "text/plain",
-                  "expression": "Gloves"
-                }
+                  },
+                  {
+                    "valueString": "1-3 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 1
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "4-14 days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 2
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "valueString": "15 or more days",
+                    "_valueString": {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                          "valueBoolean": true
+                        },
+                        {
+                          "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                          "valueDecimal": 3
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 1
+                  }
+                ],
+                "linkId": "glovereuse",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "glovereuse"
+                  }
+                ],
+                "text": "Reusing or Extending Use",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                    "valueDecimal": 2
+                  }
+                ],
+                "linkId": "gloveobtain",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "code": "gloveobtain"
+                  }
+                ],
+                "text": "Able to Obtain",
+                "type": "boolean",
+                "required": false,
+                "repeats": false
               }
             ]
           }

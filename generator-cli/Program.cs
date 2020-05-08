@@ -248,7 +248,7 @@ namespace generator_cli
                         Path.Combine(
                             metaDir,
                             $"{_filenameBaseForQuestionnaires}-{format.Name}{_extension}"),
-                        measureBundle);
+                        questionnaireBundle);
                 }
             }
 
