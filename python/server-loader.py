@@ -155,7 +155,7 @@ class Server:
     # The order of resource types matters because HAPI won't allow dangling
     # links by default.
     _deletion_order = [
-        'MeasureReport', 'Measure', 'Group', 'Location', 'Organization'
+        'MeasureReport', 'Measure', 'Group', 'Location', 'Organization', 'Questionnaire', 'QuestionnaireResponse'
     ]
 
     _headers = {
@@ -176,7 +176,7 @@ class Server:
         self._metadata = None
         self._url = url
 
-        self._metadata = requests.get(server_url + '/metadata')
+        self._metadata = requests.get(server_url + '/metadata', headers=self.headers)
         if self._metadata.status_code != 200:
             raise Error(f'Failed to read {server_url}/metadata')
         self._capabilities = self._metadata.json()
@@ -303,7 +303,8 @@ def main(server_url, delete_all, load, files, tag_code):
 
     # TODO: wrap this in a try block, saving any failed files somewhere.
     # TODO: parallelize this so multiple files can be loaded at once.
-    server = Server(server_url)
+    url = server_url[:-1] if server_url.endswith('/') else server_url
+    server = Server(url)
     if delete_all:
         # TODO: print out the number of deleted resources.
         server.delete_all_tagged_resources()
