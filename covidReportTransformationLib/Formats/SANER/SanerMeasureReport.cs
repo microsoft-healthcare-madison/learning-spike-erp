@@ -260,6 +260,14 @@ namespace covidReportTransformationLib.Formats.SANER
                     Stratifier = new List<MeasureReport.StratifierComponent>(),
                 };
 
+                if (data.Values.ContainsKey(groupName))
+                {
+                    if (data.Values[groupName].Score != null)
+                    {
+                        reportGroup.MeasureScore = new Quantity() { Value = data.Values[groupName].Score, };
+                    }
+                }
+
                 if ((measureGroup.Population == null) || (measureGroup.Population.Count == 0))
                 {
                     if (data.Values.ContainsKey(groupName))
@@ -328,7 +336,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         continue;
                     }
 
-                    if ((populationCode == FhirSystems.MeasurePopulation) &&
+                    if ((populationSystem == FhirSystems.MeasurePopulation) &&
                         (!string.IsNullOrEmpty(populationName)))
                     {
                         switch (populationCode)
