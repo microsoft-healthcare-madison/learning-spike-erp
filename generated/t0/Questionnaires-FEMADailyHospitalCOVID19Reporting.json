@@ -11,7 +11,7 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:21:05.4318265-05:00",
+  "timestamp": "2020-05-08T12:40:52.4759913-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/FEMADailyHospitalCOVID19Reporting",
@@ -215,7 +215,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                   "code": "positiveIncreasePercent",
                   "display": "Percent Positive among Newly Resulted Tests"
                 }
@@ -227,7 +227,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "totalOrdersIncrease",
                       "display": "New Diagnostic Tests Ordered/Received"
                     },
@@ -250,7 +250,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "totalTestResultsIncrease",
                       "display": "New Tests Resulted"
                     },
@@ -272,7 +272,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "positiveIncrease",
                       "display": "New Positive COVID-19 Tests"
                     },
@@ -359,7 +359,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                   "code": "positivePercent",
                   "display": "Cumulative Percent Positive among Newly Resulted Tests"
                 }
@@ -371,7 +371,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "totalOrders",
                       "display": "Cumulative Diagnostic Tests Ordered/Received"
                     },
@@ -394,7 +394,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "totalTestResults",
                       "display": "Cumulative Tests Performed"
                     },
@@ -416,7 +416,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "positive",
                       "display": "Cumulative Positive COVID-19 Tests"
                     },
@@ -438,7 +438,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "rejected",
                       "display": "Cumulative Specimens Rejected"
                     },

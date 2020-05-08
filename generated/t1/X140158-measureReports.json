@@ -11,7 +11,7 @@
     "value": "FHIR-121"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:21:07.0206479-05:00",
+  "timestamp": "2020-05-08T12:40:53.9640294-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-122",
@@ -50,7 +50,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                   "code": "positiveIncreasePercent",
                   "display": "Percent Positive among Newly Resulted Tests"
                 }
@@ -62,7 +62,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                   "code": "positivePercent",
                   "display": "Cumulative Percent Positive among Newly Resulted Tests"
                 }
@@ -110,7 +110,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "Beds",
                   "display": "Beds"
                 }
@@ -122,7 +122,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "Ventilators",
                   "display": "Ventilators"
                 }
@@ -134,7 +134,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "Encounters",
                   "display": "Encounters"
                 }

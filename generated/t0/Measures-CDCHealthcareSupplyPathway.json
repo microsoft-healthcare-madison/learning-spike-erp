@@ -11,7 +11,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:21:06.438797-05:00",
+  "timestamp": "2020-05-08T12:40:53.4553581-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/CDCHealthcareSupplyPathway",
@@ -232,7 +232,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "Ventilators",
                   "display": "Ventilator supplies (any, including tubing)"
                 }
@@ -244,7 +244,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "ventsupply",
                       "display": "Ventilator supplies (any, including tubing)"
                     }
@@ -262,7 +262,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "ventreuse",
                       "display": "Ventilator supplies (any, including tubing)"
                     }
@@ -280,7 +280,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "ventobtain",
                       "display": "Ventilator supplies (any, including tubing)"
                     }
@@ -346,7 +346,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "N95Masks",
                   "display": "N95 masks"
                 }
@@ -358,7 +358,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "n95masksupply",
                       "display": "N95 masks"
                     }
@@ -375,7 +375,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "n95maskreuse",
                       "display": "N95 masks"
                     }
@@ -392,7 +392,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "n95maskobtain",
                       "display": "N95 masks"
                     }
@@ -457,7 +457,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "OtherRespirators",
                   "display": "Other respirators including PAPRs"
                 }
@@ -469,7 +469,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "othrespsupply",
                       "display": "Other respirators including PAPRs"
                     }
@@ -487,7 +487,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "othrespreuse",
                       "display": "Other respirators including PAPRs"
                     }
@@ -505,7 +505,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "othrespobtain",
                       "display": "Other respirators including PAPRs"
                     }
@@ -571,7 +571,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "SurgicalMasks",
                   "display": "Surgical masks"
                 }
@@ -583,7 +583,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "surgmasksupply",
                       "display": "Surgical masks"
                     }
@@ -600,7 +600,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "surgmaskreuse",
                       "display": "Surgical masks"
                     }
@@ -617,7 +617,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "surgmaskobtain",
                       "display": "Surgical masks"
                     }
@@ -682,7 +682,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "EyeProtection",
                   "display": "Eye protection including face shields or goggles"
                 }
@@ -694,7 +694,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "shieldsupply",
                       "display": "Eye protection including face shields or goggles"
                     }
@@ -711,7 +711,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "shieldreuse",
                       "display": "Eye protection including face shields or goggles"
                     }
@@ -728,7 +728,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "shieldobtain",
                       "display": "Eye protection including face shields or goggles"
                     }
@@ -793,7 +793,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "Gown",
                   "display": "Gowns (single use)"
                 }
@@ -805,7 +805,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "gownsupply",
                       "display": "Gowns (single use)"
                     }
@@ -822,7 +822,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "gownreuse",
                       "display": "Gowns (single use)"
                     }
@@ -839,7 +839,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "gownobtain",
                       "display": "Gowns (single use)"
                     }
@@ -904,7 +904,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "Glove",
                   "display": "Gloves"
                 }
@@ -916,7 +916,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "glovesupply",
                       "display": "Gloves"
                     }
@@ -933,7 +933,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "glovereuse",
                       "display": "Gloves"
                     }
@@ -950,7 +950,7 @@
                 "code": {
                   "coding": [
                     {
-                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
+                      "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "gloveobtain",
                       "display": "Gloves"
                     }
