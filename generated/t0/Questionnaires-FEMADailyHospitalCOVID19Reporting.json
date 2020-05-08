@@ -11,7 +11,7 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T11:36:32.5853892-05:00",
+  "timestamp": "2020-05-08T12:21:05.4318265-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/FEMADailyHospitalCOVID19Reporting",
@@ -216,7 +216,7 @@
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                  "code": "percentPositiveAmongNewlyResultedTests",
+                  "code": "positiveIncreasePercent",
                   "display": "Percent Positive among Newly Resulted Tests"
                 }
               ],
@@ -228,7 +228,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "newDiagnosticTestsOrderedReceived",
+                      "code": "totalOrdersIncrease",
                       "display": "New Diagnostic Tests Ordered/Received"
                     },
                     {
@@ -251,7 +251,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "newTestsResulted",
+                      "code": "totalTestResultsIncrease",
                       "display": "New Tests Resulted"
                     },
                     {
@@ -273,7 +273,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "newPositiveC19Tests",
+                      "code": "positiveIncrease",
                       "display": "New Positive COVID-19 Tests"
                     },
                     {
@@ -360,7 +360,7 @@
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                  "code": "cumulativePercentPositiveAmongResultedTests",
+                  "code": "positivePercent",
                   "display": "Cumulative Percent Positive among Newly Resulted Tests"
                 }
               ],
@@ -372,7 +372,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "cumulativeDiagnosticTestsOrderedReceived",
+                      "code": "totalOrders",
                       "display": "Cumulative Diagnostic Tests Ordered/Received"
                     },
                     {
@@ -395,7 +395,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "cumulativeTestsPerformed",
+                      "code": "totalTestResults",
                       "display": "Cumulative Tests Performed"
                     },
                     {
@@ -417,7 +417,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "cumulativePositiveC19Tests",
+                      "code": "positive",
                       "display": "Cumulative Positive COVID-19 Tests"
                     },
                     {
@@ -439,7 +439,7 @@
                   "coding": [
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                      "code": "cumulativeSpecimensRejected",
+                      "code": "rejected",
                       "display": "Cumulative Specimens Rejected"
                     },
                     {

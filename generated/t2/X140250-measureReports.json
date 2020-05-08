@@ -11,7 +11,7 @@
     "value": "FHIR-196"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T11:36:34.1763509-05:00",
+  "timestamp": "2020-05-08T12:21:07.2221677-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-197",
@@ -51,7 +51,7 @@
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                  "code": "percentPositiveAmongNewlyResultedTests",
+                  "code": "positiveIncreasePercent",
                   "display": "Percent Positive among Newly Resulted Tests"
                 }
               ],
@@ -63,7 +63,7 @@
               "coding": [
                 {
                   "system": "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem",
-                  "code": "cumulativePercentPositiveAmongResultedTests",
+                  "code": "positivePercent",
                   "display": "Cumulative Percent Positive among Newly Resulted Tests"
                 }
               ],

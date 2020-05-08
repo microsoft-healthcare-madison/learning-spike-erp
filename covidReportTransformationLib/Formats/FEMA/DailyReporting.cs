@@ -22,31 +22,31 @@ namespace covidReportTransformationLib.Formats.FEMA
         public const string County = "county";
 
         /// <summary>The fema tests ordered today.</summary>
-        public const string TestsOrderedToday = "newDiagnosticTestsOrderedReceived";
+        public const string TestsOrderedToday = "totalOrdersIncrease"; // "newDiagnosticTestsOrderedReceived";
 
         /// <summary>The fema tests ordered total.</summary>
-        public const string TestsOrderedTotal = "cumulativeDiagnosticTestsOrderedReceived";
+        public const string TestsOrderedTotal = "totalOrders"; // "cumulativeDiagnosticTestsOrderedReceived";
 
         /// <summary>The fema tests with results new.</summary>
-        public const string TestsWithResultsToday = "newTestsResulted";
+        public const string TestsWithResultsToday = "totalTestResultsIncrease"; // "newTestsResulted";
 
         /// <summary>The fema specimens rejected total.</summary>
-        public const string SpecimensRejectedTotal = "cumulativeSpecimensRejected";
+        public const string SpecimensRejectedTotal = "rejected"; // "cumulativeSpecimensRejected";
 
         /// <summary>The fema tests performed total.</summary>
-        public const string TestsCompletedTotal = "cumulativeTestsPerformed";
+        public const string TestsCompletedTotal = "totalTestResults"; // "cumulativeTestsPerformed";
 
         /// <summary>The fema positive c 19 today.</summary>
-        public const string PositiveC19Today = "newPositiveC19Tests";
+        public const string PositiveC19Today = "positiveIncrease"; // "newPositiveC19Tests";
 
         /// <summary>The fema positive c 19 total.</summary>
-        public const string PositiveC19Total = "cumulativePositiveC19Tests";
+        public const string PositiveC19Total = "positive"; // "cumulativePositiveC19Tests";
 
         /// <summary>The fema percent c 19 postive.</summary>
-        public const string PercentC19PositiveToday = "percentPositiveAmongNewlyResultedTests";
+        public const string PercentC19PositiveToday = "positiveIncreasePercent"; // "percentPositiveAmongNewlyResultedTests";
 
         /// <summary>The fema percent c 19 positive total.</summary>
-        public const string PercentC19PositiveTotal = "cumulativePercentPositiveAmongResultedTests";
+        public const string PercentC19PositiveTotal = "positivePercent"; // "cumulativePercentPositiveAmongResultedTests";
 
         /// <summary>The current.</summary>
         private static DailyReporting _current = new DailyReporting();
