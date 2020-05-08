@@ -81,10 +81,10 @@ namespace covidReportTransformationLib.Utils
         public const string SanerAggregateChoice = "http://hl7.org/fhir/us/saner/CodeSystem/ChoiceAggregation";
 
         /// <summary>Group the saner belongs to.</summary>
-        public const string SanerGroup = "http://hl7.org/fhir/us/saner/CodeSystem/GroupSystem";
+        public const string SanerGroup = "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem";
 
         /// <summary>The saner population.</summary>
-        public const string SanerPopulation = "http://hl7.org/fhir/us/saner/CodeSystem/PopulationSystem";
+        public const string SanerPopulation = "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem";
 
         /// <summary>The snomed sct.</summary>
         public const string SnomedSct = "http://snomed.info/sct";
