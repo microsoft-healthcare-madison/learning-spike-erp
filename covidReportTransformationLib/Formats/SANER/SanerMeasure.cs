@@ -216,6 +216,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         Description = string.IsNullOrEmpty(field.Description) ? field.Title : field.Description,
                         Criteria = new Expression()
                         {
+                            Name = pop.Name,
                             Description = popField.Title,
                             Language = "text/plain",
                             Expression_ = string.IsNullOrEmpty(popField.Description) ? field.Title : popField.Description,
@@ -245,6 +246,7 @@ namespace covidReportTransformationLib.Formats.SANER
                     Description = $"YES - {desc}",
                     Criteria = new Expression()
                     {
+                        Name = $"{field.Name}True",
                         Description = field.Title,
                         Language = "text/plain",
                         Expression_ = "true",
@@ -260,6 +262,7 @@ namespace covidReportTransformationLib.Formats.SANER
                     Description = $"NO - {desc}",
                     Criteria = new Expression()
                     {
+                        Name = $"{field.Name}False",
                         Description = field.Title,
                         Language = "text/plain",
                         Expression_ = "false",
@@ -273,6 +276,7 @@ namespace covidReportTransformationLib.Formats.SANER
             {
                 groupComponent.Population = new List<Measure.PopulationComponent>();
 
+                int choiceNumber = 0;
                 foreach (FormatFieldOption populationChoice in field.Options)
                 {
                     Measure.PopulationComponent choiceComponent = new Measure.PopulationComponent()
@@ -284,6 +288,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         Description = $"{field.Title}:{populationChoice.Text}",
                         Criteria = new Expression()
                         {
+                            Name = $"{field.Name}Choice{choiceNumber++}",
                             Description = field.Title,
                             Language = "text/plain",
                             Expression_ = populationChoice.Text,
@@ -393,6 +398,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         Description = field.Description ?? field.Title,
                         Criteria = new Expression()
                         {
+                            Name = pop.Name,
                             Description = field.Title,
                             Language = "text/plain",
                             Expression_ = field.Description ?? field.Title,

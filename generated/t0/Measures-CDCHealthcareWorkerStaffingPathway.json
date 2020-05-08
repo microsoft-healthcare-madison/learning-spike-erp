@@ -11,7 +11,7 @@
     "value": "FHIR-6"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:47:01.9306374-05:00",
+  "timestamp": "2020-05-08T12:52:27.4617427-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/CDCHealthcareWorkerStaffingPathway",
@@ -235,6 +235,7 @@
                 "description": "YES - Front-line persons who clean patient rooms and all areas in a healthcare facility",
                 "criteria": {
                   "description": "Environmental services",
+                  "name": "shortenvsvcTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -252,6 +253,7 @@
                 "description": "NO - Front-line persons who clean patient rooms and all areas in a healthcare facility",
                 "criteria": {
                   "description": "Environmental services",
+                  "name": "shortenvsvcFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -328,6 +330,7 @@
                 "description": "YES - Registered nurses and licensed practical nurses",
                 "criteria": {
                   "description": "Nurses",
+                  "name": "shortnurseTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -345,6 +348,7 @@
                 "description": "NO - Registered nurses and licensed practical nurses",
                 "criteria": {
                   "description": "Nurses",
+                  "name": "shortnurseFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -421,6 +425,7 @@
                 "description": "YES - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
                 "criteria": {
                   "description": "Respiratory therapists",
+                  "name": "shortrtTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -438,6 +443,7 @@
                 "description": "NO - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
                 "criteria": {
                   "description": "Respiratory therapists",
+                  "name": "shortrtFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -514,6 +520,7 @@
                 "description": "YES - Pharmacists and pharmacy techs",
                 "criteria": {
                   "description": "Pharmacists and pharmacy techs",
+                  "name": "shortpharTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -531,6 +538,7 @@
                 "description": "NO - Pharmacists and pharmacy techs",
                 "criteria": {
                   "description": "Pharmacists and pharmacy techs",
+                  "name": "shortpharFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -607,6 +615,7 @@
                 "description": "YES - Attending physicians, fellows",
                 "criteria": {
                   "description": "Physicians",
+                  "name": "shortphysTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -624,6 +633,7 @@
                 "description": "NO - Attending physicians, fellows",
                 "criteria": {
                   "description": "Physicians",
+                  "name": "shortphysFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -700,6 +710,7 @@
                 "description": "YES - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
                 "criteria": {
                   "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+                  "name": "shorttempTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -717,6 +728,7 @@
                 "description": "NO - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
                 "criteria": {
                   "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+                  "name": "shorttempFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -793,6 +805,7 @@
                 "description": "YES - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
                 "criteria": {
                   "description": "Other HCP",
+                  "name": "shortothTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -810,6 +823,7 @@
                 "description": "NO - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
                 "criteria": {
                   "description": "Other HCP",
+                  "name": "shortothFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -886,6 +900,7 @@
                 "description": "YES - Advanced practice nurses, physician assistants",
                 "criteria": {
                   "description": "Other licensed independent practitioners",
+                  "name": "shortothlicTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -903,6 +918,7 @@
                 "description": "NO - Advanced practice nurses, physician assistants",
                 "criteria": {
                   "description": "Other licensed independent practitioners",
+                  "name": "shortothlicFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1036,6 +1052,7 @@
                 "description": "YES - Front-line persons who clean patient rooms and all areas in a healthcare facility",
                 "criteria": {
                   "description": "Environmental services",
+                  "name": "posshortenvsvcTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1053,6 +1070,7 @@
                 "description": "NO - Front-line persons who clean patient rooms and all areas in a healthcare facility",
                 "criteria": {
                   "description": "Environmental services",
+                  "name": "posshortenvsvcFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1129,6 +1147,7 @@
                 "description": "YES - Registered nurses and licensed practical nurses",
                 "criteria": {
                   "description": "Nurses",
+                  "name": "posshortnurseTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1146,6 +1165,7 @@
                 "description": "NO - Registered nurses and licensed practical nurses",
                 "criteria": {
                   "description": "Nurses",
+                  "name": "posshortnurseFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1222,6 +1242,7 @@
                 "description": "YES - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
                 "criteria": {
                   "description": "Respiratory therapists",
+                  "name": "posshortrtTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1239,6 +1260,7 @@
                 "description": "NO - Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
                 "criteria": {
                   "description": "Respiratory therapists",
+                  "name": "posshortrtFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1315,6 +1337,7 @@
                 "description": "YES - Pharmacists and pharmacy techs",
                 "criteria": {
                   "description": "Pharmacists and pharmacy techs",
+                  "name": "posshortpharTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1332,6 +1355,7 @@
                 "description": "NO - Pharmacists and pharmacy techs",
                 "criteria": {
                   "description": "Pharmacists and pharmacy techs",
+                  "name": "posshortpharFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1408,6 +1432,7 @@
                 "description": "YES - Attending physicians, fellows",
                 "criteria": {
                   "description": "Physicians",
+                  "name": "posshortphysTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1425,6 +1450,7 @@
                 "description": "NO - Attending physicians, fellows",
                 "criteria": {
                   "description": "Physicians",
+                  "name": "posshortphysFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1501,6 +1527,7 @@
                 "description": "YES - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
                 "criteria": {
                   "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+                  "name": "posshorttempTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1518,6 +1545,7 @@
                 "description": "NO - 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
                 "criteria": {
                   "description": "Temporary physicians, nurses, respiratory therapists, and pharmacists",
+                  "name": "posshorttempFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1594,6 +1622,7 @@
                 "description": "YES - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
                 "criteria": {
                   "description": "Other HCP",
+                  "name": "posshortothTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1611,6 +1640,7 @@
                 "description": "NO - Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.",
                 "criteria": {
                   "description": "Other HCP",
+                  "name": "posshortothFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }
@@ -1687,6 +1717,7 @@
                 "description": "YES - Advanced practice nurses, physician assistants",
                 "criteria": {
                   "description": "Other licensed independent practitioners",
+                  "name": "posshortothlicTrue",
                   "language": "text/plain",
                   "expression": "true"
                 }
@@ -1704,6 +1735,7 @@
                 "description": "NO - Advanced practice nurses, physician assistants",
                 "criteria": {
                   "description": "Other licensed independent practitioners",
+                  "name": "posshortothlicFalse",
                   "language": "text/plain",
                   "expression": "false"
                 }

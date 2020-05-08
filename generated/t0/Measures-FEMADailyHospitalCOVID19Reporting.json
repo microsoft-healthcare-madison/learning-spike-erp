@@ -11,7 +11,7 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:47:00.9209371-05:00",
+  "timestamp": "2020-05-08T12:52:26.4037518-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/FEMADailyHospitalCOVID19Reporting",
@@ -242,6 +242,7 @@
                 "description": "Midnight to midnight cutoff, tests ordered on previous date queried.",
                 "criteria": {
                   "description": "New Diagnostic Tests Ordered/Received",
+                  "name": "totalOrdersIncrease",
                   "language": "text/plain",
                   "expression": "Midnight to midnight cutoff, tests ordered on previous date queried."
                 }
@@ -264,6 +265,7 @@
                 "description": "Midnight to midnight cutoff, test results released on previous date queried.",
                 "criteria": {
                   "description": "New Tests Resulted",
+                  "name": "totalTestResultsIncrease",
                   "language": "text/plain",
                   "expression": "Midnight to midnight cutoff, test results released on previous date queried."
                 }
@@ -286,6 +288,7 @@
                 "description": "Midnight to midnight cutoff, positive test results released on the previous date queried.",
                 "criteria": {
                   "description": "New Positive COVID-19 Tests",
+                  "name": "positiveIncrease",
                   "language": "text/plain",
                   "expression": "Midnight to midnight cutoff, positive test results released on the previous date queried."
                 }
@@ -386,6 +389,7 @@
                 "description": "All tests ordered to date.",
                 "criteria": {
                   "description": "Cumulative Diagnostic Tests Ordered/Received",
+                  "name": "totalOrders",
                   "language": "text/plain",
                   "expression": "All tests ordered to date."
                 }
@@ -408,6 +412,7 @@
                 "description": "All tests with results released to date.",
                 "criteria": {
                   "description": "Cumulative Tests Performed",
+                  "name": "totalTestResults",
                   "language": "text/plain",
                   "expression": "All tests with results released to date."
                 }
@@ -430,6 +435,7 @@
                 "description": "All positive test results released to date.",
                 "criteria": {
                   "description": "Cumulative Positive COVID-19 Tests",
+                  "name": "positive",
                   "language": "text/plain",
                   "expression": "All positive test results released to date."
                 }
@@ -452,6 +458,7 @@
                 "description": "All specimens rejected for testing to date.",
                 "criteria": {
                   "description": "Cumulative Specimens Rejected",
+                  "name": "rejected",
                   "language": "text/plain",
                   "expression": "All specimens rejected for testing to date."
                 }

@@ -11,7 +11,7 @@
     "value": "FHIR-4"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T12:47:01.8952835-05:00",
+  "timestamp": "2020-05-08T12:52:27.4249441-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/CDCHealthcareSupplyPathway",
@@ -254,6 +254,7 @@
                 "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
                 "criteria": {
                   "description": "Ventilator supplies (any, including tubing)",
+                  "name": "ventsupply",
                   "language": "text/plain",
                   "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 }
@@ -272,6 +273,7 @@
                 "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
                 "criteria": {
                   "description": "Ventilator supplies (any, including tubing)",
+                  "name": "ventreuse",
                   "language": "text/plain",
                   "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 }
@@ -290,6 +292,7 @@
                 "description": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc",
                 "criteria": {
                   "description": "Ventilator supplies (any, including tubing)",
+                  "name": "ventobtain",
                   "language": "text/plain",
                   "expression": "any supplies, including flow sensors, tubing, connectors, valves, filters, etc"
                 }
@@ -367,6 +370,7 @@
                 "description": "N95 masks",
                 "criteria": {
                   "description": "N95 masks",
+                  "name": "n95masksupply",
                   "language": "text/plain",
                   "expression": "N95 masks"
                 }
@@ -384,6 +388,7 @@
                 "description": "N95 masks",
                 "criteria": {
                   "description": "N95 masks",
+                  "name": "n95maskreuse",
                   "language": "text/plain",
                   "expression": "N95 masks"
                 }
@@ -401,6 +406,7 @@
                 "description": "N95 masks",
                 "criteria": {
                   "description": "N95 masks",
+                  "name": "n95maskobtain",
                   "language": "text/plain",
                   "expression": "N95 masks"
                 }
@@ -479,6 +485,7 @@
                 "description": "Other respirators such as PAPRs or elastomerics",
                 "criteria": {
                   "description": "Other respirators including PAPRs",
+                  "name": "othrespsupply",
                   "language": "text/plain",
                   "expression": "Other respirators such as PAPRs or elastomerics"
                 }
@@ -497,6 +504,7 @@
                 "description": "Other respirators such as PAPRs or elastomerics",
                 "criteria": {
                   "description": "Other respirators including PAPRs",
+                  "name": "othrespreuse",
                   "language": "text/plain",
                   "expression": "Other respirators such as PAPRs or elastomerics"
                 }
@@ -515,6 +523,7 @@
                 "description": "Other respirators such as PAPRs or elastomerics",
                 "criteria": {
                   "description": "Other respirators including PAPRs",
+                  "name": "othrespobtain",
                   "language": "text/plain",
                   "expression": "Other respirators such as PAPRs or elastomerics"
                 }
@@ -592,6 +601,7 @@
                 "description": "Surgical masks",
                 "criteria": {
                   "description": "Surgical masks",
+                  "name": "surgmasksupply",
                   "language": "text/plain",
                   "expression": "Surgical masks"
                 }
@@ -609,6 +619,7 @@
                 "description": "Surgical masks",
                 "criteria": {
                   "description": "Surgical masks",
+                  "name": "surgmaskreuse",
                   "language": "text/plain",
                   "expression": "Surgical masks"
                 }
@@ -626,6 +637,7 @@
                 "description": "Surgical masks",
                 "criteria": {
                   "description": "Surgical masks",
+                  "name": "surgmaskobtain",
                   "language": "text/plain",
                   "expression": "Surgical masks"
                 }
@@ -703,6 +715,7 @@
                 "description": "Eye protection including face shields or goggles",
                 "criteria": {
                   "description": "Eye protection including face shields or goggles",
+                  "name": "shieldsupply",
                   "language": "text/plain",
                   "expression": "Eye protection including face shields or goggles"
                 }
@@ -720,6 +733,7 @@
                 "description": "Eye protection including face shields or goggles",
                 "criteria": {
                   "description": "Eye protection including face shields or goggles",
+                  "name": "shieldreuse",
                   "language": "text/plain",
                   "expression": "Eye protection including face shields or goggles"
                 }
@@ -737,6 +751,7 @@
                 "description": "Eye protection including face shields or goggles",
                 "criteria": {
                   "description": "Eye protection including face shields or goggles",
+                  "name": "shieldobtain",
                   "language": "text/plain",
                   "expression": "Eye protection including face shields or goggles"
                 }
@@ -814,6 +829,7 @@
                 "description": "Gowns (single use)",
                 "criteria": {
                   "description": "Gowns (single use)",
+                  "name": "gownsupply",
                   "language": "text/plain",
                   "expression": "Gowns (single use)"
                 }
@@ -831,6 +847,7 @@
                 "description": "Gowns (single use)",
                 "criteria": {
                   "description": "Gowns (single use)",
+                  "name": "gownreuse",
                   "language": "text/plain",
                   "expression": "Gowns (single use)"
                 }
@@ -848,6 +865,7 @@
                 "description": "Gowns (single use)",
                 "criteria": {
                   "description": "Gowns (single use)",
+                  "name": "gownobtain",
                   "language": "text/plain",
                   "expression": "Gowns (single use)"
                 }
@@ -925,6 +943,7 @@
                 "description": "Gloves",
                 "criteria": {
                   "description": "Gloves",
+                  "name": "glovesupply",
                   "language": "text/plain",
                   "expression": "Gloves"
                 }
@@ -942,6 +961,7 @@
                 "description": "Gloves",
                 "criteria": {
                   "description": "Gloves",
+                  "name": "glovereuse",
                   "language": "text/plain",
                   "expression": "Gloves"
                 }
@@ -959,6 +979,7 @@
                 "description": "Gloves",
                 "criteria": {
                   "description": "Gloves",
+                  "name": "gloveobtain",
                   "language": "text/plain",
                   "expression": "Gloves"
                 }
