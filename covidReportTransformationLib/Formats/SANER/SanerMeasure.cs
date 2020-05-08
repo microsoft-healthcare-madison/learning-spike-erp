@@ -67,7 +67,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 Description = new Markdown(format.Description),
                 Status = PublicationStatus.Draft,
                 Experimental = true,
-                Subject = new CodeableConcept("Location", "Location"),
+                Subject = FhirTriplet.ResourceLocation.GetConcept(),
                 Date = PublicationDate,
                 Publisher = Publisher,
                 Jurisdiction = new List<CodeableConcept>()
@@ -124,14 +124,18 @@ namespace covidReportTransformationLib.Formats.SANER
             return measure;
         }
 
+        /// <summary>Group component from flat.</summary>
+        /// <param name="grouping">The grouping.</param>
+        /// <param name="format">  Describes the format to use.</param>
+        /// <returns>A Measure.GroupComponent.</returns>
         private static Measure.GroupComponent GroupComponentFromFlat(
             MeasureGrouping grouping,
             IReportingFormat format)
         {
             FormatField field = format.Fields[grouping.FieldName];
 
-            string title = field.Title ?? field.Name;
-            string description = field.Description ?? title;
+            string title = string.IsNullOrEmpty(field.Title) ? field.Name : field.Title;
+            string description = string.IsNullOrEmpty(field.Description) ? title : field.Description;
 
             Measure.GroupComponent groupComponent = new Measure.GroupComponent()
             {
@@ -209,12 +213,12 @@ namespace covidReportTransformationLib.Formats.SANER
                             FhirSystems.SanerPopulation,
                             popField.Name,
                             popField.Title).GetConcept(popField.Description),
-                        Description = field.Description ?? field.Title,
+                        Description = string.IsNullOrEmpty(field.Description) ? field.Title : field.Description,
                         Criteria = new Expression()
                         {
                             Description = popField.Title,
                             Language = "text/plain",
-                            Expression_ = popField.Description ?? field.Title,
+                            Expression_ = string.IsNullOrEmpty(popField.Description) ? field.Title : popField.Description,
                         },
                     };
 
@@ -228,6 +232,8 @@ namespace covidReportTransformationLib.Formats.SANER
             }
             else if (field.Type == FormatField.FieldType.Boolean)
             {
+                string desc = string.IsNullOrEmpty(field.Description) ? field.Title : field.Description;
+
                 groupComponent.Population = new List<Measure.PopulationComponent>();
 
                 Measure.PopulationComponent trueComponent = new Measure.PopulationComponent()
@@ -236,7 +242,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         FhirSystems.SanerAggregateBool,
                         "true",
                         "Count of 'Yes' or 'True' responses for this field").GetConcept(),
-                    Description = $"YES - {field.Description ?? field.Title}",
+                    Description = $"YES - {desc}",
                     Criteria = new Expression()
                     {
                         Description = field.Title,
@@ -251,7 +257,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         FhirSystems.SanerAggregateBool,
                         "false",
                         "Count of 'No' or 'False' responses for this field").GetConcept(),
-                    Description = $"NO - {field.Description ?? field.Title}",
+                    Description = $"NO - {desc}",
                     Criteria = new Expression()
                     {
                         Description = field.Title,
@@ -299,9 +305,21 @@ namespace covidReportTransformationLib.Formats.SANER
             MeasureGrouping grouping,
             IReportingFormat format)
         {
+            string description = grouping.CodeText;
+
+            if (string.IsNullOrEmpty(description))
+            {
+                if (format.Fields.ContainsKey(grouping.FieldName))
+                {
+                    description = string.IsNullOrEmpty(format.Fields[grouping.FieldName].Description)
+                        ? format.Fields[grouping.FieldName].Title
+                        : format.Fields[grouping.FieldName].Description;
+                }
+            }
+
             Measure.GroupComponent groupComponent = new Measure.GroupComponent()
             {
-                Code = grouping.CodeCoding.GetConcept(grouping.CodeText),
+                Code = grouping.CodeCoding.GetConcept(description),
             };
 
             if ((grouping.GroupAttributes != null) && (grouping.GroupAttributes.Count > 0))
