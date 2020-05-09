@@ -218,7 +218,7 @@ namespace covidReportTransformationLib.Formats.FEMA
         {
             new MeasureGrouping(
                 new FhirTriplet(
-                    FhirSystems.SanerPopulation,
+                    FhirSystems.SanerGroup,
                     PercentC19PositiveToday,
                     "Percent Positive among Newly Resulted Tests"),
                 "# of new positive test results released / # of total new tests released for previous date queried",
@@ -231,7 +231,7 @@ namespace covidReportTransformationLib.Formats.FEMA
                 }),
             new MeasureGrouping(
                 new FhirTriplet(
-                    FhirSystems.SanerPopulation,
+                    FhirSystems.SanerGroup,
                     PercentC19PositiveTotal,
                     "Cumulative Percent Positive among Newly Resulted Tests"),
                 "# of total positive results to released date / # of total tests results released to date",

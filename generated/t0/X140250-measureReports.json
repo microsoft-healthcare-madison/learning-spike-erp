@@ -11,7 +11,7 @@
     "value": "FHIR-190"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T16:13:03.7976627-05:00",
+  "timestamp": "2020-05-09T15:25:54.8668381-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-191",
@@ -36,21 +36,21 @@
         "subject": {
           "reference": "Location/Loc-X140250"
         },
-        "date": "2020-05-05T00:00:00-05:00",
+        "date": "2020-05-06T00:00:00-05:00",
         "reporter": {
           "reference": "Organization/X140250",
           "display": "ST LEIBOWITZ HOSPITAL"
         },
         "period": {
-          "start": "2020-05-05",
-          "end": "2020-05-05"
+          "start": "2020-05-06",
+          "end": "2020-05-06"
         },
         "group": [
           {
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "positiveIncreasePercent",
                   "display": "Percent Positive among Newly Resulted Tests"
                 }
@@ -119,7 +119,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "positivePercent",
                   "display": "Cumulative Percent Positive among Newly Resulted Tests"
                 }
@@ -210,14 +210,14 @@
         "subject": {
           "reference": "Location/Loc-X140250"
         },
-        "date": "2020-05-05T00:00:00-05:00",
+        "date": "2020-05-06T00:00:00-05:00",
         "reporter": {
           "reference": "Organization/X140250",
           "display": "ST LEIBOWITZ HOSPITAL"
         },
         "period": {
-          "start": "2020-05-05",
-          "end": "2020-05-05"
+          "start": "2020-05-06",
+          "end": "2020-05-06"
         },
         "group": [
           {

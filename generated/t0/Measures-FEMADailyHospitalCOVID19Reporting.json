@@ -11,7 +11,7 @@
     "value": "FHIR-2"
   },
   "type": "collection",
-  "timestamp": "2020-05-08T16:12:47.4966693-05:00",
+  "timestamp": "2020-05-09T15:25:53.2086103-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Measure/FEMADailyHospitalCOVID19Reporting",
@@ -215,7 +215,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "positiveIncreasePercent",
                   "display": "Percent Positive among Newly Resulted Tests"
                 }
@@ -362,7 +362,7 @@
             "code": {
               "coding": [
                 {
-                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
                   "code": "positivePercent",
                   "display": "Cumulative Percent Positive among Newly Resulted Tests"
                 }
