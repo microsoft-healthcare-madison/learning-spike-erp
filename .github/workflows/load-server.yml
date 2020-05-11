@@ -19,12 +19,12 @@ jobs:
   load-azure:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
-    - name: Set up python 3.7.6
-      uses: actions/setup-python@v1
+    - name: Set up python 3.7.x
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.7.6
+        python-version: 3.7.x
 
     - name: Install requirements.txt
       run: |
@@ -40,12 +40,12 @@ jobs:
   load-azure-sql:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
-    - name: Set up python 3.7.6
-      uses: actions/setup-python@v1
+    - name: Set up python 3.7.x
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.7.6
+        python-version: 3.7.x
 
     - name: Install requirements.txt
       run: |
@@ -61,12 +61,12 @@ jobs:
   load-hapi:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
-    - name: Set up python 3.7.6
-      uses: actions/setup-python@v1
+    - name: Set up python 3.7.x
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.7.6
+        python-version: 3.7.x
 
     - name: Install requirements.txt
       run: |
@@ -82,12 +82,12 @@ jobs:
   load-ai:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
-    - name: Set up python 3.7.6
-      uses: actions/setup-python@v1
+    - name: Set up python 3.7.x
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.7.6
+        python-version: 3.7.x
 
     - name: Install requirements.txt
       run: |
