@@ -436,16 +436,16 @@ namespace covidReportTransformationLib.Formats.CDC
                 "COVID-19 Module: Healthcare Worker Staffing Pathway",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(FacilityId),
-                    new QuestionnaireQuestion(SummaryCensusId),
-                    new QuestionnaireQuestion(CollectionDate),
+                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 Information,
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(GroupToday),
-                    new QuestionnaireQuestion(GroupThisWeek),
+                    new QuestionnaireQuestion(GroupToday, null),
+                    new QuestionnaireQuestion(GroupThisWeek, null),
                 }),
             new QuestionnaireSection(
                 EnvironmentalServiceShortageToday,
@@ -454,11 +454,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         EnvironmentalServiceShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         EnvironmentalServiceShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 NurseShortageToday,
@@ -467,11 +469,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         NurseShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         NurseShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 RTShortageToday,
@@ -480,11 +484,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         RTShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         RTShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 PharmShortageToday,
@@ -493,11 +499,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         PharmShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         PharmShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 PhysicianShortageToday,
@@ -506,11 +514,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         PhysicianShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         PhysicianShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 TempShortageToday,
@@ -519,11 +529,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         TempShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         TempShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 OtherLicensedShortageToday,
@@ -532,11 +544,13 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         OtherLicensedShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         OtherLicensedShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 OtherShortageToday,
@@ -545,17 +559,21 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         OtherShortageToday,
                         true,
-                        GroupToday),
+                        GroupToday,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         HCPShortageToday,
-                        true),
+                        true,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         OtherShortageWeek,
                         true,
-                        GroupThisWeek),
+                        GroupThisWeek,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         HCPShortageWeek,
-                        true),
+                        true,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
         };
 

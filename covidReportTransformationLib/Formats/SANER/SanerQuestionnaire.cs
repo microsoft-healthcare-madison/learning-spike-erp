@@ -184,13 +184,17 @@ namespace covidReportTransformationLib.Formats.SANER
             Questionnaire.ItemComponent component = new Questionnaire.ItemComponent()
             {
                 LinkId = valueField.Name,
-                Code = new List<Coding>()
-                {
-                    new Coding($"{CanonicalUrl}/{format.Name}", valueField.Name),
-                },
                 Required = valueField.IsRequired == true,
                 Repeats = false,
             };
+
+            if (!string.IsNullOrEmpty(question.FieldSystem))
+            {
+                component.Code = new List<Coding>()
+                {
+                    new Coding(question.FieldSystem, valueField.Name),
+                };
+            }
 
             component.AddExtension(
                 "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",

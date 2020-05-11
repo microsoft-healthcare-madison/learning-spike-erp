@@ -18,25 +18,30 @@ namespace covidReportTransformationLib.Formats
         /// <param name="valueFieldName">  The name of the value field.</param>
         /// <param name="useTitleOnly">    True if use title only, false if not.</param>
         /// <param name="displayFieldName">The name of the display field.</param>
+        /// <param name="fieldSystem">     The field system.</param>
         public QuestionnaireQuestion(
             string valueFieldName,
             bool useTitleOnly,
-            string displayFieldName)
+            string displayFieldName,
+            string fieldSystem)
         {
             ValueFieldName = valueFieldName;
             UseTitleOnly = useTitleOnly;
             DisplayFieldName = displayFieldName;
+            FieldSystem = fieldSystem;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="QuestionnaireQuestion"/>
         /// class.
         /// </summary>
-        /// <param name="fieldName">Name of the field.</param>
-        public QuestionnaireQuestion(string fieldName)
+        /// <param name="fieldName">  Name of the field.</param>
+        /// <param name="fieldSystem">The field system.</param>
+        public QuestionnaireQuestion(string fieldName, string fieldSystem)
         {
             ValueFieldName = fieldName;
             UseTitleOnly = false;
+            FieldSystem = fieldSystem;
         }
 
         /// <summary>
@@ -45,10 +50,12 @@ namespace covidReportTransformationLib.Formats
         /// </summary>
         /// <param name="fieldName">   Name of the field.</param>
         /// <param name="useTitleOnly">True if use title only, false if not.</param>
-        public QuestionnaireQuestion(string fieldName, bool useTitleOnly)
+        /// <param name="fieldSystem"> The field system.</param>
+        public QuestionnaireQuestion(string fieldName, bool useTitleOnly, string fieldSystem)
         {
             ValueFieldName = fieldName;
             UseTitleOnly = useTitleOnly;
+            FieldSystem = fieldSystem;
         }
 
         /// <summary>Gets the name of the value field.</summary>
@@ -62,5 +69,9 @@ namespace covidReportTransformationLib.Formats
         /// <summary>Gets the name of the display field.</summary>
         /// <value>The name of the display field.</value>
         public string DisplayFieldName { get; }
+
+        /// <summary>Gets the field system.</summary>
+        /// <value>The field system.</value>
+        public string FieldSystem { get; }
     }
 }

@@ -145,7 +145,7 @@ namespace covidReportTransformationLib.Formats.CDC
         private const string DescReuse = "Are you currently reusing the item or implementing extended use?";
 
         /// <summary>The description able to obtain.</summary>
-        private const string DescAbleToObtain = "Are you able to obtain this item? If you have placed an order but  are not able to have that order filled, please answer NO.";
+        private const string DescAbleToObtain = "Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.";
 
         /// <summary>The current.</summary>
         private static AcuteHealthcareSupply _current = new AcuteHealthcareSupply();
@@ -750,17 +750,17 @@ namespace covidReportTransformationLib.Formats.CDC
                 "COVID-19 Module: Healthcare Supply Pathway",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(FacilityId),
-                    new QuestionnaireQuestion(SummaryCensusId),
-                    new QuestionnaireQuestion(CollectionDate),
+                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 Information,
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(GroupOnHandSupply),
-                    new QuestionnaireQuestion(GroupReuseOrExtendedUse),
-                    new QuestionnaireQuestion(GroupAbleToObtain),
+                    new QuestionnaireQuestion(GroupOnHandSupply, null),
+                    new QuestionnaireQuestion(GroupReuseOrExtendedUse, null),
+                    new QuestionnaireQuestion(GroupAbleToObtain, null),
                 }),
             new QuestionnaireSection(
                 VentilatorBase,
@@ -769,15 +769,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         VentilatorSupply,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         VentilatorReuse,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         VentilatorObtain,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 N95MaskBase,
@@ -786,15 +789,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         N95MaskSupply,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         N95MaskReuse,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         N95MaskObtain,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 OtherRespBase,
@@ -803,15 +809,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         OtherRespSupply,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         OtherRespReuse,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         OtherRespObtain,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 SurgicalMaskBase,
@@ -820,15 +829,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         SurgicalMaskDesc,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         SurgicalMaskSupply,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         SurgicalMaskReuse,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 FaceShieldBase,
@@ -837,15 +849,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         FaceShieldSupply,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         FaceShieldReuse,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         FaceShieldObtain,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 GownBase,
@@ -854,15 +869,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         GownSupply,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         GownReuse,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         GownObtain,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 GloveBase,
@@ -871,15 +889,18 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(
                         GloveSupply,
                         true,
-                        GroupOnHandSupply),
+                        GroupOnHandSupply,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         GloveReuse,
                         true,
-                        GroupReuseOrExtendedUse),
+                        GroupReuseOrExtendedUse,
+                        FhirSystems.SanerQuestionnaireCDC),
                     new QuestionnaireQuestion(
                         GloveObtain,
                         true,
-                        GroupAbleToObtain),
+                        GroupAbleToObtain,
+                        FhirSystems.SanerQuestionnaireCDC),
                 }),
         };
 

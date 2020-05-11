@@ -11,7 +11,7 @@
     "value": "FHIR-7"
   },
   "type": "collection",
-  "timestamp": "2020-05-09T15:25:54.1942782-05:00",
+  "timestamp": "2020-05-11T11:52:19.4599398-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCHealthcareWorkerStaffingPathway",
@@ -82,7 +82,7 @@
                 "linkId": "facilityId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "facilityId"
                   }
                 ],
@@ -101,7 +101,7 @@
                 "linkId": "summaryCensusId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "summaryCensusId"
                   }
                 ],
@@ -120,7 +120,7 @@
                 "linkId": "collectiondate",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "collectiondate"
                   }
                 ],
@@ -151,12 +151,6 @@
                   }
                 ],
                 "linkId": "groupToday",
-                "code": [
-                  {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
-                    "code": "groupToday"
-                  }
-                ],
                 "text": "Critical Staffing Shortage Today: Does your organization consider that it has a critical staffing shortage in this group today?",
                 "type": "display",
                 "required": true,
@@ -170,12 +164,6 @@
                   }
                 ],
                 "linkId": "groupThisWeek",
-                "code": [
-                  {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
-                    "code": "groupThisWeek"
-                  }
-                ],
                 "text": "Critical Staffing Shortage Within a Week: Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
                 "type": "display",
                 "required": true,
@@ -205,7 +193,7 @@
                 "linkId": "shortenvsvc",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortenvsvc"
                   }
                 ],
@@ -224,7 +212,7 @@
                 "linkId": "posshortenvsvc",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortenvsvc"
                   }
                 ],
@@ -257,7 +245,7 @@
                 "linkId": "shortnurse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortnurse"
                   }
                 ],
@@ -276,7 +264,7 @@
                 "linkId": "posshortnurse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortnurse"
                   }
                 ],
@@ -309,7 +297,7 @@
                 "linkId": "shortrt",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortrt"
                   }
                 ],
@@ -328,7 +316,7 @@
                 "linkId": "posshortrt",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortrt"
                   }
                 ],
@@ -361,7 +349,7 @@
                 "linkId": "shortphar",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortphar"
                   }
                 ],
@@ -380,7 +368,7 @@
                 "linkId": "posshortphar",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortphar"
                   }
                 ],
@@ -413,7 +401,7 @@
                 "linkId": "shortphys",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortphys"
                   }
                 ],
@@ -432,7 +420,7 @@
                 "linkId": "posshortphys",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortphys"
                   }
                 ],
@@ -465,7 +453,7 @@
                 "linkId": "shorttemp",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shorttemp"
                   }
                 ],
@@ -484,7 +472,7 @@
                 "linkId": "posshorttemp",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshorttemp"
                   }
                 ],
@@ -517,7 +505,7 @@
                 "linkId": "shortothlic",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortothlic"
                   }
                 ],
@@ -536,7 +524,7 @@
                 "linkId": "posshortothlic",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortothlic"
                   }
                 ],
@@ -569,7 +557,7 @@
                 "linkId": "shortoth",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortoth"
                   }
                 ],
@@ -588,7 +576,7 @@
                 "linkId": "shortothsfy",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shortothsfy"
                   }
                 ],
@@ -607,7 +595,7 @@
                 "linkId": "posshortoth",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortoth"
                   }
                 ],
@@ -626,7 +614,7 @@
                 "linkId": "posshortothsfy",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareWorkerStaffingPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "posshortothsfy"
                   }
                 ],

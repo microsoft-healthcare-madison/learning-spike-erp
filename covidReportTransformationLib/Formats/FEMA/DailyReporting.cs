@@ -267,16 +267,16 @@ namespace covidReportTransformationLib.Formats.FEMA
                 "Daily Hospital COVID-19 Reporting",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(CollectionDate),
-                    new QuestionnaireQuestion(State),
-                    new QuestionnaireQuestion(County),
-                    new QuestionnaireQuestion(TestsOrderedToday),
-                    new QuestionnaireQuestion(TestsOrderedTotal),
-                    new QuestionnaireQuestion(TestsWithResultsToday),
-                    new QuestionnaireQuestion(SpecimensRejectedTotal),
-                    new QuestionnaireQuestion(TestsCompletedTotal),
-                    new QuestionnaireQuestion(PositiveC19Today),
-                    new QuestionnaireQuestion(PositiveC19Total),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(State, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(County, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(TestsOrderedToday, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(TestsOrderedTotal, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(TestsWithResultsToday, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(SpecimensRejectedTotal, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(TestsCompletedTotal, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(PositiveC19Today, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(PositiveC19Total, FhirSystems.SanerQuestionnaireFEMA),
                 }),
         };
 

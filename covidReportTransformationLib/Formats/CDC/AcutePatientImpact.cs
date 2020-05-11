@@ -362,32 +362,32 @@ namespace covidReportTransformationLib.Formats.CDC
                 "COVID-19 Module: Patient Impact and Hospital Capacity Pathway",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(FacilityId),
-                    new QuestionnaireQuestion(SummaryCensusId),
-                    new QuestionnaireQuestion(CollectionDate),
+                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 "Patient Impact Data Elements",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(HospitalizedPatients),
-                    new QuestionnaireQuestion(VentilatedPatients),
-                    new QuestionnaireQuestion(HospitalOnset),
-                    new QuestionnaireQuestion(AwaitingBeds),
-                    new QuestionnaireQuestion(AwaitingVentilators),
-                    new QuestionnaireQuestion(Died),
+                    new QuestionnaireQuestion(HospitalizedPatients, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(VentilatedPatients, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(HospitalOnset, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(AwaitingBeds, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(AwaitingVentilators, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(Died, FhirSystems.SanerQuestionnaireCDC),
                 }),
             new QuestionnaireSection(
                 "Hospital Bed/ Intensive Care Unit (ICU)/ Ventilator Capacity Data Elements",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(TotalBeds),
-                    new QuestionnaireQuestion(InpatientBeds),
-                    new QuestionnaireQuestion(InpatientBedOccupancy),
-                    new QuestionnaireQuestion(IcuBeds),
-                    new QuestionnaireQuestion(IcuBedOccupancy),
-                    new QuestionnaireQuestion(Ventilators),
-                    new QuestionnaireQuestion(VentilatorsInUse),
+                    new QuestionnaireQuestion(TotalBeds, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(InpatientBeds, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(InpatientBedOccupancy, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(IcuBeds, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(IcuBedOccupancy, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(Ventilators, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(VentilatorsInUse, FhirSystems.SanerQuestionnaireCDC),
                 }),
         };
 

@@ -11,7 +11,7 @@
     "value": "FHIR-5"
   },
   "type": "collection",
-  "timestamp": "2020-05-09T15:25:54.1552643-05:00",
+  "timestamp": "2020-05-11T11:52:19.4127375-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCHealthcareSupplyPathway",
@@ -82,7 +82,7 @@
                 "linkId": "facilityId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "facilityId"
                   }
                 ],
@@ -101,7 +101,7 @@
                 "linkId": "summaryCensusId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "summaryCensusId"
                   }
                 ],
@@ -120,7 +120,7 @@
                 "linkId": "collectiondate",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "collectiondate"
                   }
                 ],
@@ -151,12 +151,6 @@
                   }
                 ],
                 "linkId": "onHandSupply",
-                "code": [
-                  {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
-                    "code": "onHandSupply"
-                  }
-                ],
                 "text": "On-hand Supply: Please answer based on your organization’s best estimation for the supply of this item.",
                 "type": "choice",
                 "required": true,
@@ -232,12 +226,6 @@
                   }
                 ],
                 "linkId": "reuseOrExtendedUse",
-                "code": [
-                  {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
-                    "code": "reuseOrExtendedUse"
-                  }
-                ],
                 "text": "Reusing or Extending Use: Are you currently reusing the item or implementing extended use?",
                 "type": "display",
                 "required": true,
@@ -251,13 +239,7 @@
                   }
                 ],
                 "linkId": "ableToObtain",
-                "code": [
-                  {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
-                    "code": "ableToObtain"
-                  }
-                ],
-                "text": "Able to Obtain: Are you able to obtain this item? If you have placed an order but  are not able to have that order filled, please answer NO.",
+                "text": "Able to Obtain: Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.",
                 "type": "display",
                 "required": true,
                 "repeats": false
@@ -286,7 +268,7 @@
                 "linkId": "ventsupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "ventsupply"
                   }
                 ],
@@ -367,7 +349,7 @@
                 "linkId": "ventreuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "ventreuse"
                   }
                 ],
@@ -386,7 +368,7 @@
                 "linkId": "ventobtain",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "ventobtain"
                   }
                 ],
@@ -419,7 +401,7 @@
                 "linkId": "n95masksupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "n95masksupply"
                   }
                 ],
@@ -500,7 +482,7 @@
                 "linkId": "n95maskreuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "n95maskreuse"
                   }
                 ],
@@ -519,7 +501,7 @@
                 "linkId": "n95maskobtain",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "n95maskobtain"
                   }
                 ],
@@ -552,7 +534,7 @@
                 "linkId": "othrespsupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "othrespsupply"
                   }
                 ],
@@ -633,7 +615,7 @@
                 "linkId": "othrespreuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "othrespreuse"
                   }
                 ],
@@ -652,7 +634,7 @@
                 "linkId": "othrespobtain",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "othrespobtain"
                   }
                 ],
@@ -685,7 +667,7 @@
                 "linkId": "surgmasksupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "surgmasksupply"
                   }
                 ],
@@ -766,7 +748,7 @@
                 "linkId": "surgmaskreuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "surgmaskreuse"
                   }
                 ],
@@ -799,7 +781,7 @@
                 "linkId": "shieldsupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shieldsupply"
                   }
                 ],
@@ -880,7 +862,7 @@
                 "linkId": "shieldreuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shieldreuse"
                   }
                 ],
@@ -899,7 +881,7 @@
                 "linkId": "shieldobtain",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "shieldobtain"
                   }
                 ],
@@ -932,7 +914,7 @@
                 "linkId": "gownsupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "gownsupply"
                   }
                 ],
@@ -1013,7 +995,7 @@
                 "linkId": "gownreuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "gownreuse"
                   }
                 ],
@@ -1032,7 +1014,7 @@
                 "linkId": "gownobtain",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "gownobtain"
                   }
                 ],
@@ -1065,7 +1047,7 @@
                 "linkId": "glovesupply",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "glovesupply"
                   }
                 ],
@@ -1146,7 +1128,7 @@
                 "linkId": "glovereuse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "glovereuse"
                   }
                 ],
@@ -1165,7 +1147,7 @@
                 "linkId": "gloveobtain",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CDCHealthcareSupplyPathway",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
                     "code": "gloveobtain"
                   }
                 ],
