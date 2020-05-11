@@ -53,6 +53,9 @@ namespace generator_cli
         private static FhirJsonSerializer _jsonSerializer = null;
         private static FhirXmlSerializer _xmlSerializer = null;
 
+        private static bool _outputBundles = true;
+        private static bool _outputFlat = false;
+
         private static string _extension = ".json";
 
         /// <summary>Main entry-point for this application.</summary>
@@ -84,6 +87,8 @@ namespace generator_cli
         /// <param name="icuToVentilatorRate"> Rate of people in ICU requiring ventilators.</param>
         /// <param name="recoveryRate">        Rate of people recovering during hospitalization.</param>
         /// <param name="deathRate">           Rate of people dying in hospitalization, when care is available.</param>
+        /// <param name="outputBundles">       True to output Bundles, false to output raw resources.</param>
+        /// <param name="outputFlat">          True to output into a single directory, false to nest.</param>
         public static void Main(
             string outputDirectory,
             string dataDirectory = null,
@@ -111,7 +116,9 @@ namespace generator_cli
             double patientToIcuRate = 0.30,
             double icuToVentilatorRate = 0.70,
             double recoveryRate = 0.1,
-            double deathRate = 0.05)
+            double deathRate = 0.05,
+            bool outputBundles = true,
+            bool outputFlat = false)
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -142,6 +149,8 @@ namespace generator_cli
             _noResourceRecoveryRate = recoveryRate * 0.1;
             _deathRate = deathRate;
             _noResourceDeathRate = Math.Min(deathRate * 10, 1.0);
+            _outputBundles = outputBundles;
+            _outputFlat = outputFlat;
 
             _useJson = outputFormat.ToUpperInvariant().Equals("JSON", StringComparison.Ordinal);
 
@@ -197,13 +206,16 @@ namespace generator_cli
             string dir;
 
             // create our time step directories
-            for (int step = 0; step < timeSteps; step++)
+            if (!_outputFlat)
             {
-                dir = Path.Combine(outputDirectory, $"t{step}");
-
-                if (!Directory.Exists(dir))
+                for (int step = 0; step < timeSteps; step++)
                 {
-                    Directory.CreateDirectory(dir);
+                    dir = Path.Combine(outputDirectory, $"t{step}");
+
+                    if (!Directory.Exists(dir))
+                    {
+                        Directory.CreateDirectory(dir);
+                    }
                 }
             }
 
@@ -223,7 +235,9 @@ namespace generator_cli
             int timePeriodHours)
         {
             // write meta-data (canonical resources) only in t0
-            string metaDir = Path.Combine(outputDirectory, "t0");
+            string dir = _outputFlat
+                ? outputDirectory
+                : Path.Combine(outputDirectory, "t0");
 
             List<IReportingFormat> formats = FormatHelper.GetFormatList();
 
@@ -235,7 +249,7 @@ namespace generator_cli
                 {
                     WriteBundle(
                         Path.Combine(
-                            metaDir,
+                            dir,
                             $"{_filenameBaseForMeasures}-{format.Name}{_extension}"),
                         measureBundle);
                 }
@@ -246,7 +260,7 @@ namespace generator_cli
                 {
                     WriteBundle(
                         Path.Combine(
-                            metaDir,
+                            dir,
                             $"{_filenameBaseForQuestionnaires}-{format.Name}{_extension}"),
                         questionnaireBundle);
                 }
@@ -257,7 +271,11 @@ namespace generator_cli
             {
                 Console.WriteLine($"Processing org: {orgId}");
 
-                WriteOrgBundle(orgId, Path.Combine(outputDirectory, "t0"));
+                dir = _outputFlat
+                    ? outputDirectory
+                    : Path.Combine(outputDirectory, "t0");
+
+                WriteOrgBundle(orgId, dir);
 
                 CreateAggregateData(
                     orgId,
@@ -269,7 +287,9 @@ namespace generator_cli
                 // loop over timeSteps
                 for (int step = 0; step < timeSteps; step++)
                 {
-                    string dir = Path.Combine(outputDirectory, $"t{step}");
+                    dir = _outputFlat
+                        ? outputDirectory
+                        : Path.Combine(outputDirectory, $"t{step}");
 
                     if (step != 0)
                     {
@@ -290,7 +310,8 @@ namespace generator_cli
                         deviceData,
                         patientData,
                         testData,
-                        workerData);
+                        workerData,
+                        step);
                 }
             }
         }
@@ -303,6 +324,7 @@ namespace generator_cli
         /// <param name="patientData">Information describing the patient.</param>
         /// <param name="testData">   Information describing the test.</param>
         /// <param name="workerData"> [out] Information describing the worker.</param>
+        /// <param name="step">       Amount to increment by.</param>
         private static void WriteOrgReportBundle(
             string orgId,
             string dir,
@@ -310,7 +332,8 @@ namespace generator_cli
             OrgDeviceData deviceData,
             OrgPatientData patientData,
             OrgTestData testData,
-            OrgWorkerData workerData)
+            OrgWorkerData workerData,
+            int step)
         {
             Dictionary<string, FieldValue> fields = OrgUtils.BuildFieldDict(
                 deviceData,
@@ -324,8 +347,12 @@ namespace generator_cli
                 _rootLocationByOrgId[orgId],
                 fields);
 
+            string filename = _outputFlat
+                ? Path.Combine(dir, $"{orgId}-{_filenameAdditionForMeasureReports}-{step:0000}{_extension}")
+                : Path.Combine(dir, $"{orgId}-{_filenameAdditionForMeasureReports}{_extension}");
+
             WriteBundle(
-                Path.Combine(dir, $"{orgId}-measureReports{_extension}"),
+                filename,
                 SanerMeasureReport.GetBundle(data, null));
         }
 
@@ -333,6 +360,7 @@ namespace generator_cli
         /// <param name="deviceData"> [in,out] Information describing the device.</param>
         /// <param name="patientData">[in,out] Information describing the patient.</param>
         /// <param name="testData">   [in,out] Information describing the test.</param>
+        /// <param name="workerData"> [out] Information describing the worker.</param>
         private static void UpdateAggregateDataForStep(
             ref OrgDeviceData deviceData,
             ref OrgPatientData patientData,
@@ -575,17 +603,85 @@ namespace generator_cli
         /// <param name="bundle">  The bundle.</param>
         private static void WriteBundle(string filename, Bundle bundle)
         {
-            if (_useJson)
+            if (_outputBundles)
             {
-                File.WriteAllText(
-                    filename,
-                    _jsonSerializer.SerializeToString(bundle));
+                if (_useJson)
+                {
+                    File.WriteAllText(
+                        filename,
+                        _jsonSerializer.SerializeToString(bundle));
+                }
+                else
+                {
+                    File.WriteAllText(
+                        filename,
+                        _xmlSerializer.SerializeToString(bundle));
+                }
+
+                return;
             }
-            else
+
+            if ((bundle.Entry == null) || (bundle.Entry.Count == 0))
             {
-                File.WriteAllText(
-                    filename,
-                    _xmlSerializer.SerializeToString(bundle));
+                return;
+            }
+
+            if (bundle.Entry.Count == 1)
+            {
+                if (_useJson)
+                {
+                    File.WriteAllText(
+                        filename,
+                        _jsonSerializer.SerializeToString(bundle.Entry[0].Resource));
+                }
+                else
+                {
+                    File.WriteAllText(
+                        filename,
+                        _xmlSerializer.SerializeToString(bundle.Entry[0].Resource));
+                }
+
+                return;
+            }
+
+            Dictionary<string, int> writtenResources = new Dictionary<string, int>();
+
+            foreach (Bundle.EntryComponent entry in bundle.Entry)
+            {
+                if (entry.Resource == null)
+                {
+                    continue;
+                }
+
+                string resType = entry.Resource.ResourceType.ToString();
+
+                if (!writtenResources.ContainsKey(resType))
+                {
+                    writtenResources.Add(resType, 0);
+                }
+
+                int count = writtenResources[resType];
+
+                string name = Path.GetFileNameWithoutExtension(filename);
+                string updatedName = (count == 0)
+                    ? $"{name}-{resType}"
+                    : $"{name}-{resType}-{count:0000}";
+                filename = filename.Replace(name, updatedName, StringComparison.Ordinal);
+
+                if (_useJson)
+                {
+                    File.WriteAllText(
+                        filename,
+                        _jsonSerializer.SerializeToString(entry.Resource));
+                }
+                else
+                {
+                    File.WriteAllText(
+                        filename,
+                        _xmlSerializer.SerializeToString(entry.Resource));
+                }
+
+                writtenResources[resType] = ++count;
             }
         }
     }

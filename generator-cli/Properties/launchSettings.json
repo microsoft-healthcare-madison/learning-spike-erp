@@ -7,6 +7,10 @@
     "large-export": {
       "commandName": "Project",
       "commandLineArgs": "--output-directory e:\\fhir-json --seed 100 --output-format JSON --facility-count 500 --time-steps 100"
+    },
+    "saner": {
+      "commandName": "Project",
+      "commandLineArgs": "--output-directory C:\\git\\fhir-saner\\fsh\\ig-data\\input\\examples --seed 100 --output-format JSON --facility-count 55 --org-source connectathon --time-steps 3 --output-bundles false --output-flat true"
     }
   }
 }
