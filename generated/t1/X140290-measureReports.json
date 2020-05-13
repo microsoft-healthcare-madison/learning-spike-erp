@@ -11,7 +11,7 @@
     "value": "FHIR-67"
   },
   "type": "collection",
-  "timestamp": "2020-05-13T14:04:59.3049675-05:00",
+  "timestamp": "2020-05-13T14:11:31.9473287-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-68",
@@ -34,6 +34,12 @@
         "type": "summary",
         "measure": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
         "subject": {
+          "extension": [
+            {
+              "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/locations",
+              "valueString": "X140290"
+            }
+          ],
           "reference": "Location/Loc-X140290"
         },
         "date": "2020-05-11T00:00:00-05:00",
@@ -208,6 +214,12 @@
         "type": "summary",
         "measure": "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
         "subject": {
+          "extension": [
+            {
+              "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/locations",
+              "valueString": "X140290"
+            }
+          ],
           "reference": "Location/Loc-X140290"
         },
         "date": "2020-05-11T00:00:00-05:00",

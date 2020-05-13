@@ -173,6 +173,13 @@ namespace covidReportTransformationLib.Formats.SANER
                     $"Location/{data.CoveredLocation.Id}",
                     data.CoveredLocation.Name);
 
+                if (data.CoveredOrganization != null)
+                {
+                    report.Subject.AddExtension(
+                        "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/connectathon/locations",
+                        new FhirString(data.CoveredOrganization.Id));
+                }
+
 #if false // 2020.05.05 - figure out if we still want contained
                 data.CoveredLocation.ToFhir(
                     out ResourceReference resourceReference,
