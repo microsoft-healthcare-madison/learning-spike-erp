@@ -81,7 +81,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 },
                 Id = format.Name,
                 Name = format.Name,
-                Url = $"{CanonicalUrl}/{format.Name}",
+                Url = $"{CanonicalUrl}/Questionnaire/{format.Name}",
                 Version = QuestionnaireVersion,
                 Title = format.Title,
                 Description = new Markdown(format.Description),
