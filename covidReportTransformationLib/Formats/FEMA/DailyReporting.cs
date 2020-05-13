@@ -267,16 +267,16 @@ namespace covidReportTransformationLib.Formats.FEMA
                 "Daily Hospital COVID-19 Reporting",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(State, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(County, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(TestsOrderedToday, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(TestsOrderedTotal, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(TestsWithResultsToday, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(SpecimensRejectedTotal, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(TestsCompletedTotal, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(PositiveC19Today, FhirSystems.SanerQuestionnaireFEMA),
-                    new QuestionnaireQuestion(PositiveC19Total, FhirSystems.SanerQuestionnaireFEMA),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(State, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(County, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(TestsOrderedToday, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(TestsOrderedTotal, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(TestsWithResultsToday, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(SpecimensRejectedTotal, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(TestsCompletedTotal, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(PositiveC19Today, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(PositiveC19Total, FhirSystems.SanerPopulation),
                 }),
         };
 

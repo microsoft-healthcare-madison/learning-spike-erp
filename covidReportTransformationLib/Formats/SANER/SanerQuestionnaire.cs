@@ -119,9 +119,11 @@ namespace covidReportTransformationLib.Formats.SANER
                     Repeats = false,
                 };
 
+#if false   // 2020.05.13 - Argonaut extensions aren't valid in R4 yet
                 section.AddExtension(
                     "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
                     new FhirDecimal(sectionNumber));
+#endif
 
                 if (format.Fields.ContainsKey(questionnaireSection.Title))
                 {
@@ -196,9 +198,11 @@ namespace covidReportTransformationLib.Formats.SANER
                 };
             }
 
+#if false   // 2020.05.13 - Argonaut extensions aren't valid in R4 yet
             component.AddExtension(
                 "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
                 new FhirDecimal(itemOrder++));
+#endif
 
             if (question.UseTitleOnly)
             {
@@ -208,6 +212,8 @@ namespace covidReportTransformationLib.Formats.SANER
             {
                 component.Text = $"{displayField.Title}: {displayField.Description}";
             }
+
+            int optionOrder = 0;
 
             switch (valueField.Type)
             {
@@ -231,19 +237,42 @@ namespace covidReportTransformationLib.Formats.SANER
                     component.Type = Questionnaire.QuestionnaireItemType.Choice;
                     component.AnswerOption = new List<Questionnaire.AnswerOptionComponent>();
 
-                    int optionOrder = 0;
+                    component.AddExtension(
+                        "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
+                        new FhirBoolean(true),
+                        true);
+
                     foreach (FormatFieldOption option in valueField.Options)
                     {
                         Element element = new FhirString(option.Text);
 
-                        element.AddExtension(
-                            "http://hl7.org/fhir/StructureDefinition/questionnaire-optionExclusive",
-                            new FhirBoolean(option.IsExclusive),
-                            true);
-
+#if false   // 2020.05.13 - Argonaut extensions aren't valid in R4 yet
                         element.AddExtension(
                             "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
                             new FhirDecimal(optionOrder++));
+#endif
+
+                        component.AnswerOption.Add(new Questionnaire.AnswerOptionComponent()
+                        {
+                            Value = element,
+                        });
+                    }
+
+                    break;
+
+                case FormatField.FieldType.MultiSelectChoice:
+                    component.Type = Questionnaire.QuestionnaireItemType.Choice;
+                    component.AnswerOption = new List<Questionnaire.AnswerOptionComponent>();
+
+                    foreach (FormatFieldOption option in valueField.Options)
+                    {
+                        Element element = new FhirString(option.Text);
+
+#if false   // 2020.05.13 - Argonaut extensions aren't valid in R4 yet
+                        element.AddExtension(
+                            "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
+                            new FhirDecimal(optionOrder++));
+#endif
 
                         component.AnswerOption.Add(new Questionnaire.AnswerOptionComponent()
                         {

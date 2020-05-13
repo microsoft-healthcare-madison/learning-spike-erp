@@ -11,7 +11,7 @@
     "value": "FHIR-3"
   },
   "type": "collection",
-  "timestamp": "2020-05-11T11:52:19.380209-05:00",
+  "timestamp": "2020-05-13T13:19:56.4014848-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/FEMADailyHospitalCOVID19Reporting",
@@ -61,28 +61,16 @@
         ],
         "item": [
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 0
-              }
-            ],
             "linkId": "section_0",
             "text": "Daily Hospital COVID-19 Reporting",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "collectionDate",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "collectionDate"
                   }
                 ],
@@ -92,16 +80,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "state",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "state"
                   }
                 ],
@@ -111,16 +93,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 2
-                  }
-                ],
                 "linkId": "county",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "county"
                   }
                 ],
@@ -130,16 +106,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 3
-                  }
-                ],
                 "linkId": "totalOrdersIncrease",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "totalOrdersIncrease"
                   }
                 ],
@@ -149,16 +119,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 4
-                  }
-                ],
                 "linkId": "totalOrders",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "totalOrders"
                   }
                 ],
@@ -168,16 +132,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 5
-                  }
-                ],
                 "linkId": "totalTestResultsIncrease",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "totalTestResultsIncrease"
                   }
                 ],
@@ -187,16 +145,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 6
-                  }
-                ],
                 "linkId": "rejected",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "rejected"
                   }
                 ],
@@ -206,16 +158,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 7
-                  }
-                ],
                 "linkId": "totalTestResults",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "totalTestResults"
                   }
                 ],
@@ -225,16 +171,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 8
-                  }
-                ],
                 "linkId": "positiveIncrease",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "positiveIncrease"
                   }
                 ],
@@ -244,16 +184,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 9
-                  }
-                ],
                 "linkId": "positive",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemFEMA",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "positive"
                   }
                 ],

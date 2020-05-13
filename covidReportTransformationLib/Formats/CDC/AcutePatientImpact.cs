@@ -362,32 +362,32 @@ namespace covidReportTransformationLib.Formats.CDC
                 "COVID-19 Module: Patient Impact and Hospital Capacity Pathway",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 "Patient Impact Data Elements",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(HospitalizedPatients, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(VentilatedPatients, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(HospitalOnset, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(AwaitingBeds, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(AwaitingVentilators, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(Died, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(HospitalizedPatients, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(VentilatedPatients, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(HospitalOnset, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(AwaitingBeds, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(AwaitingVentilators, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(Died, FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 "Hospital Bed/ Intensive Care Unit (ICU)/ Ventilator Capacity Data Elements",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(TotalBeds, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(InpatientBeds, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(InpatientBedOccupancy, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(IcuBeds, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(IcuBedOccupancy, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(Ventilators, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(VentilatorsInUse, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(TotalBeds, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(InpatientBeds, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(InpatientBedOccupancy, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(IcuBeds, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(IcuBedOccupancy, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(Ventilators, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(VentilatorsInUse, FhirSystems.SanerPopulation),
                 }),
         };
 

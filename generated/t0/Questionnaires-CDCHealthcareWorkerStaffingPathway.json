@@ -11,7 +11,7 @@
     "value": "FHIR-7"
   },
   "type": "collection",
-  "timestamp": "2020-05-11T11:52:19.4599398-05:00",
+  "timestamp": "2020-05-13T13:19:56.4595004-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCHealthcareWorkerStaffingPathway",
@@ -61,28 +61,16 @@
         ],
         "item": [
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 0
-              }
-            ],
             "linkId": "section_0",
             "text": "COVID-19 Module: Healthcare Worker Staffing Pathway",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "facilityId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "facilityId"
                   }
                 ],
@@ -92,16 +80,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "summaryCensusId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "summaryCensusId"
                   }
                 ],
@@ -111,16 +93,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 2
-                  }
-                ],
                 "linkId": "collectiondate",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "collectiondate"
                   }
                 ],
@@ -132,24 +108,12 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 1
-              }
-            ],
             "linkId": "section_1",
             "text": "Information:",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "groupToday",
                 "text": "Critical Staffing Shortage Today: Does your organization consider that it has a critical staffing shortage in this group today?",
                 "type": "display",
@@ -157,12 +121,6 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "groupThisWeek",
                 "text": "Critical Staffing Shortage Within a Week: Does your organization anticipate that it will have a critical staffing shortage in this group within one week?",
                 "type": "display",
@@ -172,28 +130,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 2
-              }
-            ],
             "linkId": "section_2",
             "text": "Environmental services: Front-line persons who clean patient rooms and all areas in a healthcare facility",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortenvsvc",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortenvsvc"
                   }
                 ],
@@ -203,16 +149,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshortenvsvc",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortenvsvc"
                   }
                 ],
@@ -224,28 +164,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 3
-              }
-            ],
             "linkId": "section_3",
             "text": "Nurses: Registered nurses and licensed practical nurses",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortnurse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortnurse"
                   }
                 ],
@@ -255,16 +183,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshortnurse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortnurse"
                   }
                 ],
@@ -276,28 +198,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 4
-              }
-            ],
             "linkId": "section_4",
             "text": "Respiratory therapists: Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortrt",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortrt"
                   }
                 ],
@@ -307,16 +217,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshortrt",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortrt"
                   }
                 ],
@@ -328,28 +232,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 5
-              }
-            ],
             "linkId": "section_5",
             "text": "Pharmacists and pharmacy techs:",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortphar",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortphar"
                   }
                 ],
@@ -359,16 +251,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshortphar",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortphar"
                   }
                 ],
@@ -380,28 +266,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 6
-              }
-            ],
             "linkId": "section_6",
             "text": "Physicians: Attending physicians, fellows",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortphys",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortphys"
                   }
                 ],
@@ -411,16 +285,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshortphys",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortphys"
                   }
                 ],
@@ -432,28 +300,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 7
-              }
-            ],
             "linkId": "section_7",
             "text": "Temporary physicians, nurses, respiratory therapists, and pharmacists: 'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shorttemp",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shorttemp"
                   }
                 ],
@@ -463,16 +319,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshorttemp",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshorttemp"
                   }
                 ],
@@ -484,28 +334,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 8
-              }
-            ],
             "linkId": "section_8",
             "text": "Other licensed independent practitioners: Advanced practice nurses, physician assistants",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortothlic",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortothlic"
                   }
                 ],
@@ -515,16 +353,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "posshortothlic",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortothlic"
                   }
                 ],
@@ -536,28 +368,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 9
-              }
-            ],
             "linkId": "section_9",
             "text": "Other HCP: Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "shortoth",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortoth"
                   }
                 ],
@@ -567,16 +387,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "shortothsfy",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "shortothsfy"
                   }
                 ],
@@ -586,16 +400,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 2
-                  }
-                ],
                 "linkId": "posshortoth",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortoth"
                   }
                 ],
@@ -605,16 +413,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 3
-                  }
-                ],
                 "linkId": "posshortothsfy",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "posshortothsfy"
                   }
                 ],

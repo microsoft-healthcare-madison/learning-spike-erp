@@ -64,6 +64,9 @@ namespace covidReportTransformationLib.Formats
             /// <summary>An enum constant representing the choice option.</summary>
             Choice,
 
+            /// <summary>An enum constant representing the multi select choice option.</summary>
+            MultiSelectChoice,
+
             /// <summary>An enum constant representing the Text option.</summary>
             Text,
 

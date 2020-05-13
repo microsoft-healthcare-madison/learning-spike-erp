@@ -153,10 +153,10 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The supply choices.</summary>
         private static readonly List<FormatFieldOption> _supplyChoices = new List<FormatFieldOption>()
         {
-            new FormatFieldOption("Zero days", true),
-            new FormatFieldOption("1-3 days", true),
-            new FormatFieldOption("4-14 days", true),
-            new FormatFieldOption("15 or more days", true),
+            new FormatFieldOption("Zero days"),
+            new FormatFieldOption("1-3 days"),
+            new FormatFieldOption("4-14 days"),
+            new FormatFieldOption("15 or more days"),
         };
 
         /// <summary>The fields.</summary>
@@ -750,9 +750,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 "COVID-19 Module: Healthcare Supply Pathway",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 Information,
@@ -770,17 +770,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         VentilatorSupply,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         VentilatorReuse,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         VentilatorObtain,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 N95MaskBase,
@@ -790,17 +790,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         N95MaskSupply,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         N95MaskReuse,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         N95MaskObtain,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 OtherRespBase,
@@ -810,17 +810,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         OtherRespSupply,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         OtherRespReuse,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         OtherRespObtain,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 SurgicalMaskBase,
@@ -830,17 +830,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         SurgicalMaskDesc,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         SurgicalMaskSupply,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         SurgicalMaskReuse,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 FaceShieldBase,
@@ -850,17 +850,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         FaceShieldSupply,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         FaceShieldReuse,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         FaceShieldObtain,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 GownBase,
@@ -870,17 +870,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         GownSupply,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         GownReuse,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         GownObtain,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 GloveBase,
@@ -890,17 +890,17 @@ namespace covidReportTransformationLib.Formats.CDC
                         GloveSupply,
                         true,
                         GroupOnHandSupply,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         GloveReuse,
                         true,
                         GroupReuseOrExtendedUse,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         GloveObtain,
                         true,
                         GroupAbleToObtain,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
         };
 

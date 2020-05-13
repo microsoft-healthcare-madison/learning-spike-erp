@@ -11,7 +11,7 @@
     "value": "FHIR-9"
   },
   "type": "collection",
-  "timestamp": "2020-05-11T11:52:19.485939-05:00",
+  "timestamp": "2020-05-13T13:19:56.4821037-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCPatientImpactAndHospitalCapacity",
@@ -61,28 +61,16 @@
         ],
         "item": [
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 0
-              }
-            ],
             "linkId": "section_0",
             "text": "COVID-19 Module: Patient Impact and Hospital Capacity Pathway",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "facilityId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "facilityId"
                   }
                 ],
@@ -92,16 +80,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "summaryCensusId",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "summaryCensusId"
                   }
                 ],
@@ -111,16 +93,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 2
-                  }
-                ],
                 "linkId": "collectionDate",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "collectionDate"
                   }
                 ],
@@ -132,28 +108,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 1
-              }
-            ],
             "linkId": "section_1",
             "text": "Patient Impact Data Elements",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "numC19HospPats",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numC19HospPats"
                   }
                 ],
@@ -163,16 +127,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "numC19MechVentPats",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numC19MechVentPats"
                   }
                 ],
@@ -182,16 +140,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 2
-                  }
-                ],
                 "linkId": "numC19HOPats",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numC19HOPats"
                   }
                 ],
@@ -201,16 +153,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 3
-                  }
-                ],
                 "linkId": "numC19OverflowPats",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numC19OverflowPats"
                   }
                 ],
@@ -220,16 +166,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 4
-                  }
-                ],
                 "linkId": "numC19OFMechVentPats",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numC19OFMechVentPats"
                   }
                 ],
@@ -239,16 +179,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 5
-                  }
-                ],
                 "linkId": "numC19Died",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numC19Died"
                   }
                 ],
@@ -260,28 +194,16 @@
             ]
           },
           {
-            "extension": [
-              {
-                "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                "valueDecimal": 2
-              }
-            ],
             "linkId": "section_2",
             "text": "Hospital Bed/ Intensive Care Unit (ICU)/ Ventilator Capacity Data Elements",
             "type": "group",
             "repeats": false,
             "item": [
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 0
-                  }
-                ],
                 "linkId": "numTotBeds",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numTotBeds"
                   }
                 ],
@@ -291,16 +213,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 1
-                  }
-                ],
                 "linkId": "numbeds",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numbeds"
                   }
                 ],
@@ -310,16 +226,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 2
-                  }
-                ],
                 "linkId": "numBedsOcc",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numBedsOcc"
                   }
                 ],
@@ -329,16 +239,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 3
-                  }
-                ],
                 "linkId": "numICUBeds",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numICUBeds"
                   }
                 ],
@@ -348,16 +252,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 4
-                  }
-                ],
                 "linkId": "numICUBedsOcc",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numICUBedsOcc"
                   }
                 ],
@@ -367,16 +265,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 5
-                  }
-                ],
                 "linkId": "numVent",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numVent"
                   }
                 ],
@@ -386,16 +278,10 @@
                 "repeats": false
               },
               {
-                "extension": [
-                  {
-                    "url": "http://fhir.org/guides/argonaut/questionnaire/StructureDefinition/extension-itemOrder",
-                    "valueDecimal": 6
-                  }
-                ],
                 "linkId": "numVentUse",
                 "code": [
                   {
-                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/QuestionnaireSystemCDC",
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                     "code": "numVentUse"
                   }
                 ],

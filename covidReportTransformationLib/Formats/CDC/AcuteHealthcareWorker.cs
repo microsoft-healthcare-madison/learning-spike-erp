@@ -436,9 +436,9 @@ namespace covidReportTransformationLib.Formats.CDC
                 "COVID-19 Module: Healthcare Worker Staffing Pathway",
                 new List<QuestionnaireQuestion>()
                 {
-                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerQuestionnaireCDC),
-                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerQuestionnaireCDC),
+                    new QuestionnaireQuestion(FacilityId, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(SummaryCensusId, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(CollectionDate, FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 Information,
@@ -455,12 +455,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         EnvironmentalServiceShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         EnvironmentalServiceShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 NurseShortageToday,
@@ -470,12 +470,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         NurseShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         NurseShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 RTShortageToday,
@@ -485,12 +485,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         RTShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         RTShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 PharmShortageToday,
@@ -500,12 +500,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         PharmShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         PharmShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 PhysicianShortageToday,
@@ -515,12 +515,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         PhysicianShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         PhysicianShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 TempShortageToday,
@@ -530,12 +530,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         TempShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         TempShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 OtherLicensedShortageToday,
@@ -545,12 +545,12 @@ namespace covidReportTransformationLib.Formats.CDC
                         OtherLicensedShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         OtherLicensedShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 OtherShortageToday,
@@ -560,20 +560,20 @@ namespace covidReportTransformationLib.Formats.CDC
                         OtherShortageToday,
                         true,
                         GroupToday,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         HCPShortageToday,
                         true,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         OtherShortageWeek,
                         true,
                         GroupThisWeek,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(
                         HCPShortageWeek,
                         true,
-                        FhirSystems.SanerQuestionnaireCDC),
+                        FhirSystems.SanerPopulation),
                 }),
         };
 
