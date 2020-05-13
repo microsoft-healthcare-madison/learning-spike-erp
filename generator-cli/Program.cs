@@ -663,6 +663,7 @@ namespace generator_cli
                 int count = writtenResources[resType];
 
                 string name = Path.GetFileNameWithoutExtension(filename);
+                name = name.Replace(_filenameAdditionForMeasureReports, string.Empty, StringComparison.Ordinal);
                 string updatedName = (count == 0)
                     ? $"{name}-{resType}"
                     : $"{name}-{resType}-{count:0000}";

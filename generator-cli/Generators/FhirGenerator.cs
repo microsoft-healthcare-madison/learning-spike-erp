@@ -68,6 +68,16 @@ namespace generator_cli.Generators
             };
         }
 
+        /// <summary>Concept list for location type.</summary>
+        /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
+        public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForLocationType() =>
+            new List<Hl7.Fhir.Model.CodeableConcept>()
+            {
+                new Hl7.Fhir.Model.CodeableConcept(
+                    SystemLiterals.LocationPhysicalType,
+                    LocationPhysicalTypeBuilding),
+            };
+
         /// <summary>Concept for organization type.</summary>
         /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;.</returns>
         public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForOrganizationType() =>
@@ -167,6 +177,8 @@ namespace generator_cli.Generators
                 PhysicalType = FhirTriplet.PhysicalTypeSite.GetConcept(),
                 Position = position,
                 ManagingOrganization = new ResourceReference($"{org.ResourceType}/{org.Id}"),
+                Type = FhirGenerator.ConceptListForLocationType(),
+                Name = $"{org.Name} Building",
             };
         }
 

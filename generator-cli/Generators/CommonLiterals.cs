@@ -14,17 +14,14 @@ namespace generator_cli.Generators
     /// <summary>A set of common literals.</summary>
     public abstract class CommonLiterals
     {
+        /// <summary>The context focus.</summary>
+        public const string ContextFocus = "focus";
+
         /// <summary>The fhir identifier prefix.</summary>
         public const string FhirIdPrefix = "FHIR-";
 
-        /// <summary>The hospital prefix.</summary>
-        public const string OrgPrefix = "Org-";
-
-        /// <summary>The root location prefix.</summary>
-        public const string RootLocationPrefix = "Loc-";
-
-        /// <summary>The organization type provider.</summary>
-        public const string OrganizationTypeProvider = "prov";
+        /// <summary>The location physical type building.</summary>
+        public const string LocationPhysicalTypeBuilding = "bu";
 
         /// <summary>The location physical type bed.</summary>
         public const string LocationPhysicalTypeBed = "bd";
@@ -32,14 +29,20 @@ namespace generator_cli.Generators
         /// <summary>The location physical type site.</summary>
         public const string LocationPhysicalTypeSite = "si";
 
+        /// <summary>The hospital prefix.</summary>
+        public const string OrgPrefix = "Org-";
+
+        /// <summary>The organization type provider.</summary>
+        public const string OrganizationTypeProvider = "prov";
+
+        /// <summary>The root location prefix.</summary>
+        public const string RootLocationPrefix = "Loc-";
+
         /// <summary>The sct covid code.</summary>
         public const string SctCovidCode = "840539006";
 
         /// <summary>The sct covid display.</summary>
         public const string SctCovidDisplay = "COVID-19";
-
-        /// <summary>The context focus.</summary>
-        public const string ContextFocus = "focus";
 
         /// <summary>This location is operational (but may be in use).</summary>
         public const string AvailabilityStatusActive = "active";
