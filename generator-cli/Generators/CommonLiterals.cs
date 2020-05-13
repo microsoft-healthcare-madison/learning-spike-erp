@@ -44,6 +44,9 @@ namespace generator_cli.Generators
         /// <summary>The sct covid display.</summary>
         public const string SctCovidDisplay = "COVID-19";
 
+        /// <summary>The service role hospital.</summary>
+        public const string ServiceRoleHospital = "HOSP";
+
         /// <summary>This location is operational (but may be in use).</summary>
         public const string AvailabilityStatusActive = "active";
 

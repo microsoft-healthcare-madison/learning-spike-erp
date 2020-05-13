@@ -86,6 +86,9 @@ namespace covidReportTransformationLib.Utils
         /// <summary>The saner population.</summary>
         public const string SanerPopulation = "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem";
 
+        /// <summary>Type of the service delivery location.</summary>
+        public const string ServiceDeliveryLocationType = "http://terminology.hl7.org/ValueSet/v3-ServiceDeliveryLocationRoleType";
+        
         /// <summary>The snomed sct.</summary>
         public const string SnomedSct = "http://snomed.info/sct";
 

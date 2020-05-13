@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using covidReportTransformationLib.Formats;
+using covidReportTransformationLib.Utils;
 using generator_cli.Geographic;
 using generator_cli.Models;
 using Hl7.Fhir.Model;
@@ -70,12 +71,12 @@ namespace generator_cli.Generators
 
         /// <summary>Concept list for location type.</summary>
         /// <returns>A List&lt;Hl7.Fhir.Model.CodeableConcept&gt;</returns>
-        public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForLocationType() =>
+        public static List<Hl7.Fhir.Model.CodeableConcept> ConceptListForServiceLocationType() =>
             new List<Hl7.Fhir.Model.CodeableConcept>()
             {
                 new Hl7.Fhir.Model.CodeableConcept(
-                    SystemLiterals.LocationPhysicalType,
-                    LocationPhysicalTypeBuilding),
+                    FhirSystems.ServiceDeliveryLocationType,
+                    ServiceRoleHospital),
             };
 
         /// <summary>Concept for organization type.</summary>
@@ -177,7 +178,7 @@ namespace generator_cli.Generators
                 PhysicalType = FhirTriplet.PhysicalTypeSite.GetConcept(),
                 Position = position,
                 ManagingOrganization = new ResourceReference($"{org.ResourceType}/{org.Id}"),
-                Type = FhirGenerator.ConceptListForLocationType(),
+                Type = FhirGenerator.ConceptListForServiceLocationType(),
                 Name = $"{org.Name} Building",
             };
         }
