@@ -27,7 +27,7 @@ namespace generator_cli
         private const string _filenameBaseForMeasures = "Measures";
         private const string _filenameBaseForQuestionnaires = "Questionnaires";
 
-        private const string _filenameAdditionForMeasureReports = "-measureReports";
+        private const string _filenameAdditionForMeasureReports = "measureReports";
 
         private static Dictionary<string, Organization> _orgById = new Dictionary<string, Organization>();
         private static Dictionary<string, Location> _rootLocationByOrgId = new Dictionary<string, Location>();
