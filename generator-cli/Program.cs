@@ -89,6 +89,7 @@ namespace generator_cli
         /// <param name="deathRate">           Rate of people dying in hospitalization, when care is available.</param>
         /// <param name="outputBundles">       True to output Bundles, false to output raw resources.</param>
         /// <param name="outputFlat">          True to output into a single directory, false to nest.</param>
+        /// <param name="measureMarkdown">    If specified, the filename of the Measure Markdown file.</param>
         public static void Main(
             string outputDirectory,
             string dataDirectory = null,
@@ -118,7 +119,8 @@ namespace generator_cli
             double recoveryRate = 0.1,
             double deathRate = 0.05,
             bool outputBundles = true,
-            bool outputFlat = false)
+            bool outputFlat = false,
+            string measureMarkdown = "")
         {
             // sanity checks
             if (string.IsNullOrEmpty(outputDirectory))
@@ -223,6 +225,11 @@ namespace generator_cli
             CreateOrgs(facilityCount, state, postalCode, recordsToSkip);
 
             ExportAggregate(outputDirectory, timeSteps, timePeriodHours);
+
+            if (!string.IsNullOrEmpty(measureMarkdown))
+            {
+                File.WriteAllText(measureMarkdown, SanerMeasure.GetMarkdown());
+            }
         }
 
         /// <summary>Export aggregate.</summary>

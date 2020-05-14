@@ -22,6 +22,9 @@ namespace covidReportTransformationLib.Formats.SANER
         /// <summary>The measures.</summary>
         private static readonly Dictionary<string, Measure> _measures = new Dictionary<string, Measure>();
 
+        /// <summary>The markdown.</summary>
+        private static string _markdown = string.Empty;
+
         /// <summary>Builds a measure.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
         /// <param name="format">Describes the format to use.</param>
@@ -122,6 +125,95 @@ namespace covidReportTransformationLib.Formats.SANER
             }
 
             return measure;
+        }
+
+        /// <summary>Builds a markdown.</summary>
+        /// <param name="format">Describes the format to use.</param>
+        /// <returns>A string.</returns>
+        private static string BuildMarkdown(IReportingFormat format)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"# {format.Name}");
+            sb.AppendLine();
+
+            if (format.Artifacts != null)
+            {
+                sb.AppendLine("## Related artifacts");
+
+                foreach (RelatedArtifact artifact in format.Artifacts)
+                {
+                    sb.AppendLine($"* [{artifact.Display}]({artifact.Url})");
+                }
+
+                sb.AppendLine();
+                sb.AppendLine();
+            }
+
+            sb.AppendLine("## Group Definitions");
+            sb.AppendLine("Group System|Group Code|Population System|Population Code");
+            sb.AppendLine("------------|----------|-----------------|---------------");
+
+            foreach (MeasureGrouping grouping in format.MeasureGroupings)
+            {
+                Measure.GroupComponent component = null;
+
+                if (grouping.CodeCoding != null)
+                {
+                    component = GroupComponentFromNested(grouping, format);
+                }
+                else if ((!string.IsNullOrEmpty(grouping.FieldName)) &&
+                    format.Fields.ContainsKey(grouping.FieldName))
+                {
+                    component = GroupComponentFromFlat(grouping, format);
+                }
+
+                if (component == null)
+                {
+                    continue;
+                }
+
+                sb.AppendLine(
+                    $"{component.Code.Coding[0].System}" +
+                    $"|{component.Code.Coding[0].Code}" +
+                    $"|<nobr/>" +
+                    $"|<nobr/>");
+
+                foreach (Measure.PopulationComponent pop in component.Population)
+                {
+                    string popSys = string.Empty;
+                    string popCode = string.Empty;
+
+                    foreach (Coding popCoding in pop.Code.Coding)
+                    {
+                        if (string.IsNullOrEmpty(popSys))
+                        {
+                            popSys = popCoding.System;
+                        }
+                        else
+                        {
+                            popSys += $"<br/>{popCoding.System}";
+                        }
+
+                        if (string.IsNullOrEmpty(popCode))
+                        {
+                            popCode = popCoding.Code;
+                        }
+                        else
+                        {
+                            popCode += $"<br/>{popCoding.Code}";
+                        }
+                    }
+
+                    sb.AppendLine(
+                        $"<nobr/>" +
+                        $"|<nobr/>" +
+                        $"|{popSys}" +
+                        $"|{popCode}");
+                }
+            }
+
+            return sb.ToString();
         }
 
         /// <summary>Group component from flat.</summary>
@@ -425,6 +517,8 @@ namespace covidReportTransformationLib.Formats.SANER
                 return;
             }
 
+            _markdown = string.Empty;
+
             List<IReportingFormat> formats = FormatHelper.GetFormatList();
 
             foreach (IReportingFormat format in formats)
@@ -432,10 +526,19 @@ namespace covidReportTransformationLib.Formats.SANER
                 if (format.MeasureGroupings != null)
                 {
                     _measures.Add(format.Name, BuildMeasure(format));
+
+                    _markdown += BuildMarkdown(format);
                 }
             }
 
             _initialized = true;
+        }
+
+        /// <summary>Gets the markdown.</summary>
+        /// <returns>The markdown.</returns>
+        public static string GetMarkdown()
+        {
+            return _markdown;
         }
 
         /// <summary>Gets a measure.</summary>
