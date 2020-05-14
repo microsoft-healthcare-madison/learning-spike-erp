@@ -343,8 +343,7 @@ namespace covidReportTransformationLib.Formats.SANER
                         continue;
                     }
 
-                    if ((populationSystem == FhirSystems.MeasurePopulation) &&
-                        (!string.IsNullOrEmpty(populationName)))
+                    if (!string.IsNullOrEmpty(populationName))
                     {
                         switch (populationCode)
                         {
@@ -382,6 +381,25 @@ namespace covidReportTransformationLib.Formats.SANER
                                     Code = population.Code,
                                     Count = data.Values[populationName].Denominator ?? (int?)data.Values[populationName].Score ?? 1,
                                 });
+                                break;
+
+                            default:
+                                if (data.Values.ContainsKey(populationName))
+                                {
+                                    reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                    {
+                                        Code = population.Code,
+                                        Count = (int)data.Values[populationName].Score,
+                                    });
+                                }
+                                else
+                                {
+                                    reportGroup.Population.Add(new MeasureReport.PopulationComponent()
+                                    {
+                                        Code = population.Code,
+                                    });
+                                }
+
                                 break;
                         }
                     }
