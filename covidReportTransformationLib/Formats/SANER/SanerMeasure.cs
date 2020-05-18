@@ -136,6 +136,9 @@ namespace covidReportTransformationLib.Formats.SANER
 
             sb.AppendLine($"# {format.Name}");
             sb.AppendLine();
+            sb.AppendLine($"{format.Title}");
+            sb.AppendLine();
+            sb.AppendLine($"{format.Description}");
 
             if (format.Artifacts != null)
             {
@@ -150,9 +153,21 @@ namespace covidReportTransformationLib.Formats.SANER
                 sb.AppendLine();
             }
 
+            if ((format.Definition != null) && (format.Definition.Count > 0))
+            {
+                sb.AppendLine("## Definitions");
+
+                foreach (string definition in format.Definition)
+                {
+                    sb.AppendLine($"* {definition}");
+                }
+            }
+
             sb.AppendLine("## Group Definitions");
-            sb.AppendLine("Group System|Group Code|Population System|Population Code");
-            sb.AppendLine("------------|----------|-----------------|---------------");
+            sb.AppendLine("Group Code|Population Code|System");
+            sb.AppendLine("----------|---------------|------");
+
+            List<string> fields = new List<string>();
 
             foreach (MeasureGrouping grouping in format.MeasureGroupings)
             {
@@ -173,11 +188,16 @@ namespace covidReportTransformationLib.Formats.SANER
                     continue;
                 }
 
+                if ((!string.IsNullOrEmpty(grouping.FieldName)) &&
+                    format.Fields.ContainsKey(grouping.FieldName))
+                {
+                    fields.Add(grouping.FieldName);
+                }
+
                 sb.AppendLine(
-                    $"{component.Code.Coding[0].System}" +
-                    $"|{component.Code.Coding[0].Code}" +
+                    $"{component.Code.Coding[0].Code}" +
                     $"|<nobr/>" +
-                    $"|<nobr/>");
+                    $"|{component.Code.Coding[0].System}");
 
                 foreach (Measure.PopulationComponent pop in component.Population)
                 {
@@ -203,14 +223,41 @@ namespace covidReportTransformationLib.Formats.SANER
                         {
                             popCode += $"<br/>{popCoding.Code}";
                         }
+
+                        if (format.Fields.ContainsKey(popCoding.Code))
+                        {
+                            fields.Add(popCoding.Code);
+                        }
                     }
 
                     sb.AppendLine(
                         $"<nobr/>" +
-                        $"|<nobr/>" +
-                        $"|{popSys}" +
-                        $"|{popCode}");
+                        $"|{popCode}" +
+                        $"|{popSys}");
                 }
+            }
+
+            sb.AppendLine();
+            sb.AppendLine("## Field Definitions");
+            sb.AppendLine("Field Name|Title|Description");
+            sb.AppendLine("----------|-----|-----------");
+
+            fields.Sort();
+
+            string lastField = string.Empty;
+            foreach (string field in fields)
+            {
+                if (field == lastField)
+                {
+                    continue;
+                }
+
+                lastField = field;
+
+                sb.AppendLine(
+                    $"{field}" +
+                    $"|{format.Fields[field].Title}" +
+                    $"|{format.Fields[field].Description}");
             }
 
             return sb.ToString();

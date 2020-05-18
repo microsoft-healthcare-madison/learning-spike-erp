@@ -11,7 +11,7 @@
     "value": "FHIR-442"
   },
   "type": "collection",
-  "timestamp": "2020-05-13T21:36:28.5307833-05:00",
+  "timestamp": "2020-05-18T12:03:22.517381-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/FHIR-443",
@@ -43,14 +43,14 @@
           "reference": "Location/Loc-X410009",
           "display": "DUNWICH MEDICAL CENTER Building"
         },
-        "date": "2020-05-11T00:00:00-05:00",
+        "date": "2020-05-15T00:00:00-05:00",
         "reporter": {
           "reference": "Organization/X410009",
           "display": "DUNWICH MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-05-11",
-          "end": "2020-05-11"
+          "start": "2020-05-15",
+          "end": "2020-05-15"
         },
         "group": [
           {
@@ -241,14 +241,14 @@
           "reference": "Location/Loc-X410009",
           "display": "DUNWICH MEDICAL CENTER Building"
         },
-        "date": "2020-05-11T00:00:00-05:00",
+        "date": "2020-05-15T00:00:00-05:00",
         "reporter": {
           "reference": "Organization/X410009",
           "display": "DUNWICH MEDICAL CENTER"
         },
         "period": {
-          "start": "2020-05-11",
-          "end": "2020-05-11"
+          "start": "2020-05-15",
+          "end": "2020-05-15"
         },
         "group": [
           {
@@ -463,10 +463,10 @@
                     {
                       "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
                       "code": "numC19Died",
-                      "display": "COVID-19 Patient Deaths"
+                      "display": "COVID-19 Patient Deaths - Total for Calendar Dates 05/14/2020 and PRIOR"
                     }
                   ],
-                  "text": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location."
+                  "text": "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location on Calendar Dates 05/14/2020 and PRIOR."
                 },
                 "count": 0
               }

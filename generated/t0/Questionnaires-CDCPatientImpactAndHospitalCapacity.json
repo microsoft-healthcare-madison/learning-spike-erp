@@ -11,7 +11,7 @@
     "value": "FHIR-9"
   },
   "type": "collection",
-  "timestamp": "2020-05-13T21:35:42.2043339-05:00",
+  "timestamp": "2020-05-18T12:03:20.9768369-05:00",
   "entry": [
     {
       "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/Questionnaire/CDCPatientImpactAndHospitalCapacity",
@@ -186,7 +186,59 @@
                     "code": "numC19Died"
                   }
                 ],
-                "text": "COVID-19 Patient Deaths: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+                "text": "COVID-19 Patient Deaths - Total for Calendar Dates 05/14/2020 and PRIOR: Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location on Calendar Dates 05/14/2020 and PRIOR.",
+                "type": "integer",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "linkId": "numc19confnewadm",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                    "code": "numc19confnewadm"
+                  }
+                ],
+                "text": "Previous Day’s Admissions with Confirmed COVID-19: New patients admitted to an inpatient bed who had confirmed COVID-19 at the time of admission.",
+                "type": "integer",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "linkId": "numc19suspnewadm",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                    "code": "numc19suspnewadm"
+                  }
+                ],
+                "text": "Previous Day’s Admissions with Suspected COVID-19: New patients admitted to an inpatient bed who had suspected COVID-19 at the time of admission.",
+                "type": "integer",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "linkId": "numc19honewpats",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                    "code": "numc19honewpats"
+                  }
+                ],
+                "text": "New Hospital Onset: Current inpatients hospitalized for a condition other than COVID-19 with onset of suspected or confirmed COVID-19 on the previous day and the previous day is fourteen or more days since admission.",
+                "type": "integer",
+                "required": false,
+                "repeats": false
+              },
+              {
+                "linkId": "numc19prevdied",
+                "code": [
+                  {
+                    "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                    "code": "numc19prevdied"
+                  }
+                ],
+                "text": "Previous Day's Deaths:  Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location on the previous calendar day.",
                 "type": "integer",
                 "required": false,
                 "repeats": false

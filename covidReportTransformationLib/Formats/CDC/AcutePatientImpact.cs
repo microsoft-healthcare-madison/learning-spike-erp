@@ -60,6 +60,18 @@ namespace covidReportTransformationLib.Formats.CDC
         /// <summary>The cdc died.</summary>
         public const string Died = "numC19Died";
 
+        /// <summary>The daily admission c 19 confirmed.</summary>
+        public const string DailyAdmissionC19Confirmed = "numc19confnewadm";
+
+        /// <summary>The daily admission c 19 suspected.</summary>
+        public const string DailyAdmissionC19Suspected = "numc19suspnewadm";
+
+        /// <summary>The daily hospital onset.</summary>
+        public const string DailyHospitalOnset = "numc19honewpats";
+
+        /// <summary>The previous day deaths.</summary>
+        public const string PreviousDayDeaths = "numc19prevdied";
+
         /// <summary>The group beds.</summary>
         public const string GroupBeds = "Beds";
 
@@ -183,8 +195,60 @@ namespace covidReportTransformationLib.Formats.CDC
                 Died,
                 new FormatField(
                     Died,
-                    "COVID-19 Patient Deaths",
-                    "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location.",
+                    "COVID-19 Patient Deaths - Total for Calendar Dates 05/14/2020 and PRIOR",
+                    "Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location on Calendar Dates 05/14/2020 and PRIOR.",
+                    FormatField.FieldType.Count,
+                    FormatField.FhirMeasureType.Outcome,
+                    false,
+                    0,
+                    1500,
+                    null)
+            },
+            {
+                DailyAdmissionC19Confirmed,
+                new FormatField(
+                    DailyAdmissionC19Confirmed,
+                    "Previous Day’s Admissions with Confirmed COVID-19",
+                    "New patients admitted to an inpatient bed who had confirmed COVID-19 at the time of admission.",
+                    FormatField.FieldType.Count,
+                    FormatField.FhirMeasureType.Outcome,
+                    false,
+                    0,
+                    10000,
+                    null)
+            },
+            {
+                DailyAdmissionC19Suspected,
+                new FormatField(
+                    DailyAdmissionC19Suspected,
+                    "Previous Day’s Admissions with Suspected COVID-19",
+                    "New patients admitted to an inpatient bed who had suspected COVID-19 at the time of admission.",
+                    FormatField.FieldType.Count,
+                    FormatField.FhirMeasureType.Outcome,
+                    false,
+                    0,
+                    10000,
+                    null)
+            },
+            {
+                DailyHospitalOnset,
+                new FormatField(
+                    DailyHospitalOnset,
+                    "New Hospital Onset",
+                    "Current inpatients hospitalized for a condition other than COVID-19 with onset of suspected or confirmed COVID-19 on the previous day and the previous day is fourteen or more days since admission.",
+                    FormatField.FieldType.Count,
+                    FormatField.FhirMeasureType.Outcome,
+                    false,
+                    0,
+                    10000,
+                    null)
+            },
+            {
+                PreviousDayDeaths,
+                new FormatField(
+                    PreviousDayDeaths,
+                    "Previous Day's Deaths",
+                    " Patients with suspected or confirmed COVID-19 who died in the hospital, ED, or any overflow location on the previous calendar day.",
                     FormatField.FieldType.Count,
                     FormatField.FhirMeasureType.Outcome,
                     false,
@@ -331,6 +395,10 @@ namespace covidReportTransformationLib.Formats.CDC
                     new MeasureGroupingPopulation(AwaitingBeds, null),
                     new MeasureGroupingPopulation(AwaitingVentilators, null),
                     new MeasureGroupingPopulation(Died, null),
+                    new MeasureGroupingPopulation(DailyAdmissionC19Confirmed, null),
+                    new MeasureGroupingPopulation(DailyAdmissionC19Suspected, null),
+                    new MeasureGroupingPopulation(DailyHospitalOnset, null),
+                    new MeasureGroupingPopulation(PreviousDayDeaths, null),
                 }),
         };
 #else
@@ -376,6 +444,10 @@ namespace covidReportTransformationLib.Formats.CDC
                     new QuestionnaireQuestion(AwaitingBeds, FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(AwaitingVentilators, FhirSystems.SanerPopulation),
                     new QuestionnaireQuestion(Died, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(DailyAdmissionC19Confirmed, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(DailyAdmissionC19Suspected, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(DailyHospitalOnset, FhirSystems.SanerPopulation),
+                    new QuestionnaireQuestion(PreviousDayDeaths, FhirSystems.SanerPopulation),
                 }),
             new QuestionnaireSection(
                 "Hospital Bed/ Intensive Care Unit (ICU)/ Ventilator Capacity Data Elements",
@@ -408,6 +480,10 @@ namespace covidReportTransformationLib.Formats.CDC
             AwaitingBeds,
             AwaitingVentilators,
             Died,
+            DailyAdmissionC19Confirmed,
+            DailyAdmissionC19Suspected,
+            DailyHospitalOnset,
+            PreviousDayDeaths,
         };
 
         /// <summary>The cdc citation.</summary>
