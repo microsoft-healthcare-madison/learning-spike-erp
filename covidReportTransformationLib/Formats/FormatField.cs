@@ -41,6 +41,43 @@ namespace covidReportTransformationLib.Formats
             CountMin = countMin;
             CountMax = countMax;
             Options = options;
+            AdditionalFieldDescription = string.Empty;
+        }
+
+        /// <summary>Initializes a new instance of the <see cref="FormatField"/> class.</summary>
+        /// <param name="name">              The name.</param>
+        /// <param name="title">             The title.</param>
+        /// <param name="description">       The description.</param>
+        /// <param name="type">              The type.</param>
+        /// <param name="measureType">       The type of the measure.</param>
+        /// <param name="isRequired">        True if this object is required, false if not.</param>
+        /// <param name="countMin">          The count minimum.</param>
+        /// <param name="countMax">          The count maximum.</param>
+        /// <param name="options">           The options allowed for this question (choices).</param>
+        /// <param name="additionalFieldDescription">Additional field name for description joining.</param>
+        public FormatField(
+            string name,
+            string title,
+            string description,
+            FieldType type,
+            FhirMeasureType measureType,
+            bool isRequired,
+            int? countMin,
+            int? countMax,
+            List<FormatFieldOption> options,
+            string additionalFieldDescription)
+            : this(
+                name,
+                title,
+                description,
+                type,
+                measureType,
+                isRequired,
+                countMin,
+                countMax,
+                options)
+        {
+            AdditionalFieldDescription = additionalFieldDescription;
         }
 
         /// <summary>Values that represent field types.</summary>
@@ -125,5 +162,9 @@ namespace covidReportTransformationLib.Formats
         /// <summary>Gets the choices.</summary>
         /// <value>The choices.</value>
         public List<FormatFieldOption> Options { get; }
+
+        /// <summary>Gets information describing the additional field.</summary>
+        /// <value>Information describing the additional field.</value>
+        public string AdditionalFieldDescription { get; }
     }
 }

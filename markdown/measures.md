@@ -33,6 +33,7 @@ totalOrders|Cumulative Diagnostic Tests Ordered/Received|All tests ordered to da
 totalOrdersIncrease|New Diagnostic Tests Ordered/Received|Midnight to midnight cutoff, tests ordered on previous date queried.
 totalTestResults|Cumulative Tests Performed|All tests with results released to date.
 totalTestResultsIncrease|New Tests Resulted|Midnight to midnight cutoff, test results released on previous date queried.
+
 # CDCHealthcareSupplyPathway
 
 COVID-19 Healthcare Supply Pathway
@@ -82,27 +83,28 @@ Glove|<nobr/>|http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem
 ## Field Definitions
 Field Name|Title|Description
 ----------|-----|-----------
-gloveobtain|Gloves|
-glovereuse|Gloves|
-glovesupply|Gloves|
-gownobtain|Gowns (single use)|
-gownreuse|Gowns (single use)|
-gownsupply|Gowns (single use)|
-n95maskobtain|N95 masks|
-n95maskreuse|N95 masks|
-n95masksupply|N95 masks|
-othrespobtain|Other respirators including PAPRs|Other respirators such as PAPRs or elastomerics
-othrespreuse|Other respirators including PAPRs|Other respirators such as PAPRs or elastomerics
-othrespsupply|Other respirators including PAPRs|Other respirators such as PAPRs or elastomerics
-shieldobtain|Eye protection including face shields or goggles|
-shieldreuse|Eye protection including face shields or goggles|
-shieldsupply|Eye protection including face shields or goggles|
-surgmaskobtain|Surgical masks|
-surgmaskreuse|Surgical masks|
-surgmasksupply|Surgical masks|
-ventobtain|Ventilator supplies (any, including tubing)|any supplies, including flow sensors, tubing, connectors, valves, filters, etc
-ventreuse|Ventilator supplies (any, including tubing)|any supplies, including flow sensors, tubing, connectors, valves, filters, etc
-ventsupply|Ventilator supplies (any, including tubing)|any supplies, including flow sensors, tubing, connectors, valves, filters, etc
+gloveobtain|Gloves - Able to Obtain|Gloves - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+glovereuse|Gloves - Reusing or Extending Use|Gloves - Are you currently reusing the item or implementing extended use?
+glovesupply|Gloves - On-hand Supply|Gloves - Please answer based on your organization’s best estimation for the supply of this item.
+gownobtain|Gowns (single use) - Able to Obtain|Gowns (single use) - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+gownreuse|Gowns (single use) - Reusing or Extending Use|Gowns (single use) - Are you currently reusing the item or implementing extended use?
+gownsupply|Gowns (single use) - On-hand Supply|Gowns (single use) - Please answer based on your organization’s best estimation for the supply of this item.
+n95maskobtain|N95 masks - Able to Obtain|N95 masks - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+n95maskreuse|N95 masks - Reusing or Extending Use|N95 masks - Are you currently reusing the item or implementing extended use?
+n95masksupply|N95 masks - On-hand Supply|N95 masks - Please answer based on your organization’s best estimation for the supply of this item.
+othrespobtain|Other respirators including PAPRs - Able to Obtain|Other respirators such as PAPRs or elastomerics - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+othrespreuse|Other respirators including PAPRs - Reusing or Extending Use|Other respirators such as PAPRs or elastomerics - Are you currently reusing the item or implementing extended use?
+othrespsupply|Other respirators including PAPRs - On-hand Supply|Other respirators such as PAPRs or elastomerics - Please answer based on your organization’s best estimation for the supply of this item.
+shieldobtain|Eye protection including face shields or goggles - Able to Obtain|Eye protection including face shields or goggles - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+shieldreuse|Eye protection including face shields or goggles - Reusing or Extending Use|Eye protection including face shields or goggles - Are you currently reusing the item or implementing extended use?
+shieldsupply|Eye protection including face shields or goggles - On-hand Supply|Eye protection including face shields or goggles - Please answer based on your organization’s best estimation for the supply of this item.
+surgmaskobtain|Surgical masks - Able to Obtain|Surgical masks - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+surgmaskreuse|Surgical masks - Reusing or Extending Use|Surgical masks - Are you currently reusing the item or implementing extended use?
+surgmasksupply|Surgical masks - On-hand Supply|Surgical masks - Please answer based on your organization’s best estimation for the supply of this item.
+ventobtain|Ventilator supplies (any, including tubing) - Able to Obtain|any supplies, including flow sensors, tubing, connectors, valves, filters, etc - Are you able to obtain this item? If you have placed an order but are not able to have that order filled, please answer NO.
+ventreuse|Ventilator supplies (any, including tubing) - Reusing or Extending Use|any supplies, including flow sensors, tubing, connectors, valves, filters, etc - Are you currently reusing the item or implementing extended use?
+ventsupply|Ventilator supplies (any, including tubing) - On-hand Supply|any supplies, including flow sensors, tubing, connectors, valves, filters, etc - Please answer based on your organization’s best estimation for the supply of this item.
+
 # CDCHealthcareWorkerStaffingPathway
 
 COVID-19 Healthcare Worker Staffing Pathway
@@ -179,7 +181,7 @@ posshortnurse|Nurses|Registered nurses and licensed practical nurses
 posshortoth|Other HCP|Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.
 posshortothlic|Other licensed independent practitioners|Advanced practice nurses, physician assistants
 posshortothsfy|Other HCP - Specify the groups|Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above.
-posshortphar|Pharmacists and pharmacy techs|
+posshortphar|Pharmacists and pharmacy techs|Pharmacists and pharmacy techs
 posshortphys|Physicians|Attending physicians, fellows
 posshortrt|Respiratory therapists|Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care
 posshorttemp|Temporary physicians, nurses, respiratory therapists, and pharmacists|'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons
@@ -188,10 +190,11 @@ shortnurse|Nurses|Registered nurses and licensed practical nurses
 shortoth|Other HCP|Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above
 shortothlic|Other licensed independent practitioners|Advanced practice nurses, physician assistants
 shortothsfy|Other HCP - Specify the groups|Persons who work in the facility, regardless of clinical responsibility or patient contact not included in categories above
-shortphar|Pharmacists and pharmacy techs|
+shortphar|Pharmacists and pharmacy techs|Pharmacists and pharmacy techs
 shortphys|Physicians|Attending physicians, fellows
 shortrt|Respiratory therapists|Certified medical professionals who specialize in knowledge and use of mechanical ventilation as well as other programs for respiratory care
 shorttemp|Temporary physicians, nurses, respiratory therapists, and pharmacists|'per diems', 'travelers', retired, or other seasonal or intermittently contracted persons
+
 # CDCPatientImpactAndHospitalCapacity
 
 Patient Impact and Hospital Capacity
@@ -263,3 +266,4 @@ numICUBedsOcc|ICU Bed Occupancy|Total number of staffed inpatient ICU beds that 
 numTotBeds|All Hospital Beds|Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.
 numVent|Mechanical Ventilators|Total number of ventilators available.
 numVentUse|Mechanical Ventilators in Use|Total number of ventilators in use.
+

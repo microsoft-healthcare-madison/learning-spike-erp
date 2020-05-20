@@ -277,7 +277,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 VentilatorReuse,
@@ -290,7 +291,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 VentilatorObtain,
@@ -303,7 +305,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
             {
                 N95MaskBase,
@@ -329,7 +332,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 N95MaskReuse,
@@ -342,7 +346,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 N95MaskObtain,
@@ -355,7 +360,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
             {
                 OtherRespBase,
@@ -381,7 +387,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 OtherRespReuse,
@@ -394,7 +401,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 OtherRespObtain,
@@ -407,7 +415,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
             {
                 SurgicalMaskBase,
@@ -433,7 +442,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 SurgicalMaskReuse,
@@ -446,7 +456,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 SurgicalMaskObtain,
@@ -459,7 +470,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
             {
                 FaceShieldBase,
@@ -485,7 +497,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 FaceShieldReuse,
@@ -498,7 +511,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 FaceShieldObtain,
@@ -511,7 +525,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
             {
                 GownBase,
@@ -537,7 +552,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 GownReuse,
@@ -550,7 +566,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 GownObtain,
@@ -563,7 +580,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
             {
                 GloveBase,
@@ -589,7 +607,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    _supplyChoices)
+                    _supplyChoices,
+                    GroupOnHandSupply)
             },
             {
                 GloveReuse,
@@ -602,7 +621,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupReuseOrExtendedUse)
             },
             {
                 GloveObtain,
@@ -615,7 +635,8 @@ namespace covidReportTransformationLib.Formats.CDC
                     false,
                     null,
                     null,
-                    null)
+                    null,
+                    GroupAbleToObtain)
             },
         };
 

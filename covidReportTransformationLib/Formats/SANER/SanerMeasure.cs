@@ -22,8 +22,8 @@ namespace covidReportTransformationLib.Formats.SANER
         /// <summary>The measures.</summary>
         private static readonly Dictionary<string, Measure> _measures = new Dictionary<string, Measure>();
 
-        /// <summary>The markdown.</summary>
-        private static string _markdown = string.Empty;
+        /// <summary>The markdowns.</summary>
+        private static readonly Dictionary<string, string> _markdowns = new Dictionary<string, string>();
 
         /// <summary>Builds a measure.</summary>
         /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
@@ -254,10 +254,26 @@ namespace covidReportTransformationLib.Formats.SANER
 
                 lastField = field;
 
+                FormatField formatField = format.Fields[field];
+
+                string title = formatField.Title;
+                string description = string.IsNullOrEmpty(formatField.Description)
+                    ? formatField.Title
+                    : formatField.Description;
+
+                if ((!string.IsNullOrEmpty(formatField.AdditionalFieldDescription)) &&
+                    format.Fields.ContainsKey(formatField.AdditionalFieldDescription))
+                {
+                    FormatField additional = format.Fields[formatField.AdditionalFieldDescription];
+
+                    title += $" - {additional.Title}";
+                    description += $" - {additional.Description}";
+                }
+
                 sb.AppendLine(
                     $"{field}" +
-                    $"|{format.Fields[field].Title}" +
-                    $"|{format.Fields[field].Description}");
+                    $"|{title}" +
+                    $"|{description}");
             }
 
             return sb.ToString();
@@ -564,8 +580,6 @@ namespace covidReportTransformationLib.Formats.SANER
                 return;
             }
 
-            _markdown = string.Empty;
-
             List<IReportingFormat> formats = FormatHelper.GetFormatList();
 
             foreach (IReportingFormat format in formats)
@@ -573,8 +587,7 @@ namespace covidReportTransformationLib.Formats.SANER
                 if (format.MeasureGroupings != null)
                 {
                     _measures.Add(format.Name, BuildMeasure(format));
-
-                    _markdown += BuildMarkdown(format);
+                    _markdowns.Add(format.Name, BuildMarkdown(format));
                 }
             }
 
@@ -585,7 +598,44 @@ namespace covidReportTransformationLib.Formats.SANER
         /// <returns>The markdown.</returns>
         public static string GetMarkdown()
         {
-            return _markdown;
+            if (!_initialized)
+            {
+                Init();
+            }
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (KeyValuePair<string, string> kvp in _markdowns)
+            {
+                sb.Append(kvp.Value);
+                sb.AppendLine();
+            }
+
+            return sb.ToString();
+        }
+
+        /// <summary>Gets the markdown.</summary>
+        /// <exception cref="ArgumentNullException">Thrown when one or more required arguments are null.</exception>
+        /// <param name="format">Describes the format to use.</param>
+        /// <returns>The markdown.</returns>
+        public static string GetMarkdown(IReportingFormat format)
+        {
+            if (!_initialized)
+            {
+                Init();
+            }
+
+            if (format == null)
+            {
+                throw new ArgumentNullException(nameof(format));
+            }
+
+            if (!_markdowns.ContainsKey(format.Name))
+            {
+                return null;
+            }
+
+            return _markdowns[format.Name];
         }
 
         /// <summary>Gets a measure.</summary>
